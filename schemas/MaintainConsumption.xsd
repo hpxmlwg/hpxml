@@ -4,46 +4,27 @@
 	attributeFormDefault="unqualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
-	<xs:element name="MaintainBuildingRequest">
+	<xs:element name="MaintainConsumptionRequest">
 		<xs:annotation>
 			<xs:documentation/>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="XMLTransactionHeaderInformation"/>
-				<xs:element ref="SoftwareInfo" minOccurs="0"/>
 				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
 				<xs:element name="CustomerID" type="SystemIdentifiersInfoType"/>
-				<xs:element name="Address" minOccurs="0">
+				<xs:element name="Consumption" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element ref="AddressSystemIdentifiers"/>
-							<xs:group ref="AddressInformation" minOccurs="0"/>
+							<xs:element maxOccurs="unbounded" ref="ConsumptionInfo"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="BuildingDetails">
-					<xs:annotation>
-						<xs:documentation>Building Description</xs:documentation>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element ref="ConstructionInfo"/>
-							<xs:element ref="ClimateandRiskZonesInfo"/>
-							<xs:element name="Enclosure" type="Enclosure"/>
-							<xs:element name="Systems" type="Systems"/>
-							<xs:element name="Appliances" type="Appliances"/>
-							<xs:element name="Lighting" type="Lighting"/>
-							<xs:element name="MiscLoads" type="MiscLoads"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element minOccurs="0" ref="TotalCost"/>
 
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="MaintainBuildingResponse">
+	<xs:element name="MaintainConsumptionResponse">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>

@@ -42,6 +42,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element minOccurs="0" ref="TotalCost"/>
 				<xs:element ref="EnergySavingsInfo" minOccurs="0"/>
 				<xs:element ref="HomeownerQuestionaireInfo" minOccurs="0"/>
 			</xs:sequence>
