@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1"
-	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="unqualified"
-	attributeFormDefault="unqualified">
+	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified"
+	attributeFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
 	<xs:element name="MaintainRetrofitRequest">
@@ -12,10 +12,11 @@
 			<xs:sequence>
 				<xs:element ref="XMLTransactionHeaderInformation"/>
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
+				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
+				<xs:element minOccurs="0" name="RetrofitID" type="SystemIdentifiersInfoType"/>
 				<xs:element name="RetrofitInfo">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
 							<xs:element name="Auditor" minOccurs="0">
 								<xs:complexType>
 									<xs:sequence>
@@ -45,6 +46,16 @@
 				<xs:element minOccurs="0" ref="TotalCost"/>
 				<xs:element ref="EnergySavingsInfo" minOccurs="0"/>
 				<xs:element ref="HomeownerQuestionaireInfo" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MaintainRetrofitResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
+				<xs:element minOccurs="0" name="RetrofitID" type="SystemIdentifiersInfoType"/>
+				<xs:element maxOccurs="unbounded" name="StatusMessages" type="StatusMessage"
+					minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

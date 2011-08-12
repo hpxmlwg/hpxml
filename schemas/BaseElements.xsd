@@ -655,11 +655,6 @@
 	</xs:element>
 	<xs:element name="CoolingSystemInfo" type="CoolingSystemInfoType"/>
 	<xs:element name="HeatPumpInfo" type="HeatPumpInfoType"/>
-	<xs:element name="HVACDistributionInfo">
-		<xs:complexType>
-			<xs:group ref="HVACDistributionGroup" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:complexType>
-	</xs:element>
 	<xs:element name="ThermostatInfo">
 		<xs:complexType>
 			<xs:sequence>
@@ -1322,84 +1317,44 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element name="Efficiency" type="Efficiency" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:group name="HVACDistributionGroup">
-		<xs:sequence>
-			<xs:group ref="SystemInfo"/>
-			<xs:element name="HVACDistributionSystemType" type="HVACDistributionSystemType"/>
-			<xs:choice>
-				<xs:element name="Ducts">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element maxOccurs="unbounded" minOccurs="0" name="Duct">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element minOccurs="0" name="DuctType" type="DuctType"/>
-										<xs:element minOccurs="0" name="DuctMaterial"
-											type="DuctMaterial"/>
-										<xs:element minOccurs="0" name="DuctLocation"
-											type="DuctLocation"/>
-										<xs:element minOccurs="0" name="DuctSurfaceArea"
-											type="SurfaceArea"/>
-										<xs:element minOccurs="0" name="DuctInsulationRValue"
-											type="RValue"/>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element ref="DuctLeakageMeasurement" maxOccurs="unbounded"
-								minOccurs="0"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="Hydronic"/>
-			</xs:choice>
-			<xs:element name="DistributionSystemImprovementInfo" minOccurs="0" maxOccurs="unbounded">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:group ref="StandardMeasureFieldsGroup" minOccurs="0"/>
-						<xs:element name="DuctSystemSealed" type="DuctSystemSealed" minOccurs="0"/>
-						<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit"
-							type="DuctOutsideEnvelopeInsulatedaspartofRetrofit" minOccurs="0"/>
-						<xs:element name="DuctSystemReplaced" type="DuctSystemReplaced"
-							minOccurs="0"/>
-						<xs:element name="SystemPumpandZoneValveCorrectionsMade"
-							type="SystemPumpandZoneValveCorrectionsMade" minOccurs="0"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-		</xs:sequence>
-	</xs:group>
 	<xs:complexType name="HydronicDistributionInfo">
 		<xs:sequence>
 			<xs:element name="PCTHydronicPipeInsulated" type="PCTHydronicPipeInsulated"
 				minOccurs="0"/>
-			<xs:group ref="HVACDistributionGroup"/>
-			<xs:element name="HydronicDistributionType" type="HydronicDistributionType"/>
+			<xs:element name="HydronicDistributionType" type="HydronicDistributionType"
+				minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="AirDistributionInfo">
 		<xs:sequence>
-			<xs:group ref="HVACDistributionGroup"/>
-			<xs:element name="AirDistributionType" type="AirDistributionType"/>
+			<xs:element name="AirDistributionType" type="AirDistributionType" minOccurs="0"/>
 			<xs:element name="AirHandlerMotorType" type="AirHandlerMotorType" minOccurs="0"/>
-			<xs:element name="ReturnDuctInsulationOutsideEnvelope" type="DuctInsulationLevel"
-				minOccurs="0"/>
 			<xs:element name="PreRetrofitDuctSizingWasAppropriate"
 				type="PreRetrofitDuctSizingWasAppropriate" minOccurs="0"/>
-			<xs:element name="PCTDuctSystemOutsideCondSpace" type="PCTDuctSystemOutsideCondSpace"
-				minOccurs="0"/>
-			<xs:element name="MaterialDuctSystemOutsideCondSpace"
-				type="MaterialDuctSystemOutsideCondSpace" minOccurs="0"/>
-			<xs:element name="PCTDuctSystemOutsideCondSpaceinWallCavity"
-				type="PCTDuctSystemOutsideCondSpaceinWallCavity" minOccurs="0"/>
-			<xs:element name="SupplyDuctInsulationOutsideEnvelope" type="DuctInsulationLevel"
-				minOccurs="0"/>
-			<xs:element ref="DuctLeakageMeasurement"/>
+			<xs:element ref="DuctLeakageMeasurement" minOccurs="0"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Ducts">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DuctType" type="DuctType"/>
+						<xs:element name="MaterialDuctSystemOutsideCondSpace" type="DuctMaterial"
+							minOccurs="0"/>
+						<xs:element name="DuctInsulationOutsideEnvelope" type="RValue" minOccurs="0"/>
+						<xs:element minOccurs="0" name="DuctLocations">
+							<xs:complexType>
+								<xs:sequence maxOccurs="unbounded">
+									<xs:element name="DuctLocation" type="DuctLocation"/>
+									<xs:element name="PCTDuctsInLocation" type="Percentage"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="DuctSurfaceArea" type="SurfaceArea"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ElectricResistanceDistribution">
 		<xs:sequence>
-			<xs:group ref="HVACDistributionGroup"/>
 			<xs:element name="ElectricResistanceDistributionType"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -1662,4 +1617,36 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:group ref="ApplianceTypeSummaryInfo"/>
 		</xs:sequence>
 	</xs:group>
+	<xs:element name="HVACDistributionInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="SystemInfo"/>
+				<xs:element name="HVACDistributionSystemType" type="HVACDistributionSystemType"/>
+				<xs:choice minOccurs="0">
+					<xs:element minOccurs="0" name="AirDistribution" type="AirDistributionInfo"/>
+					<xs:element minOccurs="0" name="HydronicDistribution"
+						type="HydronicDistributionInfo"/>
+					<xs:element minOccurs="0" name="ElectricDistribution"
+						type="ElectricDistributionType"/>
+				</xs:choice>
+				<xs:element name="DistributionSystemImprovementInfo" minOccurs="0"
+					maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="StandardMeasureFieldsGroup" minOccurs="0"/>
+							<xs:element name="DuctSystemSealed" type="DuctSystemSealed"
+								minOccurs="0"/>
+							<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit"
+								type="DuctOutsideEnvelopeInsulatedaspartofRetrofit" minOccurs="0"/>
+							<xs:element name="DuctSystemReplaced" type="DuctSystemReplaced"
+								minOccurs="0"/>
+							<xs:element name="SystemPumpandZoneValveCorrectionsMade"
+								type="SystemPumpandZoneValveCorrectionsMade" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>
