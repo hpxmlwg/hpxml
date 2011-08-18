@@ -1561,10 +1561,10 @@
 	<xs:simpleType name="PreOrPost">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="Percentage">
+	<xs:simpleType name="Fraction">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
-			<xs:maxInclusive value="100"/>
+			<xs:maxInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

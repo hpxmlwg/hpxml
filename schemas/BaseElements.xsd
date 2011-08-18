@@ -1343,7 +1343,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 							<xs:complexType>
 								<xs:sequence maxOccurs="unbounded">
 									<xs:element name="DuctLocation" type="DuctLocation"/>
-									<xs:element name="PCTDuctsInLocation" type="Percentage"/>
+									<xs:element name="FractionDuctsInLocation" type="Fraction"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
