@@ -98,6 +98,9 @@
 			<xs:element ref="ContractorSystemIdentifiers" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="EnergySavingsInfo" minOccurs="0"/>
 			<xs:element ref="Associations" minOccurs="0"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ComponentsReplaced"
+				type="SystemIdentifiersInfoType"/>
+			<xs:element name="ComponentRemoved" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:element name="TotalCost">
@@ -260,6 +263,11 @@
 				<xs:element name="FoundationType" type="FoundationType" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Primary foundation type of building</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AtticType" type="AtticType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Primary attic type of building</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="ShieldingofHome" type="ShieldingofHome" minOccurs="0"/>
@@ -554,6 +562,7 @@
 				<xs:element name="Condition" type="WindowCondition" minOccurs="0"/>
 				<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
 				<xs:element name="NFRCCertified" type="NFRCCertified" minOccurs="0"/>
+				<xs:element minOccurs="0" name="Quantity" type="xs:int"/>
 				<xs:element name="UFactor" type="UFactor" minOccurs="0"/>
 				<xs:element name="SHGC" type="SHGC" minOccurs="0"/>
 				<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
@@ -734,11 +743,13 @@
 					</xs:complexType>
 				</xs:element>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+				<xs:element name="HeatingCapacityBTUh" type="xs:double"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:group name="ApplianceTypeSummaryInfo">
 		<xs:sequence>
+			<xs:group ref="SystemInfo"/>
 			<xs:element name="NumberofUnits" type="NumberofUnits" minOccurs="0"/>
 			<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
@@ -758,6 +769,7 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:group ref="ExtensibilityGroup"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:element name="ClothesDryerDetailInfo">
@@ -928,8 +940,26 @@ You may assign all 10 points to one reason, or distribute the points among sever
 					<xs:sequence>
 						<xs:element ref="ShadingAndSolarReflectanceInfo" minOccurs="0"
 							maxOccurs="unbounded"/>
-						<xs:element ref="InsulationInfo" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+						<xs:element minOccurs="0" name="Attics">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element maxOccurs="unbounded" name="Attic">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:group ref="SystemInfo"/>
+												<xs:element name="AtticType" type="AtticType"/>
+												<xs:element ref="InsulationInfo" minOccurs="0"
+												maxOccurs="unbounded"/>
+												<xs:element name="Area" type="xs:double"/>
+												<xs:element name="IsVented" type="xs:boolean"/>
+												<xs:group ref="ExtensibilityGroup"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1614,7 +1644,13 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element name="FoundationType" type="FoundationType" minOccurs="0"/>
 			<xs:element name="NumberofBedrooms" type="NumberofBedrooms" minOccurs="0"/>
 			<xs:element name="NumberOfShowers" type="NumberOfShowers" minOccurs="0"/>
-			<xs:group ref="ApplianceTypeSummaryInfo"/>
+			<xs:element minOccurs="0" name="Appliances">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="ApplianceTypeSummaryInfo" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:group>
 	<xs:element name="HVACDistributionInfo">
@@ -1646,6 +1682,16 @@ You may assign all 10 points to one reason, or distribute the points among sever
 					</xs:complexType>
 				</xs:element>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AmbientCO">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="AmbientCOStove" type="xs:double"/>
+				<xs:element name="AmbientCOKitchen" type="xs:double"/>
+				<xs:element name="AmbientCOLivingRoom" type="xs:double"/>
+				<xs:element name="AmbientCOOther" type="xs:double"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

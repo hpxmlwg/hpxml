@@ -1567,4 +1567,14 @@
 			<xs:maxInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="AtticType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CapeCod"/>
+			<xs:enumeration value="CathedralCeiling"/>
+			<xs:enumeration value="FlatRoof"/>
+			<xs:enumeration value="UnventedAttic"/>
+			<xs:enumeration value="VentedAttic"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
