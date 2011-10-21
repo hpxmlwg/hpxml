@@ -921,7 +921,11 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="DuctLeakageTestUnitofMeasure">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="cfm50"/>
+			<xs:enumeration value="cfm25"/>
+			<xs:enumeration value="effective leakage area"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DuctOutsideEnvelopeInsulatedaspartofRetrofit">
 		<xs:restriction base="xs:boolean"/>
@@ -1339,7 +1343,11 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="HVACDistributionSystemType">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="air"/>
+			<xs:enumeration value="hydronic"/>
+			<xs:enumeration value="electric"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="HydronicDistributionType">
 		<xs:restriction base="xs:string">

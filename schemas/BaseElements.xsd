@@ -940,7 +940,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 					<xs:sequence>
 						<xs:element ref="ShadingAndSolarReflectanceInfo" minOccurs="0"
 							maxOccurs="unbounded"/>
-						<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 						<xs:element minOccurs="0" name="Attics">
 							<xs:complexType>
 								<xs:sequence>
@@ -960,6 +959,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+						<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1001,7 +1001,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 											<xs:documentation>ie Wood Stud Wall, Double Stud Wall, CMU, SIP, etc. Need to add enumerator?</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="AdjacentTo" type="xs:string" minOccurs="0">
+									<xs:element name="AdjacentTo" type="AdjacentTo" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>ie above ground, basement, crawlspace, garage.</xs:documentation>
 										</xs:annotation>
@@ -1276,7 +1276,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="HeatingSystemInfoType">
-		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+		<xs:sequence minOccurs="1" maxOccurs="1">
 			<xs:group ref="HVACSystemInfo"/>
 			<xs:element name="HeatingSystemType" type="HeatingSystemType"/>
 			<xs:element name="HeatSystemFuel" type="HeatingSystemFuel" minOccurs="0"/>
