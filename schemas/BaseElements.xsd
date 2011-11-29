@@ -380,11 +380,15 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="InsulationInfo">
+		<xs:annotation>
+			<xs:documentation>Use more than one InsulationInfo element to describe insulation states in time (e.g. 'Pre-retrofit', 'Post-retrofit', 'Proposed').</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
 				<xs:element name="Component" type="InsulatedComponentType"/>
 				<xs:element minOccurs="0" name="SurfaceArea" type="SurfaceArea"/>
+				<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 				<xs:sequence maxOccurs="unbounded">
 					<xs:element name="InstallationType" type="InstallationType" minOccurs="0"/>
 					<xs:element name="InsulationMaterial" type="InsulationMaterial" minOccurs="0"/>
@@ -501,6 +505,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
+				<xs:element minOccurs="0" name="RoofColor" type="RoofColor"/>
 				<xs:element name="RadiantBarrier" type="RadiantBarrier" minOccurs="0"/>
 				<xs:element name="RadiantBarrierLocation" type="RadiantBarrierLocation"
 					minOccurs="0"/>
@@ -567,6 +572,25 @@
 				<xs:element name="SHGC" type="SHGC" minOccurs="0"/>
 				<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
 				<xs:element minOccurs="0" name="ExteriorShading" type="ExteriorShading"/>
+				<xs:element minOccurs="0" name="Overhangs">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Depth" type="LengthMeasurement">
+								<xs:annotation>
+									<xs:documentation>Depth of overhang measured in inches</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element minOccurs="0" name="DistanceToTopOfWindow"
+								type="LengthMeasurement">
+								<xs:annotation>
+									<xs:documentation>Vertical distance from overhang to top of window in inches</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element minOccurs="0" name="DistanceToBottomOfWindow"
+								type="LengthMeasurement"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 				<xs:element name="WindowImprovementInfo" minOccurs="0" maxOccurs="unbounded">
 					<xs:complexType>
@@ -780,7 +804,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="ClothesDryers">
+	<xs:element name="ClothesDryer">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="ApplianceTypeSummaryInfo"/>
@@ -798,7 +822,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="ClothesWashers">
+	<xs:element name="ClothesWasher">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="ApplianceTypeSummaryInfo"/>
@@ -817,7 +841,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="Dishwashers">
+	<xs:element name="Dishwasher">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="ApplianceTypeSummaryInfo"/>
@@ -840,7 +864,7 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="Freezers">
+	<xs:element name="Freezer">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="ApplianceTypeSummaryInfo"/>
@@ -864,11 +888,26 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="Refrigerators">
+	<xs:element name="Refrigerator">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="ApplianceTypeSummaryInfo"/>
 				<xs:element ref="RefrigeratorDetailInfo" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CookingRangeDetailInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FuelType" type="FuelType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CookingRange">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="ApplianceTypeSummaryInfo"/>
+				<xs:element minOccurs="0" ref="CookingRangeDetailInfo"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -935,6 +974,15 @@ You may assign all 10 points to one reason, or distribute the points among sever
 	</xs:complexType>
 	<xs:complexType name="Enclosure">
 		<xs:sequence>
+			<xs:element name="AirInfiltration" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="AirInfiltrationMeasurement" minOccurs="0"
+							maxOccurs="unbounded"/>
+						<xs:element ref="AirSealingInfo" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="AtticAndRoof" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -952,6 +1000,15 @@ You may assign all 10 points to one reason, or distribute the points among sever
 												maxOccurs="unbounded"/>
 												<xs:element name="Area" type="xs:double"/>
 												<xs:element name="IsVented" type="xs:boolean"/>
+												<xs:element minOccurs="0" name="Rafters"
+												type="StudDimensions"/>
+												<xs:element minOccurs="0"
+												name="CeilingGypsumThickness"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Thickness of gypsum in inches</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:group ref="ExtensibilityGroup"/>
 											</xs:sequence>
 										</xs:complexType>
@@ -967,12 +1024,21 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="FoundationInfo" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Use a different FoundationInfo element for each type of foundation the house has.</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element name="FoundationType" type="FoundationType"/>
+									<xs:element minOccurs="0" name="ThermalBoundary"
+										type="FoundationThermalBoundary"/>
+									<xs:element minOccurs="0" name="FloorJoists"
+										type="StudDimensions"/>
+									<xs:element minOccurs="0" name="FloorCovering"
+										type="FloorCovering"/>
 									<xs:element ref="InsulationInfo" minOccurs="0"
-										maxOccurs="unbounded"/>
+										maxOccurs="unbounded"> </xs:element>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -980,12 +1046,20 @@ You may assign all 10 points to one reason, or distribute the points among sever
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="AirInfiltration" minOccurs="0">
+			<xs:element minOccurs="0" name="RimJoists">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element ref="AirInfiltrationMeasurement" minOccurs="0"
-							maxOccurs="unbounded"/>
-						<xs:element ref="AirSealingInfo" minOccurs="0" maxOccurs="unbounded"/>
+						<xs:element maxOccurs="unbounded" name="RimJoistInfo">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="AdjacentTo" type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="FloorJoists"
+										type="StudDimensions"/>
+									<xs:element ref="InsulationInfo"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1008,11 +1082,15 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									</xs:element>
 									<xs:element minOccurs="0" name="Orientation"
 										type="OrientationType"/>
-									<xs:element name="FramingFactor" type="FramingFactor"
-										minOccurs="0"/>
-									<xs:element name="StudSize" type="StudSize" minOccurs="0"/>
-									<xs:element name="StudSpacing" type="StudSpacing" minOccurs="0"/>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
+									<xs:element minOccurs="0" name="Studs" type="StudDimensions"/>
+									<xs:element minOccurs="0" name="Color" type="RoofColor"/>
+									<xs:element minOccurs="0" name="GypsumThickness"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>Thickness of gypsum in inches</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element ref="InsulationInfo" minOccurs="0"
 										maxOccurs="unbounded"/>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
@@ -1036,6 +1114,33 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Orientation"
 										type="OrientationType"/>
+									<xs:element minOccurs="0" name="AttachedToWall"
+										type="SystemIdentifiersInfoType"/>
+									<xs:group ref="ExtensibilityGroup"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Skylights">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="SkylightGroup">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element maxOccurs="unbounded" ref="WindowInfo"/>
+									<xs:element name="Area" type="SurfaceArea" minOccurs="0"/>
+									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
+									<xs:element minOccurs="0" name="Orientation"
+										type="OrientationType"/>
+									<xs:element minOccurs="0" name="Pitch" type="Pitch">
+										<xs:annotation>
+											<xs:documentation>?/12</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AttachedToRoof"
+										type="SystemIdentifiersInfoType"/>
 									<xs:group ref="ExtensibilityGroup"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1050,9 +1155,21 @@ You may assign all 10 points to one reason, or distribute the points among sever
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element ref="DoorsInfo" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="Area">
+										<xs:annotation>
+											<xs:documentation>Door are in sq.ft.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="SurfaceArea">
+												<xs:minExclusive value="0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Orientation"
 										type="OrientationType"/>
+									<xs:element minOccurs="0" name="AttachedToWall"
+										type="SystemIdentifiersInfoType"/>
 									<xs:group ref="ExtensibilityGroup"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1098,11 +1215,12 @@ You may assign all 10 points to one reason, or distribute the points among sever
 	</xs:complexType>
 	<xs:complexType name="Appliances">
 		<xs:sequence>
-			<xs:element ref="ClothesWashers" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="ClothesDryers" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="Dishwashers" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="Refrigerators" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="Freezers" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ClothesWasher" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="ClothesDryer" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="Dishwasher" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="Refrigerator" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element ref="Freezer" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="CookingRange"/>
 			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -1695,4 +1813,24 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	<xs:complexType name="StudDimensions">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Width" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>Width in inches</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Height" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>Height in inches</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Spacing" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>Spacing on center in inches</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FramingFactor" type="Fraction"/>
+		</xs:sequence>
+	</xs:complexType>
 </xs:schema>

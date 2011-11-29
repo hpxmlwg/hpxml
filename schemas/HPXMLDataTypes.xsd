@@ -461,12 +461,7 @@
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="FramingFactor">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-			<xs:maxInclusive value="1"/>
+			<xs:enumeration value="crawlspace"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="StudSize">
@@ -474,11 +469,6 @@
 			<xs:enumeration value="2x4"/>
 			<xs:enumeration value="2x6"/>
 			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="StudSpacing">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="StormDoor">
@@ -1583,6 +1573,44 @@
 			<xs:enumeration value="UnventedAttic"/>
 			<xs:enumeration value="VentedAttic"/>
 			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FoundationThermalBoundary">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="frame floor"/>
+			<xs:enumeration value="foundation wall"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RoofColor">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="light"/>
+			<xs:enumeration value="medium"/>
+			<xs:enumeration value="dark"/>
+			<xs:enumeration value="reflective"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LengthMeasurement">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InsulationGrade">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FloorCovering">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="carpet"/>
+			<xs:enumeration value="tile"/>
+			<xs:enumeration value="hardwood"/>
+			<xs:enumeration value="vinyl"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Pitch">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
