@@ -128,7 +128,9 @@
 	</xs:simpleType>
 	<!--Air Infiltration Below-->
 	<xs:simpleType name="BuildingAirLeakage">
-		<xs:restriction base="xs:double"/>
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="BuildingAirLeakageUnit">
 		<xs:restriction base="xs:string">
@@ -163,10 +165,16 @@
 			<xs:enumeration value="TestOut"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="TypeofTest">
+	<xs:simpleType name="TypeofBlowerDoorTest">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="pressurization"/>
 			<xs:enumeration value="depressurization"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TypeofInfiltrationMeasurement">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="blower door"/>
+			<xs:enumeration value="tracer gas"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="WindconditionsonDayofTest">
@@ -912,8 +920,8 @@
 	</xs:simpleType>
 	<xs:simpleType name="DuctLeakageTestUnitofMeasure">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="cfm50"/>
-			<xs:enumeration value="cfm25"/>
+			<xs:enumeration value="CFM50"/>
+			<xs:enumeration value="CFM25"/>
 			<xs:enumeration value="effective leakage area"/>
 		</xs:restriction>
 	</xs:simpleType>

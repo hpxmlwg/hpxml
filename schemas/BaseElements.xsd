@@ -221,10 +221,11 @@
 				<xs:element name="BuildingAirLeakage" type="BuildingAirLeakage" minOccurs="1"/>
 				<xs:element name="BuildingAirLeakageUnit" type="BuildingAirLeakageUnit"
 					minOccurs="1"/>
+				<xs:element name="TypeOfTest" type="TypeofInfiltrationMeasurement"/>
 				<xs:element name="HousePressure" type="xs:double" minOccurs="0"/>
 				<xs:element name="FanPressure" type="FanPressure" minOccurs="0"/>
 				<xs:element name="FanRingUsed" type="FanRingUsed" minOccurs="0"/>
-				<xs:element name="TypeofTest" type="TypeofTest" minOccurs="0"/>
+				<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
@@ -410,9 +411,35 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
-				<xs:element name="AverageWattage" type="xs:double" minOccurs="0"/>
-				<xs:element name="AverageHoursPerDay" type="xs:double" minOccurs="0"/>
-				<xs:element name="NumberofUnits" type="xs:integer" minOccurs="0"/>
+				<xs:choice>
+					<xs:sequence>
+						<xs:element name="AverageWattage" type="xs:double" minOccurs="0"/>
+						<xs:element name="AverageHoursPerDay" type="xs:double" minOccurs="0"/>
+						<xs:element name="NumberofUnits" type="xs:integer" minOccurs="0"/>
+					</xs:sequence>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="FractionIncandescent" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Fraction of lights that are incandescent.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FractionCFL" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Fraction of the lights that are compact fluorescent.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FractionLFL" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Fraction of the lights that are linear fluorescent.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FractionLED" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Fraction of lights that are LED.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:choice>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 				<xs:element name="LightingImprovementInfo" minOccurs="0" maxOccurs="unbounded">
 					<xs:complexType>
@@ -570,7 +597,10 @@
 				<xs:element minOccurs="0" name="Quantity" type="xs:int"/>
 				<xs:element name="UFactor" type="UFactor" minOccurs="0"/>
 				<xs:element name="SHGC" type="SHGC" minOccurs="0"/>
-				<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
+				<xs:choice minOccurs="0">
+					<xs:element minOccurs="1" name="InteriorShading" type="InteriorShading"/>
+					<xs:element minOccurs="1" name="InteriorShadingFactor" type="Fraction"/>
+				</xs:choice>
 				<xs:element minOccurs="0" name="ExteriorShading" type="ExteriorShading"/>
 				<xs:element minOccurs="0" name="Overhangs">
 					<xs:complexType>
@@ -720,6 +750,7 @@
 				<xs:group ref="SystemInfo"/>
 				<xs:element name="Fuel" type="HeatingSystemFuel" minOccurs="0"/>
 				<xs:element name="Type" type="WaterHeaterType" minOccurs="0"/>
+				<xs:element minOccurs="0" name="FracDHWLoadServed" type="Fraction"/>
 				<xs:element name="Location" type="WaterHeaterLocation" minOccurs="0"/>
 				<xs:element name="Year" type="ModelYear" minOccurs="0"/>
 				<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
@@ -836,6 +867,7 @@
 				<xs:element name="HeatDryDefaultOff" type="HeatDryDefaultOff" minOccurs="0"/>
 				<xs:element name="AuxillaryWaterHeaterDefaultOff" type="xs:boolean" minOccurs="0"/>
 				<xs:element minOccurs="0" name="RatedAnnualkWh" type="RatedAnnualkWh"/>
+				<xs:element minOccurs="0" name="EnergyFactor" type="EnergyFactor"/>
 				<xs:element minOccurs="0" name="RatedWaterGalPerCycle" type="RatedWaterGalPerCycle"/>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 			</xs:sequence>
@@ -908,6 +940,23 @@
 			<xs:sequence>
 				<xs:group ref="ApplianceTypeSummaryInfo"/>
 				<xs:element minOccurs="0" ref="CookingRangeDetailInfo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OvenDetailInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FuelType" type="FuelType"/>
+				<xs:element minOccurs="0" name="AttachedToCookingRange"
+					type="SystemIdentifiersInfoType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Oven">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="ApplianceTypeSummaryInfo"/>
+				<xs:element ref="OvenDetailInfo"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -1221,6 +1270,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element ref="Refrigerator" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="Freezer" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" ref="CookingRange"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="Oven"/>
 			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -1783,6 +1833,11 @@ You may assign all 10 points to one reason, or distribute the points among sever
 					<xs:element minOccurs="0" name="ElectricDistribution"
 						type="ElectricDistributionType"/>
 				</xs:choice>
+				<xs:element minOccurs="0" name="ConditionedFloorAreaServed" type="SurfaceArea">
+					<xs:annotation>
+						<xs:documentation>Conditioned floor area in sq.ft. that this distribution system serves.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="DistributionSystemImprovementInfo" minOccurs="0"
 					maxOccurs="unbounded">
 					<xs:complexType>
