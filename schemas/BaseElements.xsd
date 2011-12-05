@@ -1074,7 +1074,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 					<xs:sequence>
 						<xs:element name="FoundationInfo" maxOccurs="unbounded">
 							<xs:annotation>
-								<xs:documentation>Use a different FoundationInfo element for each type of foundation the house has.</xs:documentation>
+								<xs:documentation>Use a different FoundationInfo element for each type of foundation.</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
@@ -1082,12 +1082,109 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									<xs:element name="FoundationType" type="FoundationType"/>
 									<xs:element minOccurs="0" name="ThermalBoundary"
 										type="FoundationThermalBoundary"/>
-									<xs:element minOccurs="0" name="FloorJoists"
-										type="StudDimensions"/>
-									<xs:element minOccurs="0" name="FloorCovering"
-										type="FloorCovering"/>
-									<xs:element ref="InsulationInfo" minOccurs="0"
-										maxOccurs="unbounded"> </xs:element>
+									<xs:choice minOccurs="0">
+										<xs:element name="FrameFloor">
+											<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="FloorJoists"
+												type="StudDimensions"/>
+												<xs:element minOccurs="0" name="FloorCovering"
+												type="FloorCovering"/>
+												<xs:element ref="InsulationInfo" minOccurs="0"
+												maxOccurs="unbounded"> </xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="FoundationWall">
+											<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="Type"
+												type="FoundationWallType"/>
+												<xs:element minOccurs="0" name="Length"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Total length of foundation wall in feet</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Height"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Total height in feet of foundation wall</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Thickness"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Thickness of foundation wall in inches excluding interior framing.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="BelowGradeDepth"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Depth below grade of foundation wall in feet</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="AdjacentTo"
+												type="AdjacentTo"/>
+												<xs:element minOccurs="0" name="InteriorStuds"
+												type="StudDimensions"/>
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												ref="InsulationInfo"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Slab">
+											<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="Area"
+												type="SurfaceArea">
+												<xs:annotation>
+												<xs:documentation>Area in sq.ft. of the slab</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Perimeter"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Length in feet of slab perimeter.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="ExposedPerimeter"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Perimeter of the slab exposed to ambient conditions, in feet.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="PerimeterInsulationDepth"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Depth in feet from grade to bottom of vertical slab perimeter insulation</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="UnderSlabInsulationWidth"
+												type="LengthMeasurement"/>
+												<xs:element minOccurs="0"
+												name="OnGradeExposedPerimeter"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Perimeter of slab measuerd in feet that is on-grade (2 ft. below grade or less) and exposed to ambient conditions.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="DepthBelowGrade"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Depth from the top of the slab surface to grade in feet</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="FloorCovering"
+												type="FloorCovering"/>
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												ref="InsulationInfo"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:choice>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>

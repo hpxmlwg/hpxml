@@ -463,6 +463,16 @@
 			<xs:enumeration value="ICF"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="FoundationWallType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="solid concrete"/>
+			<xs:enumeration value="concrete block"/>
+			<xs:enumeration value="concrete block foam core"/>
+			<xs:enumeration value="concrete block vermiculite core"/>			
+			<xs:enumeration value="double brick"/>
+			<xs:enumeration value="wood"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="AdjacentTo">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="ambient"/>
@@ -1313,7 +1323,9 @@
 			<xs:enumeration value="Other"/>
 			<xs:enumeration value="Shed roof"/>
 			<xs:enumeration value="Vaulted ceiling"/>
-			<xs:enumeration value="Walls"/>
+			<xs:enumeration value="Wall"/>
+			<xs:enumeration value="Slab Perimeter"/>
+			<xs:enumeration value="Under Slab"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="SurfaceArea">
