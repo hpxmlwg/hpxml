@@ -468,7 +468,7 @@
 			<xs:enumeration value="solid concrete"/>
 			<xs:enumeration value="concrete block"/>
 			<xs:enumeration value="concrete block foam core"/>
-			<xs:enumeration value="concrete block vermiculite core"/>			
+			<xs:enumeration value="concrete block vermiculite core"/>
 			<xs:enumeration value="double brick"/>
 			<xs:enumeration value="wood"/>
 		</xs:restriction>
@@ -805,7 +805,10 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Efficiency">
-		<xs:restriction base="xs:double"/>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="EfficiencyType">
 		<xs:restriction base="xs:string">
@@ -1108,7 +1111,7 @@
 	<xs:simpleType name="SharedVentSystem">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="Size">
+	<xs:simpleType name="Volume">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
 		</xs:restriction>
@@ -1184,7 +1187,9 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="EnergyConsumption">
-		<xs:restriction base="xs:double"/>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Style">
 		<xs:restriction base="xs:string"/>
@@ -1444,6 +1449,32 @@
 			<xs:enumeration value="space-heating boiler with tankless coil"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="SolarThermalSystemType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="hot water"/>
+			<xs:enumeration value="hot water and space heating"/>
+			<xs:enumeration value="space heating"/>
+			<xs:enumeration value="hybrid system"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SolarThermalCollectorLoopType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="air direct"/>
+			<xs:enumeration value="air indirect"/>
+			<xs:enumeration value="liquid direct"/>
+			<xs:enumeration value="liquid indirect"/>
+			<xs:enumeration value="batch heater"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SolarThermalCollectorType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="single glazing black"/>
+			<xs:enumeration value="single glazing selective"/>
+			<xs:enumeration value="double glazing black"/>
+			<xs:enumeration value="double glazing selective"/>
+			<xs:enumeration value="evacuated tube"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="MessageComponentSequenceId">
 		<xs:restriction base="xs:int"/>
 	</xs:simpleType>
@@ -1629,6 +1660,17 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Pitch">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Tilt">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="90"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Power">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
 		</xs:restriction>

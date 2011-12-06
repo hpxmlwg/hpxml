@@ -755,7 +755,16 @@
 				<xs:element name="Year" type="ModelYear" minOccurs="0"/>
 				<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
 				<xs:element name="Model" type="Model" minOccurs="0"/>
-				<xs:element name="TankVolumeGallons" type="Size" minOccurs="0"/>
+				<xs:element name="TankVolume" type="Volume" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>in gallons</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>in Btuh</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 				<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
 				<xs:element name="EnergyFactor" type="EnergyFactor" minOccurs="0"/>
 				<xs:element name="RecoveryEfficiency" type="RecoveryEfficiency" minOccurs="0"/>
@@ -793,12 +802,10 @@
 							<xs:element name="PipeInsulated" type="PipeInsulated" minOccurs="0"/>
 							<xs:element name="LinearFTPipeInsulated" type="LinearFTPipeInsulated"
 								minOccurs="0"/>
-							<xs:element name="SystemReplaced" type="xs:boolean"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-				<xs:element name="HeatingCapacityBTUh" type="xs:double"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -885,10 +892,14 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="RatedAnnualkWh" type="RatedAnnualkWh" minOccurs="0"/>
-				<xs:element name="VolumeCuFt" type="Size" minOccurs="0"/>
-				<xs:element minOccurs="0" name="AdjustedVolumeCuFt" type="Size">
+				<xs:element name="Volume" type="Volume" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>1.6 * freezer volume + fresh volume</xs:documentation>
+						<xs:documentation>in ft^3</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="AdjustedVolume" type="Volume">
+					<xs:annotation>
+						<xs:documentation>1.6 * freezer volume + fresh volume in ft^3</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="Configuration" type="FreezerStyle" minOccurs="0"/>
@@ -909,10 +920,14 @@
 			<xs:sequence>
 				<xs:element name="RatedAnnualkWh" type="RatedAnnualkWh" minOccurs="0"/>
 				<xs:element name="PrimaryIndicator" type="PrimaryIndicator" minOccurs="0"/>
-				<xs:element name="VolumeCuFt" type="Size" minOccurs="0"/>
-				<xs:element minOccurs="0" name="AdjustedVolumeCuFt" type="Size">
+				<xs:element name="Volume" type="Volume" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>1.6 * freezer volume + fresh volume</xs:documentation>
+						<xs:documentation>in ft^3</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="AdjustedVolume" type="Volume">
+					<xs:annotation>
+						<xs:documentation>1.6 * freezer volume + fresh volume in ft^3</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="Configuration" type="RefrigeratorStyle" minOccurs="0"/>
@@ -1353,6 +1368,20 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element ref="WaterHeatingSystemInfo" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="SolarThermal">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="SolarThermalInfo" maxOccurs="unbounded" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Photovoltaics">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" ref="PVInfo"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -2021,4 +2050,68 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element minOccurs="0" name="FramingFactor" type="Fraction"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:element name="SolarThermalInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="SystemInfo"/>
+				<xs:element name="SystemType" minOccurs="1" type="SolarThermalSystemType"/>
+				<xs:element name="CollectorArea" type="SurfaceArea">
+					<xs:annotation>
+						<xs:documentation>in sq.ft.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="CollectorLoopType"
+					type="SolarThermalCollectorLoopType"/>
+				<xs:element minOccurs="0" name="CollectorType" type="SolarThermalCollectorType"/>
+				<xs:element minOccurs="0" name="CollectorOrientation" type="OrientationType"/>
+				<xs:element minOccurs="0" name="CollectorAzimuth" type="AzimuthType"/>
+				<xs:element minOccurs="0" name="CollectorTilt" type="Tilt"/>
+				<xs:element minOccurs="0" name="StorageVolume" type="Volume">
+					<xs:annotation>
+						<xs:documentation>in gallons</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="ConnectedTo" type="SystemIdentifiersInfoType"/>
+				<xs:element minOccurs="0" name="SolarThermalImprovementInfo" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="StandardMeasureFieldsGroup"/>
+							<xs:group minOccurs="0" ref="ExtensibilityGroup"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:group ref="ExtensibilityGroup"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PVInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="SystemInfo"/>
+				<xs:element minOccurs="0" name="ArrayOrientation" type="OrientationType"/>
+				<xs:element minOccurs="0" name="ArrayAzimuth" type="AzimuthType"/>
+				<xs:element minOccurs="0" name="ArrayTilt" type="Tilt"/>
+				<xs:element minOccurs="0" name="MaxPowerOutput" type="Power">
+					<xs:annotation>
+						<xs:documentation>Peak power in DC Watts as supplied by the manufacturer</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="CollectorArea" type="SurfaceArea">
+					<xs:annotation>
+						<xs:documentation>in sq.ft.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="InverterEfficiency" type="Efficiency"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="PVImprovementInfo">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:group ref="StandardMeasureFieldsGroup"/>
+							<xs:group ref="ExtensibilityGroup"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:group ref="ExtensibilityGroup"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>
