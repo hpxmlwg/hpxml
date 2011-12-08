@@ -235,19 +235,6 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Construction Below-->
-	<xs:simpleType name="ConditionedVolume">
-		<xs:annotation>
-			<xs:documentation>cubic feet</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="ConditionedFloorArea">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="FoundationInsulation">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
@@ -263,9 +250,15 @@
 			<xs:enumeration value="Slab on grade"/>
 			<xs:enumeration value="Conditioned garage"/>
 			<xs:enumeration value="Unconditioned garage"/>
-			<xs:enumeration value="Combination"/>
 			<xs:enumeration value="Conditioned apartment"/>
 			<xs:enumeration value="Other"/>
+			<xs:enumeration value="Finished basement"/>
+			<xs:enumeration value="Conditioned crawlspace"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FoundationTypeCombined">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Combination"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Hometype">
@@ -486,6 +479,9 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="2x4"/>
 			<xs:enumeration value="2x6"/>
+			<xs:enumeration value="2x8"/>
+			<xs:enumeration value="2x10"/>
+			<xs:enumeration value="2x12"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -540,7 +536,7 @@
 		<xs:restriction base="xs:integer"/>
 	</xs:simpleType>
 	<!--Lighting Controls Below-->
-	<xs:simpleType name="LightingControlLocation">
+	<xs:simpleType name="LightingLocation">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="interior"/>
 			<xs:enumeration value="exterior"/>
@@ -660,6 +656,8 @@
 			<xs:enumeration value="double low-e"/>
 			<xs:enumeration value="triple"/>
 			<xs:enumeration value="triple low-e"/>
+			<xs:enumeration value="quad"/>
+			<xs:enumeration value="quad low-e"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="NFRCCertified">
@@ -960,9 +958,6 @@
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
 	<xs:simpleType name="MeasuredDuctLeakage">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:simpleType name="PCTHydronicPipeInsulated">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
 	<xs:simpleType name="PostRetrofitReturnDuctInsulationOutsideEnvelope">
@@ -1401,7 +1396,15 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="OtherHECDeviceType">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="space heater"/>
+			<xs:enumeration value="pool"/>
+			<xs:enumeration value="hot tub"/>
+			<xs:enumeration value="water bed"/>
+			<xs:enumeration value="aquarium"/>
+			<xs:enumeration value="dehumidifier"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="WindowCondition">
 		<xs:restriction base="xs:string">
@@ -1632,12 +1635,22 @@
 			<xs:enumeration value="foundation wall"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="RoofColor">
+	<xs:simpleType name="WallAndRoofColor">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="light"/>
 			<xs:enumeration value="medium"/>
 			<xs:enumeration value="dark"/>
 			<xs:enumeration value="reflective"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Siding">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="vinyl siding"/>
+			<xs:enumeration value="wood siding"/>
+			<xs:enumeration value="stucco"/>
+			<xs:enumeration value="aluminum siding"/>
+			<xs:enumeration value="brick veneer"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="LengthMeasurement">
