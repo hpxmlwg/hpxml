@@ -23,7 +23,6 @@
 			<xs:documentation>Address information contains the basic descriptive elements of a location.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="AddressTypeCode" type="AddressTypeCode"/>
 			<xs:element name="Address1" type="Address1" minOccurs="0"/>
 			<xs:element name="Address2" type="Address2" minOccurs="0"/>
 			<xs:element name="CityMunicipality" type="CityMunicipality"/>
@@ -405,13 +404,20 @@
 				<xs:group ref="SystemInfo"/>
 				<xs:element name="Component" type="InsulatedComponentType"/>
 				<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
-				<xs:sequence maxOccurs="unbounded">
-					<xs:element name="InstallationType" type="InstallationType" minOccurs="0"/>
-					<xs:element name="InsulationMaterial" type="InsulationMaterial" minOccurs="0"/>
-					<xs:element name="NominalRValue" type="NominalRValue" minOccurs="0"/>
-					<xs:element name="Thickness" type="Thickness" minOccurs="0"/>
-					<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-				</xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer">
+					<xs:complexType>
+						<xs:sequence maxOccurs="1">
+							<xs:element name="InstallationType" type="InstallationType"
+								minOccurs="0"/>
+							<xs:element name="InsulationMaterial" type="InsulationMaterial"
+								minOccurs="0"/>
+							<xs:element name="NominalRValue" type="NominalRValue" minOccurs="0"/>
+							<xs:element name="Thickness" type="Thickness" minOccurs="0"/>
+							<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:group minOccurs="0" ref="ExtensibilityGroup"/>
 				<xs:element name="InsulationImprovementInfo" minOccurs="0" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
@@ -1327,15 +1333,10 @@ You may assign all 10 points to one reason, or distribute the points among sever
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element ref="DoorsInfo" maxOccurs="unbounded"/>
-									<xs:element minOccurs="0" name="Area">
+									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
 											<xs:documentation>Door are in sq.ft.</xs:documentation>
 										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="SurfaceArea">
-												<xs:minExclusive value="0"/>
-											</xs:restriction>
-										</xs:simpleType>
 									</xs:element>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Orientation"
