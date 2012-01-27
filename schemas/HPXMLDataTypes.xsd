@@ -1410,6 +1410,14 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="OtherHECDeviceUnits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kWh/year"/>
+			<xs:enumeration value="therms/year"/>
+			<xs:enumeration value="Btu/year"/>
+			<xs:enumeration value="W"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="WindowCondition">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="good"/>

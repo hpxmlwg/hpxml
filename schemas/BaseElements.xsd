@@ -1458,6 +1458,9 @@ You may assign all 10 points to one reason, or distribute the points among sever
 						<xs:element name="Fuel" type="HeatingSystemFuel"/>
 						<xs:element name="OtherHECDeviceType" type="OtherHECDeviceType"/>
 						<xs:element name="NumberOfOtherHECDevice" type="xs:integer"/>
+						<xs:element minOccurs="0" name="OtherHECDeviceLoad" type="xs:double"/>
+						<xs:element minOccurs="0" name="OtherHECDeviceUnits"
+							type="OtherHECDeviceUnits"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
