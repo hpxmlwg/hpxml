@@ -6,7 +6,10 @@
 	<!-- Value Lists -->
 	<!--Address Information Below-->
 	<xs:simpleType name="AddressTypeCode">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="street"/>
+			<xs:enumeration value="mailing"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Address1" final="">
 		<xs:restriction base="xs:string"/>
@@ -52,7 +55,11 @@
 		<xs:annotation>
 			<xs:documentation>Customer, Contractor, Landlord</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="customer"/>
+			<xs:enumeration value="contractor"/>
+			<xs:enumeration value="landlord"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Certification">
 		<xs:annotation>
@@ -1052,9 +1059,6 @@
 			<xs:minExclusive value="0"/>
 			<xs:maxInclusive value="5"/>
 		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="Fuel">
-		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="JacketInstalledIndicator">
 		<xs:restriction base="xs:string"/>
