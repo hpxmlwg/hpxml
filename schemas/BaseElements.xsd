@@ -886,7 +886,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="ApplianceTypeSummaryInfo"/>
-				<xs:element ref="ClothesWasherDetailInfo" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ClothesWasherDetailInfo"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -1359,7 +1359,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element name="HVAC" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="HVACPlantInfo" maxOccurs="unbounded">
+						<xs:element name="HVACPlantInfo">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element ref="HeatingSystemInfo" minOccurs="0"
@@ -1658,7 +1658,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="FracCoolLoadServed" type="FracCoolLoadServed" minOccurs="0"/>
-			<xs:element name="EfficiencyType" type="EfficiencyType" minOccurs="0"/>
+			<xs:element name="EfficiencyType" type="AnnualCoolEfficiencyType" minOccurs="0"/>
 			<xs:element name="Efficiency" type="Efficiency" minOccurs="0"/>
 			<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
 		</xs:sequence>
