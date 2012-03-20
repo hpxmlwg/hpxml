@@ -261,6 +261,7 @@
 			<xs:enumeration value="Other"/>
 			<xs:enumeration value="Finished basement"/>
 			<xs:enumeration value="Conditioned crawlspace"/>
+			<xs:enumeration value="Crawlspace"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FoundationTypeCombined">
@@ -812,14 +813,6 @@
 	<xs:simpleType name="Efficiency">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="EfficiencyType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="SEER"/>
-			<xs:enumeration value="EER"/>
-			<xs:enumeration value="COP"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FracCoolLoadServed">
@@ -833,13 +826,22 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="AnnualCoolEfficiencyType">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SEER"/>
+			<xs:enumeration value="EER"/>
+			<xs:enumeration value="COP"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AnnualHeatEfficiency">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="AnnualHeatEfficiencyType">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HSPF"/>
+			<xs:enumeration value="COP"/>
+			<xs:enumeration value="AFUE"/>
+			<xs:enumeration value="PercentEfficiency"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="BackUpSystemFuel">
 		<xs:restriction base="xs:string"/>
@@ -941,6 +943,7 @@
 			<xs:enumeration value="CFM50"/>
 			<xs:enumeration value="CFM25"/>
 			<xs:enumeration value="effective leakage area"/>
+			<xs:enumeration value="CFM per Std 152"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DuctOutsideEnvelopeInsulatedaspartofRetrofit">
