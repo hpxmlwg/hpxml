@@ -4,7 +4,6 @@
 	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified"
 	attributeFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
-	<xs:import/>
 	<xs:element name="XMLTransactionHeaderInformation">
 		<xs:annotation>
 			<xs:documentation>These are a series of elements that indicate the type of XML and basic descriptive data about the XML.</xs:documentation>
