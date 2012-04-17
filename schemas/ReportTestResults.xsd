@@ -48,6 +48,7 @@
 								ref="OtherHealthandSafetyInfo"/>
 							<xs:element maxOccurs="unbounded" minOccurs="0"
 								ref="DuctLeakageMeasurement"/>
+							<xs:element ref="AmbientCO"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
