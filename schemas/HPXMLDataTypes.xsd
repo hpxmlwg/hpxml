@@ -1585,4 +1585,21 @@
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ImprovementStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Installed"/>
+			<xs:enumeration value="NotInstalled"/>
+			<xs:enumeration value="Recommended"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ImprovementQAStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Passed"/>
+			<xs:enumeration value="Failed"/>
+			<xs:enumeration value="NotTested"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ImprovementType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
 </xs:schema>

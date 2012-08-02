@@ -353,11 +353,8 @@
 	<xs:element name="AirSealingInfo">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:group ref="SystemInfo"/>
-				<xs:group ref="StandardMeasureFieldsGroup" minOccurs="0"/>
 				<xs:element name="ComponentAirSealed" type="AreasAirSealed" minOccurs="0"
 					maxOccurs="unbounded"/>
-				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -368,13 +365,6 @@
 				<xs:element name="StormDoor" type="StormDoor" minOccurs="0"/>
 				<xs:element name="DoorType" type="DoorType" minOccurs="0"/>
 				<xs:element name="RValue" type="RValue" minOccurs="0"/>
-				<xs:element name="DoorImprovementInfo" minOccurs="0" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:group ref="StandardMeasureFieldsGroup" minOccurs="0"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
@@ -392,13 +382,6 @@
 					<xs:element name="Thickness" type="Thickness" minOccurs="0"/>
 					<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 				</xs:sequence>
-				<xs:element name="InsulationImprovementInfo" minOccurs="0" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:group ref="StandardMeasureFieldsGroup"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -410,13 +393,6 @@
 				<xs:element name="AverageHoursPerDay" type="xs:double" minOccurs="0"/>
 				<xs:element name="NumberofUnits" type="xs:integer" minOccurs="0"/>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-				<xs:element name="LightingImprovementInfo" minOccurs="0" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:group ref="StandardMeasureFieldsGroup" minOccurs="0"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -437,14 +413,6 @@
 					</xs:annotation>
 				</xs:element>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-				<xs:element name="LightingControlsImprovmentInfo" minOccurs="0"
-					maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:group ref="StandardMeasureFieldsGroup" minOccurs="0"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -486,14 +454,6 @@
 				<xs:element name="NumberofPlugLoadControls" type="NumberofPlugLoadControls"
 					minOccurs="0"/>
 				<xs:element name="PlugLoadControlType" minOccurs="0" type="PlugLoadControlType"/>
-				<xs:element name="PlugLoadControlImprovementInfo" minOccurs="0"
-					maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:group ref="StandardMeasureFieldsGroup" minOccurs="0"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -504,16 +464,6 @@
 				<xs:element name="RadiantBarrier" type="RadiantBarrier" minOccurs="0"/>
 				<xs:element name="RadiantBarrierLocation" type="RadiantBarrierLocation"
 					minOccurs="0"/>
-				<xs:element name="ShadingAndSolarReflectanceImprovementInfo" minOccurs="0"
-					maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:group ref="StandardMeasureFieldsGroup"/>
-							<xs:element name="OtherShadingandSolarMeasuresInstalled"
-								type="OtherShadingandSolarMeasuresInstalled" minOccurs="0"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
@@ -568,13 +518,6 @@
 				<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
 				<xs:element minOccurs="0" name="ExteriorShading" type="ExteriorShading"/>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-				<xs:element name="WindowImprovementInfo" minOccurs="0" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:group ref="StandardMeasureFieldsGroup"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -755,20 +698,6 @@
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
 			<xs:element name="Model" type="Model" minOccurs="0"/>
 			<xs:element name="ModelYear" type="ModelYear" minOccurs="0"/>
-			<xs:element name="ApplianceImprovementInfo" minOccurs="0" maxOccurs="unbounded">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:group ref="StandardMeasureFieldsGroup" minOccurs="0"/>
-						<xs:element name="DispositionofExistingUnit"
-							type="DispositionofExistingUnit" minOccurs="0"/>
-						<xs:element name="NumberImproved" type="xs:integer" minOccurs="0"/>
-						<xs:choice minOccurs="0">
-							<xs:element name="ApplianceRepaired" type="xs:boolean" minOccurs="0"/>
-							<xs:element name="ApplianceReplaced" type="xs:boolean" minOccurs="0"/>
-						</xs:choice>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
 			<xs:group ref="ExtensibilityGroup"/>
 		</xs:sequence>
 	</xs:group>
@@ -1219,11 +1148,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 	<xs:group name="SystemInfo">
 		<xs:sequence>
 			<xs:element name="SystemIdentifier" type="SystemIdentifiersInfoType"/>
-			<xs:element name="Event" type="Event">
-				<xs:annotation>
-					<xs:documentation>This used to be the PreOrPost indicator. If you have an idea for a better name that reflects the multiplicity of possibilities, please let me know.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 		</xs:sequence>
 	</xs:group>
 	<xs:group name="HVACSystemInfo">
@@ -1245,34 +1169,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			</xs:element>
 			<xs:element name="DistributionSystems" type="SystemIdentifiersInfoType" minOccurs="0"
 				maxOccurs="unbounded"/>
-			<xs:element name="HVACSystemImprovement" minOccurs="0" maxOccurs="unbounded">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:group ref="StandardMeasureFieldsGroup"/>
-						<xs:choice>
-							<xs:sequence>
-								<xs:element name="CleanandTune" type="CleanandTune" minOccurs="0"/>
-								<xs:element name="RepairDescription" type="RepairDescription"
-									minOccurs="0" maxOccurs="unbounded"/>
-							</xs:sequence>
-							<xs:element name="SystemReplaced" minOccurs="0">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="DispositionofExistingSystem"
-											type="DispositionofExistingSystem" minOccurs="0"/>
-										<xs:element name="MeetsACCA5QISpec" type="xs:boolean"
-											minOccurs="0"/>
-										<xs:element name="SizingCalculationType"
-											type="SizingCalculationType" minOccurs="0"/>
-										<xs:element name="AirSealingAndInsulationImplementedPrior"
-											type="xs:boolean" minOccurs="0"/>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-						</xs:choice>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="HeatingSystemInfoType">
@@ -1436,6 +1332,15 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:sequence>
 				<xs:element ref="JobSystemIdentifiers"/>
 				<xs:element name="ProgramName" type="ProgramName" minOccurs="0"/>
+				<xs:element minOccurs="0" name="Auditor">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="ContractorSystemIdentifiers"/>
+							<xs:element name="RelationshipToContractor" type="AuditorRelationship"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="ContractorSystemIdentifiers"/>
 				<xs:element name="Type" type="Type" minOccurs="0"/>
 				<xs:element name="Title" type="Title" minOccurs="0"/>
 				<xs:element name="Status" type="Status" minOccurs="0"/>
@@ -1443,15 +1348,18 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				<xs:element name="StartDate" type="StartDate" minOccurs="0"/>
 				<xs:element name="CompleteDateEstimated" type="CompleteDateEstimated" minOccurs="0"/>
 				<xs:element name="CompleteDateActual" type="CompleteDateActual" minOccurs="0"/>
+				<xs:element minOccurs="0" name="Hours" type="Hours"/>
+				<xs:element minOccurs="0" ref="TotalCost"/>
+				<xs:element minOccurs="0" ref="EnergySavingsInfo"/>
 				<xs:element name="Notes" type="Notes" minOccurs="0"/>
-				<xs:element ref="MiscDataFields" minOccurs="0"/>
-				<xs:element name="Measures">
+				<xs:element name="Measures" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence maxOccurs="unbounded">
 							<xs:element ref="MeasureDetailsInfo"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:group ref="ExtensibilityGroup"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -1557,6 +1465,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				<xs:element name="MeasureCode" type="MeasureCode" minOccurs="0"/>
 				<xs:element name="MeasureDescription" type="MeasureDescription" minOccurs="0"/>
 				<xs:element name="Quantity" type="Quantity" minOccurs="0"/>
+				<xs:element minOccurs="0" name="QuantityUnits" type="xs:string"/>
 				<xs:element name="Location" type="UnitLocation" minOccurs="0"/>
 				<xs:element name="EstimatedLife" type="EstimatedLife" minOccurs="0"/>
 				<xs:element name="InstallationDate" type="InstallationDate" minOccurs="0"/>
@@ -1564,7 +1473,25 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				<xs:element name="UnitPricingIndicator" type="UnitPricingIndicator" minOccurs="0"/>
 				<xs:element ref="IncentiveInfo" minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element ref="ResourceSavingsInfo" minOccurs="0"/>
-				<xs:element ref="MiscDataFields" minOccurs="0"/>
+				<xs:element minOccurs="0" ref="EnergySavingsInfo"/>
+				<xs:element minOccurs="0" name="CustomerNotes" type="Notes"/>
+				<xs:element minOccurs="0" name="WorkscopeNotes" type="Notes"/>
+				<xs:element minOccurs="0" name="Status" type="ImprovementStatusType"/>
+				<xs:element minOccurs="0" name="NotInstalledReasonCode" type="xs:string"/>
+				<xs:element minOccurs="0" name="InstallingContractor"
+					type="SystemIdentifiersInfoType"/>
+				<xs:element minOccurs="0" name="QA">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="QAStatus" type="ImprovementQAStatusType"/>
+							<xs:element name="QAComments" type="Notes"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="ReplacedComponents"
+					type="SystemIdentifiersInfoType"/>
+				<xs:element minOccurs="0" name="InstalledComponent" type="SystemIdentifiersInfoType"/>
+				<xs:group minOccurs="0" ref="ExtensibilityGroup"/>
 			</xs:sequence>
 			<xs:attribute name="ID" type="xs:int"/>
 		</xs:complexType>

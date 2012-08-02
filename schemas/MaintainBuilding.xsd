@@ -13,7 +13,7 @@
 				<xs:element ref="XMLTransactionHeaderInformation"/>
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
 				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
-				<xs:element name="CustomerID" type="SystemIdentifiersInfoType"/>
+				<xs:element name="CustomerID" type="SystemIdentifiersInfoType" minOccurs="0"/>
 				<xs:element name="Address" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
@@ -38,8 +38,8 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element name="Event" type="Event"/>
 				<xs:element minOccurs="0" ref="TotalCost"/>
-
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
