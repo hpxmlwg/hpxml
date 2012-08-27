@@ -14,7 +14,7 @@
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
 				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
 				<xs:element minOccurs="0" name="RetrofitID" type="SystemIdentifiersInfoType"/>
-				<xs:element ref="JobInfo"/>
+				<xs:element name="JobInfo" type="JobDetailsType"/>
 				<xs:element ref="HomeownerQuestionaireInfo" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>

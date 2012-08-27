@@ -1317,60 +1317,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="BuildingDetails">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="ConstructionInfo"/>
-				<xs:element ref="ClimateandRiskZonesInfo"/>
-				<xs:element ref="ConsumptionInfo"/>
-				<xs:group ref="ApplianceTypeSummaryInfo" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="JobInfo">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="JobSystemIdentifiers"/>
-				<xs:element name="ProgramName" type="ProgramName" minOccurs="0"/>
-				<xs:element minOccurs="0" name="Auditor">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element ref="ContractorSystemIdentifiers"/>
-							<xs:element name="RelationshipToContractor" type="AuditorRelationship"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element maxOccurs="unbounded" minOccurs="0" ref="ContractorSystemIdentifiers"/>
-				<xs:element name="Type" type="Type" minOccurs="0"/>
-				<xs:element name="Title" type="Title" minOccurs="0"/>
-				<xs:element name="Status" type="Status" minOccurs="0"/>
-				<xs:element name="Phase" type="Phase" minOccurs="0"/>
-				<xs:element name="StartDate" type="StartDate" minOccurs="0"/>
-				<xs:element name="CompleteDateEstimated" type="CompleteDateEstimated" minOccurs="0"/>
-				<xs:element name="CompleteDateActual" type="CompleteDateActual" minOccurs="0"/>
-				<xs:element minOccurs="0" name="Hours" type="Hours"/>
-				<xs:element minOccurs="0" ref="TotalCost"/>
-				<xs:element minOccurs="0" ref="EnergySavingsInfo"/>
-				<xs:element name="Notes" type="Notes" minOccurs="0"/>
-				<xs:element name="Measures" minOccurs="0">
-					<xs:complexType>
-						<xs:sequence maxOccurs="unbounded">
-							<xs:element ref="MeasureDetailsInfo"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:group ref="ExtensibilityGroup"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="IncentiveInfo">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="TotalAmount" type="TotalAmount"/>
-				<xs:element ref="SponsorInfo" minOccurs="0" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
+	<xs:element name="IncentiveInfo" type="IncentiveInfo_type"> </xs:element>
 	<xs:element name="SponsorInfo">
 		<xs:complexType>
 			<xs:sequence maxOccurs="unbounded">
@@ -1622,4 +1569,67 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	<xs:complexType name="IncentiveInfo_type">
+		<xs:sequence>
+			<xs:element name="TotalAmount" type="TotalAmount"/>
+			<xs:element ref="SponsorInfo" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JobStatusHistoryType">
+		<xs:sequence>
+			<xs:element name="JobStatus" type="JobStatus"/>
+			<xs:element name="JobStatusDate" type="xs:dateTime"/>
+			<xs:element minOccurs="0" name="JobStatusUser" type="xs:string"/>
+			<xs:group minOccurs="0" ref="ExtensibilityGroup"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BuildingDetailsType">
+		<xs:sequence>
+			<xs:element ref="ConstructionInfo"/>
+			<xs:element ref="ClimateandRiskZonesInfo"/>
+			<xs:element ref="ConsumptionInfo"/>
+			<xs:element name="Enclosure" type="Enclosure"/>
+			<xs:element name="Systems" type="Systems"/>
+			<xs:element name="Appliances" type="Appliances"/>
+			<xs:element name="Lighting" type="Lighting"/>
+			<xs:element name="MiscLoads" type="MiscLoads"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JobDetailsType">
+		<xs:sequence>
+			<xs:element ref="JobSystemIdentifiers"/>
+			<xs:element name="ProgramName" type="ProgramName" minOccurs="0"/>
+			<xs:element minOccurs="0" name="Auditor">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ContractorSystemIdentifiers"/>
+						<xs:element name="RelationshipToContractor" type="AuditorRelationship"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ContractorSystemIdentifiers"/>
+			<xs:element name="Type" type="JobType" minOccurs="0"/>
+			<xs:element name="Title" type="Title" minOccurs="0"/>
+			<xs:element name="Status" type="JobStatus" minOccurs="0"/>
+			<xs:element name="Phase" type="Phase" minOccurs="0"/>
+			<xs:element name="StartDate" type="StartDate" minOccurs="0"/>
+			<xs:element name="CompleteDateEstimated" type="CompleteDateEstimated" minOccurs="0"/>
+			<xs:element name="CompleteDateActual" type="CompleteDateActual" minOccurs="0"/>
+			<xs:element minOccurs="0" name="Hours" type="Hours"/>
+			<xs:element minOccurs="0" ref="TotalCost"/>
+			<xs:element minOccurs="0" ref="EnergySavingsInfo"/>
+			<xs:element name="Notes" type="Notes" minOccurs="0"/>
+			<xs:element name="Measures" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element ref="MeasureDetailsInfo"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="JobIncentives" maxOccurs="unbounded" minOccurs="0"
+				type="IncentiveInfo_type"/>
+			<xs:element minOccurs="0" name="JobStatusHistory" type="JobStatusHistoryType"/>
+			<xs:group ref="ExtensibilityGroup"/>
+		</xs:sequence>
+	</xs:complexType>
 </xs:schema>

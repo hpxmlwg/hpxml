@@ -22,21 +22,10 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="BuildingDetails">
+				<xs:element name="BuildingDetails" type="BuildingDetailsType">
 					<xs:annotation>
 						<xs:documentation>Building Description</xs:documentation>
 					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element ref="ConstructionInfo"/>
-							<xs:element ref="ClimateandRiskZonesInfo"/>
-							<xs:element name="Enclosure" type="Enclosure"/>
-							<xs:element name="Systems" type="Systems"/>
-							<xs:element name="Appliances" type="Appliances"/>
-							<xs:element name="Lighting" type="Lighting"/>
-							<xs:element name="MiscLoads" type="MiscLoads"/>
-						</xs:sequence>
-					</xs:complexType>
 				</xs:element>
 				<xs:element name="Event" type="Event"/>
 				<xs:element minOccurs="0" ref="TotalCost"/>

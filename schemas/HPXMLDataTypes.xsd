@@ -1111,7 +1111,7 @@
 			<xs:maxInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="Type">
+	<xs:simpleType name="JobType">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="HVACHWSourceIndicator">
@@ -1467,7 +1467,7 @@
 	<xs:simpleType name="Title">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="Phase">
+	<xs:simpleType name="Stage">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="StartDate">
@@ -1509,7 +1509,7 @@
 	<xs:simpleType name="TotalAmount">
 		<xs:restriction base="xs:decimal"/>
 	</xs:simpleType>
-	<xs:simpleType name="Status">
+	<xs:simpleType name="JobStatus">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="SponsorName">
