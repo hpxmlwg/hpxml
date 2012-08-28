@@ -1204,7 +1204,7 @@
 		</xs:annotation>
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
-	<xs:simpleType name="AnnualPCTReductionWholeHome">
+	<xs:simpleType name="AnnualPCTReduction">
 		<xs:annotation>
 			<xs:documentation>%</xs:documentation>
 		</xs:annotation>

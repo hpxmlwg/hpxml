@@ -96,23 +96,13 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="ContractorSystemIdentifiers" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element ref="EnergySavingsInfo" minOccurs="0"/>
+			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"/>
 			<xs:element ref="Associations" minOccurs="0"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ComponentsReplaced"
 				type="SystemIdentifiersInfoType"/>
 			<xs:element name="ComponentRemoved" type="xs:boolean" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
-	<xs:element name="TotalCost">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="TotalCostHealthSafetyMeasures"
-					type="TotalCostHealthSafetyMeasures" minOccurs="1"/>
-				<xs:element name="TotalCostQualEnergyMeasures" type="TotalCostQualEnergyMeasures"
-					minOccurs="1"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
 	<xs:element name="TelephoneInfo">
 		<xs:annotation>
 			<xs:documentation>Contains all telephone elements.</xs:documentation>
@@ -834,23 +824,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="EnergySavingsInfo">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="AnnualConsumptionReduction" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:group ref="FuelSavings"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="AnnualElectricityDemandReduction" minOccurs="0"/>
-				<xs:element name="AnnualPercentReduction" type="AnnualPCTReductionWholeHome"
-					minOccurs="0"/>
-				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
 	<xs:complexType name="ContractorType">
 		<xs:sequence>
 			<xs:element ref="ContractorSystemIdentifiers"/>
@@ -1111,21 +1084,23 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element name="Message" type="xs:string"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:group name="FuelSavings">
+	<xs:complexType name="FuelSavingsType">
 		<xs:sequence>
 			<xs:element name="FuelType" type="energyType"/>
-			<xs:element name="Units" type="energyUnitType"/>
-			<xs:element name="TotalSavings" type="xs:double"/>
-			<xs:group ref="EndUseSavings" maxOccurs="unbounded" minOccurs="0"/>
+			<xs:element name="Units" type="energyUnitType" minOccurs="0"/>
+			<xs:element name="TotalSavings" type="xs:double" minOccurs="0"/>
 			<xs:element name="TotalDollarSavings" type="xs:double" minOccurs="0"/>
+			<xs:element minOccurs="0" name="PctReduction" type="AnnualPCTReduction"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="EndUseSavings"
+				type="EndUseSavingsType"/>
 		</xs:sequence>
-	</xs:group>
-	<xs:group name="EndUseSavings">
+	</xs:complexType>
+	<xs:complexType name="EndUseSavingsType">
 		<xs:sequence>
 			<xs:element name="EndUse" type="endUseType"/>
 			<xs:element name="EndUseSavings" type="xs:double"/>
 		</xs:sequence>
-	</xs:group>
+	</xs:complexType>
 	<xs:complexType name="EnclosureInfo">
 		<xs:sequence>
 			<xs:element ref="ShadingAndSolarReflectanceInfo" minOccurs="0" maxOccurs="unbounded"/>
@@ -1257,7 +1232,8 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element name="AirHandlerMotorType" type="AirHandlerMotorType" minOccurs="0"/>
 			<xs:element name="PreRetrofitDuctSizingWasAppropriate"
 				type="PreRetrofitDuctSizingWasAppropriate" minOccurs="0"/>
-			<xs:element ref="DuctLeakageMeasurement" minOccurs="0"/>
+			<xs:element minOccurs="0" name="DuctLeakageMeasurement"
+				type="DuctLeakageMeasurementType"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="Ducts">
 				<xs:complexType>
 					<xs:sequence>
@@ -1284,19 +1260,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element name="ElectricResistanceDistributionType"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="DuctLeakageMeasurement">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="DuctLeakageTestUnitofMeasure" type="DuctLeakageTestUnitofMeasure"
-					minOccurs="0"/>
-				<xs:element name="LeakinessObservedVisualInspection"
-					type="LeakinessObservedVisualInspection" minOccurs="0"/>
-				<xs:element name="DuctLeakageTestMethod" type="DuctLeakageTestMethod" minOccurs="0"/>
-				<xs:element name="DuctLeakageTest" type="DuctLeakageTest" minOccurs="0"/>
-				<xs:element name="MeasuredDuctLeakage" type="MeasuredDuctLeakage" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
 	<xs:element name="JobSystemIdentifiers">
 		<xs:annotation>
 			<xs:documentation>HPXML records may contain data about an individual, either a person, or a business.  This element contains the root elements for individual identifier values between a sending and a receiving system.</xs:documentation>
@@ -1317,7 +1280,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="IncentiveInfo" type="IncentiveInfo_type"> </xs:element>
 	<xs:element name="SponsorInfo">
 		<xs:complexType>
 			<xs:sequence maxOccurs="unbounded">
@@ -1404,43 +1366,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:sequence>
 				<xs:element ref="ResourcesSaved" maxOccurs="unbounded"/>
 			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="MeasureDetailsInfo">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="MeasureCode" type="MeasureCode" minOccurs="0"/>
-				<xs:element name="MeasureDescription" type="MeasureDescription" minOccurs="0"/>
-				<xs:element name="Quantity" type="Quantity" minOccurs="0"/>
-				<xs:element minOccurs="0" name="QuantityUnits" type="xs:string"/>
-				<xs:element name="Location" type="UnitLocation" minOccurs="0"/>
-				<xs:element name="EstimatedLife" type="EstimatedLife" minOccurs="0"/>
-				<xs:element name="InstallationDate" type="InstallationDate" minOccurs="0"/>
-				<xs:element name="Cost" type="Cost" minOccurs="0"/>
-				<xs:element name="UnitPricingIndicator" type="UnitPricingIndicator" minOccurs="0"/>
-				<xs:element ref="IncentiveInfo" minOccurs="0" maxOccurs="unbounded"/>
-				<xs:element ref="ResourceSavingsInfo" minOccurs="0"/>
-				<xs:element minOccurs="0" ref="EnergySavingsInfo"/>
-				<xs:element minOccurs="0" name="CustomerNotes" type="Notes"/>
-				<xs:element minOccurs="0" name="WorkscopeNotes" type="Notes"/>
-				<xs:element minOccurs="0" name="Status" type="ImprovementStatusType"/>
-				<xs:element minOccurs="0" name="NotInstalledReasonCode" type="xs:string"/>
-				<xs:element minOccurs="0" name="InstallingContractor"
-					type="SystemIdentifiersInfoType"/>
-				<xs:element minOccurs="0" name="QA">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="QAStatus" type="ImprovementQAStatusType"/>
-							<xs:element name="QAComments" type="Notes"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="ReplacedComponents"
-					type="SystemIdentifiersInfoType"/>
-				<xs:element minOccurs="0" name="InstalledComponent" type="SystemIdentifiersInfoType"/>
-				<xs:group minOccurs="0" ref="ExtensibilityGroup"/>
-			</xs:sequence>
-			<xs:attribute name="ID" type="xs:int"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="SystemsInfo">
@@ -1559,17 +1484,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="AmbientCO">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="AmbientCOStove" type="xs:double"/>
-				<xs:element name="AmbientCOKitchen" type="xs:double"/>
-				<xs:element name="AmbientCOLivingRoom" type="xs:double"/>
-				<xs:element name="AmbientCOOther" type="xs:double"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:complexType name="IncentiveInfo_type">
+	<xs:complexType name="IncentiveDetailsType">
 		<xs:sequence>
 			<xs:element name="TotalAmount" type="TotalAmount"/>
 			<xs:element ref="SponsorInfo" minOccurs="0" maxOccurs="unbounded"/>
@@ -1608,28 +1523,129 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				</xs:complexType>
 			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ContractorSystemIdentifiers"/>
-			<xs:element name="Type" type="JobType" minOccurs="0"/>
+			<xs:element name="JobType" type="JobType" minOccurs="0"/>
 			<xs:element name="Title" type="Title" minOccurs="0"/>
-			<xs:element name="Status" type="JobStatus" minOccurs="0"/>
-			<xs:element name="Phase" type="Phase" minOccurs="0"/>
-			<xs:element name="StartDate" type="StartDate" minOccurs="0"/>
-			<xs:element name="CompleteDateEstimated" type="CompleteDateEstimated" minOccurs="0"/>
-			<xs:element name="CompleteDateActual" type="CompleteDateActual" minOccurs="0"/>
-			<xs:element minOccurs="0" name="Hours" type="Hours"/>
-			<xs:element minOccurs="0" ref="TotalCost"/>
-			<xs:element minOccurs="0" ref="EnergySavingsInfo"/>
-			<xs:element name="Notes" type="Notes" minOccurs="0"/>
-			<xs:element name="Measures" minOccurs="0">
+			<xs:element name="CurrentJobStatus" type="JobStatus" minOccurs="0"/>
+			<xs:element minOccurs="0" name="JobStatusHistory">
 				<xs:complexType>
-					<xs:sequence maxOccurs="unbounded">
-						<xs:element ref="MeasureDetailsInfo"/>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="JobStatusHistoryItem"
+							type="JobStatusHistoryType"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="JobIncentives" maxOccurs="unbounded" minOccurs="0"
-				type="IncentiveInfo_type"/>
-			<xs:element minOccurs="0" name="JobStatusHistory" type="JobStatusHistoryType"/>
-			<xs:group ref="ExtensibilityGroup"/>
+			<xs:element name="JobIncentives" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="JobIncentive"
+							type="IncentiveDetailsType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="JobStages">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="JobStage" type="JobStageType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TotalCostType">
+		<xs:sequence>
+			<xs:element name="TotalCostHealthSafetyMeasures" type="TotalCostHealthSafetyMeasures"
+				minOccurs="1"/>
+			<xs:element name="TotalCostQualEnergyMeasures" type="TotalCostQualEnergyMeasures"
+				minOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="JobStageType">
+		<xs:sequence>
+			<xs:element name="Stage" type="Stage" minOccurs="0"/>
+			<xs:element name="Notes" type="Notes" minOccurs="0"/>
+			<xs:element name="StartDate" type="StartDate" minOccurs="0"/>
+			<xs:element minOccurs="0" name="Hours" type="Hours"/>
+			<xs:element minOccurs="0" name="AuditCost" type="Cost"/>
+			<xs:element minOccurs="0" name="TotalCost" type="TotalCostType"/>
+			<xs:element name="CompleteDateEstimated" type="CompleteDateEstimated" minOccurs="0"/>
+			<xs:element name="CompleteDateActual" type="CompleteDateActual" minOccurs="0"/>
+			<xs:element name="Measures" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="1" name="Measure"
+							type="MeasureDetailsType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"/>
+			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MeasureDetailsType">
+		<xs:sequence>
+			<xs:element name="MeasureCode" type="MeasureCode" minOccurs="0"/>
+			<xs:element name="MeasureDescription" type="MeasureDescription" minOccurs="0"/>
+			<xs:element name="Quantity" type="Quantity" minOccurs="0"/>
+			<xs:element minOccurs="0" name="QuantityUnits" type="xs:string"/>
+			<xs:element name="Location" type="UnitLocation" minOccurs="0"/>
+			<xs:element name="EstimatedLife" type="EstimatedLife" minOccurs="0"/>
+			<xs:element name="InstallationDate" type="InstallationDate" minOccurs="0"/>
+			<xs:element name="Cost" type="Cost" minOccurs="0"/>
+			<xs:element name="UnitPricingIndicator" type="UnitPricingIndicator" minOccurs="0"/>
+			<xs:element minOccurs="0" name="Incentives">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="Incentive"
+							type="IncentiveDetailsType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="ResourceSavingsInfo" minOccurs="0"/>
+			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"/>
+			<xs:element minOccurs="0" name="CustomerNotes" type="Notes"/>
+			<xs:element minOccurs="0" name="WorkscopeNotes" type="Notes"/>
+			<xs:element minOccurs="0" name="Status" type="ImprovementStatusType"/>
+			<xs:element minOccurs="0" name="NotInstalledReasonCode" type="xs:string"/>
+			<xs:element minOccurs="0" name="InstallingContractor" type="SystemIdentifiersInfoType"/>
+			<xs:element minOccurs="0" name="QA">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="QAStatus" type="ImprovementQAStatusType"/>
+						<xs:element name="QAComments" type="Notes"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="ReplacedComponents">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="ReplacedComponent"
+							type="SystemIdentifiersInfoType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="InstalledComponent" type="SystemIdentifiersInfoType"/>
+			<xs:group minOccurs="0" ref="ExtensibilityGroup"/>
+		</xs:sequence>
+		<xs:attribute name="ID" type="xs:int"/>
+	</xs:complexType>
+	<xs:complexType name="EnergySavingsType">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="FuelSavings"
+				type="FuelSavingsType"/>
+			<xs:element name="AnnualElectricityDemandReduction" minOccurs="0"/>
+			<xs:element name="AnnualPercentReduction" type="AnnualPCTReduction" minOccurs="0"/>
+			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DuctLeakageMeasurementType">
+		<xs:sequence>
+			<xs:element name="DuctLeakageTestUnitofMeasure" type="DuctLeakageTestUnitofMeasure"
+				minOccurs="0"/>
+			<xs:element name="LeakinessObservedVisualInspection"
+				type="LeakinessObservedVisualInspection" minOccurs="0"/>
+			<xs:element name="DuctLeakageTestMethod" type="DuctLeakageTestMethod" minOccurs="0"/>
+			<xs:element name="DuctLeakageTest" type="DuctLeakageTest" minOccurs="0"/>
+			<xs:element name="MeasuredDuctLeakage" type="MeasuredDuctLeakage" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
