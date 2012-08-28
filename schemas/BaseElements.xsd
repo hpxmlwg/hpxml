@@ -58,10 +58,15 @@
 			<xs:documentation>HPXML records may contain data about an individual, either a person, or a business.  This element contains the root elements for individual identifier values between a sending and a receiving system.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
-	<xs:element name="ContractorSystemIdentifiers" type="SystemIdentifiersInfoType">
+	<xs:element name="ContractorSystemIdentifiers">
 		<xs:annotation>
 			<xs:documentation>These are the system identifiers for a specific contractor at a business</xs:documentation>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="SystemIdentifiersInfo"/>
+			</xs:sequence>
+		</xs:complexType>
 	</xs:element>
 	<xs:element name="MiscDataFields">
 		<xs:annotation>
@@ -264,26 +269,6 @@
 				<xs:element minOccurs="0" name="GaragePresent" type="xs:boolean"/>
 				<xs:element minOccurs="0" name="GarageLocation" type="GarageLocation"/>
 				<xs:element minOccurs="0" name="SpaceAboveGarage" type="SpaceAboveGarage"/>
-				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="ConsumptionInfo">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="UtilityID" type="SystemIdentifiersInfoType"/>
-				<xs:element name="ConsumptionType" type="ConsumptionType">
-					<xs:annotation>
-						<xs:documentation>Energy Type + other consumption types like water</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element name="UnitofMeasure" type="energyUnitType"/>
-				<xs:element ref="ConsumptionDetailInfo" maxOccurs="unbounded">
-					<xs:annotation>
-						<xs:documentation>Consumption records with enough granularity to be able to use smart meter data.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element name="MarginalRate" type="xs:double" minOccurs="0"/>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
@@ -1092,13 +1077,13 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element name="TotalDollarSavings" type="xs:double" minOccurs="0"/>
 			<xs:element minOccurs="0" name="PctReduction" type="AnnualPCTReduction"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="EndUseSavings"
-				type="EndUseSavingsType"/>
+				type="EndUseInfoType"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="EndUseSavingsType">
+	<xs:complexType name="EndUseInfoType">
 		<xs:sequence>
 			<xs:element name="EndUse" type="endUseType"/>
-			<xs:element name="EndUseSavings" type="xs:double"/>
+			<xs:element name="EndUseValue" type="xs:double"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EnclosureInfo">
@@ -1266,7 +1251,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="SystemIdentifiersInfo"/>
+				<xs:element ref="SystemIdentifiersInfo" maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -1502,7 +1487,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 		<xs:sequence>
 			<xs:element ref="ConstructionInfo"/>
 			<xs:element ref="ClimateandRiskZonesInfo"/>
-			<xs:element ref="ConsumptionInfo"/>
+			<xs:element name="ConsumptionInfo" type="ConsumptionInfoType"/>
 			<xs:element name="Enclosure" type="Enclosure"/>
 			<xs:element name="Systems" type="Systems"/>
 			<xs:element name="Appliances" type="Appliances"/>
@@ -1583,6 +1568,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 	</xs:complexType>
 	<xs:complexType name="MeasureDetailsType">
 		<xs:sequence>
+			<xs:element ref="MeasureSystemIdentifiers"/>
 			<xs:element name="MeasureCode" type="MeasureCode" minOccurs="0"/>
 			<xs:element name="MeasureDescription" type="MeasureDescription" minOccurs="0"/>
 			<xs:element name="Quantity" type="Quantity" minOccurs="0"/>
@@ -1626,7 +1612,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element minOccurs="0" name="InstalledComponent" type="SystemIdentifiersInfoType"/>
 			<xs:group minOccurs="0" ref="ExtensibilityGroup"/>
 		</xs:sequence>
-		<xs:attribute name="ID" type="xs:int"/>
 	</xs:complexType>
 	<xs:complexType name="EnergySavingsType">
 		<xs:sequence>
@@ -1646,6 +1631,48 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element name="DuctLeakageTestMethod" type="DuctLeakageTestMethod" minOccurs="0"/>
 			<xs:element name="DuctLeakageTest" type="DuctLeakageTest" minOccurs="0"/>
 			<xs:element name="MeasuredDuctLeakage" type="MeasuredDuctLeakage" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MeasureSystemIdentifiers">
+		<xs:annotation>
+			<xs:documentation>These are the system identifiers for a specific measure on a job</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="SystemIdentifiersInfo"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="ConsumptionInfoType">
+		<xs:sequence>
+			<xs:element name="UtilityID" type="SystemIdentifiersInfoType"/>
+			<xs:element name="ConsumptionType" type="ConsumptionType">
+				<xs:annotation>
+					<xs:documentation>Energy Type + other consumption types like water</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnitofMeasure" type="energyUnitType"/>
+			<xs:element ref="ConsumptionDetailInfo" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Consumption records with enough granularity to be able to use smart meter data.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MarginalRate" type="xs:double" minOccurs="0"/>
+			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ModeledUsageType">
+		<xs:sequence>
+			<xs:element name="EnergyType" type="energyType">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnitofMeasure" type="energyUnitType"/>
+			<xs:element minOccurs="0" name="AnnualConsumption" type="EnergyConsumption"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ConsumptionByEndUse"
+				type="EndUseInfoType"/>
+			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
