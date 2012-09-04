@@ -14,37 +14,7 @@
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
 				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
 				<xs:element minOccurs="0" name="RetrofitID" type="SystemIdentifiersInfoType"/>
-				<xs:element name="RetrofitInfo">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Auditor" minOccurs="0">
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element ref="ContractorSystemIdentifiers"/>
-										<xs:element name="RelationshipToContractor"
-											type="AuditorRelationship"/>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element ref="ContractorSystemIdentifiers" maxOccurs="unbounded"
-								minOccurs="0"/>
-							<xs:element name="CompletionDate" type="xs:dateTime" minOccurs="0"/>
-							<xs:element name="Cost" type="xs:double" minOccurs="0"/>
-							<xs:element name="Hours" type="xs:double" minOccurs="0"/>
-							<xs:element minOccurs="0" ref="ConstructionInfo"/>
-							<xs:element name="EnclosureMeasures" type="EnclosureInfo" minOccurs="0"/>
-							<xs:element name="SystemMeasures" type="Systems" minOccurs="0"/>
-							<xs:element name="ApplianceMeasures" type="Appliances" minOccurs="0"/>
-							<xs:element name="LightingMeasures" type="Lighting" minOccurs="0"/>
-							<xs:element name="MiscLoadMeasures" type="MiscLoads" minOccurs="0"/>
-							<xs:element minOccurs="0" name="HealthandSafetyMeasures"
-								type="HealthAndSafety"/>
-							<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element minOccurs="0" ref="TotalCost"/>
-				<xs:element ref="EnergySavingsInfo" minOccurs="0"/>
+				<xs:element name="JobInfo" type="JobDetailsType"/>
 				<xs:element ref="HomeownerQuestionaireInfo" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>

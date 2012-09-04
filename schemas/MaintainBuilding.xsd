@@ -13,7 +13,7 @@
 				<xs:element ref="XMLTransactionHeaderInformation"/>
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
 				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
-				<xs:element name="CustomerID" type="SystemIdentifiersInfoType"/>
+				<xs:element name="CustomerID" type="SystemIdentifiersInfoType" minOccurs="0"/>
 				<xs:element name="Address" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
@@ -22,24 +22,28 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="BuildingDetails">
+				<xs:element name="Event" type="Event"/>
+				<xs:element name="BuildingDetails" type="BuildingDetailsType">
 					<xs:annotation>
 						<xs:documentation>Building Description</xs:documentation>
 					</xs:annotation>
+				</xs:element>
+				<xs:element minOccurs="0" name="Consumption">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element ref="ConstructionInfo"/>
-							<xs:element ref="ClimateandRiskZonesInfo"/>
-							<xs:element name="Enclosure" type="Enclosure"/>
-							<xs:element name="Systems" type="Systems"/>
-							<xs:element name="Appliances" type="Appliances"/>
-							<xs:element name="Lighting" type="Lighting"/>
-							<xs:element name="MiscLoads" type="MiscLoads"/>
+							<xs:element maxOccurs="unbounded" name="ConsumptionInfo"
+								type="ConsumptionInfoType"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element minOccurs="0" ref="TotalCost"/>
-
+				<xs:element minOccurs="0" name="ModeledUsages">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="ModeledUsage"
+								type="ModeledUsageType"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
