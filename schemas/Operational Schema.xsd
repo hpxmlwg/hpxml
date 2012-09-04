@@ -66,10 +66,10 @@
 							<xs:element ref="ThermostatInfo" minOccurs="0" maxOccurs="unbounded"/>
 							<xs:element ref="WaterHeatingSystemInfo" minOccurs="0"
 								maxOccurs="unbounded"/>
-							<xs:element ref="ClothesDryers" minOccurs="0" maxOccurs="unbounded"/>
-							<xs:element ref="Dishwashers" minOccurs="0" maxOccurs="unbounded"/>
-							<xs:element ref="Freezers" minOccurs="0" maxOccurs="unbounded"/>
-							<xs:element ref="Refrigerators" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="ClothesDryer" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="Dishwasher" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="Freezer" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="Refrigerator" minOccurs="0" maxOccurs="unbounded"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
