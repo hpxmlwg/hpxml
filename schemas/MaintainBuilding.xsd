@@ -30,6 +30,7 @@
 						<xs:sequence>
 							<xs:element ref="ConstructionInfo"/>
 							<xs:element ref="ClimateandRiskZonesInfo"/>
+							<xs:element minOccurs="0" name="Zones" type="Zones"/>
 							<xs:element name="Enclosure" type="Enclosure"/>
 							<xs:element name="Systems" type="Systems"/>
 							<xs:element name="Appliances" type="Appliances"/>

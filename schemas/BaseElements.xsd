@@ -559,7 +559,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
-				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+				<xs:element minOccurs="0" ref="AttachedToSpace"/>
 				<xs:element name="NumberofPlugLoadControls" type="NumberofPlugLoadControls"
 					minOccurs="0"/>
 				<xs:element name="PlugLoadControlType" minOccurs="0" type="PlugLoadControlType"/>
@@ -571,6 +571,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -578,6 +579,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
+				<xs:element minOccurs="0" ref="AttachedToSpace"/>
 				<xs:element minOccurs="0" name="RoofColor" type="WallAndRoofColor"/>
 				<xs:element name="RadiantBarrier" type="RadiantBarrier" minOccurs="0"/>
 				<xs:element name="RadiantBarrierLocation" type="RadiantBarrierLocation"
@@ -768,6 +770,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
+				<xs:element minOccurs="0" ref="AttachedToZone"/>
 				<xs:element name="ThermostatType" type="ThermostatType" minOccurs="0"/>
 				<xs:element name="SetpointTempHeatingSeason" type="Temperature" minOccurs="0"/>
 				<xs:element name="SetbackTempHeatingSeason" type="Temperature" minOccurs="0"/>
@@ -794,6 +797,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
+				<xs:element minOccurs="0" ref="AttachedToZone"/>
 				<xs:element name="Fuel" type="HeatingSystemFuel" minOccurs="0"/>
 				<xs:element name="Type" type="WaterHeaterType" minOccurs="0"/>
 				<xs:element minOccurs="0" name="FracDHWLoadServed" type="Fraction"/>
@@ -859,6 +863,7 @@
 	<xs:group name="ApplianceTypeSummaryInfo">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
+			<xs:element minOccurs="0" ref="AttachedToSpace"/>
 			<xs:element name="NumberofUnits" type="NumberofUnits" minOccurs="0"/>
 			<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
@@ -1083,6 +1088,40 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:element name="Zone">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="SystemInfo"/>
+				<xs:element name="ZoneName" type="xs:string"/>
+				<xs:element name="ZoneType" type="ZoneType"> </xs:element>
+				<xs:element name="Spaces" type="Spaces"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Space">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="SystemInfo"/>
+				<xs:element name="SpaceName" type="xs:string"/>
+				<xs:element minOccurs="0" name="NumberOfBedrooms" type="NumberofBedrooms"/>
+				<xs:element minOccurs="0" name="FloorArea" type="SurfaceArea"/>
+				<xs:element minOccurs="0" name="Volume" type="Volume"/>
+				<xs:element minOccurs="0" name="CeilingHeight" type="AverageCeilingHeightType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AttachedToSpace" type="SystemIdentifiersInfoType"/>
+	<xs:element name="AttachedToZone" type="SystemIdentifiersInfoType"/>
+	<xs:complexType name="Spaces">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" ref="Space"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Zones">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" ref="Zone"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="Enclosure">
 		<xs:sequence>
 			<xs:element name="AirInfiltration" minOccurs="0">
@@ -1113,11 +1152,21 @@ You may assign all 10 points to one reason, or distribute the points among sever
 										<xs:complexType>
 											<xs:sequence>
 												<xs:group ref="SystemInfo"/>
+												<xs:element minOccurs="0" ref="AttachedToSpace"/>
 												<xs:element name="AtticType" type="AtticType"/>
 												<xs:element ref="InsulationInfo" minOccurs="0"
 												maxOccurs="unbounded"/>
 												<xs:element name="Area" type="xs:double"
 												minOccurs="0"/>
+												<xs:choice minOccurs="0">
+												<xs:element name="AdjacentTo" type="AdjacentTo">
+												<xs:annotation>
+												<xs:documentation>ie above ground, basement, crawlspace, garage.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element name="AdjacentToZone"
+												type="SystemIdentifiersInfoType"/>
+												</xs:choice>
 												<xs:element name="IsVented" type="xs:boolean"
 												minOccurs="0"/>
 												<xs:element minOccurs="0" name="Rafters"
@@ -1150,6 +1199,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element name="FoundationType" type="FoundationType"/>
 									<xs:element minOccurs="0" name="ThermalBoundary"
 										type="FoundationThermalBoundary"/>
@@ -1281,6 +1331,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea"/>
 									<xs:element minOccurs="0" name="AdjacentTo" type="AdjacentTo"/>
 									<xs:element minOccurs="0" name="FloorJoists"
@@ -1306,17 +1357,22 @@ You may assign all 10 points to one reason, or distribute the points among sever
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element name="WallType" type="WallType" minOccurs="1">
 										<xs:annotation>
 											<xs:documentation>ie Wood Stud Wall, Double Stud Wall, CMU, SIP, etc. Need to add enumerator?</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea"/>
-									<xs:element name="AdjacentTo" type="AdjacentTo" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>ie above ground, basement, crawlspace, garage.</xs:documentation>
-										</xs:annotation>
-									</xs:element>
+									<xs:choice minOccurs="0">
+										<xs:element name="AdjacentTo" type="AdjacentTo">
+											<xs:annotation>
+												<xs:documentation>ie above ground, basement, crawlspace, garage.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="AdjacentToZone"
+											type="SystemIdentifiersInfoType"/>
+									</xs:choice>
 									<xs:element minOccurs="0" name="Orientation"
 										type="OrientationType"/>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
@@ -1516,6 +1572,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element minOccurs="0" name="Location" type="LightingLocation"/>
 						<xs:element ref="LightingInfo" minOccurs="1" maxOccurs="unbounded">
 							<xs:annotation>
@@ -1550,6 +1607,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element name="OtherHighConsumptionDevices" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element name="Fuel" type="HeatingSystemFuel"/>
 						<xs:element name="OtherHECDeviceType" type="OtherHECDeviceType"/>
 						<xs:element name="NumberOfOtherHECDevice" type="xs:integer"/>
@@ -1637,6 +1695,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 	<xs:group name="HVACSystemInfo">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
+			<xs:element minOccurs="0" ref="AttachedToZone"/>
 			<xs:element name="UnitLocation" type="UnitLocation" minOccurs="0"/>
 			<xs:element name="ModelYear" type="ModelYear" minOccurs="0"/>
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
@@ -2067,6 +2126,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
+				<xs:element minOccurs="0" ref="AttachedToZone"/>
 				<xs:element name="HVACDistributionSystemType" type="HVACDistributionSystemType"/>
 				<xs:choice minOccurs="0">
 					<xs:element minOccurs="0" name="AirDistribution" type="AirDistributionInfo"/>
@@ -2129,6 +2189,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
+				<xs:element minOccurs="0" ref="AttachedToZone"/>
 				<xs:element name="SystemType" minOccurs="1" type="SolarThermalSystemType"/>
 				<xs:element name="CollectorArea" type="SurfaceArea" minOccurs="0">
 					<xs:annotation>

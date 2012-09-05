@@ -1731,7 +1731,13 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
-<xs:simpleType name="ConstructionDivision">
+	<xs:simpleType name="ZoneType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="conditioned"/>
+			<xs:enumeration value="unconditioned"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ConstructionDivision">
 		<xs:restriction base="xs:int"/>
 	</xs:simpleType>
 </xs:schema>
