@@ -92,7 +92,7 @@
 			<xs:element name="FieldSequenceNumber" type="FieldSequenceNumber"/>
 			<xs:element name="MeasureTypeCode" type="MeasureTypeCode" minOccurs="0"/>
 			<xs:element name="PreOrPost" type="PreOrPost" minOccurs="0"/>
-			<xs:element ref="TotalCost" minOccurs="0" />
+			<xs:element name="ImplementationCost" type="xs:double" minOccurs="0"/>
 			<xs:element name="AdditionalInformation" type="xs:string" minOccurs="0"/>
 			<xs:element name="CompletionDate" type="xs:date" minOccurs="0">
 				<xs:annotation>
@@ -102,32 +102,22 @@
 			<xs:element ref="ContractorSystemIdentifiers" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"/>
 			<xs:element ref="Associations" minOccurs="0"/>
-			<xs:element ref="MeasureItems" minOccurs="0" />
-			</xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ComponentsReplaced"
+				type="SystemIdentifiersInfoType"/>
+			<xs:element name="ComponentRemoved" type="xs:boolean" minOccurs="0"/>
+		</xs:sequence>
 	</xs:group>
 	<xs:element name="TotalCost">
-		<xs:annotation>
-            <xs:documentation>Costs broken out by type.  Useful with improvement info nodes</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
+		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="QualEnergyMeasures" type="CostItemization" minOccurs="0" />
-				<xs:element name="HealthAndSafety" type="CostItemization" minOccurs="0" />
-			<xs:element name="NonQualMeasures" type="CostItemization" minOccurs="0" />
-            </xs:sequence>
+				<xs:element name="TotalCostHealthSafetyMeasures"
+					type="TotalCostHealthSafetyMeasures" minOccurs="0"/>
+				<xs:element name="TotalCostQualEnergyMeasures" type="TotalCostQualEnergyMeasures"
+					minOccurs="0"/>
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-    <xs:complexType name="CostItemization">
-        <xs:annotation>
-            <xs:documentation>Breakout of cost with descriptions relate to improvement</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="Cost" type="xs:decimal" />
-            <xs:element ref="MeasureItems" minOccurs="0" />
-        </xs:sequence>
-        <xs:attribute name="ID" type="xs:integer" />
-    </xs:complexType>
-    <xs:element name="TelephoneInfo">
+	<xs:element name="TelephoneInfo">
 		<xs:annotation>
 			<xs:documentation>Contains all telephone elements.</xs:documentation>
 		</xs:annotation>
@@ -259,10 +249,7 @@
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConstructionInfo">
-		<xs:annotation>
-            <xs:documentation>Overall characterization of building for descriptive, rather than modeling purposes</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
+		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="YearBuilt" type="YearBuilt" minOccurs="0"/>
 				<xs:element name="HomeType" type="Hometype" minOccurs="0"/>
@@ -304,23 +291,12 @@
 						<xs:documentation>Primary attic type of building</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-                <xs:element name="AverageAtticRValue" type="NominalRValue" minOccurs="0" />
-                <xs:element name="AverageWallRValue" type="NominalRValue" minOccurs="0" />
-                <xs:element name="AverageFloorRValue" type="NominalRValue" minOccurs="0" />
-                <xs:element name="AverageDuctRValue" type="NominalRValue" minOccurs="0" />
 				<xs:element name="ShieldingofHome" type="ShieldingofHome" minOccurs="0"/>
 				<xs:element minOccurs="0" name="GaragePresent" type="xs:boolean"/>
 				<xs:element minOccurs="0" name="GarageLocation" type="GarageLocation"/>
 				<xs:element minOccurs="0" name="SpaceAboveGarage" type="SpaceAboveGarage"/>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-			<xs:element name="AnnualEnergyUse" minOccurs="0">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element ref="ConsumptionInfo" />
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
+			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="ConsumptionDetailInfo">
@@ -332,7 +308,7 @@
 						<xs:documentation>Date/time stamp in the ISO 8601 format when the usage measured began. Set time to midnight if time is not known.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="EndDateTime" type="EndDateTime" minOccurs="0">
+				<xs:element name="EndDateTime" type="EndDateTime">
 					<xs:annotation>
 						<xs:documentation>Date/time stamp of the meter reading.</xs:documentation>
 					</xs:annotation>
@@ -378,8 +354,7 @@
 	<xs:element name="AirSealingInfo">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Hours" type="Hours" minOccurs="0" />
-                <xs:element name="ComponentAirSealed" type="AreasAirSealed" minOccurs="0"
+				<xs:element name="ComponentAirSealed" type="AreasAirSealed" minOccurs="0"
 					maxOccurs="unbounded"/>
 			</xs:sequence>
 		</xs:complexType>
@@ -776,8 +751,7 @@
 							<xs:element name="PipeInsulated" type="PipeInsulated" minOccurs="0"/>
 							<xs:element name="LinearFTPipeInsulated" type="LinearFTPipeInsulated"
 								minOccurs="0"/>
-						<xs:element name="SystemReplaced" type="xs:boolean" />
-                        </xs:sequence>
+						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
 				<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
@@ -988,13 +962,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 						<xs:element ref="AirInfiltrationMeasurement" minOccurs="0"
 							maxOccurs="unbounded"/>
 						<xs:element ref="AirSealingInfo" minOccurs="0" maxOccurs="unbounded"/>
-                        <xs:element name="AnnualEnergyUse" minOccurs="0">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element ref="ConsumptionInfo" />
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1026,13 +993,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-                        <xs:element name="AnnualEnergyUse" minOccurs="0">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element ref="ConsumptionInfo" />
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
 						<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -1157,13 +1117,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
-                                    <xs:element name="AnnualEnergyUse" minOccurs="0">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element ref="ConsumptionInfo" />
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1183,13 +1136,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									<xs:element minOccurs="0" name="FloorJoists"
 										type="StudDimensions"/>
 									<xs:element ref="InsulationInfo" minOccurs="0"/>
-                                    <xs:element name="AnnualEnergyUse" minOccurs="0">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element ref="ConsumptionInfo" />
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -1222,13 +1168,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									<xs:element minOccurs="0" name="Color" type="WallAndRoofColor"/>
 									<xs:element ref="InsulationInfo" minOccurs="0"
 										maxOccurs="unbounded"/>
-                                    <xs:element name="AnnualEnergyUse" minOccurs="0">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element ref="ConsumptionInfo" />
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1252,13 +1191,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 										type="OrientationType"/>
 									<xs:element minOccurs="0" name="AttachedToWall"
 										type="SystemIdentifiersInfoType"/>
-                                    <xs:element name="AnnualEnergyUse" minOccurs="0">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element ref="ConsumptionInfo" />
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
 									<xs:group ref="ExtensibilityGroup"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1284,13 +1216,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									</xs:element>
 									<xs:element minOccurs="0" name="AttachedToRoof"
 										type="SystemIdentifiersInfoType"/>
-                                    <xs:element name="AnnualEnergyUse" minOccurs="0">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element ref="ConsumptionInfo" />
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
 									<xs:group ref="ExtensibilityGroup"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1315,13 +1240,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 										type="OrientationType"/>
 									<xs:element minOccurs="0" name="AttachedToWall"
 										type="SystemIdentifiersInfoType"/>
-                                    <xs:element name="AnnualEnergyUse" minOccurs="0">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element ref="ConsumptionInfo" />
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
 									<xs:group ref="ExtensibilityGroup"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1352,28 +1270,14 @@ You may assign all 10 points to one reason, or distribute the points among sever
 						</xs:element>
 						<xs:element ref="ThermostatInfo" minOccurs="0" maxOccurs="unbounded"/>
 						<xs:element ref="HVACDistributionInfo" minOccurs="0" maxOccurs="unbounded"/>
-    					<xs:element name="AnnualEnergyUse" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element ref="ConsumptionInfo" />
-                                    </xs:sequence>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
+					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="WaterHeating" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element ref="WaterHeatingSystemInfo" maxOccurs="unbounded"/>
-					<xs:element name="AnnualEnergyUse" minOccurs="0">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element ref="ConsumptionInfo" />
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:sequence>
+					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="SolarThermal">
@@ -1798,7 +1702,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 		<xs:complexType>
 			<xs:sequence minOccurs="0" maxOccurs="unbounded">
 				<xs:element name="ReferredBy" type="ReferredBy" minOccurs="0"/>
-				<xs:element name="HowReferred" type="HowRefered" minOccurs="0" />
+				<xs:element name="HowRefered" type="HowRefered" minOccurs="0"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -2178,24 +2082,4 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-    <xs:element name="MeasureItems">
-        <xs:complexType>
-            <xs:sequence maxOccurs="unbounded">
-                        <xs:annotation>
-            <xs:documentation>Improvements with costs</xs:documentation>
-        </xs:annotation>
-                <xs:element name="MeasureItem">
-                    <xs:complexType>
-                        <xs:all>
-                            <xs:element name="Description" type="xs:string" />
-                            <xs:element name="Division" />
-                            <xs:element name="EnergySaving" type="xs:boolean" />
-                            <xs:element name="Cost" type="Cost" />
-                        </xs:all>
-                        <xs:attribute name="ID" type="xs:int" />
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
 </xs:schema>
