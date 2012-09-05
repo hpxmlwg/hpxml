@@ -242,6 +242,19 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Construction Below-->
+	<xs:simpleType name="ConditionedVolume">
+		<xs:annotation>
+			<xs:documentation>cubic feet</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ConditionedFloorArea">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="FoundationInsulation">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
@@ -257,6 +270,7 @@
 			<xs:enumeration value="Slab on grade"/>
 			<xs:enumeration value="Conditioned garage"/>
 			<xs:enumeration value="Unconditioned garage"/>
+			<xs:enumeration value="Combination"/>
 			<xs:enumeration value="Conditioned apartment"/>
 			<xs:enumeration value="Other"/>
 			<xs:enumeration value="Finished basement"/>
@@ -425,6 +439,9 @@
 	<xs:simpleType name="Event">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
+	<xs:simpleType name="ConstructionDivison">
+		<xs:restriction base="xs:integer"/>
+	</xs:simpleType>
 	<xs:simpleType name="ImplementationCost">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
@@ -483,6 +500,12 @@
 			<xs:enumeration value="crawlspace"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="FramingFactor">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="StudSize">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="2x4"/>
@@ -491,6 +514,11 @@
 			<xs:enumeration value="2x10"/>
 			<xs:enumeration value="2x12"/>
 			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StudSpacing">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="StormDoor">
@@ -1124,7 +1152,7 @@
 			<xs:maxInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="JobType">
+	<xs:simpleType name="Type">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="HVACHWSourceIndicator">
@@ -1219,7 +1247,7 @@
 		</xs:annotation>
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
-	<xs:simpleType name="AnnualPCTReduction">
+	<xs:simpleType name="AnnualPCTReductionWholeHome">
 		<xs:annotation>
 			<xs:documentation>%</xs:documentation>
 		</xs:annotation>
@@ -1526,7 +1554,7 @@
 	<xs:simpleType name="Title">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="Stage">
+	<xs:simpleType name="Phase">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="StartDate">
@@ -1568,7 +1596,7 @@
 	<xs:simpleType name="TotalAmount">
 		<xs:restriction base="xs:decimal"/>
 	</xs:simpleType>
-	<xs:simpleType name="JobStatus">
+	<xs:simpleType name="Status">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="SponsorName">
@@ -1644,23 +1672,6 @@
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="ImprovementStatusType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Installed"/>
-			<xs:enumeration value="NotInstalled"/>
-			<xs:enumeration value="Recommended"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="ImprovementQAStatusType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Passed"/>
-			<xs:enumeration value="Failed"/>
-			<xs:enumeration value="NotTested"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="ImprovementType">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
 	<xs:simpleType name="FoundationThermalBoundary">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="frame floor"/>
@@ -1719,5 +1730,8 @@
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
+	</xs:simpleType>
+<xs:simpleType name="ConstructionDivision">
+		<xs:restriction base="xs:int"/>
 	</xs:simpleType>
 </xs:schema>
