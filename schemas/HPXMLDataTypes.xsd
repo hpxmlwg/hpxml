@@ -1152,7 +1152,7 @@
 			<xs:maxInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="Type">
+	<xs:simpleType name="JobType">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="HVACHWSourceIndicator">
@@ -1247,7 +1247,7 @@
 		</xs:annotation>
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
-	<xs:simpleType name="AnnualPCTReductionWholeHome">
+	<xs:simpleType name="AnnualPCTReduction">
 		<xs:annotation>
 			<xs:documentation>%</xs:documentation>
 		</xs:annotation>
@@ -1554,7 +1554,7 @@
 	<xs:simpleType name="Title">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="Phase">
+	<xs:simpleType name="Stage">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="StartDate">
@@ -1596,7 +1596,7 @@
 	<xs:simpleType name="TotalAmount">
 		<xs:restriction base="xs:decimal"/>
 	</xs:simpleType>
-	<xs:simpleType name="Status">
+	<xs:simpleType name="JobStatus">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="SponsorName">
@@ -1671,6 +1671,23 @@
 			<xs:enumeration value="VentedAttic"/>
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ImprovementStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Installed"/>
+			<xs:enumeration value="NotInstalled"/>
+			<xs:enumeration value="Recommended"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ImprovementQAStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Passed"/>
+			<xs:enumeration value="Failed"/>
+			<xs:enumeration value="NotTested"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ImprovementType">
+		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="FoundationThermalBoundary">
 		<xs:restriction base="xs:string">
