@@ -921,9 +921,6 @@
 			<xs:enumeration value="electric resistance"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="HeatSystemFuel">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
 	<xs:simpleType name="InputCapacity">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
