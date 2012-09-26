@@ -182,6 +182,8 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="blower door"/>
 			<xs:enumeration value="tracer gas"/>
+			<xs:enumeration value="estimate"/>
+			<xs:enumeration value="checklist"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="WindconditionsonDayofTest">
