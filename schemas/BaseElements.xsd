@@ -735,7 +735,7 @@
 				<xs:element name="Fuel" type="HeatingSystemFuel" minOccurs="0"/>
 				<xs:element name="Type" type="WaterHeaterType" minOccurs="0"/>
 				<xs:element minOccurs="0" name="FracDHWLoadServed" type="Fraction"/>
-				<xs:element name="Location" type="WaterHeaterLocation" minOccurs="0"/>
+				<xs:element name="Location" type="UnitLocation" minOccurs="0"/>
 				<xs:element name="Year" type="ModelYear" minOccurs="0"/>
 				<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
 				<xs:element name="Model" type="Model" minOccurs="0"/>
