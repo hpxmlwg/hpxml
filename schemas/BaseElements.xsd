@@ -248,7 +248,7 @@
 		<xs:complexType>
 			<xs:sequence minOccurs="0">
 				<xs:element name="ClimateZoneDOE" type="ClimateZoneDOE" minOccurs="0"/>
-				<xs:element name="ClimateZoneIECC" type="ClimateZoneIECC" minOccurs="0"/>
+				<xs:element name="ClimateZoneIECC" minOccurs="0" type="IECCClimateZoneType"/>
 				<xs:element name="RadonZone" type="RadonZone" minOccurs="0"/>
 				<xs:element name="TermiteZone" type="TermiteZone" minOccurs="0"/>
 				<xs:element name="HurricaneZone" type="xs:boolean" minOccurs="0"/>
@@ -258,6 +258,12 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	<xs:complexType name="IECCClimateZoneType">
+		<xs:sequence>
+			<xs:element name="Year" type="IECCYear"> </xs:element>
+			<xs:element name="ClimateZone" type="ClimateZoneIECC"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="ConstructionInfo">
 		<xs:annotation>
 			<xs:documentation>Overall characterization of building for descriptive, rather than modeling purposes</xs:documentation>

@@ -200,6 +200,14 @@
 			<xs:enumeration value="very cold"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="IECCYear">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="2012"/>
+			<xs:enumeration value="2009"/>
+			<xs:enumeration value="2006"/>
+			<xs:enumeration value="2003"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ClimateZoneIECC">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="1A"/>
