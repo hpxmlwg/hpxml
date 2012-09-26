@@ -27,7 +27,7 @@
 			<xs:element name="Address2" type="Address2" minOccurs="0"/>
 			<xs:element name="CityMunicipality" type="CityMunicipality"/>
 			<xs:element name="StateCode" type="StateCode"/>
-			<xs:element name="ZipCodePlus4" type="ZipCodePlus4"/>
+			<xs:element name="ZipCode" type="ZipCodePlus4"/>
 			<xs:element name="USPSBarCode" type="USPSBarCode" minOccurs="0"/>
 		</xs:sequence>
 	</xs:group>
