@@ -843,12 +843,6 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="FracCoolLoadServed">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<!--Heat Pump Information Below-->
 	<xs:simpleType name="AnnualCoolEfficiency">
 		<xs:restriction base="xs:string"/>
@@ -890,12 +884,6 @@
 	<xs:simpleType name="PCTofCoolLoadServed">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="FracofHeatLoadServed">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="VentSystem">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="atmospheric"/>
@@ -928,12 +916,6 @@
 	</xs:simpleType>
 	<xs:simpleType name="InputCapacity">
 		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="FractionHeatLoadServed">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
 	</xs:simpleType>
 	<!--HVAC Distribution Below-->
 	<xs:simpleType name="DuctType">
@@ -1119,9 +1101,6 @@
 	</xs:simpleType>
 	<xs:simpleType name="OrphanedIndocator">
 		<xs:restriction base="xs:boolean"/>
-	</xs:simpleType>
-	<xs:simpleType name="FracPipeInsulation">
-		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="PipeInsulated">
 		<xs:restriction base="xs:string"/>
