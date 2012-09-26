@@ -1641,6 +1641,7 @@
 			<xs:enumeration value="FlatRoof"/>
 			<xs:enumeration value="UnventedAttic"/>
 			<xs:enumeration value="VentedAttic"/>
+			<xs:enumeration value="VentingUnknownAttic"/>
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
