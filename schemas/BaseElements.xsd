@@ -333,7 +333,7 @@
 	<xs:element name="StoveTest">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="Fuel" type="HeatingSystemFuel" minOccurs="0"/>
+				<xs:element name="Fuel" type="FuelType" minOccurs="0"/>
 				<xs:element name="COReading" type="COReading" minOccurs="0"/>
 				<xs:element name="GasLeaksIdentified" type="GasLeaksIdentified" minOccurs="0"/>
 				<xs:element name="HeatingStoveProperlyVented" type="HeatingStoveProperlyVented"
@@ -607,7 +607,7 @@
 				<xs:element name="FuelLeaks" minOccurs="0" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="FuelType" type="energyType"/>
+							<xs:element name="FuelType" type="FuelType"/>
 							<xs:element name="LeaksIdentified" type="xs:boolean"/>
 							<xs:element name="LeaksAddressed" type="xs:boolean"/>
 						</xs:sequence>
@@ -709,7 +709,7 @@
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
 				<xs:element minOccurs="0" ref="AttachedToZone"/>
-				<xs:element name="Fuel" type="HeatingSystemFuel" minOccurs="0"/>
+				<xs:element name="Fuel" type="FuelType" minOccurs="0"/>
 				<xs:element name="Type" type="WaterHeaterType" minOccurs="0"/>
 				<xs:element minOccurs="0" name="FracDHWLoadServed" type="Fraction"/>
 				<xs:element name="Location" type="UnitLocation" minOccurs="0"/>
@@ -1454,7 +1454,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
-						<xs:element name="Fuel" type="HeatingSystemFuel"/>
+						<xs:element name="Fuel" type="FuelType"/>
 						<xs:element name="OtherHECDeviceType" type="OtherHECDeviceType"/>
 						<xs:element name="NumberOfOtherHECDevice" type="xs:integer"/>
 						<xs:element minOccurs="0" name="OtherHECDeviceLoad" type="xs:double"/>
@@ -1496,7 +1496,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 	</xs:complexType>
 	<xs:complexType name="FuelSavingsType">
 		<xs:sequence>
-			<xs:element name="FuelType" type="energyType"/>
+			<xs:element name="FuelType" type="FuelType"/>
 			<xs:element name="Units" type="energyUnitType" minOccurs="0"/>
 			<xs:element name="TotalSavings" type="xs:double" minOccurs="0"/>
 			<xs:element name="TotalDollarSavings" type="xs:double" minOccurs="0"/>
@@ -1562,7 +1562,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:extension base="HVACSystemInfo">
 				<xs:sequence minOccurs="1" maxOccurs="1">
 					<xs:element name="HeatingSystemType" type="HeatingSystemType"/>
-					<xs:element name="HeatingSystemFuel" type="HeatingSystemFuel" minOccurs="0"/>
+					<xs:element name="HeatingSystemFuel" type="FuelType" minOccurs="0"/>
 					<xs:element name="CondensingSystem" type="CondensingSystem" minOccurs="0"/>
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
@@ -1599,7 +1599,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 					</xs:element>
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
 					<xs:element name="GeothermalLoop" type="GeothermalLoop" minOccurs="0"/>
-					<xs:element name="BackupSystemFuel" type="HeatingSystemFuel" minOccurs="0"/>
+					<xs:element name="BackupSystemFuel" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="BackupAFUE" type="AFUE"/>
 					<xs:element minOccurs="0" name="BackupHeatingCapacity" type="Capacity">
 						<xs:annotation>
@@ -2097,7 +2097,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 	</xs:complexType>
 	<xs:complexType name="ModeledUsageType">
 		<xs:sequence>
-			<xs:element name="EnergyType" type="energyType">
+			<xs:element name="EnergyType" type="FuelType">
 				<xs:annotation>
 					<xs:documentation/>
 				</xs:annotation>

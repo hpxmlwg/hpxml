@@ -385,7 +385,7 @@
 	</xs:simpleType>
 	<!--Consumption Start-->
 	<xs:simpleType name="ConsumptionType">
-		<xs:union memberTypes="energyType otherConsumptionType"/>
+		<xs:union memberTypes="FuelType otherConsumptionType"/>
 	</xs:simpleType>
 	<!--Consumption Details Start-->
 	<xs:simpleType name="otherConsumptionType">
@@ -406,7 +406,7 @@
 	<xs:simpleType name="GasLeaksIdentified">
 		<xs:restriction base="xs:boolean"/>
 	</xs:simpleType>
-	<xs:simpleType name="HeatingSystemFuel">
+	<xs:simpleType name="FuelType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="electricity"/>
 			<xs:enumeration value="natural gas"/>
@@ -418,6 +418,7 @@
 			<xs:enumeration value="wood pellets"/>
 			<xs:enumeration value="coal (anthracite)"/>
 			<xs:enumeration value="coal (bituminous)"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="HeatingStoveProperlyVented">
@@ -875,9 +876,6 @@
 			<xs:enumeration value="PercentEfficiency"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="BackUpSystemFuel">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
 	<xs:simpleType name="GeothermalLoop">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="open"/>
@@ -1141,13 +1139,6 @@
 	<xs:simpleType name="ClothersDryerSequenceNumber">
 		<xs:restriction base="xs:integer"/>
 	</xs:simpleType>
-	<xs:simpleType name="FuelType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="electricity"/>
-			<xs:enumeration value="natural gas"/>
-			<xs:enumeration value="propane"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<!--Clothes Washer Below-->
 	<xs:simpleType name="ClothesWasherSequenceNumber">
 		<xs:restriction base="xs:int"/>
@@ -1268,19 +1259,6 @@
 		</xs:annotation>
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="energyType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Coal (anthracite)"/>
-			<xs:enumeration value="Coal (bituminous)"/>
-			<xs:enumeration value="Electricity"/>
-			<xs:enumeration value="Kerosene"/>
-			<xs:enumeration value="Natural Gas"/>
-			<xs:enumeration value="Other"/>
-			<xs:enumeration value="Propane"/>
-			<xs:enumeration value="Wood"/>
-			<xs:enumeration value="Fuel Oil (No. 2)"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="energyUnitType">
