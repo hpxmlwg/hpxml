@@ -14,8 +14,14 @@
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
 				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
 				<xs:element minOccurs="0" name="RetrofitID" type="SystemIdentifiersInfoType"/>
-				<xs:element name="JobInfo" type="JobDetailsType"/>
-				<xs:element ref="HomeownerQuestionaireInfo" minOccurs="0"/>
+				<xs:element name="JobDetails" type="JobDetailsType"/>
+				<xs:element name="HomeownerQuestionaireInfo" minOccurs="0"
+					type="HomeownerQuestionaireInfoType">
+					<xs:annotation>
+						<xs:documentation>Please assign 10 points the reason(s) why you choose to invest in the retrofit. 
+You may assign all 10 points to one reason, or distribute the points among several reasons – as long as they total 10.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

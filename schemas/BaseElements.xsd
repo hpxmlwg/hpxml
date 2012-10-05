@@ -318,29 +318,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="HomeownerQuestionaireInfo">
-		<xs:annotation>
-			<xs:documentation>Please assign 10 points the reason(s) why you choose to invest in the retrofit. 
-You may assign all 10 points to one reason, or distribute the points among several reasons – as long as they total 10.</xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence minOccurs="0">
-				<xs:element name="Comfort" type="HomeownerQuestionaireScore"/>
-				<xs:element name="EnergySavings" type="HomeownerQuestionaireScore"/>
-				<xs:element name="IndoorAirQuality" type="HomeownerQuestionaireScore"/>
-				<xs:element name="Durability" type="HomeownerQuestionaireScore"/>
-				<xs:element name="Environment" type="HomeownerQuestionaireScore"/>
-				<xs:element name="SupportLocalBusiness" type="HomeownerQuestionaireScore"/>
-				<xs:element name="Other" type="HomeownerQuestionaireScore"/>
-				<xs:element name="OtherDescription" type="xs:string" minOccurs="0">
-					<xs:annotation>
-						<xs:documentation>Optional description if Other above is greater than zero.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:group ref="ExtensibilityGroup"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
 	<xs:element name="SoftwareInfo">
 		<xs:complexType>
 			<xs:sequence>
@@ -402,26 +379,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" minOccurs="0"
-							name="AirInfiltrationMeasurement">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" name="Date" type="xs:date"/>
-									<xs:element minOccurs="1" name="Event" type="Event"/>
-									<xs:element name="BuildingAirLeakage" type="BuildingAirLeakage"
-										minOccurs="1"/>
-									<xs:element name="BuildingAirLeakageUnit"
-										type="BuildingAirLeakageUnit" minOccurs="1"/>
-									<xs:element name="TypeOfTest"
-										type="TypeofInfiltrationMeasurement" minOccurs="0"/>
-									<xs:element name="HousePressure" type="xs:double" minOccurs="0"/>
-									<xs:element name="FanPressure" type="FanPressure" minOccurs="0"/>
-									<xs:element name="FanRingUsed" type="FanRingUsed" minOccurs="0"/>
-									<xs:element name="TypeOfBlowerDoorTest"
-										type="TypeofBlowerDoorTest" minOccurs="0"/>
-									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
+							name="AirInfiltrationMeasurement" type="AirInfiltrationMeasurementType"> </xs:element>
 						<xs:element name="AnnualEnergyUse" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
@@ -1194,55 +1152,19 @@ You may assign all 10 points to one reason, or distribute the points among sever
 	</xs:complexType>
 	<xs:complexType name="HealthAndSafety">
 		<xs:sequence>
-			<xs:element name="Ventilation" minOccurs="0">
+			<xs:element name="Ventilation" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="VentilationInfo">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:group ref="SystemInfo"/>
-									<xs:element name="MechanicalVentilationDetermination"
-										type="MechanicalVentilationDetermination" minOccurs="0"/>
-									<xs:element name="MVRatCFM50" type="MVRatCFM50" minOccurs="0"/>
-									<xs:element name="MVRDeterminationMethod"
-										type="MVRDeterminationMethod" minOccurs="0"/>
-									<xs:element name="MVRRecommendation" type="MVRRecommendation"
-										minOccurs="0"/>
-									<xs:element name="OtherVentilationIssuesDescription"
-										type="OtherVentilationIssuesDescription" minOccurs="0"/>
-									<xs:element name="AirLeakage" type="BuildingAirLeakage"
-										minOccurs="0"/>
-									<xs:element name="ProperClothersDryerVenting"
-										type="ProperClothersDryerVenting" minOccurs="0"/>
-									<xs:element name="VentType" type="VentType" minOccurs="0"/>
-									<xs:element name="VentLocation" type="VentLocation"
-										minOccurs="0"/>
-									<xs:element name="VentstoOutdoors" type="VentstoOutdoors"
-										minOccurs="0"/>
-									<xs:element name="AirBarrierBetweenHouseAndGarage"
-										type="xs:boolean" minOccurs="0"/>
-									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
+						<xs:element maxOccurs="unbounded" name="VentilationInfo"
+							type="VentilationInfoType"> </xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="MoistureControl" minOccurs="0">
+			<xs:element name="MoistureControl" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="MoistureControlInfo">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:group ref="SystemInfo"/>
-									<xs:element name="ExteriorLocationsWaterIntrusionorDamage"
-										type="ExteriorLocationsWaterIntrusionorDamage" minOccurs="0"/>
-									<xs:element name="InteriorLocationsofWaterLeaksorDamage"
-										type="InteriorLocationsofWaterLeaksorDamage" minOccurs="0"/>
-									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
+						<xs:element maxOccurs="unbounded" name="MoistureControlInfo"
+							type="MoistureControlInfoType"> </xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1567,9 +1489,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				<xs:element ref="SystemIdentifiersInfo"/>
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element>
-	<xs:element name="SponsorInfo">
-		<xs:complexType> </xs:complexType>
 	</xs:element>
 	<xs:element name="Associations" type="AssociationsType"> </xs:element>
 	<xs:element name="ResourcesSaved">
@@ -2199,5 +2118,66 @@ You may assign all 10 points to one reason, or distribute the points among sever
 				</xs:complexType>
 			</xs:element>
 		</xs:all>
+	</xs:complexType>
+	<xs:complexType name="HomeownerQuestionaireInfoType">
+		<xs:sequence minOccurs="0">
+			<xs:element name="Comfort" type="HomeownerQuestionaireScore"/>
+			<xs:element name="EnergySavings" type="HomeownerQuestionaireScore"/>
+			<xs:element name="IndoorAirQuality" type="HomeownerQuestionaireScore"/>
+			<xs:element name="Durability" type="HomeownerQuestionaireScore"/>
+			<xs:element name="Environment" type="HomeownerQuestionaireScore"/>
+			<xs:element name="SupportLocalBusiness" type="HomeownerQuestionaireScore"/>
+			<xs:element name="Other" type="HomeownerQuestionaireScore"/>
+			<xs:element minOccurs="0" name="OtherDescription" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Optional description if Other above is greater than zero.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="ExtensibilityGroup"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AirInfiltrationMeasurementType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Date" type="xs:date"/>
+			<xs:element minOccurs="1" name="Event" type="Event"/>
+			<xs:element name="BuildingAirLeakage" type="BuildingAirLeakage" minOccurs="1"/>
+			<xs:element name="BuildingAirLeakageUnit" type="BuildingAirLeakageUnit" minOccurs="1"/>
+			<xs:element name="TypeOfTest" type="TypeofInfiltrationMeasurement" minOccurs="0"/>
+			<xs:element name="HousePressure" type="xs:double" minOccurs="0"/>
+			<xs:element name="FanPressure" type="FanPressure" minOccurs="0"/>
+			<xs:element name="FanRingUsed" type="FanRingUsed" minOccurs="0"/>
+			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
+			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VentilationInfoType">
+		<xs:sequence>
+			<xs:group ref="SystemInfo"/>
+			<xs:element name="MechanicalVentilationDetermination"
+				type="MechanicalVentilationDetermination" minOccurs="0"/>
+			<xs:element name="MVRatCFM50" type="MVRatCFM50" minOccurs="0"/>
+			<xs:element name="MVRDeterminationMethod" type="MVRDeterminationMethod" minOccurs="0"/>
+			<xs:element name="MVRRecommendation" type="MVRRecommendation" minOccurs="0"/>
+			<xs:element name="OtherVentilationIssuesDescription"
+				type="OtherVentilationIssuesDescription" minOccurs="0"/>
+			<xs:element name="AirLeakage" type="BuildingAirLeakage" minOccurs="0"/>
+			<xs:element name="ProperClothersDryerVenting" type="ProperClothersDryerVenting"
+				minOccurs="0"/>
+			<xs:element name="VentType" type="VentType" minOccurs="0"/>
+			<xs:element name="VentLocation" type="VentLocation" minOccurs="0"/>
+			<xs:element name="VentstoOutdoors" type="VentstoOutdoors" minOccurs="0"/>
+			<xs:element name="AirBarrierBetweenHouseAndGarage" type="xs:boolean" minOccurs="0"/>
+			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MoistureControlInfoType">
+		<xs:sequence>
+			<xs:group ref="SystemInfo"/>
+			<xs:element name="ExteriorLocationsWaterIntrusionorDamage"
+				type="ExteriorLocationsWaterIntrusionorDamage" minOccurs="0"/>
+			<xs:element name="InteriorLocationsofWaterLeaksorDamage"
+				type="InteriorLocationsofWaterLeaksorDamage" minOccurs="0"/>
+			<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

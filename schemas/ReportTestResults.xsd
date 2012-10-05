@@ -13,7 +13,8 @@
 			<xs:sequence>
 				<xs:element ref="XMLTransactionHeaderInformation"/>
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
-				<xs:element ref="HomeownerQuestionaireInfo" minOccurs="0"/>
+				<xs:element minOccurs="0" name="HomeownerQuestionaireInfo"
+					type="HomeownerQuestionaireInfoType"/>
 				<xs:element name="BuildingIdentifier" type="SystemIdentifiersInfoType"/>
 				<xs:element name="TestResults">
 					<xs:complexType>
@@ -36,19 +37,13 @@
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
+							<xs:element minOccurs="0" name="HealthAndSafety" type="HealthAndSafety"/>
 							<xs:element maxOccurs="unbounded" minOccurs="0"
-								ref="AirInfiltrationMeasurement"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="VentilationInfo"/>
-							<xs:element maxOccurs="unbounded" ref="MoistureControlInfo"
-								minOccurs="0"/>
+								name="AirInfiltrationMeasurement"
+								type="AirInfiltrationMeasurementType"/>
 							<xs:element maxOccurs="unbounded" minOccurs="0"
-								ref="CombustionApplianceZoneTestInfo"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0" ref="StoveTest"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0"
-								ref="OtherHealthandSafetyInfo"/>
-							<xs:element maxOccurs="unbounded" minOccurs="0"
-								ref="DuctLeakageMeasurement"/>
-							<xs:element ref="AmbientCO"/>
+								name="DuctLeakageMeasurement" type="DuctLeakageMeasurementType"/>
+							<xs:element name="AmbientCO"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

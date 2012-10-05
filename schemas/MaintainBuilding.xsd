@@ -18,7 +18,7 @@
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element ref="AddressSystemIdentifiers"/>
-							<xs:group ref="AddressInformation" minOccurs="0"/>
+							<xs:element name="AddressInformation" type="AddressInformation"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

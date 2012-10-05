@@ -16,23 +16,18 @@
 				<xs:element name="Customer">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:group ref="IndividualInfo"/>
-							<xs:element name="MailingAddress" minOccurs="0">
+							<xs:element name="IndividualInfo" type="IndividualInfo"/>
+							<xs:element name="MailingAddress" minOccurs="0"
+								type="AddressInformation">
 								<xs:annotation>
 									<xs:documentation>If different from building street address.</xs:documentation>
 								</xs:annotation>
-								<xs:complexType>
-									<xs:group ref="AddressInformation"/>
-								</xs:complexType>
 							</xs:element>
 							<xs:element name="Landlord" minOccurs="0">
 								<xs:complexType>
 									<xs:sequence>
-										<xs:group ref="IndividualInfo"/>
-										<xs:element name="Address">
-											<xs:complexType>
-												<xs:group ref="AddressInformation"/>
-											</xs:complexType>
+										<xs:element name="IndividualInfo" type="IndividualInfo"/>
+										<xs:element name="Address" type="AddressInformation">
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
