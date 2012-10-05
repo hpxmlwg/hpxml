@@ -864,15 +864,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 										minOccurs="0"/>
 									<xs:element name="TotalSetbackHoursperWeekCooling" type="Hours"
 										minOccurs="0"/>
-									<xs:element name="ThermostatImprovementInfo" minOccurs="0"
-										maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element name="NumberInstalled" type="xs:integer"
-												minOccurs="0"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
 									<xs:element name="HVACSystemsServed"
 										type="SystemIdentifiersInfoType" minOccurs="0"
 										maxOccurs="unbounded"/>
@@ -900,25 +891,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 										<xs:annotation>
 											<xs:documentation>Conditioned floor area in sq.ft. that this distribution system serves.</xs:documentation>
 										</xs:annotation>
-									</xs:element>
-									<xs:element name="DistributionSystemImprovementInfo"
-										minOccurs="0" maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element name="DuctSystemSealed"
-												type="DuctSystemSealed" minOccurs="0"/>
-												<xs:element
-												name="DuctOutsideEnvelopeInsulatedaspartofRetrofit"
-												type="DuctOutsideEnvelopeInsulatedaspartofRetrofit"
-												minOccurs="0"/>
-												<xs:element name="DuctSystemReplaced"
-												type="DuctSystemReplaced" minOccurs="0"/>
-												<xs:element
-												name="SystemPumpandZoneValveCorrectionsMade"
-												type="SystemPumpandZoneValveCorrectionsMade"
-												minOccurs="0"/>
-											</xs:sequence>
-										</xs:complexType>
 									</xs:element>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 								</xs:sequence>
@@ -993,26 +965,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									</xs:element>
 									<xs:element name="RelatedHeatingSystem"
 										type="SystemIdentifiersInfoType" minOccurs="0"/>
-									<xs:element name="WaterHeatingImprovementInfo" minOccurs="0"
-										maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element name="JacketInstalledIndicator"
-												type="JacketInstalledIndicator" minOccurs="0"/>
-												<xs:element name="DispositionofExistingSystem"
-												type="DispositionofExistingSystem" minOccurs="0"/>
-												<xs:element name="RepairsDescription"
-												type="RepairDescription" minOccurs="0"
-												maxOccurs="unbounded"/>
-												<xs:element name="PipeInsulated"
-												type="PipeInsulated" minOccurs="0"/>
-												<xs:element name="LinearFTPipeInsulated"
-												type="LinearFTPipeInsulated" minOccurs="0"/>
-												<xs:element name="SystemReplaced" type="xs:boolean"
-												/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1059,14 +1011,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									</xs:element>
 									<xs:element minOccurs="0" name="ConnectedTo"
 										type="SystemIdentifiersInfoType"/>
-									<xs:element minOccurs="0" name="SolarThermalImprovementInfo"
-										maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:group minOccurs="0" ref="ExtensibilityGroup"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
 									<xs:group ref="ExtensibilityGroup"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1098,14 +1042,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									</xs:element>
 									<xs:element minOccurs="0" name="InverterEfficiency"
 										type="Efficiency"/>
-									<xs:element maxOccurs="unbounded" minOccurs="0"
-										name="PVImprovementInfo">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:group ref="ExtensibilityGroup"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
 									<xs:group ref="ExtensibilityGroup"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1285,20 +1221,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 										minOccurs="0"/>
 									<xs:element name="AirBarrierBetweenHouseAndGarage"
 										type="xs:boolean" minOccurs="0"/>
-									<xs:element name="VentilationImprovementInfo" minOccurs="0"
-										maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element
-												name="GarageDuctsandAirHandlersAirSealed"
-												type="GarageDuctsandAirHandlersAirSealed"
-												minOccurs="0"/>
-												<xs:element name="MechanicalVentilationInstalled"
-												type="MechanicalVentilationInstalled"
-												minOccurs="0"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1317,25 +1239,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 										type="ExteriorLocationsWaterIntrusionorDamage" minOccurs="0"/>
 									<xs:element name="InteriorLocationsofWaterLeaksorDamage"
 										type="InteriorLocationsofWaterLeaksorDamage" minOccurs="0"/>
-									<xs:element name="MoistureControlImprovementInfo" minOccurs="0"
-										maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element name="GuttersInstalledorRepaired"
-												type="GuttersInstalledorRepaired" minOccurs="0"/>
-												<xs:element name="FlashingInstalledorRepaired"
-												type="FlashingInstalledorRepaired" minOccurs="0"/>
-												<xs:element name="FoundationGradingImproved"
-												type="FoundationGradingImproved" minOccurs="0"/>
-												<xs:element
-												name="OtherMeasuresImplementedDescription"
-												type="OtherMeasuresImplementedDescription"
-												minOccurs="0"/>
-												<xs:element name="VaporRetardersInstalled"
-												type="VaporRetardersInstalled" minOccurs="0"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1423,11 +1326,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 									</xs:element>
 									<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="CAZImprovementInfo" minOccurs="0" maxOccurs="unbounded">
-							<xs:complexType>
-								<xs:sequence> </xs:sequence>
 							</xs:complexType>
 						</xs:element>
 						<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
@@ -2026,6 +1924,70 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			</xs:element>
 			<xs:element minOccurs="0" name="InstalledComponent" type="SystemIdentifiersInfoType"/>
 			<xs:group minOccurs="0" ref="ExtensibilityGroup"/>
+			<xs:element name="AdditionalDetails">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="MoistureControlImprovementInfo">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GuttersInstalledorRepaired"
+										type="GuttersInstalledorRepaired" minOccurs="0"/>
+									<xs:element name="FlashingInstalledorRepaired"
+										type="FlashingInstalledorRepaired" minOccurs="0"/>
+									<xs:element name="FoundationGradingImproved"
+										type="FoundationGradingImproved" minOccurs="0"/>
+									<xs:element name="OtherMeasuresImplementedDescription"
+										type="OtherMeasuresImplementedDescription" minOccurs="0"/>
+									<xs:element name="VaporRetardersInstalled"
+										type="VaporRetardersInstalled" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="HVACDistributionImprovementInfo">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="DuctSystemSealed" type="DuctSystemSealed"
+										minOccurs="0"/>
+									<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit"
+										type="DuctOutsideEnvelopeInsulatedaspartofRetrofit"
+										minOccurs="0"/>
+									<xs:element name="DuctSystemReplaced" type="DuctSystemReplaced"
+										minOccurs="0"/>
+									<xs:element name="SystemPumpandZoneValveCorrectionsMade"
+										type="SystemPumpandZoneValveCorrectionsMade" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="WaterHeaterImprovementInfo">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="JacketInstalledIndicator"
+										type="JacketInstalledIndicator" minOccurs="0"/>
+									<xs:element name="DispositionofExistingSystem"
+										type="DispositionofExistingSystem" minOccurs="0"/>
+									<xs:element name="RepairsDescription" type="RepairDescription"
+										minOccurs="0" maxOccurs="unbounded"/>
+									<xs:element name="PipeInsulated" type="PipeInsulated"
+										minOccurs="0"/>
+									<xs:element name="LinearFTPipeInsulated"
+										type="LinearFTPipeInsulated" minOccurs="0"/>
+									<xs:element name="SystemReplaced" type="xs:boolean"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="VentilationImprovementInfo">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="GarageDuctsandAirHandlersAirSealed"
+										type="GarageDuctsandAirHandlersAirSealed" minOccurs="0"/>
+									<xs:element name="MechanicalVentilationInstalled"
+										type="MechanicalVentilationInstalled" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EnergySavingsType">
