@@ -481,6 +481,10 @@
 	</xs:simpleType>
 	<!--Doors Below-->
 	<xs:simpleType name="WallType">
+		<xs:annotation>
+			<xs:documentation>Wall type enumerations are further explained at
+https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="wood stud"/>
 			<xs:enumeration value="double stud"/>
