@@ -196,7 +196,7 @@
 								minOccurs="0"/>
 							<xs:element name="InsulationMaterial" type="InsulationMaterial"
 								minOccurs="0"/>
-							<xs:element name="NominalRValue" type="NominalRValue" minOccurs="0"/>
+							<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
 							<xs:element name="Thickness" type="Thickness" minOccurs="0"/>
 							<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 						</xs:sequence>
@@ -751,7 +751,7 @@
 												minOccurs="0"/>
 												<xs:element name="DoorType" type="DoorType"
 												minOccurs="0"/>
-												<xs:element name="RValue" type="RValue"
+												<xs:element name="NominalRValue" type="RValue"
 												minOccurs="0"/>
 												<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 											</xs:sequence>
@@ -874,7 +874,7 @@
 									<xs:element minOccurs="0" ref="AttachedToZone"/>
 									<xs:element name="Fuel" type="FuelType" minOccurs="0"/>
 									<xs:element name="Type" type="WaterHeaterType" minOccurs="0"/>
-									<xs:element minOccurs="0" name="FracDHWLoadServed"
+									<xs:element minOccurs="0" name="FractionDHWLoadServed"
 										type="Fraction"/>
 									<xs:element name="Location" type="UnitLocation" minOccurs="0"/>
 									<xs:element name="Year" type="ModelYear" minOccurs="0"/>
@@ -901,7 +901,7 @@
 										minOccurs="0"/>
 									<xs:element name="JacketRValue" type="RValue" minOccurs="0"/>
 									<xs:element name="PipeRValue" type="RValue" minOccurs="0"/>
-									<xs:element name="FracPipeInsulation" type="Fraction"
+									<xs:element name="FractionPipeInsulation" type="Fraction"
 										minOccurs="0"/>
 									<xs:element name="VentSystem" type="VentSystem" minOccurs="0"/>
 									<xs:element name="OrphanedIndicator" type="OrphanedIndocator"
@@ -1405,8 +1405,8 @@
 							<xs:documentation>Temperature at which the backup heating is activated in degF.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="FracofHeatLoadServed" type="Fraction" minOccurs="0"/>
-					<xs:element name="FracofCoolLoadServed" type="Fraction" minOccurs="0"/>
+					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
+					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element name="AnnualCoolEfficiencyType" type="AnnualCoolEfficiencyType"
 						minOccurs="0"/>
 					<xs:element name="AnnualCoolEfficiency" type="Efficiency" minOccurs="0"/>
@@ -1428,7 +1428,7 @@
 							<xs:documentation>Capacity in Btuh</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="FracCoolLoadServed" type="Fraction" minOccurs="0"/>
+					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element name="EfficiencyType" type="AnnualCoolEfficiencyType" minOccurs="0"/>
 					<xs:element name="Efficiency" type="Efficiency" minOccurs="0"/>
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
@@ -1438,7 +1438,7 @@
 	</xs:complexType>
 	<xs:complexType name="HydronicDistributionInfo">
 		<xs:sequence>
-			<xs:element name="FracHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
+			<xs:element name="FractionHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
 			<xs:element name="HydronicDistributionType" type="HydronicDistributionType"
 				minOccurs="0"/>
 		</xs:sequence>
@@ -1661,10 +1661,10 @@
 								<xs:documentation>Primary attic type of building</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="AverageAtticRValue" type="NominalRValue" minOccurs="0"/>
-						<xs:element name="AverageWallRValue" type="NominalRValue" minOccurs="0"/>
-						<xs:element name="AverageFloorRValue" type="NominalRValue" minOccurs="0"/>
-						<xs:element name="AverageDuctRValue" type="NominalRValue" minOccurs="0"/>
+						<xs:element name="AverageAtticRValue" type="RValue" minOccurs="0"/>
+						<xs:element name="AverageWallRValue" type="RValue" minOccurs="0"/>
+						<xs:element name="AverageFloorRValue" type="RValue" minOccurs="0"/>
+						<xs:element name="AverageDuctRValue" type="RValue" minOccurs="0"/>
 						<xs:element name="ShieldingofHome" type="ShieldingofHome" minOccurs="0"/>
 						<xs:element minOccurs="0" name="GaragePresent" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="GarageLocation" type="GarageLocation"/>

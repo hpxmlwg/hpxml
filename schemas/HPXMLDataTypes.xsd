@@ -572,11 +572,6 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="NominalRValue">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="Thickness">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
