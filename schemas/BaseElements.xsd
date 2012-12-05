@@ -1570,7 +1570,7 @@
 	</xs:element>
 	<xs:group name="LocationCharacteristicGroup">
 		<xs:sequence>
-			<xs:element name="YearBuilt" type="YearBuilt" minOccurs="0"/>
+			<xs:element name="YearBuilt" type="Year" minOccurs="0"/>
 			<xs:element name="SquareFeet" type="SquareFeet" minOccurs="0"/>
 			<xs:element name="NumberOfUnits" type="NumberofUnits" minOccurs="0"/>
 			<xs:element name="NumberOfFloors" type="NumberOfFloors" minOccurs="0"/>
@@ -1619,18 +1619,73 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="YearBuilt" type="YearBuilt" minOccurs="0"/>
-						<xs:element name="HomeType" type="Hometype" minOccurs="0"/>
-						<xs:element name="NumberofUnitsRetrofit" type="NumberofUnitsRetrofit"
+						<xs:element minOccurs="0" name="Site">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="SiteType" type="SiteType"/>
+									<xs:element minOccurs="0" name="Surroundings"
+										type="Surroundings"/>
+									<xs:element name="ShieldingofHome" type="ShieldingofHome"
+										minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="BuildingOccupancy">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="HouseholdType"
+										type="HouseholdType"/>
+									<xs:element minOccurs="0" name="ResidentPopulationType"
+										type="ResidentPopulationType"/>
+									<xs:element minOccurs="0" name="Occupancy" type="Occupancy"/>
+									<xs:element name="NumberofResidents"
+										type="IntegerGreaterThanZero" minOccurs="0"/>
+									<xs:element minOccurs="0" name="NumberofAdults"
+										type="IntegerGreaterThanOrEqualToZero"/>
+									<xs:element minOccurs="0" name="NumberofChildren"
+										type="IntegerGreaterThanOrEqualToZero"/>
+									<xs:element minOccurs="0" name="PubliclySubsidized"
+										type="xs:boolean"/>
+									<xs:element minOccurs="0" name="LowIncome" type="xs:boolean"/>
+									<xs:element minOccurs="0" name="HighestLevelofOccupantEducation"
+										type="EducationLevels"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="BuildingConstruction">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="YearBuilt" type="Year" minOccurs="0"/>
+									<xs:element minOccurs="0" name="YearOccupied" type="Year"/>
+									<xs:element minOccurs="0" name="YearofLastRemodel" type="Year"/>
+									<xs:element name="ResidentialFacilityType"
+										type="ResidentialFacilityType" minOccurs="0"/>
+									<xs:element minOccurs="0" name="BuildingHeight"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>height of building in linear feet</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="NumberofUnits"
+										type="IntegerGreaterThanZero"/>
+									<xs:element minOccurs="0" name="FloorToFloorHeight"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>distance in feet between floors</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="NumberofBedrooms" type="IntegerGreaterThanZero"
 							minOccurs="0"/>
-						<xs:element name="NumberofOccupants" type="NumberofOccupants" minOccurs="0"/>
-						<xs:element name="NumberofBedrooms" type="NumberofBedrooms" minOccurs="0"/>
-						<xs:element name="NumberofBathrooms" type="NumberofBedrooms" minOccurs="0"/>
+						<xs:element name="NumberofBathrooms" type="IntegerGreaterThanZero"
+							minOccurs="0"/>
 						<xs:element minOccurs="0" name="OrientationOfFrontOfHome"
 							type="OrientationType"/>
 						<xs:element minOccurs="0" name="AzimuthOfFrontOfHome" type="AzimuthType"/>
-						<xs:element name="NumberofStoriesAboveGrade"
-							type="NumberofStoriesAboveGrade" minOccurs="0"/>
+						<xs:element name="NumberofStoriesAboveGrade" type="IntegerGreaterThanZero"
+							minOccurs="0"/>
 						<xs:element name="AverageCeilingHeight" type="AverageCeilingHeightType"
 							minOccurs="0"/>
 						<xs:element name="ConditionedFloorArea" type="SurfaceArea" minOccurs="0">
@@ -1665,11 +1720,9 @@
 						<xs:element name="AverageWallRValue" type="RValue" minOccurs="0"/>
 						<xs:element name="AverageFloorRValue" type="RValue" minOccurs="0"/>
 						<xs:element name="AverageDuctRValue" type="RValue" minOccurs="0"/>
-						<xs:element name="ShieldingofHome" type="ShieldingofHome" minOccurs="0"/>
 						<xs:element minOccurs="0" name="GaragePresent" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="GarageLocation" type="GarageLocation"/>
 						<xs:element minOccurs="0" name="SpaceAboveGarage" type="SpaceAboveGarage"/>
-						<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 						<xs:element name="AnnualEnergyUse" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
@@ -1677,6 +1730,7 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+						<xs:group ref="ExtensibilityGroup" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>

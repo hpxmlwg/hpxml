@@ -293,26 +293,34 @@
 			<xs:enumeration value="Combination"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="Hometype">
+	<xs:simpleType name="ResidentialFacilityType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Single-family detached"/>
-			<xs:enumeration value="Single-family attached"/>
-			<xs:enumeration value="Mobile home"/>
-			<xs:enumeration value="2-4 unit bldg"/>
-			<xs:enumeration value="5+ unit bldg"/>
+			<xs:enumeration value="single-family detached"/>
+			<xs:enumeration value="single-family attached"/>
+			<xs:enumeration value="manufactured home"/>
+			<xs:enumeration value="2-4 unit building"/>
+			<xs:enumeration value="5+ unit building"/>
+			<xs:enumeration value="multi-family - uncategorized"/>
+			<xs:enumeration value="multi-family - town homes"/>
+			<xs:enumeration value="multi-family - condos"/>
+			<xs:enumeration value="apartment unit"/>
+			<xs:enumeration value="studio unit"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="NumberofBathrooms">
-		<xs:restriction base="xs:integer"/>
-	</xs:simpleType>
-	<xs:simpleType name="NumberofBedrooms">
-		<xs:restriction base="xs:integer">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="NumberofOccupants">
-		<xs:restriction base="xs:integer">
-			<xs:minInclusive value="0"/>
+	<xs:simpleType name="EducationLevels">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="no high school"/>
+			<xs:enumeration value="some high school"/>
+			<xs:enumeration value="high school graduate"/>
+			<xs:enumeration value="some college"/>
+			<xs:enumeration value="vocational/technical/associates degree"/>
+			<xs:enumeration value="bachelor's degree"/>
+			<xs:enumeration value="some post graduate "/>
+			<xs:enumeration value="master's degree"/>
+			<xs:enumeration value="professional degree"/>
+			<xs:enumeration value="doctoral degree"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="OrientationType">
@@ -327,12 +335,12 @@
 			<xs:enumeration value="northeast"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="NumberofStoriesAboveGrade">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
+	<xs:simpleType name="IntegerGreaterThanZero">
+		<xs:restriction base="xs:integer">
+			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="NumberofUnitsRetrofit">
+	<xs:simpleType name="IntegerGreaterThanOrEqualToZero">
 		<xs:restriction base="xs:integer">
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
@@ -352,6 +360,21 @@
 	</xs:simpleType>
 	<xs:simpleType name="RadiantBarrier">
 		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+	<xs:simpleType name="SiteType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="rural"/>
+			<xs:enumeration value="suburban"/>
+			<xs:enumeration value="urban"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Surroundings">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="stand-alone"/>
+			<xs:enumeration value="attached on one side"/>
+			<xs:enumeration value="attached on two sides"/>
+			<xs:enumeration value="attached on three sides"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ShieldingofHome">
 		<xs:restriction base="xs:string">
@@ -380,7 +403,36 @@
 	<xs:simpleType name="WindowShading">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="YearBuilt">
+	<xs:simpleType name="HouseholdType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="family household"/>
+			<xs:enumeration value="married couple, no children"/>
+			<xs:enumeration value="male household, no spouse"/>
+			<xs:enumeration value="female household, no spouse"/>
+			<xs:enumeration value="nonfamily household"/>
+			<xs:enumeration value="single male"/>
+			<xs:enumeration value="single female"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ResidentPopulationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="no specific resident population"/>
+			<xs:enumeration value="student"/>
+			<xs:enumeration value="military"/>
+			<xs:enumeration value="senior"/>
+			<xs:enumeration value="special accessibility needs"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Occupancy">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="owner-occupied"/>
+			<xs:enumeration value="renter-occupied"/>
+			<xs:enumeration value="owner-and-renter-occupied"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Year">
 		<xs:restriction base="xs:integer"/>
 	</xs:simpleType>
 	<!--Consumption Start-->
