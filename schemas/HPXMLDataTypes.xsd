@@ -323,6 +323,18 @@
 			<xs:enumeration value="doctoral degree"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="FootprintShape">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="rectangular"/>
+			<xs:enumeration value="square"/>
+			<xs:enumeration value="circular"/>
+			<xs:enumeration value="L-shaped"/>
+			<xs:enumeration value="U-shaped"/>
+			<xs:enumeration value="I-shaped"/>
+			<xs:enumeration value="V-shaped"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="OrientationType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="north"/>

@@ -1627,6 +1627,10 @@
 										type="Surroundings"/>
 									<xs:element name="ShieldingofHome" type="ShieldingofHome"
 										minOccurs="0"/>
+									<xs:element minOccurs="0" name="OrientationOfFrontOfHome"
+										type="OrientationType"/>
+									<xs:element minOccurs="0" name="AzimuthOfFrontOfHome"
+										type="AzimuthType"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -1668,61 +1672,89 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="NumberofUnits"
 										type="IntegerGreaterThanZero"/>
+									<xs:element name="AverageCeilingHeight"
+										type="AverageCeilingHeightType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>average distance in feet from the floor to the ceiling</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FloorToFloorHeight"
 										type="LengthMeasurement">
 										<xs:annotation>
 											<xs:documentation>distance in feet between floors</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="NumberofRooms"
+										type="IntegerGreaterThanZero"/>
+									<xs:element name="NumberofBedrooms"
+										type="IntegerGreaterThanZero" minOccurs="0"/>
+									<xs:element name="NumberofBathrooms"
+										type="IntegerGreaterThanZero" minOccurs="0"/>
+									<xs:element minOccurs="0" name="NumberofCompleteBathrooms"
+										type="IntegerGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>Number of bathrooms with a tub/shower combo</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="BuildingFootprintArea"
+										type="SurfaceArea"/>
+									<xs:element minOccurs="0" name="FootprintShape"
+										type="FootprintShape"/>
+									<xs:element minOccurs="0" name="GrossFloorArea"
+										type="SurfaceArea"/>
+									<xs:element minOccurs="0" name="NetFloorArea" type="SurfaceArea"/>
+									<xs:element name="ConditionedFloorArea" type="SurfaceArea"
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Floor area of home that is heated or cooled in sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="FinishedFloorArea"
+										type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>Floor area of home that is finished and assumed to be occupied, in sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="NumberofStoriesAboveGrade"
+										type="IntegerGreaterThanZero" minOccurs="0"/>
+									<xs:element minOccurs="0" name="CooledFloorArea"
+										type="SurfaceArea"/>
+									<xs:element minOccurs="0" name="HeatedFloorArea"
+										type="SurfaceArea"/>
+									<xs:element minOccurs="0" name="UnconditionedFloorArea"
+										type="SurfaceArea"/>
+									<xs:element minOccurs="0" name="BuildingVolume" type="Volume"/>
+									<xs:element name="ConditionedBuildingVolume" type="Volume"
+										minOccurs="0"> </xs:element>
+									<xs:element name="FoundationType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Primary foundation type of building</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:union
+												memberTypes="FoundationType FoundationTypeCombined"
+											/>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element name="AtticType" type="AtticType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Primary attic type of building</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="AverageAtticRValue" type="RValue"
+										minOccurs="0"/>
+									<xs:element name="AverageWallRValue" type="RValue" minOccurs="0"/>
+									<xs:element name="AverageFloorRValue" type="RValue"
+										minOccurs="0"/>
+									<xs:element name="AverageDuctRValue" type="RValue" minOccurs="0"/>
+									<xs:element minOccurs="0" name="GaragePresent" type="xs:boolean"/>
+									<xs:element minOccurs="0" name="GarageLocation"
+										type="GarageLocation"/>
+									<xs:element minOccurs="0" name="SpaceAboveGarage"
+										type="SpaceAboveGarage"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="NumberofBedrooms" type="IntegerGreaterThanZero"
-							minOccurs="0"/>
-						<xs:element name="NumberofBathrooms" type="IntegerGreaterThanZero"
-							minOccurs="0"/>
-						<xs:element minOccurs="0" name="OrientationOfFrontOfHome"
-							type="OrientationType"/>
-						<xs:element minOccurs="0" name="AzimuthOfFrontOfHome" type="AzimuthType"/>
-						<xs:element name="NumberofStoriesAboveGrade" type="IntegerGreaterThanZero"
-							minOccurs="0"/>
-						<xs:element name="AverageCeilingHeight" type="AverageCeilingHeightType"
-							minOccurs="0"/>
-						<xs:element name="ConditionedFloorArea" type="SurfaceArea" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Floor area of home that is heated or cooled in sq.ft.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="ConditionedVolume" type="Volume" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>ft^3</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="FinishedFloorArea" type="SurfaceArea">
-							<xs:annotation>
-								<xs:documentation>Floor area of home that is finished and assumed to be occupied, in sq.ft.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="FoundationType" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Primary foundation type of building</xs:documentation>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:union memberTypes="FoundationType FoundationTypeCombined"/>
-							</xs:simpleType>
-						</xs:element>
-						<xs:element name="AtticType" type="AtticType" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>Primary attic type of building</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="AverageAtticRValue" type="RValue" minOccurs="0"/>
-						<xs:element name="AverageWallRValue" type="RValue" minOccurs="0"/>
-						<xs:element name="AverageFloorRValue" type="RValue" minOccurs="0"/>
-						<xs:element name="AverageDuctRValue" type="RValue" minOccurs="0"/>
-						<xs:element minOccurs="0" name="GaragePresent" type="xs:boolean"/>
-						<xs:element minOccurs="0" name="GarageLocation" type="GarageLocation"/>
-						<xs:element minOccurs="0" name="SpaceAboveGarage" type="SpaceAboveGarage"/>
 						<xs:element name="AnnualEnergyUse" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
