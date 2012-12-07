@@ -696,6 +696,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:enumeration value="advanced power strip for AV"/>
 			<xs:enumeration value="advanced power strip for IT"/>
 			<xs:enumeration value="whole-house energy management system"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="OtherShadingandSolarMeasuresInstalled">
@@ -1309,7 +1310,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<!--Business Contact Information Below-->
 	<xs:simpleType name="AzimuthType">
 		<xs:annotation>
-			<xs:documentation>Gives compass direction a surface (window, wall) is facing</xs:documentation>
+			<xs:documentation>Gives compass direction a surface (window, wall) is facing. Measured in degrees clockwise from North.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:integer">
 			<xs:minInclusive value="0"/>
