@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1"
-	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified"
-	attributeFormDefault="qualified">
+	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
 	<xs:element name="MaintainBuildingRequest">
