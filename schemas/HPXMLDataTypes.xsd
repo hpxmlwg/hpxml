@@ -557,6 +557,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:enumeration value="solid concrete"/>
 			<xs:enumeration value="double brick"/>
 			<xs:enumeration value="ICF"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FoundationWallType">
