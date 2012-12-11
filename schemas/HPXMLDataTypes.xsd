@@ -1735,13 +1735,43 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:enumeration value="reflective"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="RoofType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="standard"/>
+			<xs:enumeration value="built-up"/>
+			<xs:enumeration value="shingles"/>
+			<xs:enumeration value="slate or tile shingles"/>
+			<xs:enumeration value="wood shingles/shakes/other wood"/>
+			<xs:enumeration value="asphalt/fiberglass/other shingles"/>
+			<xs:enumeration value="metal surfacing"/>
+			<xs:enumeration value="expanded polystyrene sheathing"/>
+			<xs:enumeration value="plastic/rubber/synthetic sheeting"/>
+			<xs:enumeration value="concrete"/>
+			<xs:enumeration value="cool roof"/>
+			<xs:enumeration value="green roof"/>
+			<xs:enumeration value="no one major type"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RoofSlope">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="flat"/>
+			<xs:enumeration value="pitched"/>
+			<xs:enumeration value="&gt; 2:12"/>
+			<xs:enumeration value="&lt; 2:12"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Siding">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="vinyl siding"/>
 			<xs:enumeration value="wood siding"/>
 			<xs:enumeration value="stucco"/>
+			<xs:enumeration value="vinyl siding"/>
 			<xs:enumeration value="aluminum siding"/>
 			<xs:enumeration value="brick veneer"/>
+			<xs:enumeration value="asbestos siding"/>
+			<xs:enumeration value="fiber cement siding"/>
+			<xs:enumeration value="composite shingle siding"/>
+			<xs:enumeration value="masonite siding"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>

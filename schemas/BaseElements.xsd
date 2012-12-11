@@ -395,19 +395,30 @@
 			<xs:element name="AtticAndRoof" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" minOccurs="0"
-							name="ShadingAndSolarReflectanceInfo">
+						<xs:element minOccurs="0" name="Roofs">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element minOccurs="0" name="RoofColor"
-										type="WallAndRoofColor"/>
-									<xs:element name="RadiantBarrier" type="RadiantBarrier"
-										minOccurs="0"/>
-									<xs:element name="RadiantBarrierLocation"
-										type="RadiantBarrierLocation" minOccurs="0"/>
-									<xs:element ref="extension" minOccurs="0"/>
+									<xs:element maxOccurs="unbounded" name="Roof">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:group ref="SystemInfo"/>
+												<xs:element minOccurs="0" ref="AttachedToSpace"/>
+												<xs:element minOccurs="0" name="RoofColor"
+												type="WallAndRoofColor"/>
+												<xs:element minOccurs="0" name="RoofType"
+												type="RoofType"/>
+												<xs:element minOccurs="0" name="RoofSlope"
+												type="RoofSlope"/>
+												<xs:element minOccurs="0" name="RoofArea"
+												type="SurfaceArea"/>
+												<xs:element name="RadiantBarrier"
+												type="RadiantBarrier" minOccurs="0"/>
+												<xs:element name="RadiantBarrierLocation"
+												type="RadiantBarrierLocation" minOccurs="0"/>
+												<xs:element ref="extension" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
