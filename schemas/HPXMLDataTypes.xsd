@@ -269,22 +269,22 @@
 	</xs:simpleType>
 	<xs:simpleType name="FoundationType">
 		<xs:annotation>
-			<xs:documentation>choose from list of available foundation types</xs:documentation>
+			<xs:documentation>above apartment is for single unit retorfits in multifamily properties</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Conditioned basement"/>
-			<xs:enumeration value="Unconditioned basement"/>
-			<xs:enumeration value="Vented crawlspace"/>
-			<xs:enumeration value="Unvented crawlspace"/>
-			<xs:enumeration value="Slab on grade"/>
-			<xs:enumeration value="Conditioned garage"/>
-			<xs:enumeration value="Unconditioned garage"/>
-			<xs:enumeration value="Combination"/>
-			<xs:enumeration value="Conditioned apartment"/>
-			<xs:enumeration value="Other"/>
-			<xs:enumeration value="Finished basement"/>
-			<xs:enumeration value="Conditioned crawlspace"/>
-			<xs:enumeration value="Crawlspace"/>
+			<xs:enumeration value="conditioned basement"/>
+			<xs:enumeration value="unconditioned basement"/>
+			<xs:enumeration value="finished basement"/>
+			<xs:enumeration value="crawlspace"/>
+			<xs:enumeration value="vented crawlspace"/>
+			<xs:enumeration value="unvented crawlspace"/>
+			<xs:enumeration value="conditioned crawlspace"/>
+			<xs:enumeration value="slab on grade"/>
+			<xs:enumeration value="conditioned garage"/>
+			<xs:enumeration value="unconditioned garage"/>
+			<xs:enumeration value="combination"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="above apartment"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FoundationTypeCombined">
@@ -441,6 +441,15 @@
 			<xs:enumeration value="owner-occupied"/>
 			<xs:enumeration value="renter-occupied"/>
 			<xs:enumeration value="owner-and-renter-occupied"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OccupantIncomeRangeUnits">
+		<xs:annotation>
+			<xs:documentation>AMI = Area Median Income; FPL = Federal Poverty Level</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="% AMI"/>
+			<xs:enumeration value="% FPL"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Year">
@@ -1668,9 +1677,20 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="Fraction">
+		<xs:annotation>
+			<xs:documentation>A fraction that has to be between 0 and 1 inclusive</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
 			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FractionGreaterThanOne">
+		<xs:annotation>
+			<xs:documentation>A fraction that can be greater than one (ie 110%)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AtticType">

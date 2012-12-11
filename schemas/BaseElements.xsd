@@ -172,7 +172,6 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
-				<xs:element name="Component" type="InsulatedComponentType"/>
 				<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer">
 					<xs:complexType>
@@ -1550,6 +1549,18 @@
 									<xs:element minOccurs="0" name="PubliclySubsidized"
 										type="xs:boolean"/>
 									<xs:element minOccurs="0" name="LowIncome" type="xs:boolean"/>
+									<xs:element minOccurs="0" name="OccupantIncomeRange"
+										type="FractionGreaterThanOne">
+										<xs:annotation>
+											<xs:documentation>Percentage as a fraction (50% = 0.5)</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="OccupantIncomeRangeUnits"
+										type="OccupantIncomeRangeUnits">
+										<xs:annotation>
+											<xs:documentation>AMI = Area Median Income; FPL = Federal Poverty Level</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="HighestLevelofOccupantEducation"
 										type="EducationLevels"/>
 									<xs:element minOccurs="0" ref="extension"/>
