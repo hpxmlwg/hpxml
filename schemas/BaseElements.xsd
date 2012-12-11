@@ -604,16 +604,16 @@
 			<xs:element minOccurs="0" name="RimJoists">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="RimJoistInfo">
+						<xs:element maxOccurs="unbounded" name="RimJoist">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element minOccurs="0" name="AdjacentTo" type="AdjacentTo"/>
+									<xs:element ref="InsulationInfo" minOccurs="0"/>
 									<xs:element minOccurs="0" name="FloorJoists"
 										type="StudDimensions"/>
-									<xs:element ref="InsulationInfo" minOccurs="0"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
