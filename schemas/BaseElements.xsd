@@ -1548,15 +1548,28 @@
 								<xs:sequence>
 									<xs:element minOccurs="0" name="HouseholdType"
 										type="HouseholdType"/>
+									<xs:element minOccurs="0" name="YearOccupied" type="Year">
+										<xs:annotation>
+											<xs:documentation>The year the current occupants moved into the building</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="ResidentPopulationType"
 										type="ResidentPopulationType"/>
 									<xs:element minOccurs="0" name="Occupancy" type="Occupancy"/>
 									<xs:element name="NumberofResidents"
 										type="IntegerGreaterThanZero" minOccurs="0"/>
 									<xs:element minOccurs="0" name="NumberofAdults"
-										type="IntegerGreaterThanOrEqualToZero"/>
+										type="IntegerGreaterThanOrEqualToZero">
+										<xs:annotation>
+											<xs:documentation>18 or older</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="NumberofChildren"
-										type="IntegerGreaterThanOrEqualToZero"/>
+										type="IntegerGreaterThanOrEqualToZero">
+										<xs:annotation>
+											<xs:documentation>less than 18 years old</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="PubliclySubsidized"
 										type="xs:boolean"/>
 									<xs:element minOccurs="0" name="LowIncome" type="xs:boolean"/>
@@ -1582,7 +1595,6 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="YearBuilt" type="Year" minOccurs="0"/>
-									<xs:element minOccurs="0" name="YearOccupied" type="Year"/>
 									<xs:element minOccurs="0" name="YearofLastRemodel" type="Year"/>
 									<xs:element name="ResidentialFacilityType"
 										type="ResidentialFacilityType" minOccurs="0"/>
@@ -1634,7 +1646,7 @@
 									<xs:element minOccurs="0" name="NumberofCompleteBathrooms"
 										type="IntegerGreaterThanZero">
 										<xs:annotation>
-											<xs:documentation>Number of bathrooms with a tub/shower combo</xs:documentation>
+											<xs:documentation>Number of bathrooms with a tub or shower</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="BuildingFootprintArea"

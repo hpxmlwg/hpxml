@@ -1737,12 +1737,10 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:simpleType>
 	<xs:simpleType name="RoofType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="standard"/>
-			<xs:enumeration value="built-up"/>
 			<xs:enumeration value="shingles"/>
 			<xs:enumeration value="slate or tile shingles"/>
-			<xs:enumeration value="wood shingles/shakes/other wood"/>
-			<xs:enumeration value="asphalt/fiberglass/other shingles"/>
+			<xs:enumeration value="wood shingles or shakes"/>
+			<xs:enumeration value="asphalt or fiberglass shingles"/>
 			<xs:enumeration value="metal surfacing"/>
 			<xs:enumeration value="expanded polystyrene sheathing"/>
 			<xs:enumeration value="plastic/rubber/synthetic sheeting"/>
