@@ -1689,15 +1689,11 @@
 									<xs:element minOccurs="0" name="BuildingVolume" type="Volume"/>
 									<xs:element name="ConditionedBuildingVolume" type="Volume"
 										minOccurs="0"> </xs:element>
-									<xs:element name="FoundationType" minOccurs="0">
+									<xs:element name="FoundationType" minOccurs="0"
+										type="FoundationType">
 										<xs:annotation>
 											<xs:documentation>Primary foundation type of building</xs:documentation>
 										</xs:annotation>
-										<xs:simpleType>
-											<xs:union
-												memberTypes="FoundationType FoundationTypeCombined"
-											/>
-										</xs:simpleType>
 									</xs:element>
 									<xs:element name="AtticType" type="AtticType" minOccurs="0">
 										<xs:annotation>
@@ -2230,5 +2226,66 @@
 				type="InteriorLocationsofWaterLeaksorDamage" minOccurs="0"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FoundationType">
+		<xs:choice>
+			<xs:element name="Basement">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Finished" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="Conditioned" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Crawlspace">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Vented" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="Conditioned" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SlabOnGrade">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Garage">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Conditioned" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="AboveApartment">
+				<xs:annotation>
+					<xs:documentation>for single unit retrofits in multifamily properties</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Combination">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Other">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
 	</xs:complexType>
 </xs:schema>

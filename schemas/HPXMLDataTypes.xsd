@@ -267,31 +267,6 @@
 	<xs:simpleType name="FoundationInsulation">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="FoundationType">
-		<xs:annotation>
-			<xs:documentation>above apartment is for single unit retorfits in multifamily properties</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="conditioned basement"/>
-			<xs:enumeration value="unconditioned basement"/>
-			<xs:enumeration value="finished basement"/>
-			<xs:enumeration value="crawlspace"/>
-			<xs:enumeration value="vented crawlspace"/>
-			<xs:enumeration value="unvented crawlspace"/>
-			<xs:enumeration value="conditioned crawlspace"/>
-			<xs:enumeration value="slab on grade"/>
-			<xs:enumeration value="conditioned garage"/>
-			<xs:enumeration value="unconditioned garage"/>
-			<xs:enumeration value="combination"/>
-			<xs:enumeration value="other"/>
-			<xs:enumeration value="above apartment"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="FoundationTypeCombined">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Combination"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="ResidentialFacilityType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="single-family detached"/>
@@ -1762,7 +1737,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="flat"/>
 			<xs:enumeration value="pitched"/>
-			<xs:enumeration value="&gt; 2:12"/>
+			<xs:enumeration value="> 2:12"/>
 			<xs:enumeration value="&lt; 2:12"/>
 		</xs:restriction>
 	</xs:simpleType>
