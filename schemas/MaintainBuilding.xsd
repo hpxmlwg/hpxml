@@ -27,14 +27,6 @@
 						<xs:documentation>Building Description</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element minOccurs="0" name="Consumption">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element maxOccurs="unbounded" name="ConsumptionInfo"
-								type="ConsumptionInfoType"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
 				<xs:element minOccurs="0" name="ModeledUsages">
 					<xs:complexType>
 						<xs:sequence>
