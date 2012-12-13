@@ -519,8 +519,15 @@
 	<xs:simpleType name="SystemIdentifierValue">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="Event">
-		<xs:restriction base="xs:string"/>
+	<xs:simpleType name="EventType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="audit"/>
+			<xs:enumeration value="proposed workscope"/>
+			<xs:enumeration value="approved workscope"/>
+			<xs:enumeration value="construction-period testing"/>
+			<xs:enumeration value="job completion"/>
+			<xs:enumeration value="quality assurance"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ConstructionDivison">
 		<xs:restriction base="xs:integer"/>

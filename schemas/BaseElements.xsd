@@ -72,6 +72,15 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="extension" type="extensionType"> </xs:element>
+	<xs:element name="Event">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="EventType" type="EventType"/>
+				<xs:element minOccurs="0" name="Date" type="xs:date"/>
+				<xs:element minOccurs="0" ref="extension"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
 	<xs:element name="TotalCost">
 		<xs:annotation>
 			<xs:documentation> No Reference Found </xs:documentation>
@@ -172,6 +181,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
+				<xs:element minOccurs="0" name="InsulationLocation" type="InsulatedComponentType"/>
 				<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer">
 					<xs:complexType>

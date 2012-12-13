@@ -21,7 +21,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
-				<xs:element name="Event" type="Event"/>
+				<xs:element ref="Event"/>
 				<xs:element name="BuildingDetails" type="BuildingDetailsType">
 					<xs:annotation>
 						<xs:documentation>Building Description</xs:documentation>
