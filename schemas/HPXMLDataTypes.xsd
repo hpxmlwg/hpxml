@@ -534,23 +534,6 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Doors Below-->
-	<xs:simpleType name="WallType">
-		<xs:annotation>
-			<xs:documentation>Wall type enumerations are further explained at
-https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="wood stud"/>
-			<xs:enumeration value="double stud"/>
-			<xs:enumeration value="CMU"/>
-			<xs:enumeration value="SIP"/>
-			<xs:enumeration value="steel frame"/>
-			<xs:enumeration value="solid concrete"/>
-			<xs:enumeration value="double brick"/>
-			<xs:enumeration value="ICF"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="FoundationWallType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="solid concrete"/>
