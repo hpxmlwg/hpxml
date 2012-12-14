@@ -174,32 +174,25 @@
 			<xs:element name="ClimateZone" type="ClimateZoneIECC"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="InsulationInfo">
-		<xs:annotation>
-			<xs:documentation/>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:group ref="SystemInfo"/>
-				<xs:element minOccurs="0" name="InsulationLocation" type="InsulatedComponentType"/>
-				<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer">
-					<xs:complexType>
-						<xs:sequence maxOccurs="1">
-							<xs:element name="InstallationType" type="InstallationType"
-								minOccurs="0"/>
-							<xs:element name="InsulationMaterial" type="InsulationMaterial"
-								minOccurs="0"/>
-							<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
-							<xs:element name="Thickness" type="Thickness" minOccurs="0"/>
-							<xs:element ref="extension" minOccurs="0"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element ref="extension" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
+	<xs:complexType name="InsulationInfo">
+		<xs:sequence>
+			<xs:group ref="SystemInfo"/>
+			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer">
+				<xs:complexType>
+					<xs:sequence maxOccurs="1">
+						<xs:element name="InstallationType" type="InstallationType" minOccurs="0"/>
+						<xs:element name="InsulationMaterial" type="InsulationMaterial"
+							minOccurs="0"/>
+						<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
+						<xs:element name="Thickness" type="Thickness" minOccurs="0"/>
+						<xs:element ref="extension" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:element name="CoolingSystemInfo" type="CoolingSystemInfoType"/>
 	<xs:element name="HeatPumpInfo" type="HeatPumpInfoType"/>
 	<xs:element name="HeatingSystemInfo" type="HeatingSystemInfoType"/>
@@ -461,8 +454,13 @@
 												</xs:choice>
 												<xs:element name="AtticType" type="AtticType"
 												minOccurs="0"/>
-												<xs:element ref="InsulationInfo" minOccurs="0"
-												maxOccurs="1"/>
+												<xs:element minOccurs="0"
+												name="AtticFloorInsulation" type="InsulationInfo"/>
+												<xs:element minOccurs="0"
+												name="AtticKneeWallInsulation"
+												type="InsulationInfo"/>
+												<xs:element minOccurs="0" name="AtticRoofInsulation"
+												type="InsulationInfo"/>
 												<xs:element name="Area" type="xs:double"
 												minOccurs="0"/>
 												<xs:element minOccurs="0" name="Rafters"
@@ -509,8 +507,9 @@
 												type="FloorCovering"/>
 												<xs:element minOccurs="0" name="Area"
 												type="SurfaceArea"/>
-												<xs:element ref="InsulationInfo" minOccurs="0"
-												maxOccurs="1"> </xs:element>
+												<xs:element minOccurs="0" maxOccurs="1"
+												name="Insulation" type="InsulationInfo"> </xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
@@ -551,7 +550,8 @@
 												<xs:element minOccurs="0" name="InteriorStuds"
 												type="StudDimensions"/>
 												<xs:element maxOccurs="1" minOccurs="0"
-												ref="InsulationInfo"/>
+												name="Insulation" type="InsulationInfo"/>
+												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
@@ -602,7 +602,10 @@
 												<xs:element minOccurs="0" name="FloorCovering"
 												type="FloorCovering"/>
 												<xs:element maxOccurs="1" minOccurs="0"
-												ref="InsulationInfo"/>
+												name="PerimeterInsulation" type="InsulationInfo"/>
+												<xs:element minOccurs="0" name="UnderSlabInsulation"
+												type="InsulationInfo"/>
+												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
@@ -631,7 +634,8 @@
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element minOccurs="0" name="AdjacentTo" type="AdjacentTo"/>
-									<xs:element ref="InsulationInfo" minOccurs="0"/>
+									<xs:element minOccurs="0" name="Insulation"
+										type="InsulationInfo"/>
 									<xs:element minOccurs="0" name="FloorJoists"
 										type="StudDimensions"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
@@ -674,7 +678,8 @@
 									<xs:element minOccurs="0" name="Studs" type="StudDimensions"/>
 									<xs:element minOccurs="0" name="Siding" type="Siding"/>
 									<xs:element minOccurs="0" name="Color" type="WallAndRoofColor"/>
-									<xs:element ref="InsulationInfo" minOccurs="0" maxOccurs="1"/>
+									<xs:element minOccurs="0" maxOccurs="1" name="Insulation"
+										type="InsulationInfo"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
