@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Andrew Steven Pollock (Conservation Services Group) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1"
-	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1" targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<!-- Value Lists -->
 	<!--Address Information Below-->
 	<xs:simpleType name="AddressTypeCode">
@@ -1773,5 +1772,48 @@
 	</xs:simpleType>
 	<xs:simpleType name="ConstructionDivision">
 		<xs:restriction base="xs:int"/>
+	</xs:simpleType>
+	<xs:simpleType name="WholeBldgVentilationRequirementMethod">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ASHRAE 62.2-1989"/>
+			<xs:enumeration value="ASHRAE 62.2-2007"/>
+			<xs:enumeration value="ASHRAE 62.2-2010"/>
+			<xs:enumeration value="ASHRAE 62.2-2013"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InfiltCreditApplied">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="true"/>
+			<xs:enumeration value="false"/>
+			<xs:enumeration value="na"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VentilationRateUnits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACH"/>
+			<xs:enumeration value="CFMnat"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Recommendation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="require"/>
+			<xs:enumeration value="recommend"/>
+			<xs:enumeration value="no recommendation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpotVentilationLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kitchen"/>
+			<xs:enumeration value="bath"/>
+			<xs:enumeration value="garage"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpotVentilationUnits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CFM"/>
+			<xs:enumeration value="ACH"/>
+			<xs:enumeration value="L/s"/>
+		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

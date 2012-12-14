@@ -872,6 +872,96 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="MechanicalVentilation">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="WholeBuildingVentilationDesign">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Method"
+										type="WholeBldgVentilationRequirementMethod"/>
+									<xs:element minOccurs="0" name="InfiltrationCreditApplied"
+										type="InfiltCreditApplied">
+										<xs:annotation>
+											<xs:documentation>ASHRAE 62.2-1989 doesn't have an infiltration credit per se, it just states that you don't need any ventilation if you are above the BAS. Hence the 'not applicable' enumerator</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="LocalWeatherFactor"
+										type="xs:double"/>
+									<xs:element minOccurs="0" name="NFactor" type="xs:double"/>
+									<xs:element minOccurs="0" name="InfiltrationCreditCFMnat"
+										type="xs:integer">
+										<xs:annotation>
+											<xs:documentation>This is just the # of the calculated infiltration credit.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:sequence minOccurs="0">
+										<xs:element name="RequiredVentilationRate" type="xs:double">
+											<xs:annotation>
+												<xs:documentation>This is the net amount of continuous ventilation needed AFTER infiltration credit is applied (if any)</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="RequiredVentilationRateUnits"
+											type="VentilationRateUnits"/>
+									</xs:sequence>
+									<xs:element minOccurs="0"
+										name="VentilationImprovementRecommendation"
+										type="Recommendation"/>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="SpotVentilationDesign">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Location"
+										type="SpotVentilationLocation"/>
+									<xs:element minOccurs="0" name="IntermittentExhaustRate"
+										type="xs:double">
+										<xs:annotation>
+											<xs:documentation>This is amount without taking into consideration any infiltration credit</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="ContinuousExhaustRate"
+										type="xs:double">
+										<xs:annotation>
+											<xs:documentation>This is amount without taking into consideration any infiltration credit</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="WindowOpeningCredit"
+										type="xs:double">
+										<xs:annotation>
+											<xs:documentation>Should be 20 cfm, if the local AHJ permits windows to be used for local exhaust</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RequiredIntermittentExhaustRate"
+										type="xs:double">
+										<xs:annotation>
+											<xs:documentation>This is the net amount of continuous ventilation needed AFTER window credit is applied (if any)</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RequiredContinuousExhaustRate"
+										type="xs:double">
+										<xs:annotation>
+											<xs:documentation>This is the net amount of continuous ventilation needed AFTER window credit is applied (if any)</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="InitialAirflorDeficit"
+										type="xs:double">
+										<xs:annotation>
+											<xs:documentation>The airflow deficit for each bathroom or kitchen is the required airflow less the airflow rating of the exhaust equipment. If there is no exhaust device or if the existing device cannot be measured nor read it, the exhaust device airflow is assumed to be zero.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AirflowRateUnits"
+										type="SpotVentilationUnits"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="WaterHeating" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
