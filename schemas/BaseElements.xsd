@@ -956,6 +956,24 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="AirflowRateUnits"
 										type="SpotVentilationUnits"/>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="VentilationFans">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element maxOccurs="unbounded" name="VentilationFan">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:group ref="SystemInfo"/>
+												<xs:element minOccurs="0" name="Manufacturer"
+												type="xs:string"/>
+												<xs:element minOccurs="0" name="SerialNumber"
+												type="xs:string"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
