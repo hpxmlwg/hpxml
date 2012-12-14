@@ -1716,14 +1716,6 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="RoofSlope">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="flat"/>
-			<xs:enumeration value="pitched"/>
-			<xs:enumeration value="> 2:12"/>
-			<xs:enumeration value="&lt; 2:12"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="Siding">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="wood siding"/>
