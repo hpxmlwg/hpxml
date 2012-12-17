@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Andrew Steven Pollock (Conservation Services Group) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1" targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1"
+	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<!-- Value Lists -->
 	<!--Address Information Below-->
 	<xs:simpleType name="AddressTypeCode">
@@ -1781,7 +1782,7 @@
 			<xs:enumeration value="ASHRAE 62.2-2013"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="InfiltCreditApplied">
+	<xs:simpleType name="BooleanWithNA">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="true"/>
 			<xs:enumeration value="false"/>
@@ -1814,6 +1815,29 @@
 			<xs:enumeration value="CFM"/>
 			<xs:enumeration value="ACH"/>
 			<xs:enumeration value="L/s"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VentilationFanType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="exhaust only"/>
+			<xs:enumeration value="supply only"/>
+			<xs:enumeration value="heat recovery ventilator"/>
+			<xs:enumeration value="energy recovery ventilator"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HoursPerDay">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="24"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VentilationFanLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bath"/>
+			<xs:enumeration value="kitchen"/>
+			<xs:enumeration value="hallway"/>
+			<xs:enumeration value="garage"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
