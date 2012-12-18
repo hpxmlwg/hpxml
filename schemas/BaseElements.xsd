@@ -962,6 +962,8 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToZone"/>
+									<xs:element minOccurs="0" name="AtachedToCAZ"
+										type="SystemIdentifiersInfoType"/>
 									<xs:element name="Fuel" type="FuelType" minOccurs="0"/>
 									<xs:element name="Type" type="WaterHeaterType" minOccurs="0"/>
 									<xs:element minOccurs="0" name="FractionDHWLoadServed"
@@ -1243,81 +1245,138 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="CombustionApplianceZoneTestInfo">
+			<xs:element minOccurs="0" name="CombustionAppliances">
 				<xs:complexType>
-					<xs:sequence minOccurs="0">
-						<xs:group ref="SystemInfo"/>
-						<xs:element name="CAZVentConfiguration" type="CAZVentConfiguration"
-							minOccurs="0"/>
-						<xs:element name="CAZDepressurizationLimit" type="CAZDepressurizationLimit"
-							minOccurs="0"/>
-						<xs:element name="WorstCaseConditions" type="WorstCaseConditions"
-							minOccurs="0"/>
-						<xs:element name="BaselinePressure" type="BaselinePressure" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>With respect to outdoors</xs:documentation>
-							</xs:annotation>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="CombustionApplianceZone"
+							maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element name="CAZDepressurizationLimit"
+										type="CAZDepressurizationLimit" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Pulled from industry standards by users (e.g. BPI Gold Sheet) or via software program</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="WorstCaseConditions"
+										type="WorstCaseConditions" minOccurs="0"/>
+									<xs:element name="BaselinePressure" type="BaselinePressure"
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>With respect to outdoors</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="WorstCasePressure" type="WorstCasePressure"
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>With respect to outdoors</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="NetPressureChange" type="NetPressureChange"
+										minOccurs="0"/>
+									<xs:element name="DepressurizationFindingWorstCase"
+										type="DepressurizationFindingWorstCase" minOccurs="0"/>
+									<xs:element name="AmountAmbientCOinCAZduringTesting"
+										type="AmountAmbientCOinCAZduringTesting" minOccurs="0"/>
+									<xs:element name="AmbientCOinCAZExceeded35ppmduringTesting"
+										type="AmbientCOinCAZExceeded35ppmduringTesting"
+										minOccurs="0"/>
+									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
 						</xs:element>
-						<xs:element name="WorstCasePressure" type="WorstCasePressure" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>With respect to outdoors</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element name="NetPressureChange" type="NetPressureChange" minOccurs="0"/>
-						<xs:element name="DepressurizationFindingWorstCase"
-							type="DepressurizationFindingWorstCase" minOccurs="0"/>
-						<xs:element name="AmountAmbientCOinCAZduringTesting"
-							type="AmountAmbientCOinCAZduringTesting" minOccurs="0"/>
-						<xs:element name="AmbientCOinCAZExceeded35ppmduringTesting"
-							type="AmbientCOinCAZExceeded35ppmduringTesting" minOccurs="0"/>
-						<xs:element minOccurs="0" name="CombustionApplicanceTestInfo">
+						<xs:element minOccurs="0" name="CombustionApplicanceTest"
+							maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:sequence minOccurs="0">
-									<xs:element name="CAZApplianceType" type="CAZApplianceType"/>
 									<xs:element name="CAZApplianceID"
-										type="SystemIdentifiersInfoType"/>
-									<xs:element name="FlueInspected" type="FlueInspected"
+										type="SystemIdentifiersInfoType">
+										<xs:annotation>
+											<xs:documentation>The ID of the system tested</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="FlueVisualCondition" type="FlueCondition"
 										minOccurs="0"/>
-									<xs:element name="FlueCondition" type="FlueCondition"
-										minOccurs="0"/>
+									<xs:element minOccurs="0" name="FlueConditionNotes"
+										type="xs:string"/>
 									<xs:element name="OutsideTemperatureFlueDraftTest"
-										type="OutsideTemperatureFlueDraftTest" minOccurs="0"/>
-									<xs:element name="StackTemperature" type="StackTemperature"
-										minOccurs="0"/>
+										type="Temperature" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>degrees Farenheit</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="FlueDraftTest">
+										<xs:annotation>
+											<xs:documentation>Test is Pascals (Pa)</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="CAZApplianceReading">
+												<xs:sequence>
+												<xs:element ref="extension" minOccurs="0"/>
+												</xs:sequence>
+												</xs:extension>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="SpillageTest">
+										<xs:annotation>
+											<xs:documentation>Test in seconds</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="CAZApplianceReading">
+												<xs:sequence>
+												<xs:element ref="extension" minOccurs="0"/>
+												</xs:sequence>
+												</xs:extension>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="CarbonMonoxideTest">
+										<xs:annotation>
+											<xs:documentation>Test in parts per million (ppm)</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="CAZApplianceReading">
+												<xs:sequence>
+												<xs:element
+												name="MaxAmbientCOinLivingSpaceDuringAudit"
+												minOccurs="0" type="xs:double">
+												<xs:annotation>
+												<xs:documentation>Monitored throughout assessment, not just appliance testing</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="AmbientCOActionDuringCAZTesting"
+												type="xs:string">
+												<xs:annotation>
+												<xs:documentation>BPI Gold Sheet is one example that shows action levels based upon decision logic</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:extension>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="StackTemperature" type="Temperature"
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>degrees Farenheit</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="FuelLeaks" minOccurs="0" maxOccurs="unbounded">
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element name="FuelType" type="FuelType"/>
 												<xs:element name="LeaksIdentified" type="xs:boolean"/>
-												<xs:element name="LeaksAddressed" type="xs:boolean"
-												/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
-									<xs:element name="WorstCase-AirHandler"
-										type="WorstCase-AirHandler" minOccurs="0"/>
-									<xs:element name="WorstCase-BathExhaustFan"
-										type="WorstCase-BathExhaustFan" minOccurs="0"/>
-									<xs:element name="WorstCase-KitchenExhaustFan"
-										type="WorstCase-KitchenExhaustFan" minOccurs="0"/>
-									<xs:element name="WorstCase-ClothesDryer"
-										type="WorstCase-ClothesDryer" minOccurs="0"/>
-									<xs:element name="WorstCase-CentralVacuum"
-										type="WorstCase-CentralVacuum" minOccurs="0"/>
-									<xs:element name="WorstCase-BasementDoor"
-										type="WorstCase-BasementDoor" minOccurs="0"/>
-									<xs:element name="WorstCase-OtherDoors"
-										type="WorstCase-OtherDoors" minOccurs="0"/>
-									<xs:element name="WorstCase-OtherDescription"
-										type="WorstCase-OtherDescription" minOccurs="0"/>
-									<xs:element name="CAZApplicanceTestResult" minOccurs="0"
-										maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element name="NormalWorstCaseIndicator"
-												type="NormalWorstCaseIndicator"/>
-												<xs:element name="CAZApplianceMeasurement"
-												type="CAZApplianceMeasurement"/>
+												<xs:element name="LeaksAddressed" type="xs:boolean"/>
+												<xs:element minOccurs="0" name="Notes"
+												type="xs:string"/>
+												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
@@ -1325,24 +1384,30 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="StoveTest">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Fuel" type="FuelType" minOccurs="0"/>
+						<xs:element name="StoveID" type="SystemIdentifiersInfoType"/>
+						<xs:element minOccurs="0" name="StoveFuel" type="FuelType"/>
+						<xs:element name="HeatingStoveProperlyVented"
+							type="HeatingStoveProperlyVented" minOccurs="0"/>
 						<xs:element name="COReading" type="COReading" minOccurs="0"/>
 						<xs:element name="GasLeaksIdentified" type="GasLeaksIdentified"
 							minOccurs="0"/>
-						<xs:element name="HeatingStoveProperlyVented"
-							type="HeatingStoveProperlyVented" minOccurs="0"/>
 						<xs:element name="ActionsTaken" type="xs:string" minOccurs="0"/>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="LeadPaint"/>
+			<xs:element minOccurs="0" name="Radon"/>
+			<xs:element minOccurs="0" name="SourcePollutants"/>
+			<xs:element minOccurs="0" name="Pests"/>
+			<xs:element minOccurs="0" name="Asbestos"/>
+			<xs:element minOccurs="0" name="SprayFoam"/>
 			<xs:element minOccurs="0" name="OtherHealthandSafetyInfo">
 				<xs:complexType>
 					<xs:sequence>
@@ -1363,6 +1428,13 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CAZApplianceReading">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="PoorScenario" type="xs:double"/>
+			<xs:element minOccurs="0" name="CurrentCondition" type="xs:double"/>
+			<xs:element minOccurs="0" name="PassedTest" type="xs:boolean"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="YesNoRecommendInstall">
@@ -1539,6 +1611,7 @@
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" ref="AttachedToZone"/>
+			<xs:element minOccurs="0" name="AttachedToCAZ" type="SystemIdentifiersInfoType"/>
 			<xs:element name="UnitLocation" type="UnitLocation" minOccurs="0"/>
 			<xs:element name="ModelYear" type="ModelYear" minOccurs="0"/>
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
@@ -1759,7 +1832,7 @@
 	</xs:complexType>
 	<xs:complexType name="BuildingDetailsType">
 		<xs:sequence>
-			<xs:element name="BuildingSummaryInfo">
+			<xs:element name="BuildingSummaryInfo" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Overall characterization of building for descriptive, rather than modeling purposes</xs:documentation>
 				</xs:annotation>
@@ -1954,7 +2027,7 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="ClimateandRiskZonesInfo">
+			<xs:element name="ClimateandRiskZonesInfo" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence minOccurs="0">
 						<xs:element name="ClimateZoneDOE" type="ClimateZoneDOE" minOccurs="0"/>
@@ -1969,11 +2042,12 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="Zones" type="Zones"/>
-			<xs:element name="Enclosure" type="Enclosure"/>
-			<xs:element name="Systems" type="Systems"/>
-			<xs:element name="Appliances" type="Appliances"/>
-			<xs:element name="Lighting" type="Lighting"/>
-			<xs:element name="MiscLoads" type="MiscLoads"/>
+			<xs:element name="Enclosure" type="Enclosure" minOccurs="0"/>
+			<xs:element name="Systems" type="Systems" minOccurs="0"/>
+			<xs:element minOccurs="0" name="HealthAndSafety" type="HealthAndSafety"/>
+			<xs:element name="Appliances" type="Appliances" minOccurs="0"/>
+			<xs:element name="Lighting" type="Lighting" minOccurs="0"/>
+			<xs:element name="MiscLoads" type="MiscLoads" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="JobDetailsType">
