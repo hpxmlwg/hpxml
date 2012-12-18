@@ -821,26 +821,26 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<!--Combustion Appliance Zone Test Below-->
-	<xs:simpleType name="AmbientCOinCAZExceeded35ppmduringTesting" final="">
-		<xs:restriction base="xs:boolean"/>
-	</xs:simpleType>
-	<xs:simpleType name="AmountAmbientCOinCAZduringTesting">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
 	<xs:simpleType name="BaselinePressure">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
 	<xs:simpleType name="CAZDepressurizationLimit">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
-	<xs:simpleType name="DepressurizationFindingWorstCase">
-		<xs:restriction base="xs:string"/>
+	<xs:simpleType name="OpenClosed">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="open"/>
+			<xs:enumeration value="closed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DepressurizationFindingPoorCase">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pass"/>
+			<xs:enumeration value="fail"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="NetPressureChange">
 		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:simpleType name="WorstCaseConditions">
-		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="WorstCasePressure">
 		<xs:restriction base="xs:double"/>

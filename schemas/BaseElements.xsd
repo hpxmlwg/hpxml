@@ -72,7 +72,7 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="extension" type="extensionType"> </xs:element>
-	<xs:element name="Event">
+	<xs:element name="ProjectStatus">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="EventType" type="EventType"/>
@@ -954,6 +954,7 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="CombustionVentilation"/>
 			<xs:element name="WaterHeating" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -1259,29 +1260,18 @@
 											<xs:documentation>Pulled from industry standards by users (e.g. BPI Gold Sheet) or via software program</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="WorstCaseConditions"
-										type="WorstCaseConditions" minOccurs="0"/>
-									<xs:element name="BaselinePressure" type="BaselinePressure"
-										minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>With respect to outdoors</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element name="WorstCasePressure" type="WorstCasePressure"
-										minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>With respect to outdoors</xs:documentation>
-										</xs:annotation>
-									</xs:element>
+									<xs:element name="BaselineTest" type="CAZTestConfiguration"
+										minOccurs="0"/>
+									<xs:element minOccurs="0" name="PoorCaseTest"
+										type="CAZTestConfiguration"/>
 									<xs:element name="NetPressureChange" type="NetPressureChange"
 										minOccurs="0"/>
-									<xs:element name="DepressurizationFindingWorstCase"
-										type="DepressurizationFindingWorstCase" minOccurs="0"/>
+									<xs:element name="DepressurizationFindingPoorCase"
+										type="DepressurizationFindingPoorCase" minOccurs="0"/>
 									<xs:element name="AmountAmbientCOinCAZduringTesting"
 										type="AmountAmbientCOinCAZduringTesting" minOccurs="0"/>
 									<xs:element name="AmbientCOinCAZExceeded35ppmduringTesting"
-										type="AmbientCOinCAZExceeded35ppmduringTesting"
-										minOccurs="0"/>
+										type="xs:boolean" minOccurs="0"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1435,6 +1425,34 @@
 			<xs:element minOccurs="0" name="PoorScenario" type="xs:double"/>
 			<xs:element minOccurs="0" name="CurrentCondition" type="xs:double"/>
 			<xs:element minOccurs="0" name="PassedTest" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CAZTestConfiguration">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="ItemsRunning">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="BathExhaustFan" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="KitchenExhaustFan" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="ClothesDryer" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="CentralVacuum" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="AirHandler" type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="DoorsOpenClosed">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="BasementDoors" type="OpenClosed"/>
+						<xs:element minOccurs="0" name="OtherDoors" type="OpenClosed"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Pressure" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Pascals (Pa), with respect to outdoors</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="YesNoRecommendInstall">
