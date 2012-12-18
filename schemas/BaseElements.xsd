@@ -954,7 +954,22 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="CombustionVentilation"/>
+			<xs:element minOccurs="0" name="CombustionVentilation">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="CombustionVentilationSystem">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="VentSystemType"
+										type="VentSystem"/>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="WaterHeating" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -1003,17 +1018,8 @@
 										type="MeetsACCA5QIHVACSpecification" minOccurs="0"/>
 									<xs:element name="HotWaterTemperature" type="Temperature"
 										minOccurs="0"/>
-									<xs:element name="SharedVenting" minOccurs="0"
-										maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element name="SharedVentingSystemType"
-												type="SharedVentingSystemType"/>
-												<xs:element name="SharedVentingSystemID"
-												type="SystemIdentifiersInfoType"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
+									<xs:element name="CombustionVentingSystem" minOccurs="0"
+										type="SystemIdentifiersInfoType"> </xs:element>
 									<xs:element name="RelatedHeatingSystem"
 										type="SystemIdentifiersInfoType" minOccurs="0"/>
 									<xs:element ref="extension" minOccurs="0"/>
@@ -1269,7 +1275,11 @@
 									<xs:element name="DepressurizationFindingPoorCase"
 										type="DepressurizationFindingPoorCase" minOccurs="0"/>
 									<xs:element name="AmountAmbientCOinCAZduringTesting"
-										type="AmountAmbientCOinCAZduringTesting" minOccurs="0"/>
+										type="xs:double" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>parts per million (ppm)</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="AmbientCOinCAZExceeded35ppmduringTesting"
 										type="xs:boolean" minOccurs="0"/>
 									<xs:element ref="extension" minOccurs="0"/>
@@ -1636,14 +1646,8 @@
 			<xs:element name="Model" type="Model" minOccurs="0"/>
 			<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
 			<xs:element minOccurs="0" name="PerformanceAdjustment" type="Fraction"/>
-			<xs:element name="SharedVenting" minOccurs="0" maxOccurs="unbounded">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="SharedVentingSystemType" type="SharedVentingSystemType"/>
-						<xs:element name="SharedVentingSystemID" type="SystemIdentifiersInfoType"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+			<xs:element minOccurs="0" name="CombustionVentingSystem"
+				type="SystemIdentifiersInfoType"/>
 			<xs:element name="DistributionSystem" type="SystemIdentifiersInfoType" minOccurs="0"
 				maxOccurs="unbounded"/>
 		</xs:sequence>
@@ -1662,7 +1666,6 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="AFUE" type="AFUE" minOccurs="0"/>
-					<xs:element name="VentSystem" type="VentSystem" minOccurs="0"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>

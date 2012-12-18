@@ -1373,12 +1373,6 @@
 			<xs:enumeration value="ECM"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="SharedVentingSystemType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="HVAC"/>
-			<xs:enumeration value="DHW"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="SizingCalculationType">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
