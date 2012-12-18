@@ -472,24 +472,6 @@
 		<xs:restriction base="xs:boolean"/>
 	</xs:simpleType>
 	<!--Other Health and Safety Below-->
-	<xs:simpleType name="ExtDisturbanceExceed6SQFTforPre1978">
-		<xs:restriction base="xs:boolean"/>
-	</xs:simpleType>
-	<xs:simpleType name="OneCODetectorPerFloorMeetsLocalCode">
-		<xs:restriction base="xs:boolean"/>
-	</xs:simpleType>
-	<xs:simpleType name="OtherActionsTakenDescription">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="OtherHealthandSafetyIdentifier">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="RadonTestResults">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="SmokeAlarmsMeetLocalCode">
-		<xs:restriction base="xs:boolean"/>
-	</xs:simpleType>
 	<!--Standard Measure Fields Below-->
 	<xs:simpleType name="SystemIdentifierValue">
 		<xs:restriction base="xs:string"/>

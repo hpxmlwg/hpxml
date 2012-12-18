@@ -5,9 +5,6 @@
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
 	<xs:element name="ReportTestResultsRequest">
-		<xs:annotation>
-			<xs:documentation>Home Performance XML Root</xs:documentation>
-		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="XMLTransactionHeaderInformation"/>
@@ -18,7 +15,7 @@
 				<xs:element name="TestResults">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="General">
+							<xs:element name="General" minOccurs="0">
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element minOccurs="0" name="OutsideTemperature"
@@ -32,7 +29,7 @@
 										<xs:element minOccurs="0"
 											name="NameofBusinessConductingTest"
 											type="NameofBusinessConductingTest"/>
-										<xs:element name="Comments" type="xs:string"/>
+										<xs:element name="Comments" type="xs:string" minOccurs="0"/>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
@@ -42,7 +39,6 @@
 								type="AirInfiltrationMeasurementType"/>
 							<xs:element maxOccurs="unbounded" minOccurs="0"
 								name="DuctLeakageMeasurement" type="DuctLeakageMeasurementType"/>
-							<xs:element name="AmbientCO"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

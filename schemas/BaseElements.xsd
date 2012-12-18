@@ -1290,12 +1290,13 @@
 							maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:sequence minOccurs="0">
-									<xs:element name="CAZApplianceID"
-										type="SystemIdentifiersInfoType">
+									<xs:element name="CAZAppliance" type="SystemIdentifiersInfoType">
 										<xs:annotation>
 											<xs:documentation>The ID of the system tested</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="CombustionVentingSystem"
+										type="SystemIdentifiersInfoType"/>
 									<xs:element name="FlueVisualCondition" type="FlueCondition"
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="FlueConditionNotes"
@@ -1402,29 +1403,175 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="LeadPaint"/>
-			<xs:element minOccurs="0" name="Radon"/>
-			<xs:element minOccurs="0" name="SourcePollutants"/>
-			<xs:element minOccurs="0" name="Pests"/>
-			<xs:element minOccurs="0" name="Asbestos"/>
-			<xs:element minOccurs="0" name="SprayFoam"/>
-			<xs:element minOccurs="0" name="OtherHealthandSafetyInfo">
+			<xs:element minOccurs="0" name="LeadPaint">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="ExtDisturbanceExceed6SQFTforPre1978"
-							type="ExtDisturbanceExceed6SQFTforPre1978" minOccurs="0"/>
-						<xs:element name="OneCODetectorPerFloorMeetsLocalCode"
-							type="OneCODetectorPerFloorMeetsLocalCode" minOccurs="0"/>
-						<xs:element name="OtherActionsTakenDescription"
-							type="OtherActionsTakenDescription" minOccurs="0"/>
-						<xs:element name="OtherHealthandSafetyIdentifier"
-							type="OtherHealthandSafetyIdentifier" minOccurs="0"/>
+						<xs:element name="Disturbed6SqFtIntPaint" type="xs:boolean" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>For a home built before 1978, did the contracted scope of work disturb greater than 6 sq.ft. of interior painted surfaces?
+</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Disturbed20SqFtExtPaint" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>For a home built before 1978, did the contracted scope of work disturb greater than 20 sf of exterior painted surfaces?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="WindowReplacement" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Did the contracted scope of work include window replacement?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="LeadSafeCertificationNumber"
+							type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Certification Number of the EPA Lead-Safe Certified firm that performed the work.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Radon">
+				<xs:complexType>
+					<xs:sequence>
 						<xs:element name="RadonTested" type="xs:boolean" minOccurs="0"/>
-						<xs:element name="RadonTestResults" type="RadonTestResults" minOccurs="0"/>
-						<xs:element name="SmokeAlarmsMeetLocalCode" type="SmokeAlarmsMeetLocalCode"
-							minOccurs="0"/>
-						<xs:element name="OtherHealthandSafetyIssues" type="xs:string" minOccurs="0"/>
-						<xs:element ref="extension" minOccurs="0"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="RadonTest">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element name="RadonTestResults" type="xs:double"
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>in pCi/L</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RadonTestMethod"/>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="EducationMaterialProvided" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Was the homeowner provided with educational material?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="ActionsTaken" type="xs:string"/>
+						<xs:element minOccurs="0" name="ActionsMeetIndustrySpecs" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>If moisture management of a crawlspace (e.g., installation of polyethylene sheeting) or radon mitigation measures were a part of the scope of work,were measures installed to be compliant with one of the following:
+- Specifications of EPA’s Indoor airPLUS program
+- Techniques detailed in EPA's Radon-Resistent New Construction
+- ASTM E2121, Standard Practice for Installing Radon Mitigation Systems in Existing Low-Rise Residential Buildings (section 7.3)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="ResultBelowActionLevel" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Was the result less than 4 pCi/L</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="SourcePollutants">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="UnventedCombustionAppliancesinLivingArea"
+							type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Are there unvented combustion heating or hearth appliances present in the living area?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="ConformanceWithANSIZ21_11_2"
+							type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>If yes, does the appliance conform with ANSI Z21.11.2?
+</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="PrimaryHeatingSource" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>If yes, is the appliance used as a primary source of heating?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="AttachedGarage" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Does home have attached garage?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="GarageContinuousAirBarrier"
+							type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>If yes, is there a continuous air barrier between garage and living space?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="GarageExhaustFan" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>If yes, is there an exhaust fan in garage?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Pests">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="IndicationsofPests" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Indications of pest entry or damage?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="EvidenceofPesticide" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Evidence of pesticide, insecticide use?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="IndustryStandardCompliance"
+							type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Do measures comply with industry standards to prevent pest entry?
+
+NOTE: This is for ALL measures that may create entry points for vermin. For example, air sealing measures identified to reduce infiltration should have proper sealants  - even if those measures were not recommended/installed for pest control purposes.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Asbestos">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="AsbestosSuspected" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Was asbestos suspected?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="TestedForAsbestos" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Was substance tested for asbestos?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="AsbestosFound" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Was asbestos found?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="ActionsTaken" type="xs:string"/>
+						<xs:element minOccurs="0" name="ActionsMeetIndustrySpecifications"
+							type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="SprayFoam">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="SprayFoamInstalled" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Was spray foam polyurethane foam and / or other potential sources of indoor pollutants installed or applied as part of the scope of work?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1853,7 +2000,7 @@
 	</xs:complexType>
 	<xs:complexType name="BuildingDetailsType">
 		<xs:sequence>
-			<xs:element name="BuildingSummaryInfo" minOccurs="0">
+			<xs:element name="BuildingSummary" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Overall characterization of building for descriptive, rather than modeling purposes</xs:documentation>
 				</xs:annotation>
@@ -2048,7 +2195,7 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="ClimateandRiskZonesInfo" minOccurs="0">
+			<xs:element name="ClimateandRiskZones" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence minOccurs="0">
 						<xs:element name="ClimateZoneDOE" type="ClimateZoneDOE" minOccurs="0"/>
@@ -2065,7 +2212,6 @@
 			<xs:element minOccurs="0" name="Zones" type="Zones"/>
 			<xs:element name="Enclosure" type="Enclosure" minOccurs="0"/>
 			<xs:element name="Systems" type="Systems" minOccurs="0"/>
-			<xs:element minOccurs="0" name="HealthAndSafety" type="HealthAndSafety"/>
 			<xs:element name="Appliances" type="Appliances" minOccurs="0"/>
 			<xs:element name="Lighting" type="Lighting" minOccurs="0"/>
 			<xs:element name="MiscLoads" type="MiscLoads" minOccurs="0"/>
