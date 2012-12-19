@@ -402,12 +402,24 @@
 					<xs:sequence>
 						<xs:element minOccurs="0" name="AirInfiltrationMeasurement"
 							type="AirInfiltrationMeasurementType"> </xs:element>
-						<xs:element maxOccurs="unbounded" minOccurs="0" name="AirSealing">
+						<xs:element minOccurs="0" name="AirSealing">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="Hours" type="Hours" minOccurs="0"/>
-									<xs:element name="ComponentAirSealed" type="AreasAirSealed"
-										minOccurs="0" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="ComponentsAirSealed">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												name="Attic" type="AtticComponentsAirSealed"/>
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												name="BasementCrawlspace"
+												type="BasementCrawlspaceComponentsAirSealed"/>
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												name="LivingSpace"
+												type="LivingSpaceComponentsAirSealed"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -2770,14 +2782,34 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 	</xs:complexType>
 	<xs:complexType name="AirInfiltrationMeasurementType">
 		<xs:sequence>
+			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="Date" type="xs:date"/>
+			<xs:element minOccurs="0" name="BusinessConductingTest" type="SystemIdentifiersInfoType"/>
+			<xs:element minOccurs="0" name="IndividualConductingTest"
+				type="SystemIdentifiersInfoType"/>
+			<xs:element minOccurs="0" name="OutsideTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>degreees Farenheit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="WindConditions" type="WindConditions"/>
+			<xs:element name="TypeOfInfiltrationMeasurement" type="TypeofInfiltrationMeasurement"
+				minOccurs="0"/>
+			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
+			<xs:element name="HousePressure" type="xs:double" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>in Pascals (Pa), with respect to outside</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FanPressure" type="FanPressure" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>in Pascals (Pa)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FanRingUsed" type="FanRingUsed" minOccurs="0"/>
+			<xs:element minOccurs="0" name="BuildingLeakiness" type="BuildingLeakiness"/>
 			<xs:element name="BuildingAirLeakage" type="BuildingAirLeakage" minOccurs="1"/>
 			<xs:element name="BuildingAirLeakageUnit" type="BuildingAirLeakageUnit" minOccurs="1"/>
-			<xs:element name="TypeOfTest" type="TypeofInfiltrationMeasurement" minOccurs="0"/>
-			<xs:element name="HousePressure" type="xs:double" minOccurs="0"/>
-			<xs:element name="FanPressure" type="FanPressure" minOccurs="0"/>
-			<xs:element name="FanRingUsed" type="FanRingUsed" minOccurs="0"/>
-			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>

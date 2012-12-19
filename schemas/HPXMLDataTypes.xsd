@@ -118,6 +118,21 @@
 	<!--Utility Information Below-->
 	<!--Misc Data Fields Below-->
 	<!--Air Infiltration Below-->
+	<xs:simpleType name="BuildingLeakiness">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="very tight"/>
+			<xs:enumeration value="tight"/>
+			<xs:enumeration value="average"/>
+			<xs:enumeration value="leaky"/>
+			<xs:enumeration value="very leaky"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WindConditions">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="windy"/>
+			<xs:enumeration value="normal"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="BuildingAirLeakage">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
@@ -130,13 +145,18 @@
 			<xs:enumeration value="CFM75"/>
 			<xs:enumeration value="ACHnatural"/>
 			<xs:enumeration value="ACH50"/>
+			<xs:enumeration value="CFMnatural"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FanPressure">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="FanRingUsed">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="open"/>
+			<xs:enumeration value="A"/>
+			<xs:enumeration value="B"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="NameofBusinessConductingTest">
 		<xs:restriction base="xs:string"/>
@@ -511,26 +531,49 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<!--Air Sealing Below-->
-	<xs:simpleType name="AreasAirSealed">
+	<!--Doors Below-->
+	<xs:simpleType name="AtticComponentsAirSealed">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic floor"/>
-			<xs:enumeration value="fenestrations"/>
-			<xs:enumeration value="cantilevers"/>
-			<xs:enumeration value="home-garage connection"/>
-			<xs:enumeration value="first floor rim joist"/>
-			<xs:enumeration value="second floor rim joist"/>
-			<xs:enumeration value="crawlspace"/>
-			<xs:enumeration value="plumbing chase"/>
-			<xs:enumeration value="chimney chase"/>
+			<xs:enumeration value="top plates"/>
+			<xs:enumeration value="kneewall transitions"/>
+			<xs:enumeration value="plumbing wet walls"/>
+			<xs:enumeration value="chimney/flue chases"/>
+			<xs:enumeration value="recessed lights"/>
+			<xs:enumeration value="attic access"/>
 			<xs:enumeration value="dropped soffit"/>
-			<xs:enumeration value="offset ceiling"/>
-			<xs:enumeration value="attic hatch/access"/>
-			<xs:enumeration value="fireplace damper"/>
-			<xs:enumeration value="foundation service penetration"/>
+			<xs:enumeration value="attic level transitions"/>
+			<xs:enumeration value="mechanical chases"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<!--Doors Below-->
+	<xs:simpleType name="BasementCrawlspaceComponentsAirSealed">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="plumbing penetrations"/>
+			<xs:enumeration value="access"/>
+			<xs:enumeration value="wiring penetrations"/>
+			<xs:enumeration value="chimney/flue chase"/>
+			<xs:enumeration value="mechanical chases"/>
+			<xs:enumeration value="rim joists"/>
+			<xs:enumeration value="windows and door"/>
+			<xs:enumeration value="foundation service penetrations"/>
+			<xs:enumeration value="cantilevers"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LivingSpaceComponentsAirSealed">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="home-garage connection"/>
+			<xs:enumeration value="rim joists"/>
+			<xs:enumeration value="baseboards"/>
+			<xs:enumeration value="windows and door"/>
+			<xs:enumeration value="plumbing penetrations"/>
+			<xs:enumeration value="hvac registers"/>
+			<xs:enumeration value="interior sheating voids"/>
+			<xs:enumeration value="cantilevers"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="FoundationWallType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="solid concrete"/>
