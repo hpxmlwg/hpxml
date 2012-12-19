@@ -637,17 +637,39 @@
 			<xs:enumeration value="continuous"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="InsulationMaterial">
+	<xs:simpleType name="InsulationBattType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="fiberglass batt"/>
-			<xs:enumeration value="loose fiberglass"/>
+			<xs:enumeration value="fiberglass"/>
+			<xs:enumeration value="rockwool"/>
+			<xs:enumeration value="recycled cotton"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InsulationLooseFillType">
+		<xs:restriction base="xs:string">
 			<xs:enumeration value="cellulose"/>
-			<xs:enumeration value="EPS"/>
-			<xs:enumeration value="XPS"/>
+			<xs:enumeration value="fiberglass"/>
+			<xs:enumeration value="rockwool"/>
+			<xs:enumeration value="vermiculite"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InsulationRigidType">
+		<xs:restriction base="xs:string">
 			<xs:enumeration value="polyisocyanurate"/>
-			<xs:enumeration value="polyurethene"/>
-			<xs:enumeration value="rock wool"/>
-			<xs:enumeration value="other"/>
+			<xs:enumeration value="xps"/>
+			<xs:enumeration value="eps"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InsulationSprayFoamType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="open cell"/>
+			<xs:enumeration value="closed cell"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InsulationCondition">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="good"/>
+			<xs:enumeration value="fair"/>
+			<xs:enumeration value="poor"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Thickness">
