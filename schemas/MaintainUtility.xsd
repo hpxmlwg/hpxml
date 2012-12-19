@@ -18,7 +18,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element ref="UtilityInfo" maxOccurs="unbounded"/>
+							<xs:element ref="Utility" maxOccurs="unbounded"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>

@@ -21,6 +21,11 @@
 					</xs:complexType>
 				</xs:element>
 
+				<xs:element minOccurs="0" name="BPI2400Inputs" type="BPI2400Inputs">
+					<xs:annotation>
+						<xs:documentation>The following fields are to support BPI-2400</xs:documentation>
+					</xs:annotation>
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

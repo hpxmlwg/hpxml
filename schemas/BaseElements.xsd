@@ -149,17 +149,19 @@
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="UtilityInfo">
+	<xs:element name="Utility">
 		<xs:annotation>
 			<xs:documentation>Contains all utility elements.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="UtilityIdentifiers" type="SystemIdentifiersInfoType"/>
-				<xs:element name="UtilityAccountNumber" type="UtilityAccountNumber"/>
-				<xs:element name="UtilityName" type="UtilityName" minOccurs="0"/>
+				<xs:group ref="SystemInfo"/>
+				<xs:element name="UtilityName" type="xs:string" minOccurs="0"/>
+				<xs:element minOccurs="0" name="MeterNumber" type="xs:string"/>
+				<xs:element name="UtilityAccountNumber" type="xs:string" minOccurs="0"/>
+				<xs:element minOccurs="0" name="Permission" type="xs:boolean"/>
 				<xs:element name="UtilityServiceTypeProvided" type="UtilityServiceTypeProvided"
-					minOccurs="0"/>
+					minOccurs="0" maxOccurs="unbounded"/>
 				<xs:element minOccurs="0" name="BusinessInfo" type="BusinessInfoType"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="BusinessContactInfo"
 					type="BusinessContactInfoType"/>
@@ -2453,29 +2455,25 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	<xs:complexType name="ConsumptionInfoType">
 		<xs:sequence>
 			<xs:element name="UtilityID" type="SystemIdentifiersInfoType"/>
-			<xs:element name="ConsumptionType" type="ConsumptionType">
-				<xs:annotation>
-					<xs:documentation>Energy Type + other consumption types like water</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="UnitofMeasure" type="energyUnitType"/>
+			<xs:element name="ConsumptionType" type="ConsumptionTypeDescription"/>
 			<xs:element maxOccurs="unbounded" name="ConsumptionDetail">
 				<xs:annotation>
 					<xs:documentation>Consumption records with enough granularity to be able to use smart meter data.</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="EnergyConsumption" type="EnergyConsumption"/>
-						<xs:element name="StartDateTime" type="StartDateTime" minOccurs="0">
+						<xs:element name="Consumption" type="xs:double"/>
+						<xs:element name="StartDateTime" type="xs:dateTime" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation>Date/time stamp in the ISO 8601 format when the usage measured began. Set time to midnight if time is not known.</xs:documentation>
+								<xs:documentation>Date/time stamp in the ISO 8601 format when the usage measured began.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="EndDateTime" type="EndDateTime" minOccurs="0">
+						<xs:element name="EndDateTime" type="xs:dateTime" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>Date/time stamp of the meter reading.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="ReadingType" type="MeterReadingType"/>
 						<xs:element name="ConsumptionCost" type="xs:double" minOccurs="0"/>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
@@ -2483,6 +2481,80 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			</xs:element>
 			<xs:element name="MarginalRate" type="xs:double" minOccurs="0"/>
 			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BPI2400Inputs">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="BaselineBillingPeriodStartDate" type="xs:date"/>
+			<xs:element minOccurs="0" name="BaselineBillingPeriodEndDate" type="xs:date"/>
+			<xs:element minOccurs="0" name="CalibrationBaselineWeatherRegression">
+				<xs:annotation>
+					<xs:documentation>Detailed Calibration Baseline Weather Regression CV-RMSE. Eqn. 3.2.2.G.i  of BPI-2400.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="BaselineWeatherNormalizedHeatingUsage" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Baseline Weather Normalized Annual Heating Usage</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="BaselineWeatherNormalizedCoolingUsage" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Baseline Weather Normalized Annual Cooling Usage</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="BaselineWeatherNormalizedBaseloadUsage" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Baseline Weather Normalized Annual Baseload Usage</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingBiasError"
+				type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Eqn. 3.2.3.A.i  of BPI-2400</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingAbsoluteError"
+				type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Eqn. 3.2.3.A.ii  of BPI-2400</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingBiasError"
+				type="xs:double"/>
+			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingAbsoluteError"
+				type="xs:double"/>
+			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadBiasError"
+				type="xs:double"/>
+			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadAbsoluteError"
+				type="xs:double"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ConsumptionTypeDescription">
+		<xs:sequence>
+			<xs:element name="ConsumptionType" type="ConsumptionType">
+				<xs:annotation>
+					<xs:documentation>Energy Type + other consumption types like water</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnitofMeasure" type="energyUnitType"/>
+			<xs:element minOccurs="0" name="MeteringConfiguration" type="MeteringConfiguration">
+				<xs:annotation>
+					<xs:documentation>direct metering = tenants directly metered; 
+master meter without sub-metering = tenants not sub metered; 
+master meter with sub-metering = tenant sub-metered by building owner</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="EmissionsFactor" type="xs:double"/>
+			<xs:element minOccurs="0" name="FuelInterruptibility" type="FuelInterruptibility"/>
+			<xs:element minOccurs="0" name="SharedEnergySystem" type="SharedEnergySystem"/>
+			<xs:element minOccurs="0" name="IntervalType" type="IntervalType"/>
+			<xs:element minOccurs="0" name="ReadingTimeZone" type="xs:string"/>
+			<xs:element minOccurs="0" name="MarginalEnergyCostRate" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>$/energy unit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PeakSeason" type="PeakSeason"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ModeledUsageType">
@@ -2493,7 +2565,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="UnitofMeasure" type="energyUnitType"/>
-			<xs:element minOccurs="0" name="AnnualConsumption" type="EnergyConsumption"/>
+			<xs:element minOccurs="0" name="AnnualConsumption" type="xs:double"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ConsumptionByEndUse"
 				type="EndUseInfoType"/>
 			<xs:element ref="extension" minOccurs="0"/>

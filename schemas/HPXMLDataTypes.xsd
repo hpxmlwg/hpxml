@@ -107,12 +107,6 @@
 		<xs:restriction base="xs:dateTime"/>
 	</xs:simpleType>
 	<!--Utility Information Below-->
-	<xs:simpleType name="UtilityAccountNumber">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="UtilityName">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
 	<xs:simpleType name="UtilityServiceTypeProvided">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
@@ -437,16 +431,46 @@
 	<!--Consumption Details Start-->
 	<xs:simpleType name="otherConsumptionType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Water"/>
+			<xs:enumeration value="water"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="StartDateTime">
-		<xs:restriction base="xs:dateTime"/>
-	</xs:simpleType>
-	<xs:simpleType name="EndDateTime">
-		<xs:restriction base="xs:dateTime"/>
-	</xs:simpleType>
 	<!--Heating Stoves Start-->
+	<xs:simpleType name="MeteringConfiguration">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="direct metering"/>
+			<xs:enumeration value="master meter without sub-metering"/>
+			<xs:enumeration value="master meter with sub-metering"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FuelInterruptibility">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="interruptible"/>
+			<xs:enumeration value="firm"/>
+			<xs:enumeration value="na"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SharedEnergySystem">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="yes"/>
+			<xs:enumeration value="no"/>
+			<xs:enumeration value="common meter"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IntervalType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="15-minute"/>
+			<xs:enumeration value="hourly"/>
+			<xs:enumeration value="daily"/>
+			<xs:enumeration value="monthly"/>
+			<xs:enumeration value="annual"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PeakSeason">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="summer"/>
+			<xs:enumeration value="winter"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="COReading">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
@@ -1163,11 +1187,6 @@
 	<xs:simpleType name="DispositionofExistingUnit">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="EnergyConsumption">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="Style">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
@@ -1250,24 +1269,35 @@
 	</xs:simpleType>
 	<xs:simpleType name="energyUnitType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="cf"/>
+			<xs:enumeration value="cmh"/>
 			<xs:enumeration value="ccf"/>
 			<xs:enumeration value="kcf"/>
 			<xs:enumeration value="Mcf"/>
-			<xs:enumeration value="therms"/>
-			<xs:enumeration value="kBtu"/>
-			<xs:enumeration value="Btu"/>
-			<xs:enumeration value="MBtu"/>
+			<xs:enumeration value="cfh"/>
 			<xs:enumeration value="kWh"/>
 			<xs:enumeration value="MWh"/>
-			<xs:enumeration value="gal"/>
-			<xs:enumeration value="cords"/>
-			<xs:enumeration value="kgal"/>
-			<xs:enumeration value="tons"/>
+			<xs:enumeration value="Btu"/>
+			<xs:enumeration value="kBtu"/>
+			<xs:enumeration value="MBtu"/>
+			<xs:enumeration value="therms"/>
 			<xs:enumeration value="lbs"/>
 			<xs:enumeration value="kLbs"/>
 			<xs:enumeration value="MLbs"/>
+			<xs:enumeration value="tonnes"/>
+			<xs:enumeration value="cords"/>
+			<xs:enumeration value="gal"/>
+			<xs:enumeration value="kgal"/>
 			<xs:enumeration value="ton hours"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MeterReadingType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="point"/>
+			<xs:enumeration value="median"/>
+			<xs:enumeration value="average"/>
+			<xs:enumeration value="total"/>
+			<xs:enumeration value="estimate"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="endUseType">
