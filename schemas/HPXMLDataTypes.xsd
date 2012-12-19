@@ -50,25 +50,30 @@
 	<xs:simpleType name="BusinessName">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="IndividualTypeCode">
-		<xs:annotation>
-			<xs:documentation>Customer, Contractor, Landlord</xs:documentation>
-		</xs:annotation>
+	<xs:simpleType name="IndividualType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="customer"/>
-			<xs:enumeration value="contractor"/>
-			<xs:enumeration value="landlord"/>
+			<xs:enumeration value="owner-occupant"/>
+			<xs:enumeration value="owner-non-occupant"/>
+			<xs:enumeration value="property manager"/>
+			<xs:enumeration value="real estate agent"/>
+			<xs:enumeration value="tenant"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="Certification">
-		<xs:annotation>
-			<xs:documentation>This represents the certifications obtained by an employee of a contracting company.</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string"/>
+	<xs:simpleType name="BusinessCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BPI"/>
+			<xs:enumeration value="RESNET"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<!--Telephone Information Below-->
 	<xs:simpleType name="TelephoneTypeCode">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="day"/>
+			<xs:enumeration value="evening"/>
+			<xs:enumeration value="mobile"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="TelephoneNumber">
 		<xs:restriction base="xs:string"/>
@@ -78,7 +83,11 @@
 	</xs:simpleType>
 	<!--Email Information Below-->
 	<xs:simpleType name="EmailTypeCode">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="personal"/>
+			<xs:enumeration value="work"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="EmailAddress">
 		<xs:restriction base="xs:string"/>
@@ -1223,15 +1232,48 @@
 	</xs:simpleType>
 	<!--Contractor / Contracting Company Information Below-->
 	<xs:simpleType name="BusinessSpecialization">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="energy audit"/>
+			<xs:enumeration value="hvac"/>
+			<xs:enumeration value="insulation"/>
+			<xs:enumeration value="carpentry"/>
+			<xs:enumeration value="plumbing"/>
+			<xs:enumeration value="electrical"/>
+			<xs:enumeration value="painting"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="BusinessType">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="contractor"/>
+			<xs:enumeration value="auditor"/>
+			<xs:enumeration value="subcontractor"/>
+			<xs:enumeration value="property manager"/>
+		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="ContactType">
-		<xs:restriction base="xs:string"/>
+	<xs:simpleType name="AuditorQualification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PE"/>
+			<xs:enumeration value="CEM"/>
+			<xs:enumeration value="BPI-BA"/>
+			<xs:enumeration value="RESNET-Home Partner"/>
+			<xs:enumeration value="RA"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
 	</xs:simpleType>
-	<!--Business Contact Information Below-->
+	<xs:simpleType name="ImplementerQualification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PE"/>
+			<xs:enumeration value="CEM"/>
+			<xs:enumeration value="BPI-BA"/>
+			<xs:enumeration value="BPI-MFBA"/>
+			<xs:enumeration value="RESNET-Home Partner"/>
+			<xs:enumeration value="RA"/>
+			<xs:enumeration value="Refrigerating System Operating Engineer"/>
+			<xs:enumeration value="High Pressure Boiler Operating Engineer"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="AzimuthType">
 		<xs:annotation>
 			<xs:documentation>Gives compass direction a surface (window, wall) is facing. Measured in degrees clockwise from North.</xs:documentation>
@@ -1809,6 +1851,15 @@
 			<xs:enumeration value="hallway"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eGridRegions">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Alaska"/>
+			<xs:enumeration value="Eastern"/>
+			<xs:enumeration value="ERCOT"/>
+			<xs:enumeration value="Hawaii"/>
+			<xs:enumeration value="Western"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

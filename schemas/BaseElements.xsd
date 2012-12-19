@@ -21,13 +21,14 @@
 			<xs:documentation>Address information contains the basic descriptive elements of a location.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="AddressType" type="AddressTypeCode"/>
+			<xs:element name="AddressType" type="AddressTypeCode" minOccurs="0"/>
 			<xs:element name="Address1" type="Address1" minOccurs="0"/>
 			<xs:element name="Address2" type="Address2" minOccurs="0"/>
-			<xs:element name="CityMunicipality" type="CityMunicipality"/>
-			<xs:element name="StateCode" type="StateCode"/>
-			<xs:element name="ZipCode" type="ZipCodePlus4"/>
+			<xs:element name="CityMunicipality" type="CityMunicipality" minOccurs="0"/>
+			<xs:element name="StateCode" type="StateCode" minOccurs="0"/>
+			<xs:element name="ZipCode" type="ZipCodePlus4" minOccurs="0"/>
 			<xs:element name="USPSBarCode" type="USPSBarCode" minOccurs="0"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="SystemIdentifiersInfoType">
@@ -46,16 +47,6 @@
 		</xs:sequence>
 		<xs:attribute name="ID" type="xs:integer" use="required"/>
 	</xs:complexType>
-	<xs:element name="AddressSystemIdentifiers" type="SystemIdentifiersInfoType">
-		<xs:annotation>
-			<xs:documentation>Most HPXML records contain data about a specfic address, or location.  This element contains the root elements for address identifier values between a sending and a receiving system.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
-	<xs:element name="IndividualSystemIdentifiers" type="SystemIdentifiersInfoType">
-		<xs:annotation>
-			<xs:documentation>HPXML records may contain data about an individual, either a person, or a business.  This element contains the root elements for individual identifier values between a sending and a receiving system.</xs:documentation>
-		</xs:annotation>
-	</xs:element>
 	<xs:element name="ContractorSystemIdentifiers">
 		<xs:annotation>
 			<xs:documentation>These are the system identifiers for a specific contractor at a business</xs:documentation>
@@ -126,26 +117,22 @@
 	<xs:complexType name="IndividualInfo">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
-			<xs:element name="IndividualNameInfo">
-				<xs:annotation>
-					<xs:documentation>Contains all name elements for either an individual or a business.</xs:documentation>
-				</xs:annotation>
+			<xs:element name="Name">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="NameTypeCode" type="NameTypeCode"/>
-						<xs:element name="FirstName" type="FirstName"/>
-						<xs:element name="LastName" type="LastName"/>
-						<xs:element name="MiddleName" type="MiddleName" minOccurs="0"/>
 						<xs:element name="PrefixName" type="PrefixName" minOccurs="0"/>
+						<xs:element name="FirstName" type="FirstName"/>
+						<xs:element name="MiddleName" type="MiddleName" minOccurs="0"/>
+						<xs:element name="LastName" type="LastName"/>
 						<xs:element name="SuffixName" type="SuffixName" minOccurs="0"/>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="TelephoneInfo"
+			<xs:element minOccurs="0" name="IndividualType" type="IndividualType"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Telephone"
 				type="TelephoneInfoType"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="EmailInfo" type="EmailInfoType"/>
-			<xs:element name="IndividualType" type="IndividualTypeCode"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Email" type="EmailInfoType"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -169,7 +156,6 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="BusinessInfo" type="BusinessInfoType"> </xs:element>
 	<xs:complexType name="IECCClimateZoneType">
 		<xs:sequence>
 			<xs:element name="Year" type="IECCYear"> </xs:element>
@@ -323,14 +309,53 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+	<xs:complexType name="BusinessContactType">
+		<xs:choice>
+			<xs:element name="Owner">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="extension" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Auditor">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Qualification" type="AuditorQualification"
+							maxOccurs="unbounded"/>
+						<xs:element minOccurs="0" name="StateWhereQualificationHeld"
+							type="StateCode"/>
+						<xs:element minOccurs="0" name="YearsExperience"
+							type="IntegerGreaterThanOrEqualToZero"/>
+						<xs:element ref="extension" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Implementer">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="Qualification"
+							type="ImplementerQualification"/>
+						<xs:element minOccurs="0" name="StateWhereQualificationHeld"
+							type="StateCode"/>
+						<xs:element ref="extension" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Other">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Description" type="xs:string"/>
+						<xs:element ref="extension" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
 	<xs:complexType name="ContractorType">
 		<xs:sequence>
 			<xs:group maxOccurs="unbounded" ref="SystemInfo"/>
 			<xs:element name="BusinessInfo" type="BusinessInfoType"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessContactInfo"
-				type="BusinessContactInfoType"/>
-			<xs:element name="Certification" type="Certification" minOccurs="0"
-				maxOccurs="unbounded"/>
 			<xs:element name="SubContractor" type="ContractorType" minOccurs="0"
 				maxOccurs="unbounded"/>
 		</xs:sequence>
@@ -2608,43 +2633,41 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 	</xs:complexType>
 	<xs:complexType name="TelephoneInfoType">
 		<xs:sequence>
-			<xs:element name="TelephoneTypeCode" type="TelephoneTypeCode"/>
+			<xs:element name="TelephoneType" type="TelephoneTypeCode"/>
 			<xs:element name="TelephoneNumber" type="TelephoneNumber"/>
+			<xs:element minOccurs="0" name="PreferredContactMethod" type="xs:boolean"/>
 			<xs:element name="TelephoneExtension" type="TelephoneExtension" minOccurs="0"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EmailInfoType">
 		<xs:sequence minOccurs="0" maxOccurs="unbounded">
-			<xs:element name="EmailTypeCode" type="EmailTypeCode"/>
+			<xs:element name="EmailType" type="EmailTypeCode" minOccurs="0"/>
 			<xs:element name="EmailAddress" type="EmailAddress"/>
+			<xs:element minOccurs="0" name="PreferredContactMethod" type="xs:boolean"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BusinessInfoType">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
-			<xs:element name="BusinessNameInfo">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="NameTypeCode" type="NameTypeCode"/>
-						<xs:element name="BusinessName" type="BusinessName"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element name="BusinessSpecialization" type="BusinessSpecialization" minOccurs="0"/>
+			<xs:element name="BusinessName" type="BusinessName"/>
 			<xs:element name="BusinessType" type="BusinessType" minOccurs="0"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="EmailInfo" type="EmailInfoType"/>
+			<xs:element name="BusinessSpecialization" type="BusinessSpecialization" minOccurs="0"/>
+			<xs:element name="Certification" type="BusinessCertification" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessContact"
+				type="BusinessContactInfoType"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="TelephoneInfo"
 				type="TelephoneInfoType"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="EmailInfo" type="EmailInfoType"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BusinessContactInfoType">
 		<xs:sequence>
-			<xs:element name="ContactType" type="ContactType" minOccurs="0"/>
-			<xs:element name="FirstName" type="FirstName" minOccurs="0"/>
-			<xs:element name="LastName" type="LastName" minOccurs="0"/>
+			<xs:element name="ContactType" type="BusinessContactType" minOccurs="0"/>
+			<xs:element minOccurs="0" name="Person" type="IndividualInfo"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>

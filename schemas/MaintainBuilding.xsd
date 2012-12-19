@@ -13,11 +13,13 @@
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
 				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
 				<xs:element name="CustomerID" type="SystemIdentifiersInfoType" minOccurs="0"/>
-				<xs:element name="Address" minOccurs="0">
+				<xs:element name="Site" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element ref="AddressSystemIdentifiers"/>
-							<xs:element name="AddressInformation" type="AddressInformation"/>
+							<xs:element name="SiteID" type="SystemIdentifiersInfoType"/>
+							<xs:element name="Address" type="AddressInformation"/>
+							<xs:element minOccurs="0" name="SchoolDistrict" type="xs:string"/>
+							<xs:element minOccurs="0" name="eGridRegion" type="eGridRegions"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
