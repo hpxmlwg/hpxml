@@ -1560,6 +1560,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 								<xs:documentation>Was asbestos found?</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="TypeofBlowerDoorTest"
+							type="TypeofBlowerDoorTest"/>
 						<xs:element minOccurs="0" name="ActionsTaken" type="xs:string"/>
 						<xs:element minOccurs="0" name="ActionsMeetIndustrySpecifications"
 							type="xs:boolean"/>
