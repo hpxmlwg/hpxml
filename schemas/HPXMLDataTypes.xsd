@@ -107,25 +107,7 @@
 		<xs:restriction base="xs:dateTime"/>
 	</xs:simpleType>
 	<!--Utility Information Below-->
-	<xs:simpleType name="UtilityServiceTypeProvided">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
 	<!--Misc Data Fields Below-->
-	<xs:simpleType name="FieldSequenceNumber">
-		<xs:restriction base="xs:integer"/>
-	</xs:simpleType>
-	<xs:simpleType name="FieldName">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="FieldDataType">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="FieldValue">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="FieldMask">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
 	<!--Air Infiltration Below-->
 	<xs:simpleType name="BuildingAirLeakage">
 		<xs:restriction base="xs:double">
@@ -1290,6 +1272,17 @@
 			<xs:enumeration value="ton hours"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="waterUnitType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gal"/>
+			<xs:enumeration value="kgal"/>
+			<xs:enumeration value="Mgal"/>
+			<xs:enumeration value="cf"/>
+			<xs:enumeration value="ccf"/>
+			<xs:enumeration value="kcf"/>
+			<xs:enumeration value="Mcf"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="MeterReadingType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="point"/>
@@ -1298,6 +1291,14 @@
 			<xs:enumeration value="total"/>
 			<xs:enumeration value="estimate"/>
 			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WaterType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="indoor and outdoor water"/>
+			<xs:enumeration value="indoor water "/>
+			<xs:enumeration value="outdoor water"/>
+			<xs:enumeration value="wastewater/sewer"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="endUseType">

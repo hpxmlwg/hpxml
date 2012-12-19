@@ -160,8 +160,8 @@
 				<xs:element minOccurs="0" name="MeterNumber" type="xs:string"/>
 				<xs:element name="UtilityAccountNumber" type="xs:string" minOccurs="0"/>
 				<xs:element minOccurs="0" name="Permission" type="xs:boolean"/>
-				<xs:element name="UtilityServiceTypeProvided" type="UtilityServiceTypeProvided"
-					minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="UtilityServiceTypeProvided" type="ConsumptionType" minOccurs="0"
+					maxOccurs="unbounded"/>
 				<xs:element minOccurs="0" name="BusinessInfo" type="BusinessInfoType"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="BusinessContactInfo"
 					type="BusinessContactInfoType"/>
@@ -377,19 +377,19 @@
 					<xs:sequence>
 						<xs:element minOccurs="0" name="AirInfiltrationMeasurement"
 							type="AirInfiltrationMeasurementType"> </xs:element>
-						<xs:element name="AnnualEnergyUse" minOccurs="0">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="ConsumptionInfo" type="ConsumptionInfoType"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element maxOccurs="unbounded" minOccurs="0" name="AirSealingInfo">
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="AirSealing">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="Hours" type="Hours" minOccurs="0"/>
 									<xs:element name="ComponentAirSealed" type="AreasAirSealed"
 										minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="AnnualEnergyUse" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ConsumptionInfo" type="ConsumptionInfoType"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -2457,7 +2457,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	<xs:complexType name="ConsumptionInfoType">
 		<xs:sequence>
 			<xs:element name="UtilityID" type="SystemIdentifiersInfoType"/>
-			<xs:element name="ConsumptionType" type="ConsumptionTypeDescription"/>
+			<xs:element name="ConsumptionType" type="EnergyAndWaterUseTypeDescription"/>
 			<xs:element maxOccurs="unbounded" name="ConsumptionDetail">
 				<xs:annotation>
 					<xs:documentation>Consumption records with enough granularity to be able to use smart meter data.</xs:documentation>
@@ -2531,33 +2531,51 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				type="xs:double"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="ConsumptionTypeDescription">
-		<xs:sequence>
-			<xs:element name="ConsumptionType" type="ConsumptionType">
-				<xs:annotation>
-					<xs:documentation>Energy Type + other consumption types like water</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="UnitofMeasure" type="energyUnitType"/>
-			<xs:element minOccurs="0" name="MeteringConfiguration" type="MeteringConfiguration">
-				<xs:annotation>
-					<xs:documentation>direct metering = tenants directly metered; 
+	<xs:complexType name="EnergyAndWaterUseTypeDescription">
+		<xs:choice>
+			<xs:element name="Energy">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FuelType" type="FuelType">
+							<xs:annotation>
+								<xs:documentation>Energy Type</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="UnitofMeasure" type="energyUnitType"/>
+						<xs:element minOccurs="0" name="MeteringConfiguration"
+							type="MeteringConfiguration">
+							<xs:annotation>
+								<xs:documentation>direct metering = tenants directly metered; 
 master meter without sub-metering = tenants not sub metered; 
 master meter with sub-metering = tenant sub-metered by building owner</xs:documentation>
-				</xs:annotation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="EmissionsFactor" type="xs:double"/>
+						<xs:element minOccurs="0" name="FuelInterruptibility"
+							type="FuelInterruptibility"/>
+						<xs:element minOccurs="0" name="SharedEnergySystem"
+							type="SharedEnergySystem"/>
+						<xs:element minOccurs="0" name="IntervalType" type="IntervalType"/>
+						<xs:element minOccurs="0" name="ReadingTimeZone" type="xs:string"/>
+						<xs:element minOccurs="0" name="MarginalEnergyCostRate" type="xs:double">
+							<xs:annotation>
+								<xs:documentation>$/energy unit</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="PeakSeason" type="PeakSeason"/>
+					</xs:sequence>
+				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="EmissionsFactor" type="xs:double"/>
-			<xs:element minOccurs="0" name="FuelInterruptibility" type="FuelInterruptibility"/>
-			<xs:element minOccurs="0" name="SharedEnergySystem" type="SharedEnergySystem"/>
-			<xs:element minOccurs="0" name="IntervalType" type="IntervalType"/>
-			<xs:element minOccurs="0" name="ReadingTimeZone" type="xs:string"/>
-			<xs:element minOccurs="0" name="MarginalEnergyCostRate" type="xs:double">
-				<xs:annotation>
-					<xs:documentation>$/energy unit</xs:documentation>
-				</xs:annotation>
+			<xs:element name="Water">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="WaterType" type="WaterType"/>
+						<xs:element name="UnitofMeasure" type="waterUnitType"/>
+						<xs:element minOccurs="0" name="MarginalWaterCostRate" type="xs:double"/>
+					</xs:sequence>
+				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="PeakSeason" type="PeakSeason"/>
-		</xs:sequence>
+		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="ModeledUsageType">
 		<xs:sequence>
