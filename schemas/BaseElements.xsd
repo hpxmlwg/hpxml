@@ -900,16 +900,21 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToZone"/>
-									<xs:element name="HVACDistributionSystemType"
-										type="HVACDistributionSystemType"/>
-									<xs:choice minOccurs="0">
-										<xs:element minOccurs="0" name="AirDistribution"
-											type="AirDistributionInfo"/>
-										<xs:element minOccurs="0" name="HydronicDistribution"
-											type="HydronicDistributionInfo"/>
-										<xs:element minOccurs="0" name="ElectricDistribution"
-											type="ElectricDistributionType"/>
-									</xs:choice>
+									<xs:element minOccurs="0" name="DistributionSystemType">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element name="AirDistribution"
+												type="AirDistributionInfo"/>
+												<xs:element name="HydronicDistribution"
+												type="HydronicDistributionInfo"/>
+												<xs:element name="Other" type="xs:string">
+												<xs:annotation>
+												<xs:documentation>describe</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" name="ConditionedFloorAreaServed"
 										type="SurfaceArea">
 										<xs:annotation>
@@ -1854,12 +1859,28 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
 			<xs:element name="ModelNumber" type="Model" minOccurs="0"/>
 			<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
-			<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
 			<xs:element minOccurs="0" name="PerformanceAdjustment" type="Fraction"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification"
+				type="HVACThirdPartyCertification"/>
 			<xs:element minOccurs="0" name="CombustionVentingSystem"
 				type="SystemIdentifiersInfoType"/>
 			<xs:element name="DistributionSystem" type="SystemIdentifiersInfoType" minOccurs="0"
 				maxOccurs="unbounded"/>
+			<xs:element minOccurs="0" name="Installation">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Standard" type="HVACInstallationStandard"/>
+						<xs:element minOccurs="0" name="SizingCalculation" type="HVACSizingCalcs"/>
+						<xs:element minOccurs="0" name="EnvelopeImprovementsUsedinSizing"
+							type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Air sealing and insulation implemented prior to replacement and used in calculations for sizing new / replacement system?</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="HeatingSystemInfoType">
@@ -1868,14 +1889,33 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				<xs:sequence minOccurs="1" maxOccurs="1">
 					<xs:element name="HeatingSystemType" type="HeatingSystemType"/>
 					<xs:element name="HeatingSystemFuel" type="FuelType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="BoilerType" type="BoilerType"/>
+					<xs:element minOccurs="0" name="SealedCombustion" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="RotaryCup" type="xs:boolean"/>
+					<xs:element name="ElectricDistribution" type="ElectricDistributionType"/>
 					<xs:element name="CondensingSystem" type="CondensingSystem" minOccurs="0"/>
-					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
+					<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
 					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>Capacity in Btuh</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="AFUE" type="AFUE" minOccurs="0"/>
+					<xs:element minOccurs="0" name="HeatingEfficiency">
+						<xs:complexType>
+							<xs:choice>
+								<xs:element name="AFUE" type="AFUE"/>
+								<xs:element name="COP" type="COP"/>
+								<xs:element name="Percent" type="Fraction">
+									<xs:annotation>
+										<xs:documentation>as decimal between 0 and 1</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:choice>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
+					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1913,11 +1953,12 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:element minOccurs="0" name="BackupHeatingSwitchoverTemperature"
 						type="Temperature">
 						<xs:annotation>
-							<xs:documentation>Temperature at which the backup heating is activated in degF.</xs:documentation>
+							<xs:documentation>Temperature at which the backup heating is activated in degrees Farenheit.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
+					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
 					<xs:element name="AnnualCoolEfficiencyType" type="AnnualCoolEfficiencyType"
 						minOccurs="0"/>
 					<xs:element name="AnnualCoolEfficiency" type="Efficiency" minOccurs="0"/>
@@ -1935,15 +1976,19 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:extension base="HVACSystemInfo">
 				<xs:sequence>
 					<xs:element name="CoolingSystemType" type="CoolingSystemType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="CoolingSystemFuel" type="FuelType"/>
 					<xs:element minOccurs="0" name="CoolingCapacity">
 						<xs:annotation>
 							<xs:documentation>Capacity in Btuh</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
+					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
 					<xs:element name="EfficiencyType" type="AnnualCoolEfficiencyType" minOccurs="0"/>
-					<xs:element name="Efficiency" type="Efficiency" minOccurs="0"/>
-					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
+					<xs:element name="AnnualCoolingEfficiency" type="Efficiency" minOccurs="0"/>
+					<xs:element minOccurs="0" name="SensibleHeatFraction" type="Fraction"/>
+					<xs:element minOccurs="0" name="WaterSideEconomizer" type="xs:boolean"/>
+					<xs:element minOccurs="0" name="CoolingEquipmentRedundancy" type="xs:boolean"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1960,8 +2005,6 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 		<xs:sequence>
 			<xs:element name="AirDistributionType" type="AirDistributionType" minOccurs="0"/>
 			<xs:element name="AirHandlerMotorType" type="AirHandlerMotorType" minOccurs="0"/>
-			<xs:element name="PreRetrofitDuctSizingWasAppropriate"
-				type="PreRetrofitDuctSizingWasAppropriate" minOccurs="0"/>
 			<xs:element minOccurs="0" name="DuctLeakageMeasurement"
 				type="DuctLeakageMeasurementType"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="Ducts">
@@ -1971,6 +2014,14 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element name="MaterialDuctSystemOutsideCondSpace" type="DuctMaterial"
 							minOccurs="0"/>
 						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0"/>
+						<xs:element minOccurs="0" name="DuctInsulationThickness"
+							type="LengthMeasurement">
+							<xs:annotation>
+								<xs:documentation>inches</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="DuctInsulationCondition"
+							type="InsulationCondition"/>
 						<xs:element name="DuctLocation" type="DuctLocation" minOccurs="0"/>
 						<xs:element minOccurs="0" name="DuctSurfaceArea" type="SurfaceArea"/>
 					</xs:sequence>

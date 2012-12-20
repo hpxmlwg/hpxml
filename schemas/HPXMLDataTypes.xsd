@@ -491,15 +491,27 @@
 	<xs:simpleType name="FuelType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="electricity"/>
+			<xs:enumeration value="renewable electricity"/>
 			<xs:enumeration value="natural gas"/>
-			<xs:enumeration value="liquified propane gas"/>
-			<xs:enumeration value="fuel oil #2"/>
+			<xs:enumeration value="renewable natural gas"/>
+			<xs:enumeration value="fuel oil"/>
+			<xs:enumeration value="fuel oil 1"/>
+			<xs:enumeration value="fuel oil 2"/>
+			<xs:enumeration value="fuel oil 4"/>
+			<xs:enumeration value="fuel oil 5/6"/>
+			<xs:enumeration value="district steam"/>
+			<xs:enumeration value="district hot water"/>
+			<xs:enumeration value="district chilled water"/>
+			<xs:enumeration value="solar hot water"/>
+			<xs:enumeration value="propane"/>
 			<xs:enumeration value="kerosene"/>
-			<xs:enumeration value="wood (hard)"/>
-			<xs:enumeration value="wood (soft)"/>
+			<xs:enumeration value="diesel"/>
+			<xs:enumeration value="anthracite coal"/>
+			<xs:enumeration value="bituminous coal"/>
+			<xs:enumeration value="coke"/>
+			<xs:enumeration value="wood"/>
 			<xs:enumeration value="wood pellets"/>
-			<xs:enumeration value="coal (anthracite)"/>
-			<xs:enumeration value="coal (bituminous)"/>
+			<xs:enumeration value="combination"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -787,6 +799,15 @@
 	<xs:simpleType name="EnergyStarCertified">
 		<xs:restriction base="xs:boolean"/>
 	</xs:simpleType>
+	<xs:simpleType name="HVACThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="CEE Tier 1"/>
+			<xs:enumeration value="CEE Tier 2"/>
+			<xs:enumeration value="CEE Tier 3"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Frame">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="wood"/>
@@ -913,7 +934,8 @@
 			<xs:enumeration value="central air conditioning"/>
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="room air conditioner"/>
-			<xs:enumeration value="heat pump"/>
+			<xs:enumeration value="evaporative cooler"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Efficiency">
@@ -930,6 +952,7 @@
 			<xs:enumeration value="SEER"/>
 			<xs:enumeration value="EER"/>
 			<xs:enumeration value="COP"/>
+			<xs:enumeration value="kW/ton"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AnnualHeatEfficiency">
@@ -976,6 +999,11 @@
 			<xs:maxInclusive value="100"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="COP">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="CondensingSystem">
 		<xs:restriction base="xs:boolean"/>
 	</xs:simpleType>
@@ -1006,12 +1034,14 @@
 	<xs:simpleType name="DuctLocation">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="conditioned space"/>
-			<xs:enumeration value="unconditioned attic"/>
+			<xs:enumeration value="unconditioned space"/>
 			<xs:enumeration value="unconditioned basement"/>
-			<xs:enumeration value="unconditioned crawlspace"/>
+			<xs:enumeration value="unvented crawlspace"/>
+			<xs:enumeration value="vented crawlspace"/>
+			<xs:enumeration value="unconditioned attic"/>
+			<xs:enumeration value="interstitial space"/>
 			<xs:enumeration value="garage"/>
-			<xs:enumeration value="exterior wall"/>
-			<xs:enumeration value="other"/>
+			<xs:enumeration value="outside"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DuctLeakageTest">
@@ -1057,9 +1087,6 @@
 	</xs:simpleType>
 	<xs:simpleType name="PostRetrofitSupplyDuctInsulationOutsideEnvelope">
 		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:simpleType name="PreRetrofitDuctSizingWasAppropriate">
-		<xs:restriction base="xs:boolean"/>
 	</xs:simpleType>
 	<xs:simpleType name="PreRetrofitMeasuredDuctLeakage">
 		<xs:restriction base="xs:string"/>
@@ -1446,41 +1473,54 @@
 	<xs:simpleType name="AuditorRelationship">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
+	<xs:simpleType name="HVACInstallationStandard">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACCA 5 QI HVAC"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HVACSizingCalcs">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="manual j"/>
+			<xs:enumeration value="manual j and manual d"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="HeatingSystemType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="furnace"/>
 			<xs:enumeration value="wall furnace"/>
 			<xs:enumeration value="boiler"/>
-			<xs:enumeration value="electric"/>
+			<xs:enumeration value="electric resistance"/>
 			<xs:enumeration value="fireplace"/>
-			<xs:enumeration value="stove"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="HVACDistributionSystemType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="air"/>
-			<xs:enumeration value="hydronic"/>
-			<xs:enumeration value="electric"/>
+			<xs:enumeration value="wood/pellet/coal stove"/>
+			<xs:enumeration value="portable heater"/>
+			<xs:enumeration value="solar thermal heating"/>
+			<xs:enumeration value="district steam heating"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="HydronicDistributionType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Baseboard"/>
-			<xs:enumeration value="Radiator"/>
-			<xs:enumeration value="Radiant floor"/>
+			<xs:enumeration value="radiator"/>
+			<xs:enumeration value="baseboard"/>
+			<xs:enumeration value="radiant floor"/>
+			<xs:enumeration value="radiant ceiling"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AirDistributionType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Regular velocity"/>
-			<xs:enumeration value="High velocity"/>
-			<xs:enumeration value="Gravity"/>
+			<xs:enumeration value="regular velocity"/>
+			<xs:enumeration value="high velocity"/>
+			<xs:enumeration value="gravity"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ElectricDistributionType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Baseboard"/>
-			<xs:enumeration value="Radiant"/>
+			<xs:enumeration value="baseboard"/>
+			<xs:enumeration value="radiant floor"/>
+			<xs:enumeration value="radiant ceiling"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AirHandlerMotorType">
@@ -1922,6 +1962,12 @@
 			<xs:enumeration value="ERCOT"/>
 			<xs:enumeration value="Hawaii"/>
 			<xs:enumeration value="Western"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BoilerType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="hot water"/>
+			<xs:enumeration value="steam"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
