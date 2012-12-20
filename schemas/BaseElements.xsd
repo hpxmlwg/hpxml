@@ -212,7 +212,7 @@
 			<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
 			<xs:element name="Model" type="Model" minOccurs="0"/>
-			<xs:element name="ModelYear" type="ModelYear" minOccurs="0"/>
+			<xs:element name="ModelYear" type="Year" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ClothesDryerInfoType">
@@ -1044,7 +1044,7 @@
 									<xs:element minOccurs="0" name="FractionDHWLoadServed"
 										type="Fraction"/>
 									<xs:element name="Location" type="UnitLocation" minOccurs="0"/>
-									<xs:element name="Year" type="ModelYear" minOccurs="0"/>
+									<xs:element name="Year" type="Year" minOccurs="0"/>
 									<xs:element name="Manufacturer" type="Manufacturer"
 										minOccurs="0"/>
 									<xs:element name="Model" type="Model" minOccurs="0"/>
@@ -1849,9 +1849,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element minOccurs="0" ref="AttachedToZone"/>
 			<xs:element minOccurs="0" name="AttachedToCAZ" type="SystemIdentifiersInfoType"/>
 			<xs:element name="UnitLocation" type="UnitLocation" minOccurs="0"/>
-			<xs:element name="ModelYear" type="ModelYear" minOccurs="0"/>
+			<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
+			<xs:element name="ModelYear" type="Year" minOccurs="0"/>
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
-			<xs:element name="Model" type="Model" minOccurs="0"/>
+			<xs:element name="ModelNumber" type="Model" minOccurs="0"/>
+			<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
 			<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
 			<xs:element minOccurs="0" name="PerformanceAdjustment" type="Fraction"/>
 			<xs:element minOccurs="0" name="CombustionVentingSystem"

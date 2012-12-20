@@ -1121,9 +1121,6 @@
 			<xs:enumeration value="other exterior"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="ModelYear">
-		<xs:restriction base="xs:integer"/>
-	</xs:simpleType>
 	<!--Thermostats Below-->
 	<xs:simpleType name="Temperature">
 		<xs:restriction base="xs:integer"/>
