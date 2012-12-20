@@ -2041,6 +2041,20 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="FractionHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
 			<xs:element name="HydronicDistributionType" type="HydronicDistributionType"
 				minOccurs="0"/>
+			<xs:element minOccurs="0" name="PumpandZoneVale">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ValveCorrections" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>System Pump and Zone Valve Corrections made</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="ThermostaticRadiatorValves"
+							type="xs:boolean"/>
+						<xs:element minOccurs="0" name="VariableSpeedPump" type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="AirDistributionInfo">
@@ -2049,12 +2063,12 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="AirHandlerMotorType" type="AirHandlerMotorType" minOccurs="0"/>
 			<xs:element minOccurs="0" name="DuctLeakageMeasurement"
 				type="DuctLeakageMeasurementType"/>
+			<xs:element minOccurs="0" name="DuctSystemSizingAppropriate" type="xs:boolean"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="Ducts">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="DuctType" type="DuctType" minOccurs="0"/>
-						<xs:element name="MaterialDuctSystemOutsideCondSpace" type="DuctMaterial"
-							minOccurs="0"/>
+						<xs:element name="DuctMaterial" type="DuctMaterial" minOccurs="0"/>
 						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0"/>
 						<xs:element minOccurs="0" name="DuctInsulationThickness"
 							type="LengthMeasurement">
@@ -2596,7 +2610,6 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="LeakinessObservedVisualInspection"
 				type="LeakinessObservedVisualInspection" minOccurs="0"/>
 			<xs:element name="DuctLeakageTestMethod" type="DuctLeakageTestMethod" minOccurs="0"/>
-			<xs:element name="DuctLeakageTest" type="DuctLeakageTest" minOccurs="0"/>
 			<xs:element name="MeasuredDuctLeakage" type="MeasuredDuctLeakage" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>

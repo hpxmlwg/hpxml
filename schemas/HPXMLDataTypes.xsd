@@ -1035,9 +1035,12 @@
 	</xs:simpleType>
 	<xs:simpleType name="DuctMaterial">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="flex duct"/>
 			<xs:enumeration value="duct board"/>
-			<xs:enumeration value="galvanized steel"/>
+			<xs:enumeration value="sheet metal"/>
+			<xs:enumeration value="galvanized"/>
+			<xs:enumeration value="flexible"/>
+			<xs:enumeration value="fiberboard"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DuctLocation">
@@ -1053,11 +1056,13 @@
 			<xs:enumeration value="outside"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="DuctLeakageTest">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
 	<xs:simpleType name="DuctLeakageTestMethod">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="duct blaster"/>
+			<xs:enumeration value="blower door subtract"/>
+			<xs:enumeration value="pressure pan"/>
+			<xs:enumeration value="visual inspection"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DuctLeakageTestUnitofMeasure">
 		<xs:restriction base="xs:string">
@@ -1077,7 +1082,13 @@
 		<xs:restriction base="xs:boolean"/>
 	</xs:simpleType>
 	<xs:simpleType name="LeakinessObservedVisualInspection">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="connections sealed w mastic"/>
+			<xs:enumeration value="no observable leaks"/>
+			<xs:enumeration value="some observable leaks"/>
+			<xs:enumeration value="significant leaks"/>
+			<xs:enumeration value="catastrophic leaks"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="MaterialDuctSystemOutsideCondSpace">
 		<xs:restriction base="xs:string"/>
