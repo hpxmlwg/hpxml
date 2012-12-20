@@ -808,6 +808,15 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="DHWThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="CEE Tier 1"/>
+			<xs:enumeration value="CEE Tier 2"/>
+			<xs:enumeration value="CEE Tier 3"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Frame">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="wood"/>
@@ -1176,9 +1185,6 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="MeetsACCA5QIHVACSpecification">
-		<xs:restriction base="xs:boolean"/>
-	</xs:simpleType>
-	<xs:simpleType name="OrphanedIndocator">
 		<xs:restriction base="xs:boolean"/>
 	</xs:simpleType>
 	<xs:simpleType name="PipeInsulated">
