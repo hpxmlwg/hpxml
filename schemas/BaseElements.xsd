@@ -2675,9 +2675,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="AdditionalDetails">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="MoistureControlImprovementInfo">
+						<xs:element name="MoistureControlImprovementInfo" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
+									<xs:element name="VaporRetardersInstalled"
+										type="VaporRetardersInstalled" minOccurs="0"/>
 									<xs:element name="GuttersInstalledorRepaired"
 										type="GuttersInstalledorRepaired" minOccurs="0"/>
 									<xs:element name="FlashingInstalledorRepaired"
@@ -2686,12 +2688,10 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 										type="FoundationGradingImproved" minOccurs="0"/>
 									<xs:element name="OtherMeasuresImplementedDescription"
 										type="OtherMeasuresImplementedDescription" minOccurs="0"/>
-									<xs:element name="VaporRetardersInstalled"
-										type="VaporRetardersInstalled" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="HVACDistributionImprovementInfo">
+						<xs:element name="HVACDistributionImprovementInfo" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="DuctSystemSealed" type="DuctSystemSealed"
@@ -2706,7 +2706,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="WaterHeaterImprovementInfo">
+						<xs:element name="WaterHeaterImprovementInfo" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="JacketInstalledIndicator"
@@ -2719,11 +2719,12 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 										minOccurs="0"/>
 									<xs:element name="LinearFTPipeInsulated"
 										type="LinearFTPipeInsulated" minOccurs="0"/>
-									<xs:element name="SystemReplaced" type="xs:boolean"/>
+									<xs:element name="SystemReplaced" type="xs:boolean"
+										minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element name="VentilationImprovementInfo">
+						<xs:element name="VentilationImprovementInfo" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="GarageDuctsandAirHandlersAirSealed"
@@ -3174,9 +3175,9 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element name="ExteriorLocationsWaterIntrusionorDamage"
-				type="ExteriorLocationsWaterIntrusionorDamage" minOccurs="0"/>
+				type="ExteriorLocationsWaterIntrusionorDamage" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element name="InteriorLocationsofWaterLeaksorDamage"
-				type="InteriorLocationsofWaterLeaksorDamage" minOccurs="0"/>
+				type="InteriorLocationsofWaterLeaksorDamage" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>

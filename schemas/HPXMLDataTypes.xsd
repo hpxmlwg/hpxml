@@ -764,7 +764,16 @@
 	</xs:simpleType>
 	<!--Moisture Control Below-->
 	<xs:simpleType name="ExteriorLocationsWaterIntrusionorDamage">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="roof"/>
+			<xs:enumeration value="interior ceiling"/>
+			<xs:enumeration value="foundation"/>
+			<xs:enumeration value="basement"/>
+			<xs:enumeration value="crawlspace"/>
+			<xs:enumeration value="walls"/>
+			<xs:enumeration value="around windows"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FlashingInstalledorRepaired">
 		<xs:restriction base="xs:boolean"/>
@@ -776,7 +785,12 @@
 		<xs:restriction base="xs:boolean"/>
 	</xs:simpleType>
 	<xs:simpleType name="InteriorLocationsofWaterLeaksorDamage">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kitchen "/>
+			<xs:enumeration value="bathroom"/>
+			<xs:enumeration value="basement"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="OtherMeasuresImplementedDescription">
 		<xs:restriction base="xs:string"/>
