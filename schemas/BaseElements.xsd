@@ -824,11 +824,10 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="AttachedToWall"
+										type="SystemIdentifiersInfoType"/>
 									<xs:element minOccurs="0" name="Quantity"
 										type="IntegerGreaterThanZero"/>
-									<xs:element name="StormDoor" type="StormDoor" minOccurs="0"/>
-									<xs:element name="DoorType" type="DoorType" minOccurs="0"/>
-									<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
 											<xs:documentation>Door area in sq.ft.</xs:documentation>
@@ -837,8 +836,16 @@
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Orientation"
 										type="OrientationType"/>
-									<xs:element minOccurs="0" name="AttachedToWall"
-										type="SystemIdentifiersInfoType"/>
+									<xs:element minOccurs="0" name="DoorType" type="DoorType"/>
+									<xs:element name="DoorMaterial" type="DoorMaterial"
+										minOccurs="0"/>
+									<xs:element minOccurs="0" name="WeatherStripping"
+										type="xs:boolean"/>
+									<xs:element name="StormDoor" type="StormDoor" minOccurs="0"/>
+									<xs:element name="RValue" type="RValue" minOccurs="0"/>
+									<xs:element maxOccurs="unbounded" minOccurs="0"
+										name="ThirdPartyCertification"
+										type="DoorThirdPartyCertifications"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>

@@ -632,9 +632,17 @@
 	<xs:simpleType name="DoorMaterial">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="solid wood"/>
-			<xs:enumeration value="wood panel"/>
-			<xs:enumeration value="foam-filled steel"/>
-			<xs:enumeration value="other"/>
+			<xs:enumeration value="hollow wood"/>
+			<xs:enumeration value="uninsulated metal"/>
+			<xs:enumeration value="insulated metal"/>
+			<xs:enumeration value="glass"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DoorType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="interior"/>
+			<xs:enumeration value="exterior"/>
+			<xs:enumeration value="storm"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="RValue">
@@ -643,6 +651,12 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Insulation Below-->
+	<xs:simpleType name="DoorThirdPartyCertifications">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="InstallationType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="cavity"/>
