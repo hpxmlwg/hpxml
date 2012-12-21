@@ -209,17 +209,26 @@
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" ref="AttachedToSpace"/>
 			<xs:element name="NumberofUnits" type="NumberofUnits" minOccurs="0"/>
-			<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
-			<xs:element name="Model" type="Model" minOccurs="0"/>
+			<xs:element name="ModelNumber" type="Model" minOccurs="0"/>
+			<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
 			<xs:element name="ModelYear" type="Year" minOccurs="0"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification"
+				type="ApplianceThirdPartyCertifications"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ClothesDryerInfoType">
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element minOccurs="0" name="Type" type="ClothesDryerType"/>
+					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="Usage" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>loads/week</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -230,9 +239,15 @@
 			<xs:extension base="ApplianceTypeSummaryInfo">
 
 				<xs:sequence>
-					<xs:element name="MEF" type="MEF" minOccurs="0"/>
 					<xs:element name="Type" type="ClothesWasherType" minOccurs="0"/>
-					<xs:element name="WF" type="WF" minOccurs="0"/>
+					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
+					<xs:element name="ModifiedEnergyFactor" type="xs:double" minOccurs="0"/>
+					<xs:element name="WaterFactor" type="xs:double" minOccurs="0"/>
+					<xs:element minOccurs="0" name="Usage" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>loads/week</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 
@@ -244,6 +259,8 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element minOccurs="0" name="Type" type="DishwasherType"/>
+					<xs:element minOccurs="0" name="Fuel" type="FuelType"/>
 					<xs:element name="HeatDryDefaultOff" type="HeatDryDefaultOff" minOccurs="0"/>
 					<xs:element name="AuxillaryWaterHeaterDefaultOff" type="xs:boolean"
 						minOccurs="0"/>
@@ -251,6 +268,11 @@
 					<xs:element minOccurs="0" name="EnergyFactor" type="EnergyFactor"/>
 					<xs:element minOccurs="0" name="RatedWaterGalPerCycle"
 						type="RatedWaterGalPerCycle"/>
+					<xs:element minOccurs="0" name="Usage" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>loads/week</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -260,6 +282,8 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element minOccurs="0" name="Type" type="FreezerType"/>
+					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="RatedAnnualkWh" type="RatedAnnualkWh" minOccurs="0"/>
 					<xs:element name="Configuration" type="FreezerStyle" minOccurs="0"/>
 					<xs:element name="Volume" type="Volume" minOccurs="0">
@@ -276,8 +300,14 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element name="Type" type="RefrigeratorStyle" minOccurs="0"/>
+					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="RatedAnnualkWh" type="RatedAnnualkWh" minOccurs="0"/>
-					<xs:element name="PrimaryIndicator" type="PrimaryIndicator" minOccurs="0"/>
+					<xs:element name="PrimaryIndicator" type="PrimaryIndicator" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>True if it is the primary refrigerator</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="Volume" type="Volume" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>in ft^3</xs:documentation>
@@ -293,7 +323,21 @@
 							<xs:documentation>Freezer Volume in ft^3.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="Configuration" type="RefrigeratorStyle" minOccurs="0"/>
+					<xs:element ref="extension" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="DehumidifierInfoType">
+		<xs:complexContent>
+			<xs:extension base="ApplianceTypeSummaryInfo">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="Location" type="DehumidifierLocation"/>
+					<xs:element minOccurs="0" name="Efficiency" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>liters / kWh</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1240,6 +1284,8 @@
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="Refrigerator"
 				type="RefrigeratorInfoType"/>
 			<xs:element minOccurs="0" maxOccurs="unbounded" name="Freezer" type="FreezerInfoType"/>
+			<xs:element name="Dehumidifier" maxOccurs="unbounded" minOccurs="0"
+				type="DehumidifierInfoType"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="CookingRange"
 				type="CookingRangeInfoType"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="Oven" type="OvenInfoType"/>

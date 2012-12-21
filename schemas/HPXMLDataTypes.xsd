@@ -1264,22 +1264,26 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<!--Clothes Dryers Below-->
-	<xs:simpleType name="ClothersDryerSequenceNumber">
-		<xs:restriction base="xs:integer"/>
-	</xs:simpleType>
 	<!--Clothes Washer Below-->
-	<xs:simpleType name="ClothesWasherSequenceNumber">
-		<xs:restriction base="xs:int"/>
-	</xs:simpleType>
-	<xs:simpleType name="MEF">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:simpleType name="WF">
-		<xs:restriction base="xs:double"/>
+	<xs:simpleType name="ApplianceThirdPartyCertifications">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="Energy Star Most Efficient"/>
+			<xs:enumeration value="CEE Tier 1"/>
+			<xs:enumeration value="CEE Tier 2"/>
+			<xs:enumeration value="CEE Tier 3"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<!--Dishwasher Below-->
-	<xs:simpleType name="DishwasherSequenceNumber">
-		<xs:restriction base="xs:int"/>
+	<xs:simpleType name="DishwasherType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="uncategorized"/>
+			<xs:enumeration value="built-in under counter"/>
+			<xs:enumeration value="portable"/>
+			<xs:enumeration value="counter-top"/>
+			<xs:enumeration value="single tank"/>
+			<xs:enumeration value="conveyor"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="HeatDryDefaultOff">
 		<xs:restriction base="xs:boolean"/>
@@ -1613,22 +1617,74 @@
 	</xs:simpleType>
 	<xs:simpleType name="ClothesWasherType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="horizontal"/>
-			<xs:enumeration value="vertical"/>
+			<xs:enumeration value="top loader"/>
+			<xs:enumeration value="front loader"/>
+			<xs:enumeration value="all-in-one combination washer/dryer"/>
+			<xs:enumeration value="unitized/stacked washer-dryer pair"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ClothesDryerType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="dryer"/>
+			<xs:enumeration value="all-in-one combination washer/dryer"/>
+			<xs:enumeration value="unitized/stacked washer-dryer pair"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LaundryMachineLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="laundry room"/>
+			<xs:enumeration value="living space"/>
+			<xs:enumeration value="basement"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FreezerType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="uncategorized"/>
+			<xs:enumeration value="manual defrost"/>
+			<xs:enumeration value="frost free"/>
+			<xs:enumeration value="walk-in"/>
+			<xs:enumeration value="case"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FreezerStyle">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="upright"/>
-			<xs:enumeration value="chest"/>
+			<xs:enumeration value="uncategorized"/>
+			<xs:enumeration value="manual defrost"/>
+			<xs:enumeration value="frost free"/>
+			<xs:enumeration value="walk-in"/>
+			<xs:enumeration value="case"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="RefrigeratorStyle">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="side-by-side"/>
 			<xs:enumeration value="top freezer"/>
 			<xs:enumeration value="bottom freezer"/>
-			<xs:enumeration value="side-by-side"/>
-			<xs:enumeration value="single-door"/>
+			<xs:enumeration value="single door"/>
+			<xs:enumeration value="full-size one door "/>
+			<xs:enumeration value="full-size two doors"/>
+			<xs:enumeration value="half or quarter size "/>
+			<xs:enumeration value="walk-in"/>
+			<xs:enumeration value="open case"/>
+			<xs:enumeration value="closed case"/>
+			<xs:enumeration value="uncategorized"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RefrigeratorLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kitchen"/>
+			<xs:enumeration value="living space"/>
+			<xs:enumeration value="basement"/>
+			<xs:enumeration value="garage"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DehumidifierLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="living space"/>
+			<xs:enumeration value="basement"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="WaterHeaterType">
