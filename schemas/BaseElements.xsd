@@ -764,6 +764,10 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="WindowInfo"/>
+									<xs:element minOccurs="0" name="WindowtoWallRatio"
+										type="Fraction"/>
+									<xs:element minOccurs="0" name="NumberofWindows"
+										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="AttachedToWall"
 										type="SystemIdentifiersInfoType"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
@@ -2814,20 +2818,78 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 	<xs:group name="WindowInfo">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
-			<xs:element name="Glazing" type="Glazing" minOccurs="0"/>
+			<xs:element name="Area" type="SurfaceArea" minOccurs="0"/>
+			<xs:element minOccurs="0" name="Quantity" type="IntegerGreaterThanZero">
+				<xs:annotation>
+					<xs:documentation>Number of windows</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
+			<xs:element minOccurs="0" name="Orientation" type="OrientationType"/>
+			<xs:element name="FrameType" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="Aluminum">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="ThermalBreak" type="xs:boolean"/>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Composite">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Fiberglass">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Steel">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Vinyl">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="Other">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="Description"/>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="NumberofPanes" type="NumberofPanes"/>
+			<xs:element minOccurs="0" name="GlassLayers" type="GlassLayers"/>
+			<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 			<xs:element name="Treatments" type="Treatments" minOccurs="0"/>
-			<xs:element name="Frame" type="Frame" minOccurs="0"/>
 			<xs:element name="Condition" type="WindowCondition" minOccurs="0"/>
-			<xs:element name="EnergyStarCertified" type="EnergyStarCertified" minOccurs="0"/>
-			<xs:element name="NFRCCertified" type="NFRCCertified" minOccurs="0"/>
-			<xs:element minOccurs="0" name="Quantity" type="xs:int"/>
 			<xs:element name="UFactor" type="UFactor" minOccurs="0"/>
 			<xs:element name="SHGC" type="SHGC" minOccurs="0"/>
-			<xs:choice minOccurs="0">
-				<xs:element minOccurs="1" name="InteriorShading" type="InteriorShading"/>
-				<xs:element minOccurs="1" name="InteriorShadingFactor" type="Fraction"/>
-			</xs:choice>
-			<xs:element minOccurs="0" name="ExteriorShading" type="ExteriorShading"/>
+			<xs:element name="NFRCCertified" type="NFRCCertified" minOccurs="0"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification"
+				type="WindowThirdPartyCertification"/>
+			<xs:element minOccurs="0" name="VisibleTransmittance" type="Fraction"/>
+			<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
+			<xs:element minOccurs="0" name="InteriorShadingFactor" type="Fraction"/>
+			<xs:element minOccurs="0" name="ExteriorShadingType" type="ExteriorShading"/>
 			<xs:element minOccurs="0" name="Overhangs">
 				<xs:complexType>
 					<xs:sequence>
@@ -2843,13 +2905,16 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="DistanceToBottomOfWindow"
-							type="LengthMeasurement"/>
+							type="LengthMeasurement">
+							<xs:annotation>
+								<xs:documentation>Vertical distance from overhang to bottom of window in inches</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="Area" type="SurfaceArea" minOccurs="0"/>
-			<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
-			<xs:element minOccurs="0" name="Orientation" type="OrientationType"/>
+			<xs:element minOccurs="0" name="WeatherStripping" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="Operable" type="xs:boolean"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="AssociationsType">

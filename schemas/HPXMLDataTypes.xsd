@@ -817,28 +817,30 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="Frame">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="wood"/>
-			<xs:enumeration value="vinyl"/>
-			<xs:enumeration value="metal"/>
-			<xs:enumeration value="metal with thermal break"/>
+	<xs:simpleType name="NumberofPanes">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="4"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="Glazing">
+	<xs:simpleType name="GlassLayers">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="single"/>
-			<xs:enumeration value="single with storm windows"/>
-			<xs:enumeration value="double"/>
-			<xs:enumeration value="double low-e"/>
-			<xs:enumeration value="triple"/>
-			<xs:enumeration value="triple low-e"/>
-			<xs:enumeration value="quad"/>
-			<xs:enumeration value="quad low-e"/>
+			<xs:enumeration value="single-pane"/>
+			<xs:enumeration value="double-pane"/>
+			<xs:enumeration value="triple-pane"/>
+			<xs:enumeration value="multi-layered"/>
+			<xs:enumeration value="single-paned with storms"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="NFRCCertified">
 		<xs:restriction base="xs:boolean"/>
+	</xs:simpleType>
+	<xs:simpleType name="WindowThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="SHGC">
 		<xs:restriction base="xs:double">
@@ -854,16 +856,20 @@
 			<xs:enumeration value="dark shades"/>
 			<xs:enumeration value="light curtains"/>
 			<xs:enumeration value="dark curtains"/>
+			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ExteriorShading">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="solar screen"/>
-			<xs:enumeration value="awning"/>
-			<xs:enumeration value="overhang"/>
+			<xs:enumeration value="external overhangs"/>
+			<xs:enumeration value="awnings"/>
+			<xs:enumeration value="solar screens"/>
+			<xs:enumeration value="solar film"/>
 			<xs:enumeration value="deciduous tree"/>
 			<xs:enumeration value="evergreen tree"/>
 			<xs:enumeration value="building"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Treatments">
@@ -1574,6 +1580,15 @@
 			<xs:enumeration value="good"/>
 			<xs:enumeration value="moderate"/>
 			<xs:enumeration value="poor"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GlassType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="low-e"/>
+			<xs:enumeration value="tinted"/>
+			<xs:enumeration value="reflective"/>
+			<xs:enumeration value="tinted/reflective"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="MVRRecommendation">
