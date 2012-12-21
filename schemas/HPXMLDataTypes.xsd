@@ -712,16 +712,54 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="interior"/>
 			<xs:enumeration value="exterior"/>
+			<xs:enumeration value="common area"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="NumberofReplacementsInstalled">
 		<xs:restriction base="xs:integer"/>
 	</xs:simpleType>
+	<xs:simpleType name="FluorescentTubeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T5"/>
+			<xs:enumeration value="T8"/>
+			<xs:enumeration value="super T8"/>
+			<xs:enumeration value="T12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FluorescentBallastType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="electronic"/>
+			<xs:enumeration value="magnetic"/>
+			<xs:enumeration value="instant start"/>
+			<xs:enumeration value="rapid start"/>
+			<xs:enumeration value="programmed start"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LightingThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LightingDailyHours">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1 to 4 hours per day"/>
+			<xs:enumeration value="4 to 12 hours per day"/>
+			<xs:enumeration value="more than 12 hours per day"/>
+			<xs:enumeration value="all day"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="LightingControls">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="occupancy sensor"/>
-			<xs:enumeration value="photo sensor"/>
-			<xs:enumeration value="timer"/>
+			<xs:enumeration value="daylight dimming"/>
+			<xs:enumeration value="occupancy sensors"/>
+			<xs:enumeration value="vacancy sensors"/>
+			<xs:enumeration value="manual dimming"/>
+			<xs:enumeration value="bi-level control"/>
+			<xs:enumeration value="timers"/>
+			<xs:enumeration value="manual"/>
+			<xs:enumeration value="advanced controls"/>
+			<xs:enumeration value="part of emcs"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Moisture Control Below-->
@@ -1581,7 +1619,6 @@
 			<xs:enumeration value="hot tub"/>
 			<xs:enumeration value="water bed"/>
 			<xs:enumeration value="aquarium"/>
-			<xs:enumeration value="dehumidifier"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>

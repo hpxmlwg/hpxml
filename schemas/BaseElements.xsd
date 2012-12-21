@@ -1296,16 +1296,28 @@
 		<xs:sequence>
 			<xs:element name="LightingGroup" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Light bulbs of the same type. For example you could have all the 60W incandescants.</xs:documentation>
+					<xs:documentation>Light units of the same type. For example you could have all the 60W incandescants.</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element minOccurs="0" name="Location" type="LightingLocation"/>
-						<xs:element name="AverageWattage" type="xs:double" minOccurs="0"/>
-						<xs:element name="AverageHoursPerDay" type="xs:double" minOccurs="0"/>
 						<xs:element name="NumberofUnits" type="xs:integer" minOccurs="0"/>
+						<xs:element minOccurs="0" name="LightingType" type="LightingType"/>
+						<xs:element name="AverageWattage" type="xs:double" minOccurs="0"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="ThirdPartyCertification" type="LightingThirdPartyCertification"/>
+						<xs:element name="AverageHoursPerDay" type="xs:double" minOccurs="0"/>
+						<xs:element minOccurs="0" name="LightingDailyHours"
+							type="LightingDailyHours"/>
+						<xs:element minOccurs="0" name="FractionofTotalInstalledPower"
+							type="Fraction"/>
+						<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea">
+							<xs:annotation>
+								<xs:documentation>square feet</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -1361,6 +1373,79 @@
 			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="LightingType">
+		<xs:choice>
+			<xs:element name="Incandescent">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Halogen" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FluorescentTube">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="TubeType" type="FluorescentTubeType"/>
+						<xs:element minOccurs="0" name="BallastType" type="FluorescentBallastType"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CompactFluorescent">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="LightEmittingDiode">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="HighIntensityDischarge">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Type">
+							<xs:complexType>
+								<xs:choice>
+									<xs:element name="MercuryVapor"/>
+									<xs:element name="Sodium">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="Pressure">
+												<xs:simpleType>
+												<xs:restriction base="xs:string">
+												<xs:enumeration value="high"/>
+												<xs:enumeration value="low"/>
+												</xs:restriction>
+												</xs:simpleType>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="MetalHalide"/>
+								</xs:choice>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Other">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Description" type="xs:string"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="MiscLoads">
 		<xs:sequence>
