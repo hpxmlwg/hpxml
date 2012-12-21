@@ -629,7 +629,7 @@
 	<xs:simpleType name="StormDoor">
 		<xs:restriction base="xs:boolean"/>
 	</xs:simpleType>
-	<xs:simpleType name="DoorType">
+	<xs:simpleType name="DoorMaterial">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="solid wood"/>
 			<xs:enumeration value="wood panel"/>

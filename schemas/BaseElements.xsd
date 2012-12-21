@@ -824,12 +824,14 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Quantity"
+										type="IntegerGreaterThanZero"/>
 									<xs:element name="StormDoor" type="StormDoor" minOccurs="0"/>
 									<xs:element name="DoorType" type="DoorType" minOccurs="0"/>
 									<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>Door are in sq.ft.</xs:documentation>
+											<xs:documentation>Door area in sq.ft.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
@@ -2818,10 +2820,14 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 	<xs:group name="WindowInfo">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
-			<xs:element name="Area" type="SurfaceArea" minOccurs="0"/>
+			<xs:element name="Area" type="SurfaceArea" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Total window surface area for this group of windows</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="Quantity" type="IntegerGreaterThanZero">
 				<xs:annotation>
-					<xs:documentation>Number of windows</xs:documentation>
+					<xs:documentation>Number of windows in the group</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
