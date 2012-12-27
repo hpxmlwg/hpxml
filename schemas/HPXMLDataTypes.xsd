@@ -601,8 +601,11 @@
 			<xs:enumeration value="ambient"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="attic"/>
-			<xs:enumeration value="other"/>
 			<xs:enumeration value="crawlspace"/>
+			<xs:enumeration value="ground"/>
+			<xs:enumeration value="living space"/>
+			<xs:enumeration value="unconditioned basement"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FramingFactor">
@@ -1463,14 +1466,6 @@
 		<xs:restriction base="xs:integer">
 			<xs:minInclusive value="0"/>
 			<xs:maxExclusive value="360"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="AverageCeilingHeightType">
-		<xs:annotation>
-			<xs:documentation>height in feet of ceiling, on average</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="energyUnitType">

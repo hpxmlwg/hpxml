@@ -432,13 +432,13 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
-						<xs:element name="SpaceName" type="xs:string"/>
+						<xs:element name="SpaceName" type="xs:string" minOccurs="0"/>
 						<xs:element minOccurs="0" name="NumberOfBedrooms"
 							type="IntegerGreaterThanOrEqualToZero"/>
 						<xs:element minOccurs="0" name="FloorArea" type="SurfaceArea"/>
 						<xs:element minOccurs="0" name="Volume" type="Volume"/>
-						<xs:element minOccurs="0" name="CeilingHeight"
-							type="AverageCeilingHeightType"/>
+						<xs:element minOccurs="0" name="CeilingHeight" type="LengthMeasurement"/>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -543,18 +543,17 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:group ref="SystemInfo"/>
-												<xs:element minOccurs="0" ref="AttachedToSpace"/>
-												<xs:element minOccurs="0" name="AttachedToRoof"
-												type="SystemIdentifiersInfoType"/>
-												<xs:choice minOccurs="0">
-												<xs:element name="AdjacentTo" type="AdjacentTo">
+												<xs:element minOccurs="0" ref="AttachedToSpace">
 												<xs:annotation>
-												<xs:documentation>ie above ground, basement, crawlspace, garage.</xs:documentation>
+												<xs:documentation>The space over which this attic is</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element name="AdjacentToZone"
+												<xs:element minOccurs="0" name="AttachedToRoof"
 												type="SystemIdentifiersInfoType"/>
-												</xs:choice>
+												<xs:element name="ExteriorAdjacentTo"
+												type="AdjacentTo" minOccurs="0"> </xs:element>
+												<xs:element minOccurs="0" name="InteriorAdjacentTo"
+												type="AdjacentTo"/>
 												<xs:element name="AtticType" type="AtticType"
 												minOccurs="0"/>
 												<xs:element minOccurs="0"
@@ -734,9 +733,12 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" name="Area" type="SurfaceArea"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element minOccurs="0" name="AdjacentTo" type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="ExteriorAdjacentTo"
+										type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo"
+										type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="Area" type="SurfaceArea"/>
 									<xs:element minOccurs="0" name="Insulation"
 										type="InsulationInfo"/>
 									<xs:element minOccurs="0" name="FloorJoists"
@@ -764,17 +766,12 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
+									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo"
+										minOccurs="0"> </xs:element>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo"
+										type="AdjacentTo"/>
 									<xs:element name="WallType" type="WallType" minOccurs="0"> </xs:element>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea"/>
-									<xs:choice minOccurs="0">
-										<xs:element name="AdjacentTo" type="AdjacentTo">
-											<xs:annotation>
-												<xs:documentation>ie above ground, basement, crawlspace, garage.</xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="AdjacentToZone"
-											type="SystemIdentifiersInfoType"/>
-									</xs:choice>
 									<xs:element minOccurs="0" name="Orientation"
 										type="OrientationType"/>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
@@ -2424,8 +2421,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 											<xs:documentation>Number of floors above grade that are heated/cooled</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="AverageCeilingHeight"
-										type="AverageCeilingHeightType" minOccurs="0">
+									<xs:element name="AverageCeilingHeight" type="LengthMeasurement"
+										minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>average distance in feet from the floor to the ceiling</xs:documentation>
 										</xs:annotation>
