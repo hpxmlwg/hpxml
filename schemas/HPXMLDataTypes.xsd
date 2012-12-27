@@ -411,6 +411,24 @@
 	<xs:simpleType name="COReading">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
+	<xs:simpleType name="RadonTestTypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="charcoal canister"/>
+			<xs:enumeration value="alpha-track detectors"/>
+			<xs:enumeration value="charcoal liquid scintillation"/>
+			<xs:enumeration value="electret ion chamber"/>
+			<xs:enumeration value="continuous radon monitor"/>
+			<xs:enumeration value="continuous working level monitor"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RadonTestLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kitchen"/>
+			<xs:enumeration value="crawlspace"/>
+			<xs:enumeration value="basement"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="FuelType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="electricity"/>

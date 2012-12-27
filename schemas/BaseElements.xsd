@@ -1689,13 +1689,19 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="StartDateTime"
+										type="xs:dateTime"/>
+									<xs:element minOccurs="0" name="EndDateTime" type="xs:dateTime"/>
+									<xs:element minOccurs="0" name="TestLocation"
+										type="RadonTestLocation"/>
 									<xs:element name="RadonTestResults" type="xs:double"
 										minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>in pCi/L</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="RadonTestMethod"/>
+									<xs:element minOccurs="0" name="RadonTestMethod"
+										type="RadonTestTypes"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
