@@ -1173,6 +1173,8 @@
 										type="MeetsACCA5QIHVACSpecification" minOccurs="0"/>
 									<xs:element name="HotWaterTemperature" type="Temperature"
 										minOccurs="0"/>
+									<xs:element minOccurs="0" name="HasSharedCombustionVentilation"
+										type="xs:boolean"/>
 									<xs:element minOccurs="0" name="CombustionVentilationOrphaned"
 										type="xs:boolean"/>
 									<xs:element name="CombustionVentingSystem" minOccurs="0"
