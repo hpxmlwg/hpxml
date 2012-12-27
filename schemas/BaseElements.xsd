@@ -22,9 +22,9 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="AddressType" type="AddressTypeCode" minOccurs="0"/>
-			<xs:element name="Address1" type="Address1" minOccurs="0"/>
-			<xs:element name="Address2" type="Address2" minOccurs="0"/>
-			<xs:element name="CityMunicipality" type="CityMunicipality" minOccurs="0"/>
+			<xs:element name="Address1" type="xs:string" minOccurs="0"/>
+			<xs:element name="Address2" type="xs:string" minOccurs="0"/>
+			<xs:element name="CityMunicipality" type="xs:string" minOccurs="0"/>
 			<xs:element name="StateCode" type="StateCode" minOccurs="0"/>
 			<xs:element name="ZipCode" type="ZipCodePlus4" minOccurs="0"/>
 			<xs:element name="USPSBarCode" type="USPSBarCode" minOccurs="0"/>
@@ -121,9 +121,9 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="PrefixName" type="PrefixName" minOccurs="0"/>
-						<xs:element name="FirstName" type="FirstName"/>
-						<xs:element name="MiddleName" type="MiddleName" minOccurs="0"/>
-						<xs:element name="LastName" type="LastName"/>
+						<xs:element name="FirstName" type="xs:string"/>
+						<xs:element name="MiddleName" type="xs:string" minOccurs="0"/>
+						<xs:element name="LastName" type="xs:string"/>
 						<xs:element name="SuffixName" type="SuffixName" minOccurs="0"/>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
@@ -189,7 +189,7 @@
 						<xs:element name="InsulationMaterial" type="InsulationMaterial"
 							minOccurs="0"/>
 						<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
-						<xs:element name="Thickness" type="Thickness" minOccurs="0">
+						<xs:element name="Thickness" type="LengthMeasurement" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>inches</xs:documentation>
 							</xs:annotation>
@@ -208,7 +208,7 @@
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" ref="AttachedToSpace"/>
-			<xs:element name="NumberofUnits" type="NumberofUnits" minOccurs="0"/>
+			<xs:element name="NumberofUnits" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
 			<xs:element name="ModelNumber" type="Model" minOccurs="0"/>
 			<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
@@ -261,7 +261,7 @@
 				<xs:sequence>
 					<xs:element minOccurs="0" name="Type" type="DishwasherType"/>
 					<xs:element minOccurs="0" name="Fuel" type="FuelType"/>
-					<xs:element name="HeatDryDefaultOff" type="HeatDryDefaultOff" minOccurs="0"/>
+					<xs:element name="HeatDryDefaultOff" type="xs:boolean" minOccurs="0"/>
 					<xs:element name="AuxillaryWaterHeaterDefaultOff" type="xs:boolean"
 						minOccurs="0"/>
 					<xs:element minOccurs="0" name="RatedAnnualkWh" type="RatedAnnualkWh"/>
@@ -282,7 +282,6 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="Type" type="FreezerType"/>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="RatedAnnualkWh" type="RatedAnnualkWh" minOccurs="0"/>
 					<xs:element name="Configuration" type="FreezerStyle" minOccurs="0"/>
@@ -303,7 +302,7 @@
 					<xs:element name="Type" type="RefrigeratorStyle" minOccurs="0"/>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="RatedAnnualkWh" type="RatedAnnualkWh" minOccurs="0"/>
-					<xs:element name="PrimaryIndicator" type="PrimaryIndicator" minOccurs="0">
+					<xs:element name="PrimaryIndicator" type="xs:boolean" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>True if it is the primary refrigerator</xs:documentation>
 						</xs:annotation>
@@ -513,8 +512,7 @@
 												type="WallAndRoofColor"/>
 												<xs:element minOccurs="0" name="RoofType"
 												type="RoofType"/>
-												<xs:element minOccurs="0" name="RoofSlope"
-												type="Pitch">
+												<xs:element minOccurs="0" name="Pitch" type="Pitch">
 												<xs:annotation>
 												<xs:documentation>Pitch of roof ?/12</xs:documentation>
 												</xs:annotation>
@@ -525,8 +523,8 @@
 												<xs:documentation>Surface area of the roof itself</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element name="RadiantBarrier"
-												type="RadiantBarrier" minOccurs="0"/>
+												<xs:element name="RadiantBarrier" type="xs:boolean"
+												minOccurs="0"/>
 												<xs:element name="RadiantBarrierLocation"
 												type="RadiantBarrierLocation" minOccurs="0"/>
 												<xs:element ref="extension" minOccurs="0"/>
@@ -882,7 +880,7 @@
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="WeatherStripping"
 										type="xs:boolean"/>
-									<xs:element name="StormDoor" type="StormDoor" minOccurs="0"/>
+									<xs:element name="StormDoor" type="xs:boolean" minOccurs="0"/>
 									<xs:element name="RValue" type="RValue" minOccurs="0"/>
 									<xs:element maxOccurs="unbounded" minOccurs="0"
 										name="ThirdPartyCertification"
@@ -1167,7 +1165,7 @@
 										</xs:complexType>
 									</xs:element>
 									<xs:element name="MeetsACCA5QIHVACSpecification"
-										type="MeetsACCA5QIHVACSpecification" minOccurs="0"/>
+										type="xs:boolean" minOccurs="0"/>
 									<xs:element name="HotWaterTemperature" type="Temperature"
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="HasSharedCombustionVentilation"
@@ -1335,7 +1333,7 @@
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="NumberofLightingControls"
-							type="NumberofReplacementsInstalled" minOccurs="0"/>
+							type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 						<xs:element name="Location" type="LightingLocation" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>interior, exterior</xs:documentation>
@@ -1455,8 +1453,8 @@
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
-						<xs:element name="NumberofPlugLoadControls" type="NumberofPlugLoadControls"
-							minOccurs="0"/>
+						<xs:element name="NumberofPlugLoadControls"
+							type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 						<xs:element name="PlugLoadControlType" minOccurs="0"
 							type="PlugLoadControlType"/>
 						<xs:element ref="extension" minOccurs="0"/>
@@ -1645,11 +1643,10 @@
 					<xs:sequence>
 						<xs:element name="StoveID" type="SystemIdentifiersInfoType"/>
 						<xs:element minOccurs="0" name="StoveFuel" type="FuelType"/>
-						<xs:element name="HeatingStoveProperlyVented"
-							type="HeatingStoveProperlyVented" minOccurs="0"/>
-						<xs:element name="COReading" type="COReading" minOccurs="0"/>
-						<xs:element name="GasLeaksIdentified" type="GasLeaksIdentified"
+						<xs:element name="HeatingStoveProperlyVented" type="xs:boolean"
 							minOccurs="0"/>
+						<xs:element name="COReading" type="COReading" minOccurs="0"/>
+						<xs:element name="GasLeaksIdentified" type="xs:boolean" minOccurs="0"/>
 						<xs:element name="ActionsTaken" type="xs:string" minOccurs="0"/>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
@@ -2010,7 +2007,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Units" type="energyUnitType" minOccurs="0"/>
 			<xs:element name="TotalSavings" type="xs:double" minOccurs="0"/>
 			<xs:element name="TotalDollarSavings" type="xs:double" minOccurs="0"/>
-			<xs:element minOccurs="0" name="PctReduction" type="AnnualPCTReduction"/>
+			<xs:element minOccurs="0" name="PctReduction" type="Fraction"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="EndUseSavings"
 				type="EndUseInfoType"/>
 		</xs:sequence>
@@ -2020,15 +2017,6 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="EndUse" type="endUseType"/>
 			<xs:element name="EndUseValue" type="xs:double"/>
 			<xs:element ref="extension" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="CAZApplianceMeasurement">
-		<xs:sequence>
-			<xs:element name="Spillage" type="SpillageResult" minOccurs="0"/>
-			<xs:element name="COResult" type="COResult" minOccurs="0"/>
-			<xs:element name="CarbonMonoxide" type="COValue" minOccurs="0"/>
-			<xs:element name="FlueDraftResult" type="FlueDraftResult" minOccurs="0"/>
-			<xs:element name="FlueDraft" type="FlueDraftValue" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:group name="SystemInfo">
@@ -2083,7 +2071,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:element minOccurs="0" name="RotaryCup" type="xs:boolean"/>
 					<xs:element name="ElectricDistribution" type="ElectricDistributionType"
 						minOccurs="0"/>
-					<xs:element name="CondensingSystem" type="CondensingSystem" minOccurs="0"/>
+					<xs:element name="CondensingSystem" type="xs:boolean" minOccurs="0"/>
 					<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 					<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
 					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
@@ -2149,7 +2137,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
-					<xs:element name="AnnualCoolEfficiencyType" type="AnnualCoolEfficiencyType"
+					<xs:element name="AnnualCoolEfficiencyType" type="CoolingEfficiencyType"
 						minOccurs="0"/>
 					<xs:element name="AnnualCoolEfficiency" type="Efficiency" minOccurs="0"/>
 					<xs:element name="AnnualHeatEfficiencyType" type="AnnualHeatEfficiencyType"
@@ -2173,7 +2161,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:element>
 					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
-					<xs:element name="EfficiencyType" type="AnnualCoolEfficiencyType" minOccurs="0"/>
+					<xs:element name="EfficiencyType" type="CoolingEfficiencyType" minOccurs="0"/>
 					<xs:element name="AnnualCoolingEfficiency" type="Efficiency" minOccurs="0"/>
 					<xs:element minOccurs="0" name="SensibleHeatFraction" type="Fraction"/>
 					<xs:element minOccurs="0" name="WaterSideEconomizer" type="xs:boolean"/>
@@ -2261,30 +2249,10 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	<xs:element name="ResourcesSaved">
 		<xs:complexType> </xs:complexType>
 	</xs:element>
-	<xs:element name="SystemsInfo">
-		<xs:complexType>
-			<xs:sequence minOccurs="0" maxOccurs="unbounded">
-				<xs:element name="SystemTypeCode" type="SystemTypeCode" minOccurs="0"/>
-				<xs:element name="SystemTypeName" type="SystemTypeName" minOccurs="0"/>
-				<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="SystemIdentifiersInfo">
+	<xs:element name="SystemIdentifiersInfo" type="SystemIdentifiersInfoType">
 		<xs:annotation>
 			<xs:documentation>System identifiers contain type codes and an identifier for both a sending and a receiving system.  These fields are needed to be able to transmit data between two systems, and have it identified in the two systems.</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="SendingSystemIdentifierType" type="SendingSystemIdentifierType"/>
-				<xs:element name="SendingSystemIdentifierValue" type="SendingSystemIdentifierValue"/>
-				<xs:element name="ReceivingSystemIdentifierType"
-					type="ReceivingSystemIdentifierType" minOccurs="0"/>
-				<xs:element name="ReceivingSystemIdentifierValue"
-					type="ReceivingSystemIdentifierValue" minOccurs="0"/>
-			</xs:sequence>
-			<xs:attribute name="ID" type="xs:int"/>
-		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="IncentiveDetailsType">
 		<xs:sequence>
@@ -2625,7 +2593,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="EstimatedLife" type="EstimatedLife" minOccurs="0"/>
 			<xs:element name="InstallationDate" type="InstallationDate" minOccurs="0"/>
 			<xs:element name="Cost" type="Cost" minOccurs="0"/>
-			<xs:element name="UnitPricingIndicator" type="UnitPricingIndicator" minOccurs="0"/>
+			<xs:element name="UnitPricingIndicator" type="xs:boolean" minOccurs="0"/>
 			<xs:element minOccurs="0" name="Incentives">
 				<xs:complexType>
 					<xs:sequence>
@@ -2674,56 +2642,57 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="InstalledComponent" type="SystemIdentifiersInfoType"/>
-			<xs:element ref="extension" minOccurs="0"/>
 			<xs:element name="AdditionalDetails">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="MoistureControlImprovementInfo" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="VaporRetardersInstalled"
-										type="VaporRetardersInstalled" minOccurs="0"/>
-									<xs:element name="GuttersInstalledorRepaired"
-										type="GuttersInstalledorRepaired" minOccurs="0"/>
-									<xs:element name="FlashingInstalledorRepaired"
-										type="FlashingInstalledorRepaired" minOccurs="0"/>
-									<xs:element name="FoundationGradingImproved"
-										type="FoundationGradingImproved" minOccurs="0"/>
+									<xs:element name="VaporRetardersInstalled" type="xs:boolean"
+										minOccurs="0"/>
+									<xs:element name="GuttersInstalledorRepaired" type="xs:boolean"
+										minOccurs="0"/>
+									<xs:element name="FlashingInstalledorRepaired" type="xs:boolean"
+										minOccurs="0"/>
+									<xs:element name="FoundationGradingImproved" type="xs:boolean"
+										minOccurs="0"/>
 									<xs:element name="OtherMeasuresImplementedDescription"
-										type="OtherMeasuresImplementedDescription" minOccurs="0"/>
+										type="xs:string" minOccurs="0"/>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
 						<xs:element name="HVACDistributionImprovementInfo" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="DuctSystemSealed" type="DuctSystemSealed"
+									<xs:element name="DuctSystemSealed" type="xs:boolean"
 										minOccurs="0"/>
 									<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit"
-										type="DuctOutsideEnvelopeInsulatedaspartofRetrofit"
-										minOccurs="0"/>
-									<xs:element name="DuctSystemReplaced" type="DuctSystemReplaced"
+										type="xs:boolean" minOccurs="0"/>
+									<xs:element name="DuctSystemReplaced" type="xs:boolean"
 										minOccurs="0"/>
 									<xs:element name="SystemPumpandZoneValveCorrectionsMade"
-										type="SystemPumpandZoneValveCorrectionsMade" minOccurs="0"/>
+										type="xs:boolean" minOccurs="0"/>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
 						<xs:element name="WaterHeaterImprovementInfo" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="JacketInstalledIndicator"
-										type="JacketInstalledIndicator" minOccurs="0"/>
+									<xs:element name="JacketInstalledIndicator" type="xs:boolean"
+										minOccurs="0"/>
 									<xs:element name="DispositionofExistingSystem"
 										type="DispositionofExistingSystem" minOccurs="0"/>
-									<xs:element name="RepairsDescription" type="RepairDescription"
+									<xs:element name="RepairsDescription" type="xs:string"
 										minOccurs="0" maxOccurs="unbounded"/>
 									<xs:element name="PipeInsulated" type="PipeInsulated"
 										minOccurs="0"/>
 									<xs:element name="LinearFTPipeInsulated"
-										type="LinearFTPipeInsulated" minOccurs="0"/>
+										type="LengthMeasurement" minOccurs="0"/>
 									<xs:element name="SystemReplaced" type="xs:boolean"
 										minOccurs="0"/>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -2731,15 +2700,18 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="GarageDuctsandAirHandlersAirSealed"
-										type="GarageDuctsandAirHandlersAirSealed" minOccurs="0"/>
+										type="xs:boolean" minOccurs="0"/>
 									<xs:element name="MechanicalVentilationInstalled"
-										type="MechanicalVentilationInstalled" minOccurs="0"/>
+										type="xs:boolean" minOccurs="0"/>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EnergySavingsType">
@@ -2747,7 +2719,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="FuelSavings"
 				type="FuelSavingsType"/>
 			<xs:element name="AnnualElectricityDemandReduction" minOccurs="0"/>
-			<xs:element name="AnnualPercentReduction" type="AnnualPCTReduction" minOccurs="0"/>
+			<xs:element name="AnnualPercentReduction" type="Fraction" minOccurs="0"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -2939,7 +2911,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 	<xs:complexType name="BusinessInfoType">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
-			<xs:element name="BusinessName" type="BusinessName"/>
+			<xs:element name="BusinessName" type="xs:string"/>
 			<xs:element name="BusinessType" type="BusinessType" minOccurs="0"/>
 			<xs:element name="BusinessSpecialization" type="BusinessSpecialization" minOccurs="0"/>
 			<xs:element name="Certification" type="BusinessCertification" minOccurs="0"
@@ -3031,7 +3003,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			<xs:element name="Condition" type="WindowCondition" minOccurs="0"/>
 			<xs:element name="UFactor" type="UFactor" minOccurs="0"/>
 			<xs:element name="SHGC" type="SHGC" minOccurs="0"/>
-			<xs:element name="NFRCCertified" type="NFRCCertified" minOccurs="0"/>
+			<xs:element name="NFRCCertified" type="xs:boolean" minOccurs="0"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification"
 				type="WindowThirdPartyCertification"/>
 			<xs:element minOccurs="0" name="VisibleTransmittance" type="Fraction"/>
@@ -3171,26 +3143,6 @@ You may assign all 10 points to one reason, or distribute the points among sever
 			<xs:element minOccurs="0" name="BuildingLeakiness" type="BuildingLeakiness"/>
 			<xs:element name="BuildingAirLeakage" type="BuildingAirLeakage" minOccurs="1"/>
 			<xs:element name="BuildingAirLeakageUnit" type="BuildingAirLeakageUnit" minOccurs="1"/>
-			<xs:element ref="extension" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="VentilationInfoType">
-		<xs:sequence>
-			<xs:group ref="SystemInfo"/>
-			<xs:element name="MechanicalVentilationDetermination"
-				type="MechanicalVentilationDetermination" minOccurs="0"/>
-			<xs:element name="MVRatCFM50" type="MVRatCFM50" minOccurs="0"/>
-			<xs:element name="MVRDeterminationMethod" type="MVRDeterminationMethod" minOccurs="0"/>
-			<xs:element name="MVRRecommendation" type="MVRRecommendation" minOccurs="0"/>
-			<xs:element name="OtherVentilationIssuesDescription"
-				type="OtherVentilationIssuesDescription" minOccurs="0"/>
-			<xs:element name="AirLeakage" type="BuildingAirLeakage" minOccurs="0"/>
-			<xs:element name="ProperClothersDryerVenting" type="ProperClothersDryerVenting"
-				minOccurs="0"/>
-			<xs:element name="VentType" type="VentType" minOccurs="0"/>
-			<xs:element name="VentLocation" type="VentLocation" minOccurs="0"/>
-			<xs:element name="VentstoOutdoors" type="VentstoOutdoors" minOccurs="0"/>
-			<xs:element name="AirBarrierBetweenHouseAndGarage" type="xs:boolean" minOccurs="0"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
