@@ -136,9 +136,9 @@
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="Utility">
+	<xs:element name="UtilityFuelProvider">
 		<xs:annotation>
-			<xs:documentation>Contains all utility elements.</xs:documentation>
+			<xs:documentation>Utility company or fuel provider</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>

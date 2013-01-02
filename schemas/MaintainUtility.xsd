@@ -12,13 +12,13 @@
 			<xs:sequence>
 				<xs:element ref="XMLTransactionHeaderInformation"/>
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
-				<xs:element name="Utilities" minOccurs="0">
+				<xs:element name="UtilitiesorFuelProviders" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Utility company information</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element ref="Utility" maxOccurs="unbounded"/>
+							<xs:element ref="UtilityFuelProvider" maxOccurs="unbounded"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
