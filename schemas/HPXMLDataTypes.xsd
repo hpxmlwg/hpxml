@@ -426,6 +426,8 @@
 			<xs:enumeration value="kitchen"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="basement"/>
+			<xs:enumeration value="bedroom"/>
+			<xs:enumeration value="living room"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
