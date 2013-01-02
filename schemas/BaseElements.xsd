@@ -2780,11 +2780,13 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 		<xs:sequence>
 			<xs:element minOccurs="0" name="BaselineBillingPeriodStartDate" type="xs:date"/>
 			<xs:element minOccurs="0" name="BaselineBillingPeriodEndDate" type="xs:date"/>
-			<xs:element minOccurs="0" name="CalibrationBaselineWeatherRegression">
+			<xs:element minOccurs="0" name="CalibrationBaselineWeatherRegressionCVRMSE">
 				<xs:annotation>
-					<xs:documentation>Detailed Calibration Baseline Weather Regression CV-RMSE. Eqn. 3.2.2.G.i  of BPI-2400.</xs:documentation>
+					<xs:documentation>Detailed Calibration Baseline Weather Regression CV-RMSE. Eqn. 3.2.2.G.i  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="BaselineHeatingFuelType" type="FuelType"/>
+			<xs:element minOccurs="0" name="BaselineHeatingUnits" type="energyUnitType"/>
 			<xs:element minOccurs="0" name="BaselineWeatherNormalizedHeatingUsage" type="xs:double">
 				<xs:annotation>
 					<xs:documentation>Baseline Weather Normalized Annual Heating Usage</xs:documentation>
@@ -2803,23 +2805,39 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingBiasError"
 				type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Eqn. 3.2.3.A.i  of BPI-2400</xs:documentation>
+					<xs:documentation>Eqn. 3.2.3.A.i  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingAbsoluteError"
 				type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Eqn. 3.2.3.A.ii  of BPI-2400</xs:documentation>
+					<xs:documentation>Eqn. 3.2.3.A.ii  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingBiasError"
-				type="xs:double"/>
+				type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingAbsoluteError"
-				type="xs:double"/>
+				type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadBiasError"
-				type="xs:double"/>
+				type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadAbsoluteError"
-				type="xs:double"/>
+				type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EnergyAndWaterUseTypeDescription">
