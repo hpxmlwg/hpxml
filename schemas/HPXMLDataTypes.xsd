@@ -730,12 +730,6 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="NumberofPanes">
-		<xs:restriction base="xs:integer">
-			<xs:minInclusive value="1"/>
-			<xs:maxInclusive value="4"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="GlassLayers">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="single-pane"/>
@@ -743,6 +737,7 @@
 			<xs:enumeration value="triple-pane"/>
 			<xs:enumeration value="multi-layered"/>
 			<xs:enumeration value="single-paned with storms"/>
+			<xs:enumeration value="single-paned with low-e storms"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
