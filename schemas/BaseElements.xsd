@@ -1532,65 +1532,63 @@
 									</xs:element>
 									<xs:element name="AmbientCOinCAZExceeded35ppmduringTesting"
 										type="xs:boolean" minOccurs="0"/>
-									<xs:element ref="extension" minOccurs="0"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element minOccurs="0" name="CombustionApplicanceTest"
-							maxOccurs="unbounded">
-							<xs:complexType>
-								<xs:sequence minOccurs="0">
-									<xs:element name="CAZAppliance" type="SystemIdentifiersInfoType">
-										<xs:annotation>
-											<xs:documentation>The ID of the system tested</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element minOccurs="0" name="CombustionVentingSystem"
-										type="SystemIdentifiersInfoType"/>
-									<xs:element name="FlueVisualCondition" type="FlueCondition"
-										minOccurs="0"/>
-									<xs:element minOccurs="0" name="FlueConditionNotes"
-										type="xs:string"/>
-									<xs:element name="OutsideTemperatureFlueDraftTest"
-										type="Temperature" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>degrees Farenheit</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element minOccurs="0" name="FlueDraftTest">
-										<xs:annotation>
-											<xs:documentation>Test is Pascals (Pa)</xs:documentation>
-										</xs:annotation>
+									<xs:element minOccurs="0" name="CombustionApplicanceTest"
+										maxOccurs="unbounded">
 										<xs:complexType>
-											<xs:complexContent>
+											<xs:sequence minOccurs="0">
+												<xs:element name="CAZAppliance"
+												type="SystemIdentifiersInfoType">
+												<xs:annotation>
+												<xs:documentation>The ID of the system tested</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="CombustionVentingSystem"
+												type="SystemIdentifiersInfoType"/>
+												<xs:element name="FlueVisualCondition"
+												type="FlueCondition" minOccurs="0"/>
+												<xs:element minOccurs="0" name="FlueConditionNotes"
+												type="xs:string"/>
+												<xs:element name="OutsideTemperatureFlueDraftTest"
+												type="Temperature" minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>degrees Farenheit</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="FlueDraftTest">
+												<xs:annotation>
+												<xs:documentation>Test is Pascals (Pa)</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:complexContent>
 												<xs:extension base="CAZApplianceReading">
 												<xs:sequence>
 												<xs:element ref="extension" minOccurs="0"/>
 												</xs:sequence>
 												</xs:extension>
-											</xs:complexContent>
-										</xs:complexType>
-									</xs:element>
-									<xs:element minOccurs="0" name="SpillageTest">
-										<xs:annotation>
-											<xs:documentation>Test in seconds</xs:documentation>
-										</xs:annotation>
-										<xs:complexType>
-											<xs:complexContent>
+												</xs:complexContent>
+												</xs:complexType>
+												</xs:element>
+												<xs:element minOccurs="0" name="SpillageTest">
+												<xs:annotation>
+												<xs:documentation>Test in seconds</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:complexContent>
 												<xs:extension base="CAZApplianceReading">
 												<xs:sequence>
 												<xs:element ref="extension" minOccurs="0"/>
 												</xs:sequence>
 												</xs:extension>
-											</xs:complexContent>
-										</xs:complexType>
-									</xs:element>
-									<xs:element minOccurs="0" name="CarbonMonoxideTest">
-										<xs:annotation>
-											<xs:documentation>Test in parts per million (ppm)</xs:documentation>
-										</xs:annotation>
-										<xs:complexType>
-											<xs:complexContent>
+												</xs:complexContent>
+												</xs:complexType>
+												</xs:element>
+												<xs:element minOccurs="0" name="CarbonMonoxideTest">
+												<xs:annotation>
+												<xs:documentation>Test in parts per million (ppm)</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:complexContent>
 												<xs:extension base="CAZApplianceReading">
 												<xs:sequence>
 												<xs:element
@@ -1610,24 +1608,31 @@
 												<xs:element minOccurs="0" ref="extension"/>
 												</xs:sequence>
 												</xs:extension>
-											</xs:complexContent>
-										</xs:complexType>
-									</xs:element>
-									<xs:element name="StackTemperature" type="Temperature"
-										minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>degrees Farenheit</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element name="FuelLeaks" minOccurs="0" maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
+												</xs:complexContent>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="StackTemperature"
+												type="Temperature" minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>degrees Farenheit</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element name="FuelLeaks" minOccurs="0"
+												maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
 												<xs:element name="FuelType" type="FuelType"/>
-												<xs:element name="LeaksIdentified" type="xs:boolean"/>
-												<xs:element name="LeaksAddressed" type="xs:boolean"/>
+												<xs:element name="LeaksIdentified"
+												type="xs:boolean"/>
+												<xs:element name="LeaksAddressed"
+												type="xs:boolean"/>
 												<xs:element minOccurs="0" name="Notes"
 												type="xs:string"/>
 												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element ref="extension" minOccurs="0"/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
