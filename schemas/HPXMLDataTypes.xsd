@@ -730,10 +730,11 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="NumberofPanes">
-		<xs:restriction base="xs:integer">
-			<xs:minInclusive value="1"/>
-			<xs:maxInclusive value="4"/>
+	<xs:simpleType name="StormWindow">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="clear"/>
+			<xs:enumeration value="low e"/>
+			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="GlassLayers">
