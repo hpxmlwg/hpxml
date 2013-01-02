@@ -1220,20 +1220,6 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="HeatingSystemType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="furnace"/>
-			<xs:enumeration value="wall furnace"/>
-			<xs:enumeration value="boiler"/>
-			<xs:enumeration value="electric resistance"/>
-			<xs:enumeration value="fireplace"/>
-			<xs:enumeration value="wood/pellet/coal stove"/>
-			<xs:enumeration value="portable heater"/>
-			<xs:enumeration value="solar thermal heating"/>
-			<xs:enumeration value="district steam heating"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="HydronicDistributionType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="radiator"/>
