@@ -2170,8 +2170,6 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:element name="EfficiencyType" type="CoolingEfficiencyType" minOccurs="0"/>
 					<xs:element name="AnnualCoolingEfficiency" type="Efficiency" minOccurs="0"/>
 					<xs:element minOccurs="0" name="SensibleHeatFraction" type="Fraction"/>
-					<xs:element minOccurs="0" name="WaterSideEconomizer" type="xs:boolean"/>
-					<xs:element minOccurs="0" name="CoolingEquipmentRedundancy" type="xs:boolean"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
