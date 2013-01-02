@@ -3107,7 +3107,6 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 					</xs:choice>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="NumberofPanes" type="NumberofPanes"/>
 			<xs:element minOccurs="0" name="GlassLayers" type="GlassLayers"/>
 			<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 			<xs:element name="Treatments" type="Treatments" minOccurs="0"/>
