@@ -1307,7 +1307,7 @@
 						<xs:element name="AverageWattage" type="xs:double" minOccurs="0"/>
 						<xs:element maxOccurs="unbounded" minOccurs="0"
 							name="ThirdPartyCertification" type="LightingThirdPartyCertification"/>
-						<xs:element name="AverageHoursPerDay" type="xs:double" minOccurs="0"/>
+						<xs:element name="AverageHoursPerDay" type="HoursPerDay" minOccurs="0"/>
 						<xs:element minOccurs="0" name="LightingDailyHours"
 							type="LightingDailyHours"/>
 						<xs:element minOccurs="0" name="FractionofTotalInstalledPower"
