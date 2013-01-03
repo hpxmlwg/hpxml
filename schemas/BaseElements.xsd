@@ -1310,8 +1310,6 @@
 						<xs:element name="AverageHoursPerDay" type="HoursPerDay" minOccurs="0"/>
 						<xs:element minOccurs="0" name="LightingDailyHours"
 							type="LightingDailyHours"/>
-						<xs:element minOccurs="0" name="FractionofTotalInstalledPower"
-							type="Fraction"/>
 						<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea">
 							<xs:annotation>
 								<xs:documentation>square feet</xs:documentation>
