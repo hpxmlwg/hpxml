@@ -831,22 +831,6 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Heat Pump Information Below-->
-	<xs:simpleType name="CoolingEfficiencyType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="SEER"/>
-			<xs:enumeration value="EER"/>
-			<xs:enumeration value="COP"/>
-			<xs:enumeration value="kW/ton"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="AnnualHeatEfficiencyType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="HSPF"/>
-			<xs:enumeration value="COP"/>
-			<xs:enumeration value="AFUE"/>
-			<xs:enumeration value="PercentEfficiency"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="GeothermalLoop">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="open"/>
@@ -883,6 +867,26 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<!--HVAC Distribution Below-->
+	<xs:simpleType name="HSPF">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SEER">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EER">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="kWperTon">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="DuctType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="supply"/>

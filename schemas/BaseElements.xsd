@@ -2080,7 +2080,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 							<xs:documentation>Capacity in Btuh</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="HeatingEfficiency">
+					<xs:element minOccurs="0" name="AnnualHeatingEfficiency">
 						<xs:complexType>
 							<xs:choice>
 								<xs:element name="AFUE" type="AFUE"/>
@@ -2230,12 +2230,22 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
-					<xs:element name="AnnualCoolEfficiencyType" type="CoolingEfficiencyType"
+					<xs:element name="AnnualCoolEfficiency" type="CoolingEfficiencyType"
 						minOccurs="0"/>
-					<xs:element name="AnnualCoolEfficiency" type="Efficiency" minOccurs="0"/>
-					<xs:element name="AnnualHeatEfficiencyType" type="AnnualHeatEfficiencyType"
-						minOccurs="0"/>
-					<xs:element name="AnnualHeatEfficiency" type="Efficiency" minOccurs="0"/>
+					<xs:element name="AnnualHeatEfficiency" minOccurs="0">
+						<xs:complexType>
+							<xs:choice>
+								<xs:element name="HSPF" type="HSPF"/>
+								<xs:element name="COP" type="COP"/>
+								<xs:element name="AFUE" type="AFUE"/>
+								<xs:element name="Percent" type="Fraction">
+									<xs:annotation>
+										<xs:documentation>as a fraction 0-1</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:choice>
+						</xs:complexType>
+					</xs:element>
 					<xs:element minOccurs="0" ref="extension"/>
 				</xs:sequence>
 			</xs:extension>
@@ -2254,13 +2264,21 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:element>
 					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
-					<xs:element name="EfficiencyType" type="CoolingEfficiencyType" minOccurs="0"/>
-					<xs:element name="AnnualCoolingEfficiency" type="Efficiency" minOccurs="0"/>
+					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType"
+						minOccurs="0"/>
 					<xs:element minOccurs="0" name="SensibleHeatFraction" type="Fraction"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="CoolingEfficiencyType">
+		<xs:choice>
+			<xs:element name="SEER" type="SEER"/>
+			<xs:element name="EER" type="EER"/>
+			<xs:element name="COP" type="COP"/>
+			<xs:element name="kWperTon" type="kWperTon"/>
+		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="HydronicDistributionInfo">
 		<xs:sequence>
