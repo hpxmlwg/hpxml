@@ -2334,16 +2334,6 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="ElectricResistanceDistributionType"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="JobSystemIdentifiers">
-		<xs:annotation>
-			<xs:documentation>HPXML records may contain data about an individual, either a person, or a business.  This element contains the root elements for individual identifier values between a sending and a receiving system.</xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="SystemIdentifiersInfo" maxOccurs="unbounded"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
 	<xs:element name="BuildingSystemIdentifiers">
 		<xs:annotation>
 			<xs:documentation>HPXML records may contain data about an individual, either a person, or a business.  This element contains the root elements for individual identifier values between a sending and a receiving system.</xs:documentation>
@@ -2365,28 +2355,15 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	</xs:element>
 	<xs:complexType name="IncentiveDetailsType">
 		<xs:sequence>
-			<xs:element name="TotalAmount" type="TotalAmount"/>
-			<xs:element minOccurs="0" name="Sponsors">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="Sponsor">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="SponsorCode" type="SponsorCode" minOccurs="0"/>
-									<xs:element name="SponsorName" type="SponsorName" minOccurs="0"/>
-									<xs:element name="IncentiveAmount" type="IncentiveAmount"
-										minOccurs="0"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="FundingSourceCode" type="FundingSourceCode" minOccurs="0"/>
+			<xs:element name="FundingSourceName" type="FundingSourceName" minOccurs="0"/>
+			<xs:element name="IncentiveType" type="SystemIdentifiersInfoType"/>
+			<xs:element name="IncentiveAmount" type="IncentiveAmount" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="JobStatusHistoryType">
 		<xs:sequence>
-			<xs:element name="JobStatus" type="JobStatus"/>
+			<xs:element name="JobStatus" type="Status"/>
 			<xs:element name="JobStatusDate" type="xs:dateTime"/>
 			<xs:element minOccurs="0" name="JobStatusUser" type="xs:string"/>
 			<xs:element ref="extension" minOccurs="0"/>
@@ -2611,45 +2588,66 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="MiscLoads" type="MiscLoads" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="JobDetailsType">
+	<xs:complexType name="ProjectDetailsType">
 		<xs:sequence>
-			<xs:element ref="JobSystemIdentifiers"/>
+			<xs:element maxOccurs="unbounded" name="ProjectSystemIdentifiers"
+				type="SystemIdentifiersInfoType"/>
 			<xs:element name="ProgramName" type="ProgramName" minOccurs="0"/>
-			<xs:element minOccurs="0" name="Auditor">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element ref="ContractorSystemIdentifiers"/>
-						<xs:element name="RelationshipToContractor" type="AuditorRelationship"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ContractorSystemIdentifiers"/>
-			<xs:element name="JobType" type="JobType" minOccurs="0"/>
+			<xs:element minOccurs="0" name="ProgramSponsor" type="ProgramSponsor"/>
+			<xs:element name="ProjectType" type="ProjectType" minOccurs="0"/>
 			<xs:element name="Title" type="Title" minOccurs="0"/>
-			<xs:element name="CurrentJobStatus" type="JobStatus" minOccurs="0"/>
-			<xs:element minOccurs="0" name="JobStatusHistory">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="JobStatusHistoryItem"
-							type="JobStatusHistoryType"/>
-					</xs:sequence>
-				</xs:complexType>
+			<xs:element name="CurrentStatus" type="Status" minOccurs="0"/>
+			<xs:element name="Stage" type="Stage" minOccurs="0"/>
+			<xs:element name="Notes" type="Notes" minOccurs="0"/>
+			<xs:element name="StartDate" type="StartDate" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Start date of project</xs:documentation>
+				</xs:annotation>
 			</xs:element>
-			<xs:element name="JobIncentives" minOccurs="0">
+			<xs:element name="CompleteDateEstimated" type="CompleteDateEstimated" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Estimated completion date of project</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CompleteDateActual" type="CompleteDateActual" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Actual completion date of project</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Hours" type="Hours">
+				<xs:annotation>
+					<xs:documentation>Amount of time spent by contractor on this stage of the project</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FeeCost" type="Cost">
+				<xs:annotation>
+					<xs:documentation>Cost of any fees associated with the audit or other project activities</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ProjectCost" type="TotalCostType">
+				<xs:annotation>
+					<xs:documentation>Cost of all work proposed or performed</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Incentives" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="JobIncentive"
+						<xs:element maxOccurs="unbounded" name="Incentive"
 							type="IncentiveDetailsType"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="JobStages">
+			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"/>
+			<xs:element minOccurs="0" name="Measures">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="JobStage" type="JobStageType"/>
+						<xs:element maxOccurs="unbounded" name="Measures" type="MeasureDetailsType"
+						/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="TotalCostType">
@@ -2660,27 +2658,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				minOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="JobStageType">
-		<xs:sequence>
-			<xs:element name="Stage" type="Stage" minOccurs="0"/>
-			<xs:element name="Notes" type="Notes" minOccurs="0"/>
-			<xs:element name="StartDate" type="StartDate" minOccurs="0"/>
-			<xs:element minOccurs="0" name="Hours" type="Hours"/>
-			<xs:element minOccurs="0" name="AuditCost" type="Cost"/>
-			<xs:element minOccurs="0" name="TotalCost" type="TotalCostType"/>
-			<xs:element name="CompleteDateEstimated" type="CompleteDateEstimated" minOccurs="0"/>
-			<xs:element name="CompleteDateActual" type="CompleteDateActual" minOccurs="0"/>
-			<xs:element name="Measures" minOccurs="0">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element maxOccurs="unbounded" minOccurs="1" name="Measure"
-							type="MeasureDetailsType"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"/>
-			<xs:element ref="extension" minOccurs="0"/>
-		</xs:sequence>
+	<xs:complexType name="StageType">
+		<xs:sequence> </xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="MeasureDetailsType">
 		<xs:sequence>

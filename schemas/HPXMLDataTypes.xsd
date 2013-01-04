@@ -1015,7 +1015,7 @@
 			<xs:maxInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="JobType">
+	<xs:simpleType name="ProjectType">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<!--Appliances Below-->
@@ -1395,7 +1395,12 @@
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="Stage">
-		<xs:restriction base="xs:string"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TestIn"/>
+			<xs:enumeration value="TestOut"/>
+			<xs:enumeration value="QA"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="StartDate">
 		<xs:restriction base="xs:date"/>
@@ -1424,16 +1429,16 @@
 	<xs:simpleType name="Cost">
 		<xs:restriction base="xs:decimal"/>
 	</xs:simpleType>
-	<xs:simpleType name="SponsorCode">
+	<xs:simpleType name="FundingSourceCode">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="TotalAmount">
 		<xs:restriction base="xs:decimal"/>
 	</xs:simpleType>
-	<xs:simpleType name="JobStatus">
+	<xs:simpleType name="Status">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="SponsorName">
+	<xs:simpleType name="FundingSourceName">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="IncentiveAmount">
@@ -1655,5 +1660,8 @@
 			<xs:enumeration value="hot water"/>
 			<xs:enumeration value="steam"/>
 		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProgramSponsor">
+		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 </xs:schema>
