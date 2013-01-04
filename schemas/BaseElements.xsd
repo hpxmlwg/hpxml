@@ -908,7 +908,7 @@
 			<xs:element name="HVAC" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="HVACPlant">
+						<xs:element name="HVACPlant" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element minOccurs="0" maxOccurs="unbounded"
@@ -921,32 +921,8 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element maxOccurs="unbounded" minOccurs="0" name="Thermostat">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" ref="AttachedToZone"/>
-									<xs:element name="ThermostatType" type="ThermostatType"
-										minOccurs="0"/>
-									<xs:element name="SetpointTempHeatingSeason" type="Temperature"
-										minOccurs="0"/>
-									<xs:element name="SetbackTempHeatingSeason" type="Temperature"
-										minOccurs="0"/>
-									<xs:element name="TotalSetbackHoursperWeekHeating" type="Hours"
-										minOccurs="0"/>
-									<xs:element name="SetbackTempCoolingSeason" type="Temperature"
-										minOccurs="0"/>
-									<xs:element name="SetpointTempCoolingSeason" type="Temperature"
-										minOccurs="0"/>
-									<xs:element name="TotalSetbackHoursperWeekCooling" type="Hours"
-										minOccurs="0"/>
-									<xs:element name="HVACSystemsServed"
-										type="SystemIdentifiersInfoType" minOccurs="0"
-										maxOccurs="unbounded"/>
-									<xs:element ref="extension" minOccurs="0"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="HVACControl"
+							type="HVACControlType"> </xs:element>
 						<xs:element maxOccurs="unbounded" minOccurs="0" name="HVACDistribution">
 							<xs:complexType>
 								<xs:sequence>
@@ -974,6 +950,17 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="Maintenance">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="Schedule"
+										type="HVACMaintenanceSchedule"/>
+									<xs:element minOccurs="0" name="ACReplacedinLastTenYears"
+										type="xs:boolean"/>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -2643,8 +2630,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element minOccurs="0" name="Measures">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="Measures" type="MeasureDetailsType"
-						/>
+						<xs:element maxOccurs="unbounded" name="Measure" type="MeasureDetailsType"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -2731,7 +2717,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="InstalledComponent" type="SystemIdentifiersInfoType"/>
-			<xs:element name="AdditionalDetails">
+			<xs:element name="AdditionalDetails" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="MoistureControlImprovementInfo" minOccurs="0">
@@ -2762,6 +2748,17 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 										minOccurs="0"/>
 									<xs:element name="SystemPumpandZoneValveCorrectionsMade"
 										type="xs:boolean" minOccurs="0"/>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="HVACMaintenance">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="NumberofCoilsReplaced"
+										type="IntegerGreaterThanOrEqualToZero"/>
+									<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
+										type="IntegerGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -3427,5 +3424,56 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 				</xs:complexType>
 			</xs:element>
 		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="HVACControlType">
+		<xs:sequence>
+			<xs:group ref="SystemInfo"/>
+			<xs:element minOccurs="0" ref="AttachedToZone"/>
+			<xs:element name="ControlType" type="ThermostatType" minOccurs="0"/>
+			<xs:element name="SetpointTempHeatingSeason" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>degrees Farenheit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SetbackTempHeatingSeason" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>degrees Farenheit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TotalSetbackHoursperWeekHeating" type="Hours" minOccurs="0"> </xs:element>
+			<xs:element name="SetupTempCoolingSeason" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>degrees Farenheit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SetpointTempCoolingSeason" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>degrees Farenheit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="TotalSetupHoursperWeekCooling" type="Hours" minOccurs="0"/>
+			<xs:element minOccurs="0" name="HotWaterResetControl" type="HotWaterResetControl"/>
+			<xs:element minOccurs="0" name="HeatLowered" type="HVACControlTypeAdjustments"/>
+			<xs:element minOccurs="0" name="ACAdjusted" type="HVACControlTypeAdjustments"/>
+			<xs:element minOccurs="0" name="FractionThermostaticRadiatorValves" type="Fraction">
+				<xs:annotation>
+					<xs:documentation>Fraction of rooms controlled by thermostatic radiator valves</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FractionElectronicZoneValves" type="Fraction">
+				<xs:annotation>
+					<xs:documentation>Percent of rooms controlled by electronic zone valves with thermostats</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="HVACSystemsServed" type="SystemIdentifiersInfoType" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HVACControlTypeAdjustments">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Day" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="Night" type="xs:boolean"/>
+		</xs:sequence>
 	</xs:complexType>
 </xs:schema>

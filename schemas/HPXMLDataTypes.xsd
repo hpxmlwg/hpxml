@@ -948,6 +948,21 @@
 	<xs:simpleType name="Capacity">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
+	<xs:simpleType name="HVACMaintenanceSchedule">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="yes - unspecified"/>
+			<xs:enumeration value="as needed"/>
+			<xs:enumeration value="daily"/>
+			<xs:enumeration value="weekly"/>
+			<xs:enumeration value="bi-weekly"/>
+			<xs:enumeration value="monthly"/>
+			<xs:enumeration value="semi-quarterly"/>
+			<xs:enumeration value="quarterly"/>
+			<xs:enumeration value="semi-annually"/>
+			<xs:enumeration value="annually"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="DispositionofExistingSystem">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
@@ -980,9 +995,18 @@
 	</xs:simpleType>
 	<xs:simpleType name="ThermostatType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="programmable"/>
-			<xs:enumeration value="non-programmable"/>
-			<xs:enumeration value="none"/>
+			<xs:enumeration value="programmable thermostat"/>
+			<xs:enumeration value="manual thermostat"/>
+			<xs:enumeration value="digital thermostat"/>
+			<xs:enumeration value="timer"/>
+			<xs:enumeration value="EMCS"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HotWaterResetControl">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="seasonal"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Hours">
