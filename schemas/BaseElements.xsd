@@ -1446,18 +1446,16 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="OtherHighConsumptionDevice" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="PlugLoad" minOccurs="0" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
-						<xs:element name="Fuel" type="FuelType" minOccurs="0"/>
-						<xs:element name="OtherHECDeviceType" type="OtherHECDeviceType"
+						<xs:element name="PlugLoadType" type="PlugLoadType" minOccurs="0"/>
+						<xs:element name="Number" type="IntegerGreaterThanOrEqualToZero"
 							minOccurs="0"/>
-						<xs:element name="NumberOfOtherHECDevice" type="xs:integer" minOccurs="0"/>
-						<xs:element minOccurs="0" name="OtherHECDeviceLoad" type="xs:double"/>
-						<xs:element minOccurs="0" name="OtherHECDeviceUnits"
-							type="OtherHECDeviceUnits"/>
+						<xs:element minOccurs="0" name="Load" type="xs:double"/>
+						<xs:element minOccurs="0" name="LoadUnits" type="PlugLoadUnits"/>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>

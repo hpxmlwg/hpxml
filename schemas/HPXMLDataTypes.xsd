@@ -1273,21 +1273,22 @@
 			<xs:enumeration value="ECM"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="OtherHECDeviceType">
+	<xs:simpleType name="PlugLoadType">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="TV plasma"/>
+			<xs:enumeration value="TV CRT"/>
+			<xs:enumeration value="TV other"/>
+			<xs:enumeration value="computer"/>
 			<xs:enumeration value="space heater"/>
-			<xs:enumeration value="pool"/>
-			<xs:enumeration value="hot tub"/>
 			<xs:enumeration value="water bed"/>
 			<xs:enumeration value="aquarium"/>
+			<xs:enumeration value="electric vehicle charging"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="OtherHECDeviceUnits">
+	<xs:simpleType name="PlugLoadUnits">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="kWh/year"/>
-			<xs:enumeration value="therms/year"/>
-			<xs:enumeration value="Btu/year"/>
 			<xs:enumeration value="W"/>
 		</xs:restriction>
 	</xs:simpleType>
