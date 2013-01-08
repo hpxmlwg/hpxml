@@ -379,6 +379,21 @@
 			<xs:enumeration value="master meter with sub-metering"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="EmissionType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CO2"/>
+			<xs:enumeration value="methane"/>
+			<xs:enumeration value="N2O"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmissionUnits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kg/MWh"/>
+			<xs:enumeration value="tons/MWh"/>
+			<xs:enumeration value="kg/therm"/>
+			<xs:enumeration value="kg/MMBtu"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="FuelInterruptibility">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="interruptible"/>
