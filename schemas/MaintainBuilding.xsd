@@ -12,7 +12,7 @@
 				<xs:element ref="XMLTransactionHeaderInformation"/>
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
 				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
-				<xs:element name="CustomerID" type="SystemIdentifiersInfoType" minOccurs="0"/>
+				<xs:element name="CustomerID" type="RemoteReference" minOccurs="0"/>
 				<xs:element name="Site" minOccurs="0">
 					<xs:complexType>
 						<xs:sequence>
@@ -43,7 +43,7 @@
 	<xs:element name="MaintainBuildingResponse">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
+				<xs:element name="BuildingID" type="RemoteReference"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="StatusMessage"
 					type="StatusMessage"/>
 			</xs:sequence>

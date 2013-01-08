@@ -28,8 +28,7 @@
 	<xs:element name="MaintainUtilityResponse">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element maxOccurs="unbounded" name="UtilityIdentifiers"
-					type="SystemIdentifiersInfoType"/>
+				<xs:element maxOccurs="unbounded" name="UtilityIdentifiers" type="RemoteReference"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="StatusMessages"
 					type="StatusMessage"/>
 			</xs:sequence>

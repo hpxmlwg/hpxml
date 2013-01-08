@@ -16,7 +16,7 @@
 You may assign all 10 points to one reason, or distribute the points among several reasons – as long as they total 10.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element name="BuildingIdentifier" type="SystemIdentifiersInfoType"/>
+				<xs:element name="BuildingIdentifier" type="RemoteReference"/>
 				<xs:element name="TestResults">
 					<xs:complexType>
 						<xs:sequence>
@@ -55,7 +55,7 @@ You may assign all 10 points to one reason, or distribute the points among sever
 	<xs:element name="ReportTestResultsResponse">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="BuildingIdentifier" type="SystemIdentifiersInfoType"/>
+				<xs:element name="BuildingIdentifier" type="RemoteReference"/>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="StatusMessages"
 					type="StatusMessage"/>
 			</xs:sequence>

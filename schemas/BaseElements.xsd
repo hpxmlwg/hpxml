@@ -33,7 +33,7 @@
 	</xs:complexType>
 	<xs:complexType name="SystemIdentifiersInfoType">
 		<xs:annotation>
-			<xs:documentation>System identifiers contain type codes and an identifier for both a sending and a receiving system.  These fields are needed to be able to transmit data between two systems, and have it identified in the two systems.</xs:documentation>
+			<xs:documentation>System identifiers contain type codes and an identifier for both a sending and a receiving system.  These fields are needed to be able to transmit data between two systems, and have it identified in the two systems. Also, there is an id attribute to define a local id to be used internally. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="SendingSystemIdentifierType" type="SendingSystemIdentifierType"
@@ -45,7 +45,34 @@
 			<xs:element name="ReceivingSystemIdentifierValue" type="ReceivingSystemIdentifierValue"
 				minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="ID" type="xs:integer" use="required"/>
+		<xs:attribute name="id" type="xs:ID" use="required">
+			<xs:annotation>
+				<xs:documentation>id local to the current document</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="LocalReference">
+		<xs:attribute name="idref" type="xs:IDREF"/>
+	</xs:complexType>
+	<xs:complexType name="RemoteReference">
+		<xs:annotation>
+			<xs:documentation>Use the id attribute if the element being referenced is available locally in the current xml transaction. Use the Sending/Receiving System Identifiers to identify elements in other xml transactions.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SendingSystemIdentifierType" type="SendingSystemIdentifierType"
+				minOccurs="0"/>
+			<xs:element name="SendingSystemIdentifierValue" type="SendingSystemIdentifierValue"
+				minOccurs="0"/>
+			<xs:element name="ReceivingSystemIdentifierType" type="ReceivingSystemIdentifierType"
+				minOccurs="0"/>
+			<xs:element name="ReceivingSystemIdentifierValue" type="ReceivingSystemIdentifierValue"
+				minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:IDREF">
+			<xs:annotation>
+				<xs:documentation>Id reference in the current document. Optional. If the element isn't available in the current document, don't use this.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:element name="ContractorSystemIdentifiers">
 		<xs:annotation>
@@ -423,8 +450,8 @@
 				maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="AttachedToSpace" type="SystemIdentifiersInfoType"/>
-	<xs:element name="AttachedToZone" type="SystemIdentifiersInfoType"/>
+	<xs:element name="AttachedToSpace" type="LocalReference"/>
+	<xs:element name="AttachedToZone" type="LocalReference"/>
 	<xs:complexType name="Spaces">
 		<xs:sequence>
 			<xs:element maxOccurs="unbounded" name="Space">
@@ -547,7 +574,7 @@
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="AttachedToRoof"
-												type="SystemIdentifiersInfoType"/>
+												type="LocalReference"/>
 												<xs:element name="ExteriorAdjacentTo"
 												type="AdjacentTo" minOccurs="0"> </xs:element>
 												<xs:element minOccurs="0" name="InteriorAdjacentTo"
@@ -808,7 +835,7 @@
 									<xs:element minOccurs="0" name="NumberofWindows"
 										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="AttachedToWall"
-										type="SystemIdentifiersInfoType"/>
+										type="LocalReference"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
@@ -840,7 +867,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="AttachedToRoof"
-										type="SystemIdentifiersInfoType"/>
+										type="LocalReference"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
@@ -864,7 +891,7 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="AttachedToWall"
-										type="SystemIdentifiersInfoType"/>
+										type="LocalReference"/>
 									<xs:element minOccurs="0" name="Quantity"
 										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
@@ -1083,7 +1110,7 @@
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToZone"/>
 									<xs:element minOccurs="0" name="AtachedToCAZ"
-										type="SystemIdentifiersInfoType"/>
+										type="LocalReference"/>
 									<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 									<xs:element name="WaterHeaterType" type="WaterHeaterType"
 										minOccurs="0"/>
@@ -1160,9 +1187,9 @@
 									<xs:element minOccurs="0" name="CombustionVentilationOrphaned"
 										type="xs:boolean"/>
 									<xs:element name="CombustionVentingSystem" minOccurs="0"
-										type="SystemIdentifiersInfoType"> </xs:element>
-									<xs:element name="RelatedHeatingSystem"
-										type="SystemIdentifiersInfoType" minOccurs="0"/>
+										type="LocalReference"> </xs:element>
+									<xs:element name="RelatedHeatingSystem" type="LocalReference"
+										minOccurs="0"/>
 									<xs:element minOccurs="0" name="Installation">
 										<xs:complexType>
 											<xs:sequence>
@@ -1217,7 +1244,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="ConnectedTo"
-										type="SystemIdentifiersInfoType"/>
+										type="LocalReference"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1311,7 +1338,7 @@
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" name="AttachedToLightingGroup"
-							type="SystemIdentifiersInfoType"/>
+							type="LocalReference"/>
 						<xs:element name="LightingControlType" type="LightingControls" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>occupancy sensor, photo sensor, timer</xs:documentation>
@@ -1520,14 +1547,14 @@
 										<xs:complexType>
 											<xs:sequence minOccurs="0">
 												<xs:element name="CAZAppliance"
-												type="SystemIdentifiersInfoType">
+												type="RemoteReference">
 												<xs:annotation>
 												<xs:documentation>The ID of the system tested</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0"
 												name="CombustionVentingSystem"
-												type="SystemIdentifiersInfoType"/>
+												type="RemoteReference"/>
 												<xs:element name="FlueVisualCondition"
 												type="FlueCondition" minOccurs="0"/>
 												<xs:element minOccurs="0" name="FlueConditionNotes"
@@ -2022,7 +2049,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" ref="AttachedToZone"/>
-			<xs:element minOccurs="0" name="AttachedToCAZ" type="SystemIdentifiersInfoType"/>
+			<xs:element minOccurs="0" name="AttachedToCAZ" type="LocalReference"/>
 			<xs:element name="UnitLocation" type="UnitLocation" minOccurs="0"/>
 			<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
 			<xs:element name="ModelYear" type="Year" minOccurs="0"/>
@@ -2034,9 +2061,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification"
 				type="HVACThirdPartyCertification"/>
 			<xs:element minOccurs="0" name="HasSharedCombustionVentilation" type="xs:boolean"/>
-			<xs:element minOccurs="0" name="CombustionVentingSystem"
-				type="SystemIdentifiersInfoType"/>
-			<xs:element name="DistributionSystem" type="SystemIdentifiersInfoType" minOccurs="0"
+			<xs:element minOccurs="0" name="CombustionVentingSystem" type="LocalReference"/>
+			<xs:element name="DistributionSystem" type="LocalReference" minOccurs="0"
 				maxOccurs="unbounded"/>
 			<xs:element minOccurs="0" name="Installation">
 				<xs:complexType>
@@ -2155,8 +2181,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="SolarThermal">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element minOccurs="0" name="SolarThermalSystem"
-							type="SystemIdentifiersInfoType"/>
+						<xs:element minOccurs="0" name="SolarThermalSystem" type="LocalReference"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2341,9 +2366,9 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	</xs:element>
 	<xs:complexType name="IncentiveDetailsType">
 		<xs:sequence>
+			<xs:element name="IncentiveType" type="SystemIdentifiersInfoType"/>
 			<xs:element name="FundingSourceCode" type="FundingSourceCode" minOccurs="0"/>
 			<xs:element name="FundingSourceName" type="FundingSourceName" minOccurs="0"/>
-			<xs:element name="IncentiveType" type="SystemIdentifiersInfoType"/>
 			<xs:element name="IncentiveAmount" type="IncentiveAmount" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -2576,8 +2601,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	</xs:complexType>
 	<xs:complexType name="ProjectDetailsType">
 		<xs:sequence>
-			<xs:element maxOccurs="unbounded" name="ProjectSystemIdentifiers"
-				type="SystemIdentifiersInfoType"/>
+			<xs:element maxOccurs="unbounded" name="ProjectSystemIdentifiers" type="RemoteReference"/>
 			<xs:element name="ProgramName" type="ProgramName" minOccurs="0"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ContractorSystemIdentifiers"/>
 			<xs:element minOccurs="0" name="ProgramSponsor" type="ProgramSponsor"/>
@@ -2697,7 +2721,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element minOccurs="0" name="WorkscopeNotes" type="Notes"/>
 			<xs:element minOccurs="0" name="Status" type="ImprovementStatusType"/>
 			<xs:element minOccurs="0" name="NotInstalledReasonCode" type="xs:string"/>
-			<xs:element minOccurs="0" name="InstallingContractor" type="SystemIdentifiersInfoType"/>
+			<xs:element minOccurs="0" name="InstallingContractor" type="RemoteReference"/>
 			<xs:element minOccurs="0" name="QA">
 				<xs:complexType>
 					<xs:sequence>
@@ -2710,11 +2734,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="ReplacedComponent"
-							type="SystemIdentifiersInfoType"/>
+							type="RemoteReference"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="InstalledComponent" type="SystemIdentifiersInfoType"/>
+			<xs:element minOccurs="0" name="InstalledComponent" type="RemoteReference"/>
 			<xs:element name="AdditionalDetails" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
@@ -2825,7 +2849,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	</xs:element>
 	<xs:complexType name="ConsumptionInfoType">
 		<xs:sequence>
-			<xs:element name="UtilityID" type="SystemIdentifiersInfoType"/>
+			<xs:element name="UtilityID" type="RemoteReference"/>
 			<xs:element name="ConsumptionType" type="EnergyAndWaterUseTypeDescription"/>
 			<xs:element maxOccurs="unbounded" name="ConsumptionDetail">
 				<xs:annotation>
@@ -3218,9 +3242,8 @@ You may assign all 10 points to one reason, or distribute the points among sever
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="Date" type="xs:date"/>
-			<xs:element minOccurs="0" name="BusinessConductingTest" type="SystemIdentifiersInfoType"/>
-			<xs:element minOccurs="0" name="IndividualConductingTest"
-				type="SystemIdentifiersInfoType"/>
+			<xs:element minOccurs="0" name="BusinessConductingTest" type="RemoteReference"/>
+			<xs:element minOccurs="0" name="IndividualConductingTest" type="RemoteReference"/>
 			<xs:element minOccurs="0" name="OutsideTemperature" type="Temperature">
 				<xs:annotation>
 					<xs:documentation>degreees Farenheit</xs:documentation>
@@ -3463,7 +3486,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					<xs:documentation>Percent of rooms controlled by electronic zone valves with thermostats</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="HVACSystemsServed" type="SystemIdentifiersInfoType" minOccurs="0"
+			<xs:element name="HVACSystemsServed" type="LocalReference" minOccurs="0"
 				maxOccurs="unbounded"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>

@@ -39,7 +39,7 @@
 	<xs:element name="MaintainCustomerResponse">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="CustomerID" type="SystemIdentifiersInfoType"/>
+				<xs:element name="CustomerID" type="RemoteReference"/>
 				<xs:element maxOccurs="unbounded" name="StatusMessages" type="StatusMessage"
 					minOccurs="0"/>
 			</xs:sequence>
