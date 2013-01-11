@@ -860,8 +860,6 @@
 									<xs:group ref="WindowInfo"/>
 									<xs:element minOccurs="0" name="WindowtoWallRatio"
 										type="Fraction"/>
-									<xs:element minOccurs="0" name="NumberofWindows"
-										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="AttachedToWall"
 										type="LocalReference"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
