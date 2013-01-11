@@ -461,7 +461,11 @@
 						<xs:element name="SpaceName" type="xs:string" minOccurs="0"/>
 						<xs:element minOccurs="0" name="NumberOfBedrooms"
 							type="IntegerGreaterThanOrEqualToZero"/>
-						<xs:element minOccurs="0" name="FloorArea" type="SurfaceArea"/>
+						<xs:element minOccurs="0" name="FloorArea" type="SurfaceArea">
+							<xs:annotation>
+								<xs:documentation>sq.ft.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="Volume" type="Volume"/>
 						<xs:element minOccurs="0" name="CeilingHeight" type="LengthMeasurement"/>
 						<xs:element minOccurs="0" ref="extension"/>
@@ -547,7 +551,7 @@
 												<xs:element minOccurs="0" name="RoofArea"
 												type="SurfaceArea">
 												<xs:annotation>
-												<xs:documentation>Surface area of the roof itself</xs:documentation>
+												<xs:documentation>Surface area of the roof itself in sq.ft.</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element name="RadiantBarrier" type="xs:boolean"
@@ -588,8 +592,12 @@
 												type="InsulationInfo"/>
 												<xs:element minOccurs="0" name="AtticRoofInsulation"
 												type="InsulationInfo"/>
-												<xs:element name="Area" type="xs:double"
-												minOccurs="0"/>
+												<xs:element name="Area" type="SurfaceArea"
+												minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>sq.ft.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="Rafters"
 												type="StudDimensions"/>
 												<xs:element ref="extension" minOccurs="0"/>
@@ -633,7 +641,11 @@
 												<xs:element minOccurs="0" name="FloorCovering"
 												type="FloorCovering"/>
 												<xs:element minOccurs="0" name="Area"
-												type="SurfaceArea"/>
+												type="SurfaceArea">
+												<xs:annotation>
+												<xs:documentation>sq.ft.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" maxOccurs="1"
 												name="Insulation" type="InsulationInfo"> </xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
@@ -659,7 +671,11 @@
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="Area"
-												type="SurfaceArea"/>
+												type="SurfaceArea">
+												<xs:annotation>
+												<xs:documentation>sq.ft.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="Thickness"
 												type="LengthMeasurement">
 												<xs:annotation>
@@ -763,7 +779,11 @@
 										type="AdjacentTo"/>
 									<xs:element minOccurs="0" name="InteriorAdjacentTo"
 										type="AdjacentTo"/>
-									<xs:element minOccurs="0" name="Area" type="SurfaceArea"/>
+									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Insulation"
 										type="InsulationInfo"/>
 									<xs:element minOccurs="0" name="FloorJoists"
@@ -796,7 +816,11 @@
 									<xs:element minOccurs="0" name="InteriorAdjacentTo"
 										type="AdjacentTo"/>
 									<xs:element name="WallType" type="WallType" minOccurs="0"> </xs:element>
-									<xs:element minOccurs="0" name="Area" type="SurfaceArea"/>
+									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Orientation"
 										type="OrientationType"/>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0"/>
@@ -1326,7 +1350,7 @@
 							type="LightingDailyHours"/>
 						<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea">
 							<xs:annotation>
-								<xs:documentation>square feet</xs:documentation>
+								<xs:documentation>sq.ft.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element ref="extension" minOccurs="0"/>
@@ -2106,7 +2130,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						</xs:complexType>
 					</xs:element>
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
-					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
+					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea">
+						<xs:annotation>
+							<xs:documentation>sq.ft.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -2240,7 +2268,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:element>
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
-					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
+					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea">
+						<xs:annotation>
+							<xs:documentation>sq.ft.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="AnnualCoolEfficiency" type="CoolingEfficiencyType"
 						minOccurs="0"/>
 					<xs:element name="AnnualHeatEfficiency" minOccurs="0">
@@ -2274,7 +2306,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
-					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea"/>
+					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea">
+						<xs:annotation>
+							<xs:documentation>sq.ft.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType"
 						minOccurs="0"/>
 					<xs:element minOccurs="0" name="SensibleHeatFraction" type="Fraction"/>
@@ -2334,7 +2370,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element minOccurs="0" name="DuctInsulationCondition"
 							type="InsulationCondition"/>
 						<xs:element name="DuctLocation" type="DuctLocation" minOccurs="0"/>
-						<xs:element minOccurs="0" name="DuctSurfaceArea" type="SurfaceArea"/>
+						<xs:element minOccurs="0" name="DuctSurfaceArea" type="SurfaceArea">
+							<xs:annotation>
+								<xs:documentation>sq.ft.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -2511,12 +2551,24 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="BuildingFootprintArea"
-										type="SurfaceArea"/>
+										type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FootprintShape"
 										type="FootprintShape"/>
 									<xs:element minOccurs="0" name="GrossFloorArea"
-										type="SurfaceArea"/>
-									<xs:element minOccurs="0" name="NetFloorArea" type="SurfaceArea"/>
+										type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="NetFloorArea" type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="ConditionedFloorArea" type="SurfaceArea"
 										minOccurs="0">
 										<xs:annotation>
@@ -2532,11 +2584,23 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element name="NumberofStoriesAboveGrade"
 										type="IntegerGreaterThanZero" minOccurs="0"/>
 									<xs:element minOccurs="0" name="CooledFloorArea"
-										type="SurfaceArea"/>
+										type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="HeatedFloorArea"
-										type="SurfaceArea"/>
+										type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="UnconditionedFloorArea"
-										type="SurfaceArea"/>
+										type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>sq.ft.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="BuildingVolume" type="Volume"/>
 									<xs:element name="ConditionedBuildingVolume" type="Volume"
 										minOccurs="0"> </xs:element>
@@ -3077,7 +3141,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			<xs:group ref="SystemInfo"/>
 			<xs:element name="Area" type="SurfaceArea" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Total window surface area for this group of windows</xs:documentation>
+					<xs:documentation>Total window surface area for this group of windows in sq.ft.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="Quantity" type="IntegerGreaterThanZero">
