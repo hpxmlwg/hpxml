@@ -1512,13 +1512,13 @@
 	</xs:simpleType>
 	<xs:simpleType name="AtticType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="CapeCod"/>
-			<xs:enumeration value="CathedralCeiling"/>
-			<xs:enumeration value="FlatRoof"/>
-			<xs:enumeration value="UnventedAttic"/>
-			<xs:enumeration value="VentedAttic"/>
-			<xs:enumeration value="VentingUnknownAttic"/>
-			<xs:enumeration value="Other"/>
+			<xs:enumeration value="cape cod"/>
+			<xs:enumeration value="cathedral ceiling"/>
+			<xs:enumeration value="flat roof"/>
+			<xs:enumeration value="unvented attic"/>
+			<xs:enumeration value="vented attic"/>
+			<xs:enumeration value="venting unknown attic"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ImprovementStatusType">
