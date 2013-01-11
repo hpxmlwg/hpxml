@@ -466,7 +466,11 @@
 								<xs:documentation>sq.ft.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element minOccurs="0" name="Volume" type="Volume"/>
+						<xs:element minOccurs="0" name="Volume" type="Volume">
+							<xs:annotation>
+								<xs:documentation>ft^3</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="CeilingHeight" type="LengthMeasurement"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
@@ -2601,9 +2605,17 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 											<xs:documentation>sq.ft.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="BuildingVolume" type="Volume"/>
+									<xs:element minOccurs="0" name="BuildingVolume" type="Volume">
+										<xs:annotation>
+											<xs:documentation>ft^3</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="ConditionedBuildingVolume" type="Volume"
-										minOccurs="0"> </xs:element>
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>ft^3</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="FoundationType" minOccurs="0"
 										type="FoundationType">
 										<xs:annotation>
