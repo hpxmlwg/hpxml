@@ -1020,7 +1020,8 @@
 						<xs:element name="AnnualEnergyUse" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="ConsumptionInfo" type="ConsumptionInfoType"/>
+									<xs:element name="ConsumptionInfo" type="ConsumptionInfoType"
+										maxOccurs="unbounded"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -2102,6 +2103,13 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="AnnualEnergyUse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ConsumptionInfo" type="ConsumptionInfoType"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
