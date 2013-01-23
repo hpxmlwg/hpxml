@@ -1569,7 +1569,7 @@
 									</xs:element>
 									<xs:element name="AmbientCOinCAZExceeded35ppmduringTesting"
 										type="xs:boolean" minOccurs="0"/>
-									<xs:element minOccurs="0" name="CombustionApplicanceTest"
+									<xs:element minOccurs="0" name="CombustionApplianceTest"
 										maxOccurs="unbounded">
 										<xs:complexType>
 											<xs:sequence minOccurs="0">
