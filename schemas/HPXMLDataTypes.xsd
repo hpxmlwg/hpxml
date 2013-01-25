@@ -1434,14 +1434,6 @@
 	<xs:simpleType name="Title">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="Stage">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="TestIn"/>
-			<xs:enumeration value="TestOut"/>
-			<xs:enumeration value="QA"/>
-			<xs:enumeration value="Other"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="StartDate">
 		<xs:restriction base="xs:date"/>
 	</xs:simpleType>
@@ -1474,9 +1466,6 @@
 	</xs:simpleType>
 	<xs:simpleType name="TotalAmount">
 		<xs:restriction base="xs:decimal"/>
-	</xs:simpleType>
-	<xs:simpleType name="Status">
-		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="FundingSourceName">
 		<xs:restriction base="xs:string"/>

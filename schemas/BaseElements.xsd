@@ -2422,14 +2422,6 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="IncentiveAmount" type="IncentiveAmount" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="JobStatusHistoryType">
-		<xs:sequence>
-			<xs:element name="JobStatus" type="Status"/>
-			<xs:element name="JobStatusDate" type="xs:dateTime"/>
-			<xs:element minOccurs="0" name="JobStatusUser" type="xs:string"/>
-			<xs:element ref="extension" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="BuildingDetailsType">
 		<xs:sequence>
 			<xs:element name="BuildingSummary" minOccurs="0">
@@ -2689,8 +2681,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element minOccurs="0" name="ProgramSponsor" type="ProgramSponsor"/>
 			<xs:element name="ProjectType" type="ProjectType" minOccurs="0"/>
 			<xs:element name="Title" type="Title" minOccurs="0"/>
-			<xs:element name="CurrentStatus" type="Status" minOccurs="0"/>
-			<xs:element name="Stage" type="Stage" minOccurs="0"/>
+			<xs:element minOccurs="0" ref="ProjectStatus"/>
 			<xs:element name="Notes" type="Notes" minOccurs="0"/>
 			<xs:element name="StartDate" type="StartDate" minOccurs="0">
 				<xs:annotation>
