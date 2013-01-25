@@ -428,12 +428,12 @@
 	</xs:simpleType>
 	<xs:simpleType name="RadonTestTypes">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="charcoal canister"/>
+			<xs:enumeration value="activated charcoal absorption"/>
 			<xs:enumeration value="alpha-track detectors"/>
-			<xs:enumeration value="charcoal liquid scintillation"/>
-			<xs:enumeration value="electret ion chamber"/>
-			<xs:enumeration value="continuous radon monitor"/>
-			<xs:enumeration value="continuous working level monitor"/>
+			<xs:enumeration value="unfiltered track detection"/>
+			<xs:enumeration value="short term electret ion chamber"/>
+			<xs:enumeration value="long term electret ion chamber"/>
+			<xs:enumeration value="continuous radon monitoring"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="RadonTestLocation">
