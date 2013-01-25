@@ -1231,6 +1231,12 @@
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="MeasuredOrEstimated">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="estimated"/>
+			<xs:enumeration value="measured"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="SurfaceArea">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>

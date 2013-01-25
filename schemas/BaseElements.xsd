@@ -2058,6 +2058,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element minOccurs="0" name="PctReduction" type="Fraction"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="EndUseSavings"
 				type="EndUseInfoType"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EndUseInfoType">
@@ -2721,7 +2722,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"/>
+			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"
+				maxOccurs="2"/>
 			<xs:element minOccurs="0" name="Measures">
 				<xs:complexType>
 					<xs:sequence>
@@ -2789,7 +2791,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"/>
+			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"
+				maxOccurs="2"/>
 			<xs:element minOccurs="0" name="CustomerNotes" type="Notes"/>
 			<xs:element minOccurs="0" name="WorkscopeNotes" type="Notes"/>
 			<xs:element minOccurs="0" name="Status" type="ImprovementStatusType"/>
@@ -2897,9 +2900,18 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	</xs:complexType>
 	<xs:complexType name="EnergySavingsType">
 		<xs:sequence>
+			<xs:element minOccurs="0" name="EnergySavingsType" type="MeasuredOrEstimated">
+				<xs:annotation>
+					<xs:documentation>Indicates whether it is measured energy savings or estimated energy savings.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="FuelSavings"
 				type="FuelSavingsType"/>
-			<xs:element name="AnnualElectricityDemandReduction" minOccurs="0"/>
+			<xs:element name="AnnualElectricityDemandReduction" minOccurs="0" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>in kW</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="AnnualPercentReduction" type="Fraction" minOccurs="0"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
