@@ -1003,6 +1003,8 @@
 											<xs:documentation>Conditioned floor area in sq.ft. that this distribution system serves.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="HVACDistributionImprovement"
+										type="HVACDistributionImprovementInfo"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1228,6 +1230,8 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+									<xs:element minOccurs="0" name="WaterHeaterImprovement"
+										type="WaterHeaterImprovementInfo"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1530,6 +1534,8 @@
 							type="SpotVentDesignInfo"/>
 						<xs:element minOccurs="0" name="OtherVentilationIssues"
 							type="OtherVentIssues"/>
+						<xs:element minOccurs="0" name="VentilationImprovement"
+							type="VentilationImprovementInfo"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1538,6 +1544,8 @@
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="MoistureControlInfo"
 							type="MoistureControlInfoType"> </xs:element>
+						<xs:element minOccurs="0" name="MoistureControlImprovement"
+							type="MoistureControlImprovementInfo"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -2117,6 +2125,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="HVACMaintenance" type="HVACMaintenance"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="HeatingSystemInfoType">
@@ -2819,86 +2828,6 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="InstalledComponent" type="RemoteReference"/>
-			<xs:element name="AdditionalDetails" minOccurs="0">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="MoistureControlImprovementInfo" minOccurs="0">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="VaporRetardersInstalled" type="xs:boolean"
-										minOccurs="0"/>
-									<xs:element name="GuttersInstalledorRepaired" type="xs:boolean"
-										minOccurs="0"/>
-									<xs:element name="FlashingInstalledorRepaired" type="xs:boolean"
-										minOccurs="0"/>
-									<xs:element name="FoundationGradingImproved" type="xs:boolean"
-										minOccurs="0"/>
-									<xs:element name="OtherMeasuresImplementedDescription"
-										type="xs:string" minOccurs="0"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="HVACDistributionImprovementInfo" minOccurs="0">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="DuctSystemSealed" type="xs:boolean"
-										minOccurs="0"/>
-									<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit"
-										type="xs:boolean" minOccurs="0"/>
-									<xs:element name="DuctSystemReplaced" type="xs:boolean"
-										minOccurs="0"/>
-									<xs:element name="SystemPumpandZoneValveCorrectionsMade"
-										type="xs:boolean" minOccurs="0"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element minOccurs="0" name="HVACMaintenance">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" name="NumberofCoilsReplaced"
-										type="IntegerGreaterThanOrEqualToZero"/>
-									<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
-										type="IntegerGreaterThanOrEqualToZero"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="WaterHeaterImprovementInfo" minOccurs="0">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="JacketInstalledIndicator" type="xs:boolean"
-										minOccurs="0"/>
-									<xs:element name="DispositionofExistingSystem"
-										type="DispositionofExistingSystem" minOccurs="0"/>
-									<xs:element name="RepairsDescription" type="xs:string"
-										minOccurs="0" maxOccurs="unbounded"/>
-									<xs:element name="PipeInsulated" type="PipeInsulated"
-										minOccurs="0"/>
-									<xs:element name="LinearFTPipeInsulated"
-										type="LengthMeasurement" minOccurs="0"/>
-									<xs:element name="SystemReplaced" type="xs:boolean"
-										minOccurs="0"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="VentilationImprovementInfo" minOccurs="0">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="GarageDuctsandAirHandlersAirSealed"
-										type="xs:boolean" minOccurs="0"/>
-									<xs:element name="MechanicalVentilationInstalled"
-										type="xs:boolean" minOccurs="0"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element minOccurs="0" ref="extension"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -3599,6 +3528,55 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 		<xs:sequence>
 			<xs:element minOccurs="0" name="Day" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="Night" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MoistureControlImprovementInfo">
+		<xs:sequence>
+			<xs:element name="VaporRetardersInstalled" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="GuttersInstalledorRepaired" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="FlashingInstalledorRepaired" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="FoundationGradingImproved" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="OtherMeasuresImplementedDescription" type="xs:string" minOccurs="0"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HVACDistributionImprovementInfo">
+		<xs:sequence>
+			<xs:element name="DuctSystemSealed" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit" type="xs:boolean"
+				minOccurs="0"/>
+			<xs:element name="DuctSystemReplaced" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="SystemPumpandZoneValveCorrectionsMade" type="xs:boolean" minOccurs="0"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="HVACMaintenance">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="NumberofCoilsReplaced"
+				type="IntegerGreaterThanOrEqualToZero"/>
+			<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
+				type="IntegerGreaterThanOrEqualToZero"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WaterHeaterImprovementInfo">
+		<xs:sequence>
+			<xs:element name="JacketInstalledIndicator" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="DispositionofExistingSystem" type="DispositionofExistingSystem"
+				minOccurs="0"/>
+			<xs:element name="RepairsDescription" type="xs:string" minOccurs="0"
+				maxOccurs="unbounded"/>
+			<xs:element name="PipeInsulated" type="PipeInsulated" minOccurs="0"/>
+			<xs:element name="LinearFTPipeInsulated" type="LengthMeasurement" minOccurs="0"/>
+			<xs:element name="SystemReplaced" type="xs:boolean" minOccurs="0"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="VentilationImprovementInfo">
+		<xs:sequence>
+			<xs:element name="GarageDuctsandAirHandlersAirSealed" type="xs:boolean" minOccurs="0"/>
+			<xs:element name="MechanicalVentilationInstalled" type="xs:boolean" minOccurs="0"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 </xs:schema>
