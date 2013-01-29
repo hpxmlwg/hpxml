@@ -13,6 +13,7 @@
 				<xs:element name="XMLGeneratedBy" type="XMLGeneratedBy"/>
 				<xs:element name="CreatedDateAndTime" type="CreatedDateAndTime"/>
 				<xs:element name="Transaction" type="TransactionType"/>
+				<xs:element minOccurs="0" ref="extension"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -99,48 +100,6 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:element name="TotalCost">
-		<xs:annotation>
-			<xs:documentation> No Reference Found </xs:documentation>
-			<xs:documentation>Costs broken out by type.  Useful with improvement info nodes</xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="QualEnergyMeasures" type="CostItemization" minOccurs="0"/>
-				<xs:element name="HealthAndSafety" type="CostItemization" minOccurs="0"/>
-				<xs:element name="NonQualMeasures" type="CostItemization" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:complexType name="CostItemization">
-		<xs:annotation>
-			<xs:documentation>Breakout of cost with descriptions relate to improvement</xs:documentation>
-		</xs:annotation>
-		<xs:sequence>
-			<xs:element name="Cost" type="xs:decimal"/>
-			<xs:element minOccurs="0" name="MeasureItems">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:annotation>
-							<xs:documentation>Improvements with costs</xs:documentation>
-						</xs:annotation>
-						<xs:element name="MeasureItem" maxOccurs="unbounded">
-							<xs:complexType>
-								<xs:all>
-									<xs:element name="Description" type="xs:string"/>
-									<xs:element name="Division"/>
-									<xs:element name="EnergySaving" type="xs:boolean"/>
-									<xs:element name="Cost" type="Cost"/>
-								</xs:all>
-								<xs:attribute name="ID" type="xs:int"/>
-							</xs:complexType>
-						</xs:element>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
-		</xs:sequence>
-		<xs:attribute name="ID" type="xs:integer"/>
-	</xs:complexType>
 	<xs:complexType name="IndividualInfo">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
@@ -187,6 +146,7 @@
 		<xs:sequence>
 			<xs:element name="Year" type="IECCYear"> </xs:element>
 			<xs:element name="ClimateZone" type="ClimateZoneIECC"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="InsulationMaterial">
@@ -449,6 +409,7 @@
 			<xs:element name="BusinessInfo" type="BusinessInfoType"/>
 			<xs:element name="SubContractor" type="ContractorType" minOccurs="0"
 				maxOccurs="unbounded"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="AttachedToSpace" type="LocalReference"/>
@@ -1111,6 +1072,7 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1536,6 +1498,7 @@
 							type="OtherVentIssues"/>
 						<xs:element minOccurs="0" name="VentilationImprovement"
 							type="VentilationImprovementInfo"/>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1546,6 +1509,7 @@
 							type="MoistureControlInfoType"> </xs:element>
 						<xs:element minOccurs="0" name="MoistureControlImprovement"
 							type="MoistureControlImprovementInfo"/>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1870,6 +1834,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element minOccurs="0" name="ActionsTaken" type="xs:string"/>
 						<xs:element minOccurs="0" name="ActionsMeetIndustrySpecifications"
 							type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1881,6 +1846,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 								<xs:documentation>Was spray foam polyurethane foam and / or other potential sources of indoor pollutants installed or applied as part of the scope of work?</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1920,6 +1886,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:documentation>Pascals (Pa), with respect to outdoors</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="YesNoRecommendInstall">
@@ -2058,6 +2025,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="MessageType" type="xs:string"/>
 			<xs:element name="MessageID" type="xs:string"/>
 			<xs:element name="Message" type="xs:string"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="FuelSavingsType">
@@ -2369,6 +2337,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="AirDistributionInfo">
@@ -2401,11 +2370,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	<xs:complexType name="ElectricResistanceDistribution">
-		<xs:sequence>
-			<xs:element name="ElectricResistanceDistributionType"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="BuildingSystemIdentifiers">
@@ -2419,9 +2384,6 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Associations" type="AssociationsType"> </xs:element>
-	<xs:element name="ResourcesSaved">
-		<xs:complexType> </xs:complexType>
-	</xs:element>
 	<xs:element name="SystemIdentifiersInfo" type="SystemIdentifiersInfoType">
 		<xs:annotation>
 			<xs:documentation>System identifiers contain type codes and an identifier for both a sending and a receiving system.  These fields are needed to be able to transmit data between two systems, and have it identified in the two systems.</xs:documentation>
@@ -2433,6 +2395,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="FundingSourceCode" type="FundingSourceCode" minOccurs="0"/>
 			<xs:element name="FundingSourceName" type="FundingSourceName" minOccurs="0"/>
 			<xs:element name="IncentiveAmount" type="IncentiveAmount" minOccurs="0"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BuildingDetailsType">
@@ -2685,6 +2648,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Lighting" type="Lighting" minOccurs="0"/>
 			<xs:element name="MiscLoads" type="MiscLoads" minOccurs="0"/>
 			<xs:element minOccurs="0" name="HealthAndSafety" type="HealthAndSafety"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ProjectDetailsType">
@@ -2755,9 +2719,6 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				minOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="StageType">
-		<xs:sequence> </xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="MeasureDetailsType">
 		<xs:sequence>
 			<xs:element name="MeasureSystemIdentifiers">
@@ -2798,6 +2759,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element name="Quantity" type="Quantity"/>
 									<xs:element name="AnnualAmount" type="AnnualAmount"
 										minOccurs="0"/>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -2816,6 +2778,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:sequence>
 						<xs:element name="QAStatus" type="ImprovementQAStatusType"/>
 						<xs:element name="QAComments" type="Notes"/>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -2857,14 +2820,9 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 				type="LeakinessObservedVisualInspection" minOccurs="0"/>
 			<xs:element name="DuctLeakageTestMethod" type="DuctLeakageTestMethod" minOccurs="0"/>
 			<xs:element name="MeasuredDuctLeakage" type="MeasuredDuctLeakage" minOccurs="0"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:element name="MeasureSystemIdentifiers">
-		<xs:annotation>
-			<xs:documentation/>
-		</xs:annotation>
-		<xs:complexType> </xs:complexType>
-	</xs:element>
 	<xs:complexType name="ConsumptionInfoType">
 		<xs:sequence>
 			<xs:element name="UtilityID" type="RemoteReference"/>
@@ -2958,6 +2916,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:documentation>Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EnergyAndWaterUseTypeDescription">
@@ -3007,6 +2966,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="PeakSeason" type="PeakSeason"/>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -3016,6 +2976,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 						<xs:element name="WaterType" type="WaterType"/>
 						<xs:element name="UnitofMeasure" type="waterUnitType"/>
 						<xs:element minOccurs="0" name="MarginalWaterCostRate" type="xs:double"/>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -3048,6 +3009,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="FramingFactor" type="Fraction"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="TelephoneInfoType">
@@ -3528,6 +3490,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 		<xs:sequence>
 			<xs:element minOccurs="0" name="Day" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="Night" type="xs:boolean"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="MoistureControlImprovementInfo">

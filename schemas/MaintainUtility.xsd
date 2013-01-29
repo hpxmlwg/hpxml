@@ -22,6 +22,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element minOccurs="0" ref="extension"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

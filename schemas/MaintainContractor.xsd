@@ -13,6 +13,7 @@
 				<xs:element ref="XMLTransactionHeaderInformation"/>
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
 				<xs:element name="Contractor" type="ContractorType"/>
+				<xs:element minOccurs="0" ref="extension"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

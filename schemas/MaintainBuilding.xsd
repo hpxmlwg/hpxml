@@ -20,6 +20,7 @@
 							<xs:element name="Address" type="AddressInformation"/>
 							<xs:element minOccurs="0" name="SchoolDistrict" type="xs:string"/>
 							<xs:element minOccurs="0" name="eGridRegion" type="eGridRegions"/>
+							<xs:element minOccurs="0" ref="extension"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
@@ -37,6 +38,7 @@
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element minOccurs="0" ref="extension"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

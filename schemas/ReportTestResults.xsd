@@ -46,9 +46,11 @@ You may assign all 10 points to one reason, or distribute the points among sever
 								type="AirInfiltrationMeasurementType"/>
 							<xs:element maxOccurs="unbounded" minOccurs="0"
 								name="DuctLeakageMeasurement" type="DuctLeakageMeasurementType"/>
+							<xs:element minOccurs="0" ref="extension"/>
 						</xs:sequence>
 					</xs:complexType>
 				</xs:element>
+				<xs:element minOccurs="0" ref="extension"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

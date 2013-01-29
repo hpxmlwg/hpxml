@@ -21,6 +21,7 @@
 You may assign all 10 points to one reason, or distribute the points among several reasons – as long as they total 10.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
+				<xs:element minOccurs="0" ref="extension"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
