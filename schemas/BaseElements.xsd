@@ -1876,6 +1876,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="CAZApplianceReading">
@@ -2674,6 +2675,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Appliances" type="Appliances" minOccurs="0"/>
 			<xs:element name="Lighting" type="Lighting" minOccurs="0"/>
 			<xs:element name="MiscLoads" type="MiscLoads" minOccurs="0"/>
+			<xs:element minOccurs="0" name="HealthAndSafety" type="HealthAndSafety"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="ProjectDetailsType">
