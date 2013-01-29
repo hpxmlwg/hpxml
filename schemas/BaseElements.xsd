@@ -238,6 +238,7 @@
 			<xs:element name="NumberofUnits" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 			<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
 			<xs:element name="ModelNumber" type="Model" minOccurs="0"/>
+			<xs:element minOccurs="0" name="AHRINumber" type="xs:string"/>
 			<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
 			<xs:element name="ModelYear" type="Year" minOccurs="0"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification"
@@ -1147,6 +1148,7 @@
 									<xs:element name="Manufacturer" type="Manufacturer"
 										minOccurs="0"/>
 									<xs:element name="ModelNumber" type="Model" minOccurs="0"/>
+									<xs:element minOccurs="0" name="AHRINumber" type="xs:string"/>
 									<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
 									<xs:element minOccurs="0" name="ThirdPartyCertification"
 										type="DHWThirdPartyCertification"/>
