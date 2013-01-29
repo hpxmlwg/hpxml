@@ -2367,6 +2367,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 								<xs:documentation>sq.ft.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
