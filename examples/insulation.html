@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HPXML - Use cases and examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/prettify.css" type="text/css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script >
+    </script>
+  </head>
+
+  <body onload="prettyPrint()">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">HPXML Examples and Use Cases</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Use Cases</li>
+              <li><a href="index.html">HVAC System Replacement</a></li>
+              <li><a href="blower_door.html">Blower Door Test</a></li>
+              <li class="active"><a href="insulation.html">Insulation installation</a></li>
+              <li><a href="water_heater.html">Water Heater</a></li>
+              <li class="nav-header">Additional Information</li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class="page-header">
+            <h2>Use Case</h2>
+          </div>
+          <p class='lead'>Auditor/Builder determine houses current insulation and air sealing. Measures are taken or proposed for upgrades to insulation and air sealing for this house</p>
+          <p>
+            <span class="label label-info">TODO:</span> Need to transmit associated load information derived from insulation values. Or is this unnecessary?
+          </p>
+
+          <h4>Minimum Data:</h4>
+          <ul>
+            <li>MaintainBuilding dataset which contains information about the house's current insulation and air sealing</li>
+            <li>MaintainBuilding dataset which contains information about the house's new/proposed insulation and air sealing</li>
+          </ul>
+
+          <h4>Optional Data:</h4>
+          <ul>
+            <li>MaintainCustomer dataset with basic customer information</li>
+            <li>MaintainProject dataset which contains information about cost of installation and hardware</li>
+          </ul>
+
+          <div class="page-header">
+            <h2>Data Set</h2>
+          </div>
+
+          <ul class="nav nav-tabs">
+            <li class='active'><a href="#original-house" data-toggle="tab">Original house</a></li>
+            <li><a href="#new-house" data-toggle="tab">New house</a></li>
+            <li><a href="#customer" data-toggle="tab">Customer</a></li>
+            <li><a href="#project" data-toggle="tab">Project</a></li>
+          </ul>
+
+          <div id="examples-tabs" class="tab-content">
+            <div class="tab-pane fade active in" id="original-house">
+              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+&lt;MaintainBuildingRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
+  &lt;XMLTransactionHeaderInformation&gt;
+    &lt;XMLType&gt;notsure&lt;/XMLType&gt;
+    &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
+    &lt;CreatedDateAndTime&gt;2013-01-31T10:24:30-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;Transaction&gt;create&lt;/Transaction&gt;
+  &lt;/XMLTransactionHeaderInformation&gt;
+  &lt;BuildingID id="b1"/&gt;
+  &lt;CustomerID id="c1"/&gt;
+  &lt;ProjectStatus&gt;
+    &lt;EventType&gt;audit&lt;/EventType&gt;
+    &lt;Date&gt;2013-01-31&lt;/Date&gt;
+  &lt;/ProjectStatus&gt;
+  &lt;BuildingDetails&gt;
+    &lt;BuildingSummary&gt;
+      &lt;BuildingConstruction&gt;
+        &lt;YearBuilt&gt;1950&lt;/YearBuilt&gt;
+        &lt;ResidentialFacilityType&gt;unknown&lt;/ResidentialFacilityType&gt;
+        &lt;AverageCeilingHeight&gt;8.5&lt;/AverageCeilingHeight&gt;
+        &lt;BuildingVolume&gt;12000&lt;/BuildingVolume&gt;
+        &lt;AverageAtticRValue&gt;13&lt;/AverageAtticRValue&gt;
+        &lt;AverageWallRValue&gt;11&lt;/AverageWallRValue&gt;
+        &lt;AverageFloorRValue&gt;10&lt;/AverageFloorRValue&gt;
+      &lt;/BuildingConstruction&gt;
+    &lt;/BuildingSummary&gt;
+  &lt;/BuildingDetails&gt;
+&lt;/MaintainBuildingRequest&gt;</code></pre>
+            </div>
+            <div class="tab-pane fade" id="new-house">
+              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+&lt;MaintainBuildingRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
+  &lt;XMLTransactionHeaderInformation&gt;
+    &lt;XMLType&gt;notsure&lt;/XMLType&gt;
+    &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
+    &lt;CreatedDateAndTime&gt;2013-01-31T10:28:41-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;Transaction&gt;create&lt;/Transaction&gt;
+  &lt;/XMLTransactionHeaderInformation&gt;
+  &lt;BuildingID id="b1"/&gt;
+  &lt;CustomerID id="c1"/&gt;
+  &lt;ProjectStatus&gt;
+    &lt;EventType&gt;audit&lt;/EventType&gt;
+    &lt;Date&gt;2013-01-31&lt;/Date&gt;
+  &lt;/ProjectStatus&gt;
+  &lt;BuildingDetails&gt;
+    &lt;BuildingSummary&gt;
+      &lt;BuildingConstruction&gt;
+        &lt;YearBuilt&gt;1950&lt;/YearBuilt&gt;
+        &lt;ResidentialFacilityType&gt;unknown&lt;/ResidentialFacilityType&gt;
+        &lt;AverageCeilingHeight&gt;8.5&lt;/AverageCeilingHeight&gt;
+        &lt;BuildingVolume&gt;12000&lt;/BuildingVolume&gt;
+        &lt;AverageAtticRValue&gt;15&lt;/AverageAtticRValue&gt;
+        &lt;AverageWallRValue&gt;14&lt;/AverageWallRValue&gt;
+        &lt;AverageFloorRValue&gt;13&lt;/AverageFloorRValue&gt;
+      &lt;/BuildingConstruction&gt;
+    &lt;/BuildingSummary&gt;
+  &lt;/BuildingDetails&gt;
+&lt;/MaintainBuildingRequest&gt;</code></pre>
+            </div>
+            <div class="tab-pane fade" id="customer">
+              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+&lt;MaintainCustomerRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
+  &lt;XMLTransactionHeaderInformation&gt;
+    &lt;XMLType&gt;notsure&lt;/XMLType&gt;
+    &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
+    &lt;CreatedDateAndTime&gt;2013-01-28T11:40:07-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;Transaction&gt;create&lt;/Transaction&gt;
+  &lt;/XMLTransactionHeaderInformation&gt;
+  &lt;Customer&gt;
+    &lt;Person&gt;
+      &lt;SystemIdentifier id="c1"/&gt;
+      &lt;Name&gt;
+        &lt;FirstName&gt;John&lt;/FirstName&gt;
+        &lt;LastName&gt;Doe&lt;/LastName&gt;
+      &lt;/Name&gt;
+      &lt;Telephone&gt;
+        &lt;TelephoneType&gt;day&lt;/TelephoneType&gt;
+        &lt;TelephoneNumber&gt;123-123-1234&lt;/TelephoneNumber&gt;
+      &lt;/Telephone&gt;
+      &lt;Email&gt;
+        &lt;EmailAddress&gt;john.doe@test.com&lt;/EmailAddress&gt;
+      &lt;/Email&gt;
+    &lt;/Person&gt;
+    &lt;MailingAddress&gt;
+      &lt;Address1&gt;123 Fake St.&lt;/Address1&gt;
+      &lt;CityMunicipality&gt;Wallawalla&lt;/CityMunicipality&gt;
+      &lt;StateCode&gt;WA&lt;/StateCode&gt;
+      &lt;ZipCode&gt;12345&lt;/ZipCode&gt;
+    &lt;/MailingAddress&gt;
+  &lt;/Customer&gt;
+&lt;/MaintainCustomerRequest&gt;</code></pre>
+            </div>
+            <div class="tab-pane fade" id="project">
+              <p>No data set yet as this spec is currently undergoing some changes.</p>
+            </div>
+          </div>
+
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <script type="text/javascript" src="js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html>

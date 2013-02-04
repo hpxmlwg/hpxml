@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>HPXML - Use cases and examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/prettify.css" type="text/css" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script >
+    </script>
+  </head>
+
+  <body onload="prettyPrint()">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">HPXML Examples and Use Cases</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Use Cases</li>
+              <li><a href="index.html">HVAC System Replacement</a></li>
+              <li><a href="blower_door.html">Blower Door Test</a></li>
+              <li><a href="insulation.html">Insulation installation</a></li>
+              <li class="active"><a href="water_heater.html">Water Heater</a></li>
+              <li class="nav-header">Additional Information</li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+          <div class="page-header">
+            <h2>Use Case</h2>
+          </div>
+          <p class='lead'>Contractor examines existing Water Heating system and recommends/sells a new system</p>
+
+          <h4>Minimum Data:</h4>
+          <ul>
+            <li>MaintainBuilding dataset which contains information about the Water Heating system currently installed</li>
+            <li>MaintainBuilding dataset which contains information about the new Water Heating systems</li>
+          </ul>
+
+          <h4>Optional Data:</h4>
+          <ul>
+            <li>MaintainCustomer dataset with basic customer information</li>
+            <li>MaintainProject dataset which contains information about cost of installation and hardware</li>
+            <li>MaintainUtility dataset with customer's utility information</li>
+          </ul>
+
+          <div class="page-header">
+            <h2>Data Set</h2>
+          </div>
+
+          <ul class="nav nav-tabs">
+            <li class='active'><a href="#original-equipment" data-toggle="tab">Original equipment</a></li>
+            <li><a href="#new-equipment" data-toggle="tab">New Equipment</a></li>
+            <li><a href="#customer" data-toggle="tab">Customer</a></li>
+            <li><a href="#utility" data-toggle="tab">Utilities</a></li>
+            <li><a href="#project" data-toggle="tab">Project</a></li>
+          </ul>
+
+          <div id="examples-tabs" class="tab-content">
+            <div class="tab-pane fade active in" id="original-equipment">
+              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+&lt;MaintainBuildingRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
+  &lt;XMLTransactionHeaderInformation&gt;
+    &lt;XMLType&gt;notsure&lt;/XMLType&gt;
+    &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-04T09:15:55-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;Transaction&gt;create&lt;/Transaction&gt;
+  &lt;/XMLTransactionHeaderInformation&gt;
+  &lt;BuildingID id="b1"/&gt;
+  &lt;CustomerID id="c1"/&gt;
+  &lt;ProjectStatus&gt;
+    &lt;EventType&gt;audit&lt;/EventType&gt;
+    &lt;Date&gt;2013-02-04&lt;/Date&gt;
+  &lt;/ProjectStatus&gt;
+  &lt;BuildingDetails&gt;
+    &lt;Systems&gt;
+      &lt;WaterHeating&gt;
+        &lt;WaterHeatingSystem&gt;
+          &lt;SystemIdentifier id="abc123"/&gt;
+          &lt;FuelType&gt;natural gas&lt;/FuelType&gt;
+          &lt;WaterHeaterType&gt;storage water heater&lt;/WaterHeaterType&gt;
+          &lt;TankVolume&gt;45&lt;/TankVolume&gt;
+          &lt;EnergyFactor&gt;0.4&lt;/EnergyFactor&gt;
+        &lt;/WaterHeatingSystem&gt;
+      &lt;/WaterHeating&gt;
+    &lt;/Systems&gt;
+  &lt;/BuildingDetails&gt;
+&lt;/MaintainBuildingRequest&gt;</code></pre>
+            </div>
+            <div class="tab-pane fade" id="new-equipment">
+              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+&lt;MaintainBuildingRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
+  &lt;XMLTransactionHeaderInformation&gt;
+    &lt;XMLType&gt;notsure&lt;/XMLType&gt;
+    &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-04T09:23:19-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;Transaction&gt;create&lt;/Transaction&gt;
+  &lt;/XMLTransactionHeaderInformation&gt;
+  &lt;BuildingID id="b1"/&gt;
+  &lt;CustomerID id="c1"/&gt;
+  &lt;ProjectStatus&gt;
+    &lt;EventType&gt;job completion&lt;/EventType&gt;
+    &lt;Date&gt;2013-02-04&lt;/Date&gt;
+  &lt;/ProjectStatus&gt;
+  &lt;BuildingDetails&gt;
+    &lt;Systems&gt;
+      &lt;WaterHeating&gt;
+        &lt;WaterHeatingSystem&gt;
+          &lt;SystemIdentifier id="abc123"/&gt;
+          &lt;FuelType&gt;natural gas&lt;/FuelType&gt;
+          &lt;WaterHeaterType&gt;storage water heater&lt;/WaterHeaterType&gt;
+          &lt;Manufacturer&gt;Rheem&lt;/Manufacturer&gt;
+          &lt;ModelNumber&gt;22V40FT&lt;/ModelNumber&gt;
+          &lt;TankVolume&gt;40&lt;/TankVolume&gt;
+          &lt;EnergyFactor&gt;0.59&lt;/EnergyFactor&gt;
+        &lt;/WaterHeatingSystem&gt;
+      &lt;/WaterHeating&gt;
+    &lt;/Systems&gt;
+  &lt;/BuildingDetails&gt;
+&lt;/MaintainBuildingRequest&gt;</code></pre>
+            </div>
+            <div class="tab-pane fade" id="customer">
+              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+&lt;MaintainCustomerRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
+  &lt;XMLTransactionHeaderInformation&gt;
+    &lt;XMLType&gt;notsure&lt;/XMLType&gt;
+    &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
+    &lt;CreatedDateAndTime&gt;2013-01-28T11:40:07-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;Transaction&gt;create&lt;/Transaction&gt;
+  &lt;/XMLTransactionHeaderInformation&gt;
+  &lt;Customer&gt;
+    &lt;Person&gt;
+      &lt;SystemIdentifier id="c1"/&gt;
+      &lt;Name&gt;
+        &lt;FirstName&gt;John&lt;/FirstName&gt;
+        &lt;LastName&gt;Doe&lt;/LastName&gt;
+      &lt;/Name&gt;
+      &lt;Telephone&gt;
+        &lt;TelephoneType&gt;day&lt;/TelephoneType&gt;
+        &lt;TelephoneNumber&gt;123-123-1234&lt;/TelephoneNumber&gt;
+      &lt;/Telephone&gt;
+      &lt;Email&gt;
+        &lt;EmailAddress&gt;john.doe@test.com&lt;/EmailAddress&gt;
+      &lt;/Email&gt;
+    &lt;/Person&gt;
+    &lt;MailingAddress&gt;
+      &lt;Address1&gt;123 Fake St.&lt;/Address1&gt;
+      &lt;CityMunicipality&gt;Wallawalla&lt;/CityMunicipality&gt;
+      &lt;StateCode&gt;WA&lt;/StateCode&gt;
+      &lt;ZipCode&gt;12345&lt;/ZipCode&gt;
+    &lt;/MailingAddress&gt;
+  &lt;/Customer&gt;
+&lt;/MaintainCustomerRequest&gt;</code></pre>
+            </div>
+            <div class="tab-pane fade" id="utility">
+              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+&lt;MaintainUtilityRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
+  &lt;XMLTransactionHeaderInformation&gt;
+    &lt;XMLType&gt;notsure&lt;/XMLType&gt;
+    &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
+    &lt;CreatedDateAndTime&gt;2013-01-31T10:33:08-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;Transaction&gt;create&lt;/Transaction&gt;
+  &lt;/XMLTransactionHeaderInformation&gt;
+  &lt;UtilitiesorFuelProviders&gt;
+    &lt;UtilityFuelProvider&gt;
+      &lt;SystemIdentifier id="u1"/&gt;
+      &lt;UtilityName&gt;PG&amp;E&lt;/UtilityName&gt;
+      &lt;MeterNumber&gt;12ab45&lt;/MeterNumber&gt;
+      &lt;UtilityAccountNumber&gt;1234abcxyz5678&lt;/UtilityAccountNumber&gt;
+      &lt;UtilityServiceTypeProvided&gt;natural gas&lt;/UtilityServiceTypeProvided&gt;
+    &lt;/UtilityFuelProvider&gt;
+    &lt;UtilityFuelProvider&gt;
+      &lt;SystemIdentifier id="u2"/&gt;
+      &lt;UtilityName&gt;PG&amp;E&lt;/UtilityName&gt;
+      &lt;MeterNumber&gt;12ab45&lt;/MeterNumber&gt;
+      &lt;UtilityAccountNumber&gt;1234abcxyz5678&lt;/UtilityAccountNumber&gt;
+      &lt;UtilityServiceTypeProvided&gt;electricity&lt;/UtilityServiceTypeProvided&gt;
+    &lt;/UtilityFuelProvider&gt;
+    &lt;UtilityFuelProvider&gt;
+      &lt;SystemIdentifier id="u3"/&gt;
+      &lt;UtilityName&gt;Some Other Utility&lt;/UtilityName&gt;
+      &lt;MeterNumber&gt;888717122&lt;/MeterNumber&gt;
+      &lt;UtilityAccountNumber&gt;klsdflsdiw120980&lt;/UtilityAccountNumber&gt;
+      &lt;UtilityServiceTypeProvided&gt;water&lt;/UtilityServiceTypeProvided&gt;
+    &lt;/UtilityFuelProvider&gt;
+  &lt;/UtilitiesorFuelProviders&gt;
+&lt;/MaintainUtilityRequest&gt;</code></pre>
+            </div>
+            <div class="tab-pane fade" id="project">
+              <p>No data set yet as this spec is currently undergoing some changes.</p>
+            </div>
+          </div>
+
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <script type="text/javascript" src="js/prettify/prettify.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html>
