@@ -191,7 +191,7 @@
       &lt;HVAC&gt;
         &lt;HVACPlant&gt;
           &lt;HeatingSystem&gt;
-            &lt;SystemIdentifier id="h1"/&gt;
+            &lt;SystemIdentifier id="h2"/&gt;
             &lt;Manufacturer&gt;Rheem&lt;/Manufacturer&gt;
             &lt;ModelNumber&gt;RGFG-09EZCMS&lt;/ModelNumber&gt;
             &lt;AHRINumber&gt;4515091&lt;/AHRINumber&gt;
@@ -328,7 +328,36 @@
 &lt;/MaintainUtilityRequest&gt;</code></pre>
             </div>
             <div class="tab-pane fade" id="project">
-              <p>No data set yet as this spec is currently undergoing some changes.</p>
+              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+&lt;MaintainProjectRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
+  &lt;XMLTransactionHeaderInformation&gt;
+    &lt;XMLType&gt;notsure&lt;/XMLType&gt;
+    &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-10T22:12:19-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;Transaction&gt;create&lt;/Transaction&gt;
+  &lt;/XMLTransactionHeaderInformation&gt;
+  &lt;BuildingID id="b1"/&gt;
+  &lt;ProjectID id="p1"/&gt;
+  &lt;ProjectDetails&gt;
+    &lt;Measures&gt;
+      &lt;Measure&gt;
+        &lt;MeasureDescription&gt;New Furnace&lt;/MeasureDescription&gt;
+        &lt;Cost&gt;2500&lt;/Cost&gt;
+        &lt;Status&gt;Recommend&lt;/Status&gt;
+        &lt;ReplacedComponents&gt;
+          &lt;ReplacedComponent id="comp1"&gt;
+            &lt;SendingSystemIdentifierValue&gt;h1&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/ReplacedComponent&gt;
+        &lt;/ReplacedComponents&gt;
+        &lt;InstalledComponents&gt;
+          &lt;InstalledComponent id="comp2"&gt;
+            &lt;SendingSystemIdentifierValue&gt;h2&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/InstalledComponent&gt;
+        &lt;/InstalledComponents&gt;
+      &lt;/Measure&gt;
+    &lt;/Measures&gt;
+  &lt;/ProjectDetails&gt;
+&lt;/MaintainProjectRequest&gt;</code></pre>
             </div>
           </div>
 
