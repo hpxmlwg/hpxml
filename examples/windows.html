@@ -50,10 +50,10 @@
               <li class="nav-header">Use Cases</li>
               <li><a href="index.html">HVAC System Replacement</a></li>
               <li><a href="blower_door.html">Blower Door Test</a></li>
-              <li class="active"><a href="insulation.html">Insulation installation</a></li>
+              <li><a href="insulation.html">Insulation installation</a></li>
               <li><a href="water_heater.html">Water Heater</a></li>
               <li><a href="ducts.html">Ductwork</a></li>
-              <li><a href="windows.html">Windows</a></li>
+              <li class="active"><a href="windows.html">Windows</a></li>
               <li class="nav-header">Additional Information</li>
             </ul>
           </div><!--/.well -->
@@ -62,15 +62,12 @@
           <div class="page-header">
             <h2>Use Case</h2>
           </div>
-          <p class='lead'>Auditor/Builder determine houses current insulation and air sealing. Measures are taken or proposed for upgrades to insulation and air sealing for this house</p>
-          <p>
-            <span class="label label-info">TODO:</span> Need to transmit associated load information derived from insulation values. Or is this unnecessary?
-          </p>
+          <p class='lead'>Contractor replaces windows in a house.</p>
 
           <h4>Minimum Data:</h4>
           <ul>
-            <li>MaintainBuilding dataset which contains information about the house's current insulation and air sealing</li>
-            <li>MaintainBuilding dataset which contains information about the house's new/proposed insulation and air sealing</li>
+            <li>MaintainBuilding dataset which contains information about the currently installed windows</li>
+            <li>MaintainBuilding dataset which contains information about the newly installed windows</li>
           </ul>
 
           <h4>Optional Data:</h4>
@@ -84,70 +81,68 @@
           </div>
 
           <ul class="nav nav-tabs">
-            <li class='active'><a href="#original-house" data-toggle="tab">Original house</a></li>
-            <li><a href="#new-house" data-toggle="tab">New house</a></li>
+            <li class='active'><a href="#original-equipment" data-toggle="tab">Original equipment</a></li>
+            <li><a href="#new-equipment" data-toggle="tab">New Equipment</a></li>
             <li><a href="#customer" data-toggle="tab">Customer</a></li>
             <li><a href="#project" data-toggle="tab">Project</a></li>
           </ul>
 
           <div id="examples-tabs" class="tab-content">
-            <div class="tab-pane fade active in" id="original-house">
+            <div class="tab-pane fade active in" id="original-equipment">
               <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
 &lt;MaintainBuildingRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
   &lt;XMLTransactionHeaderInformation&gt;
     &lt;XMLType&gt;notsure&lt;/XMLType&gt;
     &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
-    &lt;CreatedDateAndTime&gt;2013-01-31T10:24:30-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-13T14:33:51-08:00&lt;/CreatedDateAndTime&gt;
     &lt;Transaction&gt;create&lt;/Transaction&gt;
   &lt;/XMLTransactionHeaderInformation&gt;
   &lt;BuildingID id="b1"/&gt;
   &lt;CustomerID id="c1"/&gt;
   &lt;ProjectStatus&gt;
     &lt;EventType&gt;audit&lt;/EventType&gt;
-    &lt;Date&gt;2013-01-31&lt;/Date&gt;
+    &lt;Date&gt;2013-02-13&lt;/Date&gt;
   &lt;/ProjectStatus&gt;
   &lt;BuildingDetails&gt;
-    &lt;BuildingSummary&gt;
-      &lt;BuildingConstruction&gt;
-        &lt;YearBuilt&gt;1950&lt;/YearBuilt&gt;
-        &lt;ResidentialFacilityType&gt;unknown&lt;/ResidentialFacilityType&gt;
-        &lt;AverageCeilingHeight&gt;8.5&lt;/AverageCeilingHeight&gt;
-        &lt;BuildingVolume&gt;12000&lt;/BuildingVolume&gt;
-        &lt;AverageAtticRValue&gt;13&lt;/AverageAtticRValue&gt;
-        &lt;AverageWallRValue&gt;11&lt;/AverageWallRValue&gt;
-        &lt;AverageFloorRValue&gt;10&lt;/AverageFloorRValue&gt;
-      &lt;/BuildingConstruction&gt;
-    &lt;/BuildingSummary&gt;
+    &lt;Enclosure&gt;
+      &lt;Windows&gt;
+        &lt;Window&gt;
+          &lt;SystemIdentifier id="w1"/&gt;
+          &lt;Area&gt;560&lt;/Area&gt;
+          &lt;UFactor&gt;0.5&lt;/UFactor&gt;
+          &lt;SHGC&gt;0.65&lt;/SHGC&gt;
+        &lt;/Window&gt;
+      &lt;/Windows&gt;
+    &lt;/Enclosure&gt;
   &lt;/BuildingDetails&gt;
 &lt;/MaintainBuildingRequest&gt;</code></pre>
             </div>
-            <div class="tab-pane fade" id="new-house">
+            <div class="tab-pane fade" id="new-equipment">
               <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
 &lt;MaintainBuildingRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
   &lt;XMLTransactionHeaderInformation&gt;
     &lt;XMLType&gt;notsure&lt;/XMLType&gt;
     &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
-    &lt;CreatedDateAndTime&gt;2013-01-31T10:28:41-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-13T15:03:55-08:00&lt;/CreatedDateAndTime&gt;
     &lt;Transaction&gt;create&lt;/Transaction&gt;
   &lt;/XMLTransactionHeaderInformation&gt;
   &lt;BuildingID id="b1"/&gt;
   &lt;CustomerID id="c1"/&gt;
   &lt;ProjectStatus&gt;
-    &lt;EventType&gt;audit&lt;/EventType&gt;
-    &lt;Date&gt;2013-01-31&lt;/Date&gt;
+    &lt;EventType&gt;job completion&lt;/EventType&gt;
+    &lt;Date&gt;2013-02-13&lt;/Date&gt;
   &lt;/ProjectStatus&gt;
   &lt;BuildingDetails&gt;
-    &lt;BuildingSummary&gt;
-      &lt;BuildingConstruction&gt;
-        &lt;YearBuilt&gt;1950&lt;/YearBuilt&gt;
-        &lt;ResidentialFacilityType&gt;unknown&lt;/ResidentialFacilityType&gt;
-        &lt;AverageCeilingHeight&gt;8.5&lt;/AverageCeilingHeight&gt;
-        &lt;BuildingVolume&gt;12000&lt;/BuildingVolume&gt;
-        &lt;AverageAtticRValue&gt;15&lt;/AverageAtticRValue&gt;
-        &lt;AverageWallRValue&gt;14&lt;/AverageWallRValue&gt;
-        &lt;AverageFloorRValue&gt;13&lt;/AverageFloorRValue&gt;
-      &lt;/BuildingConstruction&gt;
-    &lt;/BuildingSummary&gt;
+    &lt;Enclosure&gt;
+      &lt;Windows&gt;
+        &lt;Window&gt;
+          &lt;SystemIdentifier id="w2"/&gt;
+          &lt;Area&gt;560&lt;/Area&gt;
+          &lt;UFactor&gt;0.25&lt;/UFactor&gt;
+          &lt;SHGC&gt;0.4&lt;/SHGC&gt;
+        &lt;/Window&gt;
+      &lt;/Windows&gt;
+    &lt;/Enclosure&gt;
   &lt;/BuildingDetails&gt;
 &lt;/MaintainBuildingRequest&gt;</code></pre>
             </div>
@@ -185,7 +180,36 @@
 &lt;/MaintainCustomerRequest&gt;</code></pre>
             </div>
             <div class="tab-pane fade" id="project">
-              <p>No data set yet as this spec is currently undergoing some changes.</p>
+              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+&lt;MaintainProjectRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
+  &lt;XMLTransactionHeaderInformation&gt;
+    &lt;XMLType&gt;notsure&lt;/XMLType&gt;
+    &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-13T15:08:14-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;Transaction&gt;create&lt;/Transaction&gt;
+  &lt;/XMLTransactionHeaderInformation&gt;
+  &lt;BuildingID id="b1"/&gt;
+  &lt;ProjectID id="p1"/&gt;
+  &lt;ProjectDetails&gt;
+    &lt;Measures&gt;
+      &lt;Measure&gt;
+        &lt;MeasureDescription&gt;Replace windows.&lt;/MeasureDescription&gt;
+        &lt;Cost&gt;3000&lt;/Cost&gt;
+        &lt;Status&gt;Recommend&lt;/Status&gt;
+        &lt;ReplacedComponents&gt;
+          &lt;ReplacedComponent id="comp1"&gt;
+            &lt;SendingSystemIdentifierValue&gt;w1&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/ReplacedComponent&gt;
+        &lt;/ReplacedComponents&gt;
+        &lt;InstalledComponents&gt;
+          &lt;InstalledComponent id="comp2"&gt;
+            &lt;SendingSystemIdentifierValue&gt;w2&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/InstalledComponent&gt;
+        &lt;/InstalledComponents&gt;
+      &lt;/Measure&gt;
+    &lt;/Measures&gt;
+  &lt;/ProjectDetails&gt;
+&lt;/MaintainProjectRequest&gt;</code></pre>
             </div>
           </div>
 
