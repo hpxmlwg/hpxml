@@ -97,14 +97,14 @@
   &lt;XMLTransactionHeaderInformation&gt;
     &lt;XMLType&gt;notsure&lt;/XMLType&gt;
     &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
-    &lt;CreatedDateAndTime&gt;2013-01-31T10:24:30-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-14T10:54:06-08:00&lt;/CreatedDateAndTime&gt;
     &lt;Transaction&gt;create&lt;/Transaction&gt;
   &lt;/XMLTransactionHeaderInformation&gt;
   &lt;BuildingID id="b1"/&gt;
   &lt;CustomerID id="c1"/&gt;
   &lt;ProjectStatus&gt;
     &lt;EventType&gt;audit&lt;/EventType&gt;
-    &lt;Date&gt;2013-01-31&lt;/Date&gt;
+    &lt;Date&gt;2013-02-14&lt;/Date&gt;
   &lt;/ProjectStatus&gt;
   &lt;BuildingDetails&gt;
     &lt;BuildingSummary&gt;
@@ -118,23 +118,47 @@
         &lt;AverageFloorRValue&gt;10&lt;/AverageFloorRValue&gt;
       &lt;/BuildingConstruction&gt;
     &lt;/BuildingSummary&gt;
+    &lt;Enclosure&gt;
+      &lt;AtticAndRoof&gt;
+        &lt;Attics&gt;
+          &lt;Attic&gt;
+            &lt;Area&gt;1200&lt;/Area&gt;
+            &lt;AtticFloorInsulation&gt;
+              &lt;Layer&gt;13&lt;/Layer&gt;
+            &lt;/AtticFloorInsulation&gt;
+          &lt;/Attic&gt;
+        &lt;/Attics&gt;
+      &lt;/AtticAndRoof&gt;
+      &lt;Walls&gt;
+        &lt;Wall&gt;
+          &lt;SystemIdentifier id="wall1"/&gt;
+          &lt;Area&gt;1250&lt;/Area&gt;
+          &lt;Insulation&gt;
+            &lt;Layer&gt;
+              &lt;NominalRValue&gt;11&lt;/NominalRValue&gt;
+            &lt;/Layer&gt;
+          &lt;/Insulation&gt;
+        &lt;/Wall&gt;
+      &lt;/Walls&gt;
+    &lt;/Enclosure&gt;
   &lt;/BuildingDetails&gt;
 &lt;/MaintainBuildingRequest&gt;</code></pre>
             </div>
             <div class="tab-pane fade" id="new-house">
-              <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
+              <pre class="prettyprint"><code class='language-xml'>
+&lt;?xml version="1.0"?&gt;
 &lt;MaintainBuildingRequest xmlns="http://hpxml.org/hpxml/2011/1"&gt;
   &lt;XMLTransactionHeaderInformation&gt;
     &lt;XMLType&gt;notsure&lt;/XMLType&gt;
     &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
-    &lt;CreatedDateAndTime&gt;2013-01-31T10:28:41-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-14T10:54:06-08:00&lt;/CreatedDateAndTime&gt;
     &lt;Transaction&gt;create&lt;/Transaction&gt;
   &lt;/XMLTransactionHeaderInformation&gt;
   &lt;BuildingID id="b1"/&gt;
   &lt;CustomerID id="c1"/&gt;
   &lt;ProjectStatus&gt;
     &lt;EventType&gt;audit&lt;/EventType&gt;
-    &lt;Date&gt;2013-01-31&lt;/Date&gt;
+    &lt;Date&gt;2013-02-14&lt;/Date&gt;
   &lt;/ProjectStatus&gt;
   &lt;BuildingDetails&gt;
     &lt;BuildingSummary&gt;
@@ -143,13 +167,37 @@
         &lt;ResidentialFacilityType&gt;unknown&lt;/ResidentialFacilityType&gt;
         &lt;AverageCeilingHeight&gt;8.5&lt;/AverageCeilingHeight&gt;
         &lt;BuildingVolume&gt;12000&lt;/BuildingVolume&gt;
-        &lt;AverageAtticRValue&gt;15&lt;/AverageAtticRValue&gt;
-        &lt;AverageWallRValue&gt;14&lt;/AverageWallRValue&gt;
-        &lt;AverageFloorRValue&gt;13&lt;/AverageFloorRValue&gt;
+        &lt;AverageAtticRValue&gt;13&lt;/AverageAtticRValue&gt;
+        &lt;AverageWallRValue&gt;11&lt;/AverageWallRValue&gt;
+        &lt;AverageFloorRValue&gt;10&lt;/AverageFloorRValue&gt;
       &lt;/BuildingConstruction&gt;
     &lt;/BuildingSummary&gt;
+    &lt;Enclosure&gt;
+      &lt;AtticAndRoof&gt;
+        &lt;Attics&gt;
+          &lt;Attic&gt;
+            &lt;Area&gt;1200&lt;/Area&gt;
+            &lt;AtticFloorInsulation&gt;
+              &lt;Layer&gt;15&lt;/Layer&gt;
+            &lt;/AtticFloorInsulation&gt;
+          &lt;/Attic&gt;
+        &lt;/Attics&gt;
+      &lt;/AtticAndRoof&gt;
+      &lt;Walls&gt;
+        &lt;Wall&gt;
+          &lt;SystemIdentifier id="wall1"/&gt;
+          &lt;Area&gt;1250&lt;/Area&gt;
+          &lt;Insulation&gt;
+            &lt;Layer&gt;
+              &lt;NominalRValue&gt;14&lt;/NominalRValue&gt;
+            &lt;/Layer&gt;
+          &lt;/Insulation&gt;
+        &lt;/Wall&gt;
+      &lt;/Walls&gt;
+    &lt;/Enclosure&gt;
   &lt;/BuildingDetails&gt;
-&lt;/MaintainBuildingRequest&gt;</code></pre>
+&lt;/MaintainBuildingRequest&gt;
+</code></pre>
             </div>
             <div class="tab-pane fade" id="customer">
               <pre class="prettyprint"><code class='language-xml'>&lt;?xml version="1.0"?&gt;
