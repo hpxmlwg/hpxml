@@ -48,13 +48,13 @@
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Use Cases</li>
-              <li class="active"><a href="index.html">HVAC System Replacement</a></li>
+              <li><a href="index.html">HVAC System Replacement</a></li>
               <li><a href="blower_door.html">Blower Door Test</a></li>
               <li><a href="insulation.html">Insulation installation</a></li>
               <li><a href="water_heater.html">Water Heater</a></li>
               <li><a href="ducts.html">Ductwork</a></li>
               <li><a href="windows.html">Windows</a></li>
-              <li><a href="full_house.html">Full house</a></li>
+              <li class="active"><a href="full_house.html">Full house</a></li>
               <li class="nav-header">Additional Information</li>
             </ul>
           </div><!--/.well -->
@@ -63,12 +63,12 @@
           <div class="page-header">
             <h2>Use Case</h2>
           </div>
-          <p class='lead'>Contractor examines existing HVAC system (Gas Furnace and AC) and recommends/sells a new system (Gas Furnace and AC)</p>
+          <p class='lead'>Contractor replaces insulation, windows, water heater and hvac system.</p>
 
           <h4>Minimum Data:</h4>
           <ul>
-            <li>MaintainBuilding dataset which contains information about the HVAC systems currently</li>
-            <li>MaintainBuilding dataset which contains information about the new HVAC systems</li>
+            <li>MaintainBuilding dataset which contains information about the current house</li>
+            <li>MaintainBuilding dataset which contains information about the updated house</li>
           </ul>
 
           <h4>Optional Data:</h4>
@@ -97,16 +97,63 @@
   &lt;XMLTransactionHeaderInformation&gt;
     &lt;XMLType&gt;notsure&lt;/XMLType&gt;
     &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
-    &lt;CreatedDateAndTime&gt;2013-01-28T11:24:30-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-15T14:51:24-08:00&lt;/CreatedDateAndTime&gt;
     &lt;Transaction&gt;create&lt;/Transaction&gt;
   &lt;/XMLTransactionHeaderInformation&gt;
   &lt;BuildingID id="b1"/&gt;
   &lt;CustomerID id="c1"/&gt;
   &lt;ProjectStatus&gt;
-    &lt;EventType&gt;audit&lt;/EventType&gt;
-    &lt;Date&gt;2013-01-28&lt;/Date&gt;
+    &lt;EventType&gt;job completion&lt;/EventType&gt;
+    &lt;Date&gt;2013-02-15&lt;/Date&gt;
   &lt;/ProjectStatus&gt;
   &lt;BuildingDetails&gt;
+    &lt;BuildingSummary&gt;
+      &lt;BuildingConstruction&gt;
+        &lt;YearBuilt&gt;1950&lt;/YearBuilt&gt;
+        &lt;ResidentialFacilityType&gt;unknown&lt;/ResidentialFacilityType&gt;
+        &lt;AverageCeilingHeight&gt;8.5&lt;/AverageCeilingHeight&gt;
+        &lt;BuildingVolume&gt;12000&lt;/BuildingVolume&gt;
+        &lt;AverageAtticRValue&gt;13&lt;/AverageAtticRValue&gt;
+        &lt;AverageWallRValue&gt;11&lt;/AverageWallRValue&gt;
+        &lt;AverageFloorRValue&gt;10&lt;/AverageFloorRValue&gt;
+      &lt;/BuildingConstruction&gt;
+    &lt;/BuildingSummary&gt;
+    &lt;Enclosure&gt;
+      &lt;AtticAndRoof&gt;
+        &lt;Attics&gt;
+          &lt;Attic&gt;
+            &lt;SystemIdentifier id="attic1"/&gt;
+            &lt;AtticFloorInsulation&gt;
+              &lt;SystemIdentifier id="atticinsulation1"/&gt;
+              &lt;Layer&gt;
+                &lt;NominalRValue&gt;13&lt;/NominalRValue&gt;
+              &lt;/Layer&gt;
+            &lt;/AtticFloorInsulation&gt;
+            &lt;Area&gt;1200&lt;/Area&gt;
+          &lt;/Attic&gt;
+        &lt;/Attics&gt;
+      &lt;/AtticAndRoof&gt;
+      &lt;Walls&gt;
+        &lt;Wall&gt;
+          &lt;SystemIdentifier id="wall1"/&gt;
+          &lt;Area&gt;1250&lt;/Area&gt;
+          &lt;Insulation&gt;
+            &lt;SystemIdentifier id="wallsinsulation1"/&gt;
+            &lt;Layer&gt;
+              &lt;NominalRValue&gt;11&lt;/NominalRValue&gt;
+            &lt;/Layer&gt;
+          &lt;/Insulation&gt;
+        &lt;/Wall&gt;
+      &lt;/Walls&gt;
+      &lt;Windows&gt;
+        &lt;Window&gt;
+          &lt;SystemIdentifier id="w1"/&gt;
+          &lt;Area&gt;560&lt;/Area&gt;
+          &lt;UFactor&gt;0.5&lt;/UFactor&gt;
+          &lt;SHGC&gt;0.65&lt;/SHGC&gt;
+        &lt;/Window&gt;
+      &lt;/Windows&gt;
+    &lt;/Enclosure&gt;
     &lt;Systems&gt;
       &lt;HVAC&gt;
         &lt;HVACPlant&gt;
@@ -169,7 +216,31 @@
             &lt;/AnnualCoolingEfficiency&gt;
           &lt;/CoolingSystem&gt;
         &lt;/HVACPlant&gt;
+        &lt;HVACDistribution&gt;
+          &lt;SystemIdentifier id="hd1"/&gt;
+          &lt;DistributionSystemType&gt;
+            &lt;AirDistribution&gt;
+              &lt;DuctLeakageMeasurement&gt;
+                &lt;DuctLeakageTestUnitofMeasure&gt;CFM50&lt;/DuctLeakageTestUnitofMeasure&gt;
+                &lt;MeasuredDuctLeakage&gt;37&lt;/MeasuredDuctLeakage&gt;
+              &lt;/DuctLeakageMeasurement&gt;
+              &lt;Ducts&gt;
+                &lt;DuctInsulationRValue&gt;4&lt;/DuctInsulationRValue&gt;
+                &lt;DuctLocation&gt;conditioned space&lt;/DuctLocation&gt;
+              &lt;/Ducts&gt;
+            &lt;/AirDistribution&gt;
+          &lt;/DistributionSystemType&gt;
+        &lt;/HVACDistribution&gt;
       &lt;/HVAC&gt;
+      &lt;WaterHeating&gt;
+        &lt;WaterHeatingSystem&gt;
+          &lt;SystemIdentifier id="wh1"/&gt;
+          &lt;FuelType&gt;natural gas&lt;/FuelType&gt;
+          &lt;WaterHeaterType&gt;storage water heater&lt;/WaterHeaterType&gt;
+          &lt;TankVolume&gt;45&lt;/TankVolume&gt;
+          &lt;EnergyFactor&gt;0.4&lt;/EnergyFactor&gt;
+        &lt;/WaterHeatingSystem&gt;
+      &lt;/WaterHeating&gt;
     &lt;/Systems&gt;
   &lt;/BuildingDetails&gt;
 &lt;/MaintainBuildingRequest&gt;</code></pre>
@@ -180,16 +251,63 @@
   &lt;XMLTransactionHeaderInformation&gt;
     &lt;XMLType&gt;notsure&lt;/XMLType&gt;
     &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
-    &lt;CreatedDateAndTime&gt;2013-01-28T11:32:38-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-15T14:52:13-08:00&lt;/CreatedDateAndTime&gt;
     &lt;Transaction&gt;create&lt;/Transaction&gt;
   &lt;/XMLTransactionHeaderInformation&gt;
   &lt;BuildingID id="b1"/&gt;
   &lt;CustomerID id="c1"/&gt;
   &lt;ProjectStatus&gt;
     &lt;EventType&gt;job completion&lt;/EventType&gt;
-    &lt;Date&gt;2013-01-28&lt;/Date&gt;
+    &lt;Date&gt;2013-02-15&lt;/Date&gt;
   &lt;/ProjectStatus&gt;
   &lt;BuildingDetails&gt;
+    &lt;BuildingSummary&gt;
+      &lt;BuildingConstruction&gt;
+        &lt;YearBuilt&gt;1950&lt;/YearBuilt&gt;
+        &lt;ResidentialFacilityType&gt;unknown&lt;/ResidentialFacilityType&gt;
+        &lt;AverageCeilingHeight&gt;8.5&lt;/AverageCeilingHeight&gt;
+        &lt;BuildingVolume&gt;12000&lt;/BuildingVolume&gt;
+        &lt;AverageAtticRValue&gt;13&lt;/AverageAtticRValue&gt;
+        &lt;AverageWallRValue&gt;11&lt;/AverageWallRValue&gt;
+        &lt;AverageFloorRValue&gt;10&lt;/AverageFloorRValue&gt;
+      &lt;/BuildingConstruction&gt;
+    &lt;/BuildingSummary&gt;
+    &lt;Enclosure&gt;
+      &lt;AtticAndRoof&gt;
+        &lt;Attics&gt;
+          &lt;Attic&gt;
+            &lt;SystemIdentifier id="attic1"/&gt;
+            &lt;AtticFloorInsulation&gt;
+              &lt;SystemIdentifier id="atticinsulation2"/&gt;
+              &lt;Layer&gt;
+                &lt;NominalRValue&gt;15&lt;/NominalRValue&gt;
+              &lt;/Layer&gt;
+            &lt;/AtticFloorInsulation&gt;
+            &lt;Area&gt;1200&lt;/Area&gt;
+          &lt;/Attic&gt;
+        &lt;/Attics&gt;
+      &lt;/AtticAndRoof&gt;
+      &lt;Walls&gt;
+        &lt;Wall&gt;
+          &lt;SystemIdentifier id="wall1"/&gt;
+          &lt;Area&gt;1250&lt;/Area&gt;
+          &lt;Insulation&gt;
+            &lt;SystemIdentifier id="wallsinsulation2"/&gt;
+            &lt;Layer&gt;
+              &lt;NominalRValue&gt;14&lt;/NominalRValue&gt;
+            &lt;/Layer&gt;
+          &lt;/Insulation&gt;
+        &lt;/Wall&gt;
+      &lt;/Walls&gt;
+      &lt;Windows&gt;
+        &lt;Window&gt;
+          &lt;SystemIdentifier id="w2"/&gt;
+          &lt;Area&gt;560&lt;/Area&gt;
+          &lt;UFactor&gt;0.25&lt;/UFactor&gt;
+          &lt;SHGC&gt;0.4&lt;/SHGC&gt;
+        &lt;/Window&gt;
+      &lt;/Windows&gt;
+    &lt;/Enclosure&gt;
     &lt;Systems&gt;
       &lt;HVAC&gt;
         &lt;HVACPlant&gt;
@@ -228,7 +346,7 @@
             &lt;FloorAreaServed&gt;1400&lt;/FloorAreaServed&gt;
           &lt;/HeatingSystem&gt;
           &lt;CoolingSystem&gt;
-            &lt;SystemIdentifier id="c1"/&gt;
+            &lt;SystemIdentifier id="c2"/&gt;
             &lt;Manufacturer&gt;Rheem&lt;/Manufacturer&gt;
             &lt;ModelNumber&gt;13AJM36&lt;/ModelNumber&gt;
             &lt;AHRINumber&gt;4515091&lt;/AHRINumber&gt;
@@ -259,9 +377,36 @@
           &lt;/CoolingSystem&gt;
         &lt;/HVACPlant&gt;
         &lt;HVACControl&gt;
+          &lt;SystemIdentifier id="thermostat1"/&gt;
           &lt;ControlType&gt;programmable thermostat&lt;/ControlType&gt;
         &lt;/HVACControl&gt;
+        &lt;HVACDistribution&gt;
+          &lt;SystemIdentifier id="hd2"/&gt;
+          &lt;DistributionSystemType&gt;
+            &lt;AirDistribution&gt;
+              &lt;DuctLeakageMeasurement&gt;
+                &lt;DuctLeakageTestUnitofMeasure&gt;CFM50&lt;/DuctLeakageTestUnitofMeasure&gt;
+                &lt;MeasuredDuctLeakage&gt;10&lt;/MeasuredDuctLeakage&gt;
+              &lt;/DuctLeakageMeasurement&gt;
+              &lt;Ducts&gt;
+                &lt;DuctInsulationRValue&gt;5&lt;/DuctInsulationRValue&gt;
+                &lt;DuctLocation&gt;conditioned space&lt;/DuctLocation&gt;
+              &lt;/Ducts&gt;
+            &lt;/AirDistribution&gt;
+          &lt;/DistributionSystemType&gt;
+        &lt;/HVACDistribution&gt;
       &lt;/HVAC&gt;
+      &lt;WaterHeating&gt;
+        &lt;WaterHeatingSystem&gt;
+          &lt;SystemIdentifier id="wh2"/&gt;
+          &lt;FuelType&gt;natural gas&lt;/FuelType&gt;
+          &lt;WaterHeaterType&gt;storage water heater&lt;/WaterHeaterType&gt;
+          &lt;Manufacturer&gt;Rheem&lt;/Manufacturer&gt;
+          &lt;ModelNumber&gt;22V40FT&lt;/ModelNumber&gt;
+          &lt;TankVolume&gt;40&lt;/TankVolume&gt;
+          &lt;EnergyFactor&gt;0.59&lt;/EnergyFactor&gt;
+        &lt;/WaterHeatingSystem&gt;
+      &lt;/WaterHeating&gt;
     &lt;/Systems&gt;
   &lt;/BuildingDetails&gt;
 &lt;/MaintainBuildingRequest&gt;</code></pre>
@@ -339,17 +484,18 @@
   &lt;XMLTransactionHeaderInformation&gt;
     &lt;XMLType&gt;notsure&lt;/XMLType&gt;
     &lt;XMLGeneratedBy&gt;Idea Tree&lt;/XMLGeneratedBy&gt;
-    &lt;CreatedDateAndTime&gt;2013-02-10T22:12:19-08:00&lt;/CreatedDateAndTime&gt;
+    &lt;CreatedDateAndTime&gt;2013-02-15T14:52:36-08:00&lt;/CreatedDateAndTime&gt;
     &lt;Transaction&gt;create&lt;/Transaction&gt;
   &lt;/XMLTransactionHeaderInformation&gt;
   &lt;BuildingID id="b1"/&gt;
   &lt;ProjectID id="p1"/&gt;
   &lt;ProjectDetails&gt;
+    &lt;ProjectSystemIdentifiers id="p1"/&gt;
     &lt;Measures&gt;
       &lt;Measure&gt;
-        &lt;MeasureDescription&gt;New Furnace&lt;/MeasureDescription&gt;
+        &lt;MeasureDescription&gt;New Furnace and Air Conditioner&lt;/MeasureDescription&gt;
         &lt;Cost&gt;2500&lt;/Cost&gt;
-        &lt;Status&gt;Recommend&lt;/Status&gt;
+        &lt;Status&gt;Installed&lt;/Status&gt;
         &lt;EnergySavingsInfo&gt;
           &lt;FuelSavings&gt;
             &lt;FuelType&gt;natural gas&lt;/FuelType&gt;
@@ -357,15 +503,114 @@
             &lt;TotalSavings&gt;150&lt;/TotalSavings&gt;
             &lt;TotalDollarSavings&gt;180&lt;/TotalDollarSavings&gt;
           &lt;/FuelSavings&gt;
+          &lt;FuelSavings&gt;
+            &lt;FuelType&gt;electricity&lt;/FuelType&gt;
+            &lt;Units&gt;kWh&lt;/Units&gt;
+            &lt;TotalSavings&gt;100&lt;/TotalSavings&gt;
+            &lt;TotalDollarSavings&gt;120&lt;/TotalDollarSavings&gt;
+          &lt;/FuelSavings&gt;
         &lt;/EnergySavingsInfo&gt;
         &lt;ReplacedComponents&gt;
           &lt;ReplacedComponent id="comp1"&gt;
             &lt;SendingSystemIdentifierValue&gt;h1&lt;/SendingSystemIdentifierValue&gt;
           &lt;/ReplacedComponent&gt;
+          &lt;ReplacedComponent id="comp2"&gt;
+            &lt;SendingSystemIdentifierValue&gt;c1&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/ReplacedComponent&gt;
         &lt;/ReplacedComponents&gt;
         &lt;InstalledComponents&gt;
-          &lt;InstalledComponent id="comp2"&gt;
+          &lt;InstalledComponent id="comp3"&gt;
             &lt;SendingSystemIdentifierValue&gt;h2&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/InstalledComponent&gt;
+          &lt;InstalledComponent id="comp4"&gt;
+            &lt;SendingSystemIdentifierValue&gt;c2&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/InstalledComponent&gt;
+        &lt;/InstalledComponents&gt;
+      &lt;/Measure&gt;
+      &lt;Measure&gt;
+        &lt;MeasureDescription&gt;Upgrade insulation&lt;/MeasureDescription&gt;
+        &lt;Cost&gt;1200&lt;/Cost&gt;
+        &lt;Status&gt;Installed&lt;/Status&gt;
+        &lt;EnergySavingsInfo&gt;
+          &lt;FuelSavings&gt;
+            &lt;FuelType&gt;natural gas&lt;/FuelType&gt;
+            &lt;Units&gt;ccf&lt;/Units&gt;
+            &lt;TotalSavings&gt;50&lt;/TotalSavings&gt;
+            &lt;TotalDollarSavings&gt;80&lt;/TotalDollarSavings&gt;
+          &lt;/FuelSavings&gt;
+          &lt;FuelSavings&gt;
+            &lt;FuelType&gt;electricity&lt;/FuelType&gt;
+            &lt;Units&gt;kWh&lt;/Units&gt;
+            &lt;TotalSavings&gt;20&lt;/TotalSavings&gt;
+            &lt;TotalDollarSavings&gt;42&lt;/TotalDollarSavings&gt;
+          &lt;/FuelSavings&gt;
+        &lt;/EnergySavingsInfo&gt;
+        &lt;ReplacedComponents&gt;
+          &lt;ReplacedComponent id="comp5"&gt;
+            &lt;SendingSystemIdentifierValue&gt;wallsinsulation1&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/ReplacedComponent&gt;
+          &lt;ReplacedComponent id="comp6"&gt;
+            &lt;SendingSystemIdentifierValue&gt;atticinsulation1&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/ReplacedComponent&gt;
+        &lt;/ReplacedComponents&gt;
+        &lt;InstalledComponents&gt;
+          &lt;InstalledComponent id="comp7"&gt;
+            &lt;SendingSystemIdentifierValue&gt;wallsinsulation2&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/InstalledComponent&gt;
+          &lt;InstalledComponent id="comp8"&gt;
+            &lt;SendingSystemIdentifierValue&gt;atticinsulation2&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/InstalledComponent&gt;
+        &lt;/InstalledComponents&gt;
+      &lt;/Measure&gt;
+      &lt;Measure&gt;
+        &lt;MeasureDescription&gt;Replaced Windows&lt;/MeasureDescription&gt;
+        &lt;Cost&gt;3000&lt;/Cost&gt;
+        &lt;Status&gt;Installed&lt;/Status&gt;
+        &lt;EnergySavingsInfo&gt;
+          &lt;FuelSavings&gt;
+            &lt;FuelType&gt;natural gas&lt;/FuelType&gt;
+            &lt;Units&gt;ccf&lt;/Units&gt;
+            &lt;TotalSavings&gt;80&lt;/TotalSavings&gt;
+            &lt;TotalDollarSavings&gt;100&lt;/TotalDollarSavings&gt;
+          &lt;/FuelSavings&gt;
+          &lt;FuelSavings&gt;
+            &lt;FuelType&gt;electricity&lt;/FuelType&gt;
+            &lt;Units&gt;kWh&lt;/Units&gt;
+            &lt;TotalSavings&gt;80&lt;/TotalSavings&gt;
+            &lt;TotalDollarSavings&gt;96&lt;/TotalDollarSavings&gt;
+          &lt;/FuelSavings&gt;
+        &lt;/EnergySavingsInfo&gt;
+        &lt;ReplacedComponents&gt;
+          &lt;ReplacedComponent id="comp9"&gt;
+            &lt;SendingSystemIdentifierValue&gt;w1&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/ReplacedComponent&gt;
+        &lt;/ReplacedComponents&gt;
+        &lt;InstalledComponents&gt;
+          &lt;InstalledComponent id="comp10"&gt;
+            &lt;SendingSystemIdentifierValue&gt;w2&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/InstalledComponent&gt;
+        &lt;/InstalledComponents&gt;
+      &lt;/Measure&gt;
+      &lt;Measure&gt;
+        &lt;MeasureDescription&gt;Replaced Water Heater&lt;/MeasureDescription&gt;
+        &lt;Cost&gt;950&lt;/Cost&gt;
+        &lt;Status&gt;Installed&lt;/Status&gt;
+        &lt;EnergySavingsInfo&gt;
+          &lt;FuelSavings&gt;
+            &lt;FuelType&gt;natural gas&lt;/FuelType&gt;
+            &lt;Units&gt;ccf&lt;/Units&gt;
+            &lt;TotalSavings&gt;100&lt;/TotalSavings&gt;
+            &lt;TotalDollarSavings&gt;120&lt;/TotalDollarSavings&gt;
+          &lt;/FuelSavings&gt;
+        &lt;/EnergySavingsInfo&gt;
+        &lt;ReplacedComponents&gt;
+          &lt;ReplacedComponent id="comp11"&gt;
+            &lt;SendingSystemIdentifierValue&gt;wh1&lt;/SendingSystemIdentifierValue&gt;
+          &lt;/ReplacedComponent&gt;
+        &lt;/ReplacedComponents&gt;
+        &lt;InstalledComponents&gt;
+          &lt;InstalledComponent id="comp12"&gt;
+            &lt;SendingSystemIdentifierValue&gt;wh2&lt;/SendingSystemIdentifierValue&gt;
           &lt;/InstalledComponent&gt;
         &lt;/InstalledComponents&gt;
       &lt;/Measure&gt;
