@@ -4,40 +4,10 @@
 	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
-	<xs:element name="MaintainCustomerRequest">
+	<xs:element name="MaintainCustomerRequest" type="Customer">
 		<xs:annotation>
 			<xs:documentation>Home Performance XML Root</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="XMLTransactionHeaderInformation"/>
-				<xs:element ref="SoftwareInfo" minOccurs="0"/>
-				<xs:element name="Customer">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Person" type="IndividualInfo"/>
-							<xs:element name="MailingAddress" minOccurs="0"
-								type="AddressInformation">
-								<xs:annotation>
-									<xs:documentation>If different from building street address.</xs:documentation>
-								</xs:annotation>
-							</xs:element>
-							<xs:element minOccurs="0" ref="extension"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="OtherContact" minOccurs="0" maxOccurs="unbounded">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Person" type="IndividualInfo"/>
-							<xs:element name="Address" type="AddressInformation"> </xs:element>
-							<xs:element minOccurs="0" ref="extension"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element minOccurs="0" ref="extension"/>
-			</xs:sequence>
-		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainCustomerResponse">
 		<xs:complexType>

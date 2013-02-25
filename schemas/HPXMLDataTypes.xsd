@@ -1690,13 +1690,15 @@
 			<xs:enumeration value="Western"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ProgramSponsor">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
 	<xs:simpleType name="BoilerType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="hot water"/>
 			<xs:enumeration value="steam"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="ProgramSponsor">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
+
+
 </xs:schema>

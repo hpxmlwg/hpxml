@@ -3,32 +3,10 @@
 	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
-	<xs:element name="MaintainConsumptionRequest">
+	<xs:element name="MaintainConsumptionRequest" type="Consumption">
 		<xs:annotation>
 			<xs:documentation/>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="XMLTransactionHeaderInformation"/>
-				<xs:element name="BuildingID" type="RemoteReference"/>
-				<xs:element name="CustomerID" type="RemoteReference"/>
-				<xs:element name="Consumption" minOccurs="0">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element maxOccurs="unbounded" name="ConsumptionInfo"
-								type="ConsumptionInfoType"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-
-				<xs:element minOccurs="0" name="BPI2400Inputs" type="BPI2400Inputs">
-					<xs:annotation>
-						<xs:documentation>The following fields are to support BPI-2400</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element minOccurs="0" ref="extension"/>
-			</xs:sequence>
-		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainConsumptionResponse">
 		<xs:complexType>
@@ -39,5 +17,4 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-
 </xs:schema>

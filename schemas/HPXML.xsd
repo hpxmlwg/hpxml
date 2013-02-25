@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1"
+    targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
+    <xs:include schemaLocation="BaseElements.xsd"/>
+
+
+    <xs:element name="HPXML">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Contractor" nillable="true"
+                    type="Contractor"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Customer" nillable="true"
+                    type="Customer"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Building" nillable="true"
+                    type="Building"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Project" nillable="true"
+                    type="Project"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Utility" nillable="true"
+                    type="Utility"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Consumption" nillable="true"
+                    type="Consumption"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

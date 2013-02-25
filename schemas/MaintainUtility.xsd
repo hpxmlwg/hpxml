@@ -4,27 +4,10 @@
 	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
-	<xs:element name="MaintainUtilityRequest">
+	<xs:element name="MaintainUtilityRequest" type="Utility">
 		<xs:annotation>
 			<xs:documentation>Home Performance XML Root</xs:documentation>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="XMLTransactionHeaderInformation"/>
-				<xs:element ref="SoftwareInfo" minOccurs="0"/>
-				<xs:element name="UtilitiesorFuelProviders" minOccurs="0">
-					<xs:annotation>
-						<xs:documentation>Utility company information</xs:documentation>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element ref="UtilityFuelProvider" maxOccurs="unbounded"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element minOccurs="0" ref="extension"/>
-			</xs:sequence>
-		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainUtilityResponse">
 		<xs:complexType>

@@ -3,44 +3,10 @@
 	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
-	<xs:element name="MaintainBuildingRequest">
+	<xs:element name="MaintainBuildingRequest" type="Building">
 		<xs:annotation>
 			<xs:documentation/>
 		</xs:annotation>
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="XMLTransactionHeaderInformation"/>
-				<xs:element ref="SoftwareInfo" minOccurs="0"/>
-				<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
-				<xs:element name="CustomerID" type="RemoteReference" minOccurs="0"/>
-				<xs:element name="Site" minOccurs="0">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="SiteID" type="SystemIdentifiersInfoType"/>
-							<xs:element name="Address" type="AddressInformation"/>
-							<xs:element minOccurs="0" name="SchoolDistrict" type="xs:string"/>
-							<xs:element minOccurs="0" name="eGridRegion" type="eGridRegions"/>
-							<xs:element minOccurs="0" ref="extension"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element ref="ProjectStatus"/>
-				<xs:element name="BuildingDetails" type="BuildingDetailsType">
-					<xs:annotation>
-						<xs:documentation>Building Description</xs:documentation>
-					</xs:annotation>
-				</xs:element>
-				<xs:element minOccurs="0" name="ModeledUsages">
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element maxOccurs="unbounded" name="ModeledUsage"
-								type="ModeledUsageType"/>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element minOccurs="0" ref="extension"/>
-			</xs:sequence>
-		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainBuildingResponse">
 		<xs:complexType>
@@ -51,5 +17,4 @@
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-
 </xs:schema>
