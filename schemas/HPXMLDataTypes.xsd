@@ -388,10 +388,12 @@
 	</xs:simpleType>
 	<xs:simpleType name="EmissionUnits">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="kg/MWh"/>
-			<xs:enumeration value="tons/MWh"/>
-			<xs:enumeration value="kg/therm"/>
-			<xs:enumeration value="kg/MMBtu"/>
+			<xs:enumeration value="kWh of electricity"/>
+			<xs:enumeration value="therm of gas"/>
+			<xs:enumeration value="kg"/>
+			<xs:enumeration value="ton"/>
+			<xs:enumeration value="metric ton"/>
+			<xs:enumeration value="pound"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FuelInterruptibility">
