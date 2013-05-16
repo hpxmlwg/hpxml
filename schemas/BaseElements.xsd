@@ -555,6 +555,12 @@
 												<xs:element minOccurs="0"
 												name="AtticKneeWallInsulation"
 												type="InsulationInfo"/>
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												name="AtticKneeWall">
+												<xs:complexType>
+												<xs:attribute name="ID" type="xs:IDREF"/>
+												</xs:complexType>
+												</xs:element>
 												<xs:element minOccurs="0" name="AtticRoofInsulation"
 												type="InsulationInfo"/>
 												<xs:element name="Area" type="SurfaceArea"
@@ -2480,7 +2486,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element minOccurs="0" name="BuildingHeight"
 										type="LengthMeasurement">
 										<xs:annotation>
-											<xs:documentation>height of building in linear feet</xs:documentation>
+											<xs:documentation>[ft] height of building</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="NumberofUnits"
@@ -2507,13 +2513,13 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element name="AverageCeilingHeight" type="LengthMeasurement"
 										minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>average distance in feet from the floor to the ceiling</xs:documentation>
+											<xs:documentation>[ft] Average distance from the floor to the ceiling</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="FloorToFloorHeight"
 										type="LengthMeasurement">
 										<xs:annotation>
-											<xs:documentation>distance in feet between floors</xs:documentation>
+											<xs:documentation>[ft] distance between floors</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="NumberofRooms"
@@ -2531,7 +2537,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element minOccurs="0" name="BuildingFootprintArea"
 										type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>sq.ft.</xs:documentation>
+											<xs:documentation>[sq.ft.]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="FootprintShape"
@@ -2539,24 +2545,27 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element minOccurs="0" name="GrossFloorArea"
 										type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>sq.ft.</xs:documentation>
+											<xs:documentation>[sq.ft.]
+Gross floor area (based on ASHRAE definition) is the sum of the floor areas of the spaces within the building, including basements, mezzanine and intermediate‐floored tiers, and penthouses with headroom height of 7.5 ft (2.2 meters) or greater. Measurements must be taken from the exterior faces of exterior walls OR from the centerline of walls separating buildings, OR from the centerline of walls separating spaces. Excludes non‐enclosed (or non‐enclosable) roofed‐over areas such as exterior covered walkways, porches, terraces or steps, roof overhangs, and similar features. Excludes air shafts, pipe trenches, and chimneys. Excludes floor area dedicated to the parking and circulation of motor vehicles.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="NetFloorArea" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>sq.ft.</xs:documentation>
+											<xs:documentation>[sq.ft.]
+The floor area of an occupiable space defined by the inside surfaces of its walls but excluding shafts, column enclosures, and other permanently enclosed, inaccessible, and unoccupiable areas. Obstructions in the space such as furnishings, display or storage racks, and other obstructions, whether temporary or permanent, may not be deducted from the space are considered to be part of the net occupiable area.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="ConditionedFloorArea" type="SurfaceArea"
 										minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>Floor area of home that is heated or cooled in sq.ft.</xs:documentation>
+											<xs:documentation>[sq.ft.]
+All finished space that is within the (insulated) conditioned space boundary (that is, within the insulated envelope), regardless of HVAC configuration.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="FinishedFloorArea"
 										type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>Floor area of home that is finished and assumed to be occupied, in sq.ft.</xs:documentation>
+											<xs:documentation>[sq.ft.] Floor area of home that is finished and assumed to be occupied.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="NumberofStoriesAboveGrade"
@@ -2564,30 +2573,35 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element minOccurs="0" name="CooledFloorArea"
 										type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>sq.ft.</xs:documentation>
+											<xs:documentation>[sq.ft.]
+The total area of all enclosed spaces measured to the internal face of the external walls. Included are areas of sloping surfaces such as staircases, galleries, raked auditoria, and tiered terraces where the area taken is from the area on the plan. Excluded are areas that are not enclosed such as open floors, covered ways and balconies.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HeatedFloorArea"
 										type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>sq.ft.</xs:documentation>
+											<xs:documentation>[sq.ft.]
+The total area of all enclosed spaces measured to the internal face of the external walls. Included are areas of sloping surfaces such as staircases, galleries, raked auditoria, and tiered terraces where the area taken is from the area on the plan. Excluded are areas that are not enclosed such as open floors, covered ways and balconies.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="UnconditionedFloorArea"
 										type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>sq.ft.</xs:documentation>
+											<xs:documentation>[sq.ft.]
+An enclosed space within a building that does not meet the requirements of a conditioned space. Spaces that have no control over thermal conditions but intentionally or unintentionally receive thermal energy from adjacent spaces are considered unconditioned spaces (such as an attached garage on a house or a vestibule with no thermal comfort criteria). Spaces that are ventilated only to maintain air quality are considered unconditioned spaces (such as a parking garage with no thermal comfort criteria).</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="BuildingVolume" type="Volume">
 										<xs:annotation>
-											<xs:documentation>ft^3</xs:documentation>
+											<xs:documentation>[cu.ft.]
+A volume of a building surrounded by solid surfaces such as walls, roofs, floors, fenestration, and doors where the total opening area to the outside can be reduced to less than 1% of the Gross Interior Floor Area of the space. Spaces that are temporarily enclosed such as patios enclosed with tenting are not considered Enclosed Spaces for annual building analysis. These spaces should be treated as exterior to the building.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="ConditionedBuildingVolume" type="Volume"
 										minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>ft^3</xs:documentation>
+											<xs:documentation>[cu.ft.]
+Volume inside the building envelope of the conditioned spaces. This metric can be calculated as the volume of the building if every space is conditioned or on a floor-by-floor basis. For spaces with vertical walls and horizontal ceilings and floors, this is calculated as the Gross Conditioned Floor Area times the height from the top surface of the finished floor to the top surface of the finished floor separating levels of the building or to the inside surface of the roof for the top floor. The volume of spaces that have nonvertical walls or nonhorizontal ceilings of floors should be calculated separately to properly account for the non-rectangular geometry. This metric does include the volume of floor or ceiling return air plenums.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="FoundationType" minOccurs="0"
