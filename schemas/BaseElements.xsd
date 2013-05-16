@@ -2961,7 +2961,8 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 												<xs:element name="EmissionType" type="EmissionType"/>
 												<xs:element name="EmissionUnits"
 												type="EmissionUnits"/>
-												<xs:element name="Factor" type="xs:double"/>
+												<xs:element name="EmissionFactor" type="xs:integer"
+												/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
