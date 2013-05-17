@@ -2491,6 +2491,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element minOccurs="0" name="YearofLastRemodel" type="Year"/>
 									<xs:element name="ResidentialFacilityType"
 										type="ResidentialFacilityType" minOccurs="0"/>
+									<xs:element minOccurs="0" name="PassiveSolar" type="xs:boolean"/>
 									<xs:element minOccurs="0" name="BuildingHeight"
 										type="LengthMeasurement">
 										<xs:annotation>
