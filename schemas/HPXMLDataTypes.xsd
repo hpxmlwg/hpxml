@@ -1624,6 +1624,13 @@
 			<xs:maxInclusive value="90"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="PVSystemLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="roof"/>
+			<xs:enumeration value="ground"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Power">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
