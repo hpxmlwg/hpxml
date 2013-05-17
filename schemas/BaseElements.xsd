@@ -609,6 +609,7 @@
 										minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
+												<xs:group ref="SystemInfo"/>
 												<xs:element minOccurs="0" name="FloorJoists"
 												type="StudDimensions"/>
 												<xs:element minOccurs="0" name="FloorCovering"
@@ -629,6 +630,7 @@
 										minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
+												<xs:group ref="SystemInfo"/>
 												<xs:element minOccurs="0" name="Type"
 												type="FoundationWallType"/>
 												<xs:element minOccurs="0" name="Length"
@@ -674,6 +676,7 @@
 									<xs:element name="Slab" maxOccurs="unbounded" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
+												<xs:group ref="SystemInfo"/>
 												<xs:element minOccurs="0" name="Area"
 												type="SurfaceArea">
 												<xs:annotation>
