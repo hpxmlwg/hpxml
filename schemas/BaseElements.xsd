@@ -2456,6 +2456,10 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+									<xs:element minOccurs="0" name="WalkingScore"
+										type="IntegerGreaterThanOrEqualToZero"/>
+									<xs:element minOccurs="0" name="WalkingScoreSource"
+										type="xs:string"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
