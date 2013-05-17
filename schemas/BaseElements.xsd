@@ -2432,6 +2432,30 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 										type="OrientationType"/>
 									<xs:element minOccurs="0" name="AzimuthOfFrontOfHome"
 										type="AzimuthType"/>
+									<xs:element minOccurs="0" name="PublicTransportation">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="DistanceFromSubway"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="DistanceFromBus"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="DistanceFromTrain"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
