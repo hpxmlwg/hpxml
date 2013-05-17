@@ -2871,6 +2871,12 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 				type="LeakinessObservedVisualInspection" minOccurs="0"/>
 			<xs:element name="DuctLeakageTestMethod" type="DuctLeakageTestMethod" minOccurs="0"/>
 			<xs:element name="MeasuredDuctLeakage" type="MeasuredDuctLeakage" minOccurs="0"/>
+			<xs:element minOccurs="0" name="EffectiveLeakageArea" type="SurfaceArea">
+				<xs:annotation>
+					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure. 
+Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [Pa]) ^ 0.5)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
