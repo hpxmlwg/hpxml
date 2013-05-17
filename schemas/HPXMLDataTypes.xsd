@@ -956,7 +956,6 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="CFM50"/>
 			<xs:enumeration value="CFM25"/>
-			<xs:enumeration value="effective leakage area"/>
 			<xs:enumeration value="CFM per Std 152"/>
 		</xs:restriction>
 	</xs:simpleType>
