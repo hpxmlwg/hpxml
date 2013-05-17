@@ -1886,8 +1886,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element minOccurs="0" name="DoorsOpenClosed">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="AllDoors" type="OpenClosed"/>
 						<xs:element minOccurs="0" name="BasementDoors" type="OpenClosed"/>
 						<xs:element minOccurs="0" name="OtherDoors" type="OpenClosed"/>
+						<xs:element minOccurs="0" name="BedroomDoors" type="OpenClosed"/>
+						<xs:element minOccurs="0" name="LaundryRoomDoors" type="OpenClosed"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
