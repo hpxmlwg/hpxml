@@ -3249,43 +3249,6 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			</xs:element>
 		</xs:all>
 	</xs:complexType>
-	<xs:complexType name="HomeownerQuestionaireInfoType">
-		<xs:annotation>
-			<xs:documentation>Please assign 10 points the reason(s) why you choose to invest in the retrofit. 
-You may assign all 10 points to one reason, or distribute the points among several reasons – as long as they total 10.</xs:documentation>
-		</xs:annotation>
-		<xs:sequence minOccurs="0">
-			<xs:element name="Comfort" type="HomeownerQuestionaireScore"/>
-			<xs:element name="EnergySavings" type="HomeownerQuestionaireScore"/>
-			<xs:element name="IndoorAirQuality" type="HomeownerQuestionaireScore"/>
-			<xs:element name="Durability" type="HomeownerQuestionaireScore"/>
-			<xs:element name="Environment" type="HomeownerQuestionaireScore"/>
-			<xs:element name="SupportLocalBusiness" type="HomeownerQuestionaireScore"/>
-			<xs:element name="Other" type="HomeownerQuestionaireScore"/>
-			<xs:element minOccurs="0" name="OtherDescription" type="xs:string">
-				<xs:annotation>
-					<xs:documentation>Optional description if Other above is greater than zero.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" name="PrimaryReason">
-				<xs:annotation>
-					<xs:documentation>What reason did the building owner cite as being primary, if more than one reason?</xs:documentation>
-				</xs:annotation>
-				<xs:simpleType>
-					<xs:restriction base="xs:string">
-						<xs:enumeration value="comfort"/>
-						<xs:enumeration value="energy savings"/>
-						<xs:enumeration value="indoor air quality"/>
-						<xs:enumeration value="durability"/>
-						<xs:enumeration value="environment"/>
-						<xs:enumeration value="support local business"/>
-						<xs:enumeration value="other"/>
-					</xs:restriction>
-				</xs:simpleType>
-			</xs:element>
-			<xs:element ref="extension" minOccurs="0"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="AirInfiltrationMeasurementType">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
@@ -3641,13 +3604,6 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element name="BuildingID" type="RemoteReference"/>
 			<xs:element minOccurs="0" name="ProjectID" type="SystemIdentifiersInfoType"/>
 			<xs:element name="ProjectDetails" type="ProjectDetailsType"/>
-			<xs:element minOccurs="0" name="HomeownerQuestionaire"
-				type="HomeownerQuestionaireInfoType">
-				<xs:annotation>
-					<xs:documentation>Please assign 10 points the reason(s) why you choose to invest in the retrofit. 
-You may assign all 10 points to one reason, or distribute the points among several reasons – as long as they total 10.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>

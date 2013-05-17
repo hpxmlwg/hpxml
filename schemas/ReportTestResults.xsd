@@ -9,13 +9,6 @@
 			<xs:sequence>
 				<xs:element ref="XMLTransactionHeaderInformation"/>
 				<xs:element ref="SoftwareInfo" minOccurs="0"/>
-				<xs:element minOccurs="0" name="HomeownerQuestionaire"
-					type="HomeownerQuestionaireInfoType">
-					<xs:annotation>
-						<xs:documentation>Please assign 10 points the reason(s) why you choose to invest in the retrofit. 
-You may assign all 10 points to one reason, or distribute the points among several reasons – as long as they total 10.</xs:documentation>
-					</xs:annotation>
-				</xs:element>
 				<xs:element name="BuildingIdentifier" type="RemoteReference"/>
 				<xs:element name="TestResults">
 					<xs:complexType>
