@@ -1266,6 +1266,8 @@
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="Location"
 										type="PVSystemLocation"/>
+									<xs:element minOccurs="0" name="Ownership"
+										type="PVSystemOwnership"/>
 									<xs:element minOccurs="0" name="ArrayOrientation"
 										type="OrientationType"/>
 									<xs:element minOccurs="0" name="ArrayAzimuth" type="AzimuthType"/>

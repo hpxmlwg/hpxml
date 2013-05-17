@@ -1631,6 +1631,12 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="PVSystemOwnership">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="leased"/>
+			<xs:enumeration value="owned"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Power">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
