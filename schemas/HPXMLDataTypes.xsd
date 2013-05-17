@@ -1525,7 +1525,7 @@
 			<xs:enumeration value="Recommended"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="ImprovementQAStatusType">
+	<xs:simpleType name="TestResultType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Passed"/>
 			<xs:enumeration value="Failed"/>

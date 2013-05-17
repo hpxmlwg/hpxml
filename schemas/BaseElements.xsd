@@ -1864,7 +1864,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 		<xs:sequence>
 			<xs:element minOccurs="0" name="PoorScenario" type="xs:double"/>
 			<xs:element minOccurs="0" name="CurrentCondition" type="xs:double"/>
-			<xs:element minOccurs="0" name="PassedTest" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="TestResult" type="TestResultType"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="CAZTestConfiguration">
@@ -2792,7 +2792,7 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 			<xs:element minOccurs="0" name="QA">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="QAStatus" type="ImprovementQAStatusType"/>
+						<xs:element name="QAStatus" type="TestResultType"/>
 						<xs:element name="QAComments" type="Notes"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
