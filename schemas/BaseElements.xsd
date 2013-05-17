@@ -2825,9 +2825,9 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="FuelSavings"
 				type="FuelSavingsType"/>
-			<xs:element name="AnnualElectricityDemandReduction" minOccurs="0" type="xs:double">
+			<xs:element name="DemandSavings" minOccurs="0" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>in kW</xs:documentation>
+					<xs:documentation>[kW] Demand savings from energy efficiency programs</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="AnnualPercentReduction" type="Fraction" minOccurs="0"/>
