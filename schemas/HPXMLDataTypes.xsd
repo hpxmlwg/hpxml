@@ -274,6 +274,11 @@
 			<xs:enumeration value="northeast"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="NumberOfFloorsType">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="IntegerGreaterThanZero">
 		<xs:restriction base="xs:integer">
 			<xs:minExclusive value="0"/>
