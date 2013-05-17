@@ -508,6 +508,8 @@
 												type="WallAndRoofColor"/>
 												<xs:element minOccurs="0" name="RoofType"
 												type="RoofType"/>
+												<xs:element minOccurs="0" name="DeckType"
+												type="DeckType"/>
 												<xs:element minOccurs="0" name="Pitch" type="Pitch">
 												<xs:annotation>
 												<xs:documentation>Pitch of roof ?/12</xs:documentation>

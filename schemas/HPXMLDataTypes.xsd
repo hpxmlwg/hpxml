@@ -1562,6 +1562,14 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="DeckType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="concrete"/>
+			<xs:enumeration value="metal"/>
+			<xs:enumeration value="wood"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Siding">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="wood siding"/>
