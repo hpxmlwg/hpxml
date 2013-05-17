@@ -568,6 +568,12 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="StudMaterial">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="wood"/>
+			<xs:enumeration value="metal"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="DoorMaterial">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="solid wood"/>
