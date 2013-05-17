@@ -1527,9 +1527,9 @@
 	</xs:simpleType>
 	<xs:simpleType name="TestResultType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Passed"/>
-			<xs:enumeration value="Failed"/>
-			<xs:enumeration value="NotTested"/>
+			<xs:enumeration value="passed"/>
+			<xs:enumeration value="failed"/>
+			<xs:enumeration value="not tested"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FoundationThermalBoundary">
