@@ -1281,6 +1281,8 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="InverterEfficiency"
 										type="Efficiency"/>
+									<xs:element minOccurs="0" name="YearInverterManufactured"
+										type="IntegerGreaterThanZero"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
