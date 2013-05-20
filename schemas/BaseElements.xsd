@@ -3067,7 +3067,11 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 								<xs:documentation>$/energy unit</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element minOccurs="0" name="PeakSeason" type="PeakSeason"/>
+						<xs:element minOccurs="0" name="PeakSeason" type="PeakSeason">
+							<xs:annotation>
+								<xs:documentation>Period during which electrical power is expected to be provided at a significantly higher than average supply level.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
