@@ -1734,6 +1734,15 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ProgramCertificate">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Home Performance with Energy Star"/>
+			<xs:enumeration value="LEED Certified"/>
+			<xs:enumeration value="LEED Silver"/>
+			<xs:enumeration value="LEED Gold"/>
+			<xs:enumeration value="LEED Platinum"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="BoilerType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="hot water"/>
