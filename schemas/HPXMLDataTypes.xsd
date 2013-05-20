@@ -1726,6 +1726,14 @@
 	<xs:simpleType name="ProgramSponsor">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
+	<xs:simpleType name="CertifyingOrganization">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="USGBC"/>
+			<xs:enumeration value="NAHB"/>
+			<xs:enumeration value="local program"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="BoilerType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="hot water"/>
