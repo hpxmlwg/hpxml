@@ -2715,6 +2715,8 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 			<xs:element maxOccurs="1" minOccurs="0" ref="ContractorSystemIdentifiers"/>
 			<xs:element minOccurs="0" name="ProgramSponsor" type="ProgramSponsor"/>
 			<xs:element minOccurs="0" name="CertifyingOrganization" type="CertifyingOrganization"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="EnergyScore"
+				type="EnergyScoreType"/>
 			<xs:element name="ProjectType" type="ProjectType" minOccurs="0"/>
 			<xs:element name="Title" type="Title" minOccurs="0"/>
 			<xs:element minOccurs="0" ref="ProjectStatus"/>
@@ -2767,6 +2769,25 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 				</xs:complexType>
 			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EnergyScoreType">
+		<xs:sequence>
+			<xs:element name="ScoreType">
+				<xs:annotation>
+					<xs:documentation>The Home Energy Score is an asset rating for homes, developed and administered by the U.S. Department of Energy. After conducting a brief walk thru of a home, a qualified assessor calculates a home's score on a 10 point scale using a standard scoring tool, with 10 reflecting homes that use the least amount of energy assuming standard operating conditions (US DOE).
+
+The Home Energy Rating System (HERS) index is a measure of a home's energy efficiency. It can also be used to inspect and calculate a home's energy performance. The lower a home's HERS Index Score, the better its efficiency.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="RESNET HERS"/>
+						<xs:enumeration value="US DOE Home Energy Score"/>
+						<xs:enumeration value="other"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Score" type="xs:integer"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="TotalCostType">
