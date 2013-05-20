@@ -3325,7 +3325,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="FanRingUsed" type="FanRingUsed" minOccurs="0"/>
-			<xs:element minOccurs="0" name="BuildingLeakiness" type="BuildingLeakiness"/>
+			<xs:element minOccurs="0" name="BuildingAirLeakageDescriptive" type="BuildingLeakiness"/>
 			<xs:element name="BuildingAirLeakage" type="BuildingAirLeakage" minOccurs="1"/>
 			<xs:element name="BuildingAirLeakageUnit" type="BuildingAirLeakageUnit" minOccurs="1"/>
 			<xs:element ref="extension" minOccurs="0"/>
