@@ -2763,6 +2763,7 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 			</xs:element>
 			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"
 				maxOccurs="2"/>
+			<xs:element maxOccurs="2" minOccurs="0" name="WaterSavingsInfo" type="WaterSavingsType"/>
 			<xs:element minOccurs="0" name="Measures">
 				<xs:complexType>
 					<xs:sequence>
@@ -2790,6 +2791,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 				</xs:simpleType>
 			</xs:element>
 			<xs:element name="Score" type="xs:integer"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="TotalCostType">
@@ -2891,6 +2893,16 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			</xs:element>
 			<xs:element name="AnnualPercentReduction" type="Fraction" minOccurs="0"/>
 			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WaterSavingsType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="WaterSavingsType" type="MeasuredOrEstimated"/>
+			<xs:element minOccurs="0" name="UnitOfMeasure" type="waterUnitType"/>
+			<xs:element minOccurs="0" name="TotalSavings" type="xs:double"/>
+			<xs:element minOccurs="0" name="TotalDollarSavings" type="xs:double"/>
+			<xs:element minOccurs="0" name="PctReduction" type="Fraction"/>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="DuctLeakageMeasurementType">
