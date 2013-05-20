@@ -116,12 +116,10 @@
 	</xs:simpleType>
 	<xs:simpleType name="BuildingAirLeakageUnit">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="CFM25"/>
-			<xs:enumeration value="CFM50"/>
-			<xs:enumeration value="CFM75"/>
-			<xs:enumeration value="ACHnatural"/>
-			<xs:enumeration value="ACH50"/>
+			<xs:enumeration value="CFM"/>
 			<xs:enumeration value="CFMnatural"/>
+			<xs:enumeration value="ACH"/>
+			<xs:enumeration value="ACHnatural"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FanPressure">
