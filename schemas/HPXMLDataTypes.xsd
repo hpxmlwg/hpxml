@@ -944,7 +944,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="DuctLeakageTestMethod">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="duct blaster"/>
+			<xs:enumeration value="duct leakage tester"/>
 			<xs:enumeration value="blower door subtract"/>
 			<xs:enumeration value="pressure pan"/>
 			<xs:enumeration value="visual inspection"/>
