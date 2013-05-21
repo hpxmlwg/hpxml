@@ -999,19 +999,19 @@
 	</xs:simpleType>
 	<xs:simpleType name="UnitLocation">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="conditioned basement"/>
-			<xs:enumeration value="unconditioned basement"/>
-			<xs:enumeration value="vented crawlspace"/>
-			<xs:enumeration value="unvented crawlspace"/>
-			<xs:enumeration value="conditioned garage"/>
-			<xs:enumeration value="unconditioned garage"/>
-			<xs:enumeration value="conditioned attic"/>
-			<xs:enumeration value="unconditioned attic"/>
+			<xs:enumeration value="attic - conditioned"/>
+			<xs:enumeration value="attic - unconditioned"/>
+			<xs:enumeration value="basement - conditioned"/>
+			<xs:enumeration value="basement - unconditioned"/>
 			<xs:enumeration value="conditioned space"/>
+			<xs:enumeration value="crawlspace - vented"/>
+			<xs:enumeration value="crawlspace - unvented"/>
+			<xs:enumeration value="garage - conditioned"/>
+			<xs:enumeration value="garage - unconditioned"/>
 			<xs:enumeration value="mechanical closet"/>
-			<xs:enumeration value="roof deck"/>
 			<xs:enumeration value="other interior"/>
 			<xs:enumeration value="other exterior"/>
+			<xs:enumeration value="roof deck"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Thermostats Below-->
