@@ -554,9 +554,6 @@
 												minOccurs="0"/>
 												<xs:element minOccurs="0"
 												name="AtticFloorInsulation" type="InsulationInfo"/>
-												<xs:element minOccurs="0"
-												name="AtticKneeWallInsulation"
-												type="InsulationInfo"/>
 												<xs:element maxOccurs="unbounded" minOccurs="0"
 												name="AtticKneeWall">
 												<xs:complexType>
