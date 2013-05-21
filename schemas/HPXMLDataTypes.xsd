@@ -13,8 +13,10 @@
 	<xs:simpleType name="StateCode">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="ZipCodePlus4">
-		<xs:restriction base="xs:string"/>
+	<xs:simpleType name="ZipCode">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{5}(-[0-9]{4})?"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="USPSBarCode">
 		<xs:restriction base="xs:string"/>

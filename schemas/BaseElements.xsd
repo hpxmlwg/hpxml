@@ -26,7 +26,7 @@
 			<xs:element name="Address2" type="xs:string" minOccurs="0"/>
 			<xs:element name="CityMunicipality" type="xs:string" minOccurs="0"/>
 			<xs:element name="StateCode" type="StateCode" minOccurs="0"/>
-			<xs:element name="ZipCode" type="ZipCodePlus4" minOccurs="0"/>
+			<xs:element name="ZipCode" type="ZipCode" minOccurs="0"/>
 			<xs:element name="USPSBarCode" type="USPSBarCode" minOccurs="0"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
