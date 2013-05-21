@@ -342,6 +342,8 @@
 			<xs:enumeration value="military"/>
 			<xs:enumeration value="senior"/>
 			<xs:enumeration value="special accessibility needs"/>
+			<xs:enumeration value="young children"/>
+			<xs:enumeration value="at risk"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
