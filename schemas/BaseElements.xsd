@@ -605,6 +605,8 @@
 												<xs:group ref="SystemInfo"/>
 												<xs:element minOccurs="0" name="FloorJoists"
 												type="StudProperties"/>
+												<xs:element minOccurs="0" name="FloorTrusses"
+												type="StudProperties"/>
 												<xs:element minOccurs="0" name="FloorCovering"
 												type="FloorCovering"/>
 												<xs:element minOccurs="0" name="Area"
