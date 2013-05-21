@@ -555,11 +555,7 @@
 												<xs:element minOccurs="0"
 												name="AtticFloorInsulation" type="InsulationInfo"/>
 												<xs:element maxOccurs="unbounded" minOccurs="0"
-												name="AtticKneeWall">
-												<xs:complexType>
-												<xs:attribute name="ID" type="xs:IDREF"/>
-												</xs:complexType>
-												</xs:element>
+												name="AtticKneeWall" type="LocalReference"> </xs:element>
 												<xs:element minOccurs="0" name="AtticRoofInsulation"
 												type="InsulationInfo"/>
 												<xs:element name="Area" type="SurfaceArea"
