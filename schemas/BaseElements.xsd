@@ -3395,6 +3395,11 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="Ambient">
+				<xs:annotation>
+					<xs:documentation>For use on sections of the house that are cantilevered or over ambient conditions for some other reason. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="Other">
 				<xs:complexType>
 					<xs:sequence>
