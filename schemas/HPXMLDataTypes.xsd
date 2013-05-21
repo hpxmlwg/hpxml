@@ -1584,6 +1584,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="wood siding"/>
 			<xs:enumeration value="stucco"/>
+			<xs:enumeration value="synthetic stucco"/>
 			<xs:enumeration value="vinyl siding"/>
 			<xs:enumeration value="aluminum siding"/>
 			<xs:enumeration value="brick veneer"/>
