@@ -2835,7 +2835,11 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="ResourceTypeCode" type="ResourceTypeCode"/>
-									<xs:element name="LoadProfile" type="LoadProfile" minOccurs="0"/>
+									<xs:element name="LoadProfile" type="LoadProfile" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>A load profile is created using measurements of a customer's electricity use at regular intervals, typically one hour or less, and provides an accurate representation of a customer's usage pattern over time.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="Quantity" type="Quantity"/>
 									<xs:element name="AnnualAmount" type="AnnualAmount"
 										minOccurs="0"/>
