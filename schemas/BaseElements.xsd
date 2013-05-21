@@ -2935,7 +2935,11 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Consumption" type="xs:double"/>
+						<xs:element name="Consumption" type="xs:double">
+							<xs:annotation>
+								<xs:documentation>Negative number for renewable generation. Positive number for consumption.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="StartDateTime" type="xs:dateTime" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>Date/time stamp in the ISO 8601 format when the usage measured began.</xs:documentation>
