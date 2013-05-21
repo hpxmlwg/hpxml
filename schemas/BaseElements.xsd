@@ -1944,7 +1944,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element minOccurs="0" name="Method" type="WholeBldgVentilationRequirementMethod"/>
 			<xs:element minOccurs="0" name="InfiltrationCreditApplied" type="BooleanWithNA">
 				<xs:annotation>
-					<xs:documentation>ASHRAE 62.2-1989 doesn't have an infiltration credit per se, it just states that you don't need any ventilation if you are above the BAS. Hence the 'not applicable' enumerator</xs:documentation>
+					<xs:documentation>ASHRAE 62.2-2010 has an infiltration credit. ASHRAE 62-89 and 62.2-2013 do not have infiltration credits.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="LocalWeatherFactor" type="xs:double"/>
