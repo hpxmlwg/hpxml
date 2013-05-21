@@ -1167,6 +1167,8 @@
 			<xs:enumeration value="RA"/>
 			<xs:enumeration value="Refrigerating System Operating Engineer"/>
 			<xs:enumeration value="High Pressure Boiler Operating Engineer"/>
+			<xs:enumeration value="HEP - EA"/>
+			<xs:enumeration value="HEP - QCI"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
