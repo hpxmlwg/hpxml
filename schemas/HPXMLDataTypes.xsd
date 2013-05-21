@@ -1389,9 +1389,9 @@
 			<xs:enumeration value="top freezer"/>
 			<xs:enumeration value="bottom freezer"/>
 			<xs:enumeration value="single door"/>
-			<xs:enumeration value="full-size one door "/>
+			<xs:enumeration value="full-size one door"/>
 			<xs:enumeration value="full-size two doors"/>
-			<xs:enumeration value="half or quarter size "/>
+			<xs:enumeration value="half or quarter size"/>
 			<xs:enumeration value="walk-in"/>
 			<xs:enumeration value="open case"/>
 			<xs:enumeration value="closed case"/>
