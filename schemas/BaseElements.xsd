@@ -1134,7 +1134,11 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="EnergyFactor" type="EnergyFactor"
-										minOccurs="0"/>
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The amount of energy delivered as heated water in a day divided by the total daily energy consumption of a residential water heater, as determined following standardized DOE testing procedure.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="RecoveryEfficiency" type="RecoveryEfficiency"
 										minOccurs="0"/>
 									<xs:element name="ThermalEfficiency" type="ThermalEfficiency"
