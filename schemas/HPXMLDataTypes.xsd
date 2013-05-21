@@ -1751,4 +1751,10 @@
 	</xs:simpleType>
 
 
+	<xs:simpleType name="KnownOrEstimated">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="known"/>
+			<xs:enumeration value="estimated"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
