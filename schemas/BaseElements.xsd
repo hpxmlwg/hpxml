@@ -1140,7 +1140,11 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="RecoveryEfficiency" type="RecoveryEfficiency"
-										minOccurs="0"/>
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The ratio of energy delivered to heat cold water compared to the energy consumed by the water heater, as determined following standardized DOE testing procedure.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="ThermalEfficiency" type="ThermalEfficiency"
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="WaterHeaterInsulation">
