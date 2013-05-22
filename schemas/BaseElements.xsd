@@ -2926,11 +2926,10 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 	</xs:complexType>
 	<xs:complexType name="DuctLeakageMeasurementType">
 		<xs:sequence>
-			<xs:element name="DuctLeakageTestUnitofMeasure" type="DuctLeakageTestUnitofMeasure"
-				minOccurs="0"/>
 			<xs:element name="LeakinessObservedVisualInspection"
 				type="LeakinessObservedVisualInspection" minOccurs="0"/>
 			<xs:element name="DuctLeakageTestMethod" type="DuctLeakageTestMethod" minOccurs="0"/>
+			<xs:element name="UnitofMeasure" type="DuctLeakageTestUnitofMeasure" minOccurs="0"/>
 			<xs:element name="MeasuredDuctLeakage" type="MeasuredDuctLeakage" minOccurs="0"/>
 			<xs:element minOccurs="0" name="EffectiveLeakageArea" type="SurfaceArea">
 				<xs:annotation>
@@ -3350,10 +3349,15 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="FanRingUsed" type="FanRingUsed" minOccurs="0"/>
-			<xs:element minOccurs="0" name="BuildingAirLeakageDescriptive" type="BuildingLeakiness"/>
-			<xs:element name="BuildingAirLeakageQuantitative" type="BuildingAirLeakage"
-				minOccurs="1"/>
-			<xs:element name="BuildingAirLeakageUnit" type="BuildingAirLeakageUnit" minOccurs="1"/>
+			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
+			<xs:element minOccurs="0" name="BuildingAirLeakage">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="UnitofMeasure" type="BuildingAirLeakageUnit" minOccurs="0"/>
+						<xs:element name="AirLeakage" type="BuildingAirLeakage" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
