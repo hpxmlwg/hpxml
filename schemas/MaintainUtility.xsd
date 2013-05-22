@@ -4,10 +4,14 @@
 	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
-	<xs:element name="MaintainUtilityRequest" type="Utility">
-		<xs:annotation>
-			<xs:documentation>Home Performance XML Root</xs:documentation>
-		</xs:annotation>
+	<xs:element name="MaintainUtilityRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="XMLTransactionHeaderInformation"/>
+				<xs:element ref="SoftwareInfo"/>
+				<xs:element name="Utility" type="Utility"/>
+			</xs:sequence>
+		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainUtilityResponse">
 		<xs:complexType>

@@ -3647,8 +3647,6 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="Building">
 		<xs:sequence>
-			<xs:element ref="XMLTransactionHeaderInformation"/>
-			<xs:element minOccurs="0" ref="SoftwareInfo"/>
 			<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
 			<xs:element minOccurs="0" name="CustomerID" type="RemoteReference"/>
 			<xs:element minOccurs="0" name="Site">
@@ -3681,8 +3679,6 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="Project">
 		<xs:sequence>
-			<xs:element ref="XMLTransactionHeaderInformation"/>
-			<xs:element minOccurs="0" ref="SoftwareInfo"/>
 			<xs:element name="BuildingID" type="RemoteReference"/>
 			<xs:element minOccurs="0" name="ProjectID" type="SystemIdentifiersInfoType"/>
 			<xs:element name="ProjectDetails" type="ProjectDetailsType"/>
@@ -3691,16 +3687,12 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="Contractor">
 		<xs:sequence>
-			<xs:element ref="XMLTransactionHeaderInformation"/>
-			<xs:element minOccurs="0" ref="SoftwareInfo"/>
 			<xs:element name="ContractorDetails" type="ContractorType"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Customer">
 		<xs:sequence>
-			<xs:element ref="XMLTransactionHeaderInformation"/>
-			<xs:element minOccurs="0" ref="SoftwareInfo"/>
 			<xs:element name="CustomerDetails">
 				<xs:complexType>
 					<xs:sequence>
@@ -3728,8 +3720,6 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="Utility">
 		<xs:sequence>
-			<xs:element ref="XMLTransactionHeaderInformation"/>
-			<xs:element minOccurs="0" ref="SoftwareInfo"/>
 			<xs:element minOccurs="0" name="UtilitiesorFuelProviders">
 				<xs:annotation>
 					<xs:documentation>Utility company information</xs:documentation>
@@ -3745,7 +3735,6 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="Consumption">
 		<xs:sequence>
-			<xs:element ref="XMLTransactionHeaderInformation"/>
 			<xs:element name="BuildingID" type="RemoteReference"/>
 			<xs:element name="CustomerID" type="RemoteReference"/>
 			<xs:element minOccurs="0" name="ConsumptionDetails">

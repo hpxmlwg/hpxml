@@ -3,10 +3,17 @@
 	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
-	<xs:element name="MaintainConsumptionRequest" type="Consumption">
+	<xs:element name="MaintainConsumptionRequest">
 		<xs:annotation>
 			<xs:documentation/>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="XMLTransactionHeaderInformation"/>
+				<xs:element ref="SoftwareInfo"/>
+				<xs:element name="Consumption" type="Consumption"/>
+			</xs:sequence>
+		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainConsumptionResponse">
 		<xs:complexType>

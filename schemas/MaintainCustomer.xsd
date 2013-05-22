@@ -4,10 +4,17 @@
 	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:include schemaLocation="BaseElements.xsd"/>
-	<xs:element name="MaintainCustomerRequest" type="Customer">
+	<xs:element name="MaintainCustomerRequest">
 		<xs:annotation>
 			<xs:documentation>Home Performance XML Root</xs:documentation>
 		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="XMLTransactionHeaderInformation"/>
+				<xs:element ref="SoftwareInfo"/>
+				<xs:element name="Customer" type="Customer"/>
+			</xs:sequence>
+		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainCustomerResponse">
 		<xs:complexType>
