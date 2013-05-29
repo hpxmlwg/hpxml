@@ -1252,6 +1252,12 @@
 			<xs:enumeration value="wastewater/sewer"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="WaterUseIntensityUnits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gal/sq.ft."/>
+			<xs:enumeration value="gal/day/person"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="endUseType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Heating"/>

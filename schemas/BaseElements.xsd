@@ -3134,6 +3134,17 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 						<xs:element name="WaterType" type="WaterType"/>
 						<xs:element name="UnitofMeasure" type="waterUnitType"/>
 						<xs:element minOccurs="0" name="MarginalWaterCostRate" type="xs:double"/>
+						<xs:element minOccurs="0" name="WaterUseIntensity">
+							<xs:annotation>
+								<xs:documentation>Water use intensity is defined as annual water use divided by total gross square footage of facility space reported in gallons per square foot (DOE, 2013). This element may also be reported as gallons, per day, per person.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Units" type="WaterUseIntensityUnits"/>
+									<xs:element name="Value" type="xs:double"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
