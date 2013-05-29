@@ -3689,11 +3689,6 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 		<xs:sequence>
 			<xs:element name="GarageDuctsandAirHandlersAirSealed" type="xs:boolean" minOccurs="0"/>
 			<xs:element name="MechanicalVentilationInstalled" type="xs:boolean" minOccurs="0"/>
-			<xs:element minOccurs="0" name="EnergyRecoveryVentilatorInstalled" type="xs:boolean">
-				<xs:annotation>
-					<xs:documentation>Energy-recovery ventilator is defined as a ventilator that recovers latent and sensible energy from the exhaust airstreams and imparts it to the incoming airstreams</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
