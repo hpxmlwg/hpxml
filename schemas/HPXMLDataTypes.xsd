@@ -391,12 +391,11 @@
 			<xs:enumeration value="CO2"/>
 			<xs:enumeration value="methane"/>
 			<xs:enumeration value="N2O"/>
+			<xs:enumeration value="CO2 equivalent"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="EmissionUnits">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="kWh of electricity"/>
-			<xs:enumeration value="therm of gas"/>
 			<xs:enumeration value="kg"/>
 			<xs:enumeration value="ton"/>
 			<xs:enumeration value="metric ton"/>
