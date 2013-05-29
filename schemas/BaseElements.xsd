@@ -2699,6 +2699,8 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 										type="GarageLocation"/>
 									<xs:element minOccurs="0" name="SpaceAboveGarage"
 										type="SpaceAboveGarage"/>
+									<xs:element maxOccurs="unbounded" minOccurs="0"
+										name="EnergyScore" type="EnergyScoreType"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -2747,8 +2749,6 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 			<xs:element minOccurs="0" name="CertifyingOrganization" type="CertifyingOrganization"/>
 			<xs:element minOccurs="0" name="ProgramCertificate" maxOccurs="unbounded"
 				type="ProgramCertificate"/>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="EnergyScore"
-				type="EnergyScoreType"/>
 			<xs:element name="ProjectType" type="ProjectType" minOccurs="0"/>
 			<xs:element name="Title" type="Title" minOccurs="0"/>
 			<xs:element minOccurs="0" ref="ProjectStatus"/>
