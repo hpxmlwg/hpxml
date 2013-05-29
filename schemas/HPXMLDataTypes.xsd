@@ -488,9 +488,9 @@
 			<xs:enumeration value="audit"/>
 			<xs:enumeration value="proposed workscope"/>
 			<xs:enumeration value="approved workscope"/>
-			<xs:enumeration value="construction-period testing"/>
-			<xs:enumeration value="job completion"/>
-			<xs:enumeration value="quality assurance"/>
+			<xs:enumeration value="construction-period testing/daily test out"/>
+			<xs:enumeration value="job completion testing/final inspection"/>
+			<xs:enumeration value="quality assurance/monitoring"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Air Sealing Below-->
