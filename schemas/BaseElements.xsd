@@ -3005,6 +3005,11 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="MarginalRate" type="xs:double" minOccurs="0"/>
+			<xs:element minOccurs="0" name="BaseLoad" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Baseload power is the energy consumed for the day-to-day operation of a home that is not used as a response to outside weather (i.e. excludes heating and cooling) (Krigger and Dorsi, 2009).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -3162,6 +3167,11 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			<xs:element minOccurs="0" name="AnnualConsumption" type="xs:double"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ConsumptionByEndUse"
 				type="EndUseInfoType"/>
+			<xs:element minOccurs="0" name="BaseLoad" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Baseload power is the energy consumed for the day-to-day operation of a home that is not used as a response to outside weather (i.e. excludes heating and cooling) (Krigger and Dorsi, 2009).</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
