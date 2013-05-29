@@ -1767,6 +1767,7 @@
 			<xs:enumeration value="LEED Silver"/>
 			<xs:enumeration value="LEED Gold"/>
 			<xs:enumeration value="LEED Platinum"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="BoilerType">
