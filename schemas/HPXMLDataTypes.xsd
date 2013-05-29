@@ -855,6 +855,22 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="CoolingEfficiencyUnits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SEER"/>
+			<xs:enumeration value="EER"/>
+			<xs:enumeration value="COP"/>
+			<xs:enumeration value="kW/ton"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HeatingEfficiencyUnits">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="HSPF"/>
+			<xs:enumeration value="COP"/>
+			<xs:enumeration value="AFUE"/>
+			<xs:enumeration value="Percent"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Efficiency">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
