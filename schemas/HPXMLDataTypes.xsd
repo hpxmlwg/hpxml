@@ -870,6 +870,13 @@
 			<xs:enumeration value="Percent"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="DistrictSteamType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1-pipe"/>
+			<xs:enumeration value="2-pipe"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Efficiency">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>

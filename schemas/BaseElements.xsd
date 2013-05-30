@@ -2266,6 +2266,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="DistrictSteam">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="DistrictSteamType" type="DistrictSteamType"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
