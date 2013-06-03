@@ -3740,6 +3740,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="ContractorID" type="RemoteReference"/>
 			<xs:element ref="ProjectStatus"/>
 			<xs:element name="BuildingDetails" type="BuildingDetailsType">
 				<xs:annotation>
