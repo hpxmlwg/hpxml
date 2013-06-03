@@ -2563,7 +2563,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element minOccurs="0" name="YearofLastRemodel" type="Year"/>
 									<xs:element name="ResidentialFacilityType"
 										type="ResidentialFacilityType" minOccurs="0"/>
-									<xs:element minOccurs="0" name="PassiveSolar" type="xs:boolean"/>
+									<xs:element minOccurs="0" name="PassiveSolar" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Passive solar design—also known as climatic design—involves using a building's windows, walls, and floors to collect, store, and distribute solar energy in the form of heat in the winter and reject solar heat in the summer. (source: http://www.eere.energy.gov/basics/buildings/passive_solar_design.html)</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="BuildingHeight"
 										type="LengthMeasurement">
 										<xs:annotation>
