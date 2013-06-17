@@ -3027,28 +3027,28 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 	</xs:complexType>
 	<xs:complexType name="BPI2400Inputs">
 		<xs:sequence>
-			<xs:element minOccurs="0" name="BaselineBillingPeriodStartDate" type="xs:date"/>
-			<xs:element minOccurs="0" name="BaselineBillingPeriodEndDate" type="xs:date"/>
-			<xs:element minOccurs="0" name="CalibrationBaselineWeatherRegressionCVRMSE">
+			<xs:element minOccurs="0" name="BaseloadBillingPeriodStartDate" type="xs:date"/>
+			<xs:element minOccurs="0" name="BaseloadBillingPeriodEndDate" type="xs:date"/>
+			<xs:element minOccurs="0" name="CalibrationBaseloadWeatherRegressionCVRMSE">
 				<xs:annotation>
-					<xs:documentation>Detailed Calibration Baseline Weather Regression CV-RMSE. Eqn. 3.2.2.G.i  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>Detailed Calibration Baseload Weather Regression CV-RMSE. Eqn. 3.2.2.G.i  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="BaselineHeatingFuelType" type="FuelType"/>
-			<xs:element minOccurs="0" name="BaselineHeatingUnits" type="energyUnitType"/>
-			<xs:element minOccurs="0" name="BaselineWeatherNormalizedHeatingUsage" type="xs:double">
+			<xs:element minOccurs="0" name="BaseloadHeatingFuelType" type="FuelType"/>
+			<xs:element minOccurs="0" name="BaseloadHeatingUnits" type="energyUnitType"/>
+			<xs:element minOccurs="0" name="BaseloadWeatherNormalizedHeatingUsage" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Baseline Weather Normalized Annual Heating Usage</xs:documentation>
+					<xs:documentation>Baseload Weather Normalized Annual Heating Usage</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="BaselineWeatherNormalizedCoolingUsage" type="xs:double">
+			<xs:element minOccurs="0" name="BaseloadWeatherNormalizedCoolingUsage" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Baseline Weather Normalized Annual Cooling Usage</xs:documentation>
+					<xs:documentation>Baseload Weather Normalized Annual Cooling Usage</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="BaselineWeatherNormalizedBaseloadUsage" type="xs:double">
+			<xs:element minOccurs="0" name="BaseloadWeatherNormalizedBaseloadUsage" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Baseline Weather Normalized Annual Baseload Usage</xs:documentation>
+					<xs:documentation>Baseload Weather Normalized Annual Baseload Usage</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingBiasError"
@@ -3494,7 +3494,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			</xs:element>
 			<xs:element name="Ambient">
 				<xs:annotation>
-					<xs:documentation>For use on sections of the house that are cantilevered or over ambient conditions for some other reason. </xs:documentation>
+					<xs:documentation>For use on sections of the house that are cantilevered or over ambient (outdoor) conditions for some other reason. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="RubbleStone"/>
@@ -3516,7 +3516,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element name="WoodStud">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element minOccurs="0" name="EPSSheathing" type="xs:boolean">
+						<xs:element minOccurs="0" name="ExpandedPolystyreneSheathing" type="xs:boolean">
 							<xs:annotation>
 								<xs:documentation>Sheathing insulation should be specified in the Insulation element as well.</xs:documentation>
 							</xs:annotation>
@@ -3538,7 +3538,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="CMU">
+			<xs:element name="ConcreteMasonryUnit">
 				<xs:annotation>
 					<xs:documentation>Concrete Masonry Unit</xs:documentation>
 				</xs:annotation>
@@ -3548,7 +3548,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="SIP">
+			<xs:element name="StructurallyInsulatedPanel">
 				<xs:annotation>
 					<xs:documentation>Structurally Insulated Panel</xs:documentation>
 				</xs:annotation>
@@ -3558,7 +3558,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="ICF">
+			<xs:element name="InsulatedConcreteForms">
 				<xs:annotation>
 					<xs:documentation>Insulated Concrete Forms</xs:documentation>
 				</xs:annotation>

@@ -361,8 +361,8 @@
 			<xs:documentation>AMI = Area Median Income; FPL = Federal Poverty Level</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="% AMI"/>
-			<xs:enumeration value="% FPL"/>
+			<xs:enumeration value="% area median income"/>
+			<xs:enumeration value="% federal poverty level"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Year">
