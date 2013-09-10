@@ -50,6 +50,11 @@
 				<xs:documentation>id local to the current document</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+		<xs:attribute name="sameas" type="xs:IDREF">
+			<xs:annotation>
+				<xs:documentation>Use to reference the id of the same object on the base building where the object has not been replaced.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="LocalReference">
 		<xs:attribute name="idref" type="xs:IDREF"/>
@@ -3516,7 +3521,8 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element name="WoodStud">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element minOccurs="0" name="ExpandedPolystyreneSheathing" type="xs:boolean">
+						<xs:element minOccurs="0" name="ExpandedPolystyreneSheathing"
+							type="xs:boolean">
 							<xs:annotation>
 								<xs:documentation>Sheathing insulation should be specified in the Insulation element as well.</xs:documentation>
 							</xs:annotation>
