@@ -473,10 +473,11 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" name="AirInfiltrationMeasurement"
-							type="AirInfiltrationMeasurementType"> </xs:element>
-						<xs:element minOccurs="0" name="AirSealing">
+							type="AirInfiltrationMeasurementType" maxOccurs="unbounded"> </xs:element>
+						<xs:element minOccurs="0" name="AirSealing" maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
 									<xs:element name="Hours" type="Hours" minOccurs="0"/>
 									<xs:element minOccurs="0" name="ComponentsAirSealed">
 										<xs:complexType>
