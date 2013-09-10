@@ -1723,6 +1723,7 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+									<xs:element minOccurs="0" name="Notes" type="xs:string"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
