@@ -3703,6 +3703,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="HVACMaintenance">
 		<xs:sequence>
+			<xs:element minOccurs="0" name="TuneAndRepair" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="NumberofCoilsReplaced"
 				type="IntegerGreaterThanOrEqualToZero"/>
 			<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
