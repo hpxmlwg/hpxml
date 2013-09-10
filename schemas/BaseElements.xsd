@@ -1077,7 +1077,7 @@
 												<xs:element minOccurs="0"
 												name="UsedForLocalVentilation" type="xs:boolean"/>
 												<xs:element minOccurs="0"
-												name="UsedfForWholeBuildingVentilation"
+												name="UsedForWholeBuildingVentilation"
 												type="xs:boolean"/>
 												<xs:element minOccurs="0"
 												name="UsedForGarageVentilation" type="xs:boolean"/>
