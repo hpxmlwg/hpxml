@@ -1739,6 +1739,7 @@
 						<xs:element name="HeatingStoveProperlyVented" type="xs:boolean"
 							minOccurs="0"/>
 						<xs:element name="COReading" type="COReading" minOccurs="0"/>
+						<xs:element minOccurs="0" name="TimeofCOReading" type="xs:dateTime"/>
 						<xs:element name="GasLeaksIdentified" type="xs:boolean" minOccurs="0"/>
 						<xs:element name="ActionsTaken" type="xs:string" minOccurs="0"/>
 						<xs:element ref="extension" minOccurs="0"/>
