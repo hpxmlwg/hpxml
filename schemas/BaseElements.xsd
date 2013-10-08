@@ -1598,6 +1598,14 @@
 	</xs:complexType>
 	<xs:complexType name="HealthAndSafety">
 		<xs:sequence>
+			<xs:element minOccurs="0" name="General">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="TestsCompleted" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="TestsPassed" type="xs:boolean"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="Ventilation" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
