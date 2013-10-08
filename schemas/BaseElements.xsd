@@ -3222,7 +3222,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="EmailInfoType">
-		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+		<xs:sequence>
 			<xs:element name="EmailType" type="EmailTypeCode" minOccurs="0"/>
 			<xs:element name="EmailAddress" type="EmailAddress"/>
 			<xs:element minOccurs="0" name="PreferredContactMethod" type="xs:boolean"/>
