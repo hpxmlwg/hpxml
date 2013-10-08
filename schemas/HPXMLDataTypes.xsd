@@ -614,6 +614,7 @@
 			<xs:enumeration value="fiberglass"/>
 			<xs:enumeration value="rockwool"/>
 			<xs:enumeration value="recycled cotton"/>
+			<xs:enumeration value="unknown"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="InsulationLooseFillType">
@@ -622,6 +623,7 @@
 			<xs:enumeration value="fiberglass"/>
 			<xs:enumeration value="rockwool"/>
 			<xs:enumeration value="vermiculite"/>
+			<xs:enumeration value="unknown"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="InsulationRigidType">
@@ -629,12 +631,14 @@
 			<xs:enumeration value="polyisocyanurate"/>
 			<xs:enumeration value="xps"/>
 			<xs:enumeration value="eps"/>
+			<xs:enumeration value="unknown"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="InsulationSprayFoamType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="open cell"/>
 			<xs:enumeration value="closed cell"/>
+			<xs:enumeration value="unknown"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="InsulationCondition">
