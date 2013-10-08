@@ -1444,6 +1444,36 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
+						<xs:element maxOccurs="3" minOccurs="0" name="Airflow">
+							<xs:annotation>
+								<xs:documentation/>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="FanSpeed">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="low"/>
+												<xs:enumeration value="medium"/>
+												<xs:enumeration value="high"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element minOccurs="0" name="Airflow" type="xs:double">
+										<xs:annotation>
+											<xs:documentation>[CFM]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Efficiency" type="xs:double">
+										<xs:annotation>
+											<xs:documentation>[CFM/watt] The efficiency rating of a ceiling fan as determined by the test procedure defined by the Environmental Protection Agency's ENERGY STAR Testing Facility Guidance Manual: Building a Testing Facility and Performing the Solid State Test Method for ENERGY STAR Qualified Ceiling Fans, Version 1.1, December 9, 2002. This is generally printed on the box in which the ceiling fan is shipped.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="ThirdPartyCertification"
+							type="ApplianceThirdPartyCertifications"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
