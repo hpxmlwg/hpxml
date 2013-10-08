@@ -1977,7 +1977,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	<xs:complexType name="CAZApplianceReading">
 		<xs:sequence>
 			<xs:element minOccurs="0" name="PoorScenario" type="xs:double"/>
-			<xs:element minOccurs="0" name="CurrentCondition" type="xs:double"/>
+			<xs:element minOccurs="0" name="CurrentCondition" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>This element is formerly known as "spillage, draft, and CO readings under natural conditions" as explained in BPI's Gold Sheet "Combustion Safety Test Procedure for Vented Appliances."</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="TestResult" type="TestResultType"/>
 		</xs:sequence>
 	</xs:complexType>
