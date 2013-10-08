@@ -1744,7 +1744,7 @@
 												<xs:element name="StackTemperature"
 												type="Temperature" minOccurs="0">
 												<xs:annotation>
-												<xs:documentation>[deg F]</xs:documentation>
+												<xs:documentation>[deg F] after 10 minutes run time</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element name="FuelLeaks" minOccurs="0"
