@@ -1371,6 +1371,11 @@
 						<xs:element minOccurs="0" name="Location" type="LightingLocation"/>
 						<xs:element name="NumberofUnits" type="xs:integer" minOccurs="0"/>
 						<xs:element minOccurs="0" name="LightingType" type="LightingType"/>
+						<xs:element minOccurs="0" name="AverageLumens" type="xs:double">
+							<xs:annotation>
+								<xs:documentation>Lumens is a measure of light output (brightness) as opposed to watts, which measures energy consumption. The EPA and DOE encourages people to determine the amount of light they need (or brightness) first before purchasing a light bulb. Once brightness is determined, you can look for the bulb with the lowest watts.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="AverageWattage" type="xs:double" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>[W]</xs:documentation>
