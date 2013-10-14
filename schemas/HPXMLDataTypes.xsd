@@ -650,6 +650,12 @@
 	</xs:simpleType>
 	<!--Lighting Below-->
 	<!--Lighting Controls Below-->
+	<xs:simpleType name="InsulationLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="interior"/>
+			<xs:enumeration value="exterior"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="LightingLocation">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="interior"/>

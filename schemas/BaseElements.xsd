@@ -177,6 +177,7 @@
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
+			<xs:element minOccurs="0" name="InsulationLocaion" type="InsulationLocation"/>
 			<xs:element minOccurs="0" name="MisalignedInsulation" type="xs:boolean"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer">
 				<xs:complexType>
