@@ -1647,7 +1647,11 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="BaselineTest" type="CAZTestConfiguration"
-										minOccurs="0"/>
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Baseline pressure is read under the following conditions: no items running, all fans off, all exterior doors closed, and all interior doors are opened.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="PoorCaseTest"
 										type="CAZTestConfiguration"/>
 									<xs:element name="NetPressureChange" type="NetPressureChange"
