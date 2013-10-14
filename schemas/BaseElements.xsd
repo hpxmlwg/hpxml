@@ -2464,7 +2464,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="AirDistributionType" type="AirDistributionType" minOccurs="0"/>
 			<xs:element name="AirHandlerMotorType" type="AirHandlerMotorType" minOccurs="0"/>
 			<xs:element minOccurs="0" name="DuctLeakageMeasurement"
-				type="DuctLeakageMeasurementType"/>
+				type="DuctLeakageMeasurementType" maxOccurs="unbounded"/>
 			<xs:element minOccurs="0" name="DuctSystemSizingAppropriate" type="xs:boolean"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="Ducts">
 				<xs:complexType>
@@ -3029,6 +3029,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 	</xs:complexType>
 	<xs:complexType name="DuctLeakageMeasurementType">
 		<xs:sequence>
+			<xs:element minOccurs="0" name="DuctType" type="DuctType"/>
 			<xs:element name="LeakinessObservedVisualInspection"
 				type="LeakinessObservedVisualInspection" minOccurs="0"/>
 			<xs:element name="DuctLeakageTestMethod" type="DuctLeakageTestMethod" minOccurs="0"/>
