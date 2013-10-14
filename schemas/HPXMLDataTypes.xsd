@@ -904,6 +904,7 @@
 			<xs:enumeration value="water-to-air"/>
 			<xs:enumeration value="water-to-water"/>
 			<xs:enumeration value="air-to-air"/>
+			<xs:enumeration value="mini-split"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="VentSystem">
