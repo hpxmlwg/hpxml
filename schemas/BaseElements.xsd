@@ -1655,7 +1655,11 @@
 									<xs:element minOccurs="0" name="PoorCaseTest"
 										type="CAZTestConfiguration"/>
 									<xs:element name="NetPressureChange" type="NetPressureChange"
-										minOccurs="0"/>
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>With respect to the baseline pressure (e.g. no fans running, all exterior doors closed, and all interior doors opened)</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="DepressurizationFindingPoorCase"
 										type="DepressurizationFindingPoorCase" minOccurs="0"/>
 									<xs:element name="AmountAmbientCOinCAZduringTesting"
