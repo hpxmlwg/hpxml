@@ -2785,7 +2785,8 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 						<xs:element name="AnnualEnergyUse" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="ConsumptionInfo" type="ConsumptionInfoType"/>
+									<xs:element name="ConsumptionInfo" type="ConsumptionInfoType"
+										maxOccurs="unbounded"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
