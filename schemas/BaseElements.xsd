@@ -674,6 +674,12 @@
 												<xs:documentation>[ft] Depth below grade of foundation wall</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0"
+												name="AdjacentToFoundation" type="LocalReference">
+												<xs:annotation>
+												<xs:documentation>If this foundation wall is adjacent to another foundation, use this reference to indicate which one.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="AdjacentTo"
 												type="AdjacentTo"/>
 												<xs:element minOccurs="0" name="InteriorStuds"
