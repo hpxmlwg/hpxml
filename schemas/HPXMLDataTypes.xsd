@@ -1780,6 +1780,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="USGBC"/>
 			<xs:enumeration value="NAHB"/>
+			<xs:enumeration value="Energy Star Home"/>
 			<xs:enumeration value="local program"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
