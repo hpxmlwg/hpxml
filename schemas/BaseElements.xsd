@@ -1281,6 +1281,8 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Manufacturer" type="xs:string"/>
+									<xs:element minOccurs="0" name="ModelNumber" type="xs:string"/>
 									<xs:element minOccurs="0" ref="AttachedToZone"/>
 									<xs:element name="SystemType" minOccurs="0"
 										type="SolarThermalSystemType"/>
