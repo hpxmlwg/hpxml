@@ -966,6 +966,20 @@
 						<xs:element name="HVACPlant" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
+									<xs:element minOccurs="0" name="PrimarySystems">
+										<xs:annotation>
+											<xs:documentation>Use these to reference which heating, cooling, or heat pump are the primary systems.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0"
+												name="PrimaryHeatingSystem" type="LocalReference"/>
+												<xs:element minOccurs="0"
+												name="PrimaryCoolingSystem" type="LocalReference"
+												/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" maxOccurs="unbounded"
 										name="HeatingSystem" type="HeatingSystemInfoType"/>
 									<xs:element minOccurs="0" maxOccurs="unbounded"
