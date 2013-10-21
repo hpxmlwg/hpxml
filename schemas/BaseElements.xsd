@@ -2195,7 +2195,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Units" type="energyUnitType" minOccurs="0"/>
 			<xs:element name="TotalSavings" type="xs:double" minOccurs="0"/>
 			<xs:element name="TotalDollarSavings" type="xs:double" minOccurs="0"/>
-			<xs:element minOccurs="0" name="PctReduction" type="Fraction"/>
+			<xs:element minOccurs="0" name="PctReduction" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>should be represented as a fraction (ie 0.5 instead of 50%)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="EndUseSavings"
 				type="EndUseInfoType"/>
 			<xs:element minOccurs="0" ref="extension"/>
@@ -3053,7 +3057,11 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			<xs:element minOccurs="0" name="Units" type="waterUnitType"/>
 			<xs:element minOccurs="0" name="TotalSavings" type="xs:double"/>
 			<xs:element minOccurs="0" name="TotalDollarSavings" type="xs:double"/>
-			<xs:element minOccurs="0" name="PctReduction" type="Fraction"/>
+			<xs:element minOccurs="0" name="PctReduction" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>should be represented as a fraction (ie 0.5 instead of 50%)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="RainBarrels" type="xs:double"/>
 			<xs:element minOccurs="0" name="ReclaimedWaterSystem" type="xs:boolean"/>
 			<xs:element minOccurs="0" ref="extension"/>
