@@ -3686,6 +3686,13 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="LogWall">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="Other">
 				<xs:complexType>
 					<xs:sequence>
