@@ -3003,6 +3003,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			</xs:element>
 			<xs:element minOccurs="0" name="EnergySavingsInfo" type="EnergySavingsType"
 				maxOccurs="2"/>
+			<xs:element maxOccurs="2" minOccurs="0" name="WaterSavingsInfo" type="WaterSavingsType"/>
 			<xs:element minOccurs="0" name="CustomerNotes" type="Notes"/>
 			<xs:element minOccurs="0" name="WorkscopeNotes" type="Notes"/>
 			<xs:element minOccurs="0" name="Status" type="ImprovementStatusType"/>
