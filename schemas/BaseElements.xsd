@@ -1386,7 +1386,7 @@
 						</xs:element>
 						<xs:element name="AverageWattage" type="xs:double" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation>[W]</xs:documentation>
+								<xs:documentation>[W] per unit</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element maxOccurs="unbounded" minOccurs="0"
