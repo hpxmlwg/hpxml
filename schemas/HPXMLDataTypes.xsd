@@ -561,11 +561,14 @@
 	</xs:simpleType>
 	<xs:simpleType name="StudSize">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="2x2"/>
 			<xs:enumeration value="2x4"/>
 			<xs:enumeration value="2x6"/>
 			<xs:enumeration value="2x8"/>
 			<xs:enumeration value="2x10"/>
 			<xs:enumeration value="2x12"/>
+			<xs:enumeration value="2x14"/>
+			<xs:enumeration value="2x16"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
