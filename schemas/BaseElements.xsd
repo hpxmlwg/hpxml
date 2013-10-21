@@ -3408,6 +3408,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			</xs:element>
 			<xs:element minOccurs="0" name="GlassLayers" type="GlassLayers"/>
 			<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
+			<xs:element minOccurs="0" name="GasFill" type="GasFill"/>
 			<xs:element name="Treatments" type="Treatments" minOccurs="0"/>
 			<xs:element name="Condition" type="WindowCondition" minOccurs="0"/>
 			<xs:element name="UFactor" type="UFactor" minOccurs="0"/>

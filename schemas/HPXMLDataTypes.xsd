@@ -1391,6 +1391,13 @@
 			<xs:enumeration value="poor"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="GasFill">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="air"/>
+			<xs:enumeration value="argon"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="GlassType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="low-e"/>
