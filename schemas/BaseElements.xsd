@@ -571,7 +571,11 @@
 												<xs:element name="AtticType" type="AtticType"
 												minOccurs="0"/>
 												<xs:element minOccurs="0"
-												name="AtticFloorInsulation" type="InsulationInfo"/>
+												name="AtticFloorInsulation" type="InsulationInfo">
+												<xs:annotation>
+												<xs:documentation>For attic floor insulation that covers the rafters, two layers should be defined: 1.) a cavity later with thickness equal to the rafter height, and 2.) a continuous layer above that.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="AtticRoofInsulation"
 												type="InsulationInfo"/>
 												<xs:element name="Area" type="SurfaceArea"
