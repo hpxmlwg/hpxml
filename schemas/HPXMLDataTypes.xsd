@@ -666,10 +666,15 @@
 	</xs:simpleType>
 	<xs:simpleType name="FluorescentTubeType">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="T2"/>
+			<xs:enumeration value="T4"/>
 			<xs:enumeration value="T5"/>
 			<xs:enumeration value="T8"/>
 			<xs:enumeration value="super T8"/>
+			<xs:enumeration value="T9"/>
+			<xs:enumeration value="T10"/>
 			<xs:enumeration value="T12"/>
+			<xs:enumeration value="T17"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="FluorescentBallastType">
