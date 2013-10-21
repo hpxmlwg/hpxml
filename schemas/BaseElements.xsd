@@ -3384,6 +3384,13 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+						<xs:element name="Wood">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
 						<xs:element name="Other">
 							<xs:complexType>
 								<xs:sequence>
