@@ -582,6 +582,7 @@
 			<xs:enumeration value="uninsulated metal"/>
 			<xs:enumeration value="insulated metal"/>
 			<xs:enumeration value="glass"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DoorType">
