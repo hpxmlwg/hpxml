@@ -1486,7 +1486,7 @@
 							</xs:complexType>
 						</xs:element>
 						<xs:element minOccurs="0" name="ThirdPartyCertification"
-							type="ApplianceThirdPartyCertifications"/>
+							type="ApplianceThirdPartyCertifications" maxOccurs="unbounded"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
