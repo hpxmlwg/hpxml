@@ -1357,6 +1357,8 @@
 										type="Efficiency"/>
 									<xs:element minOccurs="0" name="YearInverterManufactured"
 										type="Year"/>
+									<xs:element minOccurs="0" name="YearModulesManufactured"
+										type="Year"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
