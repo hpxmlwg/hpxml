@@ -1687,7 +1687,11 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="PoorCaseTest"
-										type="CAZTestConfiguration"/>
+										type="CAZTestConfiguration">
+										<xs:annotation>
+											<xs:documentation>The poor case CAZ depressurization test is configured by determining the largest combustion appliance zone depressurization attainable at the time of testing due to the combined effects of door position, exhaust appliance operation, and air handler fan operation. A base pressure must be measured with all fans off and doors open. The poor case CAZ depressurization measurement is the pressure difference between the largest depressurization attained at the time of testing and the base pressure.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="NetPressureChange" type="NetPressureChange"
 										minOccurs="0">
 										<xs:annotation>
