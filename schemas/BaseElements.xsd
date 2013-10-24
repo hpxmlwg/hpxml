@@ -3298,7 +3298,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			</xs:element>
 			<xs:element name="UnitofMeasure" type="energyUnitType"/>
 			<xs:element minOccurs="0" name="AnnualConsumption" type="xs:double"/>
-			<xs:element minOccurs="0" name="Cost" type="xs:double"/>
+			<xs:element minOccurs="0" name="AnnualFuelCost" type="xs:double"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ConsumptionByEndUse"
 				type="EndUseInfoType"/>
 			<xs:element minOccurs="0" name="BaseLoad" type="xs:double">
