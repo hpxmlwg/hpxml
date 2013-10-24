@@ -1293,7 +1293,11 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="CollectorLoopType"
-										type="SolarThermalCollectorLoopType"/>
+										type="SolarThermalCollectorLoopType">
+										<xs:annotation>
+											<xs:documentation>"batch heater" enumeration is deprecated. It will be removed in a future version. See #272.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="CollectorType"
 										type="SolarThermalCollectorType"/>
 									<xs:element minOccurs="0" name="CollectorOrientation"

@@ -1514,6 +1514,7 @@
 			<xs:enumeration value="liquid direct"/>
 			<xs:enumeration value="liquid indirect"/>
 			<xs:enumeration value="batch heater"/>
+			<xs:enumeration value="passive thermosyphon"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="SolarThermalCollectorType">
@@ -1523,6 +1524,7 @@
 			<xs:enumeration value="double glazing black"/>
 			<xs:enumeration value="double glazing selective"/>
 			<xs:enumeration value="evacuated tube"/>
+			<xs:enumeration value="integrated collector storage"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ResourceTypeCode">
