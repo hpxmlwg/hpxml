@@ -1312,6 +1312,8 @@
 			<xs:enumeration value="HotWater"/>
 			<xs:enumeration value="Appliance"/>
 			<xs:enumeration value="Lighting"/>
+			<xs:enumeration value="PV"/>
+			<xs:enumeration value="SolarThermal"/>
 			<xs:enumeration value="Other"/>
 		</xs:restriction>
 	</xs:simpleType>
