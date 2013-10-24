@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2010 rel. 3 sp1 (http://www.altova.com) by Andrew Steven Pollock (Conservation Services Group) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1"
-	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
+	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified" version="1.1">
 	<!-- Value Lists -->
 	<!--Address Information Below-->
 	<xs:simpleType name="AddressTypeCode">

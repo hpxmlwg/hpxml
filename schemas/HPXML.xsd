@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1"
-    targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
+    targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified" version="1.1">
     <xs:include schemaLocation="BaseElements.xsd"/>
 
 
@@ -22,6 +22,7 @@
                 <xs:element maxOccurs="unbounded" minOccurs="0" name="Consumption" nillable="true"
                     type="Consumption"/>
             </xs:sequence>
+            <xs:attribute ref="schemaVersion"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

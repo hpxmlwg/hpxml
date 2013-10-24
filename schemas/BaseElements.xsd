@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxml.org/hpxml/2011/1"
-	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified">
+	targetNamespace="http://hpxml.org/hpxml/2011/1" elementFormDefault="qualified" version="1.1">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
+	<xs:attribute name="schemaVersion">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="1.1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
 	<xs:element name="XMLTransactionHeaderInformation">
 		<xs:annotation>
 			<xs:documentation>These are a series of elements that indicate the type of XML and basic descriptive data about the XML.</xs:documentation>
