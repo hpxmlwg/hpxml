@@ -1082,7 +1082,7 @@
 	</xs:simpleType>
 	<!--Thermostats Below-->
 	<xs:simpleType name="Temperature">
-		<xs:restriction base="xs:integer"/>
+		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
 	<xs:simpleType name="ThermostatType">
 		<xs:restriction base="xs:string">
