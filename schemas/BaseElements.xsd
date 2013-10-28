@@ -2067,7 +2067,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			</xs:element>
 			<xs:element minOccurs="0" name="Pressure" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>[Pa] with respect to outdoors</xs:documentation>
+					<xs:documentation>[Pa]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
