@@ -2534,6 +2534,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element minOccurs="0" name="DuctInsulationCondition"
 							type="InsulationCondition"/>
 						<xs:element name="DuctLocation" type="DuctLocation" minOccurs="0"/>
+						<xs:element minOccurs="0" name="FractionDuctArea" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>If a DuctType of supply or return is specified above, this is the fraction of the supply or return duct area. If DuctType is omitted above, this is the fraction of the total duct area. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="DuctSurfaceArea" type="SurfaceArea">
 							<xs:annotation>
 								<xs:documentation>[sq.ft.]</xs:documentation>
