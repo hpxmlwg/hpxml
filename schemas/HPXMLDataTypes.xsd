@@ -1003,6 +1003,7 @@
 			<xs:enumeration value="unconditioned basement"/>
 			<xs:enumeration value="unvented crawlspace"/>
 			<xs:enumeration value="vented crawlspace"/>
+			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="unconditioned attic"/>
 			<xs:enumeration value="interstitial space"/>
 			<xs:enumeration value="garage"/>
