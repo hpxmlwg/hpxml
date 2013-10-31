@@ -3073,6 +3073,9 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="ReplacedComponents">
+				<xs:annotation>
+					<xs:documentation>or removed component</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="ReplacedComponent"
@@ -3080,7 +3083,8 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="InstalledComponent" type="RemoteReference"/>
+			<xs:element minOccurs="0" name="InstalledComponent" type="RemoteReference"
+				maxOccurs="unbounded"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
