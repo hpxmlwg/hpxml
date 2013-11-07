@@ -14,7 +14,7 @@
 				<xs:element ref="SoftwareInfo"/>
 				<xs:element name="Contractor" type="Contractor"/>
 			</xs:sequence>
-			<xs:attribute ref="schemaVersion"/>
+			<xs:attribute name="schemaVersion" type="schemaVersionType"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainContractorResponse">

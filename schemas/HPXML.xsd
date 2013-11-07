@@ -22,7 +22,7 @@
                 <xs:element maxOccurs="unbounded" minOccurs="0" name="Consumption" nillable="true"
                     type="Consumption"/>
             </xs:sequence>
-            <xs:attribute ref="schemaVersion"/>
+            <xs:attribute name="schemaVersion" type="schemaVersionType"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

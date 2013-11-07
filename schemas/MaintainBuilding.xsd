@@ -10,7 +10,7 @@
 				<xs:element ref="SoftwareInfo"/>
 				<xs:element name="Building" type="Building"/>
 			</xs:sequence>
-			<xs:attribute ref="schemaVersion"/>
+			<xs:attribute name="schemaVersion" type="schemaVersionType"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainBuildingResponse">

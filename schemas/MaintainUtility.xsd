@@ -11,7 +11,7 @@
 				<xs:element ref="SoftwareInfo"/>
 				<xs:element name="Utility" type="Utility"/>
 			</xs:sequence>
-			<xs:attribute ref="schemaVersion"/>
+			<xs:attribute name="schemaVersion" type="schemaVersionType"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="MaintainUtilityResponse">
