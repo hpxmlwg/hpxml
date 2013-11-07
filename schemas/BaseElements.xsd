@@ -98,7 +98,7 @@
 	</xs:element>
 	<xs:complexType name="extensionType">
 		<xs:sequence>
-			<xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="lax"/>
+			<xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="skip"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="extension" type="extensionType"> </xs:element>
