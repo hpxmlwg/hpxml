@@ -8,6 +8,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="1.1"/>
 			<xs:enumeration value="1.1.1"/>
+			<xs:enumeration value="1.2"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AddressTypeCode">
@@ -1855,6 +1856,108 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="known"/>
 			<xs:enumeration value="estimated"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PoolType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="in ground"/>
+			<xs:enumeration value="on ground"/>
+			<xs:enumeration value="above ground"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MonthsPerYear">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PoolFilterType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sand"/>
+			<xs:enumeration value="DE"/>
+			<xs:enumeration value="cartridge"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PoolPumpType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="single speed"/>
+			<xs:enumeration value="multi speed"/>
+			<xs:enumeration value="variable speed"/>
+			<xs:enumeration value="variable flow"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PoolPump3rdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ENERGY STAR"/>
+			<xs:enumeration value="ENERGY STAR Most Efficient"/>
+			<xs:enumeration value="CEE Tier 1"/>
+			<xs:enumeration value="CEE Tier 2"/>
+			<xs:enumeration value="Cee Tier 3"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PoolPumpSpeedSetting">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="low"/>
+			<xs:enumeration value="high"/>
+			<xs:enumeration value="most efficient"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Season">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="winter"/>
+			<xs:enumeration value="spring"/>
+			<xs:enumeration value="summer"/>
+			<xs:enumeration value="fall"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Speed">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FlowRate">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PoolCleanerType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="robotic"/>
+			<xs:enumeration value="suction side"/>
+			<xs:enumeration value="pressure side"/>
+			<xs:enumeration value="booster pump"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PoolHeaterType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gas fired"/>
+			<xs:enumeration value="electric resistance"/>
+			<xs:enumeration value="heat pump"/>
+			<xs:enumeration value="solar"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

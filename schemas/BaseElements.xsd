@@ -1616,6 +1616,191 @@
 			</xs:element>
 		</xs:choice>
 	</xs:complexType>
+	<xs:complexType name="Pools">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" name="Pool">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Type" type="PoolType">
+							<xs:annotation>
+								<xs:documentation>Indicates if the pool is above or below ground.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Volume" type="Volume">
+							<xs:annotation>
+								<xs:documentation>[gal] Volume of pool.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Cover" type="xs:boolean">
+							<xs:annotation>
+								<xs:documentation>Indicates if a pool cover is used.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="MonthsPerYearofOperation"
+							type="MonthsPerYear">
+							<xs:annotation>
+								<xs:documentation>Months per year pool is in operation.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="ReturnPipeDiameter" type="LengthMeasurement">
+							<xs:annotation>
+								<xs:documentation>[in]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="SuctionPipeDiameter"
+							type="LengthMeasurement">
+							<xs:annotation>
+								<xs:documentation>[in]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FilterType" type="PoolFilterType">
+							<xs:annotation>
+								<xs:documentation>Type of filter used, if any.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="PoolPumps">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element maxOccurs="unbounded" name="PoolPump">
+										<xs:annotation>
+											<xs:documentation>Pool pump: a mechanical assembly consisting of a “wet-end,” which houses the impeller and a motor. The pump increases the “head” and “flow” of the water (ENERGY STAR, 2013).</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:group ref="SystemInfo"/>
+												<xs:element minOccurs="0" name="Type"
+												type="PoolPumpType"/>
+												<xs:element minOccurs="0" name="Manufacturer"
+												type="xs:string">
+												<xs:annotation>
+												<xs:documentation>Manufacturer of pool pump.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="SerialNumber"
+												type="xs:string">
+												<xs:annotation>
+												<xs:documentation>Serial number of pool pump.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="ModelNumber"
+												type="xs:string">
+												<xs:annotation>
+												<xs:documentation>Model number of pool pump.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="ThirdPartyCertification"
+												type="PoolPump3rdPartyCertification">
+												<xs:annotation>
+												<xs:documentation>Independent organization has verified that product or appliance meets or exceeds the standard in question (ENERGY STAR, CEE, or other)</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="EnergyFactor"
+												type="Efficiency">
+												<xs:annotation>
+												<xs:documentation>[gal/Wh] The measure of overall pool filter pump efficiency in units of gallons per watt-hour, as determined using the applicable test method in Section 4.1.2. Energy factor is analogous to other energy factors such as miles per gallon. Energy factor (EF) is calculated as: EF (gal/Wh) = flow rate (gpm) * 60 ÷ power (watts) (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="SpeedSetting"
+												type="PoolPumpSpeedSetting">
+												<xs:annotation>
+												<xs:documentation>The speed setting at which the Energy Factor was measured (ENERGY STAR, 2013).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="RatedHP"
+												type="Power">
+												<xs:annotation>
+												<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower where the service factor is &gt; 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="TotalHP"
+												type="Power">
+												<xs:annotation>
+												<xs:documentation>The total horsepower, or product of the rated horsepower and the service factor of a motor used on a pool pump (also known as SFHP) based on the maximum continuous duty motor power output rating allowable for the nameplate ambient rating and motor insulation class (e.g., total horsepower = rated horsepower * service factor) (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="ServiceFactor"
+												type="xs:double">
+												<xs:annotation>
+												<xs:documentation>A multiplier applied to the rated horsepower of a pump motor to indicate the percent above nameplate horsepower at which the motor can operate continuously without exceeding its allowable insulation class temperature limit, provided that other design parameters, such rated voltage, frequency and ambient temperature, are within limits. A 1.5 hp pump with a 1.65 service factor produces 2.475 hp (total horsepower) at the maximum service factor point (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="HoursofOperation"
+												type="HoursPerDay">
+												<xs:annotation>
+												<xs:documentation>[hours] Number of hours per day a pool pump operates at a particular speed setting.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Season"
+												type="Season">
+												<xs:annotation>
+												<xs:documentation>Season during which pool is in operation</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Power" type="Power"
+												maxOccurs="unbounded">
+												<xs:annotation>
+												<xs:documentation>[W]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="MotorNominalSpeed"
+												type="Speed" maxOccurs="unbounded">
+												<xs:annotation>
+												<xs:documentation>[Rev/min] The number of revolutions of the motor shaft in a given unit of time, expressed as revolutions per minute (RPM) (ENERGY STAR, 2013).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="FlowRate"
+												maxOccurs="unbounded" type="FlowRate">
+												<xs:annotation>
+												<xs:documentation>[gal/min] The volume of water flowing through the filtration system in a given time, usually measured in gallons per minute (gpm) (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="Cleaner">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Type" type="PoolCleanerType">
+										<xs:annotation>
+											<xs:documentation>Type of pool cleaner used, if any.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="HoursPerDay" type="HoursPerDay">
+										<xs:annotation>
+											<xs:documentation>Hours per day pool cleaner is used. </xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="Heater">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Type" type="PoolHeaterType">
+										<xs:annotation>
+											<xs:documentation>Type of heater used to heat pool, if any.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="HoursPerDay" type="HoursPerDay">
+										<xs:annotation>
+											<xs:documentation>Hours per day pool heater is used.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:complexType name="MiscLoads">
 		<xs:sequence>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="PlugLoadControl">
@@ -2889,6 +3074,7 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 			<xs:element name="Systems" type="Systems" minOccurs="0"/>
 			<xs:element name="Appliances" type="Appliances" minOccurs="0"/>
 			<xs:element name="Lighting" type="Lighting" minOccurs="0"/>
+			<xs:element minOccurs="0" name="Pools" type="Pools"/>
 			<xs:element name="MiscLoads" type="MiscLoads" minOccurs="0"/>
 			<xs:element minOccurs="0" name="HealthAndSafety" type="HealthAndSafety"/>
 			<xs:element minOccurs="0" ref="extension"/>
