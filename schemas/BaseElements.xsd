@@ -1632,11 +1632,6 @@
 								<xs:documentation>[gal] Volume of pool.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element minOccurs="0" name="Cover" type="xs:boolean">
-							<xs:annotation>
-								<xs:documentation>Indicates if a pool cover is used.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
 						<xs:element minOccurs="0" name="MonthsPerYearofOperation"
 							type="MonthsPerYear">
 							<xs:annotation>
@@ -1691,7 +1686,8 @@
 												</xs:element>
 												<xs:element minOccurs="0"
 												name="ThirdPartyCertification"
-												type="PoolPump3rdPartyCertification">
+												type="PoolPump3rdPartyCertification"
+												maxOccurs="unbounded">
 												<xs:annotation>
 												<xs:documentation>Independent organization has verified that product or appliance meets or exceeds the standard in question (ENERGY STAR, CEE, or other)</xs:documentation>
 												</xs:annotation>
@@ -1708,13 +1704,13 @@
 												<xs:documentation>The speed setting at which the Energy Factor was measured (ENERGY STAR, 2013).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="RatedHP"
+												<xs:element minOccurs="0" name="RatedHorsepower"
 												type="Power">
 												<xs:annotation>
 												<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower where the service factor is &gt; 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15 2011).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="TotalHP"
+												<xs:element minOccurs="0" name="TotalHorsepower"
 												type="Power">
 												<xs:annotation>
 												<xs:documentation>The total horsepower, or product of the rated horsepower and the service factor of a motor used on a pool pump (also known as SFHP) based on the maximum continuous duty motor power output rating allowable for the nameplate ambient rating and motor insulation class (e.g., total horsepower = rated horsepower * service factor) (ANSI/APSP/ICC-15 2011).</xs:documentation>
@@ -1726,36 +1722,39 @@
 												<xs:documentation>A multiplier applied to the rated horsepower of a pump motor to indicate the percent above nameplate horsepower at which the motor can operate continuously without exceeding its allowable insulation class temperature limit, provided that other design parameters, such rated voltage, frequency and ambient temperature, are within limits. A 1.5 hp pump with a 1.65 service factor produces 2.475 hp (total horsepower) at the maximum service factor point (ANSI/APSP/ICC-15 2011).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="HoursofOperation"
+												<xs:element minOccurs="0" name="HoursPerDay"
 												type="HoursPerDay">
 												<xs:annotation>
 												<xs:documentation>[hours] Number of hours per day a pool pump operates at a particular speed setting.</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="Season"
-												type="Season">
-												<xs:annotation>
-												<xs:documentation>Season during which pool is in operation</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="Power" type="Power"
-												maxOccurs="unbounded">
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												name="PumpSpeed">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="Power"
+												type="Power">
 												<xs:annotation>
 												<xs:documentation>[W]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="MotorNominalSpeed"
-												type="Speed" maxOccurs="unbounded">
+												type="Speed">
 												<xs:annotation>
 												<xs:documentation>[Rev/min] The number of revolutions of the motor shaft in a given unit of time, expressed as revolutions per minute (RPM) (ENERGY STAR, 2013).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="FlowRate"
-												maxOccurs="unbounded" type="FlowRate">
+												type="FlowRate">
 												<xs:annotation>
 												<xs:documentation>[gal/min] The volume of water flowing through the filtration system in a given time, usually measured in gallons per minute (gpm) (ANSI/APSP/ICC-15 2011).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
@@ -1796,6 +1795,7 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>

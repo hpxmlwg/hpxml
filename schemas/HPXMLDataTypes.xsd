@@ -1877,7 +1877,7 @@
 	<xs:simpleType name="PoolFilterType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="sand"/>
-			<xs:enumeration value="DE"/>
+			<xs:enumeration value="diatomaceous earth"/>
 			<xs:enumeration value="cartridge"/>
 			<xs:enumeration value="other"/>
 			<xs:enumeration value="unknown"/>
@@ -1912,17 +1912,6 @@
 			<xs:enumeration value="low"/>
 			<xs:enumeration value="high"/>
 			<xs:enumeration value="most efficient"/>
-			<xs:enumeration value="other"/>
-			<xs:enumeration value="unknown"/>
-			<xs:enumeration value="none"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="Season">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="winter"/>
-			<xs:enumeration value="spring"/>
-			<xs:enumeration value="summer"/>
-			<xs:enumeration value="fall"/>
 			<xs:enumeration value="other"/>
 			<xs:enumeration value="unknown"/>
 			<xs:enumeration value="none"/>
