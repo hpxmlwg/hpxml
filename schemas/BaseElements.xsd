@@ -1192,6 +1192,8 @@
 									<xs:element name="ModelNumber" type="Model" minOccurs="0"/>
 									<xs:element minOccurs="0" name="AHRINumber" type="xs:string"/>
 									<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
+									<xs:element minOccurs="0" name="PerformanceAdjustment"
+										type="Fraction"/>
 									<xs:element minOccurs="0" name="ThirdPartyCertification"
 										type="DHWThirdPartyCertification"/>
 									<xs:element name="TankVolume" type="Volume" minOccurs="0">
