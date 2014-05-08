@@ -1524,7 +1524,6 @@
 			<xs:enumeration value="air indirect"/>
 			<xs:enumeration value="liquid direct"/>
 			<xs:enumeration value="liquid indirect"/>
-			<xs:enumeration value="batch heater"/>
 			<xs:enumeration value="passive thermosyphon"/>
 		</xs:restriction>
 	</xs:simpleType>
