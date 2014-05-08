@@ -3390,7 +3390,11 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			<xs:element minOccurs="0" name="WeatherRegressionBeginDate" type="xs:date"/>
 			<xs:element minOccurs="0" name="WeatherRegressionEndDate" type="xs:date"/>
 			<xs:element minOccurs="0" name="CalibrationQualification"
-				type="BPI2400CalibrationQualification"/>
+				type="BPI2400CalibrationQualification">
+				<xs:annotation>
+					<xs:documentation>This identifies which data quality requirements were met by the bills for each energy source and therefore which calibration measure are used to determine model acceptance.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="CalibrationWeatherRegressionCVRMSE" type="xs:double">
 				<xs:annotation>
 					<xs:documentation>Detailed Calibration Weather Regression CV-RMSE. Eqn. 3.2.2.G.i  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
@@ -3448,7 +3452,11 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="SimplifiedModelCalibrationTotalBiasError"
-				type="xs:double"/>
+				type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
