@@ -1112,6 +1112,9 @@
 												name="UsedForWholeBuildingVentilation"
 												type="xs:boolean"/>
 												<xs:element minOccurs="0"
+												name="UsedForSeasonalCoolingLoadReduction"
+												type="xs:boolean"/>
+												<xs:element minOccurs="0"
 												name="UsedForGarageVentilation" type="xs:boolean"/>
 												<xs:element minOccurs="0" name="RatedNoise"
 												type="xs:double">
