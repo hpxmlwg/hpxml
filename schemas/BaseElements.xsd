@@ -3377,33 +3377,38 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 					<xs:documentation>Baseload power is the energy consumed for the day-to-day operation of a home that is not used as a response to outside weather (i.e. excludes heating and cooling) (Krigger and Dorsi, 2009).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="BPI2400Inputs" type="BPI2400Inputs">
+				<xs:annotation>
+					<xs:documentation>The following fields are to support BPI-2400</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="BPI2400Inputs">
 		<xs:sequence>
-			<xs:element minOccurs="0" name="BaseloadBillingPeriodStartDate" type="xs:date"/>
-			<xs:element minOccurs="0" name="BaseloadBillingPeriodEndDate" type="xs:date"/>
-			<xs:element minOccurs="0" name="CalibrationBaseloadWeatherRegressionCVRMSE">
+			<xs:element minOccurs="0" name="WeatherRegressionBeginDate" type="xs:date"/>
+			<xs:element minOccurs="0" name="WeatherRegressionEndDate" type="xs:date"/>
+			<xs:element minOccurs="0" name="CalibrationQualification"
+				type="BPI2400CalibrationQualification"/>
+			<xs:element minOccurs="0" name="CalibrationWeatherRegressionCVRMSE" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Detailed Calibration Baseload Weather Regression CV-RMSE. Eqn. 3.2.2.G.i  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>Detailed Calibration Weather Regression CV-RMSE. Eqn. 3.2.2.G.i  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="BaseloadHeatingFuelType" type="FuelType"/>
-			<xs:element minOccurs="0" name="BaseloadHeatingUnits" type="energyUnitType"/>
-			<xs:element minOccurs="0" name="BaseloadWeatherNormalizedHeatingUsage" type="xs:double">
+			<xs:element minOccurs="0" name="WeatherNormalizedHeatingUsage" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Baseload Weather Normalized Annual Heating Usage</xs:documentation>
+					<xs:documentation>Weather Normalized Annual Heating Usage</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="BaseloadWeatherNormalizedCoolingUsage" type="xs:double">
+			<xs:element minOccurs="0" name="WeatherNormalizedCoolingUsage" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Baseload Weather Normalized Annual Cooling Usage</xs:documentation>
+					<xs:documentation>Weather Normalized Annual Cooling Usage</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="BaseloadWeatherNormalizedBaseloadUsage" type="xs:double">
+			<xs:element minOccurs="0" name="WeatherNormalizedBaseloadUsage" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Baseload Weather Normalized Annual Baseload Usage</xs:documentation>
+					<xs:documentation>Weather Normalized Annual Baseload Usage</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingBiasError"
@@ -3442,6 +3447,8 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 					<xs:documentation>Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationTotalBiasError"
+				type="xs:double"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -4209,12 +4216,6 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 							type="ConsumptionInfoType"/>
 					</xs:sequence>
 				</xs:complexType>
-			</xs:element>
-
-			<xs:element minOccurs="0" name="BPI2400Inputs" type="BPI2400Inputs">
-				<xs:annotation>
-					<xs:documentation>The following fields are to support BPI-2400</xs:documentation>
-				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>

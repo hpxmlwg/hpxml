@@ -1948,4 +1948,11 @@
 			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="BPI2400CalibrationQualification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="detailed"/>
+			<xs:enumeration value="simple"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
