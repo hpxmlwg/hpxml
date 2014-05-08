@@ -1179,7 +1179,7 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToZone"/>
-									<xs:element minOccurs="0" name="AtachedToCAZ"
+									<xs:element minOccurs="0" name="AttachedToCAZ"
 										type="LocalReference"/>
 									<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 									<xs:element name="WaterHeaterType" type="WaterHeaterType"
