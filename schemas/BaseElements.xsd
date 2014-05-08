@@ -178,6 +178,11 @@
 			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
 			<xs:element minOccurs="0" name="InsulationLocation" type="InsulationLocation"/>
+			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="RValue">
+				<xs:annotation>
+					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="MisalignedInsulation" type="xs:boolean"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer">
 				<xs:complexType>
