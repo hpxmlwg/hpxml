@@ -2013,20 +2013,7 @@
 												</xs:annotation>
 												</xs:element>
 												<xs:element name="FuelLeaks" minOccurs="0"
-												maxOccurs="unbounded">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element name="FuelType" type="FuelType"/>
-												<xs:element name="LeaksIdentified"
-												type="xs:boolean"/>
-												<xs:element name="LeaksAddressed"
-												type="xs:boolean"/>
-												<xs:element minOccurs="0" name="Notes"
-												type="xs:string"/>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												</xs:complexType>
-												</xs:element>
+												maxOccurs="unbounded" type="FuelLeaks"> </xs:element>
 												<xs:element ref="extension" minOccurs="0"/>
 											</xs:sequence>
 										</xs:complexType>
@@ -2051,6 +2038,25 @@
 						<xs:element name="GasLeaksIdentified" type="xs:boolean" minOccurs="0"/>
 						<xs:element name="ActionsTaken" type="xs:string" minOccurs="0"/>
 						<xs:element ref="extension" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="OvenAndRangeTest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OvenOrRangeID" type="LocalReference"/>
+						<xs:element minOccurs="0" name="CarbonMonoxideReading" type="xs:double"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="FuelLeaks"
+							type="FuelLeaks"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="DryerTest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DryerID" type="LocalReference"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="FuelLeaks"
+							type="FuelLeaks"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -2276,6 +2282,15 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:documentation>[Pa]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FuelLeaks">
+		<xs:sequence>
+			<xs:element name="FuelType" type="FuelType"/>
+			<xs:element name="LeaksIdentified" type="xs:boolean"/>
+			<xs:element name="LeaksAddressed" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="Notes" type="xs:string"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
