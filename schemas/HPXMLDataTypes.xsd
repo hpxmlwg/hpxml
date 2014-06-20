@@ -6,9 +6,7 @@
 	<!--Address Information Below-->
 	<xs:simpleType name="schemaVersionType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="1.1"/>
-			<xs:enumeration value="1.1.1"/>
-			<xs:enumeration value="1.2"/>
+			<xs:enumeration value="2.0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AddressTypeCode">
