@@ -1,4 +1,12 @@
-Program Administrator Guide
-###########################
+Software Developer Guide
+########################
 
-To be written by Home Performance Coalition staff or contractor.
+.. toctree::
+
+   introduction
+   versioning
+   structure
+   references
+   usecases/index
+   hescoreplaceholder
+
