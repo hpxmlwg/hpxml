@@ -1,40 +1,139 @@
 Document Structure
 ##################
 
+.. contents:: Table of Contents
 
 Top Level Nodes
 ***************
 
-.. todo::
+.. image:: images/top_level_diagram.png
 
-   * Put image of top level node structure here.
-   * Describe each top level node, what it stands for and how it is used.
+Each of the top level nodes described below with the exception of
+:ref:`xmltransactionheader-node` and :ref:`softwareinfo-node` represent a
+high-level block of information about a building or project that can be related
+to other nodes to describe useful information about a building, the people and
+businesses who interact with the building, and actions taken on the building.
+The relationships between the top level nodes are defined with
+:doc:`references` that can be used, for example, to associate a
+:ref:`building-node` with a :ref:`project-node`, :ref:`consumption-node` with a
+:ref:`building-node`, or a :ref:`contractor-node` with a :ref:`project-node`. 
+
+The schema itself does not enforce the particular constraints for a
+:doc:`usecases/index`, but rather provides a container for all the relevant
+comonponents and a referencing scheme to relate them. 
+
+.. _xmltransactionheader-node:
 
 XMLTransactionHeaderInformation
 ===============================
 
+The ``XMLTransactionHeaderInformation`` element meta data about the HPXML file.
+
+.. code-block:: xml
+
+   <XMLTransactionHeaderInformation>
+     <XMLType>auditretrofit</XMLType>
+     <XMLGeneratedBy>Noel Merket</XMLGeneratedBy>
+     <CreatedDateAndTime>2014-09-02T17:32:12Z</CreatedDateAndTime>
+     <Transaction>create</Transaction>
+   </XMLTransactionHeaderInformation>
+
+``Transaction`` describes whether this is a new document or an update to a
+previous one. 
+
+.. todo::
+   
+   * I don't know what specifically to use ``XMLType`` for. What is everyone else doing?
+   * ``XMLGeneratedBy`` same thing. Name of person?
+
+.. _softwareinfo-node:
+
 SoftwareInfo
 ============
+
+``SoftwareInfo`` provides a place to transmit information about the software
+used to generate the HPXML.
+
+.. code-block:: xml
+
+   <SoftwareInfo>
+     <SoftwareProgramUsed>WOPR</SoftwareProgramUsed>
+     <SoftwareProgramVersion>1.0</SoftwareProgramVersion>
+   </SoftwareInfo>    
+
+.. _contractor-node:
 
 Contractor
 ==========
 
+.. _customer-node:
+
+The ``Contractor`` node describes a business that the customer works with to do
+an audit or retrofit to their building. 
+
 Customer
 ========
+
+A customer is the owner, tenant, or some other person who has a vested interest
+in the house being described and worked on. This node is a place to describe
+that person, their contact information, and their relation to the building.
+
+.. _building-node:
 
 Building
 ========
 
+The ``Building`` node describes the physical characteristics of a building at a
+point in time past, present, or future.  
+
+.. _project-node:
+
 Project
 =======
+
+The ``Project`` node describes work that has been done or is to be done to a
+:ref:`building-node`. The measures described can have references pointing to
+specific components on the building and what was changed between the pre- and
+post-retrofit states and associated costs. 
+
+.. _utility-node:
 
 Utility
 =======
 
+The ``Utility`` node represents a utility company.
+
+.. _consumption-node:
+
 Consumption
 ===========
+
+The ``Consumption`` node stores and represents the energy and/or water use of a
+building. It can contain high resolution electric smart meter data down to the
+fuel oil fill up that happens once or twice a year. 
+
+
+.. _extension-elements:
 
 Extension Elements
 ******************
 
+Because it is impossible to foresee every possible data point that will ever
+need to be collected and transmitted about a house or retrofit, most elements
+in HPXML contain an ``extension`` element containing an ``<xs:any>``
+designation. That allows any element from any namespace to be inserted there.
+This is to facilitate transfer of data elements not available in the standard. 
 
+.. code-block:: xml
+   
+   <extension>
+      <QuantityWoodChucked>as much wood as a wood chuck could chuck</QuantityWoodChucked>
+   </extension>
+
+.. warning::
+
+   Please be careful with these. Often times you will not be the only one with the
+   need for a particular element that was overlooked in the standard. By
+   participating in the working group and lobbying for the elements you need you
+   can enhance the value of HPXML for all parties. If everyone extends HPXML in
+   non-standard ways, the value proposition of the standard is eroded. 
