@@ -3,6 +3,8 @@ Document Structure
 
 .. contents:: Table of Contents
 
+.. _top-level-nodes:
+
 Top Level Nodes
 ***************
 
