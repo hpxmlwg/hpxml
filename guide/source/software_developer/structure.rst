@@ -132,8 +132,11 @@ This is to facilitate transfer of data elements not available in the standard.
 
 .. warning::
 
-   Please be careful with these. Often times you will not be the only one with the
-   need for a particular element that was overlooked in the standard. By
-   participating in the working group and lobbying for the elements you need you
-   can enhance the value of HPXML for all parties. If everyone extends HPXML in
-   non-standard ways, the value proposition of the standard is eroded. 
+   Please contact BPI Working Group 5 (a.k.a. the HPXML working group) before
+   implementing an extension. The working group would prefer to extend the
+   standard for the benefit of everyone and avoid the use of extensions wherever
+   possible. Often times you will not be the only one with the need for a
+   particular element that was overlooked in the standard. By participating in the
+   working group and lobbying for the elements you need you can enhance the value
+   of HPXML for all parties. If everyone extends HPXML in non-standard ways, the
+   value proposition of the standard is eroded. 
