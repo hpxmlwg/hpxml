@@ -1,7 +1,14 @@
 Home Energy Scoring Tool HPXML Translation
 ##########################################
 
-
 .. todo::
 
-      Figure out how to import HPXML -> HEScore documentation here.
+   More description here.
+
+.. toctree::
+   :maxdepth: 2
+   
+   hescoretranslation/index
+
+
+ 
