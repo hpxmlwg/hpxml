@@ -1952,4 +1952,26 @@
 			<xs:enumeration value="simple"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="WeatherStationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TMY2"/>
+			<xs:enumeration value="TMY3"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DuctLeakageTotalOrToOutside">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ToOutside"/>
+			<xs:enumeration value="Total"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WeatherStationUse">
+		<xs:annotation>
+			<xs:documentation>By leaving this field empty, the weather station is assumed used for all functions such as utility bill regression analysis and energy model simulations. If different weather stations are used for the different functions, use this field to specify the usage of each weather station.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BillingAnalysis"/>
+			<xs:enumeration value="EnergyModelSimulation"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
