@@ -3343,7 +3343,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			<xs:element name="LeakinessObservedVisualInspection"
 				type="LeakinessObservedVisualInspection" minOccurs="0"/>
 			<xs:element name="DuctLeakageTestMethod" type="DuctLeakageTestMethod" minOccurs="0"/>
-			<xs:element minOccurs="0" name="DuctLeakage" maxOccurs="unbounded">
+			<xs:element minOccurs="0" name="DuctLeakage">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="Units" type="DuctLeakageTestUnitofMeasure" minOccurs="0"/>
@@ -3494,7 +3494,7 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			<xs:element minOccurs="0" name="SimplifiedModelCalibrationTotalBiasError"
 				type="xs:double">
 				<xs:annotation>
-					<xs:documentation>[Deprecated]</xs:documentation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
