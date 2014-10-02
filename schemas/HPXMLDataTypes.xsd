@@ -1962,8 +1962,8 @@
 	</xs:simpleType>
 	<xs:simpleType name="DuctLeakageTotalOrToOutside">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="ToOutside"/>
-			<xs:enumeration value="Total"/>
+			<xs:enumeration value="to outside"/>
+			<xs:enumeration value="total"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="WeatherStationUse">
