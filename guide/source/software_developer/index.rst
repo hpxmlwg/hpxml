@@ -9,5 +9,4 @@ Software Developer Guide
    structure
    references
    usecases/index
-   hescoreplaceholder
 
