@@ -35,18 +35,22 @@ The ``XMLTransactionHeaderInformation`` element meta data about the HPXML file.
 
    <XMLTransactionHeaderInformation>
      <XMLType>auditretrofit</XMLType>
-     <XMLGeneratedBy>Noel Merket</XMLGeneratedBy>
+     <XMLGeneratedBy>Housesoft 1.0</XMLGeneratedBy>
      <CreatedDateAndTime>2014-09-02T17:32:12Z</CreatedDateAndTime>
      <Transaction>create</Transaction>
    </XMLTransactionHeaderInformation>
 
-``Transaction`` describes whether this is a new document or an update to a
-previous one. 
+``XMLType`` is generally unused and may be deprecated in the future.
 
-.. todo::
-   
-   * I don't know what specifically to use ``XMLType`` for. What is everyone else doing?
-   * ``XMLGeneratedBy`` same thing. Name of person?
+``XMLGeneratedBy`` is often used to transmit the name of the software that
+generated the HPXML file. It may also be deprecated in the future due to its
+redundancy with :ref:`softwareinfo-node`.
+
+``CreatedDateAndTime`` is the date and time the file was generated in the ISO
+8601 format. 
+
+``Transaction`` describes whether this is a new document or
+an update to a previous one. 
 
 .. _softwareinfo-node:
 

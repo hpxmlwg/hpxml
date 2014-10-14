@@ -17,11 +17,12 @@ this the HPXML document needs to have the following
 
    * Pre-retrofit
    * Post-retrofit (proposed or completed)
-* Project - Description of measures and :doc:`references <../references>` of 
+* Project - Description of measures and :doc:`references <../references>` of
   affected elements in the pre- and post- buildings.
  
-.. literalinclude:: example1.xml
+.. literalinclude:: /../../examples/retrofit.xml
    :language: xml
+   :lines: 1-2,895,1208,1225
    :linenos:
 
 

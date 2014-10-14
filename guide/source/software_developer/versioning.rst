@@ -61,17 +61,18 @@ which necessitate a minor version change include:
 * Adding enumerations
 * Changing the annotation in the schema for an element
 
-.. todo::
+.. warning::
 
-   Adding enumerations was in kind of a grey area between minor and major revisions.
-   Based on the definition of backwards compatibility above, it is non-breaking.
-   However, it can be breaking for receiving systems if they're not expecting the change.
-   My recollection serves that we decided to go with the definition as described above, but I need to verify that. 
+   Based on the definition of backwards compatibility above, adding enumerations 
+   is a non-breaking change. However, it can be breaking for receiving systems 
+   if they're not expecting the change. The working group will provide warning 
+   when new enumerations are added so that receivers have an opportunity to 
+   respond by updating support. 
 
 .. _patch-version:
 
 Patch
 *****
 
-A patch version number is incremented when a backwards compatible change is made
-to address a bug.
+A patch version number is incremented when a backwards compatible change (as
+described in :ref:`minor-version`) is made to address a bug.
