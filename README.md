@@ -1,1 +1,1 @@
-[HPXML extra documentation](http://hpxmlcommunity.github.io/hpxml/) on github pages.
+[HPXML extra documentation](http://hpxmlwg.github.io/hpxml/) on github pages.
