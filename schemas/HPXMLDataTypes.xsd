@@ -1975,4 +1975,23 @@
 			<xs:enumeration value="energy modeling"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="WaterFixtureType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="faucet"/>
+			<xs:enumeration value="shower head"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WaterFixtureThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="Energy Star Most Efficient"/>
+			<xs:enumeration value="WaterSense"/>
+			<xs:enumeration value="CEE Tier 1"/>
+			<xs:enumeration value="CEE Tier 2"/>
+			<xs:enumeration value="CEE Tier 3"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
