@@ -930,6 +930,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="open"/>
 			<xs:enumeration value="closed"/>
+			<xs:enumeration value="direct expansion"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="HeatPumpType">
