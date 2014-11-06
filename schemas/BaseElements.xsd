@@ -3926,8 +3926,19 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 				<xs:annotation>
 					<xs:documentation>For use on sections of the house that are cantilevered or over ambient (outdoor) conditions for some other reason. </xs:documentation>
 				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
 			</xs:element>
-			<xs:element name="RubbleStone"/>
+			<xs:element name="RubbleStone">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="Other">
 				<xs:complexType>
 					<xs:sequence>
