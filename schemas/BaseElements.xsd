@@ -2764,6 +2764,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	<xs:complexType name="HydronicDistributionInfo">
 		<xs:sequence>
 			<xs:element name="FractionHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
+			<xs:element minOccurs="0" name="PipeRValue" type="RValue"/>
 			<xs:element name="HydronicDistributionType" type="HydronicDistributionType"
 				minOccurs="0"/>
 			<xs:element minOccurs="0" name="PumpandZoneValve">
