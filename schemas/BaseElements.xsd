@@ -2635,6 +2635,12 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Fireplace">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="SmokeEmissionRate" type="xs:double">
+							<xs:annotation>
+								<xs:documentation>[grams per hour] from EPA label
+http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2642,6 +2648,12 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Stove">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="SmokeEmissionRate" type="xs:double">
+							<xs:annotation>
+								<xs:documentation>[grams per hour] from EPA label
+http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
