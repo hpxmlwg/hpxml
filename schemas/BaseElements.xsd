@@ -2869,10 +2869,10 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element minOccurs="0" name="ResidentPopulationType"
 										type="ResidentPopulationType"/>
 									<xs:element minOccurs="0" name="Occupancy" type="Occupancy"/>
-									<xs:element name="NumberofResidents"
-										type="IntegerGreaterThanZero" minOccurs="0"/>
+									<xs:element name="NumberofResidents" type="PeopleCount"
+										minOccurs="0"/>
 									<xs:element minOccurs="0" name="NumberofAdults"
-										type="IntegerGreaterThanOrEqualToZero">
+										type="PeopleCount">
 										<xs:annotation>
 											<xs:documentation>18 or older</xs:documentation>
 										</xs:annotation>
