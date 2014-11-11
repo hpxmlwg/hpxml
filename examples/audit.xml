@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Row 8 -->
-<HPXML xmlns="http://hpxmlonline.com/2014/6"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://hpxmlonline.com/2014/6 ../../fullrepo/trunk/schemas/HPXML.xsd" schemaVersion="2.0">
+<HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.0">
     <XMLTransactionHeaderInformation>
         <XMLType/>
         <XMLGeneratedBy>Super-duper audit software v1.0</XMLGeneratedBy>
@@ -331,7 +328,7 @@
                         <Attic>
                             <SystemIdentifier id="attic1p" sameas="attic1"/>
                             <AtticFloorInsulation>
-                                <SystemIdentifier id="attic1insp" sameas="attic1ins"/>
+                                <SystemIdentifier id="attic1insp"/>
                                 <Layer>
                                     <NominalRValue>49</NominalRValue>
                                 </Layer>
@@ -382,7 +379,7 @@
                 <HVAC>
                     <HVACPlant>
                         <HeatingSystem>
-                            <SystemIdentifier id="htgsys1p" sameas="htgsys1"/>
+                            <SystemIdentifier id="htgsys1p"/>
                             <UnitLocation>basement - conditioned</UnitLocation>
                             <CombustionVentingSystem idref="combvent1p"/>
                             <HeatingSystemType>
@@ -595,7 +592,20 @@
                         <SystemIdentifiersInfo id="insulateattic"/>
                     </MeasureSystemIdentifiers>
                     <Cost>1200</Cost>
+                    <ReplacedComponents>
+                        <ReplacedComponent id="attic1ins"/>
+                    </ReplacedComponents>
                     <InstalledComponent id="attic1insp"/>
+                </Measure>
+                <Measure>
+                    <MeasureSystemIdentifiers>
+                        <SystemIdentifiersInfo id="furnacereplacement"/>
+                    </MeasureSystemIdentifiers>
+                    <Cost>3000</Cost>
+                    <ReplacedComponents>
+                        <ReplacedComponent id="htgsys1"/>
+                    </ReplacedComponents>
+                    <InstalledComponent id="htgsys1p"/>
                 </Measure>
             </Measures>
         </ProjectDetails>
