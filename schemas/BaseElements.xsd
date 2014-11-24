@@ -3844,7 +3844,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			</xs:element>
 			<xs:element minOccurs="0" name="WeatherStripping" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="Operable" type="xs:boolean"/>
-			<xs:element minOccurs="0" name="MoveableInsulationRValue" type="RValue">
+			<xs:element minOccurs="0" name="MovableInsulationRValue" type="RValue">
 				<xs:annotation>
 					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
 				</xs:annotation>
