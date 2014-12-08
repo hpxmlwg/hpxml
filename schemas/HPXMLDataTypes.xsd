@@ -2004,6 +2004,8 @@
 			<xs:enumeration value="CEE Tier 3"/>
 			<xs:enumeration value="other"/>
 			<xs:enumeration value="unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="PeopleCount">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
