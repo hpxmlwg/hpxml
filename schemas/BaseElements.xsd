@@ -1340,6 +1340,13 @@
 											<xs:documentation>Does this faucet have an aerator?</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0"
+										name="TemperatureInitiatedShowerFlowRestrictionValve"
+										type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Does the shower have a device that restricts the flow of water automatically once it has reached temperature?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element maxOccurs="unbounded" minOccurs="0"
 										name="ThirdPartyCertification"
 										type="WaterFixtureThirdPartyCertification">
