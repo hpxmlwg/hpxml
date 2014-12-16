@@ -1811,7 +1811,7 @@
 												<xs:element minOccurs="0" name="HoursPerDay"
 												type="HoursPerDay">
 												<xs:annotation>
-												<xs:documentation>[hours] Number of hours per day a pool pump operates at a particular speed setting.</xs:documentation>
+												<xs:documentation>DEPRECATED - Please use PumpSpeed/HoursPerDay</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element maxOccurs="unbounded" minOccurs="0"
@@ -1834,6 +1834,12 @@
 												type="FlowRate">
 												<xs:annotation>
 												<xs:documentation>[gal/min] The volume of water flowing through the filtration system in a given time, usually measured in gallons per minute (gpm) (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="HoursPerDay"
+												type="HoursPerDay">
+												<xs:annotation>
+												<xs:documentation>[hours] Number of hours per day a pool pump operates at a particular speed setting.</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
