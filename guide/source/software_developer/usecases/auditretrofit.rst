@@ -1,3 +1,5 @@
+.. _auditretrofitusecase:
+
 Audit-Retrofit
 ##############
 
@@ -141,7 +143,6 @@ measured energy use and savings achieved in a retrofit.
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
    :lines: 571-588
-   :linenos:
 
 .. note::
 
