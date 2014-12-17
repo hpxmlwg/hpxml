@@ -3,6 +3,8 @@
 Audit-Retrofit
 ##############
 
+.. contents::
+
 The audit-retrofit use case covers two scenarios:
 
 #. A baseline building with a proposed work scope 
