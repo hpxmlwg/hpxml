@@ -1,4 +1,16 @@
 Program Administrator Guide
 ###########################
 
-To be written by Home Performance Coalition staff or contractor.
+.. toctree::
+   :maxdepth: 2
+   
+   introduction
+   opportunities_benefits
+   implementation_guide
+   implementation_goals
+   coordination
+   identify_data_needs
+   program_management_systems
+   data_validation
+   testing_protocols
+   quality_management_plan
