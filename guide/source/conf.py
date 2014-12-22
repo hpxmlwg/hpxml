@@ -53,7 +53,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'HPXML Implementation Guide'
-copyright = u'2014, Noel Merket (NREL)'
+copyright = u'2014, Noel Merket (NREL), Gavin Hastings (Tierra Resource Consultants, LLC)'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
