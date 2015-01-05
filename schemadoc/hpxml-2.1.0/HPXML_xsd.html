@@ -1,0 +1,1412 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for HPXML.xsd</title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_HPXML.xsd', 
+				'properties_HPXML', 
+				'properties_HPXML_Contractor', 
+				'properties_HPXML_Customer', 
+				'properties_HPXML_Building', 
+				'properties_HPXML_Project', 
+				'properties_HPXML_Utility', 
+				'properties_HPXML_Consumption', 
+				'properties_HPXML_schemaVersion');
+var facetsBoxes= new Array('facets_HPXML_schemaVersion');
+var usedByBoxes= new Array('usedBy_HPXML_schemaVersion');
+var sourceBoxes= new Array('source_HPXML', 
+				'source_HPXML_Contractor', 
+				'source_HPXML_Customer', 
+				'source_HPXML_Building', 
+				'source_HPXML_Project', 
+				'source_HPXML_Utility', 
+				'source_HPXML_Consumption', 
+				'source_HPXML_schemaVersion');
+var instanceBoxes= new Array('instance_HPXML', 
+				'instance_HPXML_Contractor', 
+				'instance_HPXML_Customer', 
+				'instance_HPXML_Building', 
+				'instance_HPXML_Project', 
+				'instance_HPXML_Utility', 
+				'instance_HPXML_Consumption');
+var diagramBoxes= new Array('diagram_HPXML', 
+				'diagram_HPXML_Contractor', 
+				'diagram_HPXML_Customer', 
+				'diagram_HPXML_Building', 
+				'diagram_HPXML_Project', 
+				'diagram_HPXML_Utility', 
+				'diagram_HPXML_Consumption');
+var attributesBoxes= new Array('attributes_HPXML');
+var modelBoxes= new Array('model_HPXML', 
+				'model_HPXML_Contractor', 
+				'model_HPXML_Customer', 
+				'model_HPXML_Building', 
+				'model_HPXML_Project', 
+				'model_HPXML_Utility', 
+				'model_HPXML_Consumption');
+
+      
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    
+                    //--></script></head>
+   <body>
+      <div id="global_controls" class="globalControls" style="position:absolute;right:0;">
+         <table class="rt">
+            <tr>
+               <td class="rt_cornerTopLeft"></td>
+               <td class="rt_lineTop"></td>
+               <td class="rt_cornerTopRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_lineLeft"></td>
+               <td class="rt_content">
+                  <h3>Showing:</h3>
+                  <table>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, attributesBoxes);" class="control" /></span><span class="globalControlName">Attributes </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, facetsBoxes);" class="control" /></span><span class="globalControlName">Facets </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, instanceBoxes);" class="control" /></span><span class="globalControlName">Instances</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, modelBoxes);" class="control" /></span><span class="globalControlName">Model </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, propertiesBoxes);" class="control" /></span><span class="globalControlName">Properties </span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, sourceBoxes);" class="control" /></span><span class="globalControlName">Source</span></td>
+                     </tr>
+                     <tr>
+                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, usedByBoxes);" class="control" /></span><span class="globalControlName">Used by </span></td>
+                     </tr>
+                  </table>
+                  <div align="right"><span><input type="button" onclick="getElementObject('global_controls').style.display = 'none';" value="Close" /></span></div>
+               </td>
+               <td class="rt_lineRight"></td>
+            </tr>
+            <tr>
+               <td class="rt_cornerBottomLeft"></td>
+               <td class="rt_lineBottom"></td>
+               <td class="rt_cornerBottomRight"></td>
+            </tr>
+         </table>
+      </div><a id="HPXML.xsd"></a><div class="componentTitle">Main schema <span class="qname">HPXML.xsd</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://hpxmlonline.com/2014/6</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_HPXML.xsd" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_HPXML.xsd');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_HPXML.xsd" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">attribute form default</td>
+                                    <td><b>unqualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">element form default</td>
+                                    <td><b>qualified</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">version</td>
+                                    <td><b>2.1</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/var/folders/qt/5nrnlf6148z2jxyxx_5yqgl0z8pq2p/T/tmp6FcBxl/schemas/HPXML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="HPXML"></a><div class="componentTitle">Element <span class="qname">HPXML</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://hpxmlonline.com/2014/6</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_HPXML" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_HPXML');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_HPXML" style="display:block"><img alt="Diagram" border="0" src="img/HPXML_xsd_Element_HPXML.jpeg" usemap="#HPXML_xsd_Element_HPXML" /><map name="HPXML_xsd_Element_HPXML" id="HPXML_xsd_Element_HPXML">
+                                 <area alt="HPXML_xsd.tmp#HPXML_schemaVersion" href="HPXML_xsd.html#HPXML_schemaVersion" coords="109,40,282,82" />
+                                 <area alt="BaseElements_xsd.tmp#XMLTransactionHeaderInformation" href="BaseElements_xsd.html#XMLTransactionHeaderInformation" coords="187,99,405,123" />
+                                 <area alt="BaseElements_xsd.tmp#SoftwareInfo" href="BaseElements_xsd.html#SoftwareInfo" coords="187,133,285,157" />
+                                 <area alt="HPXML_xsd.tmp#HPXML_Contractor" href="HPXML_xsd.html#HPXML_Contractor" coords="187,167,311,209" />
+                                 <area alt="HPXML_xsd.tmp#HPXML_Customer" href="HPXML_xsd.html#HPXML_Customer" coords="187,219,305,261" />
+                                 <area alt="HPXML_xsd.tmp#HPXML_Building" href="HPXML_xsd.html#HPXML_Building" coords="187,271,295,313" />
+                                 <area alt="HPXML_xsd.tmp#HPXML_Project" href="HPXML_xsd.html#HPXML_Project" coords="187,323,289,365" />
+                                 <area alt="HPXML_xsd.tmp#HPXML_Utility" href="HPXML_xsd.html#HPXML_Utility" coords="187,375,283,417" />
+                                 <area alt="HPXML_xsd.tmp#HPXML_Consumption" href="HPXML_xsd.html#HPXML_Consumption" coords="187,427,325,469" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_HPXML" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_HPXML');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_HPXML" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_HPXML" type="image" src="img/btM.gif" value="-" onclick="switchState('model_HPXML');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_HPXML" style="display:block"><b><a href="BaseElements_xsd.html#XMLTransactionHeaderInformation" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">XMLTransactionHeaderInformation</a></b> , <b><a href="BaseElements_xsd.html#SoftwareInfo" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">SoftwareInfo</a></b> , <b><a href="HPXML_xsd.html#HPXML_Contractor" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Contractor*</a></b> , <b><a href="HPXML_xsd.html#HPXML_Customer" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Customer*</a></b> , <b><a href="HPXML_xsd.html#HPXML_Building" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Building*</a></b> , <b><a href="HPXML_xsd.html#HPXML_Project" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Project*</a></b> , <b><a href="HPXML_xsd.html#HPXML_Utility" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Utility*</a></b> , <b><a href="HPXML_xsd.html#HPXML_Consumption" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Consumption*</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="HPXML_xsd.html#HPXML_Building" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Building</a></b>, <b><a href="HPXML_xsd.html#HPXML_Consumption" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Consumption</a></b>, <b><a href="HPXML_xsd.html#HPXML_Contractor" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Contractor</a></b>, <b><a href="HPXML_xsd.html#HPXML_Customer" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Customer</a></b>, <b><a href="HPXML_xsd.html#HPXML_Project" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Project</a></b>, <b><a href="BaseElements_xsd.html#SoftwareInfo" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">SoftwareInfo</a></b>, <b><a href="HPXML_xsd.html#HPXML_Utility" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">Utility</a></b>, <b><a href="BaseElements_xsd.html#XMLTransactionHeaderInformation" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">XMLTransactionHeaderInformation</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_HPXML" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_HPXML');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_HPXML" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;HPXML</span><span class="tT"> </span><span class="tAN">schemaVersion=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">xmlns=</span><span class="tAV">"http://hpxmlonline.com/2014/6"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;XMLTransactionHeaderInformation</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/XMLTransactionHeaderInformation&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;SoftwareInfo</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/SoftwareInfo&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;Contractor</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/Contractor&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;Customer</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/Customer&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;Building</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/Building&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;Project</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/Project&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;Utility</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/Utility&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;Consumption</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/Consumption&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/HPXML&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Attributes</b></div>
+                           <div class="floatRight"><input id="button_attributes_HPXML" type="image" src="img/btM.gif" value="-" onclick="switchState('attributes_HPXML');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="attributes_HPXML" style="display:block">
+                              <table class="attributesTable">
+                                 <thead>
+                                    <tr>
+                                       <th>QName</th>
+                                       <th width="10%">Type</th>
+                                       <th width="5%">Use</th>
+                                       <th></th>
+                                    </tr>
+                                 </thead>
+                                 <tr>
+                                    <td class="firstColumn"><b><a href="HPXML_xsd.html#HPXML_schemaVersion" target="mainFrame" title="No namespace" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">schemaVersion</a></b></td>
+                                    <td><b><a href="HPXMLDataTypes_xsd.html#schemaVersionType" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXMLDataTypes.xsd')">schemaVersionType</a></b></td>
+                                    <td>required</td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_HPXML" type="image" src="img/btM.gif" value="-" onclick="switchState('source_HPXML');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_HPXML" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> name=</span><span class="tAV">"HPXML"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;xs:complexType</span><span class="tEl">&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:sequence</span><span class="tEl">&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"XMLTransactionHeaderInformation"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> ref=</span><span class="tAV">"SoftwareInfo"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Contractor"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Contractor"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Customer"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Customer"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Building"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Building"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Project"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Project"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Utility"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Utility"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Consumption"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Consumption"</span><span class="tEl">/&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
+    </span><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"schemaVersion"</span><span class="tAN"> type=</span><span class="tAV">"schemaVersionType"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">/&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;/xs:complexType&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/xs:element&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/var/folders/qt/5nrnlf6148z2jxyxx_5yqgl0z8pq2p/T/tmp6FcBxl/schemas/HPXML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="HPXML_Contractor"></a><div class="componentTitle">Element <span class="qname"><b><a href="HPXML_xsd.html#HPXML" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">HPXML</a></b> / Contractor</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://hpxmlonline.com/2014/6</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_HPXML_Contractor" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_HPXML_Contractor');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_HPXML_Contractor" style="display:block"><img alt="Diagram" border="0" src="img/HPXML_xsd_Element_Contractor.jpeg" usemap="#HPXML_xsd_Element_Contractor" /><map name="HPXML_xsd_Element_Contractor" id="HPXML_xsd_Element_Contractor">
+                                 <area alt="BaseElements_xsd.tmp#Contractor_ContractorDetails" href="BaseElements_xsd.html#Contractor_ContractorDetails" coords="237,40,363,64" />
+                                 <area alt="BaseElements_xsd.tmp#extension" href="BaseElements_xsd.html#extension" coords="237,74,321,98" />
+                                 <area alt="BaseElements_xsd.tmp#Contractor" href="BaseElements_xsd.html#Contractor" coords="155,3,265,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Contractor" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">Contractor</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_HPXML_Contractor" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_HPXML_Contractor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_HPXML_Contractor" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">nillable</td>
+                                    <td><b>true</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_HPXML_Contractor" type="image" src="img/btM.gif" value="-" onclick="switchState('model_HPXML_Contractor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_HPXML_Contractor" style="display:block"><b><a href="BaseElements_xsd.html#Contractor_ContractorDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ContractorDetails</a></b> , <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Contractor_ContractorDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ContractorDetails</a></b>, <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_HPXML_Contractor" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_HPXML_Contractor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_HPXML_Contractor" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;Contractor</span><span class="tT"> </span><span class="tAN">xmlns=</span><span class="tAV">"http://hpxmlonline.com/2014/6"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ContractorDetails</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/ContractorDetails&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;extension</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/extension&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/Contractor&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_HPXML_Contractor" type="image" src="img/btM.gif" value="-" onclick="switchState('source_HPXML_Contractor');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_HPXML_Contractor" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Contractor"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Contractor"</span><span class="tEl">/&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/var/folders/qt/5nrnlf6148z2jxyxx_5yqgl0z8pq2p/T/tmp6FcBxl/schemas/HPXML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="HPXML_Customer"></a><div class="componentTitle">Element <span class="qname"><b><a href="HPXML_xsd.html#HPXML" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">HPXML</a></b> / Customer</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://hpxmlonline.com/2014/6</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_HPXML_Customer" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_HPXML_Customer');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_HPXML_Customer" style="display:block"><img alt="Diagram" border="0" src="img/HPXML_xsd_Element_Customer.jpeg" usemap="#HPXML_xsd_Element_Customer" /><map name="HPXML_xsd_Element_Customer" id="HPXML_xsd_Element_Customer">
+                                 <area alt="BaseElements_xsd.tmp#Customer_CustomerDetails" href="BaseElements_xsd.html#Customer_CustomerDetails" coords="252,40,372,64" />
+                                 <area alt="BaseElements_xsd.tmp#Customer_OtherContact" href="BaseElements_xsd.html#Customer_OtherContact" coords="252,74,356,98" />
+                                 <area alt="BaseElements_xsd.tmp#extension" href="BaseElements_xsd.html#extension" coords="252,108,336,132" />
+                                 <area alt="BaseElements_xsd.tmp#Customer" href="BaseElements_xsd.html#Customer" coords="149,3,253,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Customer" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">Customer</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_HPXML_Customer" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_HPXML_Customer');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_HPXML_Customer" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">nillable</td>
+                                    <td><b>true</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_HPXML_Customer" type="image" src="img/btM.gif" value="-" onclick="switchState('model_HPXML_Customer');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_HPXML_Customer" style="display:block"><b><a href="BaseElements_xsd.html#Customer_CustomerDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">CustomerDetails</a></b> , <b><a href="BaseElements_xsd.html#Customer_OtherContact" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">OtherContact*</a></b> , <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Customer_CustomerDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">CustomerDetails</a></b>, <b><a href="BaseElements_xsd.html#Customer_OtherContact" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">OtherContact</a></b>, <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_HPXML_Customer" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_HPXML_Customer');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_HPXML_Customer" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;Customer</span><span class="tT"> </span><span class="tAN">xmlns=</span><span class="tAV">"http://hpxmlonline.com/2014/6"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;CustomerDetails</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/CustomerDetails&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;OtherContact</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,unbounded}</span><span class="tEl">&lt;/OtherContact&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;extension</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/extension&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/Customer&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_HPXML_Customer" type="image" src="img/btM.gif" value="-" onclick="switchState('source_HPXML_Customer');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_HPXML_Customer" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Customer"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Customer"</span><span class="tEl">/&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/var/folders/qt/5nrnlf6148z2jxyxx_5yqgl0z8pq2p/T/tmp6FcBxl/schemas/HPXML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="HPXML_Building"></a><div class="componentTitle">Element <span class="qname"><b><a href="HPXML_xsd.html#HPXML" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">HPXML</a></b> / Building</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://hpxmlonline.com/2014/6</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_HPXML_Building" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_HPXML_Building');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_HPXML_Building" style="display:block"><img alt="Diagram" border="0" src="img/HPXML_xsd_Element_Building.jpeg" usemap="#HPXML_xsd_Element_Building" /><map name="HPXML_xsd_Element_Building" id="HPXML_xsd_Element_Building">
+                                 <area alt="BaseElements_xsd.tmp#Building_BuildingID" href="BaseElements_xsd.html#Building_BuildingID" coords="221,40,306,64" />
+                                 <area alt="BaseElements_xsd.tmp#Building_CustomerID" href="BaseElements_xsd.html#Building_CustomerID" coords="221,74,316,98" />
+                                 <area alt="BaseElements_xsd.tmp#Building_Site" href="BaseElements_xsd.html#Building_Site" coords="221,108,272,132" />
+                                 <area alt="BaseElements_xsd.tmp#Building_ContractorID" href="BaseElements_xsd.html#Building_ContractorID" coords="221,142,322,166" />
+                                 <area alt="BaseElements_xsd.tmp#ProjectStatus" href="BaseElements_xsd.html#ProjectStatus" coords="221,176,322,200" />
+                                 <area alt="BaseElements_xsd.tmp#Building_BuildingDetails" href="BaseElements_xsd.html#Building_BuildingDetails" coords="221,210,331,234" />
+                                 <area alt="BaseElements_xsd.tmp#Building_ModeledUsages" href="BaseElements_xsd.html#Building_ModeledUsages" coords="221,244,336,268" />
+                                 <area alt="BaseElements_xsd.tmp#extension" href="BaseElements_xsd.html#extension" coords="221,278,305,302" />
+                                 <area alt="BaseElements_xsd.tmp#Building" href="BaseElements_xsd.html#Building" coords="139,3,233,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Building" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">Building</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_HPXML_Building" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_HPXML_Building');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_HPXML_Building" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">nillable</td>
+                                    <td><b>true</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_HPXML_Building" type="image" src="img/btM.gif" value="-" onclick="switchState('model_HPXML_Building');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_HPXML_Building" style="display:block"><b><a href="BaseElements_xsd.html#Building_BuildingID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">BuildingID</a></b> , <b><a href="BaseElements_xsd.html#Building_CustomerID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">CustomerID{0,1}</a></b> , <b><a href="BaseElements_xsd.html#Building_Site" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">Site{0,1}</a></b> , <b><a href="BaseElements_xsd.html#Building_ContractorID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ContractorID{0,1}</a></b> , <b><a href="BaseElements_xsd.html#ProjectStatus" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ProjectStatus</a></b> , <b><a href="BaseElements_xsd.html#Building_BuildingDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">BuildingDetails</a></b> , <b><a href="BaseElements_xsd.html#Building_ModeledUsages" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ModeledUsages{0,1}</a></b> , <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Building_BuildingDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">BuildingDetails</a></b>, <b><a href="BaseElements_xsd.html#Building_BuildingID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">BuildingID</a></b>, <b><a href="BaseElements_xsd.html#Building_ContractorID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ContractorID</a></b>, <b><a href="BaseElements_xsd.html#Building_CustomerID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">CustomerID</a></b>, <b><a href="BaseElements_xsd.html#Building_ModeledUsages" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ModeledUsages</a></b>, <b><a href="BaseElements_xsd.html#ProjectStatus" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ProjectStatus</a></b>, <b><a href="BaseElements_xsd.html#Building_Site" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">Site</a></b>, <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_HPXML_Building" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_HPXML_Building');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_HPXML_Building" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;Building</span><span class="tT"> </span><span class="tAN">xmlns=</span><span class="tAV">"http://hpxmlonline.com/2014/6"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;BuildingID</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">sameas=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/BuildingID&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;CustomerID</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/CustomerID&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;Site</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/Site&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ContractorID</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ContractorID&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ProjectStatus</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/ProjectStatus&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;BuildingDetails</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/BuildingDetails&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ModeledUsages</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ModeledUsages&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;extension</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/extension&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/Building&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_HPXML_Building" type="image" src="img/btM.gif" value="-" onclick="switchState('source_HPXML_Building');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_HPXML_Building" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Building"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Building"</span><span class="tEl">/&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/var/folders/qt/5nrnlf6148z2jxyxx_5yqgl0z8pq2p/T/tmp6FcBxl/schemas/HPXML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="HPXML_Project"></a><div class="componentTitle">Element <span class="qname"><b><a href="HPXML_xsd.html#HPXML" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">HPXML</a></b> / Project</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://hpxmlonline.com/2014/6</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_HPXML_Project" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_HPXML_Project');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_HPXML_Project" style="display:block"><img alt="Diagram" border="0" src="img/HPXML_xsd_Element_Project.jpeg" usemap="#HPXML_xsd_Element_Project" /><map name="HPXML_xsd_Element_Project" id="HPXML_xsd_Element_Project">
+                                 <area alt="BaseElements_xsd.tmp#Project_BuildingID" href="BaseElements_xsd.html#Project_BuildingID" coords="215,40,300,64" />
+                                 <area alt="BaseElements_xsd.tmp#Project_ProjectID" href="BaseElements_xsd.html#Project_ProjectID" coords="215,74,294,98" />
+                                 <area alt="BaseElements_xsd.tmp#Project_ProjectDetails" href="BaseElements_xsd.html#Project_ProjectDetails" coords="215,108,319,132" />
+                                 <area alt="BaseElements_xsd.tmp#extension" href="BaseElements_xsd.html#extension" coords="215,142,299,166" />
+                                 <area alt="BaseElements_xsd.tmp#Project" href="BaseElements_xsd.html#Project" coords="133,3,221,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Project" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">Project</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_HPXML_Project" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_HPXML_Project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_HPXML_Project" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">nillable</td>
+                                    <td><b>true</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_HPXML_Project" type="image" src="img/btM.gif" value="-" onclick="switchState('model_HPXML_Project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_HPXML_Project" style="display:block"><b><a href="BaseElements_xsd.html#Project_BuildingID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">BuildingID</a></b> , <b><a href="BaseElements_xsd.html#Project_ProjectID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ProjectID{0,1}</a></b> , <b><a href="BaseElements_xsd.html#Project_ProjectDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ProjectDetails</a></b> , <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Project_BuildingID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">BuildingID</a></b>, <b><a href="BaseElements_xsd.html#Project_ProjectDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ProjectDetails</a></b>, <b><a href="BaseElements_xsd.html#Project_ProjectID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ProjectID</a></b>, <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_HPXML_Project" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_HPXML_Project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_HPXML_Project" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;Project</span><span class="tT"> </span><span class="tAN">xmlns=</span><span class="tAV">"http://hpxmlonline.com/2014/6"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;BuildingID</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/BuildingID&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ProjectID</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tT"> </span><span class="tAN">sameas=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ProjectID&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ProjectDetails</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/ProjectDetails&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;extension</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/extension&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/Project&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_HPXML_Project" type="image" src="img/btM.gif" value="-" onclick="switchState('source_HPXML_Project');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_HPXML_Project" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Project"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Project"</span><span class="tEl">/&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/var/folders/qt/5nrnlf6148z2jxyxx_5yqgl0z8pq2p/T/tmp6FcBxl/schemas/HPXML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="HPXML_Utility"></a><div class="componentTitle">Element <span class="qname"><b><a href="HPXML_xsd.html#HPXML" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">HPXML</a></b> / Utility</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://hpxmlonline.com/2014/6</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_HPXML_Utility" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_HPXML_Utility');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_HPXML_Utility" style="display:block"><img alt="Diagram" border="0" src="img/HPXML_xsd_Element_Utility.jpeg" usemap="#HPXML_xsd_Element_Utility" /><map name="HPXML_xsd_Element_Utility" id="HPXML_xsd_Element_Utility">
+                                 <area alt="BaseElements_xsd.tmp#Utility_UtilitiesorFuelProviders" href="BaseElements_xsd.html#Utility_UtilitiesorFuelProviders" coords="209,40,365,64" />
+                                 <area alt="BaseElements_xsd.tmp#extension" href="BaseElements_xsd.html#extension" coords="209,74,293,98" />
+                                 <area alt="BaseElements_xsd.tmp#Utility" href="BaseElements_xsd.html#Utility" coords="127,3,209,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Utility" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">Utility</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_HPXML_Utility" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_HPXML_Utility');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_HPXML_Utility" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">nillable</td>
+                                    <td><b>true</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_HPXML_Utility" type="image" src="img/btM.gif" value="-" onclick="switchState('model_HPXML_Utility');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_HPXML_Utility" style="display:block"><b><a href="BaseElements_xsd.html#Utility_UtilitiesorFuelProviders" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">UtilitiesorFuelProviders{0,1}</a></b> , <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Utility_UtilitiesorFuelProviders" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">UtilitiesorFuelProviders</a></b>, <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_HPXML_Utility" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_HPXML_Utility');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_HPXML_Utility" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;Utility</span><span class="tT"> </span><span class="tAN">xmlns=</span><span class="tAV">"http://hpxmlonline.com/2014/6"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;UtilitiesorFuelProviders</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/UtilitiesorFuelProviders&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;extension</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/extension&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/Utility&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_HPXML_Utility" type="image" src="img/btM.gif" value="-" onclick="switchState('source_HPXML_Utility');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_HPXML_Utility" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Utility"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Utility"</span><span class="tEl">/&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/var/folders/qt/5nrnlf6148z2jxyxx_5yqgl0z8pq2p/T/tmp6FcBxl/schemas/HPXML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="HPXML_Consumption"></a><div class="componentTitle">Element <span class="qname"><b><a href="HPXML_xsd.html#HPXML" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">HPXML</a></b> / Consumption</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>http://hpxmlonline.com/2014/6</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Diagram</b></div>
+                           <div class="floatRight"><input id="button_diagram_HPXML_Consumption" type="image" src="img/btM.gif" value="-" onclick="switchState('diagram_HPXML_Consumption');" class="control" /></div>
+                        </td>
+                        <td class="diagram">
+                           <div id="diagram_HPXML_Consumption" style="display:block"><img alt="Diagram" border="0" src="img/HPXML_xsd_Element_Consumption.jpeg" usemap="#HPXML_xsd_Element_Consumption" /><map name="HPXML_xsd_Element_Consumption" id="HPXML_xsd_Element_Consumption">
+                                 <area alt="BaseElements_xsd.tmp#Consumption_BuildingID" href="BaseElements_xsd.html#Consumption_BuildingID" coords="251,40,336,64" />
+                                 <area alt="BaseElements_xsd.tmp#Consumption_CustomerID" href="BaseElements_xsd.html#Consumption_CustomerID" coords="251,74,346,98" />
+                                 <area alt="BaseElements_xsd.tmp#Consumption_ConsumptionDetails" href="BaseElements_xsd.html#Consumption_ConsumptionDetails" coords="251,108,391,132" />
+                                 <area alt="BaseElements_xsd.tmp#extension" href="BaseElements_xsd.html#extension" coords="251,142,335,166" />
+                                 <area alt="BaseElements_xsd.tmp#Consumption" href="BaseElements_xsd.html#Consumption" coords="169,3,293,25" /></map></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Consumption" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">Consumption</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_HPXML_Consumption" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_HPXML_Consumption');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_HPXML_Consumption" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">content</td>
+                                    <td><b>complex</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">minOccurs</td>
+                                    <td><b>0</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">maxOccurs</td>
+                                    <td><b>unbounded</b></td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">nillable</td>
+                                    <td><b>true</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Model</b><div class="floatRight"><input id="button_model_HPXML_Consumption" type="image" src="img/btM.gif" value="-" onclick="switchState('model_HPXML_Consumption');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="model_HPXML_Consumption" style="display:block"><b><a href="BaseElements_xsd.html#Consumption_BuildingID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">BuildingID</a></b> , <b><a href="BaseElements_xsd.html#Consumption_CustomerID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">CustomerID</a></b> , <b><a href="BaseElements_xsd.html#Consumption_ConsumptionDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ConsumptionDetails{0,1}</a></b> , <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension{0,1}</a></b></div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Children</b></td>
+                        <td><b><a href="BaseElements_xsd.html#Consumption_BuildingID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">BuildingID</a></b>, <b><a href="BaseElements_xsd.html#Consumption_ConsumptionDetails" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">ConsumptionDetails</a></b>, <b><a href="BaseElements_xsd.html#Consumption_CustomerID" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">CustomerID</a></b>, <b><a href="BaseElements_xsd.html#extension" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for BaseElements.xsd')">extension</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Instance</b></div>
+                           <div class="floatRight"><input id="button_instance_HPXML_Consumption" type="image" src="img/btM.gif" value="-" onclick="switchState('instance_HPXML_Consumption');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="instance_HPXML_Consumption" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;Consumption</span><span class="tT"> </span><span class="tAN">xmlns=</span><span class="tAV">"http://hpxmlonline.com/2014/6"</span><span class="tEl">&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;BuildingID</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/BuildingID&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;CustomerID</span><span class="tT"> </span><span class="tAN">id=</span><span class="tAV">""</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{1,1}</span><span class="tEl">&lt;/CustomerID&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;ConsumptionDetails</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/ConsumptionDetails&gt;</span><span class="tI">
+  </span><span class="tEl">&lt;extension</span><span class="tEl">&gt;</span><span class="tT" style="white-space:normal">{0,1}</span><span class="tEl">&lt;/extension&gt;</span><span class="tI">
+</span><span class="tEl">&lt;/Consumption&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_HPXML_Consumption" type="image" src="img/btM.gif" value="-" onclick="switchState('source_HPXML_Consumption');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_HPXML_Consumption" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:element</span><span class="tAN"> maxOccurs=</span><span class="tAV">"unbounded"</span><span class="tAN"> minOccurs=</span><span class="tAV">"0"</span><span class="tAN"> name=</span><span class="tAV">"Consumption"</span><span class="tAN"> nillable=</span><span class="tAV">"true"</span><span class="tAN"> type=</span><span class="tAV">"Consumption"</span><span class="tEl">/&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/var/folders/qt/5nrnlf6148z2jxyxx_5yqgl0z8pq2p/T/tmp6FcBxl/schemas/HPXML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table><a id="HPXML_schemaVersion"></a><div class="componentTitle">Attribute <span class="qname"><b><a href="HPXML_xsd.html#HPXML" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">HPXML</a></b> / @schemaVersion</span></div>
+      <table class="rt">
+         <tr>
+            <td class="rt_cornerTopLeft"></td>
+            <td class="rt_lineTop"></td>
+            <td class="rt_cornerTopRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_lineLeft"></td>
+            <td class="rt_content">
+               <table class="component">
+                  <tbody>
+                     <tr>
+                        <td class="firstColumn"><b>Namespace</b></td>
+                        <td>No namespace</td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Type</b></td>
+                        <td><b><a href="HPXMLDataTypes_xsd.html#schemaVersionType" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXMLDataTypes.xsd')">schemaVersionType</a></b></td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Properties</b></div>
+                           <div class="floatRight"><input id="button_properties_HPXML_schemaVersion" type="image" src="img/btM.gif" value="-" onclick="switchState('properties_HPXML_schemaVersion');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="properties_HPXML_schemaVersion" style="display:block">
+                              <table class="propertiesTable">
+                                 <tr>
+                                    <td class="firstColumn" style="white-space: nowrap;">use</td>
+                                    <td><b>required</b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Facets</b></div>
+                           <div class="floatRight"><input id="button_facets_HPXML_schemaVersion" type="image" src="img/btM.gif" value="-" onclick="switchState('facets_HPXML_schemaVersion');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="facets_HPXML_schemaVersion" style="display:block">
+                              <table class="facetsTable">
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>2.0</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td class="firstColumn">enumeration</td>
+                                    <td width="30%"><b>2.1</b></td>
+                                    <td>
+                                       <div class="annotation"></div>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Used by</b></div>
+                           <div class="floatRight"><input id="button_usedBy_HPXML_schemaVersion" type="image" src="img/btM.gif" value="-" onclick="switchState('usedBy_HPXML_schemaVersion');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="usedBy_HPXML_schemaVersion" style="display:block">
+                              <table class="usedByTable">
+                                 <tr>
+                                    <td class="firstColumn">Element </td>
+                                    <td><b><a href="HPXML_xsd.html#HPXML" target="mainFrame" title="http://hpxmlonline.com/2014/6" onclick="updatePageTitle('Schema documentation for HPXML.xsd')">HPXML</a></b></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn">
+                           <div class="floatLeft"><b>Source</b></div>
+                           <div class="floatRight"><input id="button_source_HPXML_schemaVersion" type="image" src="img/btM.gif" value="-" onclick="switchState('source_HPXML_schemaVersion');" class="control" /></div>
+                        </td>
+                        <td>
+                           <div id="source_HPXML_schemaVersion" style="display:block">
+                              <table style="table-layout:fixed;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;_white-space:pre;" class="preWrapContainer">
+                                 <tr>
+                                    <td width="100%"><pre><span class="tEl">&lt;xs:attribute</span><span class="tAN"> name=</span><span class="tAV">"schemaVersion"</span><span class="tAN"> type=</span><span class="tAV">"schemaVersionType"</span><span class="tAN"> use=</span><span class="tAV">"required"</span><span class="tEl">/&gt;</span></pre></td>
+                                 </tr>
+                              </table>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td class="firstColumn"><b>Schema location</b></td>
+                        <td>file:/var/folders/qt/5nrnlf6148z2jxyxx_5yqgl0z8pq2p/T/tmp6FcBxl/schemas/HPXML.xsd</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </td>
+            <td class="rt_lineRight"></td>
+         </tr>
+         <tr>
+            <td class="rt_cornerBottomLeft"></td>
+            <td class="rt_lineBottom"></td>
+            <td class="rt_cornerBottomRight"></td>
+         </tr>
+      </table>
+      <div class="footer">
+         <hr />
+         <div align="center">XML Schema documentation generated by <a href="http://www.oxygenxml.com" target="_parent"><span class="oXygenLogo"><span class="redX">&lt;</span>o<span class="redX">X</span>ygen<span class="redX">/&gt;</span></span></a><sup>®</sup> XML Editor.
+         </div>
+      </div><script type="text/javascript">
+         <!--
+                     // The namespace is the selected option in the TOC combo.
+                    
+                     // Floats the toolbar.
+                     var globalControls = getElementObject("global_controls"); 
+                     
+                     if(globalControls != null){
+	                     var browser=navigator.appName;
+						 var version = parseFloat(navigator.appVersion.split('MSIE')[1]);
+						 
+						 var IE6 = false;
+						 if ((browser=="Microsoft Internet Explorer") && (version < 7)){
+						 	IE6 = true;
+						 }
+	
+	                     //alert (IE6 + " |V| " + version);
+	                     
+	                     if(IE6){
+	                     	// On IE 6 the 'fixed' property is not supported. We must use javascript. 
+	                         globalControls.style.position='absolute';                         
+	                         // The global controls will do not exist in the TOC frame, when chunking.
+	                         findAndFloat("global_controls", 225, 30);    
+	                     } else {
+	                      	  globalControls.style.position='fixed';                     	
+	                     }
+	                     
+	                     globalControls.style.right='0';                       
+                     }
+                //--></script></body>
+</html>
