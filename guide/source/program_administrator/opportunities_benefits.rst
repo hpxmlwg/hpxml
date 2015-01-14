@@ -1,7 +1,7 @@
 Opportunities and Benefits for HPXML Adoption
 #############################################
 
-The HPXML was created to achieve some basic goals that are critical to a growing
+The [NEED TO BE CONSISTENT IN DOC ABOUT USING "THE HPXML" OR JUST "HPXML". CHOOSE ONE AND STICK TO IT.]HPXML was created to achieve some basic goals that are critical to a growing
 industry:
 
 #. Standardize terminology and facilitate the collection of higher quality
@@ -15,7 +15,7 @@ industry:
 Once adopted, HPXML has the potential to dramatically lower costs in a wide
 range of areas because software vendors can use off-the-shelf solutions that
 they have already developed, rather than building new systems for each client.
-If this is done in coordination with other HPXML jurisdiction, it can not only
+If this is done in coordination with other HPXML jurisdiction [WHAT IS AN HPXML JURISDICTION? SHOULD THIS SAY PROGRAM JURISDICTION? IF NOT, HPXML JURISDICTION NEEDS TO BE DEFINED.], it can not only
 lower operational costs, but give you access to a wide range of new
 opportunities to help grow your local energy efficiency marketplace. While
 these opportunities are expansive, it is important to remember that you don't
@@ -59,7 +59,7 @@ Program and Jurisdictional Opportunities
 
 Faster and more flexible tools can lower program costs, improve data quality,
 and drive innovation into your program. The following are some of the
-opportunities for HPXML that are being used by programs today:
+opportunities for HPXML that are being used by programs today:[IT SEEMS TO ME THAT BULLETS 3-5 BELOW ARE EQUALLY APPLICABLE TO CONTRACTORS.  IT WOULD BE GOOD TO SOMEHOW CONVEY THAT.  IN ADDITION, I THINK THERE IS MUCH MORE TO BE SAID ON QA BOTH AT THE PROGRAM LEVEL AND THE CONTRACTOR LEVEL RELATED TO HOW HPXML CAN SUPPORT EXECUTION OF A QUALITY MANAGEMENT SYSTEM, REDUCE COSTS RELATED TO INSPECTIONS, AND MAKE SELECTION OF CONTRACTORS/PROJECTS FOR INSPECTION MORE EFFECTIVE AND EFFICIENT. PERHAPS KEVIN POWELL CAN ADD MORE HERE. ALSO DAN KARTZMAN MIGHT BE SOMEONE WHO COULD PROVIDE INFO FROM EXPERIENCE ON HOW DATA CAN SUPPORT INTERNAL QC ACTIVITIES]
 
 * **Create an Open Modelling Software Market.**  You can use HPXML to allow
   participating contractors to choose  which software tool they want to use for
@@ -109,12 +109,12 @@ data to a variety of actors in a cost-efficient manner:
 
 * **Reporting to DOE or EPA Sponsored Programs.** Whether you are
   participating in Home Performance with ENERGY STAR, Low Income
-  Weatherization, or as a EPA ENERGY STAR sponsor, HPXML can lower the cost and
+  Weatherization, or as a EPA ENERGY STAR Partner, HPXML can lower the cost and
   burden of data collection and reporting.
 * **National Data Repositories.** Managed by federal agencies, trade ally
   associations, or other national organizations committed to the advancement of
   energy-efficiency investments, these repositories can organize data to track
-  and quantify impacts of energy efficiency.
+  and quantify impacts of energy efficiency. [SEEMS LIKE WE ARE MISSING AN OPPORTUNITY TO HERE TO HIGHLIGHT BPD AND SEED]
 * **Coordination with Market Research.** National research efforts, whether
   lead by the Department of Energy, universities, industry organization, or
   private companies, have struggled to get consistent and reliable data from
@@ -123,7 +123,7 @@ data to a variety of actors in a cost-efficient manner:
   the opportunities for emerging technologies in your market.
 
 Beyond data collection and reporting, there are a number of national efforts
-that the interoperability of HPXML can facilitate. While there are new efforts
+that the interoperability of HPXML can facilitate. While new efforts
 are emerging all the time, the following are some examples of current or
 emerging opportunities:
 
