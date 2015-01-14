@@ -59,7 +59,7 @@ Program and Jurisdictional Opportunities
 
 Faster and more flexible tools can lower program costs, improve data quality,
 and drive innovation into your program. The following are some of the
-opportunities for HPXML that are being used by programs today:
+opportunities for HPXML that are being used by programs today:[WE SHOULD ADD SOMETHING ABOUR REDUCED ADMINISTRATIVE COSTS FOR BOTH THE CONTRACTOR AND THE PROG ADMIN.I HAVE SEEN THAT APS HAS ACTUAL DATA ON THE COST REDUCTION WHICH WOULD BE HELPFUL TO CONVEY HERE.]
 
 * **Create an Open Modelling Software Market.**  You can use HPXML to allow
   participating contractors to choose  which software tool they want to use for
