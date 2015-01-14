@@ -21,7 +21,7 @@ information:
   want to "reduce the data collection burden for program participation," you
   will need to know how much it currently costs contractors in time or money to
   participate in the program, and work with them to identify a goal.
-* **What are some of my current pain points?**  For example, are the specific
+* **What are some of my current pain points?**  For example, what are the specific
   elements of your current program implementation that are drive customer or
   contractor dissatisfaction?  Alternatively, are there any procedures in your
   process that create opportunities for error or mistakes? 
@@ -29,7 +29,7 @@ information:
   what is your current number of projects per year and how many would you like
   to increase to? If you are focused on volume, your priorities might lie in
   HPXML efforts designed to increase volume, like integration with Home Energy
-  Score or Real Estate Coordination.
+  Score or coordination with your local real estate market.
 * **Are there local rules or regulations to consider?** For example, utility
   program regulators may require specific project details to be reported.  Make
   sure you coordinate with local experts in these fields to identify potential
@@ -47,14 +47,14 @@ information:
   season, in order to reduce contractor burden.
 
 By thinking strategically through the questions outlined above and identifying
-what opportunities you want to take on, you should be prepared to design the
+of which opportunities you want to take advantage, you should be prepared to design the
 balance of your implementation plan. It can be tempting to try to achieve all
 the goals in your plan through your initial implementation. However, it is
 better to stage your plan in more manageable phases. Consider taking on
 opportunities that start with the local market and your direct interaction with
 contractors and trade allies. Then, as you reach steady state and feel
-confident in your implementation, you can begin to layer take on additional
-phases and efforts?
+confident in your implementation, you can begin to layer on additional
+phases and efforts.
 
 
 
