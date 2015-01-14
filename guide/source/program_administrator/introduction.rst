@@ -19,7 +19,9 @@ The BPI data standards are designed to  help you collect and transfer
 information about residential building characteristics and project information.
 You can share this data with any party involved in a home performance or
 energy-efficiency program, including contractors, program administrators,
-utilities, federal agencies, and others. This gives you a standardized way to
+utilities, federal agencies, and others. In addition, HPXML allows home performance data 
+to be seemlessly shared with the financial, real estate, insurance, and other 
+appropriate industries. This gives you a standardized way to
 collect project information and to share that information to facilitate market
 growth.
 
@@ -44,7 +46,7 @@ etc.). While HPXML is capable of transferring a wide variety of data elements,
 any one program or jurisdiction will only need a small sub-set for most uses.
 To facilitate adoption of the data standards and to reduce variation between
 jurisdictions, which can be costly for software providers and contractors, BPI
-WG-5 has collaborated with programs to develop:
+WG-5 has collaborated with programs to develop: [BECAUSE THIS IS GOING ON A FEDERAL SITE, WE HAVE TO BE SENSITIVE TO ANY OTHER ORGS WHO ARE CONDUCTING ACTIVITIES OR DEVELOPING STANDARDS OR GUIDANCE THAT COULD ALSO BE USEFUL TO STAKEHOLDERS.  IS ANYONE ELSE BEYOND BPI LIKE ACCA OR RESNET OR ASHRAE OR ANYONE ELSE DOING ANYTHING IN THIS SPACE THAT WE SHOULD BE AWARE OF AND INCLUDE IN THIS GUIDE?]
 
 BPI-2101-S-2013: Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades
     to identify a standard set of data elements for certificates that
@@ -87,7 +89,7 @@ will want to familiarize yourself with this group, as they can serve as an
 invaluable resource to assist in the implementation of the BPI data standards,
 facilitate changes in the standard, and answer questions that you may have
 about the standards. To contact the BPI WG-5 or to get involved, email them at
-Julie.Caracino@nyserda.ny.gov.
+Julie.Caracino@nyserda.ny.gov. [IT WOULD BE PREFERABLE TO INCLUDE A GENERIC EMAIL ADDRESS LIKE HPXML@BPI.ORG INSTEAD OF A PERSON'S EMAIL ADDRESS IN A GUIDE LIKE THIS. OTHERWISE, WE COULD HAVE THEM GO TO HOMEPERFORMANCE@ENERGYSTAR.GOV]
 
 Data Standards and the DOE's Building Energy Data Exchange Specification (BEDES)
 ********************************************************************************
@@ -111,4 +113,4 @@ residential.
 
 For more information on BEDES, visit:
 http://energy.gov/eere/buildings/building-energy-data-exchange-specification-bedes
-
+[THIS WEB ADDRESS IS NOT WORKING FOR ME.]
