@@ -1,6 +1,6 @@
 .. _step3:
 
-Step 3: Identify Your Data Needs
+Step 3: Identify Your Data Needs [CAROLINE SHOULD REVIEW THIS SECTION FOR TONE ONCE REVISED]
 ################################
 
 .. contents::
@@ -35,14 +35,12 @@ particularly important for energy-efficiency programs include:
 #. Reporting a home's energy efficiency assets to the parties in real estate transactions
 #. Reporting data on program activity to DOE and other agencies
 
-BPI is completing development of standard data sets for use cases (1), (2), (3),
-(4) and (5) above, and will develop standard data sets for the other use cases
-in the future. 
+[DELETED CONTENT IS NOT IMPORTANT FOR THIS VERSION. WHEN STANDARD DATA SETS HAVE BEEN FINALIZED, THEY CAN BE MENTIONED HERE] 
 
 The standard audit and retrofit data sets are data collection and transfer
 requirements that were created by existing HPXML adopters to facilitate the
 transfer of project data from third-party energy modeling tools to a program
-management database. As a collaboration between Home Performance programs in
+management database. As a collaboration between Home Performance with ENERGY STAR programs in
 Arizona, California, New York, Vermont, and Virginia, the standard use cases
 are well suited for a wide range of program types, climate zones, and
 implementation models.
@@ -61,11 +59,9 @@ partners have agreed to transfer to date. These data points have been
 identified by the BPI WG-5 as sufficient and achievable as data collection
 requirements for third-party energy modeling tools. The BPI data standards
 support the collection and transfer of additional data points beyond these use
-cases. However, additional data may require substantive changes on behalf of
-the software vendors. Program administrators should  recognize the financial
-impacts of custom data collection requests and consider providing financial
-assistance to software vendors to meet any customization requests, as
-appropriate.  
+cases. However, additional data may require substantive [OR SUBSTANTIAL?] changes on behalf of
+the software vendors. Program administrators should be prepared for the financial
+impacts of custom data collection requests.  
 
 Before reviewing the standard use cases, there are several best practices to
 consider.
@@ -83,30 +79,26 @@ can make you aware of potential challenges that may arise later.
 Be Aware of Data Collection Burden
 ==================================
 
-When selecting data requirements, programs tend to err on the side of more data
+When selecting data requirements, some programs tend to err on the side of more data
 being better. It is important to remember that every data point required by the
-program, costs contractor time and money to collect.  Similarly software
-vendors not only incur costs to code to custom data point, but some data point
-might significantly outside the scope of data that modeling tool needs to
-collect to effective complete a energy simulation. So try to collect only what
-you really needed and if you have data points that are unique to your program,
-it may make sense to collect those data points directly in your program
-management system or through an alternate data collection method. 
+program costs contractors time and money to collect.  Similarly, software
+vendors not only incur costs to code to custom data points, but some data points
+might be significantly outside the scope of data that a modeling tool needs to
+collect to effectively complete a energy simulation. [NEED TO BE CAREFUL WITH TONE. CANNOT COME OFF AS INSULTING TO PROGRAM ADMINS. ALSO CANNOT COME OFF AS THIS GUIDE BEING WRITTEN BY SOFTWARE VENDORS AS A TOOL TO COMPLAIN TO THE PROG COMMUNITY.] 
 
-Leverage data choices made by other program sponsors
+Leverage data choices made by other Program Sponsors
 ====================================================
 
 HPXML is easily extensible and therefore can be customized to the very specific
-needs of a program.  But program sponsors need to remember that they are not
-the only member of the data management system.  When a program is using a data
+needs of a program.  But Program Sponsors should consider that they are part of the larger data management ecosystem.  When a program is using a data
 specification to collect data, too much customization for a program pushes the
 development costs of automation of the data collection process for that
 specific program onto other parties (software tool vendors and service
 providers).  Working with HPXML is best executed in coordination with other
-program sponsors to minimize the number of program specific  data fields
+Program Sponsors to minimize the number of program specific  data fields
 required.  This will reduce costs for tool vendors, speed up the software
 approval process, and make more tools available, for your program area,
-increasing competition.
+increasing competition. [THIS PARAGRAPH NEEDS TO BE TONED DOWN. EVERY PROGRAM, RIGHTLY OR WRONGLY, FEELS THAT THEY HAVE UNIQUE CIRCUMSTANCES THAT MAKE THEM SPECIAL AND REQUIRE SPECIAL DATA NEEDS. THEY DO NOT NEED TO BE TALKED DOWN TO.  THEY JUST NEED TO HEAR THAT MUCH OF WHAT THEY REQUIRE IS LIKLEY REQUIRED BY OTHER PROGRAMS AND THAT ANY SPECIAL DATA REQUIREMENTS CAN PROBABLY BE HANDLED BY AN EXISTING FIELD IN HPXML IF THE REQ IS CONSIDERED BROADLY ENOUGH.  IF THE REQ CAN'T BE HANDLED BY THE CURRENT HPXML, THEN THEY NEED TO UNDERSTAND THAT HPXML CAN BE REGULARLY REVISED TO ACCOUNT FOR THEIR SPECIAL NEEDS. THIS OPPORTUNITY FOR HPXML VERSION REVISION PROBABLY NEEDS TO BE DISCUSSED EARLIER ON IN THE GUIDE.]
 
 Schedule Updates to Data Requirements
 =====================================
@@ -121,12 +113,12 @@ scheduled iterative process.
 Recognize the Diverse Uses for Your Data
 ========================================
 
-Make sure that you are identifying all uses in the planning phase, so you can
-try to reduce the need to make significant  changes to the data requirements
+Make sure that you are identifying all uses in the planning phase so you can
+try to reduce the need to make significant changes to the data requirements
 later on.  This can include uses such as:
 
 * Quality assurance
-* Verification of incentive eligibility or financing
+* Verification of energy savings, incentive eligibility or financing
 * Marketing
 * Measurement and evaluation
 * Energy efficiency planning
@@ -140,7 +132,7 @@ streamlined data selection process.
 Standard Data Set Reviewing Tool
 ********************************
 
-To assist program administrators in reviewing the standard use cases, we have
+To assist program administrators in reviewing the standard use cases, we [WHO IS WE?]have
 developed a data set reviewing tool that helps identify what data points are
 currently required by these use cases.  Remember, if you don't see a data point
 you're looking for in the use cases, it can be added to meet your program's
@@ -206,17 +198,17 @@ The :ref:`datatool` will allow you to see the minimum required fields that have
 been agreed upon by BPI WG-5. In addition, you can use the Home Energy Score
 and BPI – 2101 compliant toggles. By activating these toggles, you can see
 which fields would be required if you wanted to complete a Home Energy Score or
-fill out a BPI-2101 real estate certificate.
+fill out a BPI-2101 real estate certificate. [THIS WOULD BE AN APPROPRIATE PLACE TO INCLUDE A REFERENCE TO A HPwES CERTIFICATE OF COMPLETION]
 
 The fields that are grayed out are optional and represent fields that are
 relevant in many jurisdictions, but not required. You can choose to make
 optional fields required in your jurisdiction. However, it is important to note
 that not all software products on the market collect every possible data point.
 By making some of these data points "required" it may restrict which products
-are eligible to participate or require you to provide financial assistance to
+are eligible to participate or require you to provide financial assistance [WHY NOT JUST SAY "PAY" INSTEAD OF "PROVIDE FIN ASSISTANCE"? IT SOUNDS LIKE WE ARE IN FAVOR OF GIVING SOFTWARE VENDORS HANDOUTS] to
 software vendors to code their software to to this requirement.  So it is
 important to communicate with potential software vendors and make sure to
-collect their feedback on which fields you require for your jurisdiction. BPI
+collect their feedback on which fields you require for your jurisdiction [THIS PHRASEOLOGY NEEDS TO BE ADJUSTED. THE PROCUREMENT RULES OF SOME PROGS MAY NOT ALLOW THEM TO COMMUNICATE WITH A VENDOR PRIOR TO ISSUING AN RFP FOR SOFTWARE]. BPI
 WG -5 can help facilitate that conversation in a constructive environment.
 
 Some programs with a large number of measurement-specific rebates are choosing
@@ -227,7 +219,9 @@ choose to send "optional" fields that trigger a rebate payment. This allow a
 diverse set of software products and contractor business models to participate,
 without having to be able to do everything the program may able to offer. If
 you want to choose this path, it will be important to provide clear
-specifications on which "optional" fields will trigger which rebate payments.
+specifications on which "optional" fields will trigger which rebate payments.[I DON'T UNDERSTAND THIS PARAGRAPH. PERHAPS "OPTIONAL" IS NOT THE RIGHT TERM OR SHOULD BE USED WITH ANOTHER TERM TO ENSURE CLARITY]
+
+ELY COMPLETED REVIEW UP TO THIS SECTION.  WILL COMPLETE REVIEW OF THIS FULL ELEMENT LATER.
 
 Definitions for Standard Data Sets
 **********************************
