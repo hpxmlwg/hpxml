@@ -113,4 +113,3 @@ residential.
 
 For more information on BEDES, visit:
 http://energy.gov/eere/buildings/building-energy-data-exchange-specification-bedes
-[THIS WEB ADDRESS IS NOT WORKING FOR ME.]
