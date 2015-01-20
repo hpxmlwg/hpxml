@@ -30,7 +30,7 @@ Based on the validation protocols that you have set up, and in order to check
 program compliance, a group of testers that are intimately familiar with the
 program requirements will review files in a test environment. The goal is to see
 if files submitted by the third-party software vendor are being captured in your
-program management system and that the systems is parsing the data out as
+program management system and that the system is parsing the data out as
 expected. Usually, this is completed by someone from the implementation or QA
 team.
 
@@ -54,9 +54,8 @@ environment or as a soft program launch. Using a limited number of contractors,
 you can identify any potential problems before full-scale release.
 
 It is good to designate a program representative responsible for overseeing the
-testing process.his person should be equipped to make decisions on behalf of the
+testing process. This person should be equipped to make decisions [WHAT KIND OF DECISIONS? WE DON'T WANT THE ORG CEO TO HAVE TO BE ENGAGED IN THIS ACTIVITY] on behalf of the
 program. As things are discovered during the testing process, it will be
 important to determine what needs to be fixed before launch verses addressed
 over time. This role will help ensure that the program requirements are being
-met, while keeping the project on track.  If you wait until all systems are
-performing perfectly, your launch timelines may become significantly delayed.
+met, while keeping the project on track.  
