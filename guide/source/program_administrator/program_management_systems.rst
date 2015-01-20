@@ -12,7 +12,7 @@ provide some best practice guidance for acquiring HPXML-compliant program
 management software and how to use the tools provided in this guide to assist
 in that process.
 
-Build a Clear Scope
+Build a Clear Scope [KEVIN, IS THIS SECTION IN LINE WITH WHAT WOULD BE REQUIRED/RECOMMENDED IN A QMS? IF NOT, ADD OTHER QUESTIONS/ISSUES THAT SHOULD BE ADDRESSED IN THE SOW]
 *******************
 
 Clearly outlining your business objectives and defining the dataset you want to
@@ -41,7 +41,7 @@ BPI W-5.
 
 There are also several program administrators that participate in BPI WG-5. If
 you have questions or would like to share their experiences, please reach out by
-contacting the group at Julie.Caracino@nyserda.ny.gov.
+contacting the group at Julie.Caracino@nyserda.ny.gov. [NEED DIFFERENT, GENERIC EMAIL ADDRESS HERE.]
 
 Plan for Testing and HPXML Coordination Support
 ***********************************************
