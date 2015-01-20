@@ -1,4 +1,4 @@
-Implementation Guide
+Implementation Guide [WHERE IS TRAINING FOR CONTRACTORS?  i HAVE GONE THRU ALL SECTIONS AND HAVEN'T FOUND ANYTHING RELATING TO TRAINING OF THE CONTRACTOR COMMUNITY OR OTHER MARKET ACTORS INCLUDING REAL ESTATE.]
 ####################
 
 To realize the benefits outlined above, you will need a well-designed
