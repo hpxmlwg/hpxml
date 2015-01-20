@@ -22,7 +22,7 @@ The relationships between the top level nodes are defined with
 
 The schema itself does not enforce the particular constraints for a
 :doc:`usecases/index`, but rather provides a container for all the relevant
-comonponents and a referencing scheme to relate them. 
+components and a referencing scheme to relate them. 
 
 .. _xmltransactionheader-node:
 
@@ -75,7 +75,7 @@ Contractor
 .. _customer-node:
 
 The ``Contractor`` node describes a business that the customer works with to do
-an audit or retrofit to their building. 
+an audit or upgrade [I'M AFRAID THIS CHANGE HAS TO HAPPEN GLOBALLY. WE DON'T USE "RETROFIT".] to their building. 
 
 Customer
 ========
@@ -144,5 +144,5 @@ This is to facilitate transfer of data elements not available in the standard.
    possible. Often times you will not be the only one with the need for a
    particular element that was overlooked in the standard. By participating in the
    working group and lobbying for the elements you need you can enhance the value
-   of HPXML for all parties. If everyone extends HPXML in non-standard ways, the
-   value proposition of the standard is eroded. 
+   of HPXML for all parties. [If everyone extends HPXML in non-standard ways, the
+   value proposition of the standard is eroded.] --> THIS APPEARS TO BE A FAIRLY IMPORTANT POINT. SHOULD IT BE EXPANDED UPON? PERHAPS HIGHLIGHTED? 
