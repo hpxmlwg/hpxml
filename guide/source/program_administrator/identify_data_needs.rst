@@ -230,7 +230,7 @@ Audit Use Case
 ==============
 
 The audit use case is designed for Home Performance with ENERGY STAR or whole
-house programs that complete comprehensive energy audits. This use case allows
+house programs that complete comprehensive [WHY USE THE WORD "COMPREHENSIVE" HERE? i UNDERSTAND THAT IS THE GOAL, BUT IS THERE ANY REASON A WALKTHROUGH ASSESSMENT WOULDN'T FALL UNDER THIS USE CASE? iS THERE A NEED TO SPECIFY COMPREHENSIVE?] energy audits. This use case allows
 auditors to submit their audit results and proposed scope of work for an
 eligibility review from the program. Required fields are established to help
 identify the home's existing characteristics, health and safety needs,
@@ -244,7 +244,7 @@ in the software developer guide at :ref:`auditretrofitusecase`.
 Retrofit Use Case
 =================
 
-The retrofit use case is designed to facilitate the transfer of complete home
+The retrofit use case is designed to facilitate the transfer of completed home
 performance with ENERGY STAR or whole house retrofit projects. This includes
 the pre-retrofit condition of the home and a description of the installed
 measures, as well as associated predicted savings. Required fields are
@@ -261,10 +261,10 @@ Other Use Cases
 ===============
 
 The standard use cases provided as a part of this guide are two primary use
-cases that have been developed to date.  We are also developing standard use
+cases that have been developed to date.  Standard use
 cases that identify the data points need for both BPI-2101 certificate of
-completion and the required data points to complete a DOE's HESorce. Each use
-case only uses a fraction of the HPXML standards. Over time, more use cases
+completion and the required data points to complete a DOE's HEScore are in development. Each use
+case only uses a fraction of the HPXML standards [IS "STANDARDS" THE RIGHT TERM HERE? WOULDN'T "METRICS" OR "FIELDS" OR "ELEMENTS" BE MORE APPROPRIATE?]. Over time, more use cases
 will be developed to meet market needs.
 
 A full list of HPXML data elements that can currently be incorporated into use
@@ -275,14 +275,14 @@ How to Add Data Elements
 ************************
 
 As you review the data sets and identify the fields that are required for your
-implementation, it is not uncommon to identify a data point you require that
-are not in one of the use cases or the HPXML standards as a whole. If this is
+implementation, it is possible to identify a data point you require that
+is not in one of the pre-defined use cases or the HPXML standards as a whole. If this is
 the case, BPI WG-5 can assist in adding the new data element and in identifying
-how to incorporate them into the standard.   In some cases this might include
+how to incorporate it into the standard.   In some cases this might include
 added new elements to the standard to account for data points that could be
 applicable across many jurisdictions.  However, if the data point is truly
 unique to your program, WG-5 has also introduced "measure codes" that allow us
-to assign a code for a specific measure in a specific program.  This created
+to assign a code for a specific measure in a specific program.  This
 added flexibility without needing to modify the standards in all cases.
 
 To submit a new data element for consideration, you can use the WG-5 github
@@ -295,16 +295,17 @@ immediately.  Follow the steps below to submit additional requests if needed:
    `HPXML GitHub issues page <https://github.com/hpxmlwg/hpxml/issues/>`_.
 #. Click "New Issue"
 #. Fill out the form to ask your question or make your request. No need to assign a person or milestone.
-#. Check the appropriate labels: probably "docs" and "enhancement" or "bug".
+#. Check the appropriate labels: probably "docs" and "enhancement" or "bug". [THESE THREE CATEGORIES SHOULD PROBABLY BE DEFINED SOMEWHERE. THEY ARE NOT EXPLICITLY OBVIOUS AS TO WHEN TO USE WHICH.
 #. Click "Submit New Issue".
+WHAT IF SOMEONE DOESN'T WANT TO CREATE A NEW ACCOUNT OR DOESN'T FEEL COMFORTABLE USING THE SYSTEM (AFTERALL, IT ISN'T THE EASIEST SYSTEM)? CAN THEY EMAIL THEIR ISSUE/SUGGESTION TO SOMEONE? OR, SHOULD THIS TYPE OF THING BE DISALLOWED?
 
 Once you have defined the use case you need for your jurisdiction and have
 identified all required fields, you are ready to proceed to the next step. 
 Remember, this can be an iterative process. It is good to do your due diligence
 in the planning process. However, even the best implementation plans will need
 to be modified as you get the program to market and start running a large
-number of homes through it. Make sure to schedule opportunities later in your
-implementation to check in on data requirements and adjust as needed.
+number of homes through it. [Make sure to schedule opportunities later in your
+implementation to check in on data requirements and adjust as needed.]--> THIS SHOULD BE HIGHLIGHTED. PERHAPS IN A CALL-OUT BOX.
 
 
 
