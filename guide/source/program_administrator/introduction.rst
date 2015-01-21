@@ -12,6 +12,8 @@ identify the potential for data standards in your jurisdiction and give you the
 basic guidance for developing an implementation plan that meets your program
 needs.
 
+.. _what-are-the-bpi-standards:
+
 What are the BPI Data Standards?
 ********************************
 
