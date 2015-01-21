@@ -72,10 +72,10 @@ used to generate the HPXML.
 Contractor
 ==========
 
-.. _customer-node:
-
 The ``Contractor`` node describes a business that the customer works with to do
 an audit or upgrade [I'M AFRAID THIS CHANGE HAS TO HAPPEN GLOBALLY. WE DON'T USE "RETROFIT".] to their building. 
+
+.. _customer-node:
 
 Customer
 ========
@@ -138,11 +138,20 @@ This is to facilitate transfer of data elements not available in the standard.
 
 .. warning::
 
-   Please contact BPI Working Group 5 (a.k.a. the HPXML working group) before
+   Please exercise extreme caution and discretion when you consider implementing
+   ``extension`` elements. Often times the temptation to use them happens when a
+   difference arises between the way your software and/or Home Performance
+   program represents a certain data field and the way HPXML represents it. It
+   is crucial in these cases to either map your data into HPXML or change the
+   way you represent it internally to conform to the HPXML standard. **If each
+   software vendor and Home Performance program extends HPXML in non-standard
+   ways, the value proposition of the standard is nullified.**
+
+   If there is no possible way to map your data into existing HPXML data fields,
+   please contact BPI Working Group 5 (a.k.a. the HPXML working group) before
    implementing an extension. The working group would prefer to extend the
    standard for the benefit of everyone and avoid the use of extensions wherever
    possible. Often times you will not be the only one with the need for a
-   particular element that was overlooked in the standard. By participating in the
-   working group and lobbying for the elements you need you can enhance the value
-   of HPXML for all parties. [If everyone extends HPXML in non-standard ways, the
-   value proposition of the standard is eroded.] --> THIS APPEARS TO BE A FAIRLY IMPORTANT POINT. SHOULD IT BE EXPANDED UPON? PERHAPS HIGHLIGHTED? 
+   particular element that was overlooked in the standard. By participating in
+   the working group and lobbying for the elements you need you can enhance the
+   value of HPXML for all parties.
