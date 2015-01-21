@@ -37,7 +37,7 @@ particularly important for energy-efficiency programs include:
 
 [DELETED CONTENT IS NOT IMPORTANT FOR THIS VERSION. WHEN STANDARD DATA SETS HAVE BEEN FINALIZED, THEY CAN BE MENTIONED HERE] 
 
-The standard audit and retrofit data sets are data collection and transfer
+The standard audit and upgrade data sets are data collection and transfer
 requirements that were created by existing HPXML adopters to facilitate the
 transfer of project data from third-party energy modeling tools to a program
 management database. As a collaboration between Home Performance with ENERGY STAR programs in
@@ -232,15 +232,15 @@ recommended improvements, and associated savings predictions.
 
 An example of an audit use case HPXML file can be found on the
 `HPXML GitHub repository <https://github.com/hpxmlwg/hpxml/tree/hpxmlguide/examples>`_
-and more technical description of the audit and retrofit use case can be found
-in the software developer guide at :ref:`auditretrofitusecase`.
+and more technical description of the audit and upgrade use case can be found
+in the software developer guide at :doc:`/software_developer/usecases/auditupgrade`.
 
-Retrofit Use Case
-=================
+Upgrade Use Case
+================
 
-The retrofit use case is designed to facilitate the transfer of completed home
-performance with ENERGY STAR or whole house retrofit projects. This includes
-the pre-retrofit condition of the home and a description of the installed
+The upgrade use case is designed to facilitate the transfer of completed home
+performance with ENERGY STAR or whole house upgrade projects. This includes
+the pre-upgrade condition of the home and a description of the installed
 measures, as well as associated predicted savings. Required fields are
 established to complete a full quality assurance review of all installed
 measures and determine rebate or financing eligibility. The minimum
@@ -248,8 +248,8 @@ requirements reflect those most common between all of the HPXML programs so
 far. Programs that offer more diverse rebates may need to consider changing
 "optional" fields to "required" in order to meet program needs.
 
-The retrofit use case HPXML file is very similar to the audit use case. The
-differences are detailed in :ref:`auditretrofitusecase`. 
+The upgrade use case HPXML file is very similar to the audit use case. The
+differences are detailed in :doc:`/software_developer/usecases/auditupgrade`. 
 
 Other Use Cases
 ===============

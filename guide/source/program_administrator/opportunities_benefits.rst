@@ -91,7 +91,7 @@ opportunities for HPXML that are being used by programs today:
   details about a home's characteristics using online or in-field audit tools.
   This data can then be used to guide ongoing marketing investments by
   providing recommendations to customers that are most meaningful for their
-  home and facilitate staging retrofit activities over time.
+  home and facilitate staging upgrade activities over time.
 * **Export For Local Real Estate.** Working with your local real estate and
   appraisal networks, you can identify data points and export strategies that
   work for your market. This could include publishing completion certificates,

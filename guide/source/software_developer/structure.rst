@@ -34,7 +34,7 @@ The ``XMLTransactionHeaderInformation`` element meta data about the HPXML file.
 .. code-block:: xml
 
    <XMLTransactionHeaderInformation>
-     <XMLType>auditretrofit</XMLType>
+     <XMLType>audit</XMLType>
      <XMLGeneratedBy>Housesoft 1.0</XMLGeneratedBy>
      <CreatedDateAndTime>2014-09-02T17:32:12Z</CreatedDateAndTime>
      <Transaction>create</Transaction>
@@ -73,7 +73,7 @@ Contractor
 ==========
 
 The ``Contractor`` node describes a business that the customer works with to do
-an audit or upgrade [I'M AFRAID THIS CHANGE HAS TO HAPPEN GLOBALLY. WE DON'T USE "RETROFIT".] to their building. 
+an audit or upgrade to their building. 
 
 .. _customer-node:
 
@@ -100,7 +100,7 @@ Project
 The ``Project`` node describes work that has been done or is to be done to a
 :ref:`building-node`. The measures described can have references pointing to
 specific components on the building and what was changed between the pre- and
-post-retrofit states and associated costs. 
+post-upgrade states and associated costs. 
 
 .. _utility-node:
 
@@ -125,7 +125,7 @@ Extension Elements
 ******************
 
 Because it is impossible to foresee every possible data point that will ever
-need to be collected and transmitted about a house or retrofit, most elements
+need to be collected and transmitted about a house or upgrade, most elements
 in HPXML contain an ``extension`` element containing an ``<xs:any>``
 designation. That allows any element from any namespace to be inserted there.
 This is to facilitate transfer of data elements not available in the standard. 

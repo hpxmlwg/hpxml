@@ -69,7 +69,7 @@ Draft: Standard for Home Energy Auditing Data Collection with Energy Modeling To
 
 Draft: Standard for Home Energy Job Completion Data Collection with Energy Modeling Tools
     This draft standard represents the minimum required data necessary to be
-    captured by energy modeling tools to capture during a home energy retrofit
+    captured by energy modeling tools to capture during a home energy upgrade
     and transfer by HPXML to Home Performance type programs. The standard is
     designed to promote consistency between programs and facilitate cost
     efficiency in the implementation of HPXML through alignment to a

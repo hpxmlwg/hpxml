@@ -82,8 +82,8 @@ sameas
 ======
 
 The ``sameas`` attribute is a special IDREF that is used most predominantly in
-the case of the :doc:`usecases/auditretrofit`. It serves to link components of
-buildings between the pre- and post-retrofit ``Building`` nodes. Each
+the case of the :doc:`usecases/auditupgrade`. It serves to link components of
+buildings between the pre- and post-upgrade ``Building`` nodes. Each
 ``Building`` node is a full description of the building and measures only
 affect some of the components. For components that do not change it is useful
 to have a way to indicate that they are the same item. 

@@ -16,9 +16,9 @@ very divergent. The purpose of this guide is to document the assumptions that
 are not codified in the schema that are necessary to write and interpret HPXML
 documents across platforms. [THE BPI STANDARDS OUTLINING HPXML SHOULD BE MENTIONED AROUND HERE.]
 
-The majority of the assumptions and recommendations here come from the a [WHICH ONE? THE OR A?] set of
-pilot implementations of the :ref:`Audit-Retrofit Use Case
-<auditretrofitusecase>`. This guide primarily documents lessons learned from
+The majority of the assumptions and recommendations here come from the set of
+pilot implementations in the :doc:`Audit-Upgrade Use Case
+</software_developer/usecases/auditupgrade>`. This guide primarily documents lessons learned from
 those pilots. As other use cases present themselves, this guide will be
 augmented appropriately.
 
