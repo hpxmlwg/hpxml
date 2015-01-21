@@ -288,10 +288,8 @@ immediately.  Follow the steps below to submit additional requests if needed:
 #. Go to the
    `HPXML GitHub issues page <https://github.com/hpxmlwg/hpxml/issues/>`_.
 #. Click "New Issue"
-#. Fill out the form to ask your question or make your request. No need to assign a person or milestone.
-#. Check the appropriate labels: probably "docs" and "enhancement" or "bug". [THESE THREE CATEGORIES SHOULD PROBABLY BE DEFINED SOMEWHERE. THEY ARE NOT EXPLICITLY OBVIOUS AS TO WHEN TO USE WHICH.
+#. Fill out the form to ask your question or make your request. No need to assign a person, milestone, or label.
 #. Click "Submit New Issue".
-WHAT IF SOMEONE DOESN'T WANT TO CREATE A NEW ACCOUNT OR DOESN'T FEEL COMFORTABLE USING THE SYSTEM (AFTERALL, IT ISN'T THE EASIEST SYSTEM)? CAN THEY EMAIL THEIR ISSUE/SUGGESTION TO SOMEONE? OR, SHOULD THIS TYPE OF THING BE DISALLOWED?
 
 Once you have defined the use case you need for your program and have
 identified all required fields, you are ready to proceed to the next step. 
