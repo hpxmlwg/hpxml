@@ -37,7 +37,7 @@ GitHub
 ******
 
 The HPXML schemas, example files, and this guide are all `maintained on GitHub
-<https://github.com/hpxmlwg/hpxml>`_. [WHO PAYS FOR THIS? WHO WILL ALWAYS PAY FOR THIS? I'M JUST ASKING.  DON'T INCLUDE IN DOC]You will always be able to find the latest
+<https://github.com/hpxmlwg/hpxml>`_. You will always be able to find the latest
 version of the schemas there. Additionally as the schemas evolve over time you
 can be connected to and influence that process. 
 
