@@ -4,14 +4,14 @@ Step 1: Setting Implementation Goals
 ####################################
 
 HPXML can drive a lot of value into your program. The key to delivering this
-value is to determine the goals or scope of your HPXML project as early on in
+value is to determine the goals and scope of your HPXML project as early on in
 the process as possible. To date, many programs have used HPXML as a means to
-open the modeling software market in their jurisdiction. Others have used HPXML
+open the modeling software market in their jurisdiction to multiple vendors. Others have used HPXML
 as a way to increase their ability to share information with other market
 actors, such as stakeholders in the real estate market. Regardless of your plans, it is important that you
-clearly define your objectives early, as these decisions will shapre your implementation tactics.
+clearly define your objectives early, as these decisions will shape your implementation tactics.
 
-To start, review each of the bullet points in the opportunities section above.
+To start, review each of the bullet points in the "Opportunities" section above.
 Highlight which opportunities you would like to take advantage of in your
 program implementation. For each opportunity, identify the following
 information:
@@ -33,9 +33,9 @@ information:
   program regulators may require specific project details to be reported.  Make
   sure you coordinate with local experts in these fields to identify potential
   issues.
-* **What are our priorities?** How could large, ambitious goals be phased? You
-  can achieve a lot with the data standards. However, if  you prioritize your
-  efforts and take them on in smaller chunks, it will improve budget and
+* **Which aspects of our overall goal should be prioritized?** How could large, ambitious goals be phased? You
+  can achieve a lot with the data standards. However, as with many IT projects, it may make sense to implement in phases. If you prioritize the different components of your your
+  efforts and address the most important ones first, it will improve budget and
   resource management, as well as change management. Coordination with trade
   allies and contractors is key, but creating too much change at once can put a
   lot of pressure on the industry.
