@@ -57,7 +57,7 @@ of the opportunities for contractors include:
   that growth.
 
 Program, Utility and Local Governmental Jurisdictional Opportunities
-****************************************
+********************************************************************
 
 Faster and more flexible tools can lower program costs, increase trade ally satisfaction, improve data quality,
 and drive innovation into your program. Working together with local contractors, an HPXML implementation will not only yield benefits to the program, but can assist in making the your program efforts more transparent to the larger market of residential home owners. The following are some of the
@@ -116,7 +116,7 @@ data to a variety of actors in a cost-efficient manner:
 * **National Data Repositories.** Managed by federal agencies, trade ally
   associations, or other national organizations committed to the advancement of
   energy-efficiency investments, these repositories can organize data to track
-  and quantify impacts of energy efficiency.  Efforts like the `building performance database website <http://energy.gov/eere/buildings/building-performance-database>`_ or the `Standard Energy Efficiency Data Platform <http://energy.gov/eere/buildings/standard-energy-efficiency-data-platform.`_ will not only make it easier for programs to collect and share data, but can allow the industry to compare results, improve transparency, and better identify performance drivers for program success. 
+  and quantify impacts of energy efficiency.  Efforts like the `building performance database website <http://energy.gov/eere/buildings/building-performance-database>`_ or the `Standard Energy Efficiency Data Platform <http://energy.gov/eere/buildings/standard-energy-efficiency-data-platform>`_ will not only make it easier for programs to collect and share data, but can allow the industry to compare results, improve transparency, and better identify performance drivers for program success. 
 * **Coordination with Market Research.** National research efforts, whether
   lead by the Department of Energy, universities, industry organization, or
   private companies, have struggled to get consistent and reliable data from
@@ -134,16 +134,15 @@ emerging opportunities:
   the field with an HPXML-compliant tool and transfer it to the DOE's
   application program interface (API) to generate a Home Energy Score in real
   time. This adds the value of the Home Energy Score to your program, while
-  minimizing your integration cost. For more information about Home Energy
-  Score or to get involved, go to
-  http://energy.gov/eere/buildings/home-energy-score
+  minimizing your integration cost. For more information or to get involved 
+  visit the `Home Energy Score website <http://energy.gov/eere/buildings/home-energy-score>`_.
 * **EPA ENERGY STAR® Home Advisor.** You can create a profile of home energy
   efficiency features and get a prioritized, customized list of energy-saving
   recommendations. Programs that complete on-line or in-person energy audits
   with HPXML-compliant tools will be able to allow customers to upload their
   recommendations, track their progress over time, and receive other
-  energy-saving information from the EPA. For more information go to
-  https://www.energystar.gov/campaign/assessYourHome?fuseaction=home_energy_advisor.showgetinput
+  energy-saving information from the EPA. For more information go to the
+  `Home Energy Advisor website <https://www.energystar.gov/campaign/assessYourHome?fuseaction=home_energy_advisor.showgetinput>`_.
 * **Multiple Listing Services.** Being able to accurately track energy
   efficiency improvements and make them known to potential homebuyers is a
   critical step in facilitating recognition of energy efficiency in the
@@ -152,8 +151,8 @@ emerging opportunities:
   `Real Estate Standards Organization <http://www.reso.org>`_. The multiple
   listing services, which represent the backbone of that real estate
   information industry, use RETS to maintain consistent data. For more
-  information, visit
-  http://www.bpi.org/tools_downloads.aspx?selectedTypeID=1&selectedID=143
+  information, see 
+  `BPI-2101-S-2013 Standard Requirements for a Certificate of Completion for Residential Energy Upgrades <http://www.bpi.org/tools_downloads.aspx?selectedTypeID=1&selectedID=143>`_.
 
 These are several of the recognized opportunities that have emerged to date. 
 While others are being created all the time, it is important to pick those that

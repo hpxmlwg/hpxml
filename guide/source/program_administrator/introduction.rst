@@ -113,5 +113,4 @@ as the BPI data standards are designed for single-family residences, while
 BEDES is designed to include all building types — both commercial and
 residential.
 
-For more information on BEDES, visit:
-http://energy.gov/eere/buildings/building-energy-data-exchange-specification-bedes
+For more information on visit the `BEDES website <http://energy.gov/eere/buildings/building-energy-data-exchange-specification-bedes>`_.

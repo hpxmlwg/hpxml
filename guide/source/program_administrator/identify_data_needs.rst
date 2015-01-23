@@ -1,7 +1,9 @@
 .. _step3:
 
-Step 3: Identify Your Data Needs [CAROLINE SHOULD REVIEW THIS SECTION FOR TONE ONCE REVISED]
+Step 3: Identify Your Data Needs
 ################################
+
+[CAROLINE SHOULD REVIEW THIS SECTION FOR TONE ONCE REVISED]
 
 .. contents::
 
