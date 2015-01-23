@@ -4,15 +4,14 @@ Step 1: Setting Implementation Goals
 ####################################
 
 HPXML can drive a lot of value into your program. The key to delivering this
-value is to determine the goals or scope of your HPXML project as early on in
+value is to determine the goals and scope of your HPXML project as early on in
 the process as possible. To date, many programs have used HPXML as a means to
-open the modeling software market in their program. Others have used HPXML
+open the modeling software market in their jurisdiction to multiple vendors. Others have used HPXML
 as a way to increase their ability to share information with other market
-actors, like real estate. Regardless of your plans, it is important that you
-clearly define your objectives early, as all other tactics below will need to
-reflect your decisions.
+actors, such as stakeholders in the real estate market. Regardless of your plans, it is important that you
+clearly define your objectives early, as these decisions will shape your implementation tactics.
 
-To start, review each of the bullet points in the opportunities section above.
+To start, review each of the bullet points in the "Opportunities" section above.
 Highlight which opportunities you would like to take advantage of in your
 program implementation. For each opportunity, identify the following
 information:
@@ -34,9 +33,9 @@ information:
   program regulators may require specific project details to be reported.  Make
   sure you coordinate with local experts in these fields to identify potential
   issues.
-* **What are our priorities?** How could large, ambitious goals be phased? You
-  can achieve a lot with the data standards. However, if  you prioritize your
-  efforts and take them on in smaller chunks, it will improve budget and
+* **Which aspects of our overall goal should be prioritized?** How could large, ambitious goals be phased? You
+  can achieve a lot with the data standards. However, as with many IT projects, it may make sense to implement in phases. If you prioritize the different components of your your
+  efforts and address the most important ones first, it will improve budget and
   resource management, as well as change management. Coordination with trade
   allies and contractors is key, but creating too much change at once can put a
   lot of pressure on the industry.
@@ -49,8 +48,8 @@ information:
 By thinking strategically through the questions outlined above and identifying
 of which opportunities you want to take advantage, you should be prepared to design the
 balance of your implementation plan. It can be tempting to try to achieve all
-the goals in your plan through your initial implementation. However, it is
-better to stage your plan in more manageable phases. Consider taking on
+the goals in your plan through your initial implementation. However, it is 
+often better to stage your plan in more manageable phases. Consider taking on
 opportunities that start with the local market and your direct interaction with
 contractors and trade allies. Then, as you reach steady state and feel
 confident in your implementation, you can begin to layer on additional
