@@ -6,7 +6,7 @@ efficiency programs with the implementation of the Building Performance
 Institute (BPI) BPI-2100 and BPI-2200 data standards commonly referred to as
 ("HPXML").  The adoption of these data standards offers programs a wealth of
 opportunities to grow your energy efficiency initiatives, while significantly
-reducing your costs. Combined with the companion technical guide for software
+reducing your costs. Together with the companion technical guide for software
 implementers, this document should provide you with the tools you need to
 identify the potential for data standards in your jurisdiction and give you the
 basic guidance for developing an implementation plan that meets your program
@@ -18,7 +18,7 @@ What are the BPI Data Standards?
 ********************************
 
 The BPI data standards are designed to  help you collect and transfer
-information about residential building characteristics and project information.
+information about the characteristics of residential buildings and upgrade projects.
 You can share this data with any party involved in a home performance or
 energy-efficiency program, including contractors, program administrators,
 utilities, federal agencies, and others. In addition, HPXML allows home performance data 
@@ -51,7 +51,7 @@ jurisdictions, which can be costly for software providers and contractors, BPI
 WG-5 in coordination with stakeholders from across the industry are developing the following data collection standards: 
 
 BPI-2101-S-2013: Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades
-    to identify a standard set of data elements for certificates that
+    This standard identifies a set of data elements for certificates that
     document the completion of a whole-house energy upgrade (HEU) and
     individual energy conservation measures (ECMs). The set of data elements
     required for inclusion in the certificate will provide a clear,
@@ -82,16 +82,16 @@ The Role of BPI Working Group 5
 
 BPI Working Group 5 (BPI WG-5) is a volunteer effort with representation from
 program administrators, implementers, software developers, and government
-agencies. The group is an official  Building Performance Institute committee
+agencies. The group is an official Building Performance Institute committee
 tasked with developing and maintaining standards related to the collection and
 transfer of energy efficiency and home performance-related data.  BPI WG-5 is
-responsible for maintaining the standard and works to ensure that the standards
+responsible for maintaining the standards, and it works to ensure that the standards
 can meet the needs of various market actors.  As a program administrator, you
 will want to familiarize yourself with this group, as they can serve as an
 invaluable resource to assist in the implementation of the BPI data standards,
 facilitate changes in the standard, and answer questions that you may have
 about the standards. To contact the BPI WG-5 or to get involved, email them at
-Julie.Caracino@nyserda.ny.gov. [IT WOULD BE PREFERABLE TO INCLUDE A GENERIC EMAIL ADDRESS LIKE HPXML@BPI.ORG INSTEAD OF A PERSON'S EMAIL ADDRESS IN A GUIDE LIKE THIS. OTHERWISE, WE COULD HAVE THEM GO TO HOMEPERFORMANCE@ENERGYSTAR.GOV]
+hpxml@homeperformance.org.
 
 Data Standards and the DOE's Building Energy Data Exchange Specification (BEDES)
 ********************************************************************************
