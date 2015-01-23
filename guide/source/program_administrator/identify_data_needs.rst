@@ -3,7 +3,9 @@
 Step 3: Identify Your Data Needs
 ################################
 
-[CAROLINE SHOULD REVIEW THIS SECTION FOR TONE ONCE REVISED]
+.. todo::
+
+    CAROLINE SHOULD REVIEW THIS SECTION FOR TONE ONCE REVISED
 
 .. contents::
 
@@ -37,7 +39,9 @@ particularly important for energy-efficiency programs include:
 #. Reporting a home's energy efficiency assets to the parties in real estate transactions
 #. Reporting data on program activity to DOE and other agencies
 
-[DELETED CONTENT IS NOT IMPORTANT FOR THIS VERSION. WHEN STANDARD DATA SETS HAVE BEEN FINALIZED, THEY CAN BE MENTIONED HERE] 
+..todo::
+
+    DELETED CONTENT IS NOT IMPORTANT FOR THIS VERSION. WHEN STANDARD DATA SETS HAVE BEEN FINALIZED, THEY CAN BE MENTIONED HERE
 
 The standard audit and upgrade data sets are data collection and transfer
 requirements that were created by existing HPXML adopters to facilitate the
@@ -98,7 +102,11 @@ providers).  Working with HPXML is best executed in coordination with other
 Program Sponsors to minimize the number of program-specific data fields
 required.  This will reduce costs for tool vendors, speed up the software
 approval process, and make more tools available for your program area,
-increasing competition. [THIS PARAGRAPH NEEDS TO BE TONED DOWN. EVERY PROGRAM, RIGHTLY OR WRONGLY, FEELS THAT THEY HAVE UNIQUE CIRCUMSTANCES THAT MAKE THEM SPECIAL AND REQUIRE SPECIAL DATA NEEDS. THEY DO NOT NEED TO BE TALKED DOWN TO.  THEY JUST NEED TO HEAR THAT MUCH OF WHAT THEY REQUIRE IS LIKLEY REQUIRED BY OTHER PROGRAMS AND THAT ANY SPECIAL DATA REQUIREMENTS CAN PROBABLY BE HANDLED BY AN EXISTING FIELD IN HPXML IF THE REQ IS CONSIDERED BROADLY ENOUGH.  IF THE REQ CAN'T BE HANDLED BY THE CURRENT HPXML, THEN THEY NEED TO UNDERSTAND THAT HPXML CAN BE REGULARLY REVISED TO ACCOUNT FOR THEIR SPECIAL NEEDS. THIS OPPORTUNITY FOR HPXML VERSION REVISION PROBABLY NEEDS TO BE DISCUSSED EARLIER ON IN THE GUIDE.]
+increasing competition. 
+
+.. todo::
+
+    THIS PARAGRAPH NEEDS TO BE TONED DOWN. EVERY PROGRAM, RIGHTLY OR WRONGLY, FEELS THAT THEY HAVE UNIQUE CIRCUMSTANCES THAT MAKE THEM SPECIAL AND REQUIRE SPECIAL DATA NEEDS. THEY DO NOT NEED TO BE TALKED DOWN TO.  THEY JUST NEED TO HEAR THAT MUCH OF WHAT THEY REQUIRE IS LIKLEY REQUIRED BY OTHER PROGRAMS AND THAT ANY SPECIAL DATA REQUIREMENTS CAN PROBABLY BE HANDLED BY AN EXISTING FIELD IN HPXML IF THE REQ IS CONSIDERED BROADLY ENOUGH.  IF THE REQ CAN'T BE HANDLED BY THE CURRENT HPXML, THEN THEY NEED TO UNDERSTAND THAT HPXML CAN BE REGULARLY REVISED TO ACCOUNT FOR THEIR SPECIAL NEEDS. THIS OPPORTUNITY FOR HPXML VERSION REVISION PROBABLY NEEDS TO BE DISCUSSED EARLIER ON IN THE GUIDE.
 
 Schedule Updates to Data Requirements
 =====================================
@@ -132,11 +140,15 @@ streamlined data selection process.
 Standard Data Set Reviewing Tool
 ********************************
 
-To assist program administrators in reviewing the standard use cases, we [WHO IS WE?]have
+To assist program administrators in reviewing the standard use cases, we* have
 developed a data set reviewing tool that helps identify what data points are
 currently required by these use cases.  Remember, if you don't see a data point
 you're looking for in the use cases, it can be added to meet your program's
 needs.
+
+.. todo:: 
+
+    \*WHO IS WE?
 
 The Standard Data Set Reviewing Tool is available here
 
@@ -198,7 +210,11 @@ The :ref:`datatool` will allow you to see the minimum required fields that have
 been agreed upon by BPI WG-5. In addition, you can use the Home Energy Score
 and BPI – 2101 requirement toggles. By activating these toggles, you can see
 which fields would be required if you wanted to complete a Home Energy Score or
-fill out a BPI-2101 Home Performance Certificate of Completion. [review with robin]
+fill out a BPI-2101 Home Performance Certificate of Completion.
+
+.. todo::
+
+    review with robin
 
 The fields that are grayed out are optional and represent fields that are
 relevant in many programs, but not required. You can choose to make
@@ -298,8 +314,12 @@ identified all required fields, you are ready to proceed to the next step.
 Remember, this can be an iterative process. It is good to do your due diligence
 in the planning process. However, even the best implementation plans will need
 to be modified as you get the program to market and start running a large
-number of homes through it. [Make sure to schedule opportunities later in your
-implementation to check in on data requirements and adjust as needed.]--> THIS SHOULD BE HIGHLIGHTED. PERHAPS IN A CALL-OUT BOX.
+number of homes through it. 
+
+.. note::
+
+    Make sure to schedule opportunities later in your
+    implementation to check in on data requirements and adjust as needed.
 
 
 

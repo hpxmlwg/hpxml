@@ -1,7 +1,9 @@
 Introduction
 ############
 
-[SHOULDN'T THERE BE SOME INTRODUCTION TO PROGRAMS, INCLUDING HPWES, FOR THIS AUDIENCE? WOULDN'T IT MATTER TO THEM TO KNOW FOR WHAT THE DATA WILL BE PRIMARILY (INITIALLY) USED? SIMILARLY, PERHAPS THERE IS A NEED FOR THIS TYPE OF INTRO TO THE SOFTWARE DEVELOPMENT COMMUNITY ON THE PROGRAM ADMIN GUIDE.]
+..todo:: 
+
+    SHOULDN'T THERE BE SOME INTRODUCTION TO PROGRAMS, INCLUDING HPWES, FOR THIS AUDIENCE? WOULDN'T IT MATTER TO THEM TO KNOW FOR WHAT THE DATA WILL BE PRIMARILY (INITIALLY) USED? SIMILARLY, PERHAPS THERE IS A NEED FOR THIS TYPE OF INTRO TO THE SOFTWARE DEVELOPMENT COMMUNITY ON THE PROGRAM ADMIN GUIDE.
 
 This software developer guide is designed to outline the technical details of
 getting a Home Performance XML (HPXML) implementation up and running. HPXML is
@@ -35,8 +37,7 @@ is BPI Working Group 5 (a.k.a. HPXML Working Group). Many of the current
 developers are there. They have a lot of experience in getting HPXML working and
 can help you avoid costly pitfalls.
 
-To join the working group contact `Julie Caracino
-<Julie.Caracino@nyserda.ny.gov>`_.[NEED GENERIC EMAIL HERE. NOT PERSON]
+To join the working group send an email to hpxml@homeperformance.org.
 
 GitHub
 ******

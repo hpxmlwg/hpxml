@@ -74,9 +74,11 @@ can significantly reduce your labor requirements for reviewing submitted files
 as you can focus your labor on probable errors or problem areas.  In some cases,
 you may be able to get to auto-approval on a select number of projects.
 
-[Over time you can add ever more sophisticated systems. What is most important to
-remember is that, if you launch with a very complex validation system, there is
-a high likelihood that many of the initial project submissions will fail as the
-market is still adapting to the new program environment.--> THIS SHOULD PROBABLY BE HIGHLIGHTED OR INLCUDED IN A CALL-OUT BOX.  MAYBE IT WOULD ALSO GO INTO A CHEAT-SHEET COMPANION TO THE GUIDE THAT DESCRIBES QUICKLY WHAT MAJOR THINGS A PROGRAM SHOLD LOOK AT/FOR WHEN CONSIDERING HPXML. If you take a phased
-approach, you can ease this tension and coordinate with the market to facilitate
-high-quality data transactions while reducing admin costs.  
+..note::
+
+    Over time you can add ever more sophisticated systems. What is most important to
+    remember is that, if you launch with a very complex validation system, there is
+    a high likelihood that many of the initial project submissions will fail as the
+    market is still adapting to the new program environment. If you take a phased
+    approach, you can ease this tension and coordinate with the market to facilitate
+    high-quality data transactions while reducing admin costs.  
