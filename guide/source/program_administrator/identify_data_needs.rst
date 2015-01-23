@@ -59,7 +59,7 @@ partners have agreed to transfer to date. These data points have been
 identified by the BPI WG-5 as sufficient and achievable as data collection
 requirements for third-party energy modeling tools. The BPI data standards
 support the collection and transfer of additional data points beyond these use
-cases. However, additional data may require substantive [OR SUBSTANTIAL?] changes on behalf of
+cases. However, additional data may require substantive  changes on behalf of
 the software vendors. Program administrators should be prepared for the financial
 impacts of custom data collection requests.  
 
@@ -79,12 +79,10 @@ can make you aware of potential challenges that may arise later.
 Be Aware of Data Collection Burden
 ==================================
 
-When selecting data requirements, some programs tend to err on the side of more data
-being better. It is important to remember that every data point required by the
-program costs contractors time and money to collect.  Similarly, software
+When selecting data requirements, all programs collect a prudent amount of data for program compliance and measurement and verification of results.  When choosing what data points are mandatory for your programs, it is important to remember that every data point collected has a costs contractors to collect.  Similarly, software
 vendors not only incur costs to code to custom data points, but some data points
 might be significantly outside the scope of data that a modeling tool needs to
-collect to effectively complete a energy simulation. [NEED TO BE CAREFUL WITH TONE. CANNOT COME OFF AS INSULTING TO PROGRAM ADMINS. ALSO CANNOT COME OFF AS THIS GUIDE BEING WRITTEN BY SOFTWARE VENDORS AS A TOOL TO COMPLAIN TO THE PROG COMMUNITY.] 
+collect to effectively complete a energy simulation.  Thus, it is important to collaborative with your evaluators, contractors and software vendors to identify data sets that are consistent to that being done in other programs across the country and meet the need of the program as cost efficiently as possible.   
 
 Leverage data choices made by other Program Sponsors
 ====================================================
@@ -198,30 +196,26 @@ The :ref:`datatool` will allow you to see the minimum required fields that have
 been agreed upon by BPI WG-5. In addition, you can use the Home Energy Score
 and BPI – 2101 compliant toggles. By activating these toggles, you can see
 which fields would be required if you wanted to complete a Home Energy Score or
-fill out a BPI-2101 real estate certificate. [THIS WOULD BE AN APPROPRIATE PLACE TO INCLUDE A REFERENCE TO A HPwES CERTIFICATE OF COMPLETION]
+fill out a BPI-2101 Home Performance Certificate of Completion. [review with robin]
 
 The fields that are grayed out are optional and represent fields that are
-relevant in many jurisdictions, but not required. You can choose to make
-optional fields required in your jurisdiction. However, it is important to note
+relevant in many programs, but not required. You can choose to make
+optional fields required in your program. However, it is important to note
 that not all software products on the market collect every possible data point.
 By making some of these data points "required" it may restrict which products
-are eligible to participate or require you to provide financial assistance [WHY NOT JUST SAY "PAY" INSTEAD OF "PROVIDE FIN ASSISTANCE"? IT SOUNDS LIKE WE ARE IN FAVOR OF GIVING SOFTWARE VENDORS HANDOUTS] to
-software vendors to code their software to to this requirement.  So it is
+are eligible to participate or require you to pay software vendors to code their software to to this requirement.  So it is
 important to communicate with potential software vendors and make sure to
-collect their feedback on which fields you require for your jurisdiction [THIS PHRASEOLOGY NEEDS TO BE ADJUSTED. THE PROCUREMENT RULES OF SOME PROGS MAY NOT ALLOW THEM TO COMMUNICATE WITH A VENDOR PRIOR TO ISSUING AN RFP FOR SOFTWARE]. BPI
+collect their feedback on which fields you require for your program before determining your final data requirements. BPI
 WG -5 can help facilitate that conversation in a constructive environment.
 
-Some programs with a large number of measurement-specific rebates are choosing
-to use the optional feature in a different way. Your program can use a minimum
-standard that is required for every home. However, if the contractor or
+Some programs with a large number of measure-specific rebates are choosing
+to identify data points as "optional" to allow flexibility in implementation. Your program can use a minimum
+data collection standard that is required for every home. However, if the contractor or
 software vendor wants to participate in the full spectrum of rebates, they can
 choose to send "optional" fields that trigger a rebate payment. This allow a
 diverse set of software products and contractor business models to participate,
-without having to be able to do everything the program may able to offer. If
-you want to choose this path, it will be important to provide clear
-specifications on which "optional" fields will trigger which rebate payments.[I DON'T UNDERSTAND THIS PARAGRAPH. PERHAPS "OPTIONAL" IS NOT THE RIGHT TERM OR SHOULD BE USED WITH ANOTHER TERM TO ENSURE CLARITY]
-
-ELY COMPLETED REVIEW UP TO THIS SECTION.  WILL COMPLETE REVIEW OF THIS FULL ELEMENT LATER.
+without mandating that every software and contractor support the full spectrum of rebates your program portfolio might offer. be able  to do everything the program may able to offer. If you want to choose this path, it will be important to provide clear
+specifications on which "optional" fields will trigger which rebate payments.
 
 Definitions for Standard Data Sets
 **********************************
@@ -230,7 +224,7 @@ Audit Use Case
 ==============
 
 The audit use case is designed for Home Performance with ENERGY STAR or whole
-house programs that complete comprehensive [WHY USE THE WORD "COMPREHENSIVE" HERE? i UNDERSTAND THAT IS THE GOAL, BUT IS THERE ANY REASON A WALKTHROUGH ASSESSMENT WOULDN'T FALL UNDER THIS USE CASE? iS THERE A NEED TO SPECIFY COMPREHENSIVE?] energy audits. This use case allows
+house programs that complete energy audits. This use case allows
 auditors to submit their audit results and proposed scope of work for an
 eligibility review from the program. Required fields are established to help
 identify the home's existing characteristics, health and safety needs,
@@ -264,7 +258,7 @@ The standard use cases provided as a part of this guide are two primary use
 cases that have been developed to date.  Standard use
 cases that identify the data points need for both BPI-2101 certificate of
 completion and the required data points to complete a DOE's HEScore are in development. Each use
-case only uses a fraction of the HPXML standards [IS "STANDARDS" THE RIGHT TERM HERE? WOULDN'T "METRICS" OR "FIELDS" OR "ELEMENTS" BE MORE APPROPRIATE?]. Over time, more use cases
+case only uses a fraction of the data points that the HPXML standard can support. Over time, more use cases
 will be developed to meet market needs.
 
 A full list of HPXML data elements that can currently be incorporated into use
@@ -280,7 +274,7 @@ is not in one of the pre-defined use cases or the HPXML standards as a whole. If
 the case, BPI WG-5 can assist in adding the new data element and in identifying
 how to incorporate it into the standard.   In some cases this might include
 added new elements to the standard to account for data points that could be
-applicable across many jurisdictions.  However, if the data point is truly
+applicable across many programs.  However, if the data point is truly
 unique to your program, WG-5 has also introduced "measure codes" that allow us
 to assign a code for a specific measure in a specific program.  This
 added flexibility without needing to modify the standards in all cases.
@@ -299,7 +293,7 @@ immediately.  Follow the steps below to submit additional requests if needed:
 #. Click "Submit New Issue".
 WHAT IF SOMEONE DOESN'T WANT TO CREATE A NEW ACCOUNT OR DOESN'T FEEL COMFORTABLE USING THE SYSTEM (AFTERALL, IT ISN'T THE EASIEST SYSTEM)? CAN THEY EMAIL THEIR ISSUE/SUGGESTION TO SOMEONE? OR, SHOULD THIS TYPE OF THING BE DISALLOWED?
 
-Once you have defined the use case you need for your jurisdiction and have
+Once you have defined the use case you need for your program and have
 identified all required fields, you are ready to proceed to the next step. 
 Remember, this can be an iterative process. It is good to do your due diligence
 in the planning process. However, even the best implementation plans will need

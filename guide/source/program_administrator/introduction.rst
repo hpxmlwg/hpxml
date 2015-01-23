@@ -20,7 +20,7 @@ information about residential building characteristics and project information.
 You can share this data with any party involved in a home performance or
 energy-efficiency program, including contractors, program administrators,
 utilities, federal agencies, and others. In addition, HPXML allows home performance data 
-to be seemlessly shared with the financial, real estate, insurance, and other 
+to be seamlessly shared with the financial, real estate, insurance, and other 
 appropriate industries. This gives you a standardized way to
 collect project information and to share that information to facilitate market
 growth.
@@ -29,7 +29,7 @@ The two primary data standards, BPI-2100 and BPI-2200 are closely related and
 are used together to implement HPXML:
 
 BPI-2100-S-2013: Standard for Home Performance-Related Data Transfer
-    provides requirements for an extensible markup language (XML) standard
+    provides requirements for an extensible mark-up language (XML) standard
     data transfer protocol that can be used to transfer home
     performance-related data.
 
@@ -46,7 +46,7 @@ etc.). While HPXML is capable of transferring a wide variety of data elements,
 any one program or jurisdiction will only need a small sub-set for most uses.
 To facilitate adoption of the data standards and to reduce variation between
 jurisdictions, which can be costly for software providers and contractors, BPI
-WG-5 has collaborated with programs to develop: [BECAUSE THIS IS GOING ON A FEDERAL SITE, WE HAVE TO BE SENSITIVE TO ANY OTHER ORGS WHO ARE CONDUCTING ACTIVITIES OR DEVELOPING STANDARDS OR GUIDANCE THAT COULD ALSO BE USEFUL TO STAKEHOLDERS.  IS ANYONE ELSE BEYOND BPI LIKE ACCA OR RESNET OR ASHRAE OR ANYONE ELSE DOING ANYTHING IN THIS SPACE THAT WE SHOULD BE AWARE OF AND INCLUDE IN THIS GUIDE?]
+WG-5 in coordination with stakeholders from across the industry are developing the following data collection standards: 
 
 BPI-2101-S-2013: Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades
     to identify a standard set of data elements for certificates that

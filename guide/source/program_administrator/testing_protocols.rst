@@ -54,7 +54,7 @@ environment or as a soft program launch. Using a limited number of contractors,
 you can identify any potential problems before full-scale release.
 
 It is good to designate a program representative responsible for overseeing the
-testing process. This person should be equipped to make decisions [WHAT KIND OF DECISIONS? WE DON'T WANT THE ORG CEO TO HAVE TO BE ENGAGED IN THIS ACTIVITY] on behalf of the
+testing process. This person should be equipped to make decisions regarding software requirements and functionality on behalf of the
 program. As things are discovered during the testing process, it will be
 important to determine what needs to be fixed before launch verses addressed
 over time. This role will help ensure that the program requirements are being

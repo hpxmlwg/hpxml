@@ -6,7 +6,7 @@ Step 1: Setting Implementation Goals
 HPXML can drive a lot of value into your program. The key to delivering this
 value is to determine the goals or scope of your HPXML project as early on in
 the process as possible. To date, many programs have used HPXML as a means to
-open the modelling software market in their jurisdiction. Others have used HPXML
+open the modeling software market in their program. Others have used HPXML
 as a way to increase their ability to share information with other market
 actors, like real estate. Regardless of your plans, it is important that you
 clearly define your objectives early, as all other tactics below will need to

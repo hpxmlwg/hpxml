@@ -3,12 +3,14 @@
 Step 5: Designing a Data Validation Process
 ###########################################
 
-Designing a good system for data validation is critical to capturing
+Designing a good system for data validation that automatically checks all submitted data is critical to ensuring
 high-quality data, maintaining contractor satisfaction, and streamlining quality
-assurance activities. The good news is that most of this work will e completed
+assurance activities. The good news is that most of this work will be completed
 by your software vendor. However,  you will want to undergo a thorough scoping
 exercise with your vendor to identify what types of validation checks you want
-your program software to complete [NEED TO DEFINE "DATA VALIDATION PROCESS" AS IF YOU'RE TALKING TO 8TH GRADERS. PROG CAN'T BE THOROUGH IF THEY DON'T KNOW WHAT IT MEANS OR SHOULD ENTAIL]. If done correctly, a good validation system
+your program software to complete.  For example, basic validation check ensure that all data is present and in the right format.  More advanced validation checks can ensure that  data falls with in an acceptable range for program compliance purposes or to guide quality assurance.  For example, you may be able to automate quality assurance review on health and safety results to ensure all standards are being meet.  If not meet, a user can be warned and intervene on the project. 
+
+If done correctly, a good validation system
 can speed up your process and significantly reduce cost. Badly done, it can
 increase frustration within your contractor base or yield lower-quality data.
 
@@ -30,7 +32,7 @@ validation protocols to warn contractors when a requirement has not been met.
 Once validation rules have been set, it is equally important to ensure that the
 user experience is optimized to minimize frustration and clearly communicate
 validation errors. If a contractor is not receiving clear validation error
-messaging and can [SHOULDN'T THIS SAY "CANNOT"] resolve the issue during the upload process, this can lead to
+messaging and cannot resolve the issue during the upload process, this can lead to
 a large number of phone calls and a higher technical assistance requirement resulting in greater cost to the program. If
 the process is not managed properly, it will be easy to burn out your users and
 create contractor dissatisfaction. This, of course, is not an observation
