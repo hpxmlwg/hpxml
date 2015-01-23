@@ -6,7 +6,7 @@ Step 3: Identify Your Data Needs
 .. contents::
 
 BPI-2200 defines a long list of data elements, many of which you may not need
-for your project. To determine which data points that you need, it is important
+for your project. To determine which data points that you do need, it is important
 to start with the responses that you came up with in Step 1. The goal of this
 exercise is to identify the minimum data collection requirements you need to
 meet your project goals. This means identifying what must be collected in the
@@ -52,7 +52,7 @@ STAR or whole house programs, they they can be used by other types of programs
 as well. 
 
 Even if you are not implementing a whole home program, these use cases are still
-a great place to start as numerous software vendors are already able to
+a great place to start, as several software vendors are already able to
 transfer the data required in these use cases. Any subset of data within these
 use cases will be easy to implement for existing HPXML-compliant tools. 
 
@@ -61,8 +61,7 @@ partners have agreed to transfer to date. These data points have been
 identified by the BPI WG-5 as sufficient and achievable as data collection
 requirements for third-party energy modeling tools. The BPI data standards
 support the collection and transfer of additional data points beyond these use
-cases. However, additional data may require substantive changes on behalf of
-the software vendors. Program administrators should  recognize the financial
+cases. However, additional data may require the software vendors to make significant changes to their systems. Program administrators should  recognize the financial
 impacts of custom data collection requests and consider providing financial
 assistance to software vendors to meet any customization requests, as
 appropriate.  
@@ -85,11 +84,11 @@ Be Aware of Data Collection Burden
 
 When selecting data requirements, programs tend to err on the side of more data
 being better. It is important to remember that every data point required by the
-program, costs contractor time and money to collect.  Similarly software
-vendors not only incur costs to code to custom data point, but some data point
-might significantly outside the scope of data that modeling tool needs to
-collect to effective complete a energy simulation. So try to collect only what
-you really needed and if you have data points that are unique to your program,
+program, costs contractor time and money to collect.  Similarly, software
+vendors incur costs to code to custom data points. Further, some data points
+may lie significantly outside the scope of the data that a particular modeling tool needs to
+collect to effective complete a energy simulation. So the best approach is generally to collect only what
+you really needed, and if you require data points that are unique to your program,
 it may make sense to collect those data points directly in your program
 management system or through an alternate data collection method. 
 
@@ -103,9 +102,9 @@ specification to collect data, too much customization for a program pushes the
 development costs of automation of the data collection process for that
 specific program onto other parties (software tool vendors and service
 providers).  Working with HPXML is best executed in coordination with other
-program sponsors to minimize the number of program specific  data fields
+program sponsors to minimize the number of program-specific data fields
 required.  This will reduce costs for tool vendors, speed up the software
-approval process, and make more tools available, for your program area,
+approval process, and make more tools available for your program area,
 increasing competition.
 
 Schedule Updates to Data Requirements
@@ -200,11 +199,11 @@ Required if Present
     house, but the condition might not be there in every case. For example,
     combustion safety is required only if gas appliance exists in the home.
 Optional
-    Not required by your program.
+    Not required.
 
 The :ref:`datatool` will allow you to see the minimum required fields that have
 been agreed upon by BPI WG-5. In addition, you can use the Home Energy Score
-and BPI – 2101 compliant toggles. By activating these toggles, you can see
+and BPI – 2101 requirement toggles. By activating these toggles, you can see
 which fields would be required if you wanted to complete a Home Energy Score or
 fill out a BPI-2101 real estate certificate.
 
@@ -212,12 +211,12 @@ The fields that are grayed out are optional and represent fields that are
 relevant in many jurisdictions, but not required. You can choose to make
 optional fields required in your jurisdiction. However, it is important to note
 that not all software products on the market collect every possible data point.
-By making some of these data points "required" it may restrict which products
-are eligible to participate or require you to provide financial assistance to
+Making some of these data points "required"  may restrict which products
+are eligible to participate, or may require you to provide financial assistance to
 software vendors to code their software to to this requirement.  So it is
 important to communicate with potential software vendors and make sure to
 collect their feedback on which fields you require for your jurisdiction. BPI
-WG -5 can help facilitate that conversation in a constructive environment.
+WG-5 can help facilitate that conversation in a constructive environment.
 
 Some programs with a large number of measurement-specific rebates are choosing
 to use the optional feature in a different way. Your program can use a minimum
@@ -236,7 +235,7 @@ Audit Use Case
 ==============
 
 The audit use case is designed for Home Performance with ENERGY STAR or whole
-house programs that complete comprehensive energy audits. This use case allows
+house programs that require comprehensive energy audits. This use case allows
 auditors to submit their audit results and proposed scope of work for an
 eligibility review from the program. Required fields are established to help
 identify the home's existing characteristics, health and safety needs,
@@ -256,7 +255,7 @@ the pre-retrofit condition of the home and a description of the installed
 measures, as well as associated predicted savings. Required fields are
 established to complete a full quality assurance review of all installed
 measures and determine rebate or financing eligibility. The minimum
-requirements reflect those most common between all of the HPXML programs so
+requirements reflect those most common between all of the HPXML-compliant programs so
 far. Programs that offer more diverse rebates may need to consider changing
 "optional" fields to "required" in order to meet program needs.
 
@@ -284,12 +283,12 @@ As you review the data sets and identify the fields that are required for your
 implementation, it is not uncommon to identify a data point you require that
 are not in one of the use cases or the HPXML standards as a whole. If this is
 the case, BPI WG-5 can assist in adding the new data element and in identifying
-how to incorporate them into the standard.   In some cases this might include
+how to incorporate them into the standard. In some cases this might include
 added new elements to the standard to account for data points that could be
 applicable across many jurisdictions.  However, if the data point is truly
 unique to your program, WG-5 has also introduced "measure codes" that allow us
-to assign a code for a specific measure in a specific program.  This created
-added flexibility without needing to modify the standards in all cases.
+to assign a code for a specific measure in a specific program.  This creates
+added flexibility, so that it is not necessary to modify the standards in all cases.
 
 To submit a new data element for consideration, you can use the WG-5 github
 account.  This way all members can see your recommendations and address them
