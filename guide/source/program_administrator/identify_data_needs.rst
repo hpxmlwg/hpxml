@@ -190,7 +190,7 @@ This also provides flexibility to receive the same data in multiple formats. For
 example, air leakage could be represented in CFM50, ACH or ACH50.
 
 Setting the Program's Data Requirement Level
-***************************************************
+********************************************
 
 The program administrator's main task in this step is to determine the
 data element "requirement level."  In each of the use cases, there are
