@@ -42,7 +42,7 @@ of the opportunities for contractors include:
   the use of HPXML and the data set required between program or utility jurisdictions,
   the more that makers of these tools can focus their investments to provide new and
   innovative functionality to improve the contractor experience and reduce the
-  cost to use the tools.  For example, contractors participating Arizona Public Service's Home Performance with ENERGY STAR|reg| program, experienced on average a 31% reduction in administrative time after the program's implementation of HPXML. 
+  cost to use the tools.  For example, contractors participating Arizona Public Service's Home Performance with ENERGY STAR\ |reg| program, experienced on average a 31% reduction in administrative time after the program's implementation of HPXML. 
 * **Improved Sales Tools.** HPXML-compliant software tools offer a wide range
   of sales tools that can enable contractors to offer a more customizable
   experience aligned with their customer's needs.  This can help increase
