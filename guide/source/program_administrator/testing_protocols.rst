@@ -4,7 +4,7 @@ Step 6: Implementing Testing Protocols
 ######################################
 
 With every new HPXML program launch, there are a number of testing activities
-that need to happen to maximize the opportunity for success. Be sure to plan
+that need to happen to maximize your opportunity for success. Be sure to plan
 for at least a couple of months of testing. Work with the software community to
 schedule each stage of testing. Make sure that you schedule time for your staff
 to focus on this activity. If you can set a clear plan for testing early on, and
@@ -54,9 +54,9 @@ environment or as a soft program launch. Using a limited number of contractors,
 you can identify any potential problems before full-scale release.
 
 It is good to designate a program representative responsible for overseeing the
-testing process. This person should be equipped to make decisions on behalf of the
+testing process.his person should be equipped to make decisions on behalf of the
 program. As things are discovered during the testing process, it will be
-important to determine what needs to be fixed before launch verses what will be addressed
+important to determine what needs to be fixed before launch verses addressed
 over time. This role will help ensure that the program requirements are being
 met, while keeping the project on track.  If you wait until all systems are
-performing perfectly, your launch timeline may become significantly delayed.
+performing perfectly, your launch timelines may become significantly delayed.
