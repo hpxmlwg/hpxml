@@ -5,11 +5,11 @@ This guide is designed to assist program administrators of residential energy
 efficiency programs with the implementation of the Building Performance
 Institute (BPI) BPI-2100 and BPI-2200 data standards commonly referred to as
 ("HPXML").  The adoption of these data standards offers programs a wealth of
-opportunities to grow your energy efficiency initiatives, while significantly
-reducing your costs. Together with the companion technical guide for software
-implementers, this document should provide you with the tools you need to
-identify the potential for data standards in your jurisdiction and give you the
-basic guidance for developing an implementation plan that meets your program
+opportunities to grow energy efficiency initiatives, while significantly
+reducing costs. Together with the companion technical guide for software
+implementers, this document should provide the tools needed to
+identify the potential for data standards in your jurisdiction and provide the
+basic guidance for developing an implementation plan to meet program
 needs.
 
 .. _what-are-the-bpi-standards:
@@ -17,13 +17,13 @@ needs.
 What are the BPI Data Standards?
 ********************************
 
-The BPI data standards are designed to  help you collect and transfer
+The BPI data standards are designed to help collect and transfer
 information about the characteristics of residential buildings and upgrade projects.
-You can share this data with any party involved in a home performance or
+Thid data can be shared this data with any party involved in a home performance or
 energy-efficiency program, including contractors, program administrators,
 utilities, federal agencies, and others. In addition, HPXML allows home performance data 
 to be seamlessly shared with the financial, real estate, insurance, and other 
-appropriate industries. This gives you a standardized way to
+appropriate industries. This gives a standardized way to
 collect project information and to share that information to facilitate market
 growth.
 
@@ -41,7 +41,7 @@ BPI-2200-S-2013: Standard for Home Performance-Related Data Collection
     the data elements defined in BPI-2200 can be transferred using HPXML via
     the methodology outlined in BPI-2100.    
 
-BPI is developing additional data collection standards, each of which specify a
+BPI is developing additional data collection standards, each of which specifies a
 set of data elements to be collected at specific points during the
 implementation of an energy efficiency program (e.g. the audit, test out, QA,
 etc.). While HPXML is capable of transferring a wide variety of data elements,
@@ -71,7 +71,7 @@ Draft: Standard for Home Energy Auditing Data Collection with Energy Modeling To
 
 Draft: Standard for Home Energy Job Completion Data Collection with Energy Modeling Tools
     This draft standard represents the minimum required data necessary to be
-    captured by energy modeling tools to capture during a home energy upgrade
+    captured by energy modeling tools during a home energy upgrade
     and transfer by HPXML to Home Performance type programs. The standard is
     designed to promote consistency between programs and facilitate cost
     efficiency in the implementation of HPXML through alignment to a
@@ -89,8 +89,7 @@ responsible for maintaining the standards, and it works to ensure that the stand
 can meet the needs of various market actors.  As a program administrator, you
 will want to familiarize yourself with this group, as they can serve as an
 invaluable resource to assist in the implementation of the BPI data standards,
-facilitate changes in the standard, and answer questions that you may have
-about the standards. To contact the BPI WG-5 or to get involved, email them at
+facilitate changes in the standard, and answer questions about the standards. To contact the BPI WG-5 or to get involved, email them at
 hpxml@homeperformance.org.
 
 Data Standards and the DOE's Building Energy Data Exchange Specification (BEDES)
@@ -107,7 +106,7 @@ activities that help stakeholders make energy investment decisions, track
 building performance, and implement energy-efficient policies and programs.
 
 Since the initiation of the BEDES effort, BPI WG-5 and representatives from the
-DOE have coordinated efforts in order to maintain interoperability between the
+DOE have coordinated efforts to maintain interoperability between the
 two standards.  The primary difference between the two efforts is one of scope,
 as the BPI data standards are designed for single-family residences, while
 BEDES is designed to include all building types — both commercial and

@@ -5,19 +5,19 @@ Implementation Guide
 
     WHERE IS TRAINING FOR CONTRACTORS?  i HAVE GONE THRU ALL SECTIONS AND HAVEN'T FOUND ANYTHING RELATING TO TRAINING OF THE CONTRACTOR COMMUNITY OR OTHER MARKET ACTORS INCLUDING REAL ESTATE.
 
-To realize the benefits outlined above, you will need a well-designed
-implementation plan.  The following sections will walk you through best
+To realize the benefits outlined above, a well-designed
+implementation plan is necessary.  The following sections will walk you through best
 practices in implementing HPXML and provide guidance that can serve as a
 starting point for an implementation plan in your jurisdiction.
 
 It is important to recognize that each jurisdiction will have different goals,
-market needs, and regulatory requirements that will influence the scope of your
+market needs, and regulatory requirements that will influence the scope of the
 HPXML project. However, you can still leverage the efforts other market actors
-have already made in implementing HPXML. This can lower your individual
+have already made in implementing HPXML. This can lower individual
 implementation costs and will help to drive alignment between jurisdictions. The
-following "steps to HPXML implementation" are designed to help you best
-leverage existing efforts, while also making sure that you meet the individual
-needs of your jurisdiction.
+following "steps to HPXML implementation" are designed to help 
+leverage existing efforts, while also making sure that individual
+jurisdiction needs are met.
 
 Steps to HPXML Implementation
 *****************************
