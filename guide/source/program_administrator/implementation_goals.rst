@@ -8,8 +8,9 @@ value is to determine the goals or scope of your HPXML project as early on in
 the process as possible. To date, many programs have used HPXML as a means to
 open the modeling software market in their jurisdiction. Others have used HPXML
 as a way to increase their ability to share information with other market
-actors, such as stakeholders in the real estate market. Regardless of your plans, it is important that you
-clearly define your objectives early, as these decisions will shapre your implementation tactics.
+actors, like real estate. Regardless of your plans, it is important that you
+clearly define your objectives early, as all other tactics below will need to
+reflect your decisions.
 
 To start, review each of the bullet points in the opportunities section above.
 Highlight which opportunities you would like to take advantage of in your
@@ -48,10 +49,11 @@ information:
 By thinking strategically through the questions outlined above and identifying
 what opportunities you want to take on, you should be prepared to design the
 balance of your implementation plan. It can be tempting to try to achieve all
-the goals in your plan through your initial implementation. However, it is 
-often better to stage your plan in more manageable phases. Consider taking on
+the goals in your plan through your initial implementation. However, it is
+better to stage your plan in more manageable phases. Consider taking on
 opportunities that start with the local market and your direct interaction with
-contractors and trade allies. Then, as your implementation reaches steady state, you can begin to layer take on additional
+contractors and trade allies. Then, as you reach steady state and feel
+confident in your implementation, you can begin to layer take on additional
 phases and efforts?
 
 
