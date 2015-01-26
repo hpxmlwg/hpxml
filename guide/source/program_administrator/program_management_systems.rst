@@ -3,11 +3,11 @@
 Step 4: Procuring or Modifying Program Management Systems
 #########################################################
 
-Procurement of a HPXML-compliant program management system or modification of
-your existing system to be HPXML compliant is a critical juncture for every
+Procurement of an HPXML-compliant program management system or modification of
+an existing system to be HPXML compliant is a critical juncture for every
 HPXML implementation. The cost and scope of this endeavor will be largely
-dictated by the business objective(s) that you establish in :ref:`step1` and how you
-want to use the data that you defined in :ref:`step3`. The following section will
+dictated by the business objective(s) established in :ref:`step1` and 
+the data use defined in :ref:`step3`. The following section will
 provide some best practice guidance for acquiring HPXML-compliant program
 management software and how to use the tools provided in this guide to assist
 in that process.
@@ -16,12 +16,12 @@ Build a Clear Scope
 *******************
 
 Clearly outlining your business objectives and defining the dataset you want to
-use are two large steps toward building an accurate scope of work to inform you
+use are two large steps toward building an accurate scope of work to inform your
 procurement process.  Within your business objectives, it will be important to
 define how you want the data to work for your program. Here are some examples
 of items to discuss:
 
-* Are you using the system to qualify projects for incentive or financing?
+* Are you using the system to qualify projects for incentives or financing?
 * What kind of quality assurance do you want to do?
 
   * How much QA automation do you want to include in the system?
@@ -35,7 +35,7 @@ of items to discuss:
 Leverage HPXML Experience
 *************************
 
-In procuring from a software provider, make sure to consider their HPXML
+In procuring a software provider, make sure to consider their HPXML
 experience — including prior implementations of HPXML and participation in the
 BPI W-5.
 

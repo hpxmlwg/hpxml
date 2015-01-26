@@ -1,15 +1,15 @@
 .. _step3:
 
-Step 3: Identify Your Data Needs
+Step 3: Identify Data Needs
 ################################
 
 .. contents::
 
-BPI-2200 defines a long list of data elements, many of which you may not need
-for your project. To determine which data points that you need, it is important
-to start with the responses that you came up with in Step 1. The goal of this
-exercise is to identify the minimum data collection requirements you need to
-meet your project goals. This means identifying what must be collected in the
+BPI-2200 defines a long list of data elements, many of which may not be needed
+for your project. To determine which data points are needed, it is important
+to start with the responses received in Step 1. The goal of this
+exercise is to identify the minimum data collection requirements needed to
+meet project goals. This means identifying what must be collected in the
 field, what must be transferred to your program management system, and what you
 are transferring/reporting to others, when applicable. The good news is that
 BPI WG-5 has coordinated with multiple programs across the country to develop
@@ -48,21 +48,20 @@ are well suited for a wide range of program types, climate zones, and
 implementation models.
 
 Although these standards are being developed for Home Performance with ENERGY
-STAR or whole house programs, they they can be used by other types of programs
+STAR or whole house programs, they can be used by other types of programs
 as well. 
 
-Even if you are not implementing a whole home program, these use cases are still
+Even if implementation is not for a whole home program, these use cases are still
 a great place to start as numerous software vendors are already able to
 transfer the data required in these use cases. Any subset of data within these
 use cases will be easy to implement for existing HPXML-compliant tools. 
 
-The standard use cases also represent the required fields that implementation
+Standard use cases also represent the required fields that implementation
 partners have agreed to transfer to date. These data points have been
 identified by the BPI WG-5 as sufficient and achievable as data collection
 requirements for third-party energy modeling tools. The BPI data standards
 support the collection and transfer of additional data points beyond these use
-cases. However, additional data may require substantive changes on behalf of
-the software vendors. Program administrators should  recognize the financial
+cases. However, additional data may require software vendors to make substantive changes. Program administrators should recognize the financial
 impacts of custom data collection requests and consider providing financial
 assistance to software vendors to meet any customization requests, as
 appropriate.  
@@ -76,54 +75,54 @@ Data Selection Best Practices
 Be Transparent with Stakeholders
 ================================
 
-Especially with your contractors and software
-vendors. By identifying your program needs early in the processes, stakeholders
+It is especially important to be transparent with your contractors and software
+vendors. By identifying your program needs early in the process, stakeholders
 can make you aware of potential challenges that may arise later.
 
 Be Aware of Data Collection Burden
 ==================================
 
-When selecting data requirements, programs tend to err on the side of more data
-being better. It is important to remember that every data point required by the
-program, costs contractor time and money to collect.  Similarly software
-vendors not only incur costs to code to custom data point, but some data point
-might significantly outside the scope of data that modeling tool needs to
-collect to effective complete a energy simulation. So try to collect only what
-you really needed and if you have data points that are unique to your program,
+When selecting data requirements, programs tend to err on the side of more data.
+It is important to remember that every data point required by the
+program costs contractor time and money to collect.  Similarly software
+vendors not only incur costs to code to custom data points, but some data points
+might fall significantly outside the scope of data that modeling tools need to
+collect to effectively complete an energy simulation. So try to collect only what
+is really needed and if data points are unique to your program,
 it may make sense to collect those data points directly in your program
 management system or through an alternate data collection method. 
 
 Leverage data choices made by other program sponsors
 ====================================================
 
-HPXML is easily extensible and therefore can be customized to the very specific
+HPXML is easily extensible and therefore can be customized to the specific
 needs of a program.  But program sponsors need to remember that they are not
-the only member of the data management system.  When a program is using a data
-specification to collect data, too much customization for a program pushes the
+the only member of the data management system.  When a program is using a
+specification to collect data, too much customization pushes the
 development costs of automation of the data collection process for that
 specific program onto other parties (software tool vendors and service
 providers).  Working with HPXML is best executed in coordination with other
-program sponsors to minimize the number of program specific  data fields
+program sponsors to minimize the number of program specific data fields
 required.  This will reduce costs for tool vendors, speed up the software
-approval process, and make more tools available, for your program area,
+approval process, and make more tools available for program areas,
 increasing competition.
 
 Schedule Updates to Data Requirements
 =====================================
 
 Software developers tend to work in phases to control releases of their
-software. It is important to set a specification that software vendors need to
+software. It is important to specify that software vendors need to
 meet and schedule regular updates once or twice a year. Constantly changing the
-requirements as you find issues can generate frustration, add costs, and create
-challenges in software versioning control. Be as regimented as you can with a
+requirements as issues are found can generate frustration, add costs, and create
+challenges in software version control. Be as regimented as possible with a
 scheduled iterative process.
 
 Recognize the Diverse Uses for Your Data
 ========================================
 
-Make sure that you are identifying all uses in the planning phase, so you can
-try to reduce the need to make significant  changes to the data requirements
-later on.  This can include uses such as:
+Be sure to identify all uses in the planning phase
+to reduce the need to make significant changes to the data requirements
+later.  This can include uses such as:
 
 * Quality assurance
 * Verification of incentive eligibility or financing
@@ -132,7 +131,7 @@ later on.  This can include uses such as:
 * Energy efficiency planning
 * Real estate valuation
 
-Adopting all of these best practices should assist you in establishing a
+Adopting all of these best practices will assist in establishing a
 streamlined data selection process.
 
 .. _datatool:
@@ -140,10 +139,10 @@ streamlined data selection process.
 Standard Data Set Reviewing Tool
 ********************************
 
-To assist program administrators in reviewing the standard use cases, we have
-developed a data set reviewing tool that helps identify what data points are
-currently required by these use cases.  Remember, if you don't see a data point
-you're looking for in the use cases, it can be added to meet your program's
+To assist program administrators in reviewing the standard use cases,
+a data set reviewing tool was developed that helps identify what data points are
+currently required by these use cases.  Remember, if a data point
+is not in the use cases, it can be added to meet the program's
 needs.
 
 The Standard Data Set Reviewing Tool is available here
@@ -151,13 +150,13 @@ The Standard Data Set Reviewing Tool is available here
 Understanding the HPXML Data Structure
 **************************************
 
-In the reviewing tool you will notice the following descriptors for each data
+In the reviewing tool, notice the following descriptors for each data
 point:
 
 Data Category 
     A general description of the information at the building characteristic
     or contact information level. Note: Insulation has several data categories,
-    depending on the insulating plane. For example, are you referring to
+    depending on the insulating plane. For example, referencing
     insulation installed on the attic floor "Attic Floor Insulation" or on the
     bottom of the roof deck "Attic Roof Insulation."
 Data Element 
@@ -184,11 +183,11 @@ describe an air leakage measurement, such as 2000 CFM\ :sub:`50`:
 This also provides flexibility to receive the same data in multiple formats. For
 example, air leakage could be represented in CFM50, ACH or ACH50.
 
-Setting the Data Requirement Level for Your Program
+Setting the Program's Data Requirement Level
 ***************************************************
 
-As the program administrator, your main task in this step is to determine the
-data element "requirement level."  In each of the use cases, you will find
+The program administrator's main task in this step is to determine the
+data element "requirement level."  In each of the use cases, there are
 three requirement levels:
 
 Required
@@ -198,9 +197,9 @@ Required
 Required if Present   
     It is mandatory to collect and transfer if the condition exists in the
     house, but the condition might not be there in every case. For example,
-    combustion safety is required only if gas appliance exists in the home.
+    combustion safety is required only if a gas appliance exists in the home.
 Optional
-    Not required by your program.
+    Not required by the program.
 
 The :ref:`datatool` will allow you to see the minimum required fields that have
 been agreed upon by BPI WG-5. In addition, you can use the Home Energy Score
@@ -208,13 +207,13 @@ and BPI – 2101 compliant toggles. By activating these toggles, you can see
 which fields would be required if you wanted to complete a Home Energy Score or
 fill out a BPI-2101 real estate certificate.
 
-The fields that are grayed out are optional and represent fields that are
+The grayed out fields are optional and represent fields that are
 relevant in many jurisdictions, but not required. You can choose to make
 optional fields required in your jurisdiction. However, it is important to note
 that not all software products on the market collect every possible data point.
-By making some of these data points "required" it may restrict which products
+Making some of these data points "required" may restrict which products
 are eligible to participate or require you to provide financial assistance to
-software vendors to code their software to to this requirement.  So it is
+software vendors to code their software for this requirement.  So it is
 important to communicate with potential software vendors and make sure to
 collect their feedback on which fields you require for your jurisdiction. BPI
 WG -5 can help facilitate that conversation in a constructive environment.
@@ -223,10 +222,10 @@ Some programs with a large number of measurement-specific rebates are choosing
 to use the optional feature in a different way. Your program can use a minimum
 standard that is required for every home. However, if the contractor or
 software vendor wants to participate in the full spectrum of rebates, they can
-choose to send "optional" fields that trigger a rebate payment. This allow a
+choose to send "optional" fields that trigger a rebate payment. This allows a
 diverse set of software products and contractor business models to participate,
-without having to be able to do everything the program may able to offer. If
-you want to choose this path, it will be important to provide clear
+without having to be able to do everything the program may offer. If
+choosing this path, it will be important to provide clear
 specifications on which "optional" fields will trigger which rebate payments.
 
 Definitions for Standard Data Sets
@@ -267,9 +266,9 @@ Other Use Cases
 ===============
 
 The standard use cases provided as a part of this guide are two primary use
-cases that have been developed to date.  We are also developing standard use
-cases that identify the data points need for both BPI-2101 certificate of
-completion and the required data points to complete a DOE's HESorce. Each use
+cases that have been developed to date.  Standard use
+cases that identify the data points needed for both BPI-2101 certificate of
+completion and the required data points to complete a DOE's HESorce are also being developed. Each use
 case only uses a fraction of the HPXML standards. Over time, more use cases
 will be developed to meet market needs.
 
@@ -280,36 +279,36 @@ cases is available in the
 How to Add Data Elements
 ************************
 
-As you review the data sets and identify the fields that are required for your
+As you review the data sets and identify the fields that are required for 
 implementation, it is not uncommon to identify a data point you require that
-are not in one of the use cases or the HPXML standards as a whole. If this is
+is not in one of the use cases or the HPXML standards as a whole. If this is
 the case, BPI WG-5 can assist in adding the new data element and in identifying
-how to incorporate them into the standard.   In some cases this might include
-added new elements to the standard to account for data points that could be
+how to incorporate it into the standard.   In some cases this might include
+adding new elements to the standard to account for data points that could be
 applicable across many jurisdictions.  However, if the data point is truly
-unique to your program, WG-5 has also introduced "measure codes" that allow us
-to assign a code for a specific measure in a specific program.  This created
+unique to your program, WG-5 has also introduced "measure codes" that allow 
+a code to be assigned for a specific measure in a specific program.  This creates
 added flexibility without needing to modify the standards in all cases.
 
 To submit a new data element for consideration, you can use the WG-5 github
 account.  This way all members can see your recommendations and address them
 immediately.  Follow the steps below to submit additional requests if needed:
 
-#. If you have not already, sign up for a user account on
+#. Sign up for a user account on
    `GitHub <https://github.com>`_.
 #. Go to the
    `HPXML GitHub issues page <https://github.com/hpxmlwg/hpxml/issues/>`_.
 #. Click "New Issue"
-#. Fill out the form to ask your question or make your request. No need to assign a person or milestone.
+#. Fill out the form to ask a question or make a request. No need to assign a person or milestone.
 #. Check the appropriate labels: probably "docs" and "enhancement" or "bug".
 #. Click "Submit New Issue".
 
-Once you have defined the use case you need for your jurisdiction and have
+Once you have defined the use case needed for your jurisdiction and have
 identified all required fields, you are ready to proceed to the next step. 
-Remember, this can be an iterative process. It is good to do your due diligence
+Remember, this can be an iterative process. It is good to do due diligence
 in the planning process. However, even the best implementation plans will need
-to be modified as you get the program to market and start running a large
-number of homes through it. Make sure to schedule opportunities later in your
+to be modified as the program goes to market and a large
+number of homes start running through it. Make sure to schedule opportunities later in your
 implementation to check in on data requirements and adjust as needed.
 
 
