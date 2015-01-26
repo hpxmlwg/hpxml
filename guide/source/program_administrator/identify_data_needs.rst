@@ -39,7 +39,7 @@ particularly important for energy-efficiency programs include:
 #. Reporting a home's energy efficiency assets to the parties in real estate transactions
 #. Reporting data on program activity to DOE and other agencies
 
-..todo::
+.. todo::
 
     DELETED CONTENT IS NOT IMPORTANT FOR THIS VERSION. WHEN STANDARD DATA SETS HAVE BEEN FINALIZED, THEY CAN BE MENTIONED HERE
 
@@ -151,6 +151,10 @@ needs.
     \*WHO IS WE?
 
 The Standard Data Set Reviewing Tool is available here
+
+.. todo::
+
+    Need to include the Excel spreadsheet tool.
 
 Understanding the HPXML Data Structure
 **************************************

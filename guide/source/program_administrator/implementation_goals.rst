@@ -11,7 +11,7 @@ as a way to increase their ability to share information with other market
 actors, such as stakeholders in the real estate market. Regardless of your plans, it is important that you
 clearly define your objectives early, as these decisions will shape your implementation tactics.
 
-To start, review each of the bullet points in the "Opportunities" section above.
+To start, review each of the bullet points in the :doc:`opportunities_benefits` section.
 Highlight which opportunities you would like to take advantage of in your
 program implementation. For each opportunity, identify the following
 information:
