@@ -3,19 +3,11 @@
 Step 2: Coordination with Trade Allies and Software Vendors
 ###########################################################
 
-<<<<<<< HEAD
-HPXML can be a powerful tool to facilitate trade ally/contractor choice in
+HPXML can be a powerful tool to facilitate trade ally/contractor's choice in
 software systems, while delivering consistent and reliable data. It provides a
 great opportunity to improve contractor satisfaction and operational
 efficiency. However, it is important to establish a means to collect feedback from
-both your trade allies and the software community throughout the process. To
-=======
-HPXML can be a powerful tool to facilitate trade ally/contractor's choice in
-software systems, while delivering consistent and reliable data. This is a
-great opportunity to improve contractor satisfaction and operational
-efficiency, but it is important to establish a means to collect feedback from
 both trade allies and the software community throughout the process. To
->>>>>>> Changes to reduce informality of copy.
 start you will want to collect feedback and cultivate support for the HPXML
 goals you established in :ref:`step1`.
 
