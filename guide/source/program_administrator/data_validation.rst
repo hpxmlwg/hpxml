@@ -74,7 +74,7 @@ can significantly reduce your labor requirements for reviewing submitted files
 as you can focus your labor on probable errors or problem areas.  In some cases,
 you may be able to get to auto-approval on a select number of projects.
 
-..note::
+.. note::
 
     Over time you can add even more sophisticated systems. What is most important to
     remember is that, if you launch with a very complex validation system, there is
