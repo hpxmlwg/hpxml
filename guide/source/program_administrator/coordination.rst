@@ -30,12 +30,8 @@ Identifying a representative group of trade allies that can assist throughout
 the process will be key in later steps of the implementation plan. Many
 successfully implemented programs have coordinated with contractors
 by setting up regular meetings, hosting dinners to collect feedback, or
-working closely with representatives from their local trade associations, such
-as Efficiency First. 
-
-.. todo::
-
-    OBVIOUSLY EF SHOULD BE MENTIONED HERE. HOWEVER, THIS DOC IS FEELING VERY HEAVILY FOCUSED ON HOME PERFORMANCE, AND NOT MUCH ON OTHER ASPECTS OF RESIDENTIAL EE.PERHAPS IT WOULD BE PRUDENT TO INCLUDE ACCA, NAIMA, CIMA, SMACNA, AND/OR OTHER TRADE ASSOCIATIONS THAT REP TRADES THAT ARE NOT FOCUSED ON HP BUT ARE STILL IN RES EE (THIS MIGHT BE WORTH A CONVERSATION TO BE POLITICALLY SENSITIVE BUT NOT OVERLY INCLUSIVE). A SPRINKLING OF REFERENCES TO OTHER RES EE EFFORTS DISTINCT FROM HP AROUND THE GUIDE WOULD BE HELPFUL, AS WELL
+working closely with representatives from local trade associations, such
+as Efficiency First, ACCA, NIAMA, SMACNA, and/or other trade associations. 
 
 Software Vendor Coordination
 ****************************
@@ -46,8 +42,7 @@ vendors that are currently coding to HPXML. As many of these vendors have
 implemented in other jurisdictions, they offer valuable support for the
 planning process.
 
-If you are opening the market to multiple modeling software tools, for example, it is important to be familiar yourself with each of the different HPXML-compliant energy
-modeling software tools that are available in the market [THIS MAY BE A TALL ORDER AND POSSIBLY BEYOND THE CAPABILITIES/CAPACITY OF SOME SMALLER PROGRAMS. WE CAN'T MAKE IT SEEM THAT INTEGRATING HPXML IS A VERY HEAVY LIFT.  NEEDS TO BE PERCEIVED AS INTENSE BUT MANAGEABLE] . Each vendor takes a
+If you are opening the market to multiple modeling software tools, for example, it is important to familiarize yourself with the different HPXML-compliant energy modeling software tools.  Taking a demo from each of the vendors is a good place to start and gain a general understanding of how their tools work.  Each vendor takes a
 different approach, which promotes innovation and helps contractors deliver
 high-quality proposals and energy savings feedback to customers. That said, it
 is important to understand what the market is prepared to deliver from a

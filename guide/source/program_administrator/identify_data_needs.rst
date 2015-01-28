@@ -107,7 +107,7 @@ increasing competition.
 
 .. todo::
 
-    THIS PARAGRAPH NEEDS TO BE TONED DOWN. EVERY PROGRAM, RIGHTLY OR WRONGLY, FEELS THAT THEY HAVE UNIQUE CIRCUMSTANCES THAT MAKE THEM SPECIAL AND REQUIRE SPECIAL DATA NEEDS. THEY DO NOT NEED TO BE TALKED DOWN TO.  THEY JUST NEED TO HEAR THAT MUCH OF WHAT THEY REQUIRE IS LIKLEY REQUIRED BY OTHER PROGRAMS AND THAT ANY SPECIAL DATA REQUIREMENTS CAN PROBABLY BE HANDLED BY AN EXISTING FIELD IN HPXML IF THE REQ IS CONSIDERED BROADLY ENOUGH.  IF THE REQ CAN'T BE HANDLED BY THE CURRENT HPXML, THEN THEY NEED TO UNDERSTAND THAT HPXML CAN BE REGULARLY REVISED TO ACCOUNT FOR THEIR SPECIAL NEEDS. THIS OPPORTUNITY FOR HPXML VERSION REVISION PROBABLY NEEDS TO BE DISCUSSED EARLIER ON IN THE GUIDE.
+    THIS PARAGRAPH NEEDS TO BE TONED DOWN. EVERY PROGRAM, RIGHTLY OR WRONGLY, FEELS THAT THEY HAVE UNIQUE CIRCUMSTANCES THAT MAKE THEM SPECIAL AND REQUIRE SPECIAL DATA NEEDS. THEY DO NOT NEED TO BE TALKED DOWN TO.  THEY JUST NEED TO HEAR THAT MUCH OF WHAT THEY REQUIRE IS LIKLEY REQUIRED BY OTHER PROGRAMS AND THAT ANY SPECIAL DATA REQUIREMENTS CAN PROBABLY BE HANDLED BY AN EXISTING FIELD IN HPXML IF THE REQ IS CONSIDERED BROADLY ENOUGH.  IF THE REQ CAN'T BE HANDLED BY THE CURRENT HPXML, THEN THEY NEED TO UNDERSTAND THAT HPXML CAN BE REGULARLY REVISED TO ACCOUNT FOR THEIR SPECIAL NEEDS. THIS OPPORTUNITY FOR HPXML VERSION REVISION PROBABLY NEEDS TO BE DISCUSSED EARLIER ON IN THE GUIDE. [NOEL I MADE THIS FIX IN A PRIVIOUS PATCH. CAN YOU HELP ME FIND IT?]
 
 Schedule Updates to Data Requirements
 =====================================
@@ -270,15 +270,20 @@ far. Programs that offer more diverse rebates may need to consider changing
 The upgrade use case HPXML file is very similar to the audit use case. The
 differences are detailed in :doc:`/software_developer/usecases/auditupgrade`. 
 
+Home Energy Score Use Cases
+===========================
+
+The Home Energy Score use case defines the minimum data set required by the DOE's Home Energy Score tool, in order to properly generate the 1 to 10 score.  These data point are clearly identified in the data selection tool.  Programs interested in generating a Home Energy Score, will need to make sure that their HPXML software tool are collecting this minimum dataset. 
+
+In order to generate the score, your program software team will also need to integrate with the DOE's Home Energy Score API. HPXML can be transferred through the API and generate a Home Energy Scores in real time. For more information on integration with the Home Energy Score API, contact [NEED EMAIL FROM GLENN]. 
+
 Other Use Cases
 ===============
 
 The standard use cases provided as a part of this guide are two primary use
 cases that have been developed to date.  Standard use
 cases that identify the data points needed for both BPI-2101 certificate of
-completion and the required data points to complete a DOE Home Energy Score are in development. Each use
-case only uses a fraction of the data points that the HPXML standard can support. Over time, more use cases
-will be developed to meet market needs.
+completion is in development. Each use case only uses a fraction of the data points that the HPXML standard can support. Over time, more use cases will be developed to meet market needs.
 
 A full list of HPXML data elements that can currently be incorporated into use
 cases is available in the

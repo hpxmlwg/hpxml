@@ -114,7 +114,7 @@ data to a variety of actors in a cost-efficient manner:
 * **National Data Repositories.** Managed by federal agencies, trade ally
   associations, or other national organizations committed to the advancement of
   energy-efficiency investments, these repositories can organize data to track
-  and quantify impacts of energy efficiency.  Efforts like the `building performance database website <http://energy.gov/eere/buildings/building-performance-database>`_ or the `Standard Energy Efficiency Data Platform <http://energy.gov/eere/buildings/standard-energy-efficiency-data-platform>`_ will not only make it easier for programs to collect and share data, but can allow the industry to compare results, improve transparency, and better identify performance drivers for program success. 
+  and quantify impacts of energy efficiency.  Efforts like the `Building Performance Database Website <http://energy.gov/eere/buildings/building-performance-database>`_ or the `Standard Energy Efficiency Data Platform <http://energy.gov/eere/buildings/standard-energy-efficiency-data-platform>`_ will not only make it easier for programs to collect and share data, but can allow the industry to compare results, improve transparency, and better identify performance drivers for program success. 
 * **Coordination with Market Research.** National research efforts, whether
   lead by the Department of Energy, universities, industry organizations, or
   private companies, have struggled to get consistent and reliable data from
@@ -127,12 +127,15 @@ that the interoperability of HPXML can facilitate. While new efforts
 are continually emerging, the following are some examples of current or
 emerging opportunities:
 
-* **DOE Home Energy Score.**  This allows homeowners to compare the energy
+* **DOE Home Energy Score.**  This allows home owners to compare the energy
   performance of their homes to other homes nationwide. By collecting data in
   the field with an HPXML-compliant tool and transferring it to the DOE's
   application program interface (API) a Home Energy Score can be generated in real
-  time. This adds the value of the Home Energy Score to programs, while
-  minimizing integration costs. For more information or to get involved 
+  time, and minimizes integration costs. 
+  
+  The seamless integration of Home Energy Score through HPXML can make it easier for contractors and auditors to generate this simple 1 to 10 scale for your customers. This easy to understand score, combine with the standardized collection of data across Home Energy Score partners and jurisdictions can assist in raising the transparency of energy efficiency upgrades within your local market. As more homes are scored this information should be shared with the real estate community and include in general consumer education campaigns to improve awareness, drive the value of energy efficiency, and increase project volume. 
+  
+  For more information or to get involved 
   visit the `Home Energy Score website <http://energy.gov/eere/buildings/home-energy-score>`_.
 * **EPA ENERGY STAR® Home Advisor.** Create a profile of home energy
   efficiency features to receive a prioritized, customized list of energy-saving
@@ -142,7 +145,7 @@ emerging opportunities:
   energy-saving information from the EPA. For more information go to the
   `Home Energy Advisor website <https://www.energystar.gov/campaign/assessYourHome?fuseaction=home_energy_advisor.showgetinput>`_.
 * **Multiple Listing Services.** Being able to accurately track energy
-  efficiency improvements and make them known to potential homebuyers is a
+  efficiency improvements and make them known to potential home buyers is a
   critical step in facilitating recognition of energy efficiency in the
   valuation of homes. The HPXML effort has been coordinated with Real Estate
   Transaction Standard (RETS), which is a national data standard from the
