@@ -275,7 +275,7 @@ Home Energy Score Use Cases
 
 The Home Energy Score use case defines the minimum data set required by the DOE's Home Energy Score tool, in order to properly generate the 1 to 10 score.  These data point are clearly identified in the data selection tool.  Programs interested in generating a Home Energy Score, will need to make sure that their HPXML software tool are collecting this minimum dataset. 
 
-In order to generate the score, your program software team will also need to integrate with the DOE's Home Energy Score API. HPXML can be transferred through the API and generate a Home Energy Scores in real time. For more information on integration with the Home Energy Score API, contact [NEED EMAIL FROM GLENN]. 
+In order to generate the score, your program software team will also need to integrate with the DOE's Home Energy Score API. HPXML can be transferred through the API and generate a Home Energy Scores in real time. For more information on integration with the Home Energy Score API, see :doc:`/software_developer/usecases/hescore` in the software developer guide. 
 
 Other Use Cases
 ===============
