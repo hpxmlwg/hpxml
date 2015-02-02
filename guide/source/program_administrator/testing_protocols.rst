@@ -75,11 +75,7 @@ implementation team will be able to identify validation errors or unexpected
 outcomes in the data transfer process.
 
 For more information on the Home Energy Scores integration testing protocols,
-visit:
-
-.. todo::
-
-    Need website from Glenn. 
+contact the Home Energy Score support team at assessor@sra.com.
 
 User Training and Contractor Role Out
 *************************************
@@ -105,10 +101,11 @@ also increasing contractor satisfaction.
 
 .. note::
 
-    Remember - If you are implementing Home Energy Score for the first time, it is important that all participating contractors and auditors complete the mandatory Home Energy Score training.  If you are rolling out HPXML and Home Energy Score together, you will want to provide ample opportunity for contractors to participate in training and complete all requirements before launch.  
+    Remember - If you are implementing Home Energy Score for the first time, it
+    is important that all participating contractors and auditors complete the
+    mandatory Home Energy Score training.  If you are rolling out HPXML and Home
+    Energy Score together, you will want to provide ample opportunity for
+    contractors to participate in training and complete all requirements before
+    launch.  
 
-For more information on the Home Energy Score training requirements, visit
-
-.. todo::
-
-    Need website from Glenn.
+The `Home Energy Score website <http://energy.gov/eere/buildings/home-energy-score-information-interested-assessors>`_ has more information on training requirements.

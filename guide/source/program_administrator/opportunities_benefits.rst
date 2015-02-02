@@ -14,12 +14,14 @@ industry:
    exchange between market actors.
 
 Once adopted, HPXML has the potential to dramatically lower costs in a wide
-range of areas as software vendors can use off-the-shelf solutions that
-they have already developed, rather than building new systems for each client.
-If this is done in coordination with other programs, utilities, and governments implementing HPXML, it can not only
-lower operational costs, but provide access to a wide range of new
-opportunities to help grow the local energy efficiency marketplace. While
-these opportunities are expansive, it is important to remember that it is not necessary to take advantage of every opportunity that HPXML creates. In fact, it is important to identify priorities and to stage
+range of areas as software vendors can use off-the-shelf solutions that they
+have already developed, rather than building new systems for each client. If
+this is done in coordination with other programs, utilities, and governments
+implementing HPXML, it can not only lower operational costs, but provide access
+to a wide range of new opportunities to help grow the local energy efficiency
+marketplace. While these opportunities are expansive, it is important to
+remember that it is not necessary to take advantage of every opportunity that
+HPXML creates. In fact, it is important to identify priorities and to stage
 adoption of them over time.
 
 To help understand what opportunities are available and encourage getting the
@@ -39,15 +41,25 @@ of the opportunities for contractors include:
 * **Reduce Data Collection Burden for Program Participation.** Many of the
   HPXML-compliant software tools offer contractors a more streamlined modeling
   or data collection experience. The more that programs can align around both
-  the use of HPXML and the data set required between program or utility jurisdictions,
-  the more that makers of these tools can focus their investments to provide new and
-  innovative functionality to improve the contractor experience and reduce the
-  cost to use the tools.  For example, contractors participating Arizona Public Service's Home Performance with ENERGY STAR\ |reg| program, experienced on average a 31% reduction in administrative time after the program's implementation of HPXML. 
+  the use of HPXML and the data set required between program or utility
+  jurisdictions, the more that makers of these tools can focus their investments
+  to provide new and innovative functionality to improve the contractor
+  experience and reduce the cost to use the tools.  For example, contractors
+  participating Arizona Public Service's Home Performance with ENERGY STAR\
+  |reg| program, experienced on average a 31% reduction in administrative time
+  after the program's implementation of HPXML. 
 * **Improved Sales Tools.** HPXML-compliant software tools offer a wide range
   of sales tools that can enable contractors to offer a more customizable
   experience aligned with their customer's needs.  This can help increase
   conversion rates and assist in the sales process.
-* **Improve Business Analytics and Quality Management.** A standardization of performance data through HPXML enhances the opportunities to integrate this information into your business systems.  Using HPXML data, contractors are improving the way they can track performance drivers within projects to improve the delivery of internal quality management systems.  Additionally, enhanced tracking and trend analysis can help contracting companies better identify key drivers that impact profitability, customer satisfaction, and the performance of their products.    
+* **Improve Business Analytics and Quality Management.** A standardization of
+  performance data through HPXML enhances the opportunities to integrate this
+  information into your business systems.  Using HPXML data, contractors are
+  improving the way they can track performance drivers within projects to
+  improve the delivery of internal quality management systems.  Additionally,
+  enhanced tracking and trend analysis can help contracting companies better
+  identify key drivers that impact profitability, customer satisfaction, and the
+  performance of their products.    
 * **Acquiring New Investment Resources.** As better data on energy efficiency
   improvements is transparent and easily shared within the market, the
   opportunity to recruit new financing resources increases. This can help grow
@@ -57,9 +69,12 @@ of the opportunities for contractors include:
 Program, Utility and Local Governmental Jurisdictional Opportunities
 ********************************************************************
 
-Faster and more flexible tools can lower program costs, increase trade ally satisfaction, improve data quality,
-and drive innovation into programs. Working together with local contractors, an HPXML implementation will not only yield benefits to the program, but can assist in making the your program efforts more transparent to the larger market of residential home owners. The following are some of the
-opportunities for HPXML that are being used by programs today:
+Faster and more flexible tools can lower program costs, increase trade ally
+satisfaction, improve data quality, and drive innovation into programs. Working
+together with local contractors, an HPXML implementation will not only yield
+benefits to the program, but can assist in making the your program efforts more
+transparent to the larger market of residential home owners. The following are
+some of the opportunities for HPXML that are being used by programs today:
 
 * **Create an Open Modelling Software Market.**  HPXML allows
   participating contractors to choose which software tool they want to use for
@@ -73,12 +88,15 @@ opportunities for HPXML that are being used by programs today:
   with other software products.
 * **Streamlined Quality Assurance.** As data becomes more standardized and
   consistent across multiple jurisdictions, software developers are creating
-  more advanced QA systems to evaluate incoming data and guide quality
-  assurance activities. The more automated desk reviews of projects for
-  compliance with incentives and program rules become, the more
-  quality can be maintained while reducing labor costs to manually review files. For one of the pilot programs, Arizona Public Service, time spent completing desk QA reviews has decreased by as much as 50% per project. In many implementations,
-  programs are pursuing automated approvals can allow contractors to seek incentives or financing
-  approvals while they are still on-site with the customer and further reduce the program administration costs per project.
+  more advanced QA systems to evaluate incoming data and guide quality assurance
+  activities. The more automated desk reviews of projects for compliance with
+  incentives and program rules become, the more quality can be maintained while
+  reducing labor costs to manually review files. For one of the pilot programs,
+  Arizona Public Service, time spent completing desk QA reviews has decreased by
+  as much as 50% per project. In many implementations, programs are pursuing
+  automated approvals can allow contractors to seek incentives or financing
+  approvals while they are still on-site with the customer and further reduce
+  the program administration costs per project.
 * **Improved Program Analytics.** Improving both the quality and consistency
   of the data collected allows programs to complete comprehensive, ongoing
   analytics. HPXML data extracts can speed up or enhance measurement and
@@ -102,9 +120,9 @@ opportunities for HPXML that are being used by programs today:
 National Opportunities
 **********************
 
-Collecting standardized data sets across multiple programs and jurisdictions is a critical
-step in helping guide national policy, financial investments, and research.
-Adoption of HPXML commands higher quality data and transfer of that
+Collecting standardized data sets across multiple programs and jurisdictions is
+a critical step in helping guide national policy, financial investments, and
+research. Adoption of HPXML commands higher quality data and transfer of that
 data to a variety of actors in a cost-efficient manner:
 
 * **Reporting to DOE or EPA Sponsored Programs.** Whether 
@@ -114,7 +132,14 @@ data to a variety of actors in a cost-efficient manner:
 * **National Data Repositories.** Managed by federal agencies, trade ally
   associations, or other national organizations committed to the advancement of
   energy-efficiency investments, these repositories can organize data to track
-  and quantify impacts of energy efficiency.  Efforts like the `Building Performance Database Website <http://energy.gov/eere/buildings/building-performance-database>`_ or the `Standard Energy Efficiency Data Platform <http://energy.gov/eere/buildings/standard-energy-efficiency-data-platform>`_ will not only make it easier for programs to collect and share data, but can allow the industry to compare results, improve transparency, and better identify performance drivers for program success. 
+  and quantify impacts of energy efficiency.  Efforts like the `Building
+  Performance Database Website
+  <http://energy.gov/eere/buildings/building-performance-database>`_ or the
+  `Standard Energy Efficiency Data Platform
+  <http://energy.gov/eere/buildings/standard-energy-efficiency-data-platform>`_
+  will not only make it easier for programs to collect and share data, but can
+  allow the industry to compare results, improve transparency, and better
+  identify performance drivers for program success. 
 * **Coordination with Market Research.** National research efforts, whether
   lead by the Department of Energy, universities, industry organizations, or
   private companies, have struggled to get consistent and reliable data from
@@ -133,10 +158,17 @@ emerging opportunities:
   application program interface (API) a Home Energy Score can be generated in real
   time, and minimizes integration costs. 
   
-  The seamless integration of Home Energy Score through HPXML can make it easier for contractors and auditors to generate this simple 1 to 10 scale for your customers. This easy to understand score, combine with the standardized collection of data across Home Energy Score partners and jurisdictions can assist in raising the transparency of energy efficiency upgrades within your local market. As more homes are scored this information should be shared with the real estate community and include in general consumer education campaigns to improve awareness, drive the value of energy efficiency, and increase project volume. 
+  The seamless integration of Home Energy Score through HPXML can make it easier
+  for contractors and auditors to generate this simple 1 to 10 scale for your
+  customers. This easy to understand score, combined with the standardized
+  collection of data across Home Energy Score partners and jurisdictions can
+  assist in raising the transparency of energy efficiency upgrades within your
+  local market. As more homes are scored, this information should be shared with
+  the real estate community and included in general consumer education campaigns
+  to improve awareness, drive the value of energy efficiency, and increase
+  project volume. 
   
-  For more information or to get involved 
-  visit the `Home Energy Score website <http://energy.gov/eere/buildings/home-energy-score>`_.
+  For more information or to get involved visit the `Home Energy Score website <http://energy.gov/eere/buildings/home-energy-score>`_.
 * **EPA ENERGY STAR® Home Advisor.** Create a profile of home energy
   efficiency features to receive a prioritized, customized list of energy-saving
   recommendations. Programs that complete on-line or in-person energy audits
@@ -148,12 +180,12 @@ emerging opportunities:
   efficiency improvements and make them known to potential home buyers is a
   critical step in facilitating recognition of energy efficiency in the
   valuation of homes. The HPXML effort has been coordinated with Real Estate
-  Transaction Standard (RETS), which is a national data standard from the
-  `Real Estate Standards Organization <http://www.reso.org>`_. The multiple
-  listing services, which represent the backbone of that real estate
-  information industry, use RETS to maintain consistent data. For more
-  information, see 
-  `BPI-2101-S-2013 Standard Requirements for a Certificate of Completion for Residential Energy Upgrades <http://www.bpi.org/tools_downloads.aspx?selectedTypeID=1&selectedID=143>`_.
+  Transaction Standard (RETS), which is a national data standard from the `Real
+  Estate Standards Organization <http://www.reso.org>`_. The multiple listing
+  services, which represent the backbone of that real estate information
+  industry, use RETS to maintain consistent data. For more information, see
+  `BPI-2101-S-2013 Standard Requirements for a Certificate of Completion for Residential Energy Upgrades
+  <http://www.bpi.org/tools_downloads.aspx?selectedTypeID=1&selectedID=143>`_.
 
 These are several of the recognized opportunities that have emerged to date. 
 While others are being created all the time, it is important to pick those that
