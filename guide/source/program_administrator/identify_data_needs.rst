@@ -39,10 +39,6 @@ particularly important for energy-efficiency programs include:
 #. Reporting a home's energy efficiency assets to the parties in real estate transactions
 #. Reporting data on program activity to DOE and other agencies
 
-.. todo::
-
-    DELETED CONTENT IS NOT IMPORTANT FOR THIS VERSION. WHEN STANDARD DATA SETS HAVE BEEN FINALIZED, THEY CAN BE MENTIONED HERE
-
 The standard audit and upgrade data sets are data collection and transfer
 requirements that were created by existing HPXML adopters to facilitate the
 transfer of project data from third-party energy modeling tools to a program
