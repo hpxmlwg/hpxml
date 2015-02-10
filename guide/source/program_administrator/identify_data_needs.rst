@@ -202,10 +202,6 @@ and BPI – 2101 requirement toggles. By activating these toggles, you can see
 which fields would be required if you wanted to complete a Home Energy Score or
 fill out a BPI-2101 Home Performance Certificate of Completion.
 
-.. todo::
-
-    review with robin
-
 The grayed out fields are optional and represent fields that are
 relevant in many programs, but not required. You can choose to make
 optional fields required in your program. However, it is important to note

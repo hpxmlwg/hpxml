@@ -1,10 +1,6 @@
 Introduction
 ############
 
-.. todo:: 
-
-    SHOULDN'T THERE BE SOME INTRODUCTION TO PROGRAMS, INCLUDING HPWES, FOR THIS AUDIENCE? WOULDN'T IT MATTER TO THEM TO KNOW FOR WHAT THE DATA WILL BE PRIMARILY (INITIALLY) USED? SIMILARLY, PERHAPS THERE IS A NEED FOR THIS TYPE OF INTRO TO THE SOFTWARE DEVELOPMENT COMMUNITY ON THE PROGRAM ADMIN GUIDE.
-
 This software developer guide is designed to outline the technical details of
 getting a Home Performance XML (HPXML) implementation up and running. HPXML is
 an expansive standard data format based on XML and maintained by the Building

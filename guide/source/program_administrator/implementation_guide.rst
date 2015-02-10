@@ -1,10 +1,6 @@
 Implementation Guide
 ####################
 
-.. todo::
-
-    WHERE IS TRAINING FOR CONTRACTORS?  i HAVE GONE THRU ALL SECTIONS AND HAVEN'T FOUND ANYTHING RELATING TO TRAINING OF THE CONTRACTOR COMMUNITY OR OTHER MARKET ACTORS INCLUDING REAL ESTATE.
-
 To realize the benefits outlined above, a well-designed
 implementation plan is necessary.  The following sections will walk you through best
 practices in implementing HPXML and provide guidance that can serve as a
@@ -23,7 +19,7 @@ Steps to HPXML Implementation
 *****************************
 
 .. figure:: images/implementation_steps.png
-   :alt: Step 1: Set Clear Implementaiton Goals, Step 2: Coordinate with Trade Allies and Software Providers, Step 3: Identify Your Data Needs, Step 4: Procure or Modify Program Management Systems, Step 5: Design Data Validation Process, Step 6: Implement Testing Protocols, Step 7: Develop a Quality Mangement Plan
+   :alt: Step 1: Set Clear Implementation Goals, Step 2: Coordinate with Trade Allies and Software Providers, Step 3: Identify Your Data Needs, Step 4: Procure or Modify Program Management Systems, Step 5: Design Data Validation Process, Step 6: Implement Testing Protocols, Step 7: Develop a Quality Management Plan
 
 
 
