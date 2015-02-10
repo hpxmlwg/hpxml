@@ -95,19 +95,12 @@ Leverage data choices made by other Program Sponsors
 ====================================================
 
 HPXML is easily extensible and therefore can be customized to the specific
-needs of a program.  But Program Sponsors should consider that they are part of the larger data management ecosystem.  When a program is using a
-specification to collect data, too much customization pushes the
-development costs of automation of the data collection process for that
-specific program onto other parties (software tool vendors and service
-providers).  Working with HPXML is best executed in coordination with other
+needs of a program.  That said, Program Sponsors should first look at the data sets being implemented by other program around the country. When a program is using a
+specification to collect data, too much customization can push significant development costs of automation of the data collection process for that specific program onto other parties (software tool vendors and service
+providers).  To streamline implementation and best leverage efforts from other programs it is best to coordination with other
 Program Sponsors to minimize the number of program-specific data fields
-required.  This will reduce costs for tool vendors, speed up the software
-approval process, and make more tools available for program areas,
-increasing competition. 
-
-.. todo::
-
-    THIS PARAGRAPH NEEDS TO BE TONED DOWN. EVERY PROGRAM, RIGHTLY OR WRONGLY, FEELS THAT THEY HAVE UNIQUE CIRCUMSTANCES THAT MAKE THEM SPECIAL AND REQUIRE SPECIAL DATA NEEDS. THEY DO NOT NEED TO BE TALKED DOWN TO.  THEY JUST NEED TO HEAR THAT MUCH OF WHAT THEY REQUIRE IS LIKLEY REQUIRED BY OTHER PROGRAMS AND THAT ANY SPECIAL DATA REQUIREMENTS CAN PROBABLY BE HANDLED BY AN EXISTING FIELD IN HPXML IF THE REQ IS CONSIDERED BROADLY ENOUGH.  IF THE REQ CAN'T BE HANDLED BY THE CURRENT HPXML, THEN THEY NEED TO UNDERSTAND THAT HPXML CAN BE REGULARLY REVISED TO ACCOUNT FOR THEIR SPECIAL NEEDS. THIS OPPORTUNITY FOR HPXML VERSION REVISION PROBABLY NEEDS TO BE DISCUSSED EARLIER ON IN THE GUIDE. [NOEL I MADE THIS FIX IN A PRIVIOUS PATCH. CAN YOU HELP ME FIND IT?]
+required in your jurisdiction.  This can help reduce costs for tool vendors, speed up the software
+approval process, and make more tools available for program areas.
 
 Schedule Updates to Data Requirements
 =====================================
