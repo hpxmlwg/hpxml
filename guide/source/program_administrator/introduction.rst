@@ -1,7 +1,7 @@
 Introduction
 ############
 
-This guide is designed to assist program administrators of residential energy
+[NEED TO IDENTIFY AND DISCUSS DOE'S ROLE AND EXPECTATIONS FOR THIS GUIDE IN THE INTRO - HPwES TEAM TO DEVELOP]This guide is designed to assist program administrators of residential energy
 efficiency programs with the implementation of the Building Performance
 Institute (BPI) BPI-2100 and BPI-2200 data standards commonly referred to as
 ("HPXML").  The adoption of these data standards offers programs a wealth of
@@ -19,7 +19,7 @@ What are the BPI Data Standards?
 
 The BPI data standards are designed to help collect and transfer
 information about the characteristics of residential buildings and upgrade projects.
-Thid data can be shared this data with any party involved in a home performance or
+This data can be shared with any party involved in a home performance or
 energy-efficiency program, including contractors, program administrators,
 utilities, federal agencies, and others. In addition, HPXML allows home performance data 
 to be seamlessly shared with the financial, real estate, insurance, and other 
@@ -50,7 +50,7 @@ To facilitate adoption of the data standards and to reduce variation between
 jurisdictions, which can be costly for software providers and contractors, BPI
 WG-5 in coordination with stakeholders from across the industry are developing the following data collection standards: 
 
-BPI-2101-S-2013: Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades
+[THIS STANDARD IS ALREADY DEVELOPED AND RELEASED.  PRIOR SENTENCE SHOULD BE CORRECTED] BPI-2101-S-2013: Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades
     This standard identifies a set of data elements for certificates that
     document the completion of a whole-house energy upgrade (HEU) and
     individual energy conservation measures (ECMs). The set of data elements
@@ -60,19 +60,19 @@ BPI-2101-S-2013: Standard Requirements for a Certificate of Completion for Resid
     predicted energy savings or other performance indicators. The certificate
     can be designed to be used as a reference document by real estate agents,
     appraisers, and other professionals during the home sale process, and can
-    be uploaded into Multiple Listing Service (MLS) databases.
+    be uploaded into Multiple Listing Service (MLS) databases. Home Performance with ENERGY STAR's Certificate of Completion template [MAY NEED LINK TO THIS - ASK CAROLINE], available to Program Sponsors, relies on BPI-2101 to assure consistency of data elements.
 
 Draft: Standard for Home Energy Auditing Data Collection with Energy Modeling Tools
     This draft standard represents the minimum data necessary for energy
     modeling tools to capture during an energy audit and transfer by HPXML to
-    Home Performance type programs. The standard is designed to promote
+    home performance programs. The standard is designed to promote
     consistency between programs and facilitate cost efficiency in the
     implementation of HPXML through alignment to a standardized specification.
 
 Draft: Standard for Home Energy Job Completion Data Collection with Energy Modeling Tools
     This draft standard represents the minimum required data necessary to be
     captured by energy modeling tools during a home energy upgrade
-    and transfer by HPXML to Home Performance type programs. The standard is
+    and transfer by HPXML to home performance programs. The standard is
     designed to promote consistency between programs and facilitate cost
     efficiency in the implementation of HPXML through alignment to a
     standardized specification.
@@ -92,7 +92,7 @@ invaluable resource to assist in the implementation of the BPI data standards,
 facilitate changes in the standard, and answer questions about the standards. To contact the BPI WG-5 or to get involved, email them at
 hpxml@homeperformance.org.
 
-Data Standards and the DOE's Building Energy Data Exchange Specification (BEDES)
+Data Standards and the U.S. DOE's Building Energy Data Exchange Specification (BEDES)
 ********************************************************************************
 
 The BPI data standards were developed to serve the single family residential
