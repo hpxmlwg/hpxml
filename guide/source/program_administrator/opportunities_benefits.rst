@@ -72,8 +72,8 @@ Program, Utility and Local Governmental Jurisdictional Opportunities
 Faster and more flexible tools can lower program costs, increase trade ally
 satisfaction, improve data quality, and drive innovation into programs. Working
 together with local contractors, an HPXML implementation will not only yield
-benefits to the program, but can assist in making the your program efforts more
-transparent to the larger market of residential home owners. The following are
+benefits to the program, but can assist in making your program efforts more
+transparent to the larger market of homeowners. The following are
 some of the opportunities for HPXML that are being used by programs today:
 
 * **Create an Open Modelling Software Market.**  HPXML allows
@@ -94,9 +94,9 @@ some of the opportunities for HPXML that are being used by programs today:
   reducing labor costs to manually review files. For one of the pilot programs,
   Arizona Public Service, time spent completing desk QA reviews has decreased by
   as much as 50% per project. In many implementations, programs are pursuing
-  automated approvals can allow contractors to seek incentives or financing
+  automated approvals that can allow contractors to seek incentives or financing
   approvals while they are still on-site with the customer and further reduce
-  the program administration costs per project.
+  the program administration costs per project while improving assessment-to-upgrade conversion ratios.
 * **Improved Program Analytics.** Improving both the quality and consistency
   of the data collected allows programs to complete comprehensive, ongoing
   analytics. HPXML data extracts can speed up or enhance measurement and
@@ -152,7 +152,7 @@ that the interoperability of HPXML can facilitate. While new efforts
 are continually emerging, the following are some examples of current or
 emerging opportunities:
 
-* **DOE Home Energy Score.**  This allows home owners to compare the energy
+* **DOE Home Energy Score.**  This tool allows home owners to compare the energy
   performance of their homes to other homes nationwide. By collecting data in
   the field with an HPXML-compliant tool and transferring it to the DOE's
   application program interface (API) a Home Energy Score can be generated in real
