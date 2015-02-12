@@ -31,7 +31,7 @@ the process will be key in later steps of the implementation plan. Many
 successfully implemented programs have coordinated with contractors
 by setting up regular meetings, hosting dinners to collect feedback, or
 working closely with representatives from local trade associations, such
-as Efficiency First, ACCA, NIAMA, SMACNA, and/or other trade associations. 
+as Efficiency First, and other trade associations representing the HVAC and envelope trades. 
 
 Software Vendor Coordination
 ****************************
