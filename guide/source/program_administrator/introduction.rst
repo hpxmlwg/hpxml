@@ -1,7 +1,11 @@
 Introduction
 ############
 
-[NEED TO IDENTIFY AND DISCUSS DOE'S ROLE AND EXPECTATIONS FOR THIS GUIDE IN THE INTRO - HPwES TEAM TO DEVELOP]This guide is designed to assist program administrators of residential energy
+.. todo::
+
+    NEED TO IDENTIFY AND DISCUSS DOE'S ROLE AND EXPECTATIONS FOR THIS GUIDE IN THE INTRO - HPwES TEAM TO DEVELOP
+
+This guide is designed to assist program administrators of residential energy
 efficiency programs with the implementation of the Building Performance
 Institute (BPI) BPI-2100 and BPI-2200 data standards commonly referred to as
 ("HPXML").  The adoption of these data standards offers programs a wealth of
@@ -48,9 +52,14 @@ etc.). While HPXML is capable of transferring a wide variety of data elements,
 any one program or jurisdiction will only need a small sub-set for most uses.
 To facilitate adoption of the data standards and to reduce variation between
 jurisdictions, which can be costly for software providers and contractors, BPI
-WG-5 in coordination with stakeholders from across the industry are developing the following data collection standards: 
+WG-5 in coordination with stakeholders from across the industry are developing
+the following data collection standards: 
 
-[THIS STANDARD IS ALREADY DEVELOPED AND RELEASED.  PRIOR SENTENCE SHOULD BE CORRECTED] BPI-2101-S-2013: Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades
+.. todo::
+
+    THIS STANDARD IS ALREADY DEVELOPED AND RELEASED.  PRIOR SENTENCE SHOULD BE CORRECTED.
+
+BPI-2101-S-2013: Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades
     This standard identifies a set of data elements for certificates that
     document the completion of a whole-house energy upgrade (HEU) and
     individual energy conservation measures (ECMs). The set of data elements
@@ -60,7 +69,13 @@ WG-5 in coordination with stakeholders from across the industry are developing t
     predicted energy savings or other performance indicators. The certificate
     can be designed to be used as a reference document by real estate agents,
     appraisers, and other professionals during the home sale process, and can
-    be uploaded into Multiple Listing Service (MLS) databases. Home Performance with ENERGY STAR's Certificate of Completion template [MAY NEED LINK TO THIS - ASK CAROLINE], available to Program Sponsors, relies on BPI-2101 to assure consistency of data elements.
+    be uploaded into Multiple Listing Service (MLS) databases. Home Performance
+    with ENERGY STAR's Certificate of Completion template, available to Program
+    Sponsors, relies on BPI-2101 to assure consistency of data elements.
+
+.. todo::
+
+    MAY NEED LINK TO ENERGY STAR's Certificate of Completion template - ASK CAROLINE
 
 Draft: Standard for Home Energy Auditing Data Collection with Energy Modeling Tools
     This draft standard represents the minimum data necessary for energy
@@ -85,15 +100,16 @@ program administrators, implementers, software developers, and government
 agencies. The group is an official Building Performance Institute committee
 tasked with developing and maintaining standards related to the collection and
 transfer of energy efficiency and home performance-related data.  BPI WG-5 is
-responsible for maintaining the standards, and it works to ensure that the standards
-can meet the needs of various market actors.  As a program administrator, you
-will want to familiarize yourself with this group, as they can serve as an
-invaluable resource to assist in the implementation of the BPI data standards,
-facilitate changes in the standard, and answer questions about the standards. To contact the BPI WG-5 or to get involved, email them at
+responsible for maintaining the standards, and it works to ensure that the
+standards can meet the needs of various market actors.  As a program
+administrator, you will want to familiarize yourself with this group, as they
+can serve as an invaluable resource to assist in the implementation of the BPI
+data standards, facilitate changes in the standard, and answer questions about
+the standards. To contact the BPI WG-5 or to get involved, email them at
 hpxml@homeperformance.org.
 
 Data Standards and the U.S. DOE's Building Energy Data Exchange Specification (BEDES)
-********************************************************************************
+*************************************************************************************
 
 The BPI data standards were developed to serve the single family residential
 sector (i.e. 1-4 unit buildings). Since the creation of HPXML, and with shared
