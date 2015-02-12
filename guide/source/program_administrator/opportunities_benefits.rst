@@ -31,7 +31,7 @@ and national levels for consideration. These opportunities are as follows:
 Trade Ally and Contractor Opportunities
 ***************************************
 
-Participation in Home Performance or other energy-efficiency programs can help
+Participation in home performance or other energy-efficiency programs can help
 contractors increase access to financing or incentives and align with marketing
 and education efforts to promote their business. HPXML lets contracting
 companies develop or procure systems that ease the burden of reporting to

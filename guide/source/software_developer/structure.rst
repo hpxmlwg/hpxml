@@ -140,11 +140,11 @@ This is to facilitate transfer of data elements not available in the standard.
 
    Please exercise extreme caution and discretion when you consider implementing
    ``extension`` elements. Often times the temptation to use them happens when a
-   difference arises between the way your software and/or Home Performance
+   difference arises between the way your software and/or home performance
    program represents a certain data field and the way HPXML represents it. It
    is crucial in these cases to either map your data into HPXML or change the
    way you represent it internally to conform to the HPXML standard. **If each
-   software vendor and Home Performance program extends HPXML in non-standard
+   software vendor and home performance program extends HPXML in non-standard
    ways, the value proposition of the standard is nullified.**
 
    If there is no possible way to map your data into existing HPXML data fields,
