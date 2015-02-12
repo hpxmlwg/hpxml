@@ -242,8 +242,8 @@ in the software developer guide at :doc:`/software_developer/usecases/auditupgra
 Upgrade Use Case
 ================
 
-The upgrade use case is designed to facilitate the transfer of completed home
-performance with ENERGY STAR or whole house upgrade projects. This includes
+The upgrade use case is designed to facilitate the transfer of completed Home
+Performance with ENERGY STAR or whole house upgrade projects. This includes
 the pre-upgrade condition of the home and a description of the installed
 measures, as well as associated predicted savings. Required fields are
 established to complete a full quality assurance review of all installed
