@@ -114,7 +114,7 @@ some of the opportunities for HPXML that are being used by programs today:
   providing the data to populate the Appraisal Institute's Green and Energy
   Efficient Addendum or directly export data to the local MLS. Doing this
   can help increase the value of EE in the real estate transaction and
-  provide greater incentive and investment opportunity for home owners to fund
+  provide greater incentive and investment opportunity for homeowners to fund
   energy efficiency upgrades. 
 
 National Opportunities
@@ -152,7 +152,7 @@ that the interoperability of HPXML can facilitate. While new efforts
 are continually emerging, the following are some examples of current or
 emerging opportunities:
 
-* **DOE Home Energy Score.**  This tool allows home owners to compare the energy
+* **DOE Home Energy Score.**  This tool allows homeowners to compare the energy
   performance of their homes to other homes nationwide. By collecting data in
   the field with an HPXML-compliant tool and transferring it to the DOE's
   application program interface (API) a Home Energy Score can be generated in real
