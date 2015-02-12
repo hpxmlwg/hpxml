@@ -79,21 +79,21 @@ It is especially important to be transparent with your contractors and software
 vendors. By identifying your program needs early in the process, stakeholders
 can make you aware of potential challenges that may arise later.
 
-Be Aware of Data Collection Burden
+Be Sensitive to Data Collection Burden
 ==================================
 
-When selecting data requirements, all programs collect a prudent amount of data for program compliance and measurement and verification of results.  When choosing what data points are mandatory for your programs, it is important to remember that every data point collected has a costs contractors to collect.  Similarly, software
+When selecting data requirements, programs should collect just enough data for program compliance and measurement and verification of results.  As a guiding principle, Home Performance with ENERGY STAR encourages programs to "Employ administrative procedures that minimize the burden of participation for contractors and homeowners." [PAGE 1 OF HPWES SPONSOR GUIDE V1.5] When choosing what data points are mandatory for your programs, it is important to remember that every data point collected has a cost to contractors to collect.  Similarly, software
 vendors not only incur costs to code to custom data points, but some data points
-might fall significantly outside the scope of data that a modeling tools need to
-collect to effectively complete an energy simulation.  Thus, it is important to collaborative with your evaluators, contractors and software vendors to identify data sets that are consistent to that being done in other programs across the country and meet the need of the program as cost efficiently as possible.   
+might fall significantly outside the scope of data that modeling tools need to
+collect to effectively complete an energy simulation.  Thus, it is important to collaborate with your evaluators, contractors and software vendors to identify data sets that are consistent to that being done in other programs across the country and meet the need of the program as cost efficiently as possible.   
 
 Leverage data choices made by other Program Sponsors
 ====================================================
 
 HPXML is easily extensible and therefore can be customized to the specific
-needs of a program.  That said, Program Sponsors should first look at the data sets being implemented by other program around the country. When a program is using a
+needs of a program.  That said, {Program Sponsors should first look at the data sets being implemented by other program around the country} THIS SENTENCE WAS JUST SAID IN THE PRIOR PARAGRAPH. TRY TO REFRAIN FROM REPITIION]. When a program is using a [SHOULD THERE BE AN ADJECTIVE HERE? PERHAPS "UNIQUE"] 
 specification to collect data, too much customization can push significant development costs of automation of the data collection process for that specific program onto other parties (software tool vendors and service
-providers).  To streamline implementation and best leverage efforts from other programs it is best to coordination with other
+providers).  To streamline implementation and best leverage efforts from other programs it is best to coordinatE with other
 Program Sponsors to minimize the number of program-specific data fields
 required in your jurisdiction.  This can help reduce costs for tool vendors, speed up the software
 approval process, and make more tools available for program areas.
@@ -260,12 +260,12 @@ Home Energy Score Use Cases
 
 The Home Energy Score use case defines the minimum data set required by the DOE's Home Energy Score tool, in order to properly generate the 1 to 10 score.  These data point are clearly identified in the data selection tool.  Programs interested in generating a Home Energy Score, will need to make sure that their HPXML software tool are collecting this minimum dataset. 
 
-In order to generate the score, your program software team will also need to integrate with the DOE's Home Energy Score API. HPXML can be transferred through the API and generate a Home Energy Scores in real time. For more information on integration with the Home Energy Score API, see :doc:`/software_developer/usecases/hescore` in the software developer guide. 
+In order to generate the score, your program software team will also need to integrate with the DOE's Home Energy Score API. HPXML can be transferred through the API and generate a Home Energy Score in real time. For more information on integration with the Home Energy Score API, see :doc:`/software_developer/usecases/hescore` in the software developer guide. 
 
 Other Use Cases
 ===============
 
-The standard use cases provided as a part of this guide are two primary use
+The standard use cases provided as a part of this guide are three [ASSUMING YOU'RE INCLUDING HESCORE USE CASE] primary use
 cases that have been developed to date.  Standard use
 cases that identify the data points needed for both BPI-2101 certificate of
 completion is in development. Each use case only uses a fraction of the data points that the HPXML standard can support. Over time, more use cases will be developed to meet market needs.
