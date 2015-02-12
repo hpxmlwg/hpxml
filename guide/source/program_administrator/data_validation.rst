@@ -8,7 +8,7 @@ high-quality data, maintaining contractor satisfaction, and streamlining quality
 assurance activities. The good news is that most of this work will be completed
 by your software vendor. However, you will want to undergo a thorough scoping
 exercise with your vendor to identify what types of validation checks you want
-your program software to complete.  For example, basic validation check ensure that all data is present and in the right format.  More advanced validation checks can ensure that  data falls with in an acceptable range for program compliance purposes or to guide quality assurance.  For example, you may be able to automate quality assurance review on health and safety results to ensure all standards are being meet.  If not meet, a user can be warned and intervene on the project. 
+your program software to complete.  For example, a basic validation check ensures that all data is present and in the right format.  More advanced validation checks can ensure that data falls with in an acceptable range for program compliance purposes or to guide quality assurance.  For example, you may be able to automate quality assurance review on health and safety results to ensure all standards are being meet.  If not met, a user can be warned and intervene on the project. 
 
 If done correctly, a good validation system
 can speed up your process and significantly reduce cost. Badly done, it can
