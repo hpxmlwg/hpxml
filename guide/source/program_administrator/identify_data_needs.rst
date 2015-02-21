@@ -87,7 +87,7 @@ vendors not only incur costs to code to custom data points, but some data points
 might fall significantly outside the scope of data that modeling tools need to
 collect to effectively complete an energy simulation.  Thus, it is important to collaborate with your evaluators, contractors and software vendors to identify data sets that are consistent to that being done in other programs across the country and meet the need of the program as cost efficiently as possible.   
 
-Leverage data choices made by other Program Sponsors
+Leverage data choices made by other Program Sponsors[ch here: I agree. these 2 sections can be merged. they're saying the same or very similar things.]
 ====================================================
 
 HPXML is easily extensible and therefore can be customized to the specific
@@ -98,7 +98,7 @@ Program Sponsors to minimize the number of program-specific data fields
 required in your jurisdiction.  This can help reduce costs for tool vendors, speed up the software
 approval process, and make more tools available for program areas.
 
-Schedule Updates to Data Requirements
+Plan a Standardized Schedule for Updates to Data Requirements
 =====================================
 
 Software developers tend to work in phases to control releases of their
@@ -130,11 +130,10 @@ streamlined data selection process.
 Standard Data Set Reviewing Tool
 ********************************
 
-To assist program administrators in reviewing the standard use cases,
-a data set reviewing tool was developed that helps identify what data points are
-currently required by these use cases.  Remember, if a data point
-is not in the use cases, it can be added to meet the program's
-needs.
+[there is a voice change here, who developed the tool? maybe it should say....] XX created a data set reviewing tool to assist
+program administrators in reviewing standard use cases. The tool helps identify what data points are
+currently required by these use cases.  Program administrators can add any data points that may not be in the tool's list of use
+cases. 
 
 The Standard Data Set Reviewing Tool is available here
 
