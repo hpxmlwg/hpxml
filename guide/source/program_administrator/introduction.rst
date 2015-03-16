@@ -33,17 +33,19 @@ energy savings from a more efficient marketplace.
 
     Figure 2: Connected Market
 
-It is the expectation of the U.S. Department of Energy that expanded use of HPXML will achieve the following:
+It is the expectation of the U.S. Department of Energy that expanded use of
+HPXML will achieve the following:
 
-    * Reduce time and cost of collecting and transferring home-related data.
-    * Increase the transparency of energy efficiency work targeted toward
-      facilitating deeper penetration of energy efficiency products and
-      services throughout the market.
-    * Improve the quality assurance systems and practices needed to efficiently
-      measure and verify energy performance.
+    * Reduce time and cost of collecting and transferring home and
+      energy-related data;
     * Foster new and strengthen existing organizational relationships within
-      the residential supply chain leading to advancements in valuing energy
-      efficiency.
+      the residential supply chain;
+    * Increase the transparency of energy efficiency work tto facilitate deeper
+      market penetration of energy efficiency products and services;
+    * Enhance ability to quantify energy savings through standardized,
+      data-rich EM&V methods;
+    * Improve the quality assurance systems and practices needed to efficiently
+      support, measure and verify energy performance.
 
 Significant effort has gone into the development of HPXML and this
 Implementation Guide, but the work is not complete.  HPXML is constantly being

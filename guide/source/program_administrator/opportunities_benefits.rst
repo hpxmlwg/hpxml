@@ -25,8 +25,8 @@ marketplace.
 To illustrate the potential opportunities created by HPXML, Figure 3 offers a
 visualization of data flow for most program environments today, pre-HPXML.  This
 is compared to a post-HPXML marketplace in which home energy upgrades are
-captures and transferred in a more standardize way and available to a larger
-number of market actors.  This new data flow can facilitate emerging
+captured and transferred in a more standardize way and available to a larger
+number of market actors.  This new data flow will facilitate emerging
 opportunities in the valuation of energy efficiency and the availability of
 financing for home energy upgrades.
 
@@ -207,17 +207,18 @@ emerging opportunities:
   recommendations. Programs that complete on-line or in-person energy audits
   with HPXML-compliant tools could allow customers to upload their
   recommendations, track their progress over time, and receive other
-  energy-saving information from the EPA. For more information go to the `Home
-  Energy Advisor`_.
+  energy-saving information from the EPA. For more information go to the
+  `Home Energy Advisor`_.
 * **Multiple Listing Services.** Being able to accurately track energy 
   efficiency improvements and make them known to potential home buyers is a
   critical step in facilitating recognition of energy efficiency in the
   valuation of homes. The HPXML effort has been coordinated with Real Estate
-  Transaction Standard (RETS), which is a national data standard from the `Real
-  Estate Standards Organization`_. The multiple listing services, which
+  Transaction Standard (RETS), which is a national data standard from the
+  `Real Estate Standards Organization`_. The multiple listing services, which
   represent the backbone of that real estate information industry, use RETS to
-  maintain consistent data. For more information, see `BPI-2101-S-2013 Standard
-  Requirements`_ for a Certificate of Completion for Residential Energy Upgrades.
+  maintain consistent data. For more information, see
+  `BPI-2101-S-2013 Standard Requirements`_ for a Certificate of Completion for
+  Residential Energy Upgrades.
 
 These are several of the recognized opportunities that have emerged to date. 
 While others are being created all the time, it is recommended to start with those that
