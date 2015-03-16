@@ -154,7 +154,7 @@ Measures
 The ``Measure`` element describes a piece of work done for a job. Each measure
 references one or more replaced components in the pre-upgrade building and one
 or more (usually one) installed components in the post-upgrade building. In
-cases where a component was installed without replacing an existing comopnent
+cases where a component was installed without replacing an existing component
 the ``ReplacedComponent`` can be omitted. Similarly if something was removed
 and nothing was installed in its place ``InstalledComponent`` would be omitted.
 The measure cost is also included.

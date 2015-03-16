@@ -8,7 +8,7 @@ Performance Institute's Working Group 5 (BPI WG-5). For more information on the
 BPI data standards and their relation to HPXML see
 :ref:`what-are-the-bpi-standards`. 
 
-The HPXML format is defined by a set of XML Schema (xsd) documents that outline
+The HPXML format is defined by a set of XML Schema (XSD) documents that outline
 all the acceptable data elements, their structure, and relation to one another.
 The schema itself is very flexible. Almost none of the elements are required,
 which allows for any level of detail in home performance data to be transmitted
