@@ -22,7 +22,7 @@ The relationships between the top level nodes are defined with
 
 The schema itself does not enforce the particular constraints for a
 :doc:`usecases/index`, but rather provides a container for all the relevant
-comonponents and a referencing scheme to relate them. 
+components and a referencing scheme to relate them. 
 
 .. _xmltransactionheader-node:
 
@@ -34,7 +34,7 @@ The ``XMLTransactionHeaderInformation`` element meta data about the HPXML file.
 .. code-block:: xml
 
    <XMLTransactionHeaderInformation>
-     <XMLType>auditretrofit</XMLType>
+     <XMLType>audit</XMLType>
      <XMLGeneratedBy>Housesoft 1.0</XMLGeneratedBy>
      <CreatedDateAndTime>2014-09-02T17:32:12Z</CreatedDateAndTime>
      <Transaction>create</Transaction>
@@ -72,10 +72,10 @@ used to generate the HPXML.
 Contractor
 ==========
 
-.. _customer-node:
-
 The ``Contractor`` node describes a business that the customer works with to do
-an audit or retrofit to their building. 
+an audit or upgrade to their building. 
+
+.. _customer-node:
 
 Customer
 ========
@@ -100,7 +100,7 @@ Project
 The ``Project`` node describes work that has been done or is to be done to a
 :ref:`building-node`. The measures described can have references pointing to
 specific components on the building and what was changed between the pre- and
-post-retrofit states and associated costs. 
+post-upgrade states and associated costs. 
 
 .. _utility-node:
 
@@ -125,7 +125,7 @@ Extension Elements
 ******************
 
 Because it is impossible to foresee every possible data point that will ever
-need to be collected and transmitted about a house or retrofit, most elements
+need to be collected and transmitted about a house or upgrade, most elements
 in HPXML contain an ``extension`` element containing an ``<xs:any>``
 designation. That allows any element from any namespace to be inserted there.
 This is to facilitate transfer of data elements not available in the standard. 
@@ -138,11 +138,20 @@ This is to facilitate transfer of data elements not available in the standard.
 
 .. warning::
 
-   Please contact BPI Working Group 5 (a.k.a. the HPXML working group) before
+   Please exercise extreme caution and discretion when you consider implementing
+   ``extension`` elements. Often times the temptation to use them happens when a
+   difference arises between the way your software and/or home performance
+   program represents a certain data field and the way HPXML represents it. It
+   is crucial in these cases to either map your data into HPXML or change the
+   way you represent it internally to conform to the HPXML standard. **If each
+   software vendor and home performance program extends HPXML in non-standard
+   ways, the value proposition of the standard is nullified.**
+
+   If there is no possible way to map your data into existing HPXML data fields,
+   please contact BPI Working Group 5 (a.k.a. the HPXML working group) before
    implementing an extension. The working group would prefer to extend the
    standard for the benefit of everyone and avoid the use of extensions wherever
    possible. Often times you will not be the only one with the need for a
-   particular element that was overlooked in the standard. By participating in the
-   working group and lobbying for the elements you need you can enhance the value
-   of HPXML for all parties. If everyone extends HPXML in non-standard ways, the
-   value proposition of the standard is eroded. 
+   particular element that was overlooked in the standard. By participating in
+   the working group and lobbying for the elements you need you can enhance the
+   value of HPXML for all parties.

@@ -1,16 +1,14 @@
-.. _auditretrofitusecase:
-
-Audit-Retrofit
-##############
+Audit-Upgrade
+#############
 
 .. contents::
 
-The audit-retrofit use case covers two scenarios:
+The audit-upgrade use case covers two scenarios:
 
 #. A baseline building with a proposed work scope 
 #. A baseline building with a completed work scope
 
-Both scenarios describe a pre- and post-retrofit building and the actions
+Both scenarios describe a pre- and post-upgrade building and the actions
 (measures) that occur between the two states to make the difference. To achieve
 this the HPXML document needs to have the
 :ref:`top level nodes <top-level-nodes>` described as below. 
@@ -44,19 +42,19 @@ include their name and phone number as shown.
 Building
 ********
 
-There are two ``Building`` nodes in an Audit-Retrofit use case document: pre-
-and post-retrofit. Each is a full description the house. For the audit use
-case, the pre-retrofit condition is the house as audited and the post-retrofit
-condition is the proposed work scope. For the retrofit use case, the
-pre-retrofit building is the state of the house before any work was done and
-the post-retrofit state is the final building state audit.
+There are two ``Building`` nodes in an Audit-Upgrade use case document: pre-
+and post-upgrade. Each is a full description the house. For the audit use
+case, the pre-upgrade condition is the house as audited and the post-upgrade
+condition is the proposed work scope. For the upgrade use case, the
+pre-upgrade building is the state of the house before any work was done and
+the post-upgrade state is the final building state audit.
 
-.. _preretro:
+.. _preupgrade:
 
-Pre-retrofit
-============
+Pre-upgrade
+===========
 
-The pre-retrofit ``Building`` element comes first in the document. It describes
+The pre-upgrade ``Building`` element comes first in the document. It describes
 the initial state of the building. It should have a ``ProjectStatus/EventType``
 of ``audit``. 
 
@@ -69,45 +67,45 @@ Many items within the building require a unique ``SystemIdentifier`` element.
 The ``id`` attribute is used to specify this id within the document (see
 :ref:`id-idref`). 
 
-For example, the water heater in the pre-retrofit building has an id of ``dhw1``.
+For example, the water heater in the pre-upgrade building has an id of ``dhw1``.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
    :lines: 222-228
    :emphasize-lines: 2
 
-.. _postretro:
+.. _postupgrade:
    
-Post-retrofit
-=============
+Post-upgrade
+============
 
-The post-retrofit ``Building`` element appears second in the document. It
+The post-upgrade ``Building`` element appears second in the document. It
 describes the "after" state of the building. In the audit use case, that means
-the *proposed* state of the building after the retrofits. In the retrofit use
+the *proposed* state of the building after the upgrades. In the upgrade use
 case, that means the *actual* audited state of the building after the work is
 completed. The ``ProjectStatus/EventType`` element has a different value
 depending on the use case:
 
-.. table:: Post-retrofit Event Types
+.. table:: Post-upgrade Event Types
    
    ========  =======================================
    Use Case  Event Type
    ========  =======================================
    Audit     proposed workscope
-   Retrofit  job completion testing/final inspection
+   Upgrade   job completion testing/final inspection
    ========  =======================================
 
-The post-retrofit building is mostly a duplicate of the pre-retrofit building
+The post-upgrade building is mostly a duplicate of the pre-upgrade building
 where components of the building that do not change remain the same. However,
-each component in the post-retrofit building needs a unique identifier that is
-different from the unique identifier in the pre-retrofit building. The
+each component in the post-upgrade building needs a unique identifier that is
+different from the unique identifier in the pre-upgrade building. The
 ``sameas`` attribute of the ``SystemIdentifier`` element is used to link
-identical elements in the pre- and post-retrofit buildings (see :ref:`sameas`).
+identical elements in the pre- and post-upgrade buildings (see :ref:`sameas`).
 
-Going back to the water heater example, the water heater in the post-retrofit
+Going back to the water heater example, the water heater in the post-upgrade
 building has a different ``id`` than the identical water heater in the
-pre-retrofit building, but it has a ``sameas`` attribute to link it back to the
-pre-retrofit water heater and indicate it is indeed the same equipment.
+pre-upgrade building, but it has a ``sameas`` attribute to link it back to the
+pre-upgrade water heater and indicate it is indeed the same equipment.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
@@ -116,14 +114,14 @@ pre-retrofit water heater and indicate it is indeed the same equipment.
 
 .. note::
 
-   When a measure changes a component between a pre- and post-retrofit building,
+   When a measure changes a component between a pre- and post-upgrade building,
    the ``SystemIdentifier/@sameas`` attribute is omitted because the measure
    references the relationship between components.
 
 Project
 *******
 
-In this paradigm, the :ref:`preretro` and :ref:`postretro` building elements
+In this paradigm, the :ref:`preupgrade` and :ref:`postupgrade` building elements
 describes the state of the building at points in time. The ``Project`` element
 describes what was done or is to be done to get from one state to another. 
 
@@ -140,7 +138,7 @@ Energy Savings
 ==============
 
 ``EnergySavingsInfo`` is used to transmit either or both the estimated or
-measured energy use and savings achieved in a retrofit. 
+measured energy use and savings achieved in an upgrade. 
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
@@ -154,9 +152,9 @@ Measures
 ========
 
 The ``Measure`` element describes a piece of work done for a job. Each measure
-references one or more replaced components in the pre-retrofit building and one
-or more (usually one) installed components in the post-retrofit building. In
-cases where a component was installed without replacing an existing comopnent
+references one or more replaced components in the pre-upgrade building and one
+or more (usually one) installed components in the post-upgrade building. In
+cases where a component was installed without replacing an existing component
 the ``ReplacedComponent`` can be omitted. Similarly if something was removed
 and nothing was installed in its place ``InstalledComponent`` would be omitted.
 The measure cost is also included.
@@ -168,7 +166,7 @@ From the example file, this measure
    :lines: 600-609 
    :emphasize-lines: 7,9
 
-replaces this furnace in the pre-retrofit building
+replaces this furnace in the pre-upgrade building
 
 .. literalinclude:: /../../examples/audit.xml 
    :language: xml 
