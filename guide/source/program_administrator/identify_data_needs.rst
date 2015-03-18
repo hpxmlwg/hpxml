@@ -123,19 +123,17 @@ selection process.
 .. _datatool:
 
 HPXML Data Selection Tool
-**************************
+*************************
 
 To assist program administrators in reviewing the standard use cases that are
 being implemented by other programs, a data selection tool  is available to help
 identify what data points are currently required in these use cases and helps
 programs select and communicate the requirements for the program. The HPXML Data
-Selection Tool is a "living document", so if a programs identifies  data points
+Selection Tool is a "living document", so if a programs identifies data points
 that are not in the use cases, WG-5 can assist in added them to the tool and
 thus meet the program's needs.
 
-.. todo::
-
-    Need to include the Excel spreadsheet tool.
+   * Download: :download:`HPXML Data Selection Tool <hpxml_data_selection_tool.xlsx>`
 
 The attached instructional video will provide a walkthrough of the HPXML data
 selection tool.  Using the tool programs can quickly select the data required
