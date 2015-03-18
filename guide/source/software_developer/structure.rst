@@ -20,7 +20,7 @@ The relationships between the top level nodes are defined with
 :ref:`building-node` with a :ref:`project-node`, :ref:`consumption-node` with a
 :ref:`building-node`, or a :ref:`contractor-node` with a :ref:`project-node`. 
 
-The schema itself does not enforce the particular constraints for a
+The schema itself does not enforce the particular constraints for
 :doc:`usecases/index`, but rather provides a container for all the relevant
 components and a referencing scheme to relate them. 
 
@@ -115,8 +115,9 @@ Consumption
 ===========
 
 The ``Consumption`` node stores and represents the energy and/or water use of a
-building. It can contain high resolution electric smart meter data down to the
-fuel oil fill up that happens once or twice a year. 
+building. It can contain high resolution electric smart meter data, the
+fuel oil fill up that happens once or twice a year, or more typically, monthly
+gas or electric bills.
 
 
 .. _extension-elements:
