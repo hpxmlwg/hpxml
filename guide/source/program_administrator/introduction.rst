@@ -25,11 +25,11 @@ specific uses for some data, other data could be shared creating more value for
 residential energy efficiency as a whole ultimately translating into greater
 energy savings from a more efficient marketplace.
 
-.. todo::
+.. figure:: images/market_existing.png
 
     Figure 1: Existing Market Conditions
 
-.. todo::
+.. figure:: images/market_connected.png
 
     Figure 2: Connected Market
 

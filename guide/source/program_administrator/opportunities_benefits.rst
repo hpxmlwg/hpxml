@@ -24,15 +24,19 @@ marketplace.
 
 To illustrate the potential opportunities created by HPXML, Figure 3 offers a
 visualization of data flow for most program environments today, pre-HPXML.  This
-is compared to a post-HPXML marketplace in which home energy upgrades are
+is compared to a post-HPXML marketplace (Figure 4) in which home energy upgrades are
 captured and transferred in a more standardize way and available to a larger
 number of market actors.  This new data flow will facilitate emerging
 opportunities in the valuation of energy efficiency and the availability of
 financing for home energy upgrades.
 
-.. todo::
+.. figure:: images/existing_connections.png
 
-    Figure 3?
+    Figure 3: Data flow of existing markets
+
+.. figure:: images/hpxml_connected_market.png
+
+    Figure 4: HPXML connected market data flow
 
 While these opportunities are expansive, it is important to identify priorities
 that are right for your program or jurisdiction and to stage adoption of these
