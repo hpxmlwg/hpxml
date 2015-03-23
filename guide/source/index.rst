@@ -12,6 +12,8 @@ home and the computing language that facilitates the quick and easy transfer of
 home-related data between different market actors.
 
 .. image:: images/hpxml_connected_market.png
+    :width: 4.5in
+    :align: center
 
 Today there is a fragmented, siloed marketplace where exchange of data occurs
 but with the non-uniform definitions for metrics and lack of two-way feedback
@@ -25,11 +27,9 @@ Contents
    :maxdepth: 2
 
    introduction
+   data_standards_ecosystem
    program_administrator/index
    software_developer/index
 
 .. todolist::
-
-
-* :ref:`search`
 

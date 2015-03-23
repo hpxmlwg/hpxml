@@ -112,15 +112,15 @@ on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if on_rtd:
     html_theme = 'default'
 else:
-    # import sphinx_rtd_theme
-    # html_theme = 'sphinx_rtd_theme'
-    # html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-    html_theme = 'basic'
-    html_theme_options = {
-        "nosidebar": False,
-        "sidebarwidth": 230
-    }
-    html_sidebars = {'**': ['globaltoc.html']}
+    import sphinx_rtd_theme
+    html_theme = 'sphinx_rtd_theme'
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+    # html_theme = 'basic'
+    # html_theme_options = {
+    #     "nosidebar": False,
+    #     "sidebarwidth": 230
+    # }
+    # html_sidebars = {'**': ['globaltoc.html']}
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
