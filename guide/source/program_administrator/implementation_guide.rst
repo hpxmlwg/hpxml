@@ -17,7 +17,7 @@ individual jurisdictional needs are met.
 Steps to HPXML Implementation
 *****************************
 
-.. figure:: images/implementation_steps.png
+.. figure:: /images/implementation_steps.png
    :alt: Step 1: Set Clear Implementation Goals, Step 2: Coordinate with Trade Allies and Software Providers, Step 3: Identify Your Data Needs, Step 4: Procure or Modify Program Management Systems, Step 5: Design Data Validation Process, Step 6: Implement Testing Protocols, Step 7: Develop a Quality Management Plan
 
 

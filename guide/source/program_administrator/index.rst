@@ -4,7 +4,6 @@ Program Administrator Guide
 .. toctree::
    :maxdepth: 2
    
-   introduction
    opportunities_benefits
    implementation_guide
    implementation_goals

@@ -30,13 +30,17 @@ number of market actors.  This new data flow will facilitate emerging
 opportunities in the valuation of energy efficiency and the availability of
 financing for home energy upgrades.
 
-.. figure:: images/existing_connections.png
+.. figure:: /images/market_existing.png
 
     Figure 3: Data flow of existing markets
 
-.. figure:: images/hpxml_connected_market.png
+.. figure:: /images/market_connected.png
 
     Figure 4: HPXML connected market data flow
+
+.. todo::
+
+    Fix text in these graphics.
 
 While these opportunities are expansive, it is important to identify priorities
 that are right for your program or jurisdiction and to stage adoption of these
