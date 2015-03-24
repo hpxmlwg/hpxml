@@ -31,16 +31,16 @@ opportunities in the valuation of energy efficiency and the availability of
 financing for home energy upgrades.
 
 .. figure:: /images/market_existing.png
+    :figwidth: 7.5in
+    :align: center
 
     Figure 3: Data flow of existing markets
 
 .. figure:: /images/market_connected.png
+    :figwidth: 7.5in
+    :align: center
 
     Figure 4: HPXML connected market data flow
-
-.. todo::
-
-    Fix text in these graphics.
 
 While these opportunities are expansive, it is important to identify priorities
 that are right for your program or jurisdiction and to stage adoption of these

@@ -87,7 +87,13 @@ your contractor and trade ally networks to achieve success. When rolling out a
 new software environment, especially if multiple software products are being
 introduced into the market at the same time, programs should coordinate software
 training along with the software vendors.  Each software vendor may have their
-own training practices, webinars, or other resources they prefer to use. 
+own training practices, webinars, or other resources they prefer to use.
+
+.. figure:: /images/hpxml_contractor_training_aps.jpg
+    :align: center
+    :figwidth: 5.5in
+
+    HPXML Contractor Training for Arizona Public Service (Source: EnergySavvy)
 
 The trainings should include a clear understanding of how to
 download and upload HPXML files.  This includes making transparent to all users
@@ -107,6 +113,6 @@ also increasing contractor satisfaction.
     together, you will want to provide ample opportunity for contractors to
     participate in training and complete all requirements before launch.  
 
-The `Home Energy Score website`_ has more information on training requirements.
+    The `Home Energy Score website`_ has more information on training requirements.
 
 .. _Home Energy Score website: http://energy.gov/eere/buildings/home-energy-score-information-interested-assessors
