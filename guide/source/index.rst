@@ -31,5 +31,3 @@ Contents
    program_administrator/index
    software_developer/index
 
-.. todolist::
-
