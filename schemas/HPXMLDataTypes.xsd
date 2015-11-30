@@ -309,6 +309,14 @@
 			<xs:enumeration value="attached on three sides"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="VerticalSurroundings">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="unit above"/>
+			<xs:enumeration value="unit below"/>
+			<xs:enumeration value="unit above and below"/>
+			<xs:enumeration value="no units above or below"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ShieldingofHome">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="well-shielded"/>
