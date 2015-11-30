@@ -1,0 +1,5 @@
+.pydevproject
+.settings
+.project
+guide/build
+.idea
