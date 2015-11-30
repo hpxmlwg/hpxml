@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.0">
+<HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.1">
     <XMLTransactionHeaderInformation>
         <XMLType/>
         <XMLGeneratedBy>Super-duper audit software v1.0</XMLGeneratedBy>
