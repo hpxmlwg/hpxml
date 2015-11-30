@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2014/6"
-	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.0">
+	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.1">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:element name="XMLTransactionHeaderInformation">
 		<xs:annotation>
@@ -1236,6 +1236,16 @@
 											<xs:documentation>The amount of energy delivered as heated water in a day divided by the total daily energy consumption of a residential water heater, as determined following standardized DOE testing procedure.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="FirstHourRating" type="Volume">
+										<xs:annotation>
+											<xs:documentation>[gal per hour] An estimate of the maximum volume of hot water in gallons that a storage water heater can supply within an hour that begins with the water heater fully heated.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="GallonsPerMinute" type="Volume">
+										<xs:annotation>
+											<xs:documentation>[gal per minute] The amount of gallons per minute of hot water that can be supplied by an instantaneous water heater while maintaining a nominal temperature rise of 77°F during steady state operation.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="RecoveryEfficiency" type="RecoveryEfficiency"
 										minOccurs="0">
 										<xs:annotation>
@@ -1309,6 +1319,42 @@
 									<xs:element minOccurs="0" name="WaterHeaterImprovement"
 										type="WaterHeaterImprovementInfo"/>
 									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="WaterFixture">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="AttachedToWaterHeatingSystem"
+										type="LocalReference"/>
+									<xs:element minOccurs="1" name="WaterFixtureType"
+										type="WaterFixtureType"/>
+									<xs:element minOccurs="0" name="FlowRate" type="xs:double">
+										<xs:annotation>
+											<xs:documentation>[gallons per minute] flow rate of water</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="FaucetAerator" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Does this faucet have an aerator?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0"
+										name="TemperatureInitiatedShowerFlowRestrictionValve"
+										type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Does the shower have a device that restricts the flow of water automatically once it has reached temperature?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element maxOccurs="unbounded" minOccurs="0"
+										name="ThirdPartyCertification"
+										type="WaterFixtureThirdPartyCertification">
+										<xs:annotation>
+											<xs:documentation>Independent organization has verified that product or appliance meets or exceeds the standard in question.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -1449,6 +1495,11 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Fixture" type="LocalReference">
+							<xs:annotation>
+								<xs:documentation>The LightingFixture that this is attached to</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element minOccurs="0" name="Location" type="LightingLocation"/>
 						<xs:element name="NumberofUnits" type="xs:integer" minOccurs="0"/>
@@ -1482,6 +1533,17 @@
 							</xs:annotation>
 						</xs:element>
 						<xs:element ref="extension" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="LightingFixture">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0"
+							name="ThirdPartyCertification"
+							type="LightingFixtureThirdPartyCertification"/>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1749,7 +1811,7 @@
 												<xs:element minOccurs="0" name="HoursPerDay"
 												type="HoursPerDay">
 												<xs:annotation>
-												<xs:documentation>[hours] Number of hours per day a pool pump operates at a particular speed setting.</xs:documentation>
+												<xs:documentation>DEPRECATED - Please use PumpSpeed/HoursPerDay</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element maxOccurs="unbounded" minOccurs="0"
@@ -1772,6 +1834,12 @@
 												type="FlowRate">
 												<xs:annotation>
 												<xs:documentation>[gal/min] The volume of water flowing through the filtration system in a given time, usually measured in gallons per minute (gpm) (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="HoursPerDay"
+												type="HoursPerDay">
+												<xs:annotation>
+												<xs:documentation>[hours] Number of hours per day a pool pump operates at a particular speed setting.</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
@@ -2580,6 +2648,12 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Fireplace">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="SmokeEmissionRate" type="xs:double">
+							<xs:annotation>
+								<xs:documentation>[grams per hour] from EPA label
+http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2587,6 +2661,12 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Stove">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="SmokeEmissionRate" type="xs:double">
+							<xs:annotation>
+								<xs:documentation>[grams per hour] from EPA label
+http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2719,6 +2799,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	<xs:complexType name="HydronicDistributionInfo">
 		<xs:sequence>
 			<xs:element name="FractionHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
+			<xs:element minOccurs="0" name="PipeRValue" type="RValue"/>
 			<xs:element name="HydronicDistributionType" type="HydronicDistributionType"
 				minOccurs="0"/>
 			<xs:element minOccurs="0" name="PumpandZoneValve">
@@ -2869,10 +2950,10 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 									<xs:element minOccurs="0" name="ResidentPopulationType"
 										type="ResidentPopulationType"/>
 									<xs:element minOccurs="0" name="Occupancy" type="Occupancy"/>
-									<xs:element name="NumberofResidents"
-										type="IntegerGreaterThanZero" minOccurs="0"/>
+									<xs:element name="NumberofResidents" type="PeopleCount"
+										minOccurs="0"/>
 									<xs:element minOccurs="0" name="NumberofAdults"
-										type="IntegerGreaterThanOrEqualToZero">
+										type="PeopleCount">
 										<xs:annotation>
 											<xs:documentation>18 or older</xs:documentation>
 										</xs:annotation>
@@ -3089,6 +3170,12 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 						<xs:element name="HurricaneZone" type="xs:boolean" minOccurs="0"/>
 						<xs:element name="FloodZone" type="xs:boolean" minOccurs="0"/>
 						<xs:element name="EarthquakeZone" type="EarthquakeZone" minOccurs="0"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="WeatherStation"
+							type="WeatherStation">
+							<xs:annotation>
+								<xs:documentation>Weather location used in model simulation and/or utility bill regression analysis</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -3342,6 +3429,8 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 					<xs:sequence>
 						<xs:element name="Units" type="DuctLeakageTestUnitofMeasure" minOccurs="0"/>
 						<xs:element name="Value" type="MeasuredDuctLeakage" minOccurs="0"/>
+						<xs:element minOccurs="0" name="TotalOrToOutside"
+							type="DuctLeakageTotalOrToOutside"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -3438,7 +3527,7 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingAbsoluteError"
 				type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Eqn. 3.2.3.A.ii  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>Eqn. 3.2.3.A.ii  of BPI-2400. In either kWh for electricity or MMBTU for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingBiasError"
@@ -3450,7 +3539,7 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingAbsoluteError"
 				type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>In either kWh for electricity or MMBTU for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadBiasError"
@@ -3462,13 +3551,31 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadAbsoluteError"
 				type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>In either kWh for electricity or MMBTU for all other fuels.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationHeatingBiasError"
+				nillable="true" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationCoolingBiasError"
+				type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationBaseloadBiasError"
+				nillable="true" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="SimplifiedModelCalibrationTotalBiasError"
 				type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria.</xs:documentation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
@@ -3750,6 +3857,11 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			</xs:element>
 			<xs:element minOccurs="0" name="WeatherStripping" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="Operable" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="MovableInsulationRValue" type="RValue">
+				<xs:annotation>
+					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="AssociationsType">
@@ -3900,8 +4012,19 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 				<xs:annotation>
 					<xs:documentation>For use on sections of the house that are cantilevered or over ambient (outdoor) conditions for some other reason. </xs:documentation>
 				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
 			</xs:element>
-			<xs:element name="RubbleStone"/>
+			<xs:element name="RubbleStone">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="Other">
 				<xs:complexType>
 					<xs:sequence>
@@ -4163,6 +4286,11 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" name="ModeledUsages">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="WeatherStation" type="LocalReference">
+							<xs:annotation>
+								<xs:documentation>Indicates which weather station is used for the modeling. It's a reference that points to Building/BuildingDetails/ClimateAndRiskZones/WeatherStation</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element maxOccurs="unbounded" name="ModeledUsage"
 							type="ModeledUsageType"/>
 					</xs:sequence>
@@ -4239,6 +4367,18 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WeatherStation">
+		<xs:sequence>
+			<xs:element ref="SystemIdentifiersInfo"/>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="State" type="StateCode"/>
+			<xs:element minOccurs="0" name="WBAN" type="xs:string"/>
+			<xs:element minOccurs="0" name="Type" type="WeatherStationType"/>
+			<xs:element minOccurs="0" name="Use" nillable="true" type="WeatherStationUse"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2014/6"
-	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.0">
+	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.1">
 	<!-- Value Lists -->
 	<!--Address Information Below-->
 	<xs:simpleType name="schemaVersionType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="2.0"/>
+			<xs:enumeration value="2.1"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AddressTypeCode">
@@ -930,6 +931,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="open"/>
 			<xs:enumeration value="closed"/>
+			<xs:enumeration value="direct expansion"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="HeatPumpType">
@@ -1950,6 +1952,64 @@
 			<xs:enumeration value="none"/>
 			<xs:enumeration value="detailed"/>
 			<xs:enumeration value="simple"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WeatherStationType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TMY"/>
+			<xs:enumeration value="TMY2"/>
+			<xs:enumeration value="TMY3"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DuctLeakageTotalOrToOutside">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="to outside"/>
+			<xs:enumeration value="total"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WeatherStationUse">
+		<xs:annotation>
+			<xs:documentation>By leaving this field empty, the weather station is assumed used for all functions such as utility bill regression analysis and energy model simulations. If different weather stations are used for the different functions, use this field to specify the usage of each weather station.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="billing analysis"/>
+			<xs:enumeration value="energy modeling"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WaterFixtureType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="faucet"/>
+			<xs:enumeration value="shower head"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WaterFixtureThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="Energy Star Most Efficient"/>
+			<xs:enumeration value="WaterSense"/>
+			<xs:enumeration value="CEE Tier 1"/>
+			<xs:enumeration value="CEE Tier 2"/>
+			<xs:enumeration value="CEE Tier 3"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LightingFixtureThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="Energy Star Most Efficient"/>
+			<xs:enumeration value="CEE Tier 1"/>
+			<xs:enumeration value="CEE Tier 2"/>
+			<xs:enumeration value="CEE Tier 3"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PeopleCount">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
