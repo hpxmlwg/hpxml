@@ -45,7 +45,7 @@ to.
    :emphasize-lines: 19,25
 
    <?xml version="1.0" encoding="UTF-8"?>
-   <HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.0">
+   <HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.1">
        <XMLTransactionHeaderInformation>
            <XMLType></XMLType>
            <XMLGeneratedBy></XMLGeneratedBy>
@@ -92,7 +92,7 @@ to have a way to indicate that they are the same item.
    :emphasize-lines: 19,34
 
    <?xml version="1.0" encoding="UTF-8"?>
-   <HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.0">
+   <HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.1">
        <XMLTransactionHeaderInformation>
            <XMLType></XMLType>
            <XMLGeneratedBy></XMLGeneratedBy>

@@ -292,7 +292,7 @@ integration with the Home Energy Score API, see
 A full list of HPXML data elements that can currently be incorporated into use
 cases is available in the `online schema documentation`_.
 
-.. _online schema documentation: http://hpxmlwg.github.io/hpxml/schemadoc/hpxml-2.0.0/index.html
+.. _online schema documentation: http://hpxmlwg.github.io/hpxml/schemadoc/hpxml-2.1.0/index.html
 
 BPI – 2101 Certificate of Completion Use Case
 =============================================
