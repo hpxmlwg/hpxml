@@ -1266,27 +1266,11 @@
 												</xs:sequence>
 												</xs:complexType>
 												</xs:element>
-												<xs:element minOccurs="0" name="Pipe">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element name="PipeRValue" type="RValue"
-												minOccurs="0"/>
-												<xs:element minOccurs="0"
-												name="PipeLengthInsulated"
-												type="LengthMeasurement">
+												<xs:element minOccurs="0" name="Pipe"
+												type="PipeInsulationType">
 												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
+												<xs:documentation>DEPRECATED. This will be removed in v3.0. Use HotWaterDistribution element instead.</xs:documentation>
 												</xs:annotation>
-												</xs:element>
-												<xs:element name="FractionPipeInsulation"
-												type="Fraction" minOccurs="0">
-												<xs:annotation>
-												<xs:documentation>Fraction of total pipe insulated</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												</xs:complexType>
 												</xs:element>
 											</xs:sequence>
 										</xs:complexType>
@@ -1322,12 +1306,96 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element maxOccurs="unbounded" minOccurs="0" name="WaterFixture">
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="HotWaterDistribution">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="AttachedToWaterHeatingSystem"
-										type="LocalReference"/>
+										type="LocalReference">
+										<xs:annotation>
+											<xs:documentation>The water heating system that his distribution system serves.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="SystemType">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element name="Standard">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="PipingLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="Recirculation">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="ControlType"
+												type="RecirculationControlType"/>
+												<xs:element minOccurs="0"
+												name="RecirculationPipingLoopLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="BranchPipingLoopLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="PumpPower"
+												type="Power">
+												<xs:annotation>
+												<xs:documentation>[W]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="PipeInsulation"
+										type="PipeInsulationType"/>
+									<xs:element minOccurs="0" name="DrainWaterHeatRecovery">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="FacilitiesConnected"
+												type="DrainWaterHeatRecoveryFacilitiesConnected"/>
+												<xs:element minOccurs="0" name="EqualFlow"
+												type="xs:boolean"/>
+												<xs:element minOccurs="0" name="Efficiency"
+												type="Fraction">
+												<xs:annotation>
+												<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="WaterFixture">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:choice minOccurs="0">
+										<xs:element name="AttachedToWaterHeatingSystem"
+											type="LocalReference"/>
+										<xs:element name="AttachedToHotWaterDistribution"
+											type="LocalReference"/>
+									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType"
 										type="WaterFixtureType"/>
 									<xs:element minOccurs="0" name="FlowRate" type="xs:double">
@@ -4379,6 +4447,22 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" name="WBAN" type="xs:string"/>
 			<xs:element minOccurs="0" name="Type" type="WeatherStationType"/>
 			<xs:element minOccurs="0" name="Use" nillable="true" type="WeatherStationUse"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PipeInsulationType">
+		<xs:sequence>
+			<xs:element name="PipeRValue" type="RValue" minOccurs="0"/>
+			<xs:element minOccurs="0" name="PipeLengthInsulated" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[ft]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FractionPipeInsulation" type="Fraction" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fraction of total pipe insulated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
