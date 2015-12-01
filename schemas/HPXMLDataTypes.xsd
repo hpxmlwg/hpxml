@@ -1732,6 +1732,9 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="leased"/>
 			<xs:enumeration value="owned"/>
+			<xs:enumeration value="power purchase agreement"/>
+			<xs:enumeration value="utility owned"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Power">
