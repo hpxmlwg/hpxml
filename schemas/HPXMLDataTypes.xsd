@@ -1835,10 +1835,21 @@
 	<xs:simpleType name="ProgramCertificate">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Home Performance with Energy Star"/>
+			<xs:enumeration value="Energy Star Certified"/>
+			<xs:enumeration value="DOE Zero Energy Ready Home"/>
 			<xs:enumeration value="LEED Certified"/>
 			<xs:enumeration value="LEED Silver"/>
 			<xs:enumeration value="LEED Gold"/>
 			<xs:enumeration value="LEED Platinum"/>
+			<xs:enumeration value="Indoor airPLUS"/>
+			<xs:enumeration value="WaterSense"/>
+			<xs:enumeration value="NGBS Single-Family Certification"/>
+			<xs:enumeration value="NGBS Multifamily Certification"/>
+			<xs:enumeration value="NGBS Remodeling Certification"/>
+			<xs:enumeration value="NGBS Land Development Certification"/>
+			<xs:enumeration value="Enterprise Green Communities"/>
+			<xs:enumeration value="Earthcraft"/>
+			<xs:enumeration value="Environments for Living"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
