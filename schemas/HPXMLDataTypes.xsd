@@ -1507,6 +1507,7 @@
 			<xs:enumeration value="heat pump water heater"/>
 			<xs:enumeration value="space-heating boiler with storage tank"/>
 			<xs:enumeration value="space-heating boiler with tankless coil"/>
+			<xs:enumeration value="geothermal desuperheater"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="SolarThermalSystemType">
