@@ -2857,6 +2857,23 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 			</xs:element>
 			<xs:element minOccurs="0" name="NumberofReturnRegisters"
 				type="IntegerGreaterThanOrEqualToZero"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="StaticPressureMeasurement">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="StaticPressure" type="xs:double">
+							<xs:annotation>
+								<xs:documentation>[Pa] positive for supply side measurements, negative for return side.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="MeasurementLocation"
+							type="AirHandlerStaticPressureMeasurementLocation"/>
+						<xs:element minOccurs="0" name="LocationDescription" type="xs:string"/>
+						<xs:element minOccurs="0" name="StaticPressureSource"
+							type="StaticPressureSource"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
