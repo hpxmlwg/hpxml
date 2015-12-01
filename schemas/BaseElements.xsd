@@ -4262,6 +4262,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 							</xs:complexType>
 						</xs:element>
 						<xs:element minOccurs="0" name="DateLastReplaced" type="xs:date"/>
+						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
