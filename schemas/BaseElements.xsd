@@ -2898,7 +2898,17 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 								<xs:sequence>
 									<xs:element minOccurs="0" name="SiteType" type="SiteType"/>
 									<xs:element minOccurs="0" name="Surroundings"
-										type="Surroundings"/>
+										type="Surroundings">
+										<xs:annotation>
+											<xs:documentation>If the building is attached to other units in the horizontal plane.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="VerticalSurroundings"
+										type="VerticalSurroundings">
+										<xs:annotation>
+											<xs:documentation>If the building is attached to other units on the vertical plane.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="ShieldingofHome" type="ShieldingofHome"
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="OrientationOfFrontOfHome"
