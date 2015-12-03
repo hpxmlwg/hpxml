@@ -4244,6 +4244,39 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 				type="IntegerGreaterThanOrEqualToZero"/>
 			<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
 				type="IntegerGreaterThanOrEqualToZero"/>
+			<xs:element minOccurs="0" name="AirFilter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Size">
+							<xs:annotation>
+								<xs:documentation>Width x Length x Thickness</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Width">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Length">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Thickness">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="DateLastReplaced" type="xs:date"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
