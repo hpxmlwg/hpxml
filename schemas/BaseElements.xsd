@@ -4237,6 +4237,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" name="AirFilter">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" name="Size">
 							<xs:annotation>
 								<xs:documentation>Width x Length x Thickness</xs:documentation>
