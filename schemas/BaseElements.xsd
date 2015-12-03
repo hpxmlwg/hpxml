@@ -1217,7 +1217,7 @@
 									<xs:element minOccurs="0" name="PerformanceAdjustment"
 										type="Fraction"/>
 									<xs:element minOccurs="0" name="ThirdPartyCertification"
-										type="DHWThirdPartyCertification"/>
+										type="DHWThirdPartyCertification" maxOccurs="unbounded"/>
 									<xs:element name="TankVolume" type="Volume" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[gal]</xs:documentation>
@@ -3051,7 +3051,7 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 									<xs:element minOccurs="0" name="NumberofRooms"
 										type="IntegerGreaterThanZero"/>
 									<xs:element name="NumberofBedrooms"
-										type="IntegerGreaterThanZero" minOccurs="0"/>
+										type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 									<xs:element name="NumberofBathrooms"
 										type="IntegerGreaterThanZero" minOccurs="0"/>
 									<xs:element minOccurs="0" name="NumberofCompleteBathrooms"
