@@ -1217,7 +1217,7 @@
 									<xs:element minOccurs="0" name="PerformanceAdjustment"
 										type="Fraction"/>
 									<xs:element minOccurs="0" name="ThirdPartyCertification"
-										type="DHWThirdPartyCertification"/>
+										type="DHWThirdPartyCertification" maxOccurs="unbounded"/>
 									<xs:element name="TankVolume" type="Volume" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[gal]</xs:documentation>
