@@ -2857,7 +2857,8 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 			</xs:element>
 			<xs:element minOccurs="0" name="NumberofReturnRegisters"
 				type="IntegerGreaterThanOrEqualToZero"/>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="StaticPressureMeasurement">
+			<xs:element maxOccurs="unbounded" minOccurs="0"
+				name="TotalExternalStaticPressureMeasurement">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="StaticPressure" type="xs:double">
