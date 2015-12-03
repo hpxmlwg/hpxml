@@ -2012,4 +2012,10 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="WindThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AWEA 9.1-2009"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>

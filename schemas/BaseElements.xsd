@@ -1464,6 +1464,52 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="Wind">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="WindTurbine">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Model" type="xs:string"/>
+									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
+									<xs:element minOccurs="0" name="RatedCapacity" type="Capacity">
+										<xs:annotation>
+											<xs:documentation>[kW]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="ThirdPartyCertification"
+										maxOccurs="unbounded" type="WindThirdPartyCertification"/>
+									<xs:element minOccurs="0" name="AWEARatedAnnualEnergy"
+										type="RatedAnnualkWh">
+										<xs:annotation>
+											<xs:documentation>[kWh] the calculated total energy that would be produced during a one-year period with an average wind speed of 5 m/s (11.2 mph)</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AWEARatedSoundLevel"
+										type="xs:double">
+										<xs:annotation>
+											<xs:documentation>[dBA] the sound pressure level not exceeded by the wind turbine 95% of the time at a distance of 60 meters from the rotor with an average wind speed of 5 m/s (11.2 mph).
+</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AWEARatedPower" type="Power">
+										<xs:annotation>
+											<xs:documentation>[kW] the wind turbine’s power output at 11 m/s (24.6 mph). Manufacturers may still describe or name their wind turbine models using a nominal power (e.g. 5 kW S-343).</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="PeakPower" type="Power">
+										<xs:annotation>
+											<xs:documentation>[kW] the highest point on the certified power curve.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
