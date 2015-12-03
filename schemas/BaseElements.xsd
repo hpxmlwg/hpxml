@@ -3041,7 +3041,7 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 									<xs:element minOccurs="0" name="NumberofRooms"
 										type="IntegerGreaterThanZero"/>
 									<xs:element name="NumberofBedrooms"
-										type="IntegerGreaterThanZero" minOccurs="0"/>
+										type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 									<xs:element name="NumberofBathrooms"
 										type="IntegerGreaterThanZero" minOccurs="0"/>
 									<xs:element minOccurs="0" name="NumberofCompleteBathrooms"
