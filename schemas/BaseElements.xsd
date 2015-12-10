@@ -1793,7 +1793,7 @@
 												<xs:element minOccurs="0" name="RatedHorsepower"
 												type="Power">
 												<xs:annotation>
-												<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower where the service factor is &gt; 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower where the service factor is greater than 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15 2011).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="TotalHorsepower"
