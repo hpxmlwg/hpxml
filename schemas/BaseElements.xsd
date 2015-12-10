@@ -1473,11 +1473,6 @@
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="Model" type="xs:string"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
-									<xs:element minOccurs="0" name="RatedCapacity" type="Capacity">
-										<xs:annotation>
-											<xs:documentation>[kW]</xs:documentation>
-										</xs:annotation>
-									</xs:element>
 									<xs:element minOccurs="0" name="ThirdPartyCertification"
 										maxOccurs="unbounded" type="WindThirdPartyCertification"/>
 									<xs:element minOccurs="0" name="AWEARatedAnnualEnergy"
