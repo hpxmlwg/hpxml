@@ -1217,7 +1217,7 @@
 									<xs:element minOccurs="0" name="PerformanceAdjustment"
 										type="Fraction"/>
 									<xs:element minOccurs="0" name="ThirdPartyCertification"
-										type="DHWThirdPartyCertification"/>
+										type="DHWThirdPartyCertification" maxOccurs="unbounded"/>
 									<xs:element name="TankVolume" type="Volume" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[gal]</xs:documentation>
@@ -1834,7 +1834,7 @@
 												<xs:element minOccurs="0" name="RatedHorsepower"
 												type="Power">
 												<xs:annotation>
-												<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower where the service factor is &gt; 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower where the service factor is greater than 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15 2011).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="TotalHorsepower"
@@ -2939,7 +2939,17 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 								<xs:sequence>
 									<xs:element minOccurs="0" name="SiteType" type="SiteType"/>
 									<xs:element minOccurs="0" name="Surroundings"
-										type="Surroundings"/>
+										type="Surroundings">
+										<xs:annotation>
+											<xs:documentation>If the building is attached to other units in the horizontal plane.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="VerticalSurroundings"
+										type="VerticalSurroundings">
+										<xs:annotation>
+											<xs:documentation>If the building is attached to other units on the vertical plane.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="ShieldingofHome" type="ShieldingofHome"
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="OrientationOfFrontOfHome"
@@ -3082,7 +3092,7 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 									<xs:element minOccurs="0" name="NumberofRooms"
 										type="IntegerGreaterThanZero"/>
 									<xs:element name="NumberofBedrooms"
-										type="IntegerGreaterThanZero" minOccurs="0"/>
+										type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 									<xs:element name="NumberofBathrooms"
 										type="IntegerGreaterThanZero" minOccurs="0"/>
 									<xs:element minOccurs="0" name="NumberofCompleteBathrooms"
@@ -4275,6 +4285,39 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 				type="IntegerGreaterThanOrEqualToZero"/>
 			<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
 				type="IntegerGreaterThanOrEqualToZero"/>
+			<xs:element minOccurs="0" name="AirFilter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Size">
+							<xs:annotation>
+								<xs:documentation>Width x Length x Thickness</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Width">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Length">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Thickness">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="DateLastReplaced" type="xs:date"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>

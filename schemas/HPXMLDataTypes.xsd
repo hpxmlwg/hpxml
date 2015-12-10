@@ -309,6 +309,14 @@
 			<xs:enumeration value="attached on three sides"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="VerticalSurroundings">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="unit above"/>
+			<xs:enumeration value="unit below"/>
+			<xs:enumeration value="unit above and below"/>
+			<xs:enumeration value="no units above or below"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ShieldingofHome">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="well-shielded"/>
@@ -780,6 +788,7 @@
 			<xs:enumeration value="top side of truss under sheathing"/>
 			<xs:enumeration value="below bottom chord of truss"/>
 			<xs:enumeration value="attic floor"/>
+			<xs:enumeration value="underside of rafters"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -788,6 +797,7 @@
 	<xs:simpleType name="HVACThirdPartyCertification">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="Energy Star Most Efficient"/>
 			<xs:enumeration value="CEE Tier 1"/>
 			<xs:enumeration value="CEE Tier 2"/>
 			<xs:enumeration value="CEE Tier 3"/>
