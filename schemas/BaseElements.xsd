@@ -2709,11 +2709,6 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 			<xs:extension base="HVACSystemInfo">
 				<xs:sequence minOccurs="0">
 					<xs:element name="HeatPumpType" type="HeatPumpType" minOccurs="0"/>
-					<xs:element minOccurs="0" name="ColdClimate" type="xs:boolean">
-						<xs:annotation>
-							<xs:documentation>Is this a cold climate heat pump?</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>[Btuh] Typically the nameplate capacity at 47F.</xs:documentation>
