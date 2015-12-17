@@ -1420,7 +1420,7 @@
 			<xs:element minOccurs="0" name="Photovoltaics">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="PVSystem">
+						<xs:element maxOccurs="unbounded" name="PVSystem" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
@@ -1458,6 +1458,265 @@
 									<xs:element minOccurs="0" name="YearModulesManufactured"
 										type="Year"/>
 									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="RenewableReady">
+							<xs:annotation>
+								<xs:documentation>Renewable Ready Home Solar Photovoltaic Checklist</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="BuildingArraySiteAssessment">
+										<xs:annotation>
+											<xs:documentation>Section 1</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0"
+												name="ProposedArrayLocationAndSize">
+												<xs:annotation>
+												<xs:documentation>1.1. Designate a proposed array location and square footage on architectural diagram.</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0"
+												name="ArrayLocationProposed" type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>Builder verified array location and square footage on architectural diagram.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="ArrayArea"
+												type="SurfaceArea">
+												<xs:annotation>
+												<xs:documentation>[sq.ft.] Proposed array area.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element minOccurs="0" name="ProposedAzimuth"
+												type="AzimuthType">
+												<xs:annotation>
+												<xs:documentation>1.2 [deg] Identify orientation (azimuth) of proposed array location.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="ProposedInclination"
+												type="Tilt">
+												<xs:annotation>
+												<xs:documentation>1.3 [deg] Identify inclination of proposed array location.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="ShadingStudy">
+												<xs:annotation>
+												<xs:documentation>1.4 Conduct a shading study documenting impacts on proposed array location.</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0"
+												name="AdjustedAnnualShadingImpact" type="Fraction">
+												<xs:annotation>
+												<xs:documentation>[fraction] percentage expressed as a fraction 0-1.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="MonthlyValuesVerifiedSolarPathAssessment"
+												type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>If using monthly values as verified through the solar path assessments.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="SolarResourcePotential" type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>1.5 Assess if proposed array location supports a solar resource potential of more than 75% of the optimal solar resource potential for the same location using the online RERH Solar Site Assessent Tool.
+
+Yes/true: This home meets the minimum recommended solar resource potential of 75% per the RERH SSAT results; continue with Section 2 below.
+
+No/false: This home does not meet the recommended solar resource potential per the RERH SSAT results; this location is not a good host for a future solar energy system and should not be made renewable energy ready.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0"
+										name="StructuralAndSafetyConsiderations">
+										<xs:annotation>
+											<xs:documentation>Section 2</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="RoofLoadRatings"
+												type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>2.1 Provide code-compliant documentation of the maximum allowable dead load and live load ratings of the existing roof; recommended allowable dead load rating can support an additional 6 lbs/sq. ft. for future solar system.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="RoofAnchorFallSafetySystem"
+												type="BooleanWithNA">
+												<xs:annotation>
+												<xs:documentation>2.2 Install permanent roof anchor fall safety system (na for roof pitch less than or equal to 3:12).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0"
+										name="RenewableEnergyReadyHomeInfrastructure">
+										<xs:annotation>
+											<xs:documentation>Section 3</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0"
+												name="InstalledInverterMountingPanel"
+												type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>3.1 Install and label a 4' x 4' plywood panel area for mounting an inverter and balance of system components.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="InstalledConduitInverterToServicePanel"
+												type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>3.2 Install a 1" metal conduit for the DC wire run from the designated array location to the designated inverter location 
+(cap and label both ends).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="HomeownerEducation">
+										<xs:annotation>
+											<xs:documentation>Section 4</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="ProvidedDocuments">
+												<xs:annotation>
+												<xs:documentation>4.1 Provide to the homeowner a copy of this checklist and all the support documents listed below (to be provided to future solar designer). </xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0"
+												name="RenewableEnergyReadyHomeSpecGuide"
+												type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>Copy of the Renewable Energy Ready Home Specification guide.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="RERHChecklist"
+												type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>Fully completed RERH checklist (all sections)</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="ArchitecturalDrawings" type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>Architectural drawings detailing proposed array location and square footage</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="ElectricalDrawings" type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>Electrical drawings and riser diagram of RERH PV system components that detail the dedicated location for the mounting of the balance components</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="ShadingStudy"
+												type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>Shading study with percent monthly or adjusted annual shading impact(s)</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="SiteAssessmentRecord" type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>Site assessment record generated by the online RERH SSAT indicating that the proposed site meets a minimum solar resource potential of 75 percent of optimal</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="RoofLoadDocumentation" type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>Code-compliant documentation of the maximum allowable dead load and live load ratings of the roof</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="ElectricUtilityInformation">
+												<xs:annotation>
+												<xs:documentation>4.2</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0"
+												name="ContactInformation" type="xs:string">
+												<xs:annotation>
+												<xs:documentation>Record electric utility service providers contact information</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="UtilityName"
+												type="xs:string">
+												<xs:annotation>
+												<xs:documentation>Electric utility service provider's name</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="UtilityURL"
+												type="xs:anyURI">
+												<xs:annotation>
+												<xs:documentation>Electric utility service provider's web address</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="BuilderBestPractices">
+										<xs:annotation>
+											<xs:documentation>Section 5 (optional)</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="LandscapePlan"
+												type="BooleanWithNA">
+												<xs:annotation>
+												<xs:documentation>5.1 Develop a detailed landscape plan with a clear emphasis on low-growth vegetation</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="RoofPenetrationsAboveArray"
+												type="BooleanWithNA">
+												<xs:annotation>
+												<xs:documentation>5.2 Place roof penetrations above or north of the proposed array to prevent casting shadows on the array location</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="BuilderCompletionDate"
+										type="xs:date"/>
+									<xs:element minOccurs="0" name="BuilderCompanyName"
+										type="xs:string"/>
+									<xs:element minOccurs="0" name="BuilderEmployeeName"
+										type="xs:string"/>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
