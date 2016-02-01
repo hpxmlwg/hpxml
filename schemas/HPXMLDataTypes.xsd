@@ -1414,6 +1414,7 @@
 			<xs:enumeration value="water bed"/>
 			<xs:enumeration value="aquarium"/>
 			<xs:enumeration value="electric vehicle charging"/>
+			<xs:enumeration value="sauna"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
