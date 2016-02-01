@@ -1776,6 +1776,11 @@
 			<xs:enumeration value="CFMnat"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="VentilationFanThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Recommendation">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="require"/>
