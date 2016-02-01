@@ -1868,6 +1868,7 @@
 			<xs:enumeration value="Enterprise Green Communities"/>
 			<xs:enumeration value="Earthcraft"/>
 			<xs:enumeration value="Environments for Living"/>
+			<xs:enumeration value="Green Point Rated"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
