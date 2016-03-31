@@ -1054,6 +1054,19 @@
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
 	<!--HVAC System Below-->
+	<xs:simpleType name="AirHandlerStaticPressureMeasurementLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="in ducts"/>
+			<xs:enumeration value="at equipment"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="StaticPressureSource">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="as measured"/>
+			<xs:enumeration value="per design report"/>
+			<xs:enumeration value="per OEM documentation"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="Capacity">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
