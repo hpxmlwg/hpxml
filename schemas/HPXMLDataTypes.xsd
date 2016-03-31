@@ -801,6 +801,7 @@
 			<xs:enumeration value="CEE Tier 1"/>
 			<xs:enumeration value="CEE Tier 2"/>
 			<xs:enumeration value="CEE Tier 3"/>
+			<xs:enumeration value="NEEP Cold-Climate Air-Source Heat Pump Specification"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
