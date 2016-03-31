@@ -1418,6 +1418,12 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="PlugLoadLocation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="interior"/>
+			<xs:enumeration value="exterior"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="PlugLoadUnits">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="kWh/year"/>
