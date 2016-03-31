@@ -4241,6 +4241,11 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="HVACMaintenance">
 		<xs:sequence>
 			<xs:element minOccurs="0" name="TuneAndRepair" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="TuneAndRepairYearMonth" type="xs:gYearMonth">
+				<xs:annotation>
+					<xs:documentation>Year and month of the last tune and repair for this HVAC equipment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="NumberofCoilsReplaced"
 				type="IntegerGreaterThanOrEqualToZero"/>
 			<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
