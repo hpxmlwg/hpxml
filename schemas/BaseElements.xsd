@@ -4231,6 +4231,11 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="HVACDistributionImprovementInfo">
 		<xs:sequence>
 			<xs:element name="DuctSystemSealed" type="xs:boolean" minOccurs="0"/>
+			<xs:element minOccurs="0" name="DuctSystemSealedYearMonth" type="xs:gYearMonth">
+				<xs:annotation>
+					<xs:documentation>The year and month the duct system was sealed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit" type="xs:boolean"
 				minOccurs="0"/>
 			<xs:element name="DuctSystemReplaced" type="xs:boolean" minOccurs="0"/>
