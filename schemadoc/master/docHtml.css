@@ -266,16 +266,16 @@ div.annotation table td{
 }
 
 /*  Hierarchy */
-ul > li{
+ul > li.internal, ul > li.schemaHierarchy {
     list-style:none;
 }
 
-ul {
+ul.internal {
     margin:2px;
     padding:0;
 }
 
-ul ul li {
+ul ul li.internal {
     padding-left:10px;
     
     list-style-image:url('img/hierarchy_arrow.gif');
@@ -290,6 +290,7 @@ ul ul li.schemaHierarchy {
 }
 
 ul.schemaHierarchy {
+    margin:2px;
     padding-left:20px;
 }
 
