@@ -1217,7 +1217,7 @@
 									<xs:element minOccurs="0" name="PerformanceAdjustment"
 										type="Fraction"/>
 									<xs:element minOccurs="0" name="ThirdPartyCertification"
-										type="DHWThirdPartyCertification"/>
+										type="DHWThirdPartyCertification" maxOccurs="unbounded"/>
 									<xs:element name="TankVolume" type="Volume" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[gal]</xs:documentation>
@@ -1281,6 +1281,12 @@
 										minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[deg F]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="HasGeothermalDesuperheater"
+										type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Indicates whether this water heater has a geothermal desuperheater. The attached heat pump can be referenced in the RelatedHeatingSystem element.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HasSharedCombustionVentilation"
@@ -1861,7 +1867,7 @@
 												<xs:element minOccurs="0" name="RatedHorsepower"
 												type="Power">
 												<xs:annotation>
-												<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower where the service factor is &gt; 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15 2011).</xs:documentation>
+												<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower where the service factor is greater than 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15 2011).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="TotalHorsepower"
@@ -1982,6 +1988,7 @@
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element name="PlugLoadType" type="PlugLoadType" minOccurs="0"/>
+						<xs:element minOccurs="0" name="Location" type="PlugLoadLocation"/>
 						<xs:element name="Count" type="IntegerGreaterThanOrEqualToZero"
 							minOccurs="0"/>
 						<xs:element minOccurs="0" name="Load">
@@ -2925,6 +2932,16 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 			</xs:element>
 			<xs:element minOccurs="0" name="NumberofReturnRegisters"
 				type="IntegerGreaterThanOrEqualToZero"/>
+			<xs:element minOccurs="0" name="TotalExternalStaticPressureMeasurement">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Supply"
+							type="TotalExternalStaticPressureMeasurement"/>
+						<xs:element minOccurs="0" name="Return"
+							type="TotalExternalStaticPressureMeasurement"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -2966,7 +2983,17 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 								<xs:sequence>
 									<xs:element minOccurs="0" name="SiteType" type="SiteType"/>
 									<xs:element minOccurs="0" name="Surroundings"
-										type="Surroundings"/>
+										type="Surroundings">
+										<xs:annotation>
+											<xs:documentation>If the building is attached to other units in the horizontal plane.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="VerticalSurroundings"
+										type="VerticalSurroundings">
+										<xs:annotation>
+											<xs:documentation>If the building is attached to other units on the vertical plane.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="ShieldingofHome" type="ShieldingofHome"
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="OrientationOfFrontOfHome"
@@ -3109,7 +3136,7 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 									<xs:element minOccurs="0" name="NumberofRooms"
 										type="IntegerGreaterThanZero"/>
 									<xs:element name="NumberofBedrooms"
-										type="IntegerGreaterThanZero" minOccurs="0"/>
+										type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 									<xs:element name="NumberofBathrooms"
 										type="IntegerGreaterThanZero" minOccurs="0"/>
 									<xs:element minOccurs="0" name="NumberofCompleteBathrooms"
@@ -3504,7 +3531,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			</xs:element>
 			<xs:element minOccurs="0" name="EffectiveLeakageArea" type="SurfaceArea">
 				<xs:annotation>
-					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure. 
+					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure.
 Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [Pa]) ^ 0.5)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -3663,8 +3690,8 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 						<xs:element minOccurs="0" name="MeteringConfiguration"
 							type="MeteringConfiguration">
 							<xs:annotation>
-								<xs:documentation>direct metering = tenants directly metered; 
-master meter without sub-metering = tenants not sub metered; 
+								<xs:documentation>direct metering = tenants directly metered;
+master meter without sub-metering = tenants not sub metered;
 master meter with sub-metering = tenant sub-metered by building owner</xs:documentation>
 							</xs:annotation>
 						</xs:element>
@@ -4288,6 +4315,11 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="HVACDistributionImprovementInfo">
 		<xs:sequence>
 			<xs:element name="DuctSystemSealed" type="xs:boolean" minOccurs="0"/>
+			<xs:element minOccurs="0" name="DuctSystemSealedYearMonth" type="xs:gYearMonth">
+				<xs:annotation>
+					<xs:documentation>The year and month the duct system was sealed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit" type="xs:boolean"
 				minOccurs="0"/>
 			<xs:element name="DuctSystemReplaced" type="xs:boolean" minOccurs="0"/>
@@ -4298,10 +4330,48 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="HVACMaintenance">
 		<xs:sequence>
 			<xs:element minOccurs="0" name="TuneAndRepair" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="TuneAndRepairYearMonth" type="xs:gYearMonth">
+				<xs:annotation>
+					<xs:documentation>Year and month of the last tune and repair for this HVAC equipment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="NumberofCoilsReplaced"
 				type="IntegerGreaterThanOrEqualToZero"/>
 			<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
 				type="IntegerGreaterThanOrEqualToZero"/>
+			<xs:element minOccurs="0" name="AirFilter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Size">
+							<xs:annotation>
+								<xs:documentation>Width x Length x Thickness</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Width">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Length">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Thickness">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="DateLastReplaced" type="xs:date"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -4463,6 +4533,20 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					<xs:documentation>Fraction of total pipe insulated</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TotalExternalStaticPressureMeasurement">
+		<xs:sequence>
+			<xs:element name="StaticPressure" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>[Pa] positive for supply side measurements, negative for return side.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MeasurementLocation"
+				type="AirHandlerStaticPressureMeasurementLocation"/>
+			<xs:element minOccurs="0" name="LocationDescription" type="xs:string"/>
+			<xs:element minOccurs="0" name="StaticPressureSource" type="StaticPressureSource"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
