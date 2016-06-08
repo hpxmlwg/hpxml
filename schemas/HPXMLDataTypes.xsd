@@ -1801,6 +1801,7 @@
 	<xs:simpleType name="VentilationFanThirdPartyCertification">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="Home Ventilation Institute"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
