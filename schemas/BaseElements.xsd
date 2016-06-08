@@ -1165,6 +1165,9 @@
 												<xs:documentation>[W]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												name="ThirdPartyCertification"
+												type="VentilationFanThirdPartyCertification"/>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
