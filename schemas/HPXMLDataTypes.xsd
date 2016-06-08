@@ -2044,4 +2044,19 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="DrainWaterHeatRecoveryFacilitiesConnected">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="one"/>
+			<xs:enumeration value="all"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RecirculationControlType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="no control"/>
+			<xs:enumeration value="timer"/>
+			<xs:enumeration value="temperature"/>
+			<xs:enumeration value="presence sensor demand control"/>
+			<xs:enumeration value="manual demand control"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
