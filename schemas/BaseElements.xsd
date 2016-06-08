@@ -1269,27 +1269,11 @@
 												</xs:sequence>
 												</xs:complexType>
 												</xs:element>
-												<xs:element minOccurs="0" name="Pipe">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element name="PipeRValue" type="RValue"
-												minOccurs="0"/>
-												<xs:element minOccurs="0"
-												name="PipeLengthInsulated"
-												type="LengthMeasurement">
+												<xs:element minOccurs="0" name="Pipe"
+												type="PipeInsulationType">
 												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
+												<xs:documentation>DEPRECATED. This will be removed in v3.0. Use HotWaterDistribution element instead.</xs:documentation>
 												</xs:annotation>
-												</xs:element>
-												<xs:element name="FractionPipeInsulation"
-												type="Fraction" minOccurs="0">
-												<xs:annotation>
-												<xs:documentation>Fraction of total pipe insulated</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												</xs:complexType>
 												</xs:element>
 											</xs:sequence>
 										</xs:complexType>
@@ -1300,6 +1284,12 @@
 										minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[deg F]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="HasGeothermalDesuperheater"
+										type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Indicates whether this water heater has a geothermal desuperheater. The attached heat pump can be referenced in the RelatedHeatingSystem element.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HasSharedCombustionVentilation"
@@ -1325,12 +1315,96 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element maxOccurs="unbounded" minOccurs="0" name="WaterFixture">
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="HotWaterDistribution">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="AttachedToWaterHeatingSystem"
-										type="LocalReference"/>
+										type="LocalReference">
+										<xs:annotation>
+											<xs:documentation>The water heating system that his distribution system serves.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="SystemType">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element name="Standard">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="PipingLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="Recirculation">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="ControlType"
+												type="RecirculationControlType"/>
+												<xs:element minOccurs="0"
+												name="RecirculationPipingLoopLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="BranchPipingLoopLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="PumpPower"
+												type="Power">
+												<xs:annotation>
+												<xs:documentation>[W]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="PipeInsulation"
+										type="PipeInsulationType"/>
+									<xs:element minOccurs="0" name="DrainWaterHeatRecovery">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="FacilitiesConnected"
+												type="DrainWaterHeatRecoveryFacilitiesConnected"/>
+												<xs:element minOccurs="0" name="EqualFlow"
+												type="xs:boolean"/>
+												<xs:element minOccurs="0" name="Efficiency"
+												type="Fraction">
+												<xs:annotation>
+												<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="WaterFixture">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:choice minOccurs="0">
+										<xs:element name="AttachedToWaterHeatingSystem"
+											type="LocalReference"/>
+										<xs:element name="AttachedToHotWaterDistribution"
+											type="LocalReference"/>
+									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType"
 										type="WaterFixtureType"/>
 									<xs:element minOccurs="0" name="FlowRate" type="xs:double">
@@ -1917,6 +1991,7 @@
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element name="PlugLoadType" type="PlugLoadType" minOccurs="0"/>
+						<xs:element minOccurs="0" name="Location" type="PlugLoadLocation"/>
 						<xs:element name="Count" type="IntegerGreaterThanOrEqualToZero"
 							minOccurs="0"/>
 						<xs:element minOccurs="0" name="Load">
@@ -2860,6 +2935,16 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 			</xs:element>
 			<xs:element minOccurs="0" name="NumberofReturnRegisters"
 				type="IntegerGreaterThanOrEqualToZero"/>
+			<xs:element minOccurs="0" name="TotalExternalStaticPressureMeasurement">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Supply"
+							type="TotalExternalStaticPressureMeasurement"/>
+						<xs:element minOccurs="0" name="Return"
+							type="TotalExternalStaticPressureMeasurement"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -3449,7 +3534,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			</xs:element>
 			<xs:element minOccurs="0" name="EffectiveLeakageArea" type="SurfaceArea">
 				<xs:annotation>
-					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure. 
+					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure.
 Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [Pa]) ^ 0.5)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -3608,8 +3693,8 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 						<xs:element minOccurs="0" name="MeteringConfiguration"
 							type="MeteringConfiguration">
 							<xs:annotation>
-								<xs:documentation>direct metering = tenants directly metered; 
-master meter without sub-metering = tenants not sub metered; 
+								<xs:documentation>direct metering = tenants directly metered;
+master meter without sub-metering = tenants not sub metered;
 master meter with sub-metering = tenant sub-metered by building owner</xs:documentation>
 							</xs:annotation>
 						</xs:element>
@@ -4233,6 +4318,11 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="HVACDistributionImprovementInfo">
 		<xs:sequence>
 			<xs:element name="DuctSystemSealed" type="xs:boolean" minOccurs="0"/>
+			<xs:element minOccurs="0" name="DuctSystemSealedYearMonth" type="xs:gYearMonth">
+				<xs:annotation>
+					<xs:documentation>The year and month the duct system was sealed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit" type="xs:boolean"
 				minOccurs="0"/>
 			<xs:element name="DuctSystemReplaced" type="xs:boolean" minOccurs="0"/>
@@ -4243,6 +4333,11 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="HVACMaintenance">
 		<xs:sequence>
 			<xs:element minOccurs="0" name="TuneAndRepair" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="TuneAndRepairYearMonth" type="xs:gYearMonth">
+				<xs:annotation>
+					<xs:documentation>Year and month of the last tune and repair for this HVAC equipment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="NumberofCoilsReplaced"
 				type="IntegerGreaterThanOrEqualToZero"/>
 			<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
@@ -4425,6 +4520,36 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" name="WBAN" type="xs:string"/>
 			<xs:element minOccurs="0" name="Type" type="WeatherStationType"/>
 			<xs:element minOccurs="0" name="Use" nillable="true" type="WeatherStationUse"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PipeInsulationType">
+		<xs:sequence>
+			<xs:element name="PipeRValue" type="RValue" minOccurs="0"/>
+			<xs:element minOccurs="0" name="PipeLengthInsulated" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[ft]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FractionPipeInsulation" type="Fraction" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fraction of total pipe insulated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TotalExternalStaticPressureMeasurement">
+		<xs:sequence>
+			<xs:element name="StaticPressure" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>[Pa] positive for supply side measurements, negative for return side.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MeasurementLocation"
+				type="AirHandlerStaticPressureMeasurementLocation"/>
+			<xs:element minOccurs="0" name="LocationDescription" type="xs:string"/>
+			<xs:element minOccurs="0" name="StaticPressureSource" type="StaticPressureSource"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
