@@ -4436,7 +4436,16 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element minOccurs="0" name="DateLastReplaced" type="xs:date"/>
+						<xs:element minOccurs="0" name="MERVRating" type="MERV">
+							<xs:annotation>
+								<xs:documentation>Minimum efficiency reporting value, commonly known as MERV rating, is a measurement scale designed in 1987 by the American Society of Heating, Refrigerating and Air-Conditioning Engineers (ASHRAE) to rate the effectiveness of air filters.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="LastReplaced" type="xs:gYearMonth">
+							<xs:annotation>
+								<xs:documentation>The Year and Month the filter was last replacced.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
