@@ -1326,7 +1326,8 @@
 	<xs:simpleType name="WaterType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="indoor and outdoor water"/>
-			<xs:enumeration value="indoor water "/>
+			<xs:enumeration value="indoor water "/><!-- deprecated -->
+			<xs:enumeration value="indoor water"/>
 			<xs:enumeration value="outdoor water"/>
 			<xs:enumeration value="wastewater/sewer"/>
 		</xs:restriction>
