@@ -1165,6 +1165,9 @@
 												<xs:documentation>[W]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												name="ThirdPartyCertification"
+												type="VentilationFanThirdPartyCertification"/>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
@@ -1266,27 +1269,11 @@
 												</xs:sequence>
 												</xs:complexType>
 												</xs:element>
-												<xs:element minOccurs="0" name="Pipe">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element name="PipeRValue" type="RValue"
-												minOccurs="0"/>
-												<xs:element minOccurs="0"
-												name="PipeLengthInsulated"
-												type="LengthMeasurement">
+												<xs:element minOccurs="0" name="Pipe"
+												type="PipeInsulationType">
 												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
+												<xs:documentation>DEPRECATED. This will be removed in v3.0. Use HotWaterDistribution element instead.</xs:documentation>
 												</xs:annotation>
-												</xs:element>
-												<xs:element name="FractionPipeInsulation"
-												type="Fraction" minOccurs="0">
-												<xs:annotation>
-												<xs:documentation>Fraction of total pipe insulated</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												</xs:complexType>
 												</xs:element>
 											</xs:sequence>
 										</xs:complexType>
@@ -1328,12 +1315,96 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element maxOccurs="unbounded" minOccurs="0" name="WaterFixture">
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="HotWaterDistribution">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="AttachedToWaterHeatingSystem"
-										type="LocalReference"/>
+										type="LocalReference">
+										<xs:annotation>
+											<xs:documentation>The water heating system that his distribution system serves.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="SystemType">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element name="Standard">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="PipingLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="Recirculation">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="ControlType"
+												type="RecirculationControlType"/>
+												<xs:element minOccurs="0"
+												name="RecirculationPipingLoopLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="BranchPipingLoopLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="PumpPower"
+												type="Power">
+												<xs:annotation>
+												<xs:documentation>[W]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="PipeInsulation"
+										type="PipeInsulationType"/>
+									<xs:element minOccurs="0" name="DrainWaterHeatRecovery">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="FacilitiesConnected"
+												type="DrainWaterHeatRecoveryFacilitiesConnected"/>
+												<xs:element minOccurs="0" name="EqualFlow"
+												type="xs:boolean"/>
+												<xs:element minOccurs="0" name="Efficiency"
+												type="Fraction">
+												<xs:annotation>
+												<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="WaterFixture">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:choice minOccurs="0">
+										<xs:element name="AttachedToWaterHeatingSystem"
+											type="LocalReference"/>
+										<xs:element name="AttachedToHotWaterDistribution"
+											type="LocalReference"/>
+									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType"
 										type="WaterFixtureType"/>
 									<xs:element minOccurs="0" name="FlowRate" type="xs:double">
@@ -1463,7 +1534,79 @@
 										type="Year"/>
 									<xs:element minOccurs="0" name="YearModulesManufactured"
 										type="Year"/>
+									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
+									<xs:element minOccurs="0" name="AnnualOutput"
+										type="RatedAnnualkWh">
+										<xs:annotation>
+											<xs:documentation>[kWh] Projected Annual Output for a typical meterological year as determined by PVWatts or similar. </xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="LevelizedCostOfElectricity"
+										type="Cost">
+										<xs:annotation>
+											<xs:documentation>[$] The LCOE is the total cost of installing and operating a project expressed in dollars per kilowatt-hour of electricity generated by the system over its life. Can be calculated with System Advisor Model, a similar software, or through a simplified calculation at http://www.nrel.gov/analysis/tech_lcoe.html.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Wind">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="WindTurbine">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Model" type="xs:string"/>
+									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
+									<xs:element minOccurs="0" name="ThirdPartyCertification"
+										maxOccurs="unbounded" type="WindThirdPartyCertification"/>
+									<xs:element minOccurs="0" name="AWEARatedAnnualEnergy"
+										type="RatedAnnualkWh">
+										<xs:annotation>
+											<xs:documentation>[kWh] the calculated total energy that would be produced during a one-year period with an average wind speed of 5 m/s (11.2 mph)</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AWEARatedSoundLevel"
+										type="xs:double">
+										<xs:annotation>
+											<xs:documentation>[dBA] the sound pressure level not exceeded by the wind turbine 95% of the time at a distance of 60 meters from the rotor with an average wind speed of 5 m/s (11.2 mph).
+</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AWEARatedPower" type="Power">
+										<xs:annotation>
+											<xs:documentation>[kW] the wind turbine’s power output at 11 m/s (24.6 mph). Manufacturers may still describe or name their wind turbine models using a nominal power (e.g. 5 kW S-343).</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="PeakPower" type="Power">
+										<xs:annotation>
+											<xs:documentation>[kW] the highest point on the certified power curve.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RotorDiameter"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="HubHeight"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="LevelizedCostOfElectricity"
+										type="Cost">
+										<xs:annotation>
+											<xs:documentation>[$] The LCOE is the total cost of installing and operating a project expressed in dollars per kilowatt-hour of electricity generated by the system over its life. Can be calculated with System Advisor Model, a similar software, or through a simplified calculation at http://www.nrel.gov/analysis/tech_lcoe.html.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -3463,7 +3606,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			</xs:element>
 			<xs:element minOccurs="0" name="EffectiveLeakageArea" type="SurfaceArea">
 				<xs:annotation>
-					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure. 
+					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure.
 Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [Pa]) ^ 0.5)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -3622,8 +3765,8 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 						<xs:element minOccurs="0" name="MeteringConfiguration"
 							type="MeteringConfiguration">
 							<xs:annotation>
-								<xs:documentation>direct metering = tenants directly metered; 
-master meter without sub-metering = tenants not sub metered; 
+								<xs:documentation>direct metering = tenants directly metered;
+master meter without sub-metering = tenants not sub metered;
 master meter with sub-metering = tenant sub-metered by building owner</xs:documentation>
 							</xs:annotation>
 						</xs:element>
@@ -4299,7 +4442,16 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element minOccurs="0" name="DateLastReplaced" type="xs:date"/>
+						<xs:element minOccurs="0" name="MERVRating" type="MERV">
+							<xs:annotation>
+								<xs:documentation>Minimum efficiency reporting value, commonly known as MERV rating, is a measurement scale designed in 1987 by the American Society of Heating, Refrigerating and Air-Conditioning Engineers (ASHRAE) to rate the effectiveness of air filters.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="LastReplaced" type="xs:gYearMonth">
+							<xs:annotation>
+								<xs:documentation>The Year and Month the filter was last replacced.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -4449,6 +4601,22 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" name="WBAN" type="xs:string"/>
 			<xs:element minOccurs="0" name="Type" type="WeatherStationType"/>
 			<xs:element minOccurs="0" name="Use" nillable="true" type="WeatherStationUse"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PipeInsulationType">
+		<xs:sequence>
+			<xs:element name="PipeRValue" type="RValue" minOccurs="0"/>
+			<xs:element minOccurs="0" name="PipeLengthInsulated" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[ft]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FractionPipeInsulation" type="Fraction" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fraction of total pipe insulated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>

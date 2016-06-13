@@ -1326,7 +1326,8 @@
 	<xs:simpleType name="WaterType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="indoor and outdoor water"/>
-			<xs:enumeration value="indoor water "/>
+			<xs:enumeration value="indoor water "/><!-- deprecated -->
+			<xs:enumeration value="indoor water"/>
 			<xs:enumeration value="outdoor water"/>
 			<xs:enumeration value="wastewater/sewer"/>
 		</xs:restriction>
@@ -1764,6 +1765,9 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="leased"/>
 			<xs:enumeration value="owned"/>
+			<xs:enumeration value="power purchase agreement"/>
+			<xs:enumeration value="utility owned"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Power">
@@ -1796,6 +1800,13 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="ACH"/>
 			<xs:enumeration value="CFMnat"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VentilationFanThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="Home Ventilation Institute"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Recommendation">
@@ -2042,6 +2053,33 @@
 	<xs:simpleType name="PeopleCount">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WindThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AWEA 9.1-2009"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DrainWaterHeatRecoveryFacilitiesConnected">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="one"/>
+			<xs:enumeration value="all"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RecirculationControlType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="no control"/>
+			<xs:enumeration value="timer"/>
+			<xs:enumeration value="temperature"/>
+			<xs:enumeration value="presence sensor demand control"/>
+			<xs:enumeration value="manual demand control"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MERV">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="20"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
