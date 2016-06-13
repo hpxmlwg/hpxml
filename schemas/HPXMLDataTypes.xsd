@@ -2076,4 +2076,10 @@
 			<xs:enumeration value="manual demand control"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="MERV">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
