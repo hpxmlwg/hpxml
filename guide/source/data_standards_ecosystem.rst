@@ -8,7 +8,6 @@ What are the BPI Data Standards?
 
 The BPI data standards are designed to help collect and transfer
 information about the characteristics of residential buildings and upgrade projects.
-
 This data can be shared with any party involved in a home performance or
 energy-efficiency program, including contractors, program administrators,
 utilities, federal agencies, and others. In addition, HPXML allows home performance data
