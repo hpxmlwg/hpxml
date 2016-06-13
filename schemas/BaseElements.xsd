@@ -1682,6 +1682,26 @@ No/false: This home does not meet the recommended solar resource potential per t
 (cap and label both ends).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0"
+												name="InstalledConduitFromInverterToServicePanel"
+												type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>3.3 Install a 1” metal conduit from designated inverter location to electrical service panel (cap and label both ends).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="InstalledPVCircuitBreaker" type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>3.4 Install and label a 70-amp dual pole circuit breaker in the electrical service panel for use by the PV system (label the service panel).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="ProvideArchitecturalDiagram"
+												type="xs:boolean">
+												<xs:annotation>
+												<xs:documentation>3.5 Provide architectural drawing and riser diagram of RERH solar PV system components.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
