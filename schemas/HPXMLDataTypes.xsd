@@ -154,6 +154,11 @@
 			<xs:enumeration value="depressurization"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="HousePressure">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="TypeofInfiltrationMeasurement">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="blower door"/>

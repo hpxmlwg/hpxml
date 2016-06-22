@@ -4088,7 +4088,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			<xs:element name="TypeOfInfiltrationMeasurement" type="TypeofInfiltrationMeasurement"
 				minOccurs="0"/>
 			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
-			<xs:element name="HousePressure" type="xs:double" minOccurs="0">
+			<xs:element name="HousePressure" type="HousePressure" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[Pa] with respect to outside</xs:documentation>
 				</xs:annotation>
