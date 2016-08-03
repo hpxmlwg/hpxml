@@ -5,8 +5,8 @@ Audit-Upgrade
 
 The audit-upgrade use case covers two scenarios:
 
-#. A baseline building with a proposed work scope 
-#. A baseline building with a completed work scope
+#. A baseline building with a proposed work scope (see :ref:`audit-use-case-defn`)
+#. A baseline building with a completed work scope (see :ref:`upgrade-use-case-defn`)
 
 Both scenarios describe a pre- and post-upgrade building and the actions
 (measures) that occur between the two states to make the difference. To achieve
@@ -36,6 +36,7 @@ include their name and phone number as shown.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml 
+   :dedent: 4
    :lines: 34-47
    :emphasize-lines: 6-7,10
 
@@ -60,7 +61,8 @@ of ``audit``.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml 
-   :lines: 48-49,60-62,280
+   :dedent: 4
+   :lines: 48-49,60-62,286
    :emphasize-lines: 4
 
 Many items within the building require a unique ``SystemIdentifier`` element.
@@ -71,7 +73,8 @@ For example, the water heater in the pre-upgrade building has an id of ``dhw1``.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
-   :lines: 222-228
+   :dedent: 20
+   :lines: 228-234
    :emphasize-lines: 2
 
 .. _postupgrade:
@@ -109,7 +112,8 @@ pre-upgrade water heater and indicate it is indeed the same equipment.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
-   :lines: 455-461
+   :dedent: 20
+   :lines: 467-473
    :emphasize-lines: 2
 
 .. note::
@@ -131,7 +135,8 @@ building.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
-   :lines: 566-571,588-589,610-612
+   :dedent: 4
+   :lines: 578-586,603-604,625-627
    :emphasize-lines: 2,4-5
 
 Energy Savings
@@ -142,7 +147,8 @@ measured energy use and savings achieved in an upgrade.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
-   :lines: 571-588
+   :dedent: 12
+   :lines: 586-603
 
 .. note::
 
@@ -162,22 +168,25 @@ The measure cost is also included.
 From the example file, this measure
 
 .. literalinclude:: /../../examples/audit.xml 
-   :language: xml 
-   :lines: 600-609 
+   :language: xml
+   :dedent: 16
+   :lines: 615-624 
    :emphasize-lines: 7,9
 
 replaces this furnace in the pre-upgrade building
 
 .. literalinclude:: /../../examples/audit.xml 
    :language: xml 
-   :lines: 148-161 
+   :dedent: 24
+   :lines: 154-167 
    :emphasize-lines: 2
 
 with this one.
 
 .. literalinclude:: /../../examples/audit.xml 
-   :language: xml 
-   :lines: 381-394 
+   :language: xml
+   :dedent: 24
+   :lines: 393-406
    :emphasize-lines: 2
 
 

@@ -11,12 +11,14 @@ requires data inputs to be submitted in terms of the data model set forth by
 |hescore|. Therefore, any users of the |hescore| API must translate their data
 into the appropriate location and representation in the |hescore| input array. 
 
-The latest version of the |hescore| API provides the capability for an HPXML
-import. This receives an HPXML file as input and translates the user-specified
-:ref:`building-node` element (whether pre- or post-upgrade) into corresponding
-|hescore| inputs and populates the |hescore| input array. By using this import
-capability software developers can leverage their investment in HPXML to provide
-|hescore| functionality at a minimum incremental development cost.
+The |hescore| API provides the capability for an HPXML import. This receives an
+HPXML file as input and translates the user-specified :ref:`building-node`
+element (whether pre- or post-upgrade) into corresponding |hescore| inputs and
+populates the |hescore| input array. By using this import capability software
+developers can leverage their investment in HPXML to provide |hescore|
+functionality at a minimum incremental development cost.
+
+See :ref:`hescore-use-case-defn` for additional information.
 
 |hescore| API
 *************

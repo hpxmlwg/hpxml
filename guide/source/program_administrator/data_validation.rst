@@ -45,6 +45,21 @@ properly, you can burn out your users and create contractor dissatisfaction.
 This, of course, is not an observation exclusive to HPXML, but a best practice
 in any software implementation in general.
 
+.. _toolbox:
+
+HPXML Toolbox
+*************
+
+To assist in validation, NREL provides an `HPXML Toolbox`_ website that includes
+a schema validator, use case validator, a collapsable tree view of HPXML data,
+and a web API that can be incorportated into software workflows. The tool is
+useful to both software developers to test their implementation against the
+known use cases. It is also helpful for program administrators to see what data
+is in an HPXML file and what additional data would be required to meet any of
+the use cases.
+
+.. _HPXML Toolbox: https://hpxml.nrel.gov/
+
 Phasing of Validation
 *********************
 

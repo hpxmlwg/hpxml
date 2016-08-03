@@ -1,0 +1,21 @@
+BPI – 2101 Certificate of Completion
+####################################
+
+This use case contains data that has the intent of informing real estate
+transactions (See :ref:`bpi2101-use-case-defn`). It is likely the most
+complicated use case and contains each of the following :ref:`building-node`
+nodes.
+
+* Pre-upgrade
+* Proposed workscope
+* Post-upgrade
+
+Two :ref:`project-node` nodes are included as well that describe the proposed
+project and the completed project. It can be thought of as a combination of the
+:doc:`Audit and Upgrade <auditupgrade>` use cases. 
+
+Finally, :ref:`consumption-node` and :ref:`utility-node` nodes are also included
+to provide a utility billing history.
+
+See the ``examples/bpi2101.xml`` document for more details on what data elements
+are included.
