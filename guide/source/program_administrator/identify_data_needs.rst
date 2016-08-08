@@ -141,9 +141,13 @@ for HPXML program implementation.  Programs can then forward the tool to the
 implementation team, trade allies and software providers, giving them clear
 guidance on the requirements  for HPXML Implementation with your program.
 
-.. todo::
+.. raw:: html
 
-    YouTube video here.
+    <iframe width="640" height="360" src="https://www.youtube.com/embed/vmfU1ytzMfc" frameborder="0" allowfullscreen></iframe>
+
+.. raw:: latex
+
+    \par\href{https://youtu.be/vmfU1ytzMfc}{YouTube: HPXML Data Selection Tool Tutorial}\par
 
 Additional details about the data structure and standard data sets are provided
 in the sections below.
@@ -240,6 +244,8 @@ cases that have been developed to date. Each use case only uses a fraction of
 the data points that the HPXML standard can support. Over time, more use cases
 will be developed to meet market needs.
 
+.. _audit-use-case-defn:
+
 Audit Use Case
 ==============
 
@@ -257,6 +263,8 @@ can be found in the software developer guide at
 
 .. _HPXML GitHub repository: https://github.com/hpxmlwg/hpxml/tree/hpxmlguide/examples
 
+.. _upgrade-use-case-defn:
+
 Upgrade Use Case
 ================
 
@@ -273,6 +281,8 @@ program needs.
 
 The upgrade use case HPXML file is very similar to the audit use case. The
 differences are detailed in :doc:`/software_developer/usecases/auditupgrade`. 
+
+.. _hescore-use-case-defn:
 
 Home Energy Score Use Case
 ==========================
@@ -292,7 +302,9 @@ integration with the Home Energy Score API, see
 A full list of HPXML data elements that can currently be incorporated into use
 cases is available in the `online schema documentation`_.
 
-.. _online schema documentation: http://hpxmlwg.github.io/hpxml/schemadoc/hpxml-2.1.0/index.html
+.. _online schema documentation: http://hpxmlwg.github.io/hpxml/schemadoc/hpxml-2.2.0/index.html
+
+.. _bpi2101-use-case-defn:
 
 BPI – 2101 Certificate of Completion Use Case
 =============================================

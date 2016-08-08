@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2014/6"
-	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.1">
+	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.2">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:element name="XMLTransactionHeaderInformation">
 		<xs:annotation>
@@ -3444,6 +3444,12 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
+			<xs:element minOccurs="0" name="OtherScoreType">
+				<xs:annotation>
+					<xs:documentation>Name of the score type if "other" is selected in ScoreType.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ScoreDate" type="xs:date"/>
 			<xs:element name="Score" type="xs:integer"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
@@ -4088,7 +4094,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			<xs:element name="TypeOfInfiltrationMeasurement" type="TypeofInfiltrationMeasurement"
 				minOccurs="0"/>
 			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
-			<xs:element name="HousePressure" type="xs:double" minOccurs="0">
+			<xs:element name="HousePressure" type="HousePressure" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[Pa] with respect to outside</xs:documentation>
 				</xs:annotation>
