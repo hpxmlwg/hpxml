@@ -3,27 +3,29 @@
 Introduction
 ############
 
-An organized group of members of the home performance community with the support
-of the private, utility, and public sectors, conceived of and developed the
-Building Performance Institute's (BPI) BPI-2100 and BPI-2200 data standards
-commonly referred to as ("HPXML"). To expedite its deployment into the market,
-Home Performance with ENERGY STAR\ |reg| developed this HPXML Implementation Guide to
-help program administrators and software developers integrate HPXML into their
-operations and products. Simply put, HPXML is a set of common definitions for
-the attributes of the systems in a home and the computing language that
-facilitates the quick and easy transfer of home-related data between different
-market actors. Without HPXML, home improvement contractors cannot easily
-exchange data with partnering businesses, energy efficiency programs, the real
-estate market, or the financial sector.
+The Need for Data Standardization
 
-As conveyed in Figure 1 below, today there is a fragmented, siloed marketplace
-where exchange of data occurs but with non-uniform definitions for metrics and a
-lack of for two-way feedback systems. Figure 2 represents a market where HPXML
-has been successfully integrated which facilitates the easy exchange of data
-between and among different market actors.  While each market actor would have
-specific uses for some data, other data could be shared creating more value for
-residential energy efficiency as a whole ultimately translating into greater
-energy savings from a more efficient marketplace.
+In today’s residential energy efficiency market the electronic exchange of information and data is often characterized by a
+lack of common terms, definitions, and two-way feedback systems (Figure 1). This limits the ability of decision-makers to
+access, aggregate, share and use data for the design and implementation of energy efficiency programs. This also makes it
+difficult for market actors to understand the drivers of variation in performance (e.g., of measures, home improvements
+contractors, energy efficiency programs, and homes), identify investment opportunities, and precisely quantify and project
+savings from energy efficiency investments. 
+
+To facilitate communication and the exchange of information and data on residential building and energy performance, the
+Building Performance Institute (BPI), a nonprofit standards setting organization, developed and published the HPXML Data
+Dictionary and the HPXML Transfer Standard. 
+
+The HPXML Data Dictionary defines terms related to the physical attributes and performance of buildings and measures. It
+provides a common vocabulary for the residential energy efficiency industry and the data standard also defines several standard
+datasets that can be used to describe specific use cases, for example, information collected during the completion of a whole
+-house program (need link to that section). 
+
+The HPXML Transfer Standard provides requirements for an extensible mark-up language (XML) data transfer protocol that can be
+used to transfer information related to energy efficiency upgrades between different software systems. The transfer standard is
+the companion standard to the HPXML data dictionary. Each of the data elements defined in the data dictionary can be
+transferred using HPXML.
+
 
 .. figure:: /images/existing_connections.png
     :figwidth: 4.5in
@@ -36,6 +38,8 @@ energy savings from a more efficient marketplace.
     :align: center
 
     Figure 2: Connected Market
+
+Value of HPXML
 
 It is the expectation of the U.S. Department of Energy that expanded use of
 HPXML will achieve the following:
@@ -50,6 +54,21 @@ HPXML will achieve the following:
       data-rich EM&V methods;
     * Improve the quality assurance systems and practices needed to efficiently
       support, measure and verify energy performance.
+
+Continued Growth
+
+The HPXML Data Dictionary is designed to grow with our industry. If you have recommendations for adding new or changing
+existing data elements or enumerations, create a new issue on the Github repository or send us an email with the following
+information.
+
+    * Name: Create a name for the data element or enumeration you feel best describes the term.
+    * Definition: Write a comprehensive definition of the data element and include references if necessary.
+    * Data Type: Include your recommended data type and maximum field length.
+    * Enumerations: If your recommended field is a pick-list, please include enumerations. Enumerations may also need a definition.
+    * Justification: Please provide a reason the data element is important to your energy efficiency program or market.
+    * Duplication: Review the dictionary thoroughly to ensure you are not duplicating an already existing data element or enumeration. Concepts can be expressed in a number of ways and rather than adding additional data elements or enumerations, we can use this recommendation to better define existing elements.
+
+How to Use the Implementation Guide
 
 Significant effort has gone into the development of HPXML and this
 Implementation Guide, but the work is not complete.  HPXML is constantly being
