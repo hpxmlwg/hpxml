@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
-Introduction
-############
+Introduction to HPXML
+#####################
 
 The Need for Data Standardization
 *********************************
@@ -43,8 +43,18 @@ transferred using HPXML.
 Value of HPXML
 **************
 
-  
-      
+HPXML allows home improvement contractors to easily exchange data with partnering businesses, energy efficiency programs, the real 
+estate market and the financial sector. Many of the energy efficiency programs that have adopted HPXML, including the New York State 
+Energy Research and Development Authority (NYSERDA), Energy Upgrade California, and Arizona Public Service (APS) have been able to 
+reduce implementation costs through the automated validation of standardized data. For example, APS was able to decrease its 
+
+While there are many uses for HPXML, we believe these can be framed as four categories:
+
+    * Reduce program administrative and implementation costs. HPXML enables access to the same, well understood terms and data structures that are used for data retrieval, driving economies of scale in the administration, finance, and evaluation of energy efficiency programs. HPXML also enables the reuse of data and software for multiple purposes, which guards against software obsolesce and vendor lock-in, boosting innovation in software development. 
+    * Support high quality research.
+    * Support more precise savings calculations.
+    * Make energy efficiency visible in the real estate transaction.
+
 Standards Development
 *********************
 
