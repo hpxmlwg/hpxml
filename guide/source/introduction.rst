@@ -9,23 +9,18 @@ The Need for Data Standardization
 In today’s residential energy efficiency market the electronic exchange of information and data is often characterized by a
 lack of common terms, definitions, and two-way feedback systems (Figure 1). This limits the ability of decision-makers to
 access, aggregate, share and use data for the design and implementation of energy efficiency programs. This also makes it
-difficult for market actors to understand the drivers of variation in performance (e.g., of measures, home improvements
-contractors, energy efficiency programs, and homes), identify investment opportunities, and precisely quantify and project
+difficult for market actors to understand the drivers of variation in performance, analyze market trends, and project
 savings from energy efficiency investments. 
 
 To facilitate communication and the exchange of information and data on residential building and energy performance, the
 Building Performance Institute (BPI), a nonprofit standards setting organization, developed and published the HPXML Data
 Dictionary and the HPXML Transfer Standard. 
 
-The HPXML Data Dictionary defines terms related to the physical attributes and performance of buildings and measures. It
-provides a common vocabulary for the residential energy efficiency industry and the data standard also defines several standard
-datasets that can be used to describe specific use cases, for example, information collected during the completion of a whole
--house program. 
+The HPXML Data Dictionary (BPI-2200-S-2013) provides a common vocabulary for the residential energy efficiency industry. It defines terms related to the physical attributes and performance of buildings and measures. The data standard also defines several standard datasets that can be used to describe specific use cases, for example, information collected during the completion of a whole -house program. 
 
-The HPXML Transfer Standard provides requirements for an extensible mark-up language (XML) data transfer protocol that can be
-used to transfer information related to energy efficiency upgrades between different software systems. The transfer standard is
-the companion standard to the HPXML data dictionary. Each of the data elements defined in the data dictionary can be
-transferred using HPXML.
+To facilitate communication with a wide range of market actors in related industries, the HPXML Data Dictionary is aligned with the Department of Energy’s (DOE) Building Energy Data Exchange Specification (BEDES). BEDES is a dictionary of terms, definitions, and field formats created to facilitate the exchange of information on building characteristics and energy use for the commercial, multifamily and residential industries. Residential terms that appear both in BEDES and HPXML are aligned.
+
+The HPXML Transfer Standard (BPI-2100-S-2013) provides requirements for an extensible mark-up language (XML) data transfer protocol that can be used to transfer information related to energy efficiency upgrades between different software systems. The transfer standard is the companion standard to the HPXML data dictionary. Each of the data elements defined in the data dictionary can be transferred using HPXML.
 
 
 .. figure:: /images/existing_connections.png
@@ -43,27 +38,26 @@ transferred using HPXML.
 Value of HPXML
 **************
 
-HPXML allows home improvement contractors to easily exchange data with partnering businesses, energy efficiency programs, the real 
-estate market and the financial sector. Many of the energy efficiency programs that have adopted HPXML, including the New York State 
-Energy Research and Development Authority (NYSERDA), Energy Upgrade California, and Arizona Public Service (APS) have been able to 
-reduce implementation costs through the automated validation of standardized data. For example, APS was able to decrease its 
+While there are many benefits to HPXML and data standardization, the three main high-level categories of value are described below:
 
-While there are many uses for HPXML, we believe these can be framed as four categories:
+ HPXML also enables the reuse of data and software for multiple purposes, which guards against software obsolesce and vendor lock-in, boosting innovation in software development. 
 
-    * Reduce program administrative and implementation costs. HPXML enables access to the same, well understood terms and data structures that are used for data retrieval, driving economies of scale in the administration, finance, and evaluation of energy efficiency programs. HPXML also enables the reuse of data and software for multiple purposes, which guards against software obsolesce and vendor lock-in, boosting innovation in software development. 
-    * Support high quality research.
-    * Support more precise savings calculations.
-    * Make energy efficiency visible in the real estate transaction.
-
+    * Industry efficiency - Programs can reduce data collection and transfer costs through the validation of standardized data
+    
+    * Interoperability - HPXML facilitates quicker and more automated transfer of data between different software systems
+    
+    * High quality research -  HPXML facilitates the collection of higher-quality data as a means of tracking and quantifying work being completed in the industry. 
+    
+    HPXML enables access to the same, well-understood terms and data structures, which makes data aggregation possible. The aggregation of program and market data across service territories, states or regions helps researchers and programs analyze trends, identify investment opportunities, 
+    
+   
+    
 Standards Development
 *********************
 
-HPXML is developed by a working group of industry experts under the Building Performance Institute Data and Modeling Standards
-Technical Committee. The HPXML working group is comprised of organizations and individuals from residential energy efficiency
-programs, software development, government, and the nonprofit sector. Members are responsible developing and managing the HPXML Data
-Dictionary and the HPXML Transfer Standard. The working group meets quarterly to discuss updates and vote on new version releases. 
+HPXML is developed and managed by a working group of industry experts under the Building Performance Institute Data and Modeling Standards Technical Committee. The HPXML working group is comprised of organizations and individuals from residential energy efficiency programs, software development, government, and the nonprofit sector. Members are responsible developing and managing the HPXML Data Dictionary and the HPXML Transfer Standard. The working group meets quarterly to discuss updates and vote on new version releases. 
 
-HPXML is developed through a consensus-based approach and comments from all stakeholders are taken into account. If you are 
+HPXML is managed through a consensus-based approach and comments from all stakeholders are taken into account. If you are 
 interested in joining the working group, contact hpxml@homeperformance.org. 
 
 HPXML Compliance
@@ -79,26 +73,7 @@ For example, using a non-HPXML data element entitled “Number of Panes” to de
 not be HPXML-compliant because the HPXML element “Number of Layers” could be used. In the context of a description of a window, this 
 would be understood by energy efficiency professionals and would not result in miscommunication.
 
-Software developers may test their tool's compliance with HPXML by uploading files to the HPXML validator. Example HPXML files are 
-also available on Github. More information on the HPXML validator can be found in the section for Software Developers.
-
-Alignment with Industry Standards
-*********************************
-
-To facilitate communication with a wide range of market actors in related industries, HPXML is aligned with the Department of 
-Energy’s (DOE) Building Energy Data Exchange Specification (BEDES) and with the Real Estate Standards Organization's (RESO) Data 
-Dictionary.
-
-BEDES is a dictionary of terms, definitions, and field formats created to facilitate the exchange of information on building 
-characteristics and energy use for the commercial, multifamily and residential industries. It is intended to be used in tools and 
-activities that help stakeholders make energy investment decisions, track building performance, and implement energy-efficient 
-policies and programs. Residential terms that appear both in BEDES and HPXML are aligned.
-
-The Real Estate Standards Organization (RESO) Data Dictionary standardizes fields, enumerations, and definitions for hundreds of 
-multiple listing services (MLS) nationwide. The RESO Dictionary contains a number of fields and enumerations that can be used to 
-characterize energy-related improvements to the home. Because these fields are standardized and aligned with HPXML, realtors can 
-provide homebuyers with access to consistent, comparable information about energy efficiency features in existing homes, which will 
-make energy efficiency visibile in the real estate transaction.
+Software developers may validate their HPXML files against the schema and its standard datasets by uploading files to the HPXML validator. Example HPXML files are also available on Github. More information on the HPXML validator can be found in the section for Software Developers.
 
 Continued Growth
 ****************
