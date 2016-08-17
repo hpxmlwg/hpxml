@@ -1,117 +1,65 @@
-Data Standards Ecosystem
+Standard Datasets
 ########################
 
-.. _what-are-the-bpi-standards:
+.. _standard-data-collection-tools:
 
-What are the BPI Data Standards?
-********************************
+Value of Standardized Data Collection
+*************************************
 
-The BPI data standards are designed to help collect and transfer
-information about the characteristics of residential buildings and upgrade projects.
-This data can be shared with any party involved in a home performance or
-energy-efficiency program, including contractors, program administrators,
-utilities, federal agencies, and others. In addition, HPXML allows home performance data
-to be seamlessly shared with the financial, real estate, insurance, and other
-appropriate industries. This creates a standardized way to
-collect project information and to share that information to facilitate market
-growth.
+The HPXML Data Dictionary includes requirements for four datasets that contain a subset of HPXML data elements. Each of these datasets specifies a number of data elements to be collected at specific points during the implementation of an energy efficiency program (e.g. the audit, project completion, etc.). While HPXML is capable of transferring a wide variety of data elements, any one program or jurisdiction will only need a small sub-set in most cases. 
 
-The two primary data standards, `BPI-2100`_ and `BPI-2200`_ are closely related and
-are used together to implement HPXML:
+The audit and upgrade datasets were identified by the working group to facilitate the transfer of project data from third-party energy modeling tools to a program management database. Home Energy Score and BPI-2101 reflect collaboration with existing programs.
 
-`BPI-2100-S-2013`_: Standard for Home Performance-Related Data Transfer
-    provides requirements for an extensible mark-up language (XML) standard
-    data transfer protocol that can be used to transfer home
-    performance-related data.
-
-`BPI-2200-S-2013`_: Standard for Home Performance-Related Data Collection
-    provides a standard vocabulary for describing terms related to
-    buildings, energy consumption, and energy conservation measures. Each of
-    the data elements defined in BPI-2200 can be transferred using HPXML via
-    the methodology outlined in BPI-2100.
-
-BPI will be developing additional data collection standards, of which
-`BPI-2101-S-2013`_ has been completed. Each of these standards specifies a set
-of data elements to be collected at specific points during the implementation of
-an energy efficiency program (e.g. the audit, project completion, etc.). While
-HPXML is capable of transferring a wide variety of data elements, any one
-program or jurisdiction will only need a small sub-set in most cases. To
-facilitate adoption of the data standards and to reduce variation between
-jurisdictions, which can be costly for software providers and contractors, BPI
-WG-5 in coordination with stakeholders from across the industry have started
-developing the following data collection standards:
-
-`BPI-2101-S-2013`_: Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades
-    This standard identifies a set of data elements for certificates that
-    document the completion of a whole-house energy upgrade (HEU) and
-    individual energy conservation measures (ECMs). The set of data elements
-    required for inclusion in the certificate will provide a clear,
-    easy-to-understand description of the HEU or ECMs, including information
-    about major energy-related improvements implemented and, if relevant,
-    predicted energy savings or other performance indicators. The certificate
-    is designed to be used as a reference document by real estate agents,
-    appraisers, and other professionals during the home sale process, and can
-    be uploaded into Multiple Listing Service (MLS) databases. Home Performance
-    with ENERGY STAR's Certificate of Completion template, available to Program
-    Sponsors, complies with BPI-2101 to assure consistency of data elements.
-
-Draft: Standard for Home Energy Auditing Data Collection with Energy Modeling Tools
-    This draft standard represents the minimum data necessary for energy
-    modeling tools to capture during an energy audit and transfer by HPXML to
-    home performance programs. The standard is designed to promote
+he standard is designed to promote
     consistency between programs and facilitate cost efficiency in the
     implementation of HPXML through alignment to a standardized specification.
 
-Draft: Standard for Home Energy Job Completion Data Collection with Energy Modeling Tools
-    This draft standard represents the minimum required data necessary to be
-    captured by energy modeling or other data collection tools during a home energy upgrade
-    and transfer by HPXML to home performance programs. The standard is
-    designed to promote consistency between programs and facilitate cost
-    efficiency in the implementation of HPXML through alignment to a
-    standardized specification.
 
-The Role of BPI Working Group 5
-*******************************
+New standard datasets will be created as the need arises.
 
-BPI Working Group 5 (BPI WG-5) is a volunteer effort with representation from
-program administrators, implementers, software developers, and government
-agencies. The group is an official Building Performance Institute committee
-tasked with developing and maintaining standards related to the collection and
-transfer of energy efficiency and home performance-related data.  BPI WG-5 is
-responsible for maintaining the standards, and it works to ensure that the
-standards can meet the needs of various market actors.  As a program
-administrator, you may want to familiarize yourself with this group, as they
-can serve as an invaluable resource to assist in the implementation of the BPI
-data standards, facilitate changes in the standard, and answer questions about
-the standards. To contact the BPI WG-5 or to get involved, email them at
-hpxml@homeperformance.org.
+To facilitate adoption of the data standards and reduce variation between
+jurisdictions, which can be costly for software providers and contractors
 
-Data Standards and the U.S. DOE's Building Energy Data Exchange Specification (BEDES)
-*************************************************************************************
+Audit
+*****
 
-The BPI data standards were developed to serve the single family residential
-sector (i.e. 1-4 unit buildings). Since the creation of HPXML, and with shared
-objectives, the US Department of Energy has begun the development of the
-`Building Energy Data Exchange Specification`_, referred to as BEDES (pronounced
-"beads" or /bi:ds/). BEDES is a dictionary of terms, definitions, and field
-formats which was created to help facilitate the exchange of information on
-building characteristics and energy use. It is intended to be used in tools and
-activities that help stakeholders make energy investment decisions, track
-building performance, and implement energy-efficient policies and programs.
+The audit dataset is designed for use by Home Performance with ENERGY STAR® or other whole house programs that require auditors to submit energy audit results and a proposed workscope to the program for review. The audit dataset was established through a consensus process of three geographically diverse existing whole-house programs, and is intended to meet the needs of most programs. The dataset describes the baseline building with a proposed workscope. Required fields include data on the home’s existing characteristics, health and safety needs, recommended improvements, and savings predictions.
 
-Since the initiation of the BEDES effort, BPI WG-5 and representatives from the
-DOE have coordinated efforts to maintain interoperability between the
-two standards.  The primary difference between the two efforts is one of scope,
-as the BPI data standards are designed for single-family residences, while
-BEDES is designed to include all building types — both commercial and
-residential.
+Programs that wish to adopt the audit dataset, may download the Data Selection Tool for guidance on the required data fields.
 
-For more information on visit the `BEDES website <Building Energy Data Exchange Specification_>`_.
+Software developers may visit the GitHub repository for an example of an HPXML audit file.
 
-.. _BPI-2100: http://www.bpi.org/tools_downloads.aspx?selectedTypeID=1&selectedID=141
-.. _BPI-2200: http://www.bpi.org/tools_downloads.aspx?selectedTypeID=1&selectedID=142
-.. _BPI-2100-S-2013: `BPI-2100`_
-.. _BPI-2200-S-2013: `BPI-2200`_
-.. _BPI-2101: http://www.bpi.org/tools_downloads.aspx?selectedTypeID=1&selectedID=143
-.. _BPI-2101-S-2013: `BPI-2101`_
-.. _Building Energy Data Exchange Specification: http://energy.gov/eere/buildings/building-energy-data-exchange-specification-bedes
+Upgrade
+*******
+
+The upgrade dataset is designed to facilitate the transfer of information on completed whole house retrofits from contractors to Home Performance with ENERGY STAR® or other whole house programs that require a completed workscope. The upgrade dataset describes the baseline building (e.g., the pre-upgrade condition of the home, with proposed measures) with a completed workscope (e.g., description of installed measures, with modeled or predicted energy savings). The upgrade dataset was established through a consensus process of three geographically diverse existing whole-house programs, and is intended to meet the needs of most programs. Programs that offer more diverse incentives may need to add HPXML data elements to meet program needs.
+
+Programs that wish to adopt the upgrade dataset, may download the Data Selection Tool for guidance on the required data fields.
+
+Software developers may visit the GitHub repository for an example of an HPXML upgrade file.
+
+Home Energy Score
+*****************
+
+The Department of Energy’s Home Energy Score (HEScore) is similar to a miles-per-gallon rating that helps homeowners and homebuyers understand how much energy the home is expected to use. The score also provides information on how to make the home more energy efficient.
+
+The Home Energy Score Translator was developed by the National Renewable Energy Laboratory (NREL) to generate HEScore inputs from HPXML files. The translator is available open source as a stand-alone script. It is also incorporated into the HEScore API. By using this translator, software developers can leverage their investment in HPXML to provide HEScore functionality with minimum development cost.
+
+Certificate of Completion
+*************************
+
+BPI-2101-S-2013 Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades is a BPI standard that identifies a subset of HPXML data elements for certificates that document the completion of an energy efficiency project, either whole-house or individual measures. BPI-2101 provides a clear, easy-to-understand description of the home energy upgrade, including predicted energy savings or other performance indicators, such as Home Energy Score, and is designed to be used as a reference document by real estate agents, appraisers, and other professionals during the home sale process. 
+
+Types of Certificates
+
+There are two types of certificates that can be issued in compliance with BPI-2101. The first is a Certificate of Efficiency Improvements, which provides information about the energy efficiency improvements installed. The second is a Certificate of Performance, which provides information about energy efficiency improvements installed plus quantitative information about a home’s performance, for example, a Home Energy Score or projected energy consumption.
+
+These certificates can be formatted and branded by the programs that are implementing them. For example, Arizona Public Service and Salt River Project are currently issuing a Certificate of Efficiency Improvements to homeowners that complete the Home Performance with ENERGY STAR program. A sample certificate can be found here.
+
+Alignment with Real Estate Standards
+
+All of the HPXML data elements that can be used on BPI-2101 compliant certificates are aligned with the Real Estate Standards Organization (RESO) Data Dictionary and with the Appraisal Institute’s Residential Green and Energy Efficient Addendum. The RESO Data Dictionary standardizes the fields that are used in hundreds of MLS’ nationwide. Because BPI-2101 is aligned with the RESO standard, programs are able to provide homeowners with access to consistent, comparable information about the energy efficiency features in existing homes and to standardize the flow of information about a home’s energy efficient characteristics into property listings.
+
+Future Updates
+
+The Home Performance Coalition will be working with Elevate Energy, and other BPI Working Group 9 members in 2016 to update the Certificate of Completion to ensure its continued alignment with the new version of the RESO Data Dictionary (v.1.5).
