@@ -1,24 +1,16 @@
-Standard Datasets
+Standard HPXML Datasets
 ########################
 
-.. _standard-data-collection-tools:
+.. _value-of-standarized-data-collection:
 
 Value of Standardized Data Collection
 *************************************
 
-The HPXML Data Dictionary includes requirements for four datasets that contain a subset of HPXML data elements. Each of these datasets specifies a number of data elements to be collected at specific points during the implementation of an energy efficiency program (e.g. the audit, project completion, etc.). While HPXML is capable of transferring a wide variety of data elements, any one program or jurisdiction will only need a small sub-set in most cases. 
+The HPXML Data Dictionary includes minimum data requirements for four use cases that were identified to reduce data variation between jurisdictions implementing energy efficiency programs, including whole-house and single measure programs. Each of the use cases include corresponding datasets that specify a number of data elements that can be collected at specific points during the implementation of an energy efficiency program (e.g., the energy audit). The audit and upgrade datasets were created to facilitate the transfer of project data from third-party energy modeling tools to a program management database. Home Energy Score and the Certificate of Completion (BPI-2101) reflect collaboration with existing programs and standards.
 
-The audit and upgrade datasets were identified by the working group to facilitate the transfer of project data from third-party energy modeling tools to a program management database. Home Energy Score and BPI-2101 reflect collaboration with existing programs.
+There is value in standardizing requirements that impact data collection. For example, by adopting the audit and upgrade datasets, whole-house programs can implement HPXML more quickly and cost-effectively, and reduce the data collection burden on contractors working in multiple jurisdictions. Data variation also imposes costs on software developers with multiple clients who must spend significant resources on development, resources that are then passed to the client. When programs adopt HPXML-compliant software, they reduce administrative costs by buying off-the-shelf solutions that need little development work and also guard against software obsolesce. 
 
-he standard is designed to promote
-    consistency between programs and facilitate cost efficiency in the
-    implementation of HPXML through alignment to a standardized specification.
-
-
-New standard datasets will be created as the need arises.
-
-To facilitate adoption of the data standards and reduce variation between
-jurisdictions, which can be costly for software providers and contractors
+Below is a description of the current HPXML datasets. Home Performance Coalition, which chairs the HPXML working group, continues to work with industry partners, including regulators, program evaluators, implementers, and utilities to advance data standardization in the industry, including standardized measure definitions, reporting and program evaluation requirements. Programs may also advance standardization by using the standard HPXML datasets as the basis for determining program eligibility and incentives.
 
 Audit
 *****
@@ -43,7 +35,7 @@ Home Energy Score
 
 The Department of Energy’s Home Energy Score (HEScore) is similar to a miles-per-gallon rating that helps homeowners and homebuyers understand how much energy the home is expected to use. The score also provides information on how to make the home more energy efficient.
 
-The Home Energy Score Translator was developed by the National Renewable Energy Laboratory (NREL) to generate HEScore inputs from HPXML files. The translator is available open source as a stand-alone script. It is also incorporated into the HEScore API. By using this translator, software developers can leverage their investment in HPXML to provide HEScore functionality with minimum development cost.
+The Home Energy Score Translator was developed by the National Renewable Energy Laboratory (NREL) to generate HEScore inputs from HPXML files. The translator is open source and available as a stand-alone script. It is also incorporated into the HEScore API. By using this translator, software developers can leverage their investment in HPXML to provide HEScore functionality with minimum development cost.
 
 Certificate of Completion
 *************************
