@@ -1,9 +1,9 @@
 Standard HPXML Datasets
 ########################
 
-.. benefits-to-adopting-standard-datasets:
+.. benefits-of-adopting-standard-datasets:
 
-Benefits to Adopting Standard Datasets
+Benefits of Adopting Standard Datasets
 **************************************
 
 The HPXML Data Dictionary includes minimum data requirements for four use cases that were identified to reduce data variation between jurisdictions implementing energy efficiency programs, including whole-house and single measure programs. Each of the use cases include corresponding datasets that specify a number of data elements that can be collected at specific points during the implementation of an energy efficiency program (e.g., the energy audit). The audit and upgrade datasets were created to facilitate the transfer of project data from third-party energy modeling tools to a program management database. Home Energy Score and the Certificate of Completion (BPI-2101) reflect collaboration with existing programs and standards.
