@@ -1,18 +1,17 @@
 Implementation Guide
 ####################
 
-To realize the benefits outlined above, a well-designed implementation plan is
-necessary.  The following sections will provide program administrators with a
-walkthrough of best practices in implementing HPXML and provide guidance that
+A well-designed implementation plan is necessary to sucessfully integrate HPXML into your operations. The following sections will walk program administrators through the process of implementing HPXML and provide guidance that
 can serve as a starting point for an implementation plan in your jurisdiction.
 
 Each jurisdiction will have different goals, market needs, and regulatory
 requirements that will influence the scope of the HPXML projects. However,
-leveraging the efforts other market actors who have already implemented HPXML
-can lower individual implementation costs and will help to drive alignment
-between jurisdictions. The following "steps to HPXML implementation" are
-designed to help leverage existing efforts, while also making sure that
-individual jurisdictional needs are met.
+leveraging the experiences of programs who have already implemented HPXML
+can lower individual implementation costs and will help drive alignment
+between jurisdictions. 
+
+The following "Steps to HPXML Implementation" are
+designed to help you efficiently implement HPXML.
 
 Steps to HPXML Implementation
 *****************************
