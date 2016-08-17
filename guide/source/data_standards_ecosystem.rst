@@ -1,16 +1,16 @@
 Standard HPXML Datasets
 ########################
 
-.. _value-of-standarized-data-collection:
+.. benefits-to-adopting-standard-datasets:
 
-Value of Standardized Data Collection
-*************************************
+Benefits to Adopting Standard Datasets
+**************************************
 
 The HPXML Data Dictionary includes minimum data requirements for four use cases that were identified to reduce data variation between jurisdictions implementing energy efficiency programs, including whole-house and single measure programs. Each of the use cases include corresponding datasets that specify a number of data elements that can be collected at specific points during the implementation of an energy efficiency program (e.g., the energy audit). The audit and upgrade datasets were created to facilitate the transfer of project data from third-party energy modeling tools to a program management database. Home Energy Score and the Certificate of Completion (BPI-2101) reflect collaboration with existing programs and standards.
 
-There is value in standardizing requirements that impact data collection. For example, by adopting the audit and upgrade datasets, whole-house programs can implement HPXML more quickly and cost-effectively, and reduce the data collection burden on contractors working in multiple jurisdictions. Data variation also imposes costs on software developers with multiple clients who must spend significant resources on development, resources that are then passed to the client. When programs adopt HPXML-compliant software, they reduce administrative costs by buying off-the-shelf solutions that need little development work and also guard against software obsolesce. 
+By adopting the audit and upgrade datasets, energy efficiency programs can implement HPXML more quickly and cost-effectively, and reduce the data collection burden on contractors working in multiple jurisdictions. Data variation among programs also imposes costs on software developers because significant development work is needed to meet the program's data needs. When programs adopt HPXML-compliant software, program administrators can get out of the software development business by adopting off-the-shelf solutions that require little customization. This guards against software obsolesce and vendor lock-in, and boosts innovation in software development.  
 
-Below is a description of the current HPXML datasets. Home Performance Coalition, which chairs the HPXML working group, continues to work with industry partners, including regulators, program evaluators, implementers, and utilities to advance data standardization in the industry, including standardized measure definitions, reporting and program evaluation requirements. Programs may also advance standardization by using the standard HPXML datasets as the basis for determining program eligibility and incentives.
+Below is a description of the current HPXML datasets. Home Performance Coalition, which chairs the HPXML working group, continues to work with industry partners, including regulators, program evaluators, implementers, and utilities to advance data standardization in the industry, including standardized measure definitions, reporting and program evaluation requirements. New datasets will be published as they are identified. 
 
 Audit
 *****
