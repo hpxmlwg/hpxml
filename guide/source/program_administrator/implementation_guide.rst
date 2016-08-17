@@ -1,7 +1,7 @@
 Implementation Guide
 ####################
 
-A well-designed implementation plan is necessary to sucessfully integrate HPXML into your operations. The following sections will walk program administrators through the process of implementing HPXML and provide guidance that
+A well-designed implementation plan is necessary to sucessfully integrate HPXML into program operations. The following sections will walk you through the process of implementing HPXML and provide guidance that
 can serve as a starting point for an implementation plan in your jurisdiction.
 
 Each jurisdiction will have different goals, market needs, and regulatory
