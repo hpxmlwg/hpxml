@@ -38,19 +38,13 @@ The HPXML Transfer Standard (BPI-2100-S-2013) provides requirements for an exten
 Value of HPXML
 **************
 
-While there are many benefits to HPXML and data standardization, the three main high-level categories of value are described below:
+The HPXML Data Dictionary and Transfer Standard were created to achieve some of the basic goals that are critical to a growing industry including:
 
- HPXML also enables the reuse of data and software for multiple purposes, which guards against software obsolesce and vendor lock-in, boosting innovation in software development. 
+    * Standardize terminology and facilitate the collection of higher quality data as a means of tracking and quantifying the work being completed across the residential energy-efficiency industry;
+    * Create interoperability between software systems to allow the transfer of residential energy efficiency data across a diverse set of market actors; and,
+    * Improve industry efficiency by reducing the costs of data collection and exchange between market actors.
 
-    * Industry efficiency - Programs can reduce data collection and transfer costs through the validation of standardized data
-    
-    * Interoperability - HPXML facilitates quicker and more automated transfer of data between different software systems
-    
-    * High quality research -  HPXML facilitates the collection of higher-quality data as a means of tracking and quantifying work being completed in the industry. 
-    
-    HPXML enables access to the same, well-understood terms and data structures, which makes data aggregation possible. The aggregation of program and market data across service territories, states or regions helps researchers and programs analyze trends, identify investment opportunities, 
-    
-   
+As the number of stakeholders using HPXML increases, the costs of collecting and sharing information will decrease, enabling programs and other stakeholders to deliver better information to decision-makers at a lower cost. The ability to aggregate, share and use building and energy performance data will create new opportunities in the valuation of energy efficiency.
     
 Standards Development
 *********************
