@@ -12,7 +12,7 @@ Data standards like the Home Performance Extensible Markup Language (HPXML) supp
 
 The HPXML Data Dictionary provides a common vocabulary for the residential energy efficiency industry and is aligned with another important industry standard that is published by the Department of Energy called Building Energy Data Exchange Specification (BEDES). The HPXML Data Dictionary defines terms related to the physical attributes and performance of buildings and measures. The data standard also defines several standard datasets that can be used to describe specific use cases, for example, information collected during the completion of a whole-house program. 
 
-The HPXML Transfer Standard  provides requirements for an extensible mark-up language (XML) data transfer protocol that can be used to transfer information related to energy efficiency upgrades between different software systems. The transfer standard is the companion standard to the HPXML data dictionary. Each of the data elements defined in the data dictionary can be transferred using HPXML.
+The HPXML Transfer Standard provides requirements for a standard extensible mark-up language (XML) data transfer protocol that can be used to transfer information and data between different software systems. The transfer standard is the companion standard to the HPXML data dictionary. Each of the data elements defined in the data dictionary can be transferred using HPXML.
 
 
 .. figure:: /images/existing_connections.png
@@ -41,25 +41,18 @@ As the number of stakeholders using HPXML increases, the costs of collecting and
 Standards Development
 *********************
 
-HPXML is developed and managed by a working group of industry experts under the Building Performance Institute Data and Modeling Standards Technical Committee. The HPXML working group is comprised of organizations and individuals from residential energy efficiency programs, software development, government, and the nonprofit sector. Members are responsible developing and managing the HPXML Data Dictionary and the HPXML Transfer Standard. The working group meets quarterly to discuss updates and vote on new version releases. 
+HPXML is managed by a working group of industry experts under the Building Performance Institute Data and Modeling Standards Technical Committee. The HPXML working group is comprised of organizations and individuals from residential energy efficiency programs, software development, government, and the nonprofit sector. Members are responsible developing and managing the HPXML Data Dictionary and the Transfer Standard. The working group meets quarterly to discuss updates and vote on new versions of the standards. 
 
-HPXML is managed through a consensus-based approach and comments from all stakeholders are taken into account. If you are 
-interested in joining the working group, contact hpxml@homeperformance.org. 
+If you are interested in joining the working group, sign up through the HPXML website. 
 
 HPXML Compliance
 ****************
 
-Compliance with HPXML requires that stakeholders use HPXML data in all cases in which an HPXML data element is sufficient to 
-adequately represent the person, characteristic, concept or other home-related datum. Data can be “adequately represented” by HPXML 
-if HPXML data elements, singly or in combination, provide a representation of the thing or person to be described that a) could 
-reasonably be understood by other energy efficiency professionals, and b) does not result in significant loss of information or 
-create significant risks of miscommunication.
+Stakeholders that wish to comply with the HPXML Data Dictionary and Transfer Standard shall use HPXML data in all cases in which an HPXML data element is sufficient to adequately represent the person, characteristic, concept or other home-related datum that is being described.
 
-For example, using a non-HPXML data element entitled “Number of Panes” to describe the number of layers of glass in a window would 
-not be HPXML-compliant because the HPXML element “Number of Layers” could be used. In the context of a description of a window, this 
-would be understood by energy efficiency professionals and would not result in miscommunication.
+Data can be adequately represented by HPXML if HPXML data elements, singly or in combination, can be used to describe the person or thing in a way that a) could reasonably be understood by other energy efficiency professionals, and b) does not result in significant loss of information or create significant risks of miscommunication.
 
-Software developers may validate their HPXML files against the schema and its standard datasets by uploading files to the HPXML validator. Example HPXML files are also available on Github. More information on the HPXML validator can be found in the section for Software Developers.
+Software developers may validate their HPXML files against the schema and its datasets by uploading files to the HPXML validator. Example HPXML files are available on Github. 
 
 Continued Growth
 ****************
