@@ -1,7 +1,7 @@
-Introduction
-########################
+.. _benefits-of-adopting-standard-datasets:
 
-.. benefits-of-adopting-standard-datasets:
+Introduction
+############
 
 The HPXML Data Dictionary contains over 800 data points. However, program administrators may only need to collect a subset of the HPXML data for specific use cases (i.e., during the administration of a whole home program or to make energy efficiency visible in real estate transactions).
 
