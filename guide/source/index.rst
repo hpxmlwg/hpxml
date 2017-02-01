@@ -22,7 +22,7 @@ Contents
    :maxdepth: 2
 
    introduction
-   data_standards_ecosystem
+   standard_datasets
    program_administrator/index
    software_developer/index
 
