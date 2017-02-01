@@ -49,15 +49,22 @@ Certificate of Completion
 BPI-2101-S-2013 Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades is a BPI standard that identifies a subset of HPXML data elements for certificates that document the completion of an energy efficiency project, either whole-house or individual measures. BPI-2101 provides a clear, easy-to-understand description of the home energy upgrade, including predicted energy savings or other performance indicators, such as Home Energy Score, and is designed to be used as a reference document by real estate agents, appraisers, and other professionals during the home sale process. 
 
 Types of Certificates
+=====================
 
 There are two types of certificates that can be issued in compliance with BPI-2101. The first is a Certificate of Efficiency Improvements, which provides information about the energy efficiency improvements installed. The second is a Certificate of Performance, which provides information about energy efficiency improvements installed plus quantitative information about a home’s performance, for example, a Home Energy Score or projected energy consumption.
 
 These certificates can be formatted and branded by the programs that are implementing them. For example, Arizona Public Service and Salt River Project are currently issuing a Certificate of Efficiency Improvements to homeowners that complete the Home Performance with ENERGY STAR program. A sample certificate can be found here.
 
+.. todo::
+  
+  Move below to overview page.
+
 Alignment with Real Estate Standards
+====================================
 
 All of the HPXML data elements that can be used on BPI-2101 compliant certificates are aligned with the Real Estate Standards Organization (RESO) Data Dictionary and with the Appraisal Institute’s Residential Green and Energy Efficient Addendum. The RESO Data Dictionary standardizes the fields that are used in hundreds of MLS’ nationwide. Because BPI-2101 is aligned with the RESO standard, programs are able to provide homeowners with access to consistent, comparable information about the energy efficiency features in existing homes and to standardize the flow of information about a home’s energy efficient characteristics into property listings.
 
 Future Updates
+==============
 
 The Home Performance Coalition will be working with Elevate Energy, and other BPI Working Group 9 members in 2016 to update the Certificate of Completion to ensure its continued alignment with the new version of the RESO Data Dictionary (v.1.5).

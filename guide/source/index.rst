@@ -21,7 +21,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   introduction
+   overview
    standard_datasets
    program_administrator/index
    software_developer/index
