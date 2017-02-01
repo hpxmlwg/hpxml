@@ -13,3 +13,16 @@ If you are thinking about implementing HPXML, or just want to learn more about t
    * The Software Developer Guide provides developers with information on versioning, document structure, XML element references, and use case validation. The section also provides links to sample HPXML files. 
 
 The Implementation Guide will be updated as new versions of HPXML are released. For more information on HPXML or to view the Implementation Guide, visit the HPXML website.   
+
+
+Contents
+********
+
+.. toctree::
+   :maxdepth: 2
+
+   introduction
+   data_standards_ecosystem
+   program_administrator/index
+   software_developer/index
+
