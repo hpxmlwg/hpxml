@@ -1,7 +1,7 @@
 .. include:: <isonum.txt>
 
-Overview
-########
+Overview of HPXML
+#################
 
 The Need for Data Standardization
 *********************************
@@ -38,9 +38,9 @@ The HPXML Transfer Standard (BPI-2100) provides requirements for a standard exte
 
 Together, the data dictionary and transfer standard benefit a growing industry by:
 
-    * Standardizing terminology and facilitating the collection of higher quality data as a means of tracking and quantifying the work being completed across the residential energy efficiency industry;
+    * Standardizing terminology and facilitating the collection of higher quality data as a means of tracking and quantifying work being completed across the residential energy efficiency industry;
 
-    * Creating interoperability between software systems to allow the transfer of residential energy efficiency data across a diverse set of market actors, including the real estate and financial sectors; and,
+    * Creating interoperability between software systems to allow the transfer of residential energy efficiency data across a diverse set of market actors, such as the real estate and financial sectors; and,
 
     * Improving industry efficiency by reducing the costs of data collection and exchange between market actors.
 
@@ -61,14 +61,14 @@ To facilitate communication with a wide range of market actors in related indust
 
 HPXML is currently the most widely used implementation of BEDES. Users of residential BEDES terms may adopt the standard HPXML schema to transfer information and data between software systems. This has the benefit of increasing the cost-effective transfer of residential energy efficiency data across a diverse set of market actors.
 
-HPXML is also aligned with the Real Estate Standards Organization's (RESO) Data Dictionary, which standardizes terms used in hundreds of multiple listing services (MLS) and other source providers nationwide so that information can be easily shared and understood in the real estate industry.
+HPXML is also aligned with the Real Estate Standards Organization's (RESO) Data Dictionary, which standardizes terms used in hundreds of multiple listing services (MLS) and other source providers nationwide so that information can be easily shared and understood in the real estate industry, and with the Appraisal Institute's Green and Energy Efficient Addendum, which standardizes the communication of high performing features for appraisers, lenders, agents, and homeowners. 
 
-There are several pilots underway to test the auto-population of MLS using HPXML. Programs that adopt HPXML can swiftly and easily generate a BPI-2101-compliant Home Performance Certificate, Home Energy Score, or other scores and labels, to introduce information about a home's energy efficient features into real estate transactions through the auto-population of MLS.
+Programs that adopt HPXML can swiftly and easily generate a BPI-2101-compliant Home Performance Certificate (described in next section), Home Energy Score, or other scores and labels, to introduce information about a home's energy efficient features into real estate transactions through the auto-population of MLS.
 
 Standards Development
 *********************
 
-HPXML has been developed, and is modified and maintained, by the stakeholders who use them, including organizations and individuals from residential energy efficiency programs, software development, government, and the nonprofit sector. HPXML is managed by a working group of industry experts under the Building Performance Institute (BPI) Data and Modeling Standards Technical Committee using an open and consensus based decision-making process set by the BPI. The working group meets quarterly to discuss updates and vote on new versions of the standards. 
+HPXML has been developed, and is modified and maintained, by the stakeholders who use them, including organizations and individuals from residential energy efficiency programs, software development, government, and the nonprofit sector. HPXML is managed by a working group of industry experts under the Building Performance Institute (BPI) Data and Modeling Standards Technical Committee using an open and consensus based decision-making process set by the BPI. The working group meets quarterly to discuss updates and to vote on new versions of the standards. 
 
 If you are interested in joining the working group, sign up through www.hpxmlonline.com. 
 
@@ -79,7 +79,7 @@ Stakeholders that wish to comply with the HPXML Data Dictionary and Transfer Sta
 
 Data can be adequately represented by HPXML if HPXML data elements, singly or in combination, can be used to describe the person or thing in a way that a) could reasonably be understood by other energy efficiency professionals, and b) does not result in significant loss of information or create significant risks of miscommunication.
 
-Software developers may validate their HPXML files against the schema and its datasets by uploading files to the HPXML validator. Example HPXML files are available on Github. 
+Software developers may validate their HPXML files against the schema and its datasets by uploading files to the HPXML Validator. Example HPXML files are also available on Github. 
 
 Continued Growth
 ****************
@@ -94,18 +94,3 @@ with the following information.
     * Enumerations: If your recommended field is a pick-list, please include enumerations. Enumerations may also need a definition.
     * Justification: Please provide a reason the data element is important to your energy efficiency program or market.
     * Duplication: Review the dictionary thoroughly to ensure you are not duplicating an already existing data element or enumeration. Concepts can be expressed in a number of ways and rather than adding additional data elements or enumerations, we can use this recommendation to better define existing elements.
-
-How to Use the Implementation Guide
-***********************************
-
-The HPXML Implementation Guide helps program administrators and software developers integrate HPXML into their operations and products. This guide is divided into two sections that are tailored to specific audiences. 
-
-    * The Program Administrator Guide discusses the benefits of HPXML adoption and walks administrators through the process of goal setting, identifying data needs, data validation, testing, and quality management.
-    
-    * The Software Developer Guide provides developers with information on versioning, document structure, XML element references, and use case validation. The section also provides links to sample HPXML files.
-
-HPXML is periodically updated to reflect changes in the needs of the market and the stakeholders that adopt the standard. Whenever a 
-new version of HXPML is released, the Guide will be updated to reflect changes to the data standard and how it is being used in the 
-market.
-
-For more information on HPXML, visit www.hpxmlonline.com. 
