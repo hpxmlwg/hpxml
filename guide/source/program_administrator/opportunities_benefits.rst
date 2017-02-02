@@ -33,7 +33,7 @@ financing for home energy upgrades.
 .. figure:: /images/market_existing.png
     :figwidth: 7.5in
     :align: center
-
+ 
     Figure 3: Data flow of existing markets
 
 .. figure:: /images/market_connected.png
