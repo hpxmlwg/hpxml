@@ -6,13 +6,17 @@ The Home Performance Extensible Mark-Up Language (HPXML) Implementation Guide is
 
 HPXML is comprised of two standards: a data dictionary that defines terms and field formats related to the physical attributes and performance of buildings and measures, and a standard extensible mark-up language (XML) data transfer protocol that can be used to exchange data defined in the dictionary between different software systems.
 
-If you are thinking about implementing HPXML, or just want to learn more about the data standard and how it may benefit your program or business, then this implementation guide will be a critical resource. The guide is divided into two sections that are tailored to specific audiences. 
+If you are thinking about implementing HPXML, or just want to learn more about the data standard and how it may benefit your program or business, then this implementation guide will be a valuable resource. The guide is divided into two sections that are tailored to specific audiences. 
 
    * The Program Administrator Guide discusses the benefits of HPXML adoption and walks administrators through the process of goal setting, identifying data needs, data validation, testing, and quality management. 
 
    * The Software Developer Guide provides developers with information on versioning, document structure, XML element references, and use case validation. The section also provides links to sample HPXML files. 
 
-The Implementation Guide will be updated as new versions of HPXML are released. For more information on HPXML or to view the Implementation Guide, visit the HPXML website.   
+HPXML is periodically updated to reflect changes in the needs of the market and the stakeholders that adopt the standard. Whenever a 
+new version of HXPML is released, the Guide will be updated to reflect changes to the data standard and how it is being used in the 
+market.
+
+For more information on HPXML, and to view the Implementation Guide, visit www.hpxmlonline.com.   
 
 
 Contents
