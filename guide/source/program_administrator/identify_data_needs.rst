@@ -5,6 +5,8 @@ Step 3: Identify Data Needs
 
 .. contents::
 
+One of the areas in which data standardization holds the greatest promise is in data collection and reporting. If different programs all agree to collect the same (or very similar) data for the same use cases, such as the data reported by the contractor when the initial audit is conducted or the final job and test-out results are reported, information technology costs could be reduced tremendously across the country because software vendors would be able to use the same reporting template, with only minor modifications, for multiple programs. Standard datasets will also greatly facilitate cross-program comparability, support research efforts and accurate quantification of savings for other uses.
+
 BPI-2200 defines a long list of data elements, many of which may not be needed
 for your project. To determine which data points are needed, start with the
 responses you developed in :doc:`implementation_goals`. The goal of this
@@ -19,14 +21,7 @@ Standard Data Sets Developed by BPI WG-5
 ****************************************
 
 When exporting or importing data with third-party data systems, it is important
-to develop a concise set of data requirements. As stated above, the BPI data
-standards are capable of describing and transferring a large universe of data,
-only a portion of which is needed for any one use case. To facilitate
-efficiencies between programs, BPI is in the process of developing standard
-data sets, each of which is associated with a specific use case. Use cases
-(defined here as a set of interactions designed to achieve a specific function
-within an energy efficiency program) that BPI WG-5 has identified as
-particularly important for energy-efficiency programs include:
+to develop a concise set of data requirements. As stated above, HPXML is capable of describing and transferring a large universe of data, but only a portion of data may be needed for any one use case (defined as a set of interactions designed to achieve a specific function within an energy efficiency program). For example,
 
 #. Reporting on the baseline conditions of a home and proposed improvements
 #. Reporting on the improvements to the home compared to baseline conditions
@@ -35,20 +30,20 @@ particularly important for energy-efficiency programs include:
 #. Reporting a home's energy efficiency assets to the parties in real estate transactions
 #. Reporting data on program activity to DOE and other agencies
 
-The standard audit and upgrade data sets are data collection and transfer
+The standard Audit and Upgrade datasets are data collection and transfer
 requirements that were created by existing HPXML adopters to facilitate the
 transfer of project data from third-party energy modeling tools to a program
 management database. As a collaboration between Home Performance with ENERGY
 STAR programs in Arizona, California, New York, Vermont, and Virginia, the
-standard use cases are well suited for a wide range of program types, climate
+standard datasets are well suited for a wide range of program types, climate
 zones, and implementation models.
 
-Although these standards are being developed for Home Performance with ENERGY
+Although these datasets were initially developed for Home Performance with ENERGY
 STAR or whole house programs, they can be used by other types of programs as
-well, such as weatherization of single measure programs.
+well, such as weatherization or single measure programs.
 
-Even if implementation is not for a whole home program, these use cases are
-still a great place to start, as several software vendors are already able to
+Even if implementation is not for a whole home program, these datasets are
+still a great place to start because software vendors are already able to
 transfer the data required in these use cases. Any subset of data within these
 use cases will be easy to implement for existing HPXML-compliant tools. 
 
