@@ -1,4 +1,4 @@
-Implementation Guide
+Implementation Guide - Delete
 ####################
 
 A well-designed implementation plan is necessary to sucessfully integrate HPXML into program operations. The following sections will walk you through the process of implementing HPXML and provide guidance that
