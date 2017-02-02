@@ -7,9 +7,9 @@ One of the areas in which data standardization holds the greatest promise is in 
 
 As part of the effort to implement the data standards, Home Performance Coalition, chair of the HPXML working group, led the development of three standard datasets, for the audit, project completion, and the Home Performance Certificate (BPI-2101-S-2013), which creates a bridge between the energy efficiency and real estate industries. The National Renewable Energy Laboratory (NREL) developed the Home Energy Score Translator, which allows software vendors to generate HEScore inputs from HPXML files. 
 
-Each of the datasets specify a number of required data elements that can be collected at specific points during the implementation of a residential energy efficiency program. The audit and upgrade datasets were created to facilitate the transfer of project data from third-party energy modeling tools to a program management database. Home Energy Score and the the Home Performance Certificate reflect collaboration with existing programs and standards.
+Each of the datasets specify a number of required data elements that can be collected at specific points during the implementation of a residential energy efficiency program. The audit and upgrade datasets were created to facilitate the transfer of project data from third-party energy modeling tools to a program management database. Home Energy Score and the Home Performance Certificate reflect collaboration with existing programs and standards.
 
-The next section of the Implementation Guide explains on how programs and implementers can use the Data Selection Tool to determine their HPXML data needs based on the minimum data requirements of the HPXML datasets.
+The next section of the Implementation Guide explains how programs and implementers can use the Data Selection Tool to determine their HPXML data needs based on the minimum data requirements of the HPXML datasets.
 
 The remainder of this section describes current HPXML datasets. Development of standard datasets associated with other use cases, particularly evaluation, measurement, and verification (EM&V), is an important additional priority because it will generate additional cost savings and promote program adoption of the standards. New datasets will be published as they are identified. 
 
@@ -34,7 +34,7 @@ Programs that wish to adopt the upgrade dataset, may download the Data Selection
 Home Energy Score
 *****************
 
-he Department of Energy’s Home Energy Score (HEScore) is similar to a miles-per-gallon rating that helps homeowners and homebuyers understand how much energy the home is expected to use. The HEScore also provides information on how to make the home more energy efficient.
+The Department of Energy’s Home Energy Score (HEScore) is similar to a miles-per-gallon rating that helps homeowners and homebuyers understand how much energy the home is expected to use. The HEScore also provides information on how to make the home more energy efficient.
 
 The Home Energy Score Translator was developed by the NREL to generate HEScore inputs from HPXML files. The translator is available open source as a stand-alone script. It is also incorporated into the HEScore API. By using this translator, software developers can leverage their investment in HPXML to provide HEScore functionality with minimum development cost.
 
