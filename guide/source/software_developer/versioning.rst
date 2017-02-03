@@ -31,19 +31,17 @@ The major version number is incremented when the schemas are changed in a manner
 which is incompatible with previous versions. Examples of changes which
 necessitate a major version change include:
 
-* Renaming elements 
-* Removing elements 
-* Moving elements 
-* Removing enumerations
+   * Renaming elements 
+   * Removing elements 
+   * Moving elements 
+   * Removing enumerations
 
 A different xml namespace is used for each major revision. Starting with version
-2.0, the namespaces follow the pattern
+2.0, the namespaces follow the pattern where the year and month are when the major version number was changed.
 
 ::
 
    http://hpxmlonline.com/[Year]/[Month]
-
-where the year and month are when the major version number was changed.
 
 .. _minor-version:
 
@@ -51,21 +49,21 @@ Minor
 *****
 
 The minor version number is incremented when the schemas are changed in a manner
-which is backwards compatible with previous versions that share the same
+that is backwards compatible with previous versions that share the same
 :ref:`major-version` version. Backwards compatible in the context of HPXML
 means that given the schema changes, a document created in a previous version
 of the schema will also validate against the new schema. Example of changes
 which necessitate a minor version change include:
 
-* Adding elements
-* Adding enumerations
-* Changing the annotation in the schema for an element
+   * Adding elements
+   * Adding enumerations
+   * Changing the annotation in the schema for an element
 
 .. warning::
 
-   Based on the definition of backwards compatibility above, adding enumerations 
+   Based on the definition of backwards compatibility, adding enumerations 
    is a non-breaking change. However, it can be breaking for receiving systems 
-   if they're not expecting the change. The working group will provide warning 
+   if they are not expecting the change. The working group will provide warning 
    when new enumerations are added so that receivers have an opportunity to 
    respond by updating support. 
 
