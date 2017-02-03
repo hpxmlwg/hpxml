@@ -28,12 +28,12 @@ of items to discuss:
   * What type of program reporting are you doing?
   * Are you exporting data to third parties? If so, what are the specifications of their systems?
 
-If your program needs to issue a request for proposals, there are some
+If your program needs to issue a Request for Proposals (RFP), there are some
 additional best practices to consider:
 
  * Include all of your program's incentive or financing rules. This will help the developers understand what pieces of information are most important to you and what you will be reviewing.
  * Consider including narrative examples of what you are trying to accomplish with this system's functionality. Technical specifications are important, but adding commentary on how you want to use it is equally helpful. 
- * Ask other programs to share their Request for Proposals (RFP) scopes of work. With each new program adoption of HPXML, RFPs are getting more consistent and comprehensive. The HPXML working group can help your procurement team identify recent RFPs and connect you with a program contact. 
+ * Ask other programs to share their RFP scopes of work. With each new program adoption of HPXML, RFPs are getting more consistent and comprehensive. The HPXML working group can help your procurement team identify recent RFPs and connect you with a program contact. 
 
 Leverage HPXML Experience
 *************************
