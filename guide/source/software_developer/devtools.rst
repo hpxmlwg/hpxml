@@ -4,14 +4,11 @@ Development Tools
 Data Selection Tool
 *******************
 
-Program administrators are being instructed to use the :ref:`datatool` to
-determine and communicate the intersection of :doc:`usecases/index` they're
-interested in as well as any additional elements to collect and require.
-Elements beyond established use cases are highlighted in red. In the
-spreadsheeet, elements required by a use case will be more prominent (black font
-color instead of light grey). Elements required in addition to specified use
-cases will be highlighted in red. All together, it should provide a complete
-list of data elements required to either provide or process.
+A :ref:`datatool` has been developed to help program administrators select the data points they are requiring to collect for specific use cases. The data selection tool is a spreadsheet with the required and optional data points selected by working group members for specific use cases, including Audit, Upgrade, Home Energy Score, and Home Performance Certificate. A detailed desccription of these use cases and the corresponding standard HPXML datasets can be found in section :ref:'
+
+In the spreadsheeet, data points required by a dataset will be in black color instead of light grey. Elements that are optional are highlighted in red.
+
+The standard datasets provide a complete list of data elements required to either provide or process.
 
 HPXML Toolbox
 *************
