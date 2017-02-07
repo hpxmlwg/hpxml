@@ -46,7 +46,7 @@ Together, the data dictionary and transfer standard benefit a growing industry b
 
 Programs that have adopted HPXML have been able to reduce costs by facilitating software solutions for automated reporting, project review, incentive processing, and quality assurance. Programs that have adopted these automated review and verification processes have seen accelerated project approval, reduced errors, and freed up staff time for other more valuable projects. For example, one year after implementing HPXML, Arizona Public Service's Home Performance with ENERGY STAR program acheived:
 
-    * 50% increase in contractor satisfaction after the launch of an HPXML-based software encironment;
+    * 50% increase in contractor satisfaction after the launch of an HPXML-based software environment;
     * 31% decrease per project in contractor administrative labor following the implementation of a more streamlined online reporting, rebate approval, and QA process; and,
     * 50% decrease in quality assurance administrative labor following implementation of the new software environment.
 
