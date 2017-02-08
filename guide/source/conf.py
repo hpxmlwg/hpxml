@@ -284,9 +284,9 @@ texinfo_documents = [
 
 # Bibliographic Dublin Core info.
 epub_title = u'HPXML Implementation Guide'
-epub_author = u'Noel Merket (NREL)'
-epub_publisher = u'Noel Merket (NREL)'
-epub_copyright = u'2016, Noel Merket (NREL)'
+epub_author = u'Julie Caracino(HPC), Noel Merket (NREL)'
+epub_publisher = u''
+epub_copyright = u'2017'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = u'HPXML Implementation Guide'

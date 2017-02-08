@@ -13,6 +13,8 @@ The next section of the Implementation Guide explains how programs and implement
 
 The remainder of this section describes current HPXML datasets. Development of standard datasets associated with other use cases, particularly evaluation, measurement, and verification (EM&V), is an important additional priority because it will generate additional cost savings and promote program adoption of the standards. New datasets will be published as they are identified. 
 
+.. _audit-use-case-defn:
+
 Audit
 *****
 
@@ -21,6 +23,8 @@ The audit dataset is designed for use by Home Performance with ENERGY STAR or ot
 The audit dataset was established through a consensus process of three geographically diverse existing whole-house programs, and is intended to meet the needs of most programs. The dataset describes the baseline building with a proposed work scope. Required fields include data on the home's existing characteristics, health and safety needs, recommended improvements, and savings predictions.
 
 Programs that wish to adopt the audit dataset, may download the Data Selection Tool for guidance on the required data fields. Software developers may visit the GitHub repository for an example of an HPXML audit file.
+
+.. _upgrade-use-case-defn:
 
 Upgrade
 *******
@@ -31,12 +35,16 @@ The upgrade dataset describes the baseline building (e.g., the pre-upgrade condi
 
 Programs that wish to adopt the upgrade dataset, may download the Data Selection Tool for guidance on the required data fields. Software developers may visit the GitHub repository for an example of an HPXML upgrade file.
 
+.. _hescore-use-case-defn:
+
 Home Energy Score
 *****************
 
 The Department of Energy’s Home Energy Score (HEScore) is similar to a miles-per-gallon rating that helps homeowners and homebuyers understand how much energy the home is expected to use. The HEScore also provides information on how to make the home more energy efficient.
 
 The Home Energy Score Translator was developed by the NREL to generate HEScore inputs from HPXML files. The translator is available open source as a stand-alone script. It is also incorporated into the HEScore API. By using this translator, software developers can leverage their investment in HPXML to provide HEScore functionality with minimum development cost.
+
+.. _bpi2101-use-case-defn:
 
 Home Performance Certificate
 ****************************

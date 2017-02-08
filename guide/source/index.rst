@@ -16,7 +16,7 @@ HPXML is periodically updated to reflect changes in the needs of the market and 
 new version of HXPML is released, the Guide will be updated to reflect changes to the data standard and how it is being used in the 
 market.
 
-For more information on HPXML, and to view the Implementation Guide, visit www.hpxmlonline.com.   
+For more information on HPXML, and to view the Implementation Guide, visit http://www.hpxmlonline.com.   
 
 
 Contents
@@ -29,4 +29,3 @@ Contents
    standard_datasets
    program_administrator/index
    software_developer/index
-
