@@ -1,5 +1,5 @@
-Use Cases
-#########
+Standard HPXML Datasets
+#######################
 
 .. toctree::
    :maxdepth: 1
