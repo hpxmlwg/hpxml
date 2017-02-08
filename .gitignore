@@ -3,3 +3,5 @@
 .project
 guide/build
 .idea
+.DS_Store
+

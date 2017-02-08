@@ -17,7 +17,6 @@ Steps to HPXML Implementation
 .. toctree::
    :maxdepth: 2
    
-   opportunities_benefits
    implementation_guide
    implementation_goals
    coordination
