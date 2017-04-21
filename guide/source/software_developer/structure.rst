@@ -90,14 +90,14 @@ Building
 ========
 
 The ``Building`` node describes the physical characteristics of a building at a
-point in time past, present, or future.  
+point in time - past, present, or future.  
 
 .. _project-node:
 
 Project
 =======
 
-The ``Project`` node describes work that has been done or is to be done to a
+The ``Project`` node describes work that has been completed or is to be completed to a
 :ref:`building-node`. The measures described can have references pointing to
 specific components on the building and what was changed between the pre- and
 post-upgrade states and associated costs. 
@@ -115,10 +115,8 @@ Consumption
 ===========
 
 The ``Consumption`` node stores and represents the energy and/or water use of a
-building. It can contain high resolution electric smart meter data, the
-fuel oil fill up that happens once or twice a year, or more typically, monthly
+building. It can contain high resolution electric smart meter data, information on fuel oil, or more typically, monthly
 gas or electric bills.
-
 
 .. _extension-elements:
 
@@ -128,7 +126,7 @@ Extension Elements
 Because it is impossible to foresee every possible data point that will ever
 need to be collected and transmitted about a house or upgrade, most elements
 in HPXML contain an ``extension`` element containing an ``<xs:any>``
-designation. That allows any element from any namespace to be inserted there.
+designation. That allows any element from any namespace to be inserted.
 This is to facilitate transfer of data elements not available in the standard. 
 
 .. code-block:: xml
@@ -140,7 +138,7 @@ This is to facilitate transfer of data elements not available in the standard.
 .. warning::
 
    Please exercise extreme caution and discretion when you consider implementing
-   ``extension`` elements. Often times the temptation to use them happens when a
+   ``extension`` elements. Typically, the temptation to use them happens when a
    difference arises between the way your software and/or home performance
    program represents a certain data field and the way HPXML represents it. It
    is crucial in these cases to either map your data into HPXML or change the
@@ -149,10 +147,12 @@ This is to facilitate transfer of data elements not available in the standard.
    ways, the value proposition of the standard is nullified.**
 
    If there is no possible way to map your data into existing HPXML data fields,
-   please contact BPI Working Group 5 (a.k.a. the HPXML working group) before
+   please contact the HPXML working group before
    implementing an extension. The working group would prefer to extend the
    standard for the benefit of everyone and avoid the use of extensions wherever
-   possible. Often times you will not be the only one with the need for a
+   possible. 
+   
+   Usually, you will not be the only one with the need for a
    particular element that was overlooked in the standard. By participating in
    the working group and lobbying for the elements you need you can enhance the
    value of HPXML for all parties.

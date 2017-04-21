@@ -1,9 +1,9 @@
 XML Element References
 ######################
 
-XML documents are inherently hierarchical. This works out quite well for
-describing many things regarding houses and home performance in general. For
-instance, an AFUE is a property of a furnace which is part of an HVAC system on
+XML documents are inherently hierarchical. This works out well for
+describing many things regarding houses, and home performance in general. For
+instance, an AFUE is a property of a furnace, which is part of an HVAC system on
 a building. Many other relationships are not as strictly hierarchical, however.
 An example of this would be the relationship between two furnaces in different
 snapshots of the building where one furnace replaced the other. In that case,
@@ -17,7 +17,7 @@ throughout the document. This is done with the ``SystemIdentifier`` element.
 
 .. _intra-doc-ref:
 
-Intra-document references
+Intra-Document References
 *************************
 
 The most common reference you will make is a reference that is internal to the
@@ -38,8 +38,7 @@ document. This is similar to a primary key in a relational database.
 When an element needs to reference another element it uses an
 `xs:IDREF datatype <http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/datatypes.html#IDREF>`_,
 which ensures that the id referenced exists somewhere within the document. One
-simple example of this is how a window can reference which wall it is attached
-to.
+simple example of this is how a window can reference the wall to which it is attached.
 
 .. code-block:: xml
    :emphasize-lines: 19,25
@@ -133,7 +132,7 @@ to have a way to indicate that they are the same item.
    </HPXML>
 
 
-Inter-document references
+Inter-Document References
 *************************
 
 The ``SystemIdentifier`` element also has sub-elements that facilitate
