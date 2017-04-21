@@ -1,7 +1,7 @@
 .. _step1:
 
-Step 1: Setting Implementation Goals
-####################################
+Step 1: Set Implementation Goals
+################################
 
 HPXML can drive value into a program. Administrative costs associated with data entry, project review, incentive processing, reporting, and quality assurance can be reduced by adopting national data standards. Program administrators implementing HPXML may also elect to open the market to multiple data collection and energy modeling tools that comply with HPXML, allowing contractors to use the tool that best meets their business needs. The key to delivering this value is to determine the goals and scope of the project as early in the process as possible because these decisions will shape your implementation tactics. To start, identify the following information:
 

@@ -81,15 +81,6 @@ Software developers may validate their HPXML files against the schema and its da
 Continued Growth
 ****************
 
-.. todo::
-    
-    This is the same content as :ref:`how_to_add_data_elements`. Do we need it in both places?
+When reviewing the datasets that are required for your implementation, it is possible to identify a data point you require that is not in one of the pre-defined datasets or in HPXML. If this is the case, the HPXML working group can assist in adding the new data element and in identifying how to incorporate it into the standard.
 
-The HPXML Data Dictionary is designed to grow with the industry. If you have recommendations for adding new or changing existing data elements or enumerations, create a `new issue on the Github repository <https://github.com/hpxmlwg/hpxml/issues/new>`_ or send an email to hpxml@homeperformance.org with the following information:
-
-    * Name: Create a name for the data element or enumeration you feel best describes the term.
-    * Definition: Write a comprehensive definition of the data element and include references if necessary.
-    * Data Type: Include your recommended data type and maximum field length.
-    * Enumerations: If your recommended field is a pick-list, please include enumerations. Enumerations may also need a definition.
-    * Justification: Please provide a reason the data element is important to your energy efficiency program or market.
-    * Duplication: Review the dictionary thoroughly to ensure you are not duplicating an already existing data element or enumeration. Concepts can be expressed in a number of ways and rather than adding additional data elements or enumerations, we can use this recommendation to better define existing elements.
+See :ref:`how_to_add_data_elements` for details.

@@ -1,7 +1,7 @@
 .. _step6:
 
-Step 6: Implementing Testing Protocols and User Training
-########################################################
+Step 6: Implement Testing Protocols and User Training
+#####################################################
 
 With every new HPXML program launch, there are a number of testing activities that need to occur to maximize the opportunity for success. You should not underestimate the need for testing, but assume at least two months of testing will be needed. Work with the software community to schedule each stage of testing and schedule time for your staff to focus on this activity. If you can set a clear plan for testing early on, and stick to your production schedule, this should allow you to get to market in a timely and organized manner.
 
@@ -39,10 +39,6 @@ After testing is complete, you can launch your new HPXML-based systems. As in mo
     :figwidth: 5.5in
 
     HPXML Contractor Training for Arizona Public Service (Source: EnergySavvy)
-
-.. todo::
-    
-    Keep this photo?
 
 The trainings should include a clear understanding of how to download and upload HPXML files. This includes making transparent to all users the data collection requirements that you have determined as a part of your HPXML implementation.
 

@@ -1,7 +1,7 @@
 .. _step5:
 
-Step 5: Designing a Data Validation Process
-###########################################
+Step 5: Design a Data Validation Process
+########################################
 
 Designing a good system for data validation that automatically checks all submitted data is critical for ensuring high-quality data, maintaining contractor satisfaction, and streamlining quality assurance activities. The good news is that most of this work will be completed by your software vendor. However, you will want to undergo a thorough scoping exercise with your vendor to identify what types of validation checks you want your program software to complete. 
 
