@@ -2,6 +2,8 @@
 HPXML Implementation Guide
 ##########################
 
+.. todolist::
+
 .. only:: html
 
     .. image:: /images/hpxml_logo.png
