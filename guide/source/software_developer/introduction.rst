@@ -3,7 +3,7 @@ Introduction
 
 This section of the Implementation Guide is designed to outline the technical details of implementing HPXML. HPXML is
 an expansive standard data format based on extensible markup language (XML) and maintained by the Building
-Performance Institute's HPXML working group. For more information on HPXML, visit www.hpxmlonline.com. 
+Performance Institute's HPXML working group. For more information on HPXML, visit http://www.hpxmlonline.com. 
 
 The HPXML format is defined by a set of XML Schema (XSD) documents that outline
 all the acceptable data elements, their structure, and relation to one another.
@@ -14,11 +14,16 @@ dangerous for the software developer. Two developers could each create an
 implementation that would represent their data in valid HPXML, but would be divergent. The purpose of this guide is to document the assumptions that are not codified in the schema that are necessary to write and interpret HPXML documents
 across platforms.
 
+Standard Datasets
+*****************
+
+In order to better utilize the standard and have consistency across the HPXML workging group has created :doc:`/standard_datasets` that define what data elements are required for a pre-defined set of typical use cases. While most programs will have their own specific data needs to be supported by HPXML these can serve a useful starting point to enable interoperability between existing systems already in the marketplace. 
+
 The majority of the assumptions and recommendations in this Guide come from the set of
-pilot implementations in the :doc:`Audit-Upgrade Use Case
+pilot implementations in the :doc:`Audit-Upgrade Standard Dataset
 </software_developer/usecases/auditupgrade>`. This guide primarily documents
 lessons learned from those pilots. As other datasets are created, this
-guide will be updated.
+guide will continue to be updated.
 
 HPXML Working Group
 *******************
