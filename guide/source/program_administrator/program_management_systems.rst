@@ -15,7 +15,7 @@ Build a Clear Scope
 Clearly outlining your business objectives and defining the dataset you want to use are two large steps toward building an accurate scope of work to inform your procurement process. Within your business objectives, you will want to define how you want the data to work for your program. Here are some examples of items to discuss:
 
   * Are you using the system to qualify projects for incentives or financing?
-  * •	What kind of quality assurance/quality management do you want to do? How much QA automation do you want to include in the system? What data does your implementation team need to review on the project and at what stages? Programs may want to reference guidance from the Home Performance with ENERGY STAR\ |reg| Sponsor Guide (v1.5). Section 6 and Appendix F provide a description of quality management system approach, how it uses data to determine compliance and measure performance, and directions for developing a QMS plan.
+  * What kind of quality assurance/quality management do you want to do? How much QA automation do you want to include in the system? What data does your implementation team need to review on the project and at what stages? Programs may want to reference guidance from the Home Performance with ENERGY STAR\ |reg| Sponsor Guide (v1.5). Section 6 and Appendix F provide a description of quality management system approach, how it uses data to determine compliance and measure performance, and directions for developing a QMS plan.
   * What is the workflow of your program?
   * What feedback systems do you want for both contractors and participating customers?
   * What type of program reporting are you doing?

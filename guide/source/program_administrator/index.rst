@@ -25,4 +25,4 @@ Each jurisdiction will have different goals, market needs, and regulatory requir
    data_validation
    testing_protocols
    quality_management_plan
-   conclusion
+   summary
