@@ -1332,7 +1332,8 @@
 	<xs:simpleType name="WaterType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="indoor and outdoor water"/>
-			<xs:enumeration value="indoor water "/><!-- deprecated -->
+			<xs:enumeration value="indoor water "/>
+			<!-- deprecated -->
 			<xs:enumeration value="indoor water"/>
 			<xs:enumeration value="outdoor water"/>
 			<xs:enumeration value="wastewater/sewer"/>
@@ -1660,6 +1661,13 @@
 			<xs:enumeration value="unvented attic"/>
 			<xs:enumeration value="vented attic"/>
 			<xs:enumeration value="venting unknown attic"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AtticWallType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gable"/>
+			<xs:enumeration value="knee wall"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
