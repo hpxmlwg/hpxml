@@ -529,6 +529,7 @@
 			<xs:enumeration value="construction-period testing/daily test out"/>
 			<xs:enumeration value="job completion testing/final inspection"/>
 			<xs:enumeration value="quality assurance/monitoring"/>
+			<xs:enumeration value="preconstruction"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Air Sealing Below-->
