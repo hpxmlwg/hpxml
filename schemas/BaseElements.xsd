@@ -3161,6 +3161,17 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 										type="IntegerGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="WalkingScoreSource"
 										type="xs:string"/>
+									<xs:element minOccurs="0" name="FuelTypesAvailable">
+										<xs:annotation>
+											<xs:documentation>Fuels available on site via utility lines/pipes or delivery.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element maxOccurs="unbounded" name="Fuel"
+												type="FuelType"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
