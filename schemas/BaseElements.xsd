@@ -232,6 +232,20 @@
 							<xs:documentation>loads/week</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="EfficiencyFactor" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>lbs dry clothes/kWh</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ControlType">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="timer"/>
+								<xs:enumeration value="moisture"/>
+								<xs:enumeration value="temperature"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -249,6 +263,31 @@
 					<xs:element minOccurs="0" name="Usage" type="xs:double">
 						<xs:annotation>
 							<xs:documentation>loads/week</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="RatedAnnualkWh" type="RatedAnnualkWh">
+						<xs:annotation>
+							<xs:documentation>kWh/yr</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="LabelElectricRate" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>$/kWh</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="LabelGasRate" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>$/therm</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="LabelAnnualGasCost" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>$</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="Capacity" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>ft^3</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
@@ -271,6 +310,8 @@
 					<xs:element minOccurs="0" name="EnergyFactor" type="EnergyFactor"/>
 					<xs:element minOccurs="0" name="RatedWaterGalPerCycle"
 						type="RatedWaterGalPerCycle"/>
+					<xs:element minOccurs="0" name="PlaceSettingCapacity"
+						type="IntegerGreaterThanZero"/>
 					<xs:element minOccurs="0" name="Usage" type="xs:double">
 						<xs:annotation>
 							<xs:documentation>loads/week</xs:documentation>
@@ -350,6 +391,7 @@
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="IsInduction" type="xs:boolean"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -360,6 +402,7 @@
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="IsConvection" type="xs:boolean"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
