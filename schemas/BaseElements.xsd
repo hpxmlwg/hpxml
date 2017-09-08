@@ -517,42 +517,6 @@
 			<xs:element name="AtticAndRoof" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element minOccurs="0" name="Roofs">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="Roof" maxOccurs="unbounded">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:group ref="SystemInfo"/>
-												<xs:element minOccurs="0" ref="AttachedToSpace"/>
-												<xs:element minOccurs="0" name="RoofColor"
-												type="WallAndRoofColor"/>
-												<xs:element minOccurs="0" name="RoofType"
-												type="RoofType"/>
-												<xs:element minOccurs="0" name="DeckType"
-												type="DeckType"/>
-												<xs:element minOccurs="0" name="Pitch" type="Pitch">
-												<xs:annotation>
-												<xs:documentation>Pitch of roof ?/12</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="RoofArea"
-												type="SurfaceArea">
-												<xs:annotation>
-												<xs:documentation>[sq.ft.] Surface area of the roof itself</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element name="RadiantBarrier" type="xs:boolean"
-												minOccurs="0"/>
-												<xs:element name="RadiantBarrierLocation"
-												type="RadiantBarrierLocation" minOccurs="0"/>
-												<xs:element ref="extension" minOccurs="0"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
 						<xs:element minOccurs="0" name="Attics">
 							<xs:complexType>
 								<xs:sequence>
@@ -565,32 +529,126 @@
 												<xs:documentation>The space over which this attic is</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="AttachedToRoof"
-												type="LocalReference"/>
-												<xs:element name="ExteriorAdjacentTo"
-												type="AdjacentTo" minOccurs="0"> </xs:element>
-												<xs:element minOccurs="0" name="InteriorAdjacentTo"
-												type="AdjacentTo"/>
-												<xs:element maxOccurs="unbounded" minOccurs="0"
-												name="AtticKneeWall" type="LocalReference"> </xs:element>
 												<xs:element name="AtticType" type="AtticType"
 												minOccurs="0"/>
-												<xs:element minOccurs="0"
-												name="AtticFloorInsulation" type="InsulationInfo">
+												<xs:element minOccurs="0" name="Roofs">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element name="Roof" maxOccurs="unbounded">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:group ref="SystemInfo"/>
+												<xs:element minOccurs="0" name="Area"
+												type="SurfaceArea">
+												<xs:annotation>
+												<xs:documentation>[sq.ft.] Surface area of the roof itself</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="RoofType"
+												type="RoofType"/>
+												<xs:element minOccurs="0" name="RoofColor"
+												type="WallAndRoofColor"/>
+												<xs:element minOccurs="0" name="Rafters"
+												type="StudProperties"/>
+												<xs:element minOccurs="0" name="DeckType"
+												type="DeckType"/>
+												<xs:element minOccurs="0" name="Pitch"
+												type="Pitch">
+												<xs:annotation>
+												<xs:documentation>Pitch of roof ?/12</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element name="RadiantBarrier"
+												type="xs:boolean" minOccurs="0"/>
+												<xs:element name="RadiantBarrierLocation"
+												type="RadiantBarrierLocation" minOccurs="0"/>
+												<xs:element minOccurs="0" name="Insulation"
+												type="InsulationInfo"/>
+												<xs:element ref="extension" minOccurs="0"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element minOccurs="0" name="Floors">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element maxOccurs="unbounded" name="Floor">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:group ref="SystemInfo"/>
+												<xs:element minOccurs="0" name="Area"
+												type="SurfaceArea">
+												<xs:annotation>
+												<xs:documentation>[sq.ft.] Area of the floor</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Joists"
+												type="StudProperties"/>
+												<xs:element minOccurs="0" name="Insulation"
+												type="InsulationInfo">
 												<xs:annotation>
 												<xs:documentation>For attic floor insulation that covers the rafters, two layers should be defined: 1.) a cavity later with thickness equal to the rafter height, and 2.) a continuous layer above that.</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="AtticRoofInsulation"
-												type="InsulationInfo"/>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element minOccurs="0" name="Walls">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element maxOccurs="unbounded" name="Wall">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:group ref="SystemInfo"/>
+												<xs:element name="AtticWallType"
+												type="AtticWallType"/>
+												<xs:element minOccurs="0" name="Thickness"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[in] Thickness of the wall assembly</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Area"
+												type="SurfaceArea">
+												<xs:annotation>
+												<xs:documentation>[sq.ft.] Gross wall area</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Orientation"
+												type="OrientationType"/>
+												<xs:element name="Azimuth" type="AzimuthType"
+												minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>[deg]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Studs"
+												type="StudProperties"/>
+												<xs:element minOccurs="0" name="Siding"
+												type="Siding"/>
+												<xs:element minOccurs="0" name="Color"
+												type="WallAndRoofColor"/>
+												<xs:element minOccurs="0" maxOccurs="1"
+												name="Insulation" type="InsulationInfo"/>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
 												<xs:element name="Area" type="SurfaceArea"
 												minOccurs="0">
 												<xs:annotation>
-												<xs:documentation>[sq.ft.] Area of the floor of the attic.</xs:documentation>
+												<xs:documentation>[sq.ft.] Area of the floor of the attic. DO WE STILL NEED THIS?</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="Rafters"
-												type="StudProperties"/>
 												<xs:element ref="extension" minOccurs="0"/>
 											</xs:sequence>
 										</xs:complexType>
