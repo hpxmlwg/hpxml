@@ -1438,6 +1438,13 @@
 												<xs:documentation>[ft]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0"
+												name="LongestPipingLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Measured length of hot water piping in ft from the hot water heater to the farthest hot water fixture, measured longitudinally from plans, assuming the hot water piping does not run diagonally</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 												</xs:sequence>
 												</xs:complexType>
@@ -1459,6 +1466,13 @@
 												type="LengthMeasurement">
 												<xs:annotation>
 												<xs:documentation>[ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="LongestPipingLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Measured length of hot water piping in ft from the hot water heater to the farthest hot water fixture, measured longitudinally from plans, assuming the hot water piping does not run diagonally</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="PumpPower"
