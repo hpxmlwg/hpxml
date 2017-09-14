@@ -1,4 +1,4 @@
-<HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.2">
+<HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.2.1">
     <XMLTransactionHeaderInformation>
         <XMLType>BPI-2101</XMLType>
         <XMLGeneratedBy>Noel</XMLGeneratedBy>
