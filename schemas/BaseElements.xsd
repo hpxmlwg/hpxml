@@ -1435,13 +1435,6 @@
 												<xs:element minOccurs="0" name="PipingLength"
 												type="LengthMeasurement">
 												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0"
-												name="LongestPipingLength"
-												type="LengthMeasurement">
-												<xs:annotation>
 												<xs:documentation>Measured length of hot water piping from the hot water heater to the farthest hot water fixture, measured longitudinally from plans, assuming the hot water piping does not run diagonally. [ft]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
@@ -1458,25 +1451,11 @@
 												name="RecirculationPipingLoopLength"
 												type="LengthMeasurement">
 												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0"
-												name="BranchPipingLoopLength"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0"
-												name="LongestRecirculationPipingLoopLength"
-												type="LengthMeasurement">
-												<xs:annotation>
 												<xs:documentation>Hot water recirculation loop piping length including both supply and return sides of the loop, measured longitudinally from plans, assuming the hot water piping does not run diagonally. [ft]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0"
-												name="LongestBranchPipingLoopLength"
+												name="BranchPipingLoopLength"
 												type="LengthMeasurement">
 												<xs:annotation>
 												<xs:documentation>Length of the branch hot water piping from the recirculation loop to the farthest hot water fixture from the recirculation loop, measured longitudinally from plans, assuming the branch hot water piping does not run diagonally. [ft]</xs:documentation>
