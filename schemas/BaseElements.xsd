@@ -1489,6 +1489,7 @@
 												<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
