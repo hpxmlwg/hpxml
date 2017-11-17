@@ -631,7 +631,7 @@
 												<xs:documentation>[sq.ft.] Area of the floor</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="Joists"
+												<xs:element minOccurs="0" name="FloorJoists"
 												type="StudProperties"/>
 												<xs:element minOccurs="0" name="Insulation"
 												type="InsulationInfo">
