@@ -650,7 +650,7 @@
 												<xs:sequence>
 												<xs:group ref="SystemInfo"/>
 												<xs:element name="AtticWallType"
-												type="AtticWallType"/>
+												type="AtticWallType" minOccurs="0"/>
 												<xs:element minOccurs="0" name="Thickness"
 												type="LengthMeasurement">
 												<xs:annotation>
