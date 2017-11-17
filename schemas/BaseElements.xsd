@@ -527,6 +527,10 @@
 												<xs:element minOccurs="0" ref="AttachedToSpace"/>
 												<xs:element minOccurs="0" name="RoofColor"
 												type="WallAndRoofColor"/>
+												<xs:element minOccurs="0" name="SolarAbsorptance"
+													type="SolarAbsorptance"/>
+												<xs:element minOccurs="0" name="Emittance"
+													type="Emittance"/>
 												<xs:element minOccurs="0" name="RoofType"
 												type="RoofType"/>
 												<xs:element minOccurs="0" name="DeckType"
@@ -839,6 +843,9 @@
 									<xs:element minOccurs="0" name="Studs" type="StudProperties"/>
 									<xs:element minOccurs="0" name="Siding" type="Siding"/>
 									<xs:element minOccurs="0" name="Color" type="WallAndRoofColor"/>
+									<xs:element minOccurs="0" name="SolarAbsorptance"
+										type="SolarAbsorptance"/>
+									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation"
 										type="InsulationInfo"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
