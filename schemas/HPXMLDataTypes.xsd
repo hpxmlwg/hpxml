@@ -2097,4 +2097,16 @@
 			<xs:maxInclusive value="20"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="SolarAbsorptance">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Emittance">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
