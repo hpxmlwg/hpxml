@@ -1845,6 +1845,8 @@
 			<xs:enumeration value="supply only"/>
 			<xs:enumeration value="heat recovery ventilator"/>
 			<xs:enumeration value="energy recovery ventilator"/>
+			<xs:enumeration value="balanced"/>
+			<xs:enumeration value="central fan integrated supply"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="HoursPerDay">
