@@ -1448,7 +1448,7 @@
 												<xs:element minOccurs="0" name="PipingLength"
 												type="LengthMeasurement">
 												<xs:annotation>
-												<xs:documentation>Measured length of hot water piping from the hot water heater to the farthest hot water fixture, measured longitudinally from plans, assuming the hot water piping does not run diagonally. [ft]</xs:documentation>
+												<xs:documentation>Measured length of hot water piping from the hot water heater to the farthest hot water fixture, measured longitudinally from plans, assuming the hot water piping does not run diagonally, plus 10 feet of piping for each floor level, plus 5 feet of piping for unconditioned basements. [ft]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
@@ -1471,7 +1471,7 @@
 												name="BranchPipingLoopLength"
 												type="LengthMeasurement">
 												<xs:annotation>
-												<xs:documentation>Length of the branch hot water piping from the recirculation loop to the farthest hot water fixture from the recirculation loop, measured longitudinally from plans, assuming the branch hot water piping does not run diagonally. [ft]</xs:documentation>
+												<xs:documentation>Length of the branch hot water piping from the recirculation loop to the farthest hot water fixture from the recirculation loop, measured longitudinally from plans, assuming the branch hot water piping does not run diagonally, plus 20 feet of piping for each floor level greater than one plus 10 feet of piping for unconditioned basements. [ft]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="PumpPower"
