@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2014/6"
-	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.2.1">
+	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="3.0">
 	<!-- Value Lists -->
 	<!--Address Information Below-->
 	<xs:simpleType name="schemaVersionType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="2.0"/>
-			<xs:enumeration value="2.1"/>
-			<xs:enumeration value="2.2"/>
-			<xs:enumeration value="2.2.1"/>
+			<xs:enumeration value="3.0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="AddressTypeCode">
