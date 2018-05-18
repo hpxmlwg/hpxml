@@ -1353,6 +1353,12 @@
 											<xs:documentation>The amount of energy delivered as heated water in a day divided by the total daily energy consumption of a residential water heater, as determined following standardized DOE testing procedure.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element name="UniformEnergyFactor" type="EnergyFactor"
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>DOE’s new metric for communicating the energy efficiency of a residential water heater, which replaces the Energy Factor (EF) metric. More efficient water heaters have a higher Uniform Energy Factor (UEF). UEF is determined by the Department of Energy’s test method outlined in 10 CFR Part 430, Subpart B, Appendix E.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FirstHourRating" type="Volume">
 										<xs:annotation>
 											<xs:documentation>[gal per hour] An estimate of the maximum volume of hot water in gallons that a storage water heater can supply within an hour that begins with the water heater fully heated.</xs:documentation>
