@@ -820,6 +820,12 @@
 												<xs:documentation>[sq.ft.] Area of the slab</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0" name="Thickness"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[in] Thickness of foundation slab.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="Perimeter"
 												type="LengthMeasurement">
 												<xs:annotation>
