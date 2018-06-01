@@ -3472,7 +3472,8 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 				<xs:complexType>
 					<xs:sequence minOccurs="0">
 						<xs:element name="ClimateZoneDOE" type="ClimateZoneDOE" minOccurs="0"/>
-						<xs:element name="ClimateZoneIECC" minOccurs="0" type="IECCClimateZoneType"/>
+						<xs:element name="ClimateZoneIECC" minOccurs="0" type="IECCClimateZoneType"
+							maxOccurs="unbounded"/>
 						<xs:element name="RadonZone" type="RadonZone" minOccurs="0"/>
 						<xs:element name="TermiteZone" type="TermiteZone" minOccurs="0"/>
 						<xs:element name="HurricaneZone" type="xs:boolean" minOccurs="0"/>
