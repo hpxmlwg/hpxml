@@ -788,7 +788,7 @@
 												<xs:documentation>[in] Thickness of foundation wall excluding interior framing.</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="BelowGradeDepth"
+												<xs:element minOccurs="0" name="DepthBelowGrade"
 												type="LengthMeasurement">
 												<xs:annotation>
 												<xs:documentation>[ft] Depth below grade of foundation wall</xs:documentation>
@@ -3023,9 +3023,9 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 							<xs:documentation>[sq.ft.]</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="AnnualCoolEfficiency" type="CoolingEfficiencyType"
+					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType"
 						minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="AnnualHeatEfficiency" minOccurs="0"
+					<xs:element name="AnnualHeatingEfficiency" minOccurs="0"
 						type="HeatingEfficiencyType" maxOccurs="unbounded"> </xs:element>
 					<xs:element minOccurs="0" ref="extension"/>
 				</xs:sequence>
@@ -3689,8 +3689,14 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="InstalledComponent" type="RemoteReference"
-				maxOccurs="unbounded"/>
+			<xs:element minOccurs="0" name="InstalledComponents">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="1" name="InstalledComponent" type="RemoteReference"
+							maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
