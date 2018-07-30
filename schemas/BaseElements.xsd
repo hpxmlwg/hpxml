@@ -4657,6 +4657,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 							<xs:enumeration value="illustration"/>
 							<xs:enumeration value="document"/>
 							<xs:enumeration value="spreadsheet"/>
+							<xs:enumeration value="website"/>
 							<xs:enumeration value="other"/>
 						</xs:restriction>
 					</xs:simpleType>
