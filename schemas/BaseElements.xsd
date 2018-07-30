@@ -2876,6 +2876,22 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 					</xs:element>
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
 					<xs:element name="GeothermalLoop" type="GeothermalLoop" minOccurs="0"/>
+					<xs:element minOccurs="0" name="BackupType">
+						<xs:annotation>
+							<xs:documentation>Whether the heat pump backup is integrated into the unit (describe in BackupSystemFuel, BackupAFUE, BackupHeatingCapacity), or a separate heating system (add reference in BackupSystem).</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="integrated"/>
+								<xs:enumeration value="separate"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="0" name="BackupSystem" type="LocalReference">
+						<xs:annotation>
+							<xs:documentation>References the HeatingSystem that provides the backup for a separate backup.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="BackupSystemFuel" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="BackupAFUE" type="AFUE"/>
 					<xs:element minOccurs="0" name="BackupHeatingCapacity" type="Capacity">
