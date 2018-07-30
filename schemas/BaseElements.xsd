@@ -3671,7 +3671,7 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			<xs:element minOccurs="0" name="CalibrationQualification"
 				type="BPI2400CalibrationQualification">
 				<xs:annotation>
-					<xs:documentation>This identifies which data quality requirements were met by the bills for each energy source and therefore which calibration measure are used to determine model acceptance.</xs:documentation>
+					<xs:documentation>This identifies which data quality requirements (if any) were met by the bills for the relevant energy source and therefore which calibration metrics (if any) are used to determine whether the calibrated model is accepted.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="CalibrationWeatherRegressionCVRMSE" type="xs:double">
