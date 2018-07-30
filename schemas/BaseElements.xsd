@@ -2680,6 +2680,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	<xs:group name="SystemInfo">
 		<xs:sequence>
 			<xs:element name="SystemIdentifier" type="SystemIdentifiersInfoType"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="HVACSystemInfo">
@@ -3364,6 +3365,7 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 	<xs:complexType name="ProjectDetailsType">
 		<xs:sequence>
 			<xs:element maxOccurs="unbounded" name="ProjectSystemIdentifiers" type="RemoteReference"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 			<xs:element name="ProgramName" type="ProgramName" minOccurs="0"/>
 			<xs:element maxOccurs="1" minOccurs="0" ref="ContractorSystemIdentifiers"/>
 			<xs:element minOccurs="0" name="ProgramSponsor" type="ProgramSponsor"/>
@@ -3474,6 +3476,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 			<xs:element name="MeasureCode" type="MeasureCode" minOccurs="0"/>
 			<xs:element name="MeasureDescription" type="MeasureDescription" minOccurs="0"/>
 			<xs:element minOccurs="0" name="Quantity">
@@ -3623,6 +3626,7 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 		<xs:sequence>
 			<xs:element name="UtilityID" type="RemoteReference"/>
 			<xs:element name="ConsumptionType" type="EnergyAndWaterUseTypeDescription"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 			<xs:element maxOccurs="unbounded" name="ConsumptionDetail">
 				<xs:annotation>
 					<xs:documentation>Consumption records with enough granularity to be able to use smart meter data.</xs:documentation>
@@ -4492,11 +4496,13 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="Building">
 		<xs:sequence>
 			<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 			<xs:element minOccurs="0" name="CustomerID" type="RemoteReference"/>
 			<xs:element minOccurs="0" name="Site">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="SiteID" type="SystemIdentifiersInfoType"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 						<xs:element name="Address" type="AddressInformation"/>
 						<xs:element minOccurs="0" name="SchoolDistrict" type="xs:string"/>
 						<xs:element minOccurs="0" name="eGridRegion" type="eGridRegions"/>
@@ -4640,4 +4646,25 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:element name="ExternalResource">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="URL" type="xs:anyURI"/>
+				<xs:element name="Type">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="photo"/>
+							<xs:enumeration value="illustration"/>
+							<xs:enumeration value="document"/>
+							<xs:enumeration value="spreadsheet"/>
+							<xs:enumeration value="other"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Description" type="xs:string"/>
+				<xs:element minOccurs="0" ref="extension"/>
+			</xs:sequence>
+			<xs:attribute name="id" use="required"/>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>
