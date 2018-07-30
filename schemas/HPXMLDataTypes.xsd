@@ -1658,6 +1658,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="cape cod"/>
 			<xs:enumeration value="cathedral ceiling"/>
+			<xs:enumeration value="conditioned attic"/>
 			<xs:enumeration value="flat roof"/>
 			<xs:enumeration value="unvented attic"/>
 			<xs:enumeration value="vented attic"/>
