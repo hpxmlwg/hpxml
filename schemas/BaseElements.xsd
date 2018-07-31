@@ -2745,6 +2745,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 							<xs:documentation>[sq.ft.]</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="ElectricAuxiliaryEnergy" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>The average annual auxiliary electrical energy consumption for, e.g., a gas furnace or boiler, in kilowatt-hours per year. Published in the AHRI Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
