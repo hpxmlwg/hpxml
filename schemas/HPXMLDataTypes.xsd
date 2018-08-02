@@ -1690,6 +1690,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="light"/>
 			<xs:enumeration value="medium"/>
+			<xs:enumeration value="medium dark"/>
 			<xs:enumeration value="dark"/>
 			<xs:enumeration value="reflective"/>
 		</xs:restriction>
