@@ -3865,6 +3865,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 					<xs:documentation>Baseload power is the energy consumed for the day-to-day operation of a home that is not used as a response to outside weather (i.e. excludes heating and cooling) (Krigger and Dorsi, 2009).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="ElectricityDemandKW" type="xs:double"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
