@@ -2763,16 +2763,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="WallFurnace">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element minOccurs="0" name="SealedCombustion" type="xs:boolean"/>
-						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
-						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
-						<xs:element minOccurs="0" ref="extension"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="WallFurnace" type="WallAndFloorFurnace"> </xs:element>
+			<xs:element name="FloorFurnace" type="WallAndFloorFurnace"/>
 			<xs:element name="Boiler">
 				<xs:complexType>
 					<xs:sequence>
@@ -4637,6 +4629,14 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 				type="AirHandlerStaticPressureMeasurementLocation"/>
 			<xs:element minOccurs="0" name="LocationDescription" type="xs:string"/>
 			<xs:element minOccurs="0" name="StaticPressureSource" type="StaticPressureSource"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WallAndFloorFurnace">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="SealedCombustion" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
