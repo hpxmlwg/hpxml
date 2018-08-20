@@ -600,6 +600,7 @@
 	<xs:simpleType name="StudSize">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="2x2"/>
+			<xs:enumeration value="2x3"/>
 			<xs:enumeration value="2x4"/>
 			<xs:enumeration value="2x6"/>
 			<xs:enumeration value="2x8"/>
@@ -1694,6 +1695,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="light"/>
 			<xs:enumeration value="medium"/>
+			<xs:enumeration value="medium dark"/>
 			<xs:enumeration value="dark"/>
 			<xs:enumeration value="reflective"/>
 		</xs:restriction>
