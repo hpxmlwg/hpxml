@@ -232,9 +232,14 @@
 							<xs:documentation>loads/week</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="EfficiencyFactor" type="xs:double">
+					<xs:element minOccurs="0" name="EnergyFactor" type="xs:double">
 						<xs:annotation>
 							<xs:documentation>lbs dry clothes/kWh</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="CombinedEnergyFactor" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>The efficiency metric effective September 13, 2013, it includes the active drying cycle energy as well as energy consumed during Stand-by and Off modes. lbs dry clothes/kWh</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="ControlType">
@@ -571,9 +576,9 @@
 												<xs:element minOccurs="0" name="RoofColor"
 												type="WallAndRoofColor"/>
 												<xs:element minOccurs="0" name="SolarAbsorptance"
-													type="SolarAbsorptance"/>
+												type="SolarAbsorptance"/>
 												<xs:element minOccurs="0" name="Emittance"
-													type="Emittance"/>
+												type="Emittance"/>
 												<xs:element minOccurs="0" name="RoofType"
 												type="RoofType"/>
 												<xs:element minOccurs="0" name="DeckType"
