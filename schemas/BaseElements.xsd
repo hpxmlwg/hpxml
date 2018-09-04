@@ -264,7 +264,17 @@
 					<xs:element name="Type" type="ClothesWasherType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
 					<xs:element name="ModifiedEnergyFactor" type="xs:double" minOccurs="0"/>
+					<xs:element name="IntegratedModifiedEnergyFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The energy performance metric for ENERGY STAR certified residential clothes washers as of March 7, 2015.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="WaterFactor" type="xs:double" minOccurs="0"/>
+					<xs:element name="IntegratedWaterFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The water performance metric for ENERGY STAR certified residential clothes washers as of March 7, 2015.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Usage" type="xs:double">
 						<xs:annotation>
 							<xs:documentation>loads/week</xs:documentation>
