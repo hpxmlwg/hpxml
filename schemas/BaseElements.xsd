@@ -1652,6 +1652,26 @@
 										type="PVSystemLocation"/>
 									<xs:element minOccurs="0" name="Ownership"
 										type="PVSystemOwnership"/>
+									<xs:element minOccurs="0" name="ModuleType">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="standard"/>
+												<xs:enumeration value="premium"/>
+												<xs:enumeration value="thin film"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element maxOccurs="1" minOccurs="0" name="ArrayType">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="fixed open rack"/>
+												<xs:enumeration value="fixed roof mount"/>
+												<xs:enumeration value="1-axis"/>
+												<xs:enumeration value="1-axis backtracked"/>
+												<xs:enumeration value="2-axis"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element minOccurs="0" name="ArrayOrientation"
 										type="OrientationType"/>
 									<xs:element minOccurs="0" name="ArrayAzimuth" type="AzimuthType">
@@ -1677,6 +1697,12 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="InverterEfficiency"
 										type="Efficiency"/>
+									<xs:element minOccurs="0" name="SystemLossesFraction"
+										type="Fraction">
+										<xs:annotation>
+											<xs:documentation>System losses can be due to soiling, shading, snow, mismatch, wiring, electrical connections, light-induced degradation, nameplate rating inaccuracies, age, and availability.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="YearInverterManufactured"
 										type="Year"/>
 									<xs:element minOccurs="0" name="YearModulesManufactured"
