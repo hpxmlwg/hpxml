@@ -960,8 +960,10 @@
 			<xs:enumeration value="water-to-air"/>
 			<xs:enumeration value="water-to-water"/>
 			<xs:enumeration value="air-to-air"/>
+			<xs:enumeration value="air-to-water"/>
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="ground-to-air"/>
+			<xs:enumeration value="ground-to-water"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="VentSystem">
@@ -1336,7 +1338,8 @@
 	<xs:simpleType name="WaterType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="indoor and outdoor water"/>
-			<xs:enumeration value="indoor water "/><!-- deprecated -->
+			<xs:enumeration value="indoor water "/>
+			<!-- deprecated -->
 			<xs:enumeration value="indoor water"/>
 			<xs:enumeration value="outdoor water"/>
 			<xs:enumeration value="wastewater/sewer"/>
