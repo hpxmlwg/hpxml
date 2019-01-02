@@ -602,6 +602,14 @@
 												<xs:documentation>[sq.ft.] Surface area of the roof itself</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0" name="Orientation"
+												type="OrientationType"/>
+												<xs:element name="Azimuth" type="AzimuthType"
+												minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>[deg]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="RoofType"
 												type="RoofType"/>
 												<xs:element minOccurs="0" name="RoofColor"
