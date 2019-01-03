@@ -648,6 +648,8 @@
 												<xs:complexType>
 												<xs:sequence>
 												<xs:group ref="SystemInfo"/>
+												<xs:element minOccurs="0" name="AdjacentTo"
+												type="AdjacentTo"/>
 												<xs:element minOccurs="0" name="Area"
 												type="SurfaceArea">
 												<xs:annotation>
@@ -676,6 +678,8 @@
 												<xs:complexType>
 												<xs:sequence>
 												<xs:group ref="SystemInfo"/>
+												<xs:element minOccurs="0" name="AdjacentTo"
+												type="AdjacentTo"/>
 												<xs:element name="AtticWallType"
 												type="AtticWallType" minOccurs="0"/>
 												<xs:element name="WallType" type="WallType"
