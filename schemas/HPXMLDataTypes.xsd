@@ -588,6 +588,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
+			<xs:enumeration value="attic - unconditioned"/>
 			<xs:enumeration value="attic - unvented"/>
 			<xs:enumeration value="attic - vented"/>
 			<xs:enumeration value="basement"/>
@@ -595,6 +596,7 @@
 			<xs:enumeration value="basement - unconditioned"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
+			<xs:enumeration value="crawlspace - unconditioned"/>
 			<xs:enumeration value="crawlspace - unvented"/>
 			<xs:enumeration value="crawlspace - vented"/>
 			<xs:enumeration value="garage"/>
@@ -605,6 +607,7 @@
 			<xs:enumeration value="other"/>
 			<xs:enumeration value="other housing unit"/>
 			<xs:enumeration value="outside"/>
+			<xs:enumeration value="unconditioned space"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="StudSize">
@@ -1033,6 +1036,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
+			<xs:enumeration value="attic - unconditioned"/>
 			<xs:enumeration value="attic - unvented"/>
 			<xs:enumeration value="attic - vented"/>
 			<xs:enumeration value="basement"/>
@@ -1040,6 +1044,7 @@
 			<xs:enumeration value="basement - unconditioned"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
+			<xs:enumeration value="crawlspace - unconditioned"/>
 			<xs:enumeration value="crawlspace - unvented"/>
 			<xs:enumeration value="crawlspace - vented"/>
 			<xs:enumeration value="garage"/>
@@ -1123,6 +1128,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
+			<xs:enumeration value="attic - unconditioned"/>
 			<xs:enumeration value="attic - unvented"/>
 			<xs:enumeration value="attic - vented"/>
 			<xs:enumeration value="basement"/>
@@ -1130,6 +1136,7 @@
 			<xs:enumeration value="basement - unconditioned"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
+			<xs:enumeration value="crawlspace - unconditioned"/>
 			<xs:enumeration value="crawlspace - unvented"/>
 			<xs:enumeration value="crawlspace - vented"/>
 			<xs:enumeration value="garage"/>
@@ -1140,6 +1147,7 @@
 			<xs:enumeration value="other interior"/>
 			<xs:enumeration value="other exterior"/>
 			<xs:enumeration value="roof deck"/>
+			<xs:enumeration value="unconditioned space"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Thermostats Below-->
