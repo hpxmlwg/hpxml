@@ -1384,7 +1384,7 @@
 									<xs:element minOccurs="0" name="AttachedToWaterHeatingSystem"
 										type="LocalReference">
 										<xs:annotation>
-											<xs:documentation>The water heating system that his distribution system serves.</xs:documentation>
+											<xs:documentation>The water heating system that this distribution system serves.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="SystemType">
