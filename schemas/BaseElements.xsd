@@ -4606,7 +4606,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="WeatherStation">
 		<xs:sequence>
-			<xs:element ref="SystemIdentifiersInfo"/>
+      <xs:group ref="SystemInfo"/>
 			<xs:element name="Name" type="xs:string"/>
 			<xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
 			<xs:element minOccurs="0" name="State" type="StateCode"/>
