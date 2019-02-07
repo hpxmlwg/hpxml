@@ -175,6 +175,7 @@
 	<xs:complexType name="InsulationInfo">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
+			<xs:element minOccurs="0" name="InsulationPresent" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
 			<xs:element minOccurs="0" name="InsulationLocation" type="InsulationLocation"/>
@@ -3223,6 +3224,7 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 					<xs:sequence>
 						<xs:element name="DuctType" type="DuctType" minOccurs="0"/>
 						<xs:element name="DuctMaterial" type="DuctMaterial" minOccurs="0"/>
+						<xs:element minOccurs="0" name="DuctInsulationPresent" type="xs:boolean"/>
 						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0"/>
 						<xs:element minOccurs="0" name="DuctInsulationThickness"
 							type="LengthMeasurement">
