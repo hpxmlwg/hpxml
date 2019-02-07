@@ -2877,7 +2877,8 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
 					<xs:element name="GeothermalLoop" type="GeothermalLoop" minOccurs="0"/>
 					<xs:element name="BackupSystemFuel" type="FuelType" minOccurs="0"/>
-					<xs:element minOccurs="0" name="BackupAFUE" type="AFUE"/>
+					<xs:element name="BackupAnnualHeatingEfficiency" minOccurs="0"
+						type="HeatingEfficiencyType" maxOccurs="unbounded"> </xs:element>
 					<xs:element minOccurs="0" name="BackupHeatingCapacity" type="Capacity">
 						<xs:annotation>
 							<xs:documentation>[Btuh]</xs:documentation>
@@ -4606,7 +4607,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="WeatherStation">
 		<xs:sequence>
-      <xs:group ref="SystemInfo"/>
+			<xs:group ref="SystemInfo"/>
 			<xs:element name="Name" type="xs:string"/>
 			<xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
 			<xs:element minOccurs="0" name="State" type="StateCode"/>
