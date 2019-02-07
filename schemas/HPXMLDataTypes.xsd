@@ -717,6 +717,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="interior"/>
 			<xs:enumeration value="exterior"/>
+			<xs:enumeration value="garage"/>
 			<xs:enumeration value="common area"/>
 		</xs:restriction>
 	</xs:simpleType>
