@@ -2974,6 +2974,12 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element name="CondensingSystem" type="xs:boolean" minOccurs="0"/>
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="GravitySystem" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
+						<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2989,6 +2995,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="RotaryCup" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
+						<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -4895,6 +4906,10 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" name="SealedCombustion" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="IntermittentIgnitionDevice" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
