@@ -586,6 +586,12 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="AtticType" type="AtticType" minOccurs="0"/>
+									<xs:element minOccurs="0" name="AtticSpecificLeakageArea"
+										type="Fraction">
+										<xs:annotation>
+											<xs:documentation>The Specific Leakage Area (SLA) for a vented attic is defined as the Effective Leakage Area (ELA) divided by the floor area.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Roofs">
 										<xs:complexType>
 											<xs:sequence>
@@ -749,6 +755,12 @@
 									<xs:element name="FoundationType" type="FoundationType"/>
 									<xs:element minOccurs="0" name="ThermalBoundary"
 										type="FoundationThermalBoundary"/>
+									<xs:element minOccurs="0" name="FoundationSpecificLeakageArea"
+										type="Fraction">
+										<xs:annotation>
+											<xs:documentation>The Specific Leakage Area (SLA) for a vented foundation is defined as the Effective Leakage Area (ELA) divided by the floor area.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="FrameFloor" maxOccurs="unbounded"
 										minOccurs="0">
 										<xs:complexType>
