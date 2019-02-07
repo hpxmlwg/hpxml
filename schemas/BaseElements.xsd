@@ -1591,6 +1591,8 @@
 											<xs:documentation>[sq.ft.]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="NumberOfPanels"
+										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="InverterEfficiency"
 										type="Efficiency"/>
 									<xs:element minOccurs="0" name="YearInverterManufactured"
