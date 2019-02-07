@@ -2970,11 +2970,18 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element name="Furnace">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="FurnaceType">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="forced air"/>
+									<xs:enumeration value="gravity"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
 						<xs:element minOccurs="0" name="SealedCombustion" type="xs:boolean"/>
 						<xs:element name="CondensingSystem" type="xs:boolean" minOccurs="0"/>
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
-						<xs:element minOccurs="0" name="GravitySystem" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
