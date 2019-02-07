@@ -1331,12 +1331,6 @@
 												</xs:sequence>
 												</xs:complexType>
 												</xs:element>
-												<xs:element minOccurs="0" name="Pipe"
-												type="PipeInsulationType">
-												<xs:annotation>
-												<xs:documentation>DEPRECATED. This will be removed in v3.0. Use HotWaterDistribution element instead.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
@@ -1527,11 +1521,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="CollectorLoopType"
-										type="SolarThermalCollectorLoopType">
-										<xs:annotation>
-											<xs:documentation>"batch heater" enumeration is deprecated. It will be removed in a future version. See #272.</xs:documentation>
-										</xs:annotation>
-									</xs:element>
+										type="SolarThermalCollectorLoopType"/>
 									<xs:element minOccurs="0" name="CollectorType"
 										type="SolarThermalCollectorType"/>
 									<xs:element minOccurs="0" name="CollectorOrientation"
@@ -2018,12 +2008,6 @@
 												type="xs:double">
 												<xs:annotation>
 												<xs:documentation>A multiplier applied to the rated horsepower of a pump motor to indicate the percent above nameplate horsepower at which the motor can operate continuously without exceeding its allowable insulation class temperature limit, provided that other design parameters, such rated voltage, frequency and ambient temperature, are within limits. A 1.5 hp pump with a 1.65 service factor produces 2.475 hp (total horsepower) at the maximum service factor point (ANSI/APSP/ICC-15 2011).</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="HoursPerDay"
-												type="HoursPerDay">
-												<xs:annotation>
-												<xs:documentation>DEPRECATED - Please use PumpSpeed/HoursPerDay</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element maxOccurs="unbounded" minOccurs="0"
