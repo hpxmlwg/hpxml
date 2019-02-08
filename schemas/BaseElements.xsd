@@ -526,7 +526,7 @@
 											<xs:documentation>The space over which this attic is</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="AtticType" type="AtticType" minOccurs="0"/>
+									<xs:element name="AtticType" type="AtticType" minOccurs="1"/>
 									<xs:element minOccurs="0" name="Roofs">
 										<xs:complexType>
 											<xs:sequence>
@@ -4698,5 +4698,40 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" name="StaticPressureSource" type="StaticPressureSource"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AtticType">
+		<xs:choice>
+			<xs:element name="Attic">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Vented" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="Conditioned" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="CapeCod" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CathedralCeiling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FlatRoof">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Other">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
 	</xs:complexType>
 </xs:schema>

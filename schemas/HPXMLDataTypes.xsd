@@ -1653,17 +1653,6 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="AtticType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="cape cod"/>
-			<xs:enumeration value="cathedral ceiling"/>
-			<xs:enumeration value="flat roof"/>
-			<xs:enumeration value="unvented attic"/>
-			<xs:enumeration value="vented attic"/>
-			<xs:enumeration value="venting unknown attic"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="AtticWallType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="gable"/>
