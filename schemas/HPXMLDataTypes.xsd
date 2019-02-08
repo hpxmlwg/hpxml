@@ -2155,6 +2155,7 @@
 			<xs:minInclusive value="0"/>
 			<xs:maxInclusive value="1"/>
 		</xs:restriction>
+    </xs:simpleType>
 	<xs:simpleType name="SpecificLeakageAreaType">
 		<xs:annotation>
 			<xs:documentation>Specific Leakage Area (SLA) is defined as the Effective Leakage Area (ELA) divided by the floor area.</xs:documentation>
