@@ -1732,8 +1732,7 @@
 							</xs:annotation>
 						</xs:element>
 						<xs:element maxOccurs="unbounded" minOccurs="0"
-							name="ThirdPartyCertification"
-							type="LightingFixtureThirdPartyCertification"/>
+							name="ThirdPartyCertification" type="LightingThirdPartyCertification"/>
 						<xs:element name="AverageHoursPerDay" type="HoursPerDay" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>[h]</xs:documentation>

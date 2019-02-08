@@ -733,6 +733,19 @@
 			<xs:enumeration value="programmed start"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="LightingThirdPartyCertification">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Energy Star"/>
+			<xs:enumeration value="Energy Star Most Efficient"/>
+			<xs:enumeration value="CEE Tier 1"/>
+			<xs:enumeration value="CEE Tier 2"/>
+			<xs:enumeration value="CEE Tier 3"/>
+			<xs:enumeration value="ERI Tier I"/>
+			<xs:enumeration value="ERI Tier II"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="LightingDailyHours">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="1 to 4 hours per day"/>
@@ -1331,8 +1344,7 @@
 	<xs:simpleType name="WaterType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="indoor and outdoor water"/>
-			<xs:enumeration value="indoor water "/>
-			<!-- deprecated -->
+			<xs:enumeration value="indoor water "/><!-- deprecated -->
 			<xs:enumeration value="indoor water"/>
 			<xs:enumeration value="outdoor water"/>
 			<xs:enumeration value="wastewater/sewer"/>
