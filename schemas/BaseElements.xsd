@@ -1587,6 +1587,12 @@
 											<xs:documentation>Does this faucet have an aerator?</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="MinutesPerDay"
+										type="MinutesPerDay">
+										<xs:annotation>
+											<xs:documentation>[minutes] Number of minutes per day a water fixture operates.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0"
 										name="TemperatureInitiatedShowerFlowRestrictionValve"
 										type="xs:boolean">

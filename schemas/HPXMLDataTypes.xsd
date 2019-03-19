@@ -2162,4 +2162,10 @@
 		</xs:annotation>
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
+	<xs:simpleType name="MinutesPerDay">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1440"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
