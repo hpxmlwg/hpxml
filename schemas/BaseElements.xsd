@@ -1433,8 +1433,38 @@
 												<xs:element minOccurs="0" name="Jacket">
 												<xs:complexType>
 												<xs:sequence>
+												<xs:element minOccurs="0"
+												name="InsulationMaterial"
+												type="InsulationMaterial"/>
 												<xs:element name="JacketRValue" type="RValue"
 												minOccurs="0"/>
+												<xs:element minOccurs="0" name="Thickness"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[in]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element minOccurs="0" name="TankWall">
+												<xs:annotation>
+												<xs:documentation>Refers to the insulation in the tank wall itself. This information is sometimes vailable on the water heater's name plate or the units specification sheet, or can be estimated by removing the water heater's access plate.</xs:documentation>
+												</xs:annotation>
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0"
+												name="InsulationMaterial"
+												type="InsulationMaterial"/>
+												<xs:element name="TankWallRValue" type="RValue"
+												minOccurs="0"/>
+												<xs:element minOccurs="0" name="Thickness"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[in]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 												</xs:sequence>
 												</xs:complexType>
