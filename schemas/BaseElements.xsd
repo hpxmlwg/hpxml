@@ -571,9 +571,9 @@
 												<xs:element minOccurs="0" name="RoofColor"
 												type="WallAndRoofColor"/>
 												<xs:element minOccurs="0" name="SolarAbsorptance"
-													type="SolarAbsorptance"/>
+												type="SolarAbsorptance"/>
 												<xs:element minOccurs="0" name="Emittance"
-													type="Emittance"/>
+												type="Emittance"/>
 												<xs:element minOccurs="0" name="RoofType"
 												type="RoofType"/>
 												<xs:element minOccurs="0" name="DeckType"
@@ -1483,6 +1483,12 @@
 									<xs:element minOccurs="0" name="FaucetAerator" type="xs:boolean">
 										<xs:annotation>
 											<xs:documentation>Does this faucet have an aerator?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="MinutesPerDay"
+										type="MinutesPerDay">
+										<xs:annotation>
+											<xs:documentation>[minutes] Number of minutes per day a water fixture operates.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0"
