@@ -1470,6 +1470,12 @@
 									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType"
 										type="WaterFixtureType"/>
+									<xs:element minOccurs="0" name="Quantity"
+										type="IntegerGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>Number of similar water fixtures.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FlowRate" type="xs:double">
 										<xs:annotation>
 											<xs:documentation>[gallons per minute] flow rate of water</xs:documentation>
