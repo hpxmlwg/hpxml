@@ -168,7 +168,6 @@
 					<xs:documentation>Describe</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="None"/>
 			<xs:element name="Unknown"/>
 		</xs:choice>
 	</xs:complexType>
