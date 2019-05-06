@@ -976,8 +976,8 @@
 												<xs:sequence>
 												<xs:group ref="SystemInfo"/>
 												<xs:element minOccurs="0" ref="AttachedToSpace"/>
-												<xs:element name="ExteriorAdjacentTo"
-												type="AdjacentTo" minOccurs="0"> </xs:element>
+												<xs:element name="AdjacentTo" type="AdjacentTo"
+												minOccurs="0"> </xs:element>
 												<xs:element name="WallType" type="WallType"
 												minOccurs="0"> </xs:element>
 												<xs:element minOccurs="0" name="Thickness"
