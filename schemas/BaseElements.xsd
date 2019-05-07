@@ -1360,6 +1360,11 @@
 										type="xs:boolean"/>
 									<xs:element name="CombustionVentingSystem" minOccurs="0"
 										type="LocalReference"> </xs:element>
+									<xs:element minOccurs="0" name="AutomaticVentDamper"
+										type="xs:boolean"/>
+									<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+									<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+										type="xs:boolean"/>
 									<xs:element name="RelatedHeatingSystem" type="LocalReference"
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="Installation">
@@ -2870,6 +2875,10 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2883,6 +2892,10 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
