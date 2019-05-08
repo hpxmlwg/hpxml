@@ -785,6 +785,9 @@
 												name="UnderSlabInsulationWidth"
 												type="LengthMeasurement"/>
 												<xs:element minOccurs="0"
+												name="UnderSlabInsulationSpansEntireSlab"
+												type="xs:boolean"/>
+												<xs:element minOccurs="0"
 												name="OnGradeExposedPerimeter"
 												type="LengthMeasurement">
 												<xs:annotation>
