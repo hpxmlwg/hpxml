@@ -718,6 +718,14 @@
 												<xs:documentation>[sq.ft.]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0" name="Orientation"
+												type="OrientationType"/>
+												<xs:element name="Azimuth" type="AzimuthType"
+												minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>[deg]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="Thickness"
 												type="LengthMeasurement">
 												<xs:annotation>
@@ -837,6 +845,13 @@
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
 											<xs:documentation>[sq.ft.]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Orientation"
+										type="OrientationType"/>
+									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[deg]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Insulation"
