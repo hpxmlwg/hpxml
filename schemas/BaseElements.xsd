@@ -1014,6 +1014,8 @@
 											<xs:documentation>[ft] Width from slab edge inward of horizontal under-slab insulation</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="UnderSlabInsulationSpansEntireSlab"
+										type="xs:boolean"/>
 									<xs:element minOccurs="0" name="OnGradeExposedPerimeter"
 										type="LengthMeasurement">
 										<xs:annotation>
