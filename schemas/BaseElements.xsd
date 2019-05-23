@@ -232,9 +232,14 @@
 							<xs:documentation>loads/week</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="EfficiencyFactor" type="xs:double">
+					<xs:element minOccurs="0" name="EnergyFactor" type="xs:double">
 						<xs:annotation>
-							<xs:documentation>lbs dry clothes/kWh</xs:documentation>
+							<xs:documentation>[lbs dry clothes/kWh] The energy performance metric for ENERGY STAR certified residential clothes dryers prior to September 13, 2013. The new metric is Combined Energy Factor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="CombinedEnergyFactor" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>[lbs dry clothes/kWh] The energy performance metric for ENERGY STAR certified residential clothes dryers as of September 13, 2013, it includes the active drying cycle energy as well as energy consumed during Stand-by and Off modes.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="ControlType">
@@ -258,8 +263,26 @@
 				<xs:sequence>
 					<xs:element name="Type" type="ClothesWasherType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
-					<xs:element name="ModifiedEnergyFactor" type="xs:double" minOccurs="0"/>
-					<xs:element name="WaterFactor" type="xs:double" minOccurs="0"/>
+					<xs:element name="ModifiedEnergyFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The energy performance metric for ENERGY STAR certified residential clothes washers prior to March 7, 2015. The new metric is Integrated Modified Energy Factor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="IntegratedModifiedEnergyFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The energy performance metric for ENERGY STAR certified residential clothes washers as of March 7, 2015.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="WaterFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The water performance metric for ENERGY STAR certified residential clothes washers prior to March 7, 2015. The new metric is Integrated Water Factor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="IntegratedWaterFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The water performance metric for ENERGY STAR certified residential clothes washers as of March 7, 2015.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Usage" type="xs:double">
 						<xs:annotation>
 							<xs:documentation>loads/week</xs:documentation>
@@ -807,6 +830,19 @@
 											<xs:documentation>[sq.ft.]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="Orientation"
+										type="OrientationType"/>
+									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[deg]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Perimeter"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Insulation"
 										type="InsulationInfo"/>
 									<xs:element minOccurs="0" name="FloorJoists"
@@ -852,6 +888,13 @@
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
 											<xs:documentation>[sq.ft.]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Orientation"
+										type="OrientationType"/>
+									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[deg]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Thickness"
@@ -960,11 +1003,15 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="UnderSlabInsulationWidth"
-										type="LengthMeasurement"/>
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Width from slab edge inward of horizontal under-slab insulation</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="OnGradeExposedPerimeter"
 										type="LengthMeasurement">
 										<xs:annotation>
-											<xs:documentation>[ft] Perimeter of slab measuerd in feet that is on-grade (2 ft. below grade or less) and exposed to ambient conditions.</xs:documentation>
+											<xs:documentation>[ft] Perimeter of slab measured in feet that is on-grade (2 ft. below grade or less) and exposed to ambient conditions.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="DepthBelowGrade"
@@ -1078,6 +1125,8 @@
 										type="xs:boolean"/>
 									<xs:element name="StormDoor" type="xs:boolean" minOccurs="0"/>
 									<xs:element name="RValue" type="RValue" minOccurs="0"/>
+									<xs:element minOccurs="0" name="LeakinessDescription"
+										type="BuildingLeakiness"/>
 									<xs:element maxOccurs="unbounded" minOccurs="0"
 										name="ThirdPartyCertification"
 										type="DoorThirdPartyCertifications"/>
@@ -1298,6 +1347,12 @@
 												<xs:element maxOccurs="unbounded" minOccurs="0"
 												name="ThirdPartyCertification"
 												type="VentilationFanThirdPartyCertification"/>
+												<xs:element name="AttachedToHVACDistributionSystem"
+												type="LocalReference" minOccurs="0" maxOccurs="1">
+												<xs:annotation>
+												<xs:documentation>For central fan integrated supply mechanical ventilation, specifies the HVAC distribution system it is attached to.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
@@ -1434,6 +1489,11 @@
 										type="xs:boolean"/>
 									<xs:element name="CombustionVentingSystem" minOccurs="0"
 										type="LocalReference"> </xs:element>
+									<xs:element minOccurs="0" name="AutomaticVentDamper"
+										type="xs:boolean"/>
+									<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+									<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+										type="xs:boolean"/>
 									<xs:element name="RelatedHeatingSystem" type="LocalReference"
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="Installation">
@@ -1544,14 +1604,31 @@
 									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType"
 										type="WaterFixtureType"/>
+									<xs:element minOccurs="0" name="Quantity"
+										type="IntegerGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>Number of similar water fixtures.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FlowRate" type="xs:double">
 										<xs:annotation>
 											<xs:documentation>[gallons per minute] flow rate of water</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="LowFlow" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Is the fixture considered low-flow?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FaucetAerator" type="xs:boolean">
 										<xs:annotation>
 											<xs:documentation>Does this faucet have an aerator?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="MinutesPerDay"
+										type="MinutesPerDay">
+										<xs:annotation>
+											<xs:documentation>[minutes] Number of minutes per day a water fixture operates.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0"
@@ -1642,6 +1719,25 @@
 										type="PVSystemLocation"/>
 									<xs:element minOccurs="0" name="Ownership"
 										type="PVSystemOwnership"/>
+									<xs:element minOccurs="0" name="ModuleType">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="standard"/>
+												<xs:enumeration value="premium"/>
+												<xs:enumeration value="thin film"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element maxOccurs="1" minOccurs="0" name="Tracking">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="fixed"/>
+												<xs:enumeration value="1-axis"/>
+												<xs:enumeration value="1-axis backtracked"/>
+												<xs:enumeration value="2-axis"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element minOccurs="0" name="ArrayOrientation"
 										type="OrientationType"/>
 									<xs:element minOccurs="0" name="ArrayAzimuth" type="AzimuthType">
@@ -1665,8 +1761,16 @@
 											<xs:documentation>[sq.ft.]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="NumberOfPanels"
+										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="InverterEfficiency"
 										type="Efficiency"/>
+									<xs:element minOccurs="0" name="SystemLossesFraction"
+										type="Fraction">
+										<xs:annotation>
+											<xs:documentation>System losses can be due to soiling, shading, snow, mismatch, wiring, electrical connections, light-induced degradation, nameplate rating inaccuracies, age, and availability.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="YearInverterManufactured"
 										type="Year"/>
 									<xs:element minOccurs="0" name="YearModulesManufactured"
@@ -1675,7 +1779,7 @@
 									<xs:element minOccurs="0" name="AnnualOutput"
 										type="RatedAnnualkWh">
 										<xs:annotation>
-											<xs:documentation>[kWh] Projected Annual Output for a typical meterological year as determined by PVWatts or similar. </xs:documentation>
+											<xs:documentation>[kWh] Projected Annual Output for a typical meteorological year as determined by PVWatts or similar. </xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="LevelizedCostOfElectricity"
@@ -1776,7 +1880,7 @@
 		<xs:sequence>
 			<xs:element name="LightingGroup" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Light units of the same type. For example you could have all the 60W incandescants.</xs:documentation>
+					<xs:documentation>Light units of the same type. For example you could have all the 60W incandescents.</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
@@ -1909,6 +2013,12 @@
 						</xs:element>
 						<xs:element minOccurs="0" name="ThirdPartyCertification"
 							type="ApplianceThirdPartyCertifications" maxOccurs="unbounded"/>
+						<xs:element minOccurs="0" name="Quantity" type="IntegerGreaterThanZero">
+							<xs:annotation>
+								<xs:documentation>Number of similar ceiling fans.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -2487,7 +2597,7 @@
 							<xs:annotation>
 								<xs:documentation>If moisture management of a crawlspace (e.g., installation of polyethylene sheeting) or radon mitigation measures were a part of the scope of work,were measures installed to be compliant with one of the following:
 - Specifications of EPA’s Indoor airPLUS program
-- Techniques detailed in EPA's Radon-Resistent New Construction
+- Techniques detailed in EPA's Radon-Resistant New Construction
 - ASTM E2121, Standard Practice for Installing Radon Mitigation Systems in Existing Low-Rise Residential Buildings (section 7.3)</xs:documentation>
 							</xs:annotation>
 						</xs:element>
@@ -2883,6 +2993,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 							<xs:documentation>[sq.ft.]</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="ElectricAuxiliaryEnergy" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>The average annual auxiliary electrical energy consumption for, e.g., a gas furnace or boiler, in kilowatt-hours per year. Published in the AHRI Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -2897,6 +3012,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element name="CondensingSystem" type="xs:boolean" minOccurs="0"/>
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
+						<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2912,6 +3032,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="RotaryCup" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
+						<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2934,6 +3059,10 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2947,6 +3076,10 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2989,6 +3122,7 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 			<xs:extension base="HVACSystemInfo">
 				<xs:sequence minOccurs="0">
 					<xs:element name="HeatPumpType" type="HeatPumpType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="HeatPumpFuel" type="FuelType"/>
 					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>[Btuh] Typically the nameplate capacity at 47F.</xs:documentation>
@@ -3491,7 +3625,8 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 				<xs:complexType>
 					<xs:sequence minOccurs="0">
 						<xs:element name="ClimateZoneDOE" type="ClimateZoneDOE" minOccurs="0"/>
-						<xs:element name="ClimateZoneIECC" minOccurs="0" type="IECCClimateZoneType"/>
+						<xs:element name="ClimateZoneIECC" minOccurs="0" type="IECCClimateZoneType"
+							maxOccurs="unbounded"/>
 						<xs:element name="RadonZone" type="RadonZone" minOccurs="0"/>
 						<xs:element name="TermiteZone" type="TermiteZone" minOccurs="0"/>
 						<xs:element name="HurricaneZone" type="xs:boolean" minOccurs="0"/>
@@ -4199,6 +4334,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="AssociationsType">
@@ -4616,7 +4752,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 						</xs:element>
 						<xs:element minOccurs="0" name="LastReplaced" type="xs:gYearMonth">
 							<xs:annotation>
-								<xs:documentation>The Year and Month the filter was last replacced.</xs:documentation>
+								<xs:documentation>The Year and Month the filter was last replaced.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
@@ -4809,6 +4945,10 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" name="SealedCombustion" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="IntermittentIgnitionDevice" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>

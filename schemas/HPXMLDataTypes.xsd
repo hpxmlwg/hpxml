@@ -375,6 +375,7 @@
 			<xs:enumeration value="owner-occupied"/>
 			<xs:enumeration value="renter-occupied"/>
 			<xs:enumeration value="owner-and-renter-occupied"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="OccupantIncomeRangeUnits">
@@ -512,6 +513,7 @@
 			<xs:enumeration value="propane"/>
 			<xs:enumeration value="kerosene"/>
 			<xs:enumeration value="diesel"/>
+			<xs:enumeration value="coal"/>
 			<xs:enumeration value="anthracite coal"/>
 			<xs:enumeration value="bituminous coal"/>
 			<xs:enumeration value="coke"/>
@@ -960,8 +962,10 @@
 			<xs:enumeration value="water-to-air"/>
 			<xs:enumeration value="water-to-water"/>
 			<xs:enumeration value="air-to-air"/>
+			<xs:enumeration value="air-to-water"/>
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="ground-to-air"/>
+			<xs:enumeration value="ground-to-water"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="VentSystem">
@@ -1336,7 +1340,8 @@
 	<xs:simpleType name="WaterType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="indoor and outdoor water"/>
-			<xs:enumeration value="indoor water "/><!-- deprecated -->
+			<xs:enumeration value="indoor water "/>
+			<!-- deprecated -->
 			<xs:enumeration value="indoor water"/>
 			<xs:enumeration value="outdoor water"/>
 			<xs:enumeration value="wastewater/sewer"/>
@@ -1517,6 +1522,7 @@
 			<xs:enumeration value="top freezer"/>
 			<xs:enumeration value="bottom freezer"/>
 			<xs:enumeration value="single door"/>
+			<xs:enumeration value="single door with freezer"/>
 			<xs:enumeration value="full-size one door"/>
 			<xs:enumeration value="full-size two doors"/>
 			<xs:enumeration value="half or quarter size"/>
@@ -2108,5 +2114,11 @@
 			<xs:documentation>Specific Leakage Area (SLA) is defined as the Effective Leakage Area (ELA) divided by the floor area.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:simpleType name="MinutesPerDay">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1440"/>
+		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
