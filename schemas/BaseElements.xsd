@@ -1004,6 +1004,8 @@
 										type="xs:boolean"/>
 									<xs:element name="StormDoor" type="xs:boolean" minOccurs="0"/>
 									<xs:element name="RValue" type="RValue" minOccurs="0"/>
+									<xs:element minOccurs="0" name="LeakinessDescription"
+										type="BuildingLeakiness"/>
 									<xs:element maxOccurs="unbounded" minOccurs="0"
 										name="ThirdPartyCertification"
 										type="DoorThirdPartyCertifications"/>
@@ -4148,6 +4150,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="AssociationsType">
