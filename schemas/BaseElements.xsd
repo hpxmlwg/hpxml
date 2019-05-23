@@ -718,6 +718,14 @@
 												<xs:documentation>[sq.ft.]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0" name="Orientation"
+												type="OrientationType"/>
+												<xs:element name="Azimuth" type="AzimuthType"
+												minOccurs="0">
+												<xs:annotation>
+												<xs:documentation>[deg]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="Thickness"
 												type="LengthMeasurement">
 												<xs:annotation>
@@ -783,7 +791,11 @@
 												</xs:element>
 												<xs:element minOccurs="0"
 												name="UnderSlabInsulationWidth"
-												type="LengthMeasurement"/>
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[ft] Width from slab edge inward of horizontal under-slab insulation.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0"
 												name="OnGradeExposedPerimeter"
 												type="LengthMeasurement">
@@ -837,6 +849,13 @@
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
 											<xs:documentation>[sq.ft.]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Orientation"
+										type="OrientationType"/>
+									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[deg]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Perimeter"
@@ -1010,6 +1029,8 @@
 										type="xs:boolean"/>
 									<xs:element name="StormDoor" type="xs:boolean" minOccurs="0"/>
 									<xs:element name="RValue" type="RValue" minOccurs="0"/>
+									<xs:element minOccurs="0" name="LeakinessDescription"
+										type="BuildingLeakiness"/>
 									<xs:element maxOccurs="unbounded" minOccurs="0"
 										name="ThirdPartyCertification"
 										type="DoorThirdPartyCertifications"/>
@@ -1230,6 +1251,12 @@
 												<xs:element maxOccurs="unbounded" minOccurs="0"
 												name="ThirdPartyCertification"
 												type="VentilationFanThirdPartyCertification"/>
+												<xs:element name="AttachedToHVACDistributionSystem"
+												type="LocalReference" minOccurs="0" maxOccurs="1">
+												<xs:annotation>
+												<xs:documentation>For central fan integrated supply mechanical ventilation, specifies the HVAC distribution system it is attached to.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
@@ -1366,6 +1393,11 @@
 										type="xs:boolean"/>
 									<xs:element name="CombustionVentingSystem" minOccurs="0"
 										type="LocalReference"> </xs:element>
+									<xs:element minOccurs="0" name="AutomaticVentDamper"
+										type="xs:boolean"/>
+									<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+									<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+										type="xs:boolean"/>
 									<xs:element name="RelatedHeatingSystem" type="LocalReference"
 										minOccurs="0"/>
 									<xs:element minOccurs="0" name="Installation">
@@ -1390,7 +1422,7 @@
 									<xs:element minOccurs="0" name="AttachedToWaterHeatingSystem"
 										type="LocalReference">
 										<xs:annotation>
-											<xs:documentation>The water heating system that his distribution system serves.</xs:documentation>
+											<xs:documentation>The water heating system that this distribution system serves.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="SystemType">
@@ -1476,6 +1508,12 @@
 									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType"
 										type="WaterFixtureType"/>
+									<xs:element minOccurs="0" name="Quantity"
+										type="IntegerGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>Number of similar water fixtures.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FlowRate" type="xs:double">
 										<xs:annotation>
 											<xs:documentation>[gallons per minute] flow rate of water</xs:documentation>
@@ -1597,6 +1635,8 @@
 											<xs:documentation>[sq.ft.]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="NumberOfPanels"
+										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="InverterEfficiency"
 										type="Efficiency"/>
 									<xs:element minOccurs="0" name="YearInverterManufactured"
@@ -1841,6 +1881,12 @@
 						</xs:element>
 						<xs:element minOccurs="0" name="ThirdPartyCertification"
 							type="ApplianceThirdPartyCertifications" maxOccurs="unbounded"/>
+						<xs:element minOccurs="0" name="Quantity" type="IntegerGreaterThanZero">
+							<xs:annotation>
+								<xs:documentation>Number of similar ceiling fans.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -2829,6 +2875,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element name="CondensingSystem" type="xs:boolean" minOccurs="0"/>
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
+						<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2844,6 +2895,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="RotaryCup" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
+						<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2866,6 +2922,10 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2879,6 +2939,10 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2921,6 +2985,7 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 			<xs:extension base="HVACSystemInfo">
 				<xs:sequence minOccurs="0">
 					<xs:element name="HeatPumpType" type="HeatPumpType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="HeatPumpFuel" type="FuelType"/>
 					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>[Btuh] Typically the nameplate capacity at 47F.</xs:documentation>
@@ -4131,6 +4196,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="AssociationsType">
@@ -4741,6 +4807,10 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:element minOccurs="0" name="SealedCombustion" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="IntermittentIgnitionDevice" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>

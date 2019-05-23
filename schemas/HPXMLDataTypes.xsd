@@ -375,6 +375,7 @@
 			<xs:enumeration value="owner-occupied"/>
 			<xs:enumeration value="renter-occupied"/>
 			<xs:enumeration value="owner-and-renter-occupied"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="OccupantIncomeRangeUnits">
@@ -512,6 +513,7 @@
 			<xs:enumeration value="propane"/>
 			<xs:enumeration value="kerosene"/>
 			<xs:enumeration value="diesel"/>
+			<xs:enumeration value="coal"/>
 			<xs:enumeration value="anthracite coal"/>
 			<xs:enumeration value="bituminous coal"/>
 			<xs:enumeration value="coke"/>
@@ -1517,6 +1519,7 @@
 			<xs:enumeration value="top freezer"/>
 			<xs:enumeration value="bottom freezer"/>
 			<xs:enumeration value="single door"/>
+			<xs:enumeration value="single door with freezer"/>
 			<xs:enumeration value="full-size one door"/>
 			<xs:enumeration value="full-size two doors"/>
 			<xs:enumeration value="half or quarter size"/>
