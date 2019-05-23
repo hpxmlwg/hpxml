@@ -513,6 +513,7 @@
 			<xs:enumeration value="propane"/>
 			<xs:enumeration value="kerosene"/>
 			<xs:enumeration value="diesel"/>
+			<xs:enumeration value="coal"/>
 			<xs:enumeration value="anthracite coal"/>
 			<xs:enumeration value="bituminous coal"/>
 			<xs:enumeration value="coke"/>
