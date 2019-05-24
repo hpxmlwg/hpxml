@@ -3594,9 +3594,21 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 											<xs:documentation>Primary foundation type of building</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="FoundationVentilationRate"
+										type="VentilationType">
+										<xs:annotation>
+											<xs:documentation>The ventilation rate of, e.g., a vented crawlspace</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="AtticType" type="AtticType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Primary attic type of building</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AtticVentilationRate"
+										type="VentilationType">
+										<xs:annotation>
+											<xs:documentation>The ventilation rate of, e.g., a vented attic</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="AverageAtticRValue" type="RValue"
@@ -4452,8 +4464,6 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 					<xs:sequence>
 						<xs:element minOccurs="0" name="Vented" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="Conditioned" type="xs:boolean"/>
-						<xs:element minOccurs="0" name="SpecificLeakageArea"
-							type="SpecificLeakageAreaType"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -4969,8 +4979,6 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 						<xs:element minOccurs="0" name="Vented" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="Conditioned" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="CapeCod" type="xs:boolean"/>
-						<xs:element minOccurs="0" name="SpecificLeakageArea"
-							type="SpecificLeakageAreaType"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -4997,6 +5005,12 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 				</xs:complexType>
 			</xs:element>
 		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="VentilationType">
+		<xs:sequence>
+			<xs:element name="UnitofMeasure" type="VentilationUnit" minOccurs="0"/>
+			<xs:element name="Value" type="BuildingAirLeakage" minOccurs="0"/>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="ExternalResource">
 		<xs:complexType>
