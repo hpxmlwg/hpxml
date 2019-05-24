@@ -715,8 +715,6 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo"
-										minOccurs="0"> </xs:element>
 									<xs:element minOccurs="0" name="InteriorAdjacentTo"
 										type="AdjacentTo"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
@@ -978,8 +976,6 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo"
-										minOccurs="0"> </xs:element>
 									<xs:element minOccurs="0" name="InteriorAdjacentTo"
 										type="AdjacentTo"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
@@ -1017,8 +1013,8 @@
 											<xs:documentation>[ft] Width from slab edge inward of horizontal under-slab insulation</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="UnderSlabInsulationSpansEntireSlab"
-										type="xs:boolean"/>
+									<xs:element minOccurs="0"
+										name="UnderSlabInsulationSpansEntireSlab" type="xs:boolean"/>
 									<xs:element minOccurs="0" name="OnGradeExposedPerimeter"
 										type="LengthMeasurement">
 										<xs:annotation>
