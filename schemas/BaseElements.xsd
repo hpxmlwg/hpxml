@@ -923,10 +923,16 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="InteriorStuds"
 										type="StudProperties"/>
-									<xs:element minOccurs="0" name="InsulationHeight"
+									<xs:element minOccurs="0" name="DistanceToTopOfInsulation"
 										type="LengthMeasurement">
 										<xs:annotation>
-											<xs:documentation>[ft] Height of the insulation, spanning from the top of the foundation wall downward.</xs:documentation>
+											<xs:documentation>[ft] Vertical distance from top of foundation wall to top of insulation.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="DistanceToBottomOfInsulation"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Vertical distance from top of foundation wall to bottom of insulation.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element maxOccurs="1" minOccurs="0" name="Insulation"
