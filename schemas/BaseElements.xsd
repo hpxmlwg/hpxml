@@ -596,6 +596,8 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="1" name="AtticType" type="AtticType"/>
+									<xs:element minOccurs="0" name="VentilationRate"
+										type="VentilationType"/>
 									<xs:element minOccurs="0" name="AttachedToRoof"
 										type="LocalReference" maxOccurs="unbounded"/>
 									<xs:element minOccurs="0" name="AttachedToWall"
@@ -629,6 +631,8 @@
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element name="FoundationType" type="FoundationType"/>
+									<xs:element minOccurs="0" name="VentilationRate"
+										type="VentilationType"/>
 									<xs:element minOccurs="0" name="ThermalBoundary"
 										type="FoundationThermalBoundary"/>
 									<xs:element minOccurs="0" name="AttachedToRimJoist"
@@ -3608,21 +3612,9 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 											<xs:documentation>Primary foundation type of building</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="FoundationVentilationRate"
-										type="VentilationType">
-										<xs:annotation>
-											<xs:documentation>The ventilation rate of, e.g., a vented crawlspace</xs:documentation>
-										</xs:annotation>
-									</xs:element>
 									<xs:element name="AtticType" type="AtticType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Primary attic type of building</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element minOccurs="0" name="AtticVentilationRate"
-										type="VentilationType">
-										<xs:annotation>
-											<xs:documentation>The ventilation rate of, e.g., a vented attic</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="AverageAtticRValue" type="RValue"
