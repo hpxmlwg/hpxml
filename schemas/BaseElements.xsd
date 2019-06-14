@@ -1621,6 +1621,27 @@
 											<xs:documentation>[deg]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="CollectorRatedOpticalEfficiency">
+										<xs:annotation>
+											<xs:documentation>Often refered to as Fr-tau-alpha (FRta), this describes the optical efficiency portion of the overall collector efficiency. In the Directory of SRCC Certified Solar Collector Ratings, this is the y-intercept of the efficiency curve.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+												<xs:maxExclusive value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element minOccurs="0" name="CollectorRatedThermalLosses">
+										<xs:annotation>
+											<xs:documentation>Often refered to as Fr-Ul (FRUl), this describes the collector thermal losses portion of the overall collector efficiency. In the Directory of SRCC Certified Solar Collector Ratings, this is the slope of the efficiency curve.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element minOccurs="0" name="StorageVolume" type="Volume">
 										<xs:annotation>
 											<xs:documentation>[gal]</xs:documentation>
