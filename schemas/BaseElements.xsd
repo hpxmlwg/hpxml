@@ -675,8 +675,6 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:group ref="SystemInfo"/>
-												<xs:element name="AdjacentTo" type="AdjacentTo"
-												minOccurs="0"> </xs:element>
 												<xs:element minOccurs="0" name="FloorJoists"
 												type="StudProperties"/>
 												<xs:element minOccurs="0" name="FloorTrusses"
