@@ -1063,6 +1063,7 @@
 			<xs:enumeration value="crawlspace - unconditioned"/>
 			<xs:enumeration value="crawlspace - unvented"/>
 			<xs:enumeration value="crawlspace - vented"/>
+			<xs:enumeration value="exterior wall"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="garage - conditioned"/>
 			<xs:enumeration value="garage - unconditioned"/>
@@ -1071,6 +1072,7 @@
 			<xs:enumeration value="outside"/>
 			<xs:enumeration value="roof deck"/>
 			<xs:enumeration value="unconditioned space"/>
+			<xs:enumeration value="under slab"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DuctLeakageTestMethod">
