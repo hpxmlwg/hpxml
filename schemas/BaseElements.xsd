@@ -1265,6 +1265,20 @@
 												<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by electric consumption, case heat loss or heat gain, air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the potential sensible energy that could be recovered plus the exhaust fan energy. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0"
+												name="AdjustedTotalRecoveryEfficiency"
+												type="Fraction">
+												<xs:annotation>
+												<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by case heat loss or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential total energy that could be recovered. This value is used to predict and compare Cooling Season Performance for the HRV/ERV unit. This value should be used for energy modeling when wattage for air movement is separately accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="AdjustedSensibleRecoveryEfficiency"
+												type="Fraction">
+												<xs:annotation>
+												<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by case heat loss or heat gain, air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the potential sensible energy that could be recovered. This value should be used for energy modeling when wattage for air movement is separately accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="FanPower"
 												type="xs:double">
 												<xs:annotation>
