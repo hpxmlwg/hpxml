@@ -1412,10 +1412,10 @@
 											<xs:documentation>[deg F]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="HasGeothermalDesuperheater"
+									<xs:element minOccurs="0" name="UsesDesuperheater"
 										type="xs:boolean">
 										<xs:annotation>
-											<xs:documentation>Indicates whether this water heater has a geothermal desuperheater. The attached heat pump can be referenced in the RelatedHeatingSystem element.</xs:documentation>
+											<xs:documentation>Indicates whether this water heater uses a desuperheater. The attached heat pump or air conditioner can be referenced in the RelatedHVACSystem element.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HasSharedCombustionVentilation"
@@ -1429,8 +1429,12 @@
 									<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
 									<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
 										type="xs:boolean"/>
-									<xs:element name="RelatedHeatingSystem" type="LocalReference"
-										minOccurs="0"/>
+									<xs:element name="RelatedHVACSystem" type="LocalReference"
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Reference a HeatingSystem, HeatPump, or CoolingSystem.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Installation">
 										<xs:complexType>
 											<xs:sequence>
