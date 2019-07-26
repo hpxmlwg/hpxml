@@ -177,7 +177,6 @@
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
-			<xs:element minOccurs="0" name="InsulationLocation" type="InsulationLocation"/>
 			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="RValue">
 				<xs:annotation>
 					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments.</xs:documentation>
@@ -190,6 +189,8 @@
 						<xs:element name="InstallationType" type="InstallationType" minOccurs="0"/>
 						<xs:element name="InsulationMaterial" type="InsulationMaterial"
 							minOccurs="0"/>
+						<xs:element minOccurs="0" name="InsulationLocation"
+							type="InsulationLocation"/>
 						<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
 						<xs:element name="Thickness" type="LengthMeasurement" minOccurs="0">
 							<xs:annotation>
