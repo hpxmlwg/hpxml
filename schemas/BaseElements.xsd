@@ -189,8 +189,6 @@
 						<xs:element name="InstallationType" type="InstallationType" minOccurs="0"/>
 						<xs:element name="InsulationMaterial" type="InsulationMaterial"
 							minOccurs="0"/>
-						<xs:element minOccurs="0" name="InsulationLocation"
-							type="InsulationLocation"/>
 						<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
 						<xs:element name="Thickness" type="LengthMeasurement" minOccurs="0">
 							<xs:annotation>

@@ -669,6 +669,8 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="cavity"/>
 			<xs:enumeration value="continuous"/>
+			<xs:enumeration value="continuous - interior"/>
+			<xs:enumeration value="continuous - exterior"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="InsulationBattType">
