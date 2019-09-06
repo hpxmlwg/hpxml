@@ -1858,6 +1858,50 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="ElectricVehicleChargers">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="ElectricVehicleCharger">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Manufacturer"
+										type="Manufacturer"/>
+									<xs:element maxOccurs="1" minOccurs="0" name="ModelNumber"
+										type="Model"/>
+									<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
+									<xs:element minOccurs="0" name="ChargingLevel"
+										type="EVChargingLevel"/>
+									<xs:element maxOccurs="1" minOccurs="0" name="ModelYear"
+										type="Year"/>
+									<xs:element minOccurs="0" name="ACPowerSourceVoltage"
+										type="Voltage">
+										<xs:annotation>
+											<xs:documentation>[V] Voltage of the AC power source</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Amperage" minOccurs="0" type="Current">
+										<xs:annotation>
+											<xs:documentation>[A] Max current to electric vehicle</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="ChargingPower" type="Power">
+										<xs:annotation>
+											<xs:documentation>[W] Maximum charging rate</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="StandbyPower" type="Power">
+										<xs:annotation>
+											<xs:documentation>[W] Power used by charger when vehicle is not charging</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" name="Wind">
 				<xs:complexType>
 					<xs:sequence>
