@@ -2181,4 +2181,25 @@
 			<xs:enumeration value="CFM per sq.ft."/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="BatteryType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Li-ion"/>
+			<xs:enumeration value="lead acid"/>
+			<xs:enumeration value="Ni-Cd"/>
+			<xs:enumeration value="salt water"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BatteryCapacity">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BatteryCoolingStrategy">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="passive"/>
+			<xs:enumeration value="active air cooling"/>
+			<xs:enumeration value="liquid cooling"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>

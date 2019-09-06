@@ -1858,6 +1858,61 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="Batteries">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="Battery">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Manufacturer"
+										type="Manufacturer"/>
+									<xs:element minOccurs="0" name="ModelNumber" type="Model"/>
+									<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
+									<xs:element minOccurs="0" name="BatteryType" type="BatteryType"/>
+									<xs:element minOccurs="0" name="CoolingStrategy"
+										type="BatteryCoolingStrategy"/>
+									<xs:element minOccurs="0" name="NominalCapacity"
+										type="BatteryCapacity">
+										<xs:annotation>
+											<xs:documentation>[Ah] for a specific C-rate. The total Ampere hours available when the battery is discharged at a certain discharge current (C-rate) starting from 100 % state of charge until it reaches the cut-off voltage. Capacity is computed by multiplying the discharge current (Amps) by the discharge time (hours). Capacity decreases with an increasing C-rate.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="UsableCapacity"
+										type="BatteryCapacity">
+										<xs:annotation>
+											<xs:documentation>[Ah] for a specific C-rate. The stored energy that can actually be used. In most cases usable capacity is less than the nominal capacity.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RealPowerMaxContinuous"
+										type="Power">
+										<xs:annotation>
+											<xs:documentation>[W] The amount of power the battery typically generates under non-peak conditions.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="RealPowerPeak" type="Power" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[W] The peak power that the battery can generate for a short period of time.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="NominalVoltage">
+										<xs:annotation>
+											<xs:documentation>[V] The nominal voltage is the battery voltage when the state of charge is 0.5 (midway between being fully charged, and fully discharged) with a 0.2C discharge current.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RoundTripEfficiency"
+										type="Fraction">
+										<xs:annotation>
+											<xs:documentation>Not all the power that is used to charge the battery is available during discharge. Round trip efficiency is the ratio of the energy put in to the energy retrieved from storage.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" name="Wind">
 				<xs:complexType>
 					<xs:sequence>
