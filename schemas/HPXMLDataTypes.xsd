@@ -1714,17 +1714,6 @@
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="AtticType">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="cape cod"/>
-			<xs:enumeration value="cathedral ceiling"/>
-			<xs:enumeration value="flat roof"/>
-			<xs:enumeration value="unvented attic"/>
-			<xs:enumeration value="vented attic"/>
-			<xs:enumeration value="venting unknown attic"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="ImprovementStatusType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Installed"/>
@@ -1810,6 +1799,7 @@
 			<xs:enumeration value="tile"/>
 			<xs:enumeration value="hardwood"/>
 			<xs:enumeration value="vinyl"/>
+			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Pitch">
@@ -2171,10 +2161,24 @@
 			<xs:maxInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="AtticWallType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gable"/>
+			<xs:enumeration value="knee wall"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="MinutesPerDay">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
 			<xs:maxInclusive value="1440"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VentilationUnit">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SLA"/>
+			<xs:enumeration value="ACHnatural"/>
+			<xs:enumeration value="CFM per sq.ft."/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
