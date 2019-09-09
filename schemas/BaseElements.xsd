@@ -2,6 +2,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2014/6"
 	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.3">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
+	<xs:attribute name="dataSource" type="DataSource"/>
 	<xs:element name="XMLTransactionHeaderInformation">
 		<xs:annotation>
 			<xs:documentation>These are a series of elements that indicate the type of XML and basic descriptive data about the XML.</xs:documentation>
