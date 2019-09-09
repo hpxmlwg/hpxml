@@ -2181,4 +2181,11 @@
 			<xs:enumeration value="CFM per sq.ft."/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="DiameterDimension">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="inner"/>
+			<xs:enumeration value="outer"/>
+			<xs:enumeration value="nominal"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>

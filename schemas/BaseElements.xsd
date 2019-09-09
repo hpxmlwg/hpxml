@@ -3266,8 +3266,29 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 		<xs:sequence>
 			<xs:element name="FractionHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
 			<xs:element minOccurs="0" name="PipeRValue" type="RValue"/>
+			<xs:element minOccurs="0" name="PipeInsulationThickness" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[in]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PipeLength" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[ft]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PipeDiameter" type="PipeDiameterType"/>
 			<xs:element name="HydronicDistributionType" type="HydronicDistributionType"
 				minOccurs="0"/>
+			<xs:element minOccurs="0" name="SupplyTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[degF]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ReturnTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[degF]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="PumpandZoneValve">
 				<xs:complexType>
 					<xs:sequence>
@@ -4822,6 +4843,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					<xs:documentation>[ft]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="DiameterofPipeInsulated" type="PipeDiameterType"/>
 			<xs:element name="SystemReplaced" type="xs:boolean" minOccurs="0"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
@@ -4965,6 +4987,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					<xs:documentation>[ft]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="PipeDiameterInsulated" type="PipeDiameterType"/>
 			<xs:element name="FractionPipeInsulation" type="Fraction" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Fraction of total pipe insulated</xs:documentation>
@@ -5038,6 +5061,22 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 		<xs:sequence>
 			<xs:element name="UnitofMeasure" type="VentilationUnit" minOccurs="0"/>
 			<xs:element name="Value" type="BuildingAirLeakage" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PipeDiameterType">
+		<xs:sequence>
+			<xs:element maxOccurs="3" name="PipeDiameter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Dimension" type="DiameterDimension"/>
+						<xs:element name="Value" type="LengthMeasurement">
+							<xs:annotation>
+								<xs:documentation>[in]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="ExternalResource">
