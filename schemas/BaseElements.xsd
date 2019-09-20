@@ -1133,7 +1133,7 @@
 										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.] door area</xs:documentation>
+											<xs:documentation>[sq.ft.] Total door surface area for this group of doors</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
