@@ -4902,13 +4902,13 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="HomeownerConcerns">
+			<xs:element minOccurs="0" name="Comments">
 				<xs:annotation>
-					<xs:documentation>A list of homeowner concerns to address in priority order. Examples could include: bad smells, cold or hot rooms, noise, humidity/mold, ice damming.</xs:documentation>
+					<xs:documentation>A list of comments in priority order. </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="HomeownerConcern" type="xs:string"/>
+						<xs:element maxOccurs="unbounded" name="Comment" type="xs:string"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
