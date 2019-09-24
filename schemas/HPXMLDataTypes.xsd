@@ -2185,8 +2185,6 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="user"/>
 			<xs:enumeration value="software"/>
-			<xs:enumeration value="software default"/>
-			<xs:enumeration value="imputed"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
