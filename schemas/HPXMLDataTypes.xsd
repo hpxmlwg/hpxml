@@ -1830,7 +1830,15 @@
 	<xs:simpleType name="EVChargingLevel">
 		<xs:restriction base="xs:integer">
 			<xs:minInclusive value="1"/>
-			<xs:maxInclusive value="2"/>
+			<xs:maxInclusive value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EVChargingConnector">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SAE J1772"/>
+			<xs:enumeration value="CHAdeMO"/>
+			<xs:enumeration value="Tesla"/>
+			<xs:enumeration value="Combined Charging System"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Current">

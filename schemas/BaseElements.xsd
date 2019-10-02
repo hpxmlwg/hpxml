@@ -1921,6 +1921,8 @@
 									<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
 									<xs:element minOccurs="0" name="ChargingLevel"
 										type="EVChargingLevel"/>
+									<xs:element minOccurs="0" name="ChargingConnector"
+										type="EVChargingConnector"/>
 									<xs:element maxOccurs="1" minOccurs="0" name="ModelYear"
 										type="Year"/>
 									<xs:element minOccurs="0" name="ACPowerSourceVoltage"
