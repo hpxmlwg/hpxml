@@ -1869,6 +1869,12 @@
 										type="Manufacturer"/>
 									<xs:element minOccurs="0" name="ModelNumber" type="Model"/>
 									<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
+									<xs:element minOccurs="0" name="Location" type="BatteryLocation"/>
+									<xs:element minOccurs="0" name="GridConnected" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Has the ability to feed electricity back on to the grid.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="BatteryType" type="BatteryType"/>
 									<xs:element minOccurs="0" name="CoolingStrategy"
 										type="BatteryCoolingStrategy"/>
