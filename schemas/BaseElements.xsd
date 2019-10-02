@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2014/6"
-	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.3">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10"
+	targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:element name="XMLTransactionHeaderInformation">
 		<xs:annotation>
@@ -168,8 +168,16 @@
 					<xs:documentation>Describe</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="None"/>
-			<xs:element name="Unknown"/>
+			<xs:element name="None">
+				<xs:annotation>
+					<xs:documentation>Indicates insulation not present.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Unknown">
+				<xs:annotation>
+					<xs:documentation>Indicates insulation present but material type unknown.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="InsulationInfo">
@@ -177,7 +185,6 @@
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
-			<xs:element minOccurs="0" name="InsulationLocation" type="InsulationLocation"/>
 			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="RValue">
 				<xs:annotation>
 					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments.</xs:documentation>
@@ -1133,7 +1140,7 @@
 										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.] door area</xs:documentation>
+											<xs:documentation>[sq.ft.] Total door surface area for this group of doors</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
@@ -1757,6 +1764,27 @@
 											<xs:documentation>[deg]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="CollectorRatedOpticalEfficiency">
+										<xs:annotation>
+											<xs:documentation>Often referred to as Fr-tau-alpha (FRta), this describes the optical efficiency portion of the overall collector efficiency. In the OG-100 SRCC Certified Solar Thermal Collector Directory, this is the y-intercept of the efficiency curve.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+												<xs:maxExclusive value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element minOccurs="0" name="CollectorRatedThermalLosses">
+										<xs:annotation>
+											<xs:documentation>Often referred to as Fr-Ul (FRUl), this describes the collector thermal losses portion of the overall collector efficiency. In the OG-100 SRCC Certified Solar Thermal Collector Directory, this is the slope of the efficiency curve.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element minOccurs="0" name="StorageVolume" type="Volume">
 										<xs:annotation>
 											<xs:documentation>[gal]</xs:documentation>
@@ -1764,6 +1792,27 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="ConnectedTo"
 										type="LocalReference"/>
+									<xs:element minOccurs="0" name="SolarFraction">
+										<xs:annotation>
+											<xs:documentation>The Solar Fraction is the portion of the total conventional hot water heating load (delivered energy and tank standby losses). The higher the solar fraction, the greater the solar contribution to water heating, which reduces the energy required by the backup water heater. This value can be found in the OG-300 SRCC Certified Solar Water Heating System Directory.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+												<xs:maxInclusive value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element minOccurs="0" name="SolarEnergyFactor">
+										<xs:annotation>
+											<xs:documentation>The Solar Energy Factor is defined as the energy delivered by the system divided by the electrical or gas energy put into the system. The higher the number, the more energy efficient. This value can be found in the OG-300 SRCC Certified Solar Water Heating System Directory.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -3310,8 +3359,29 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 		<xs:sequence>
 			<xs:element name="FractionHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
 			<xs:element minOccurs="0" name="PipeRValue" type="RValue"/>
+			<xs:element minOccurs="0" name="PipeInsulationThickness" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[in]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PipeLength" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[ft]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PipeDiameter" type="PipeDiameterType"/>
 			<xs:element name="HydronicDistributionType" type="HydronicDistributionType"
 				minOccurs="0"/>
+			<xs:element minOccurs="0" name="SupplyTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[degF]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ReturnTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[degF]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="PumpandZoneValve">
 				<xs:complexType>
 					<xs:sequence>
@@ -3341,6 +3411,8 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 					<xs:sequence>
 						<xs:element name="DuctType" type="DuctType" minOccurs="0"/>
 						<xs:element name="DuctMaterial" type="DuctMaterial" minOccurs="0"/>
+						<xs:element minOccurs="0" name="DuctInsulationMaterial"
+							type="InsulationMaterial"/>
 						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0"/>
 						<xs:element minOccurs="0" name="DuctInsulationThickness"
 							type="LengthMeasurement">
@@ -4388,7 +4460,8 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 				type="WindowThirdPartyCertification"/>
 			<xs:element minOccurs="0" name="VisibleTransmittance" type="Fraction"/>
 			<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
-			<xs:element minOccurs="0" name="InteriorShadingFactor" type="Fraction"/>
+			<xs:element minOccurs="0" name="InteriorShadingFactorSummer" type="Fraction"/>
+			<xs:element minOccurs="0" name="InteriorShadingFactorWinter" type="Fraction"/>
 			<xs:element minOccurs="0" name="ExteriorShading" type="ExteriorShading"/>
 			<xs:element minOccurs="0" name="Overhangs">
 				<xs:complexType>
@@ -4866,6 +4939,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					<xs:documentation>[ft]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="DiameterofPipeInsulated" type="PipeDiameterType"/>
 			<xs:element name="SystemReplaced" type="xs:boolean" minOccurs="0"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
@@ -4946,6 +5020,16 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="Comments">
+				<xs:annotation>
+					<xs:documentation>A list of comments in priority order. </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="Comment" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="OtherContact">
 				<xs:complexType>
 					<xs:sequence>
@@ -5009,6 +5093,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					<xs:documentation>[ft]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="PipeDiameterInsulated" type="PipeDiameterType"/>
 			<xs:element name="FractionPipeInsulation" type="Fraction" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Fraction of total pipe insulated</xs:documentation>
@@ -5082,6 +5167,22 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 		<xs:sequence>
 			<xs:element name="UnitofMeasure" type="VentilationUnit" minOccurs="0"/>
 			<xs:element name="Value" type="BuildingAirLeakage" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PipeDiameterType">
+		<xs:sequence>
+			<xs:element maxOccurs="3" name="PipeDiameter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Dimension" type="DiameterDimension"/>
+						<xs:element name="Value" type="LengthMeasurement">
+							<xs:annotation>
+								<xs:documentation>[in]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="ExternalResource">
