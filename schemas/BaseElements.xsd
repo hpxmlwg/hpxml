@@ -4934,6 +4934,16 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="Comments">
+				<xs:annotation>
+					<xs:documentation>A list of comments in priority order. </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="Comment" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="OtherContact">
 				<xs:complexType>
 					<xs:sequence>
