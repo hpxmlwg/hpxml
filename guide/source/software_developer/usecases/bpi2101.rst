@@ -1,0 +1,20 @@
+Home Performance Certificate (BPI-2101)
+#######################################
+
+BPI-2101-S-2013 Standard Requirements for a Certificate of Completion for Residential Energy Efficiency Upgrades ("Home Performance Certificate") is a BPI standard that identifies a subset of HPXML data elements for certificates that document the completion of an energy efficiency project, either whole-house or individual measures (See :ref:`bpi2101-use-case-defn`).
+
+The Home Performance Certificate standard dataset is the most complex use case because it contains each of the following :ref:`building-node` nodes.
+
+  * Pre-upgrade
+  * Proposed workscope
+  * Post-upgrade
+
+Two :ref:`project-node` nodes are included as well that describe the proposed
+project and the completed project. It can be thought of as a combination of the
+:doc:`Audit and Upgrade <auditupgrade>` use cases. 
+
+Finally, :ref:`consumption-node` and :ref:`utility-node` nodes are also included
+to provide a utility billing history.
+
+See the ``examples/bpi2101.xml`` document for more details on what data elements
+are included.

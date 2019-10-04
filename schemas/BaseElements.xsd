@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2014/6"
-	targetNamespace="http://hpxmlonline.com/2014/6" elementFormDefault="qualified" version="2.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10"
+	targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:element name="XMLTransactionHeaderInformation">
 		<xs:annotation>
@@ -168,8 +168,16 @@
 					<xs:documentation>Describe</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="None"/>
-			<xs:element name="Unknown"/>
+			<xs:element name="None">
+				<xs:annotation>
+					<xs:documentation>Indicates insulation not present.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Unknown">
+				<xs:annotation>
+					<xs:documentation>Indicates insulation present but material type unknown.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:choice>
 	</xs:complexType>
 	<xs:complexType name="InsulationInfo">
@@ -177,7 +185,6 @@
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
-			<xs:element minOccurs="0" name="InsulationLocation" type="InsulationLocation"/>
 			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="RValue">
 				<xs:annotation>
 					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments.</xs:documentation>
@@ -232,6 +239,25 @@
 							<xs:documentation>loads/week</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="EnergyFactor" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>[lbs dry clothes/kWh] The energy performance metric for ENERGY STAR certified residential clothes dryers prior to September 13, 2013. The new metric is Combined Energy Factor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="CombinedEnergyFactor" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>[lbs dry clothes/kWh] The energy performance metric for ENERGY STAR certified residential clothes dryers as of September 13, 2013, it includes the active drying cycle energy as well as energy consumed during Stand-by and Off modes.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ControlType">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="timer"/>
+								<xs:enumeration value="moisture"/>
+								<xs:enumeration value="temperature"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -244,11 +270,54 @@
 				<xs:sequence>
 					<xs:element name="Type" type="ClothesWasherType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
-					<xs:element name="ModifiedEnergyFactor" type="xs:double" minOccurs="0"/>
-					<xs:element name="WaterFactor" type="xs:double" minOccurs="0"/>
+					<xs:element name="ModifiedEnergyFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The energy performance metric for ENERGY STAR certified residential clothes washers prior to March 7, 2015. The new metric is Integrated Modified Energy Factor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="IntegratedModifiedEnergyFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The energy performance metric for ENERGY STAR certified residential clothes washers as of March 7, 2015.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="WaterFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The water performance metric for ENERGY STAR certified residential clothes washers prior to March 7, 2015. The new metric is Integrated Water Factor.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="IntegratedWaterFactor" type="xs:double" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>The water performance metric for ENERGY STAR certified residential clothes washers as of March 7, 2015.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Usage" type="xs:double">
 						<xs:annotation>
 							<xs:documentation>loads/week</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="RatedAnnualkWh" type="RatedAnnualkWh">
+						<xs:annotation>
+							<xs:documentation>kWh/yr</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="LabelElectricRate" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>$/kWh</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="LabelGasRate" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>$/therm</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="LabelAnnualGasCost" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>$</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="Capacity" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>ft^3</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
@@ -271,6 +340,8 @@
 					<xs:element minOccurs="0" name="EnergyFactor" type="EnergyFactor"/>
 					<xs:element minOccurs="0" name="RatedWaterGalPerCycle"
 						type="RatedWaterGalPerCycle"/>
+					<xs:element minOccurs="0" name="PlaceSettingCapacity"
+						type="IntegerGreaterThanZero"/>
 					<xs:element minOccurs="0" name="Usage" type="xs:double">
 						<xs:annotation>
 							<xs:documentation>loads/week</xs:documentation>
@@ -350,6 +421,7 @@
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="IsInduction" type="xs:boolean"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -360,6 +432,7 @@
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="IsConvection" type="xs:boolean"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -514,98 +587,42 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="AtticAndRoof" minOccurs="0">
+			<xs:element minOccurs="0" name="Attics">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element minOccurs="0" name="Roofs">
+						<xs:element maxOccurs="unbounded" name="Attic">
+							<xs:annotation>
+								<xs:documentation>Use a different Attic element for each type of attic.</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="Roof" maxOccurs="unbounded">
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace">
+										<xs:annotation>
+											<xs:documentation>The space over which this attic is</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="1" name="AtticType" type="AtticType"/>
+									<xs:element minOccurs="0" name="VentilationRate"
+										type="VentilationType"/>
+									<xs:element minOccurs="0" name="AttachedToRoof"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToWall"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToFrameFloor"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:group ref="SystemInfo"/>
-												<xs:element minOccurs="0" ref="AttachedToSpace"/>
-												<xs:element minOccurs="0" name="RoofColor"
-												type="WallAndRoofColor"/>
-												<xs:element minOccurs="0" name="RoofType"
-												type="RoofType"/>
-												<xs:element minOccurs="0" name="DeckType"
-												type="DeckType"/>
-												<xs:element minOccurs="0" name="Pitch" type="Pitch">
-												<xs:annotation>
-												<xs:documentation>Pitch of roof ?/12</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="RoofArea"
-												type="SurfaceArea">
-												<xs:annotation>
-												<xs:documentation>[sq.ft.] Surface area of the roof itself</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element name="RadiantBarrier" type="xs:boolean"
-												minOccurs="0"/>
-												<xs:element name="RadiantBarrierLocation"
-												type="RadiantBarrierLocation" minOccurs="0"/>
-												<xs:element ref="extension" minOccurs="0"/>
+												<xs:element name="ConsumptionInfo"
+												type="ConsumptionInfoType"/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element minOccurs="0" name="Attics">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element maxOccurs="unbounded" name="Attic">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:group ref="SystemInfo"/>
-												<xs:element minOccurs="0" ref="AttachedToSpace">
-												<xs:annotation>
-												<xs:documentation>The space over which this attic is</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="AttachedToRoof"
-												type="LocalReference"/>
-												<xs:element name="ExteriorAdjacentTo"
-												type="AdjacentTo" minOccurs="0"> </xs:element>
-												<xs:element minOccurs="0" name="InteriorAdjacentTo"
-												type="AdjacentTo"/>
-												<xs:element maxOccurs="unbounded" minOccurs="0"
-												name="AtticKneeWall" type="LocalReference"> </xs:element>
-												<xs:element name="AtticType" type="AtticType"
-												minOccurs="0"/>
-												<xs:element minOccurs="0"
-												name="AtticFloorInsulation" type="InsulationInfo">
-												<xs:annotation>
-												<xs:documentation>For attic floor insulation that covers the rafters, two layers should be defined: 1.) a cavity later with thickness equal to the rafter height, and 2.) a continuous layer above that.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="AtticRoofInsulation"
-												type="InsulationInfo"/>
-												<xs:element name="Area" type="SurfaceArea"
-												minOccurs="0">
-												<xs:annotation>
-												<xs:documentation>[sq.ft.] Area of the floor of the attic.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="Rafters"
-												type="StudProperties"/>
-												<xs:element ref="extension" minOccurs="0"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="AnnualEnergyUse" minOccurs="0">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element name="ConsumptionInfo" type="ConsumptionInfoType"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -621,139 +638,20 @@
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element name="FoundationType" type="FoundationType"/>
+									<xs:element minOccurs="0" name="VentilationRate"
+										type="VentilationType"/>
 									<xs:element minOccurs="0" name="ThermalBoundary"
 										type="FoundationThermalBoundary"/>
-									<xs:element name="FrameFloor" maxOccurs="unbounded"
-										minOccurs="0">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:group ref="SystemInfo"/>
-												<xs:element minOccurs="0" name="FloorJoists"
-												type="StudProperties"/>
-												<xs:element minOccurs="0" name="FloorTrusses"
-												type="StudProperties"/>
-												<xs:element minOccurs="0" name="FloorCovering"
-												type="FloorCovering"/>
-												<xs:element minOccurs="0" name="Area"
-												type="SurfaceArea">
-												<xs:annotation>
-												<xs:documentation>[sq.ft.]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" maxOccurs="1"
-												name="Insulation" type="InsulationInfo"> </xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
-									<xs:element name="FoundationWall" maxOccurs="unbounded"
-										minOccurs="0">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:group ref="SystemInfo"/>
-												<xs:element minOccurs="0" name="Type"
-												type="FoundationWallType"/>
-												<xs:element minOccurs="0" name="Length"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft] Total length of foundation wall</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="Height"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft] Total height in feet of foundation wall</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="Area"
-												type="SurfaceArea">
-												<xs:annotation>
-												<xs:documentation>[sq.ft.]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="Thickness"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[in] Thickness of foundation wall excluding interior framing.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="BelowGradeDepth"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft] Depth below grade of foundation wall</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0"
-												name="AdjacentToFoundation" type="LocalReference">
-												<xs:annotation>
-												<xs:documentation>If this foundation wall is adjacent to another foundation, use this reference to indicate which one.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="AdjacentTo"
-												type="AdjacentTo"/>
-												<xs:element minOccurs="0" name="InteriorStuds"
-												type="StudProperties"/>
-												<xs:element maxOccurs="1" minOccurs="0"
-												name="Insulation" type="InsulationInfo"/>
-												<xs:element minOccurs="0" ref="extension"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
-									<xs:element name="Slab" maxOccurs="unbounded" minOccurs="0">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:group ref="SystemInfo"/>
-												<xs:element minOccurs="0" name="Area"
-												type="SurfaceArea">
-												<xs:annotation>
-												<xs:documentation>[sq.ft.] Area of the slab</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="Perimeter"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft] Length of slab perimeter.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="ExposedPerimeter"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft] Perimeter of the slab exposed to ambient conditions</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0"
-												name="PerimeterInsulationDepth"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft] Depth from grade to bottom of vertical slab perimeter insulation</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0"
-												name="UnderSlabInsulationWidth"
-												type="LengthMeasurement"/>
-												<xs:element minOccurs="0"
-												name="OnGradeExposedPerimeter"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft] Perimeter of slab measuerd in feet that is on-grade (2 ft. below grade or less) and exposed to ambient conditions.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="DepthBelowGrade"
-												type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft] Depth from the top of the slab surface to grade</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="FloorCovering"
-												type="FloorCovering"/>
-												<xs:element maxOccurs="1" minOccurs="0"
-												name="PerimeterInsulation" type="InsulationInfo"/>
-												<xs:element minOccurs="0" name="UnderSlabInsulation"
-												type="InsulationInfo"/>
-												<xs:element minOccurs="0" ref="extension"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
+									<xs:element minOccurs="0" name="AttachedToRimJoist"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToWall"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToFoundationWall"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToFrameFloor"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToSlab"
+										type="LocalReference" maxOccurs="unbounded"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
@@ -762,6 +660,110 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Garages">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="Garage">
+							<xs:annotation>
+								<xs:documentation>Use a different Garage element for each type of garage.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace">
+										<xs:annotation>
+											<xs:documentation/>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="1" name="GarageType">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="AttachedtoHouse"
+												type="xs:boolean"/>
+												<xs:element minOccurs="0" name="Vented"
+												type="xs:boolean"/>
+												<xs:element minOccurs="0" name="Conditioned"
+												type="xs:boolean"/>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="AttachedToRoof"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToWall"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToFoundationWall"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToFrameFloor"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element minOccurs="0" name="AttachedToSlab"
+										type="LocalReference" maxOccurs="unbounded"/>
+									<xs:element name="AnnualEnergyUse" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="ConsumptionInfo"
+												type="ConsumptionInfoType"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Roofs">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Roof" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Use the Roof element for all pitched/horizontal surfaces underneath ambient conditions.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace"/>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo"
+										type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>[sq.ft.] Surface area of the roof itself</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Orientation"
+										type="OrientationType"/>
+									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[deg]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RoofType" type="RoofType"/>
+									<xs:element minOccurs="0" name="RoofColor"
+										type="WallAndRoofColor"/>
+									<xs:element minOccurs="0" name="SolarAbsorptance"
+										type="SolarAbsorptance"/>
+									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
+									<xs:element minOccurs="0" name="Rafters" type="StudProperties"/>
+									<xs:element minOccurs="0" name="DeckType" type="DeckType"/>
+									<xs:element minOccurs="0" name="Pitch" type="Pitch">
+										<xs:annotation>
+											<xs:documentation>Pitch of roof ?/12</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="RadiantBarrier" type="xs:boolean"
+										minOccurs="0"/>
+									<xs:element name="RadiantBarrierLocation"
+										type="RadiantBarrierLocation" minOccurs="0"/>
+									<xs:element minOccurs="0" name="Insulation"
+										type="InsulationInfo"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -786,6 +788,22 @@
 											<xs:documentation>[sq.ft.]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="Orientation"
+										type="OrientationType"/>
+									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[deg]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Perimeter"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="SolarAbsorptance"
+										type="SolarAbsorptance"/>
+									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
 									<xs:element minOccurs="0" name="Insulation"
 										type="InsulationInfo"/>
 									<xs:element minOccurs="0" name="FloorJoists"
@@ -817,6 +835,8 @@
 										minOccurs="0"> </xs:element>
 									<xs:element minOccurs="0" name="InteriorAdjacentTo"
 										type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="AtticWallType"
+										type="AtticWallType"/>
 									<xs:element name="WallType" type="WallType" minOccurs="0"> </xs:element>
 									<xs:element minOccurs="0" name="Thickness"
 										type="LengthMeasurement">
@@ -839,6 +859,9 @@
 									<xs:element minOccurs="0" name="Studs" type="StudProperties"/>
 									<xs:element minOccurs="0" name="Siding" type="Siding"/>
 									<xs:element minOccurs="0" name="Color" type="WallAndRoofColor"/>
+									<xs:element minOccurs="0" name="SolarAbsorptance"
+										type="SolarAbsorptance"/>
+									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation"
 										type="InsulationInfo"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
@@ -850,6 +873,192 @@
 										</xs:complexType>
 									</xs:element>
 									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="FoundationWalls">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FoundationWall" maxOccurs="unbounded" minOccurs="1">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace"/>
+									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo"
+										minOccurs="0"> </xs:element>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo"
+										type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="Type" type="FoundationWallType"/>
+									<xs:element minOccurs="0" name="Length" type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Total length of foundation wall</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Height" type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Total height in feet of foundation wall</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>[sq.ft.]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Orientation"
+										type="OrientationType"/>
+									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[deg]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Thickness"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[in] Thickness of foundation wall excluding interior framing.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="DepthBelowGrade"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Depth below grade of foundation wall</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AdjacentToFoundation"
+										type="LocalReference">
+										<xs:annotation>
+											<xs:documentation>If this foundation wall is adjacent to another foundation, use this reference to indicate which one.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="InteriorStuds"
+										type="StudProperties"/>
+									<xs:element minOccurs="0" name="DistanceToTopOfInsulation"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Vertical distance from top of foundation wall to top of insulation.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="DistanceToBottomOfInsulation"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Vertical distance from top of foundation wall to bottom of insulation.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element maxOccurs="1" minOccurs="0" name="Insulation"
+										type="InsulationInfo"/>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="FrameFloors">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FrameFloor" maxOccurs="unbounded" minOccurs="1">
+							<xs:annotation>
+								<xs:documentation>Use the FrameFloor element for all floors/ceilings. For example, living space ceilings/attic floors, floors above foundations, floors under bonus rooms, cantilevered floors, etc.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace"/>
+									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo"
+										minOccurs="0"> </xs:element>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo"
+										type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="FloorJoists"
+										type="StudProperties"/>
+									<xs:element minOccurs="0" name="FloorTrusses"
+										type="StudProperties"/>
+									<xs:element minOccurs="0" name="FloorCovering"
+										type="FloorCovering"/>
+									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>[sq.ft.]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" maxOccurs="1" name="Insulation"
+										type="InsulationInfo"> </xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Slabs">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Slab" maxOccurs="unbounded" minOccurs="1">
+							<xs:annotation>
+								<xs:documentation>Use the Slab element for all horizontal surfaces adjacent to the ground.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace"/>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo"
+										type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>[sq.ft.] Area of the slab</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Thickness"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[in] Thickness of foundation slab.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Perimeter"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Length of slab perimeter.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="ExposedPerimeter"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Perimeter of the slab exposed to ambient conditions</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="PerimeterInsulationDepth"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Depth from grade to bottom of vertical slab perimeter insulation</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="UnderSlabInsulationWidth"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Width from slab edge inward of horizontal under-slab insulation</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0"
+										name="UnderSlabInsulationSpansEntireSlab" type="xs:boolean"/>
+									<xs:element minOccurs="0" name="OnGradeExposedPerimeter"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Perimeter of slab measured in feet that is on-grade (2 ft. below grade or less) and exposed to ambient conditions.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="DepthBelowGrade"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft] Depth from the top of the slab surface to grade</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="FloorCovering"
+										type="FloorCovering"/>
+									<xs:element maxOccurs="1" minOccurs="0"
+										name="PerimeterInsulation" type="InsulationInfo"/>
+									<xs:element minOccurs="0" name="UnderSlabInsulation"
+										type="InsulationInfo"/>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -931,7 +1140,7 @@
 										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.] door area</xs:documentation>
+											<xs:documentation>[sq.ft.] Total door surface area for this group of doors</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="Azimuth" type="AzimuthType" minOccurs="0">
@@ -948,6 +1157,8 @@
 										type="xs:boolean"/>
 									<xs:element name="StormDoor" type="xs:boolean" minOccurs="0"/>
 									<xs:element name="RValue" type="RValue" minOccurs="0"/>
+									<xs:element minOccurs="0" name="LeakinessDescription"
+										type="BuildingLeakiness"/>
 									<xs:element maxOccurs="unbounded" minOccurs="0"
 										name="ThirdPartyCertification"
 										type="DoorThirdPartyCertifications"/>
@@ -1159,10 +1370,33 @@
 												<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by electric consumption, case heat loss or heat gain, air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the potential sensible energy that could be recovered plus the exhaust fan energy. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0"
+												name="AdjustedTotalRecoveryEfficiency"
+												type="Fraction">
+												<xs:annotation>
+												<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by case heat loss or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential total energy that could be recovered. This value is used to predict and compare Cooling Season Performance for the HRV/ERV unit. This value should be used for energy modeling when wattage for air movement is separately accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="AdjustedSensibleRecoveryEfficiency"
+												type="Fraction">
+												<xs:annotation>
+												<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by case heat loss or heat gain, air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the potential sensible energy that could be recovered. This value should be used for energy modeling when wattage for air movement is separately accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="FanPower"
 												type="xs:double">
 												<xs:annotation>
 												<xs:documentation>[W]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element maxOccurs="unbounded" minOccurs="0"
+												name="ThirdPartyCertification"
+												type="VentilationFanThirdPartyCertification"/>
+												<xs:element name="AttachedToHVACDistributionSystem"
+												type="LocalReference" minOccurs="0" maxOccurs="1">
+												<xs:annotation>
+												<xs:documentation>For central fan integrated supply mechanical ventilation, specifies the HVAC distribution system it is attached to.</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
@@ -1236,6 +1470,12 @@
 											<xs:documentation>The amount of energy delivered as heated water in a day divided by the total daily energy consumption of a residential water heater, as determined following standardized DOE testing procedure.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element name="UniformEnergyFactor" type="EnergyFactor"
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>DOE’s new metric for communicating the energy efficiency of a residential water heater, which replaces the Energy Factor (EF) metric. More efficient water heaters have a higher Uniform Energy Factor (UEF). UEF is determined by the Department of Energy’s test method outlined in 10 CFR Part 430, Subpart B, Appendix E.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FirstHourRating" type="Volume">
 										<xs:annotation>
 											<xs:documentation>[gal per hour] An estimate of the maximum volume of hot water in gallons that a storage water heater can supply within an hour that begins with the water heater fully heated.</xs:documentation>
@@ -1260,28 +1500,36 @@
 												<xs:element minOccurs="0" name="Jacket">
 												<xs:complexType>
 												<xs:sequence>
+												<xs:element minOccurs="0"
+												name="InsulationMaterial"
+												type="InsulationMaterial"/>
 												<xs:element name="JacketRValue" type="RValue"
 												minOccurs="0"/>
+												<xs:element minOccurs="0" name="Thickness"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>[in]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 												</xs:sequence>
 												</xs:complexType>
 												</xs:element>
-												<xs:element minOccurs="0" name="Pipe">
+												<xs:element minOccurs="0" name="TankWall">
+												<xs:annotation>
+												<xs:documentation>Refers to the insulation in the tank wall itself. This information is sometimes vailable on the water heater's name plate or the units specification sheet, or can be estimated by removing the water heater's access plate.</xs:documentation>
+												</xs:annotation>
 												<xs:complexType>
 												<xs:sequence>
-												<xs:element name="PipeRValue" type="RValue"
-												minOccurs="0"/>
 												<xs:element minOccurs="0"
-												name="PipeLengthInsulated"
+												name="InsulationMaterial"
+												type="InsulationMaterial"/>
+												<xs:element name="TankWallRValue" type="RValue"
+												minOccurs="0"/>
+												<xs:element minOccurs="0" name="Thickness"
 												type="LengthMeasurement">
 												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element name="FractionPipeInsulation"
-												type="Fraction" minOccurs="0">
-												<xs:annotation>
-												<xs:documentation>Fraction of total pipe insulated</xs:documentation>
+												<xs:documentation>[in]</xs:documentation>
 												</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
@@ -1299,14 +1547,29 @@
 											<xs:documentation>[deg F]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="UsesDesuperheater"
+										type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Indicates whether this water heater uses a desuperheater. The attached heat pump or air conditioner can be referenced in the RelatedHVACSystem element.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="HasSharedCombustionVentilation"
 										type="xs:boolean"/>
 									<xs:element minOccurs="0" name="CombustionVentilationOrphaned"
 										type="xs:boolean"/>
 									<xs:element name="CombustionVentingSystem" minOccurs="0"
 										type="LocalReference"> </xs:element>
-									<xs:element name="RelatedHeatingSystem" type="LocalReference"
-										minOccurs="0"/>
+									<xs:element minOccurs="0" name="AutomaticVentDamper"
+										type="xs:boolean"/>
+									<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+									<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+										type="xs:boolean"/>
+									<xs:element name="RelatedHVACSystem" type="LocalReference"
+										minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Reference a HeatingSystem, HeatPump, or CoolingSystem.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Installation">
 										<xs:complexType>
 											<xs:sequence>
@@ -1322,22 +1585,124 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element maxOccurs="unbounded" minOccurs="0" name="WaterFixture">
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="HotWaterDistribution">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="AttachedToWaterHeatingSystem"
-										type="LocalReference"/>
+										type="LocalReference">
+										<xs:annotation>
+											<xs:documentation>The water heating system that this distribution system serves.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="SystemType">
+										<xs:complexType>
+											<xs:choice>
+												<xs:element name="Standard">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="PipingLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Measured length of hot water piping from the hot water heater to the farthest hot water fixture, measured longitudinally from plans, assuming the hot water piping does not run diagonally, plus 10 feet of piping for each floor level, plus 5 feet of piping for unconditioned basements. [ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+												<xs:element name="Recirculation">
+												<xs:complexType>
+												<xs:sequence>
+												<xs:element minOccurs="0" name="ControlType"
+												type="RecirculationControlType"/>
+												<xs:element minOccurs="0"
+												name="RecirculationPipingLoopLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Hot water recirculation loop piping length including both supply and return sides of the loop, measured longitudinally from plans, assuming the hot water piping does not run diagonally. [ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0"
+												name="BranchPipingLoopLength"
+												type="LengthMeasurement">
+												<xs:annotation>
+												<xs:documentation>Length of the branch hot water piping from the recirculation loop to the farthest hot water fixture from the recirculation loop, measured longitudinally from plans, assuming the branch hot water piping does not run diagonally, plus 20 feet of piping for each floor level greater than one plus 10 feet of piping for unconditioned basements. [ft]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="PumpPower"
+												type="Power">
+												<xs:annotation>
+												<xs:documentation>[W]</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+												</xs:sequence>
+												</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="PipeInsulation"
+										type="PipeInsulationType"/>
+									<xs:element minOccurs="0" name="DrainWaterHeatRecovery">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="FacilitiesConnected"
+												type="DrainWaterHeatRecoveryFacilitiesConnected"/>
+												<xs:element minOccurs="0" name="EqualFlow"
+												type="xs:boolean"/>
+												<xs:element minOccurs="0" name="Efficiency"
+												type="Fraction">
+												<xs:annotation>
+												<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
+												</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element maxOccurs="unbounded" minOccurs="0" name="WaterFixture">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:choice minOccurs="0">
+										<xs:element name="AttachedToWaterHeatingSystem"
+											type="LocalReference"/>
+										<xs:element name="AttachedToHotWaterDistribution"
+											type="LocalReference"/>
+									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType"
 										type="WaterFixtureType"/>
+									<xs:element minOccurs="0" name="Quantity"
+										type="IntegerGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>Number of similar water fixtures.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FlowRate" type="xs:double">
 										<xs:annotation>
 											<xs:documentation>[gallons per minute] flow rate of water</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="LowFlow" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Is the fixture considered low-flow?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FaucetAerator" type="xs:boolean">
 										<xs:annotation>
 											<xs:documentation>Does this faucet have an aerator?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="MinutesPerDay"
+										type="MinutesPerDay">
+										<xs:annotation>
+											<xs:documentation>[minutes] Number of minutes per day a water fixture operates.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0"
@@ -1387,11 +1752,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="CollectorLoopType"
-										type="SolarThermalCollectorLoopType">
-										<xs:annotation>
-											<xs:documentation>"batch heater" enumeration is deprecated. It will be removed in a future version. See #272.</xs:documentation>
-										</xs:annotation>
-									</xs:element>
+										type="SolarThermalCollectorLoopType"/>
 									<xs:element minOccurs="0" name="CollectorType"
 										type="SolarThermalCollectorType"/>
 									<xs:element minOccurs="0" name="CollectorOrientation"
@@ -1403,6 +1764,27 @@
 											<xs:documentation>[deg]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="CollectorRatedOpticalEfficiency">
+										<xs:annotation>
+											<xs:documentation>Often referred to as Fr-tau-alpha (FRta), this describes the optical efficiency portion of the overall collector efficiency. In the OG-100 SRCC Certified Solar Thermal Collector Directory, this is the y-intercept of the efficiency curve.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+												<xs:maxExclusive value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element minOccurs="0" name="CollectorRatedThermalLosses">
+										<xs:annotation>
+											<xs:documentation>Often referred to as Fr-Ul (FRUl), this describes the collector thermal losses portion of the overall collector efficiency. In the OG-100 SRCC Certified Solar Thermal Collector Directory, this is the slope of the efficiency curve.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element minOccurs="0" name="StorageVolume" type="Volume">
 										<xs:annotation>
 											<xs:documentation>[gal]</xs:documentation>
@@ -1410,6 +1792,27 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="ConnectedTo"
 										type="LocalReference"/>
+									<xs:element minOccurs="0" name="SolarFraction">
+										<xs:annotation>
+											<xs:documentation>The Solar Fraction is the portion of the total conventional hot water heating load (delivered energy and tank standby losses). The higher the solar fraction, the greater the solar contribution to water heating, which reduces the energy required by the backup water heater. This value can be found in the OG-300 SRCC Certified Solar Water Heating System Directory.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+												<xs:maxInclusive value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element minOccurs="0" name="SolarEnergyFactor">
+										<xs:annotation>
+											<xs:documentation>The Solar Energy Factor is defined as the energy delivered by the system divided by the electrical or gas energy put into the system. The higher the number, the more energy efficient. This value can be found in the OG-300 SRCC Certified Solar Water Heating System Directory.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:double">
+												<xs:minExclusive value="0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -1428,6 +1831,25 @@
 										type="PVSystemLocation"/>
 									<xs:element minOccurs="0" name="Ownership"
 										type="PVSystemOwnership"/>
+									<xs:element minOccurs="0" name="ModuleType">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="standard"/>
+												<xs:enumeration value="premium"/>
+												<xs:enumeration value="thin film"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
+									<xs:element maxOccurs="1" minOccurs="0" name="Tracking">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="fixed"/>
+												<xs:enumeration value="1-axis"/>
+												<xs:enumeration value="1-axis backtracked"/>
+												<xs:enumeration value="2-axis"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:element>
 									<xs:element minOccurs="0" name="ArrayOrientation"
 										type="OrientationType"/>
 									<xs:element minOccurs="0" name="ArrayAzimuth" type="AzimuthType">
@@ -1451,13 +1873,93 @@
 											<xs:documentation>[sq.ft.]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="NumberOfPanels"
+										type="IntegerGreaterThanZero"/>
 									<xs:element minOccurs="0" name="InverterEfficiency"
 										type="Efficiency"/>
+									<xs:element minOccurs="0" name="SystemLossesFraction"
+										type="Fraction">
+										<xs:annotation>
+											<xs:documentation>System losses can be due to soiling, shading, snow, mismatch, wiring, electrical connections, light-induced degradation, nameplate rating inaccuracies, age, and availability.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="YearInverterManufactured"
 										type="Year"/>
 									<xs:element minOccurs="0" name="YearModulesManufactured"
 										type="Year"/>
+									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
+									<xs:element minOccurs="0" name="AnnualOutput"
+										type="RatedAnnualkWh">
+										<xs:annotation>
+											<xs:documentation>[kWh] Projected Annual Output for a typical meteorological year as determined by PVWatts or similar. </xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="LevelizedCostOfElectricity"
+										type="Cost">
+										<xs:annotation>
+											<xs:documentation>[$] The LCOE is the total cost of installing and operating a project expressed in dollars per kilowatt-hour of electricity generated by the system over its life. Can be calculated with System Advisor Model, a similar software, or through a simplified calculation at http://www.nrel.gov/analysis/tech_lcoe.html.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="Wind">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="WindTurbine">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Model" type="xs:string"/>
+									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
+									<xs:element minOccurs="0" name="ThirdPartyCertification"
+										maxOccurs="unbounded" type="WindThirdPartyCertification"/>
+									<xs:element minOccurs="0" name="AWEARatedAnnualEnergy"
+										type="RatedAnnualkWh">
+										<xs:annotation>
+											<xs:documentation>[kWh] the calculated total energy that would be produced during a one-year period with an average wind speed of 5 m/s (11.2 mph)</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AWEARatedSoundLevel"
+										type="xs:double">
+										<xs:annotation>
+											<xs:documentation>[dBA] the sound pressure level not exceeded by the wind turbine 95% of the time at a distance of 60 meters from the rotor with an average wind speed of 5 m/s (11.2 mph).
+</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="AWEARatedPower" type="Power">
+										<xs:annotation>
+											<xs:documentation>[kW] the wind turbine’s power output at 11 m/s (24.6 mph). Manufacturers may still describe or name their wind turbine models using a nominal power (e.g. 5 kW S-343).</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="PeakPower" type="Power">
+										<xs:annotation>
+											<xs:documentation>[kW] the highest point on the certified power curve.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RotorDiameter"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="HubHeight"
+										type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[ft]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="LevelizedCostOfElectricity"
+										type="Cost">
+										<xs:annotation>
+											<xs:documentation>[$] The LCOE is the total cost of installing and operating a project expressed in dollars per kilowatt-hour of electricity generated by the system over its life. Can be calculated with System Advisor Model, a similar software, or through a simplified calculation at http://www.nrel.gov/analysis/tech_lcoe.html.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -1490,7 +1992,7 @@
 		<xs:sequence>
 			<xs:element name="LightingGroup" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Light units of the same type. For example you could have all the 60W incandescants.</xs:documentation>
+					<xs:documentation>Light units of the same type. For example you could have all the 60W incandescents.</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
@@ -1503,6 +2005,11 @@
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element minOccurs="0" name="Location" type="LightingLocation"/>
 						<xs:element name="NumberofUnits" type="xs:integer" minOccurs="0"/>
+						<xs:element minOccurs="0" name="FractionofUnitsInLocation" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>The fraction of lighting units in the specified Location, where all the fractions for the Location sum to 1. If a Location is not specified, fractions apply to the entire building.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="LightingType" type="LightingType"/>
 						<xs:element minOccurs="0" name="AverageLumens" type="xs:double">
 							<xs:annotation>
@@ -1562,33 +2069,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="LightingFractions">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element minOccurs="0" name="FractionIncandescent" type="Fraction">
-							<xs:annotation>
-								<xs:documentation>Fraction of lights that are incandescent.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="FractionCFL" type="Fraction">
-							<xs:annotation>
-								<xs:documentation>Fraction of the lights that are compact fluorescent.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="FractionLFL" type="Fraction">
-							<xs:annotation>
-								<xs:documentation>Fraction of the lights that are linear fluorescent.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="FractionLED" type="Fraction">
-							<xs:annotation>
-								<xs:documentation>Fraction of lights that are LED.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element ref="extension" minOccurs="0"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="CeilingFan">
 				<xs:complexType>
 					<xs:sequence>
@@ -1623,6 +2103,12 @@
 						</xs:element>
 						<xs:element minOccurs="0" name="ThirdPartyCertification"
 							type="ApplianceThirdPartyCertifications" maxOccurs="unbounded"/>
+						<xs:element minOccurs="0" name="Quantity" type="IntegerGreaterThanZero">
+							<xs:annotation>
+								<xs:documentation>Number of similar ceiling fans.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1808,12 +2294,6 @@
 												<xs:documentation>A multiplier applied to the rated horsepower of a pump motor to indicate the percent above nameplate horsepower at which the motor can operate continuously without exceeding its allowable insulation class temperature limit, provided that other design parameters, such rated voltage, frequency and ambient temperature, are within limits. A 1.5 hp pump with a 1.65 service factor produces 2.475 hp (total horsepower) at the maximum service factor point (ANSI/APSP/ICC-15 2011).</xs:documentation>
 												</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="HoursPerDay"
-												type="HoursPerDay">
-												<xs:annotation>
-												<xs:documentation>DEPRECATED - Please use PumpSpeed/HoursPerDay</xs:documentation>
-												</xs:annotation>
-												</xs:element>
 												<xs:element maxOccurs="unbounded" minOccurs="0"
 												name="PumpSpeed">
 												<xs:complexType>
@@ -1914,6 +2394,7 @@
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element name="PlugLoadType" type="PlugLoadType" minOccurs="0"/>
+						<xs:element minOccurs="0" name="Location" type="PlugLoadLocation"/>
 						<xs:element name="Count" type="IntegerGreaterThanOrEqualToZero"
 							minOccurs="0"/>
 						<xs:element minOccurs="0" name="Load">
@@ -2200,7 +2681,7 @@
 							<xs:annotation>
 								<xs:documentation>If moisture management of a crawlspace (e.g., installation of polyethylene sheeting) or radon mitigation measures were a part of the scope of work,were measures installed to be compliant with one of the following:
 - Specifications of EPA’s Indoor airPLUS program
-- Techniques detailed in EPA's Radon-Resistent New Construction
+- Techniques detailed in EPA's Radon-Resistant New Construction
 - ASTM E2121, Standard Practice for Installing Radon Mitigation Systems in Existing Low-Rise Residential Buildings (section 7.3)</xs:documentation>
 							</xs:annotation>
 						</xs:element>
@@ -2530,6 +3011,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 	<xs:group name="SystemInfo">
 		<xs:sequence>
 			<xs:element name="SystemIdentifier" type="SystemIdentifiersInfoType"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="HVACSystemInfo">
@@ -2595,6 +3077,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 							<xs:documentation>[sq.ft.]</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="ElectricAuxiliaryEnergy" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>The average annual auxiliary electrical energy consumption for, e.g., a gas furnace or boiler, in kilowatt-hours per year. Published in the AHRI Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -2609,20 +3096,17 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element name="CondensingSystem" type="xs:boolean" minOccurs="0"/>
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
+						<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="WallFurnace">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element minOccurs="0" name="SealedCombustion" type="xs:boolean"/>
-						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
-						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
-						<xs:element minOccurs="0" ref="extension"/>
-					</xs:sequence>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="WallFurnace" type="WallAndFloorFurnace"> </xs:element>
+			<xs:element name="FloorFurnace" type="WallAndFloorFurnace"/>
 			<xs:element name="Boiler">
 				<xs:complexType>
 					<xs:sequence>
@@ -2632,6 +3116,11 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
 						<xs:element minOccurs="0" name="RotaryCup" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
+						<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2654,6 +3143,10 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2667,6 +3160,10 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice"
+							type="xs:boolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -2709,6 +3206,7 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 			<xs:extension base="HVACSystemInfo">
 				<xs:sequence minOccurs="0">
 					<xs:element name="HeatPumpType" type="HeatPumpType" minOccurs="0"/>
+					<xs:element minOccurs="0" name="HeatPumpFuel" type="FuelType"/>
 					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>[Btuh] Typically the nameplate capacity at 47F.</xs:documentation>
@@ -2726,8 +3224,25 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 					</xs:element>
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
 					<xs:element name="GeothermalLoop" type="GeothermalLoop" minOccurs="0"/>
+					<xs:element minOccurs="0" name="BackupType">
+						<xs:annotation>
+							<xs:documentation>Whether the heat pump backup is integrated into the unit (describe in BackupSystemFuel, BackupAnnualHeatingEfficiency, BackupHeatingCapacity), or a separate heating system (add reference in BackupSystem).</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="integrated"/>
+								<xs:enumeration value="separate"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="0" name="BackupSystem" type="LocalReference">
+						<xs:annotation>
+							<xs:documentation>References the HeatingSystem that provides the backup for a separate backup.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="BackupSystemFuel" type="FuelType" minOccurs="0"/>
-					<xs:element minOccurs="0" name="BackupAFUE" type="AFUE"/>
+					<xs:element name="BackupAnnualHeatingEfficiency" minOccurs="0"
+						type="HeatingEfficiencyType" maxOccurs="unbounded"> </xs:element>
 					<xs:element minOccurs="0" name="BackupHeatingCapacity" type="Capacity">
 						<xs:annotation>
 							<xs:documentation>[Btuh]</xs:documentation>
@@ -2746,9 +3261,9 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 							<xs:documentation>[sq.ft.]</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="AnnualCoolEfficiency" type="CoolingEfficiencyType"
+					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType"
 						minOccurs="0" maxOccurs="unbounded"/>
-					<xs:element name="AnnualHeatEfficiency" minOccurs="0"
+					<xs:element name="AnnualHeatingEfficiency" minOccurs="0"
 						type="HeatingEfficiencyType" maxOccurs="unbounded"> </xs:element>
 					<xs:element minOccurs="0" ref="extension"/>
 				</xs:sequence>
@@ -2800,8 +3315,29 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 		<xs:sequence>
 			<xs:element name="FractionHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
 			<xs:element minOccurs="0" name="PipeRValue" type="RValue"/>
+			<xs:element minOccurs="0" name="PipeInsulationThickness" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[in]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PipeLength" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[ft]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PipeDiameter" type="PipeDiameterType"/>
 			<xs:element name="HydronicDistributionType" type="HydronicDistributionType"
 				minOccurs="0"/>
+			<xs:element minOccurs="0" name="SupplyTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[degF]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ReturnTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[degF]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="PumpandZoneValve">
 				<xs:complexType>
 					<xs:sequence>
@@ -2831,6 +3367,8 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 					<xs:sequence>
 						<xs:element name="DuctType" type="DuctType" minOccurs="0"/>
 						<xs:element name="DuctMaterial" type="DuctMaterial" minOccurs="0"/>
+						<xs:element minOccurs="0" name="DuctInsulationMaterial"
+							type="InsulationMaterial"/>
 						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0"/>
 						<xs:element minOccurs="0" name="DuctInsulationThickness"
 							type="LengthMeasurement">
@@ -2857,6 +3395,16 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 			</xs:element>
 			<xs:element minOccurs="0" name="NumberofReturnRegisters"
 				type="IntegerGreaterThanOrEqualToZero"/>
+			<xs:element minOccurs="0" name="TotalExternalStaticPressureMeasurement">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Supply"
+							type="TotalExternalStaticPressureMeasurement"/>
+						<xs:element minOccurs="0" name="Return"
+							type="TotalExternalStaticPressureMeasurement"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -2943,6 +3491,17 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 										type="IntegerGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="WalkingScoreSource"
 										type="xs:string"/>
+									<xs:element minOccurs="0" name="FuelTypesAvailable">
+										<xs:annotation>
+											<xs:documentation>Fuels available on site via utility lines/pipes or delivery.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element maxOccurs="unbounded" name="Fuel"
+												type="FuelType"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
@@ -3174,7 +3733,8 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 				<xs:complexType>
 					<xs:sequence minOccurs="0">
 						<xs:element name="ClimateZoneDOE" type="ClimateZoneDOE" minOccurs="0"/>
-						<xs:element name="ClimateZoneIECC" minOccurs="0" type="IECCClimateZoneType"/>
+						<xs:element name="ClimateZoneIECC" minOccurs="0" type="IECCClimateZoneType"
+							maxOccurs="unbounded"/>
 						<xs:element name="RadonZone" type="RadonZone" minOccurs="0"/>
 						<xs:element name="TermiteZone" type="TermiteZone" minOccurs="0"/>
 						<xs:element name="HurricaneZone" type="xs:boolean" minOccurs="0"/>
@@ -3204,6 +3764,7 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 	<xs:complexType name="ProjectDetailsType">
 		<xs:sequence>
 			<xs:element maxOccurs="unbounded" name="ProjectSystemIdentifiers" type="RemoteReference"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 			<xs:element name="ProgramName" type="ProgramName" minOccurs="0"/>
 			<xs:element maxOccurs="1" minOccurs="0" ref="ContractorSystemIdentifiers"/>
 			<xs:element minOccurs="0" name="ProgramSponsor" type="ProgramSponsor"/>
@@ -3284,6 +3845,12 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
+			<xs:element minOccurs="0" name="OtherScoreType">
+				<xs:annotation>
+					<xs:documentation>Name of the score type if "other" is selected in ScoreType.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ScoreDate" type="xs:date"/>
 			<xs:element name="Score" type="xs:integer"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
@@ -3308,6 +3875,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 			<xs:element name="MeasureCode" type="MeasureCode" minOccurs="0"/>
 			<xs:element name="MeasureDescription" type="MeasureDescription" minOccurs="0"/>
 			<xs:element minOccurs="0" name="Quantity">
@@ -3384,8 +3952,14 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="InstalledComponent" type="RemoteReference"
-				maxOccurs="unbounded"/>
+			<xs:element minOccurs="0" name="InstalledComponents">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="1" name="InstalledComponent" type="RemoteReference"
+							maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -3446,7 +4020,7 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			</xs:element>
 			<xs:element minOccurs="0" name="EffectiveLeakageArea" type="SurfaceArea">
 				<xs:annotation>
-					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure. 
+					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure.
 Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [Pa]) ^ 0.5)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
@@ -3457,6 +4031,7 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 		<xs:sequence>
 			<xs:element name="UtilityID" type="RemoteReference"/>
 			<xs:element name="ConsumptionType" type="EnergyAndWaterUseTypeDescription"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 			<xs:element maxOccurs="unbounded" name="ConsumptionDetail">
 				<xs:annotation>
 					<xs:documentation>Consumption records with enough granularity to be able to use smart meter data.</xs:documentation>
@@ -3505,7 +4080,7 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			<xs:element minOccurs="0" name="CalibrationQualification"
 				type="BPI2400CalibrationQualification">
 				<xs:annotation>
-					<xs:documentation>This identifies which data quality requirements were met by the bills for each energy source and therefore which calibration measure are used to determine model acceptance.</xs:documentation>
+					<xs:documentation>This identifies which data quality requirements (if any) were met by the bills for the relevant energy source and therefore which calibration metrics (if any) are used to determine whether the calibrated model is accepted.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="CalibrationWeatherRegressionCVRMSE" type="xs:double">
@@ -3605,8 +4180,8 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 						<xs:element minOccurs="0" name="MeteringConfiguration"
 							type="MeteringConfiguration">
 							<xs:annotation>
-								<xs:documentation>direct metering = tenants directly metered; 
-master meter without sub-metering = tenants not sub metered; 
+								<xs:documentation>direct metering = tenants directly metered;
+master meter without sub-metering = tenants not sub metered;
 master meter with sub-metering = tenant sub-metered by building owner</xs:documentation>
 							</xs:annotation>
 						</xs:element>
@@ -3691,6 +4266,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 					<xs:documentation>Baseload power is the energy consumed for the day-to-day operation of a home that is not used as a response to outside weather (i.e. excludes heating and cooling) (Krigger and Dorsi, 2009).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="ElectricityDemandKW" type="xs:double"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -3840,7 +4416,8 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 				type="WindowThirdPartyCertification"/>
 			<xs:element minOccurs="0" name="VisibleTransmittance" type="Fraction"/>
 			<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
-			<xs:element minOccurs="0" name="InteriorShadingFactor" type="Fraction"/>
+			<xs:element minOccurs="0" name="InteriorShadingFactorSummer" type="Fraction"/>
+			<xs:element minOccurs="0" name="InteriorShadingFactorWinter" type="Fraction"/>
 			<xs:element minOccurs="0" name="ExteriorShading" type="ExteriorShading"/>
 			<xs:element minOccurs="0" name="Overhangs">
 				<xs:complexType>
@@ -3872,6 +4449,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="AssociationsType">
@@ -3928,7 +4506,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			<xs:element name="TypeOfInfiltrationMeasurement" type="TypeofInfiltrationMeasurement"
 				minOccurs="0"/>
 			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
-			<xs:element name="HousePressure" type="xs:double" minOccurs="0">
+			<xs:element name="HousePressure" type="HousePressure" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[Pa] with respect to outside</xs:documentation>
 				</xs:annotation>
@@ -3951,6 +4529,11 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			<xs:element minOccurs="0" name="EffectiveLeakageArea" type="xs:double">
 				<xs:annotation>
 					<xs:documentation>[sq.in.] The Effective Leakage Area is defined as the area of a special nozzle-shaped hole (similar to the inlet of a blower door fan) that would leak the same amount of air as the building does at a pressure of 4 Pascals.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="InfiltrationVolume" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>[sq. ft.] The volume of the building that is applicable to the air infiltration measurement test. The volume can be defined as the conditioned building volume plus the volume of crawlspaces, attics, and/or basements that are connected to the building's conditioned space via open doors or hatches.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
@@ -4230,6 +4813,11 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="HVACDistributionImprovementInfo">
 		<xs:sequence>
 			<xs:element name="DuctSystemSealed" type="xs:boolean" minOccurs="0"/>
+			<xs:element minOccurs="0" name="DuctSystemSealedYearMonth" type="xs:gYearMonth">
+				<xs:annotation>
+					<xs:documentation>The year and month the duct system was sealed.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit" type="xs:boolean"
 				minOccurs="0"/>
 			<xs:element name="DuctSystemReplaced" type="xs:boolean" minOccurs="0"/>
@@ -4240,6 +4828,11 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="HVACMaintenance">
 		<xs:sequence>
 			<xs:element minOccurs="0" name="TuneAndRepair" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="TuneAndRepairYearMonth" type="xs:gYearMonth">
+				<xs:annotation>
+					<xs:documentation>Year and month of the last tune and repair for this HVAC equipment.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="NumberofCoilsReplaced"
 				type="IntegerGreaterThanOrEqualToZero"/>
 			<xs:element minOccurs="0" name="NumberofAirHandlersReplaced"
@@ -4272,7 +4865,16 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element minOccurs="0" name="DateLastReplaced" type="xs:date"/>
+						<xs:element minOccurs="0" name="MERVRating" type="MERV">
+							<xs:annotation>
+								<xs:documentation>Minimum efficiency reporting value, commonly known as MERV rating, is a measurement scale designed in 1987 by the American Society of Heating, Refrigerating and Air-Conditioning Engineers (ASHRAE) to rate the effectiveness of air filters.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="LastReplaced" type="xs:gYearMonth">
+							<xs:annotation>
+								<xs:documentation>The Year and Month the filter was last replaced.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -4293,6 +4895,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					<xs:documentation>[ft]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="DiameterofPipeInsulated" type="PipeDiameterType"/>
 			<xs:element name="SystemReplaced" type="xs:boolean" minOccurs="0"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
@@ -4307,11 +4910,13 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	<xs:complexType name="Building">
 		<xs:sequence>
 			<xs:element name="BuildingID" type="SystemIdentifiersInfoType"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 			<xs:element minOccurs="0" name="CustomerID" type="RemoteReference"/>
 			<xs:element minOccurs="0" name="Site">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="SiteID" type="SystemIdentifiersInfoType"/>
+						<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 						<xs:element name="Address" type="AddressInformation"/>
 						<xs:element minOccurs="0" name="SchoolDistrict" type="xs:string"/>
 						<xs:element minOccurs="0" name="eGridRegion" type="eGridRegions"/>
@@ -4371,6 +4976,16 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="Comments">
+				<xs:annotation>
+					<xs:documentation>A list of comments in priority order. </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" name="Comment" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="OtherContact">
 				<xs:complexType>
 					<xs:sequence>
@@ -4415,14 +5030,137 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 	</xs:complexType>
 	<xs:complexType name="WeatherStation">
 		<xs:sequence>
-			<xs:element ref="SystemIdentifiersInfo"/>
+			<xs:group ref="SystemInfo"/>
 			<xs:element name="Name" type="xs:string"/>
 			<xs:element minOccurs="0" name="City" nillable="true" type="xs:string"/>
 			<xs:element minOccurs="0" name="State" type="StateCode"/>
 			<xs:element minOccurs="0" name="WBAN" type="xs:string"/>
+			<xs:element minOccurs="0" name="WMO" type="xs:string"/>
 			<xs:element minOccurs="0" name="Type" type="WeatherStationType"/>
 			<xs:element minOccurs="0" name="Use" nillable="true" type="WeatherStationUse"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="PipeInsulationType">
+		<xs:sequence>
+			<xs:element name="PipeRValue" type="RValue" minOccurs="0"/>
+			<xs:element minOccurs="0" name="PipeLengthInsulated" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[ft]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PipeDiameterInsulated" type="PipeDiameterType"/>
+			<xs:element name="FractionPipeInsulation" type="Fraction" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fraction of total pipe insulated</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TotalExternalStaticPressureMeasurement">
+		<xs:sequence>
+			<xs:element name="StaticPressure" type="xs:double">
+				<xs:annotation>
+					<xs:documentation>[Pa] positive for supply side measurements, negative for return side.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MeasurementLocation"
+				type="AirHandlerStaticPressureMeasurementLocation"/>
+			<xs:element minOccurs="0" name="LocationDescription" type="xs:string"/>
+			<xs:element minOccurs="0" name="StaticPressureSource" type="StaticPressureSource"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="WallAndFloorFurnace">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="SealedCombustion" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="AtmosphericBurner" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="PowerBurner" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="PilotLight" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="IntermittentIgnitionDevice" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="RetentionHead" type="xs:boolean"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AtticType">
+		<xs:choice>
+			<xs:element name="Attic">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Vented" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="Conditioned" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="CapeCod" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CathedralCeiling">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FlatRoof">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Other">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="VentilationType">
+		<xs:sequence>
+			<xs:element name="UnitofMeasure" type="VentilationUnit" minOccurs="0"/>
+			<xs:element name="Value" type="BuildingAirLeakage" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PipeDiameterType">
+		<xs:sequence>
+			<xs:element maxOccurs="3" name="PipeDiameter">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Dimension" type="DiameterDimension"/>
+						<xs:element name="Value" type="LengthMeasurement">
+							<xs:annotation>
+								<xs:documentation>[in]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ExternalResource">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="URL" type="xs:anyURI"/>
+				<xs:element name="Type">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="photo"/>
+							<xs:enumeration value="illustration"/>
+							<xs:enumeration value="document"/>
+							<xs:enumeration value="spreadsheet"/>
+							<xs:enumeration value="website"/>
+							<xs:enumeration value="other"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Description" type="xs:string"/>
+				<xs:element minOccurs="0" ref="extension"/>
+			</xs:sequence>
+			<xs:attribute name="id" use="required"/>
+		</xs:complexType>
+	</xs:element>
 </xs:schema>
