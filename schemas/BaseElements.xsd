@@ -5190,6 +5190,8 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					type="LocalReference"/>
 				<xs:element minOccurs="0" name="CommunicationProtocol"
 					type="ConnectedDeviceCommunicationProtocol"/>
+				<xs:element minOccurs="0" name="DemandResponseCapability" type="xs:boolean"/>
+				<xs:element minOccurs="0" name="OccupancySensor" type="xs:boolean"/>
 				<xs:element minOccurs="0" ref="extension"/>
 			</xs:sequence>
 		</xs:complexType>
