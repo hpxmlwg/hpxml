@@ -3763,6 +3763,11 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 											<xs:documentation>The name of the verification or certification awarded to a new or pre-existing residential or commercial structure. For example: LEED, Energy Star, ICC-700. In cases where more than one certification have been awarded, leverage multiple iterations of the green verification fields via the repeating element method.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="OtherType" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>If "other" is selected for GreenBuildingVerification/Type, fill in type here.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Body" type="xs:string">
 										<xs:annotation>
 											<xs:documentation>The name of the body or group providing the verification/certification/rating named in the GreenBuildingVerificationType field. There is almost always a direct correlation between bodies and programs.</xs:documentation>

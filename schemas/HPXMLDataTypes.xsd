@@ -1936,8 +1936,7 @@
 			<xs:enumeration value="EnerPHit"/>
 			<xs:enumeration value="HERS Index Score"/>
 			<xs:enumeration value="Home Energy Score"/>
-			<xs:enumeration
-				value="Home Energy Upgrade Certificate of Energy Efficiency Improvements"/>
+			<xs:enumeration value="Home Energy Upgrade Certificate of Energy Efficiency Improvements"/>
 			<xs:enumeration value="Home Energy Upgrade Certificate of Energy Efficiency Performance"/>
 			<xs:enumeration value="Home Performance with ENERGY STAR"/>
 			<xs:enumeration value="Indoor airPLUS"/>
@@ -1946,6 +1945,7 @@
 			<xs:enumeration value="NGBS New Construction"/>
 			<xs:enumeration value="NGBS Small Projects Remodel"/>
 			<xs:enumeration value="NGBS Whole-Home Remodel"/>
+			<xs:enumeration value="Pearl Home Certification"/>
 			<xs:enumeration value="PHIUS+"/>
 			<xs:enumeration value="WaterSense"/>
 			<xs:enumeration value="Zero Energy Ready Home"/>
