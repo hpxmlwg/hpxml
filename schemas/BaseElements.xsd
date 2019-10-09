@@ -5189,7 +5189,7 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 				<xs:element maxOccurs="unbounded" minOccurs="0" name="CommunicatesWith"
 					type="LocalReference"/>
 				<xs:element minOccurs="0" name="CommunicationProtocol"
-					type="ConnectedDeviceCommunicationProtocol"/>
+					type="ConnectedDeviceCommunicationProtocol" maxOccurs="unbounded"/>
 				<xs:element minOccurs="0" name="DemandResponseCapability" type="xs:boolean"/>
 				<xs:element minOccurs="0" name="OccupancySensor" type="xs:boolean"/>
 				<xs:element minOccurs="0" ref="extension"/>
