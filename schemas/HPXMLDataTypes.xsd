@@ -1929,45 +1929,6 @@
 	<xs:simpleType name="ProgramSponsor">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
-	<xs:simpleType name="CertifyingOrganization">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="USGBC"/>
-			<xs:enumeration value="NAHB"/>
-			<xs:enumeration value="Energy Star Home"/>
-			<xs:enumeration value="local program"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="ProgramCertificate">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="Home Performance with Energy Star"/>
-			<xs:enumeration value="Energy Star Certified"/>
-			<xs:enumeration value="DOE Zero Energy Ready Home"/>
-			<xs:enumeration value="LEED Certified"/>
-			<xs:enumeration value="LEED Silver"/>
-			<xs:enumeration value="LEED Gold"/>
-			<xs:enumeration value="LEED Platinum"/>
-			<xs:enumeration value="Indoor airPLUS"/>
-			<xs:enumeration value="WaterSense"/>
-			<xs:enumeration value="NGBS Single-Family Bronze"/>
-			<xs:enumeration value="NGBS Single-Family Silver"/>
-			<xs:enumeration value="NGBS Single-Family Gold"/>
-			<xs:enumeration value="NGBS Single-Family Emerald"/>
-			<xs:enumeration value="NGBS Multifamily Bronze"/>
-			<xs:enumeration value="NGBS Multifamily Silver"/>
-			<xs:enumeration value="NGBS Multifamily Gold"/>
-			<xs:enumeration value="NGBS Multifamily Emerald"/>
-			<xs:enumeration value="NGBS Remodeling Bronze"/>
-			<xs:enumeration value="NGBS Remodeling Silver"/>
-			<xs:enumeration value="NGBS Remodeling Gold"/>
-			<xs:enumeration value="NGBS Remodeling Emerald"/>
-			<xs:enumeration value="Enterprise Green Communities"/>
-			<xs:enumeration value="Earthcraft"/>
-			<xs:enumeration value="Environments for Living"/>
-			<xs:enumeration value="Green Point Rated"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="GreenBuildingVerificationType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Certified Passive House"/>
@@ -1975,7 +1936,8 @@
 			<xs:enumeration value="EnerPHit"/>
 			<xs:enumeration value="HERS Index Score"/>
 			<xs:enumeration value="Home Energy Score"/>
-			<xs:enumeration value="Home Energy Upgrade Certificate of Energy Efficiency Improvements"/>
+			<xs:enumeration
+				value="Home Energy Upgrade Certificate of Energy Efficiency Improvements"/>
 			<xs:enumeration value="Home Energy Upgrade Certificate of Energy Efficiency Performance"/>
 			<xs:enumeration value="Home Performance with ENERGY STAR"/>
 			<xs:enumeration value="Indoor airPLUS"/>

@@ -3830,12 +3830,6 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 			<xs:element name="ProgramName" type="ProgramName" minOccurs="0"/>
 			<xs:element maxOccurs="1" minOccurs="0" ref="ContractorSystemIdentifiers"/>
 			<xs:element minOccurs="0" name="ProgramSponsor" type="ProgramSponsor"/>
-			<xs:element minOccurs="0" name="CertifyingOrganization" type="CertifyingOrganization"/>
-			<xs:element minOccurs="0" name="CertifyingOrganizationURL" type="xs:string"/>
-			<xs:element minOccurs="0" name="YearCertified" type="Year"/>
-			<xs:element minOccurs="0" name="ProgramCertificate" maxOccurs="unbounded"
-				type="ProgramCertificate"/>
-			<xs:element minOccurs="0" name="EnergyStarHomeVersion" type="xs:string"/>
 			<xs:element name="ProjectType" type="ProjectType" minOccurs="0"/>
 			<xs:element name="Title" type="Title" minOccurs="0"/>
 			<xs:element minOccurs="0" ref="ProjectStatus"/>
