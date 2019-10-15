@@ -1397,6 +1397,7 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element ref="ConnectedDevice"/>
 									<xs:element minOccurs="0" name="Model" type="xs:string"/>
 									<xs:element minOccurs="0" name="Manufacturer" type="xs:string"/>
 									<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
@@ -4755,10 +4756,8 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
 				<xs:element name="IsConnected" type="xs:boolean"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="CommunicatesWith"
-					type="LocalReference"/>
-				<xs:element minOccurs="0" name="CommunicationProtocol"
-					type="ConnectedDeviceCommunicationProtocol" maxOccurs="unbounded"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="CommunicatesWith" type="LocalReference"/>
+				<xs:element minOccurs="0" name="CommunicationProtocol" type="ConnectedDeviceCommunicationProtocol" maxOccurs="unbounded"/>
 				<xs:element minOccurs="0" name="DemandResponseCapability" type="xs:boolean"/>
 				<xs:element minOccurs="0" name="OccupancySensor" type="xs:boolean"/>
 				<xs:element minOccurs="0" ref="extension"/>
