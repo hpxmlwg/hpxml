@@ -32,7 +32,8 @@
 	</xs:complexType>
 	<xs:complexType name="SystemIdentifiersInfoType">
 		<xs:annotation>
-			<xs:documentation>System identifiers contain type codes and an identifier for both a sending and a receiving system.  These fields are needed to be able to transmit data between two systems, and have it identified in the two systems. Also, there is an id attribute to define a local id to be used internally. </xs:documentation>
+			<xs:documentation>System identifiers contain type codes and an identifier for both a sending and a receiving system. These fields are needed to be able to transmit data between two
+				systems, and have it identified in the two systems. Also, there is an id attribute to define a local id to be used internally. </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="SendingSystemIdentifierType" type="SendingSystemIdentifierType" minOccurs="0"/>
@@ -56,7 +57,8 @@
 	</xs:complexType>
 	<xs:complexType name="RemoteReference">
 		<xs:annotation>
-			<xs:documentation>Use the id attribute if the element being referenced is available locally in the current xml transaction. Use the Sending/Receiving System Identifiers to identify elements in other xml transactions.</xs:documentation>
+			<xs:documentation>Use the id attribute if the element being referenced is available locally in the current xml transaction. Use the Sending/Receiving System Identifiers to identify
+				elements in other xml transactions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="SendingSystemIdentifierType" type="SendingSystemIdentifierType" minOccurs="0"/>
@@ -91,7 +93,8 @@
 			<xs:sequence>
 				<xs:element name="EventType" type="EventType">
 					<xs:annotation>
-						<xs:documentation>Quality assurance: The observation techniques and activities used externally by an organization to evaluate the effectiveness of their quality management system and to provide feedback that may result in quality improvements (BPI, 2006). </xs:documentation>
+						<xs:documentation>Quality assurance: The observation techniques and activities used externally by an organization to evaluate the effectiveness of their quality management
+							system and to provide feedback that may result in quality improvements (BPI, 2006). </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element minOccurs="0" name="Date" type="xs:date"/>
@@ -228,12 +231,14 @@
 					</xs:element>
 					<xs:element minOccurs="0" name="EnergyFactor" type="xs:double">
 						<xs:annotation>
-							<xs:documentation>[lbs dry clothes/kWh] The energy performance metric for ENERGY STAR certified residential clothes dryers prior to September 13, 2013. The new metric is Combined Energy Factor.</xs:documentation>
+							<xs:documentation>[lbs dry clothes/kWh] The energy performance metric for ENERGY STAR certified residential clothes dryers prior to September 13, 2013. The new metric is
+								Combined Energy Factor.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="CombinedEnergyFactor" type="xs:double">
 						<xs:annotation>
-							<xs:documentation>[lbs dry clothes/kWh] The energy performance metric for ENERGY STAR certified residential clothes dryers as of September 13, 2013, it includes the active drying cycle energy as well as energy consumed during Stand-by and Off modes.</xs:documentation>
+							<xs:documentation>[lbs dry clothes/kWh] The energy performance metric for ENERGY STAR certified residential clothes dryers as of September 13, 2013, it includes the active
+								drying cycle energy as well as energy consumed during Stand-by and Off modes.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="ControlType">
@@ -259,7 +264,8 @@
 					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
 					<xs:element name="ModifiedEnergyFactor" type="xs:double" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>The energy performance metric for ENERGY STAR certified residential clothes washers prior to March 7, 2015. The new metric is Integrated Modified Energy Factor.</xs:documentation>
+							<xs:documentation>The energy performance metric for ENERGY STAR certified residential clothes washers prior to March 7, 2015. The new metric is Integrated Modified Energy
+								Factor.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="IntegratedModifiedEnergyFactor" type="xs:double" minOccurs="0">
@@ -269,7 +275,8 @@
 					</xs:element>
 					<xs:element name="WaterFactor" type="xs:double" minOccurs="0">
 						<xs:annotation>
-							<xs:documentation>The water performance metric for ENERGY STAR certified residential clothes washers prior to March 7, 2015. The new metric is Integrated Water Factor.</xs:documentation>
+							<xs:documentation>The water performance metric for ENERGY STAR certified residential clothes washers prior to March 7, 2015. The new metric is Integrated Water
+								Factor.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="IntegratedWaterFactor" type="xs:double" minOccurs="0">
@@ -875,7 +882,8 @@
 					<xs:sequence>
 						<xs:element name="FrameFloor" maxOccurs="unbounded" minOccurs="1">
 							<xs:annotation>
-								<xs:documentation>Use the FrameFloor element for all floors/ceilings. For example, living space ceilings/attic floors, floors above foundations, floors under bonus rooms, cantilevered floors, etc.</xs:documentation>
+								<xs:documentation>Use the FrameFloor element for all floors/ceilings. For example, living space ceilings/attic floors, floors above foundations, floors under bonus
+									rooms, cantilevered floors, etc.</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
@@ -967,7 +975,8 @@
 					<xs:sequence>
 						<xs:element name="Window" maxOccurs="unbounded">
 							<xs:annotation>
-								<xs:documentation>The Window element can be used to describe a single window or a group of windows with the same characteristics. For a group of windows, use the sum of the window areas in the Area subelement.</xs:documentation>
+								<xs:documentation>The Window element can be used to describe a single window or a group of windows with the same characteristics. For a group of windows, use the sum of
+									the window areas in the Area subelement.</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
@@ -993,7 +1002,8 @@
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="Skylight">
 							<xs:annotation>
-								<xs:documentation>The Skylight element can be used to describe a single skylight or a group of skylights with the same characteristics. For a group of skylights, use the sum of the skylight areas in the Area subelement.</xs:documentation>
+								<xs:documentation>The Skylight element can be used to describe a single skylight or a group of skylights with the same characteristics. For a group of skylights, use
+									the sum of the skylight areas in the Area subelement.</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
@@ -1115,12 +1125,16 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="AnnualHeatingDistributionSystemEfficiency" type="xs:double">
 										<xs:annotation>
-											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for heating, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History.</xs:documentation>
+											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for heating, the DSE may be approximated by equation
+												3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use
+												History.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="AnnualCoolingDistributionSystemEfficiency" type="xs:double">
 										<xs:annotation>
-											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for cooling, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History.</xs:documentation>
+											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for cooling, the DSE may be approximated by equation
+												3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use
+												History.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HVACDistributionImprovement" type="HVACDistributionImprovementInfo"/>
@@ -1206,22 +1220,35 @@
 												</xs:element>
 												<xs:element minOccurs="0" name="TotalRecoveryEfficiency" type="Fraction">
 													<xs:annotation>
-														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by electric consumption, case heat loss or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential total energy that could be recovered plus the exhaust fan energy. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
+														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by electric
+															consumption, case heat loss or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential
+															total energy that could be recovered plus the exhaust fan energy. Values for some products can be found at the Home Ventilating Institute
+															(hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="SensibleRecoveryEfficiency" type="Fraction">
 													<xs:annotation>
-														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by electric consumption, case heat loss or heat gain, air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the potential sensible energy that could be recovered plus the exhaust fan energy. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
+														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by electric consumption, case heat loss or heat gain,
+															air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test),
+															as a percent of the potential sensible energy that could be recovered plus the exhaust fan energy. Values for some products can be found at
+															the Home Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="AdjustedTotalRecoveryEfficiency" type="Fraction">
 													<xs:annotation>
-														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by case heat loss or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential total energy that could be recovered. This value is used to predict and compare Cooling Season Performance for the HRV/ERV unit. This value should be used for energy modeling when wattage for air movement is separately accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
+														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by case heat loss
+															or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential total energy that could be
+															recovered. This value is used to predict and compare Cooling Season Performance for the HRV/ERV unit. This value should be used for energy
+															modeling when wattage for air movement is separately accounted for in the energy model. Values for some products can be found at the Home
+															Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="AdjustedSensibleRecoveryEfficiency" type="Fraction">
 													<xs:annotation>
-														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by case heat loss or heat gain, air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the potential sensible energy that could be recovered. This value should be used for energy modeling when wattage for air movement is separately accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
+														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by case heat loss or heat gain, air leakage, airflow
+															mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the
+															potential sensible energy that could be recovered. This value should be used for energy modeling when wattage for air movement is separately
+															accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="FanPower" type="xs:double">
@@ -1232,7 +1259,8 @@
 												<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification" type="VentilationFanThirdPartyCertification"/>
 												<xs:element name="AttachedToHVACDistributionSystem" type="LocalReference" minOccurs="0" maxOccurs="1">
 													<xs:annotation>
-														<xs:documentation>For central fan integrated supply mechanical ventilation, specifies the HVAC distribution system it is attached to.</xs:documentation>
+														<xs:documentation>For central fan integrated supply mechanical ventilation, specifies the HVAC distribution system it is attached
+															to.</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
@@ -1296,27 +1324,33 @@
 									</xs:element>
 									<xs:element name="EnergyFactor" type="EnergyFactor" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>The amount of energy delivered as heated water in a day divided by the total daily energy consumption of a residential water heater, as determined following standardized DOE testing procedure.</xs:documentation>
+											<xs:documentation>The amount of energy delivered as heated water in a day divided by the total daily energy consumption of a residential water heater, as
+												determined following standardized DOE testing procedure.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="UniformEnergyFactor" type="EnergyFactor" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>DOE’s new metric for communicating the energy efficiency of a residential water heater, which replaces the Energy Factor (EF) metric. More efficient water heaters have a higher Uniform Energy Factor (UEF). UEF is determined by the Department of Energy’s test method outlined in 10 CFR Part 430, Subpart B, Appendix E.</xs:documentation>
+											<xs:documentation>DOE’s new metric for communicating the energy efficiency of a residential water heater, which replaces the Energy Factor (EF) metric. More
+												efficient water heaters have a higher Uniform Energy Factor (UEF). UEF is determined by the Department of Energy’s test method outlined in 10 CFR Part
+												430, Subpart B, Appendix E.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="FirstHourRating" type="Volume">
 										<xs:annotation>
-											<xs:documentation>[gal per hour] An estimate of the maximum volume of hot water in gallons that a storage water heater can supply within an hour that begins with the water heater fully heated.</xs:documentation>
+											<xs:documentation>[gal per hour] An estimate of the maximum volume of hot water in gallons that a storage water heater can supply within an hour that begins
+												with the water heater fully heated.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="GallonsPerMinute" type="Volume">
 										<xs:annotation>
-											<xs:documentation>[gal per minute] The amount of gallons per minute of hot water that can be supplied by an instantaneous water heater while maintaining a nominal temperature rise of 77°F during steady state operation.</xs:documentation>
+											<xs:documentation>[gal per minute] The amount of gallons per minute of hot water that can be supplied by an instantaneous water heater while maintaining a
+												nominal temperature rise of 77°F during steady state operation.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="RecoveryEfficiency" type="RecoveryEfficiency" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>The ratio of energy delivered to heat cold water compared to the energy consumed by the water heater, as determined following standardized DOE testing procedure.</xs:documentation>
+											<xs:documentation>The ratio of energy delivered to heat cold water compared to the energy consumed by the water heater, as determined following standardized
+												DOE testing procedure.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="ThermalEfficiency" type="ThermalEfficiency" minOccurs="0"/>
@@ -1339,7 +1373,8 @@
 												</xs:element>
 												<xs:element minOccurs="0" name="TankWall">
 													<xs:annotation>
-														<xs:documentation>Refers to the insulation in the tank wall itself. This information is sometimes vailable on the water heater's name plate or the units specification sheet, or can be estimated by removing the water heater's access plate.</xs:documentation>
+														<xs:documentation>Refers to the insulation in the tank wall itself. This information is sometimes vailable on the water heater's name plate or
+															the units specification sheet, or can be estimated by removing the water heater's access plate.</xs:documentation>
 													</xs:annotation>
 													<xs:complexType>
 														<xs:sequence>
@@ -1366,7 +1401,8 @@
 									<xs:element minOccurs="0" name="HasMixingValve" type="xs:boolean"/>
 									<xs:element minOccurs="0" name="UsesDesuperheater" type="xs:boolean">
 										<xs:annotation>
-											<xs:documentation>Indicates whether this water heater uses a desuperheater. The attached heat pump or air conditioner can be referenced in the RelatedHVACSystem element.</xs:documentation>
+											<xs:documentation>Indicates whether this water heater uses a desuperheater. The attached heat pump or air conditioner can be referenced in the
+												RelatedHVACSystem element.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HasSharedCombustionVentilation" type="xs:boolean"/>
@@ -1424,7 +1460,9 @@
 														<xs:sequence>
 															<xs:element minOccurs="0" name="PipingLength" type="LengthMeasurement">
 																<xs:annotation>
-																	<xs:documentation>Measured length of hot water piping from the hot water heater to the farthest hot water fixture, measured longitudinally from plans, assuming the hot water piping does not run diagonally, plus 10 feet of piping for each floor level, plus 5 feet of piping for unconditioned basements. [ft]</xs:documentation>
+																	<xs:documentation>Measured length of hot water piping from the hot water heater to the farthest hot water fixture, measured
+																		longitudinally from plans, assuming the hot water piping does not run diagonally, plus 10 feet of piping for each floor level,
+																		plus 5 feet of piping for unconditioned basements. [ft]</xs:documentation>
 																</xs:annotation>
 															</xs:element>
 															<xs:element minOccurs="0" ref="extension"/>
@@ -1437,12 +1475,15 @@
 															<xs:element minOccurs="0" name="ControlType" type="RecirculationControlType"/>
 															<xs:element minOccurs="0" name="RecirculationPipingLoopLength" type="LengthMeasurement">
 																<xs:annotation>
-																	<xs:documentation>Hot water recirculation loop piping length including both supply and return sides of the loop, measured longitudinally from plans, assuming the hot water piping does not run diagonally. [ft]</xs:documentation>
+																	<xs:documentation>Hot water recirculation loop piping length including both supply and return sides of the loop, measured
+																		longitudinally from plans, assuming the hot water piping does not run diagonally. [ft]</xs:documentation>
 																</xs:annotation>
 															</xs:element>
 															<xs:element minOccurs="0" name="BranchPipingLoopLength" type="LengthMeasurement">
 																<xs:annotation>
-																	<xs:documentation>Length of the branch hot water piping from the recirculation loop to the farthest hot water fixture from the recirculation loop, measured longitudinally from plans, assuming the branch hot water piping does not run diagonally, plus 20 feet of piping for each floor level greater than one plus 10 feet of piping for unconditioned basements. [ft]</xs:documentation>
+																	<xs:documentation>Length of the branch hot water piping from the recirculation loop to the farthest hot water fixture from the
+																		recirculation loop, measured longitudinally from plans, assuming the branch hot water piping does not run diagonally, plus 20
+																		feet of piping for each floor level greater than one plus 10 feet of piping for unconditioned basements. [ft]</xs:documentation>
 																</xs:annotation>
 															</xs:element>
 															<xs:element minOccurs="0" name="PumpPower" type="Power">
@@ -1562,7 +1603,8 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="CollectorRatedOpticalEfficiency">
 										<xs:annotation>
-											<xs:documentation>Often referred to as Fr-tau-alpha (FRta), this describes the optical efficiency portion of the overall collector efficiency. In the OG-100 SRCC Certified Solar Thermal Collector Directory, this is the y-intercept of the efficiency curve.</xs:documentation>
+											<xs:documentation>Often referred to as Fr-tau-alpha (FRta), this describes the optical efficiency portion of the overall collector efficiency. In the OG-100
+												SRCC Certified Solar Thermal Collector Directory, this is the y-intercept of the efficiency curve.</xs:documentation>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:double">
@@ -1573,7 +1615,8 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="CollectorRatedThermalLosses">
 										<xs:annotation>
-											<xs:documentation>Often referred to as Fr-Ul (FRUl), this describes the collector thermal losses portion of the overall collector efficiency. In the OG-100 SRCC Certified Solar Thermal Collector Directory, this is the slope of the efficiency curve.</xs:documentation>
+											<xs:documentation>Often referred to as Fr-Ul (FRUl), this describes the collector thermal losses portion of the overall collector efficiency. In the OG-100
+												SRCC Certified Solar Thermal Collector Directory, this is the slope of the efficiency curve.</xs:documentation>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:double">
@@ -1589,7 +1632,9 @@
 									<xs:element minOccurs="0" name="ConnectedTo" type="LocalReference"/>
 									<xs:element minOccurs="0" name="SolarFraction">
 										<xs:annotation>
-											<xs:documentation>The Solar Fraction is the portion of the total conventional hot water heating load (delivered energy and tank standby losses). The higher the solar fraction, the greater the solar contribution to water heating, which reduces the energy required by the backup water heater. This value can be found in the OG-300 SRCC Certified Solar Water Heating System Directory.</xs:documentation>
+											<xs:documentation>The Solar Fraction is the portion of the total conventional hot water heating load (delivered energy and tank standby losses). The higher
+												the solar fraction, the greater the solar contribution to water heating, which reduces the energy required by the backup water heater. This value can be
+												found in the OG-300 SRCC Certified Solar Water Heating System Directory.</xs:documentation>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:double">
@@ -1600,7 +1645,9 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="SolarEnergyFactor">
 										<xs:annotation>
-											<xs:documentation>The Solar Energy Factor is defined as the energy delivered by the system divided by the electrical or gas energy put into the system. The higher the number, the more energy efficient. This value can be found in the OG-300 SRCC Certified Solar Water Heating System Directory.</xs:documentation>
+											<xs:documentation>The Solar Energy Factor is defined as the energy delivered by the system divided by the electrical or gas energy put into the system. The
+												higher the number, the more energy efficient. This value can be found in the OG-300 SRCC Certified Solar Water Heating System
+												Directory.</xs:documentation>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:double">
@@ -1669,7 +1716,8 @@
 									<xs:element minOccurs="0" name="InverterEfficiency" type="Efficiency"/>
 									<xs:element minOccurs="0" name="SystemLossesFraction" type="Fraction">
 										<xs:annotation>
-											<xs:documentation>System losses can be due to soiling, shading, snow, mismatch, wiring, electrical connections, light-induced degradation, nameplate rating inaccuracies, age, and availability.</xs:documentation>
+											<xs:documentation>System losses can be due to soiling, shading, snow, mismatch, wiring, electrical connections, light-induced degradation, nameplate rating
+												inaccuracies, age, and availability.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="YearInverterManufactured" type="Year"/>
@@ -1682,7 +1730,9 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="LevelizedCostOfElectricity" type="Cost">
 										<xs:annotation>
-											<xs:documentation>[$] The LCOE is the total cost of installing and operating a project expressed in dollars per kilowatt-hour of electricity generated by the system over its life. Can be calculated with System Advisor Model, a similar software, or through a simplified calculation at http://www.nrel.gov/analysis/tech_lcoe.html.</xs:documentation>
+											<xs:documentation>[$] The LCOE is the total cost of installing and operating a project expressed in dollars per kilowatt-hour of electricity generated by
+												the system over its life. Can be calculated with System Advisor Model, a similar software, or through a simplified calculation at
+												http://www.nrel.gov/analysis/tech_lcoe.html.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element ref="extension" minOccurs="0"/>
@@ -1704,18 +1754,20 @@
 									<xs:element minOccurs="0" name="ThirdPartyCertification" maxOccurs="unbounded" type="WindThirdPartyCertification"/>
 									<xs:element minOccurs="0" name="AWEARatedAnnualEnergy" type="RatedAnnualkWh">
 										<xs:annotation>
-											<xs:documentation>[kWh] the calculated total energy that would be produced during a one-year period with an average wind speed of 5 m/s (11.2 mph)</xs:documentation>
+											<xs:documentation>[kWh] the calculated total energy that would be produced during a one-year period with an average wind speed of 5 m/s (11.2
+												mph)</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="AWEARatedSoundLevel" type="xs:double">
 										<xs:annotation>
-											<xs:documentation>[dBA] the sound pressure level not exceeded by the wind turbine 95% of the time at a distance of 60 meters from the rotor with an average wind speed of 5 m/s (11.2 mph).
-</xs:documentation>
+											<xs:documentation>[dBA] the sound pressure level not exceeded by the wind turbine 95% of the time at a distance of 60 meters from the rotor with an average
+												wind speed of 5 m/s (11.2 mph). </xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="AWEARatedPower" type="Power">
 										<xs:annotation>
-											<xs:documentation>[kW] the wind turbine’s power output at 11 m/s (24.6 mph). Manufacturers may still describe or name their wind turbine models using a nominal power (e.g. 5 kW S-343).</xs:documentation>
+											<xs:documentation>[kW] the wind turbine’s power output at 11 m/s (24.6 mph). Manufacturers may still describe or name their wind turbine models using a
+												nominal power (e.g. 5 kW S-343).</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="PeakPower" type="Power">
@@ -1735,7 +1787,9 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="LevelizedCostOfElectricity" type="Cost">
 										<xs:annotation>
-											<xs:documentation>[$] The LCOE is the total cost of installing and operating a project expressed in dollars per kilowatt-hour of electricity generated by the system over its life. Can be calculated with System Advisor Model, a similar software, or through a simplified calculation at http://www.nrel.gov/analysis/tech_lcoe.html.</xs:documentation>
+											<xs:documentation>[$] The LCOE is the total cost of installing and operating a project expressed in dollars per kilowatt-hour of electricity generated by
+												the system over its life. Can be calculated with System Advisor Model, a similar software, or through a simplified calculation at
+												http://www.nrel.gov/analysis/tech_lcoe.html.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
@@ -1781,13 +1835,16 @@
 						<xs:element name="NumberofUnits" type="xs:integer" minOccurs="0"/>
 						<xs:element minOccurs="0" name="FractionofUnitsInLocation" type="Fraction">
 							<xs:annotation>
-								<xs:documentation>The fraction of lighting units in the specified Location, where all the fractions for the Location sum to 1. If a Location is not specified, fractions apply to the entire building.</xs:documentation>
+								<xs:documentation>The fraction of lighting units in the specified Location, where all the fractions for the Location sum to 1. If a Location is not specified, fractions
+									apply to the entire building.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="LightingType" type="LightingType"/>
 						<xs:element minOccurs="0" name="AverageLumens" type="xs:double">
 							<xs:annotation>
-								<xs:documentation>Lumens is a measure of light output (brightness) as opposed to watts, which measures energy consumption. The EPA and DOE encourages people to determine the amount of light they need (or brightness) first before purchasing a light bulb. Once brightness is determined, you can look for the bulb with the lowest watts.</xs:documentation>
+								<xs:documentation>Lumens is a measure of light output (brightness) as opposed to watts, which measures energy consumption. The EPA and DOE encourages people to
+									determine the amount of light they need (or brightness) first before purchasing a light bulb. Once brightness is determined, you can look for the bulb with the
+									lowest watts.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="AverageWattage" type="xs:double" minOccurs="0">
@@ -1865,7 +1922,9 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="Efficiency" type="xs:double">
 										<xs:annotation>
-											<xs:documentation>[CFM/watt] The efficiency rating of a ceiling fan as determined by the test procedure defined by the Environmental Protection Agency's ENERGY STAR Testing Facility Guidance Manual: Building a Testing Facility and Performing the Solid State Test Method for ENERGY STAR Qualified Ceiling Fans, Version 1.1, December 9, 2002. This is generally printed on the box in which the ceiling fan is shipped.</xs:documentation>
+											<xs:documentation>[CFM/watt] The efficiency rating of a ceiling fan as determined by the test procedure defined by the Environmental Protection Agency's
+												ENERGY STAR Testing Facility Guidance Manual: Building a Testing Facility and Performing the Solid State Test Method for ENERGY STAR Qualified Ceiling
+												Fans, Version 1.1, December 9, 2002. This is generally printed on the box in which the ceiling fan is shipped.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 								</xs:sequence>
@@ -1998,7 +2057,8 @@
 								<xs:sequence>
 									<xs:element maxOccurs="unbounded" name="PoolPump">
 										<xs:annotation>
-											<xs:documentation>Pool pump: a mechanical assembly consisting of a “wet-end,” which houses the impeller and a motor. The pump increases the “head” and “flow” of the water (ENERGY STAR, 2013).</xs:documentation>
+											<xs:documentation>Pool pump: a mechanical assembly consisting of a “wet-end,” which houses the impeller and a motor. The pump increases the “head” and
+												“flow” of the water (ENERGY STAR, 2013).</xs:documentation>
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
@@ -2022,12 +2082,15 @@
 												</xs:element>
 												<xs:element minOccurs="0" name="ThirdPartyCertification" type="PoolPump3rdPartyCertification" maxOccurs="unbounded">
 													<xs:annotation>
-														<xs:documentation>Independent organization has verified that product or appliance meets or exceeds the standard in question (ENERGY STAR, CEE, or other)</xs:documentation>
+														<xs:documentation>Independent organization has verified that product or appliance meets or exceeds the standard in question (ENERGY STAR, CEE,
+															or other)</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="EnergyFactor" type="Efficiency">
 													<xs:annotation>
-														<xs:documentation>[gal/Wh] The measure of overall pool filter pump efficiency in units of gallons per watt-hour, as determined using the applicable test method in Section 4.1.2. Energy factor is analogous to other energy factors such as miles per gallon. Energy factor (EF) is calculated as: EF (gal/Wh) = flow rate (gpm) * 60 ÷ power (watts) (ANSI/APSP/ICC-15 2011).</xs:documentation>
+														<xs:documentation>[gal/Wh] The measure of overall pool filter pump efficiency in units of gallons per watt-hour, as determined using the
+															applicable test method in Section 4.1.2. Energy factor is analogous to other energy factors such as miles per gallon. Energy factor (EF) is
+															calculated as: EF (gal/Wh) = flow rate (gpm) * 60 ÷ power (watts) (ANSI/APSP/ICC-15 2011).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="SpeedSetting" type="PoolPumpSpeedSetting">
@@ -2037,17 +2100,24 @@
 												</xs:element>
 												<xs:element minOccurs="0" name="RatedHorsepower" type="Power">
 													<xs:annotation>
-														<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower where the service factor is greater than 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15 2011).</xs:documentation>
+														<xs:documentation>The motor power output designed by the manufacturer for a rated RPM, voltage and frequency. May be less than total horsepower
+															where the service factor is greater than 1.0, or equal to total horsepower where the service factor = 1.0 (ANSI/APSP/ICC-15
+															2011).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="TotalHorsepower" type="Power">
 													<xs:annotation>
-														<xs:documentation>The total horsepower, or product of the rated horsepower and the service factor of a motor used on a pool pump (also known as SFHP) based on the maximum continuous duty motor power output rating allowable for the nameplate ambient rating and motor insulation class (e.g., total horsepower = rated horsepower * service factor) (ANSI/APSP/ICC-15 2011).</xs:documentation>
+														<xs:documentation>The total horsepower, or product of the rated horsepower and the service factor of a motor used on a pool pump (also known as
+															SFHP) based on the maximum continuous duty motor power output rating allowable for the nameplate ambient rating and motor insulation class
+															(e.g., total horsepower = rated horsepower * service factor) (ANSI/APSP/ICC-15 2011).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="ServiceFactor" type="xs:double">
 													<xs:annotation>
-														<xs:documentation>A multiplier applied to the rated horsepower of a pump motor to indicate the percent above nameplate horsepower at which the motor can operate continuously without exceeding its allowable insulation class temperature limit, provided that other design parameters, such rated voltage, frequency and ambient temperature, are within limits. A 1.5 hp pump with a 1.65 service factor produces 2.475 hp (total horsepower) at the maximum service factor point (ANSI/APSP/ICC-15 2011).</xs:documentation>
+														<xs:documentation>A multiplier applied to the rated horsepower of a pump motor to indicate the percent above nameplate horsepower at which the
+															motor can operate continuously without exceeding its allowable insulation class temperature limit, provided that other design parameters,
+															such rated voltage, frequency and ambient temperature, are within limits. A 1.5 hp pump with a 1.65 service factor produces 2.475 hp (total
+															horsepower) at the maximum service factor point (ANSI/APSP/ICC-15 2011).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element maxOccurs="unbounded" minOccurs="0" name="PumpSpeed">
@@ -2060,12 +2130,14 @@
 															</xs:element>
 															<xs:element minOccurs="0" name="MotorNominalSpeed" type="Speed">
 																<xs:annotation>
-																	<xs:documentation>[Rev/min] The number of revolutions of the motor shaft in a given unit of time, expressed as revolutions per minute (RPM) (ENERGY STAR, 2013).</xs:documentation>
+																	<xs:documentation>[Rev/min] The number of revolutions of the motor shaft in a given unit of time, expressed as revolutions per
+																		minute (RPM) (ENERGY STAR, 2013).</xs:documentation>
 																</xs:annotation>
 															</xs:element>
 															<xs:element minOccurs="0" name="FlowRate" type="FlowRate">
 																<xs:annotation>
-																	<xs:documentation>[gal/min] The volume of water flowing through the filtration system in a given time, usually measured in gallons per minute (gpm) (ANSI/APSP/ICC-15 2011).</xs:documentation>
+																	<xs:documentation>[gal/min] The volume of water flowing through the filtration system in a given time, usually measured in gallons
+																		per minute (gpm) (ANSI/APSP/ICC-15 2011).</xs:documentation>
 																</xs:annotation>
 															</xs:element>
 															<xs:element minOccurs="0" name="HoursPerDay" type="HoursPerDay">
@@ -2211,12 +2283,16 @@
 									</xs:element>
 									<xs:element name="BaselineTest" type="CAZTestConfiguration" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>Baseline pressure is read under the following conditions: no items running, all fans off, all exterior doors closed, and all interior doors are opened.</xs:documentation>
+											<xs:documentation>Baseline pressure is read under the following conditions: no items running, all fans off, all exterior doors closed, and all interior
+												doors are opened.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="PoorCaseTest" type="CAZTestConfiguration">
 										<xs:annotation>
-											<xs:documentation>The poor case CAZ depressurization test is configured by determining the largest combustion appliance zone depressurization attainable at the time of testing due to the combined effects of door position, exhaust appliance operation, and air handler fan operation. A base pressure must be measured with all fans off and doors open. The poor case CAZ depressurization measurement is the pressure difference between the largest depressurization attained at the time of testing and the base pressure.</xs:documentation>
+											<xs:documentation>The poor case CAZ depressurization test is configured by determining the largest combustion appliance zone depressurization attainable at
+												the time of testing due to the combined effects of door position, exhaust appliance operation, and air handler fan operation. A base pressure must be
+												measured with all fans off and doors open. The poor case CAZ depressurization measurement is the pressure difference between the largest
+												depressurization attained at the time of testing and the base pressure.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="NetPressureChange" type="NetPressureChange" minOccurs="0">
@@ -2346,8 +2422,7 @@
 					<xs:sequence>
 						<xs:element name="Disturbed6SqFtIntPaint" type="xs:boolean" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation>For a home built before 1978, did the contracted scope of work disturb greater than 6 sq.ft. of interior painted surfaces?
-</xs:documentation>
+								<xs:documentation>For a home built before 1978, did the contracted scope of work disturb greater than 6 sq.ft. of interior painted surfaces? </xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="Disturbed20SqFtExtPaint" type="xs:boolean">
@@ -2398,10 +2473,10 @@
 						<xs:element minOccurs="0" name="ActionsTaken" type="xs:string"/>
 						<xs:element minOccurs="0" name="ActionsMeetIndustrySpecs" type="xs:boolean">
 							<xs:annotation>
-								<xs:documentation>If moisture management of a crawlspace (e.g., installation of polyethylene sheeting) or radon mitigation measures were a part of the scope of work,were measures installed to be compliant with one of the following:
-- Specifications of EPA’s Indoor airPLUS program
-- Techniques detailed in EPA's Radon-Resistant New Construction
-- ASTM E2121, Standard Practice for Installing Radon Mitigation Systems in Existing Low-Rise Residential Buildings (section 7.3)</xs:documentation>
+								<xs:documentation>If moisture management of a crawlspace (e.g., installation of polyethylene sheeting) or radon mitigation measures were a part of the scope of
+									work,were measures installed to be compliant with one of the following: - Specifications of EPA’s Indoor airPLUS program - Techniques detailed in EPA's
+									Radon-Resistant New Construction - ASTM E2121, Standard Practice for Installing Radon Mitigation Systems in Existing Low-Rise Residential Buildings (section
+									7.3)</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="ResultBelowActionLevel" type="xs:boolean">
@@ -2423,8 +2498,7 @@
 						</xs:element>
 						<xs:element minOccurs="0" name="ConformanceWithANSIZ21_11_2" type="xs:boolean">
 							<xs:annotation>
-								<xs:documentation>If yes, does the appliance conform with ANSI Z21.11.2?
-</xs:documentation>
+								<xs:documentation>If yes, does the appliance conform with ANSI Z21.11.2? </xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="PrimaryHeatingSource" type="xs:boolean">
@@ -2466,9 +2540,9 @@
 						</xs:element>
 						<xs:element minOccurs="0" name="IndustryStandardCompliance" type="xs:boolean">
 							<xs:annotation>
-								<xs:documentation>Do measures comply with industry standards to prevent pest entry?
-
-NOTE: This is for ALL measures that may create entry points for vermin. For example, air sealing measures identified to reduce infiltration should have proper sealants  - even if those measures were not recommended/installed for pest control purposes.</xs:documentation>
+								<xs:documentation>Do measures comply with industry standards to prevent pest entry? NOTE: This is for ALL measures that may create entry points for vermin. For example,
+									air sealing measures identified to reduce infiltration should have proper sealants - even if those measures were not recommended/installed for pest control
+									purposes.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
@@ -2505,7 +2579,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:sequence>
 						<xs:element minOccurs="0" name="SprayFoamInstalled" type="xs:boolean">
 							<xs:annotation>
-								<xs:documentation>Was spray foam polyurethane foam and / or other potential sources of indoor pollutants installed or applied as part of the scope of work?</xs:documentation>
+								<xs:documentation>Was spray foam polyurethane foam and / or other potential sources of indoor pollutants installed or applied as part of the scope of
+									work?</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
@@ -2520,7 +2595,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			<xs:element minOccurs="0" name="PoorScenario" type="xs:double"/>
 			<xs:element minOccurs="0" name="CurrentCondition" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>This element is formerly known as "spillage, draft, and CO readings under natural conditions" as explained in BPI's Gold Sheet "Combustion Safety Test Procedure for Vented Appliances."</xs:documentation>
+					<xs:documentation>This element is formerly known as "spillage, draft, and CO readings under natural conditions" as explained in BPI's Gold Sheet "Combustion Safety Test Procedure
+						for Vented Appliances."</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="TestResult" type="TestResultType"/>
@@ -2649,7 +2725,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 			</xs:element>
 			<xs:element minOccurs="0" name="InitialAirflorDeficit" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>The airflow deficit for each bathroom or kitchen is the required airflow less the airflow rating of the exhaust equipment. If there is no exhaust device or if the existing device cannot be measured nor read it, the exhaust device airflow is assumed to be zero.</xs:documentation>
+					<xs:documentation>The airflow deficit for each bathroom or kitchen is the required airflow less the airflow rating of the exhaust equipment. If there is no exhaust device or if the
+						existing device cannot be measured nor read it, the exhaust device airflow is assumed to be zero.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="AirflowRateUnits" type="SpotVentilationUnits"/>
@@ -2786,7 +2863,8 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					</xs:element>
 					<xs:element minOccurs="0" name="ElectricAuxiliaryEnergy" type="xs:double">
 						<xs:annotation>
-							<xs:documentation>The average annual auxiliary electrical energy consumption for, e.g., a gas furnace or boiler, in kilowatt-hours per year. Published in the AHRI Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
+							<xs:documentation>The average annual auxiliary electrical energy consumption for, e.g., a gas furnace or boiler, in kilowatt-hours per year. Published in the AHRI
+								Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
@@ -2843,8 +2921,7 @@ NOTE: This is for ALL measures that may create entry points for vermin. For exam
 					<xs:sequence>
 						<xs:element minOccurs="0" name="SmokeEmissionRate" type="xs:double">
 							<xs:annotation>
-								<xs:documentation>[grams per hour] from EPA label
-http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
+								<xs:documentation>[grams per hour] from EPA label http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
@@ -2859,8 +2936,7 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 					<xs:sequence>
 						<xs:element minOccurs="0" name="SmokeEmissionRate" type="xs:double">
 							<xs:annotation>
-								<xs:documentation>[grams per hour] from EPA label
-http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
+								<xs:documentation>[grams per hour] from EPA label http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="AutomaticVentDamper" type="xs:boolean"/>
@@ -2928,7 +3004,8 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 					<xs:element name="GeothermalLoop" type="GeothermalLoop" minOccurs="0"/>
 					<xs:element minOccurs="0" name="BackupType">
 						<xs:annotation>
-							<xs:documentation>Whether the heat pump backup is integrated into the unit (describe in BackupSystemFuel, BackupAnnualHeatingEfficiency, BackupHeatingCapacity), or a separate heating system (add reference in BackupSystem).</xs:documentation>
+							<xs:documentation>Whether the heat pump backup is integrated into the unit (describe in BackupSystemFuel, BackupAnnualHeatingEfficiency, BackupHeatingCapacity), or a
+								separate heating system (add reference in BackupSystem).</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:string">
@@ -3072,7 +3149,8 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 						<xs:element name="DuctLocation" type="DuctLocation" minOccurs="0"/>
 						<xs:element minOccurs="0" name="FractionDuctArea" type="Fraction">
 							<xs:annotation>
-								<xs:documentation>If a DuctType of supply or return is specified above, this is the fraction of the supply or return duct area. If DuctType is omitted above, this is the fraction of the total duct area. </xs:documentation>
+								<xs:documentation>If a DuctType of supply or return is specified above, this is the fraction of the supply or return duct area. If DuctType is omitted above, this is
+									the fraction of the total duct area. </xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="DuctSurfaceArea" type="SurfaceArea">
@@ -3098,7 +3176,8 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 	</xs:complexType>
 	<xs:element name="BuildingSystemIdentifiers">
 		<xs:annotation>
-			<xs:documentation>HPXML records may contain data about an individual, either a person, or a business.  This element contains the root elements for individual identifier values between a sending and a receiving system.</xs:documentation>
+			<xs:documentation>HPXML records may contain data about an individual, either a person, or a business. This element contains the root elements for individual identifier values between a
+				sending and a receiving system.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
@@ -3109,7 +3188,8 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 	<xs:element name="Associations" type="AssociationsType"> </xs:element>
 	<xs:element name="SystemIdentifiersInfo" type="SystemIdentifiersInfoType">
 		<xs:annotation>
-			<xs:documentation>System identifiers contain type codes and an identifier for both a sending and a receiving system.  These fields are needed to be able to transmit data between two systems, and have it identified in the two systems.</xs:documentation>
+			<xs:documentation>System identifiers contain type codes and an identifier for both a sending and a receiving system. These fields are needed to be able to transmit data between two
+				systems, and have it identified in the two systems.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:complexType name="IncentiveDetailsType">
@@ -3231,7 +3311,9 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 									<xs:element name="ResidentialFacilityType" type="ResidentialFacilityType" minOccurs="0"/>
 									<xs:element minOccurs="0" name="PassiveSolar" type="xs:boolean">
 										<xs:annotation>
-											<xs:documentation>Passive solar design—also known as climatic design—involves using a building's windows, walls, and floors to collect, store, and distribute solar energy in the form of heat in the winter and reject solar heat in the summer. (source: http://www.eere.energy.gov/basics/buildings/passive_solar_design.html)</xs:documentation>
+											<xs:documentation>Passive solar design—also known as climatic design—involves using a building's windows, walls, and floors to collect, store, and
+												distribute solar energy in the form of heat in the winter and reject solar heat in the summer. (source:
+												http://www.eere.energy.gov/basics/buildings/passive_solar_design.html)</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="BuildingHeight" type="LengthMeasurement">
@@ -3281,20 +3363,26 @@ http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:docum
 									<xs:element minOccurs="0" name="FootprintShape" type="FootprintShape"/>
 									<xs:element minOccurs="0" name="GrossFloorArea" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.]
-Gross floor area (based on ASHRAE definition) is the sum of the floor areas of the spaces within the building, including basements, mezzanine and intermediate‐floored tiers, and penthouses with headroom height of 7.5 ft (2.2 meters) or greater. Measurements must be taken from the exterior faces of exterior walls OR from the centerline of walls separating buildings, OR from the centerline of walls separating spaces. Excludes non‐enclosed (or non‐enclosable) roofed‐over areas such as exterior covered walkways, porches, terraces or steps, roof overhangs, and similar features. Excludes air shafts, pipe trenches, and chimneys. Excludes floor area dedicated to the parking and circulation of motor vehicles.</xs:documentation>
+											<xs:documentation>[sq.ft.] Gross floor area (based on ASHRAE definition) is the sum of the floor areas of the spaces within the building, including
+												basements, mezzanine and intermediate‐floored tiers, and penthouses with headroom height of 7.5 ft (2.2 meters) or greater. Measurements must be taken
+												from the exterior faces of exterior walls OR from the centerline of walls separating buildings, OR from the centerline of walls separating spaces.
+												Excludes non‐enclosed (or non‐enclosable) roofed‐over areas such as exterior covered walkways, porches, terraces or steps, roof overhangs, and similar
+												features. Excludes air shafts, pipe trenches, and chimneys. Excludes floor area dedicated to the parking and circulation of motor
+												vehicles.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="NetFloorArea" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.]
-The floor area of an occupiable space defined by the inside surfaces of its walls but excluding shafts, column enclosures, and other permanently enclosed, inaccessible, and unoccupiable areas. Obstructions in the space such as furnishings, display or storage racks, and other obstructions, whether temporary or permanent, may not be deducted from the space are considered to be part of the net occupiable area.</xs:documentation>
+											<xs:documentation>[sq.ft.] The floor area of an occupiable space defined by the inside surfaces of its walls but excluding shafts, column enclosures, and
+												other permanently enclosed, inaccessible, and unoccupiable areas. Obstructions in the space such as furnishings, display or storage racks, and other
+												obstructions, whether temporary or permanent, may not be deducted from the space are considered to be part of the net occupiable
+												area.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="ConditionedFloorArea" type="SurfaceArea" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.]
-All finished space that is within the (insulated) conditioned space boundary (that is, within the insulated envelope), regardless of HVAC configuration.</xs:documentation>
+											<xs:documentation>[sq.ft.] All finished space that is within the (insulated) conditioned space boundary (that is, within the insulated envelope), regardless
+												of HVAC configuration.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="FinishedFloorArea" type="SurfaceArea">
@@ -3305,32 +3393,42 @@ All finished space that is within the (insulated) conditioned space boundary (th
 									<xs:element name="NumberofStoriesAboveGrade" type="IntegerGreaterThanZero" minOccurs="0"/>
 									<xs:element minOccurs="0" name="CooledFloorArea" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.]
-The total area of all enclosed spaces measured to the internal face of the external walls. Included are areas of sloping surfaces such as staircases, galleries, raked auditoria, and tiered terraces where the area taken is from the area on the plan. Excluded are areas that are not enclosed such as open floors, covered ways and balconies.</xs:documentation>
+											<xs:documentation>[sq.ft.] The total area of all enclosed spaces measured to the internal face of the external walls. Included are areas of sloping surfaces
+												such as staircases, galleries, raked auditoria, and tiered terraces where the area taken is from the area on the plan. Excluded are areas that are not
+												enclosed such as open floors, covered ways and balconies.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HeatedFloorArea" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.]
-The total area of all enclosed spaces measured to the internal face of the external walls. Included are areas of sloping surfaces such as staircases, galleries, raked auditoria, and tiered terraces where the area taken is from the area on the plan. Excluded are areas that are not enclosed such as open floors, covered ways and balconies.</xs:documentation>
+											<xs:documentation>[sq.ft.] The total area of all enclosed spaces measured to the internal face of the external walls. Included are areas of sloping surfaces
+												such as staircases, galleries, raked auditoria, and tiered terraces where the area taken is from the area on the plan. Excluded are areas that are not
+												enclosed such as open floors, covered ways and balconies.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="UnconditionedFloorArea" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.]
-An enclosed space within a building that does not meet the requirements of a conditioned space. Spaces that have no control over thermal conditions but intentionally or unintentionally receive thermal energy from adjacent spaces are considered unconditioned spaces (such as an attached garage on a house or a vestibule with no thermal comfort criteria). Spaces that are ventilated only to maintain air quality are considered unconditioned spaces (such as a parking garage with no thermal comfort criteria).</xs:documentation>
+											<xs:documentation>[sq.ft.] An enclosed space within a building that does not meet the requirements of a conditioned space. Spaces that have no control over
+												thermal conditions but intentionally or unintentionally receive thermal energy from adjacent spaces are considered unconditioned spaces (such as an
+												attached garage on a house or a vestibule with no thermal comfort criteria). Spaces that are ventilated only to maintain air quality are considered
+												unconditioned spaces (such as a parking garage with no thermal comfort criteria).</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="BuildingVolume" type="Volume">
 										<xs:annotation>
-											<xs:documentation>[cu.ft.]
-A volume of a building surrounded by solid surfaces such as walls, roofs, floors, fenestration, and doors where the total opening area to the outside can be reduced to less than 1% of the Gross Interior Floor Area of the space. Spaces that are temporarily enclosed such as patios enclosed with tenting are not considered Enclosed Spaces for annual building analysis. These spaces should be treated as exterior to the building.</xs:documentation>
+											<xs:documentation>[cu.ft.] A volume of a building surrounded by solid surfaces such as walls, roofs, floors, fenestration, and doors where the total opening
+												area to the outside can be reduced to less than 1% of the Gross Interior Floor Area of the space. Spaces that are temporarily enclosed such as patios
+												enclosed with tenting are not considered Enclosed Spaces for annual building analysis. These spaces should be treated as exterior to the
+												building.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="ConditionedBuildingVolume" type="Volume" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>[cu.ft.]
-Volume inside the building envelope of the conditioned spaces. This metric can be calculated as the volume of the building if every space is conditioned or on a floor-by-floor basis. For spaces with vertical walls and horizontal ceilings and floors, this is calculated as the Gross Conditioned Floor Area times the height from the top surface of the finished floor to the top surface of the finished floor separating levels of the building or to the inside surface of the roof for the top floor. The volume of spaces that have nonvertical walls or nonhorizontal ceilings of floors should be calculated separately to properly account for the non-rectangular geometry. This metric does include the volume of floor or ceiling return air plenums.</xs:documentation>
+											<xs:documentation>[cu.ft.] Volume inside the building envelope of the conditioned spaces. This metric can be calculated as the volume of the building if
+												every space is conditioned or on a floor-by-floor basis. For spaces with vertical walls and horizontal ceilings and floors, this is calculated as the
+												Gross Conditioned Floor Area times the height from the top surface of the finished floor to the top surface of the finished floor separating levels of
+												the building or to the inside surface of the roof for the top floor. The volume of spaces that have nonvertical walls or nonhorizontal ceilings of
+												floors should be calculated separately to properly account for the non-rectangular geometry. This metric does include the volume of floor or ceiling
+												return air plenums.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="FoundationType" minOccurs="0" type="FoundationType">
@@ -3465,9 +3563,10 @@ Volume inside the building envelope of the conditioned spaces. This metric can b
 		<xs:sequence>
 			<xs:element name="ScoreType">
 				<xs:annotation>
-					<xs:documentation>The Home Energy Score is an asset rating for homes, developed and administered by the U.S. Department of Energy. After conducting a brief walk thru of a home, a qualified assessor calculates a home's score on a 10 point scale using a standard scoring tool, with 10 reflecting homes that use the least amount of energy assuming standard operating conditions (US DOE).
-
-The Home Energy Rating System (HERS) index is a measure of a home's energy efficiency. It can also be used to inspect and calculate a home's energy performance. The lower a home's HERS Index Score, the better its efficiency.</xs:documentation>
+					<xs:documentation>The Home Energy Score is an asset rating for homes, developed and administered by the U.S. Department of Energy. After conducting a brief walk thru of a home, a
+						qualified assessor calculates a home's score on a 10 point scale using a standard scoring tool, with 10 reflecting homes that use the least amount of energy assuming standard
+						operating conditions (US DOE). The Home Energy Rating System (HERS) index is a measure of a home's energy efficiency. It can also be used to inspect and calculate a home's
+						energy performance. The lower a home's HERS Index Score, the better its efficiency.</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
@@ -3537,7 +3636,8 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 									<xs:element name="ResourceTypeCode" type="ResourceTypeCode"/>
 									<xs:element name="LoadProfile" type="LoadProfile" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>A load profile is created using measurements of a customer's electricity use at regular intervals, typically one hour or less, and provides an accurate representation of a customer's usage pattern over time.</xs:documentation>
+											<xs:documentation>A load profile is created using measurements of a customer's electricity use at regular intervals, typically one hour or less, and
+												provides an accurate representation of a customer's usage pattern over time.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="Quantity" type="Quantity"/>
@@ -3558,7 +3658,8 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			<xs:element minOccurs="0" name="InstallingContractor" type="RemoteReference"/>
 			<xs:element minOccurs="0" name="QA">
 				<xs:annotation>
-					<xs:documentation>Quality assurance: The observation techniques and activities used externally by an organization to evaluate the effectiveness of their quality management system and to provide feedback that may result in quality improvements (BPI, 2006). </xs:documentation>
+					<xs:documentation>Quality assurance: The observation techniques and activities used externally by an organization to evaluate the effectiveness of their quality management system
+						and to provide feedback that may result in quality improvements (BPI, 2006). </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
@@ -3642,8 +3743,8 @@ The Home Energy Rating System (HERS) index is a measure of a home's energy effic
 			</xs:element>
 			<xs:element minOccurs="0" name="EffectiveLeakageArea" type="SurfaceArea">
 				<xs:annotation>
-					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were subjected to the Test Pressure.
-Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [Pa]) ^ 0.5)</xs:documentation>
+					<xs:documentation>The Leakage Area is defined in TECBLAST as the size of a sharp edged orifice which would leak at the same flow rate as the measured leakage, if the orifice were
+						subjected to the Test Pressure. Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [Pa]) ^ 0.5)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
@@ -3684,7 +3785,8 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			<xs:element name="MarginalRate" type="xs:double" minOccurs="0"/>
 			<xs:element minOccurs="0" name="BaseLoad" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Baseload power is the energy consumed for the day-to-day operation of a home that is not used as a response to outside weather (i.e. excludes heating and cooling) (Krigger and Dorsi, 2009).</xs:documentation>
+					<xs:documentation>Baseload power is the energy consumed for the day-to-day operation of a home that is not used as a response to outside weather (i.e. excludes heating and cooling)
+						(Krigger and Dorsi, 2009).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="BPI2400Inputs" type="BPI2400Inputs">
@@ -3701,12 +3803,13 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			<xs:element minOccurs="0" name="WeatherRegressionEndDate" type="xs:date"/>
 			<xs:element minOccurs="0" name="CalibrationQualification" type="BPI2400CalibrationQualification">
 				<xs:annotation>
-					<xs:documentation>This identifies which data quality requirements (if any) were met by the bills for the relevant energy source and therefore which calibration metrics (if any) are used to determine whether the calibrated model is accepted.</xs:documentation>
+					<xs:documentation>This identifies which data quality requirements (if any) were met by the bills for the relevant energy source and therefore which calibration metrics (if any) are
+						used to determine whether the calibrated model is accepted.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="CalibrationWeatherRegressionCVRMSE" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Detailed Calibration Weather Regression CV-RMSE. Eqn. 3.2.2.G.i  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>Detailed Calibration Weather Regression CV-RMSE. Eqn. 3.2.2.G.i of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="WeatherNormalizedHeatingUsage" type="xs:double">
@@ -3726,12 +3829,12 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingBiasError" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Eqn. 3.2.3.A.i  of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>Eqn. 3.2.3.A.i of BPI-2400. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingAbsoluteError" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Eqn. 3.2.3.A.ii  of BPI-2400. In either kWh for electricity or MMBTU for all other fuels.</xs:documentation>
+					<xs:documentation>Eqn. 3.2.3.A.ii of BPI-2400. In either kWh for electricity or MMBTU for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingBiasError" type="xs:double">
@@ -3756,22 +3859,26 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 			</xs:element>
 			<xs:element minOccurs="0" name="SimplifiedModelCalibrationHeatingBiasError" nillable="true" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% =
+						0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="SimplifiedModelCalibrationCoolingBiasError" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% =
+						0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="SimplifiedModelCalibrationBaseloadBiasError" nillable="true" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% =
+						0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="SimplifiedModelCalibrationTotalBiasError" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% = 0.1)</xs:documentation>
+					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% =
+						0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
@@ -3790,9 +3897,8 @@ Leakage Area [sq in] = Duct System Leakage Rate [CFM] / (1.06 * (Test Pressure [
 						<xs:element name="UnitofMeasure" type="energyUnitType"/>
 						<xs:element minOccurs="0" name="MeteringConfiguration" type="MeteringConfiguration">
 							<xs:annotation>
-								<xs:documentation>direct metering = tenants directly metered;
-master meter without sub-metering = tenants not sub metered;
-master meter with sub-metering = tenant sub-metered by building owner</xs:documentation>
+								<xs:documentation>direct metering = tenants directly metered; master meter without sub-metering = tenants not sub metered; master meter with sub-metering = tenant
+									sub-metered by building owner</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="EmissionsFactors">
@@ -3821,7 +3927,8 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 						</xs:element>
 						<xs:element minOccurs="0" name="EnergyUseIntensity" type="xs:double">
 							<xs:annotation>
-								<xs:documentation>[kBtu/ft^2] Energy use intensity (EUI) is a unit of measurement that describes a building's energy use. EUI represents the energy consumed by a building relative to its size.</xs:documentation>
+								<xs:documentation>[kBtu/ft^2] Energy use intensity (EUI) is a unit of measurement that describes a building's energy use. EUI represents the energy consumed by a
+									building relative to its size.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="PeakSeason" type="PeakSeason">
@@ -3841,7 +3948,8 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 						<xs:element minOccurs="0" name="MarginalWaterCostRate" type="xs:double"/>
 						<xs:element minOccurs="0" name="WaterUseIntensity">
 							<xs:annotation>
-								<xs:documentation>Water use intensity is defined as annual water use divided by total gross square footage of facility space reported in gallons per square foot (DOE, 2013). This element may also be reported as gallons, per day, per person.</xs:documentation>
+								<xs:documentation>Water use intensity is defined as annual water use divided by total gross square footage of facility space reported in gallons per square foot (DOE,
+									2013). This element may also be reported as gallons, per day, per person.</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
@@ -3869,7 +3977,8 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ConsumptionByEndUse" type="EndUseInfoType"/>
 			<xs:element minOccurs="0" name="BaseLoad" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>Baseload power is the energy consumed for the day-to-day operation of a home that is not used as a response to outside weather (i.e. excludes heating and cooling) (Krigger and Dorsi, 2009).</xs:documentation>
+					<xs:documentation>Baseload power is the energy consumed for the day-to-day operation of a home that is not used as a response to outside weather (i.e. excludes heating and cooling)
+						(Krigger and Dorsi, 2009).</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="ElectricityDemandKW" type="xs:double"/>
@@ -4127,12 +4236,14 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 			</xs:element>
 			<xs:element minOccurs="0" name="EffectiveLeakageArea" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>[sq.in.] The Effective Leakage Area is defined as the area of a special nozzle-shaped hole (similar to the inlet of a blower door fan) that would leak the same amount of air as the building does at a pressure of 4 Pascals.</xs:documentation>
+					<xs:documentation>[sq.in.] The Effective Leakage Area is defined as the area of a special nozzle-shaped hole (similar to the inlet of a blower door fan) that would leak the same
+						amount of air as the building does at a pressure of 4 Pascals.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="InfiltrationVolume" type="xs:double">
 				<xs:annotation>
-					<xs:documentation>[sq. ft.] The volume of the building that is applicable to the air infiltration measurement test. The volume can be defined as the conditioned building volume plus the volume of crawlspaces, attics, and/or basements that are connected to the building's conditioned space via open doors or hatches.</xs:documentation>
+					<xs:documentation>[sq. ft.] The volume of the building that is applicable to the air infiltration measurement test. The volume can be defined as the conditioned building volume
+						plus the volume of crawlspaces, attics, and/or basements that are connected to the building's conditioned space via open doors or hatches.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
@@ -4226,8 +4337,7 @@ master meter with sub-metering = tenant sub-metered by building owner</xs:docume
 	</xs:complexType>
 	<xs:complexType name="WallType">
 		<xs:annotation>
-			<xs:documentation>Wall type enumerations are further explained at
-https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
+			<xs:documentation>Wall type enumerations are further explained at https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 		</xs:annotation>
 		<xs:choice>
 			<xs:element name="WoodStud">
@@ -4460,7 +4570,8 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 						</xs:element>
 						<xs:element minOccurs="0" name="MERVRating" type="MERV">
 							<xs:annotation>
-								<xs:documentation>Minimum efficiency reporting value, commonly known as MERV rating, is a measurement scale designed in 1987 by the American Society of Heating, Refrigerating and Air-Conditioning Engineers (ASHRAE) to rate the effectiveness of air filters.</xs:documentation>
+								<xs:documentation>Minimum efficiency reporting value, commonly known as MERV rating, is a measurement scale designed in 1987 by the American Society of Heating,
+									Refrigerating and Air-Conditioning Engineers (ASHRAE) to rate the effectiveness of air filters.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="LastReplaced" type="xs:gYearMonth">
@@ -4527,7 +4638,8 @@ https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
 					<xs:sequence>
 						<xs:element minOccurs="0" name="WeatherStation" type="LocalReference">
 							<xs:annotation>
-								<xs:documentation>Indicates which weather station is used for the modeling. It's a reference that points to Building/BuildingDetails/ClimateAndRiskZones/WeatherStation</xs:documentation>
+								<xs:documentation>Indicates which weather station is used for the modeling. It's a reference that points to
+									Building/BuildingDetails/ClimateAndRiskZones/WeatherStation</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element maxOccurs="unbounded" name="ModeledUsage" type="ModeledUsageType"/>
