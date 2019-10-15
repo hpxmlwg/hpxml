@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10"
-	targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
 	<!-- Value Lists -->
 	<!--Address Information Below-->
 	<xs:simpleType name="schemaVersionType">
@@ -2076,7 +2075,8 @@
 	</xs:simpleType>
 	<xs:simpleType name="WeatherStationUse">
 		<xs:annotation>
-			<xs:documentation>By leaving this field empty, the weather station is assumed used for all functions such as utility bill regression analysis and energy model simulations. If different weather stations are used for the different functions, use this field to specify the usage of each weather station.</xs:documentation>
+			<xs:documentation>By leaving this field empty, the weather station is assumed used for all functions such as utility bill regression analysis and energy model simulations. If different
+				weather stations are used for the different functions, use this field to specify the usage of each weather station.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="billing analysis"/>
