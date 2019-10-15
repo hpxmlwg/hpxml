@@ -4026,78 +4026,63 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="Orientation" type="OrientationType"/>
-			<xs:element name="FrameType" minOccurs="0">
-				<xs:complexType>
-					<xs:choice>
-						<xs:element name="Aluminum">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" name="ThermalBreak" type="xs:boolean"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Composite">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Fiberglass">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Metal">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" name="ThermalBreak" type="xs:boolean"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Vinyl">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Wood">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Other">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" name="Description"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-					</xs:choice>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="FrameType" minOccurs="0" type="WindowFrameType"> </xs:element>
 			<xs:element minOccurs="0" name="GlassLayers" type="GlassLayers"/>
 			<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 			<xs:element minOccurs="0" name="GasFill" type="GasFill"/>
-			<xs:element name="Treatments" type="Treatments" minOccurs="0"/>
 			<xs:element name="Condition" type="WindowCondition" minOccurs="0"/>
 			<xs:element name="UFactor" type="UFactor" minOccurs="0"/>
 			<xs:element name="SHGC" type="SHGC" minOccurs="0"/>
+			<xs:element minOccurs="0" name="VisibleTransmittance" type="Fraction"/>
 			<xs:element name="NFRCCertified" type="xs:boolean" minOccurs="0"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification" type="WindowThirdPartyCertification"/>
-			<xs:element minOccurs="0" name="VisibleTransmittance" type="Fraction"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="WindowFilm">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="ShadingFactor" type="xs:decimal"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ExteriorShading">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Type" type="ExteriorShading"/>
+						<xs:element minOccurs="0" name="ShadingFactor" type="xs:decimal"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="StormWindow">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
+						<xs:element minOccurs="0" name="FrameType" type="WindowFrameType"/>
+						<xs:element minOccurs="0" name="Operable" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="Condition" type="WindowCondition"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="MoveableInsulation">
+				<xs:annotation>
+					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="RValue" type="RValue"/>
+						<xs:element minOccurs="0" name="Material" type="InsulationMaterial"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
 			<xs:element minOccurs="0" name="InteriorShadingFactorSummer" type="Fraction"/>
 			<xs:element minOccurs="0" name="InteriorShadingFactorWinter" type="Fraction"/>
-			<xs:element minOccurs="0" name="ExteriorShading" type="ExteriorShading"/>
 			<xs:element minOccurs="0" name="Overhangs">
 				<xs:complexType>
 					<xs:sequence>
@@ -4121,14 +4106,65 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="WeatherStripping" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="Operable" type="xs:boolean"/>
-			<xs:element minOccurs="0" name="MovableInsulationRValue" type="RValue">
-				<xs:annotation>
-					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
 		</xs:sequence>
 	</xs:group>
+	<xs:complexType name="WindowFrameType">
+		<xs:choice>
+			<xs:element name="Aluminum">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ThermalBreak" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Composite">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Fiberglass">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Metal">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ThermalBreak" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Vinyl">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Wood">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Other">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Description"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
 	<xs:complexType name="AssociationsType">
 		<xs:all minOccurs="0">
 			<xs:element name="Job" minOccurs="0">
