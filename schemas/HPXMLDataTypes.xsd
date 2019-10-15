@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10"
-	targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
 	<!-- Value Lists -->
 	<!--Address Information Below-->
 	<xs:simpleType name="schemaVersionType">
@@ -2184,6 +2183,18 @@
 			<xs:enumeration value="inner"/>
 			<xs:enumeration value="outer"/>
 			<xs:enumeration value="nominal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DHWControllerTechnology">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="smart"/>
+			<xs:enumeration value="timer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DHWTemperatureControl">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="fixed"/>
+			<xs:enumeration value="variable"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
