@@ -607,6 +607,8 @@
 			<xs:enumeration value="living space"/>
 			<xs:enumeration value="other"/>
 			<xs:enumeration value="other housing unit"/>
+			<xs:enumeration value="other housing unit above"/>
+			<xs:enumeration value="other housing unit below"/>
 			<xs:enumeration value="outside"/>
 			<xs:enumeration value="unconditioned space"/>
 		</xs:restriction>
