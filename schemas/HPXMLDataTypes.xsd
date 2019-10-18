@@ -1417,6 +1417,11 @@
 	</xs:simpleType>
 	<xs:simpleType name="SurfaceArea">
 		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DuctSurfaceArea">
+		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
