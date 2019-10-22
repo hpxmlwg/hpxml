@@ -4066,7 +4066,19 @@
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" name="Type" type="ExteriorShading"/>
-						<xs:element minOccurs="0" name="ShadingFactor" type="xs:decimal"/>
+						<xs:element minOccurs="0" name="SummerShadingFactor" type="Fraction"/>
+						<xs:element minOccurs="0" name="WinterShadingFactor" type="Fraction"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="InteriorShading">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Type" type="InteriorShading"/>
+						<xs:element minOccurs="0" name="SummerShadingFactor" type="Fraction"/>
+						<xs:element minOccurs="0" name="WinterShadingFactor" type="Fraction"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -4096,9 +4108,6 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
-			<xs:element minOccurs="0" name="InteriorShadingFactorSummer" type="Fraction"/>
-			<xs:element minOccurs="0" name="InteriorShadingFactorWinter" type="Fraction"/>
 			<xs:element minOccurs="0" name="Overhangs">
 				<xs:complexType>
 					<xs:sequence>
@@ -4889,10 +4898,8 @@
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
 				<xs:element name="IsConnected" type="xs:boolean"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="CommunicatesWith"
-					type="LocalReference"/>
-				<xs:element minOccurs="0" name="CommunicationProtocol"
-					type="ConnectedDeviceCommunicationProtocol" maxOccurs="unbounded"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="CommunicatesWith" type="LocalReference"/>
+				<xs:element minOccurs="0" name="CommunicationProtocol" type="ConnectedDeviceCommunicationProtocol" maxOccurs="unbounded"/>
 				<xs:element minOccurs="0" name="DemandResponseCapability" type="xs:boolean"/>
 				<xs:element minOccurs="0" name="OccupancySensor" type="xs:boolean"/>
 				<xs:element minOccurs="0" ref="extension"/>
