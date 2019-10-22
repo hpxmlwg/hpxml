@@ -3481,7 +3481,6 @@
 	</xs:complexType>
 	<xs:complexType name="ProjectDetailsType">
 		<xs:sequence>
-			<xs:element maxOccurs="unbounded" name="ProjectSystemIdentifiers" type="RemoteReference"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 			<xs:element name="ProgramName" type="ProgramName" minOccurs="0"/>
 			<xs:element maxOccurs="1" minOccurs="0" ref="ContractorSystemIdentifiers"/>
@@ -4636,8 +4635,9 @@
 	</xs:complexType>
 	<xs:complexType name="Project">
 		<xs:sequence>
-			<xs:element name="BuildingID" type="RemoteReference"/>
-			<xs:element minOccurs="0" name="ProjectID" type="SystemIdentifiersInfoType"/>
+			<xs:element name="ProjectID" type="SystemIdentifiersInfoType"/>
+			<xs:element name="PreBuildingID" type="RemoteReference"/>
+			<xs:element name="PostBuildingID" type="RemoteReference"/>
 			<xs:element name="ProjectDetails" type="ProjectDetailsType"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
