@@ -4103,7 +4103,6 @@
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" name="RValue" type="RValue"/>
-						<xs:element minOccurs="0" name="Material" type="InsulationMaterial"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
