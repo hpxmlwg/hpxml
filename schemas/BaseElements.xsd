@@ -4073,6 +4073,11 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="InteriorShading">
+				<xs:annotation>
+					<xs:documentation>Used to describe drapes, blinds, etc. 
+
+If moveable insulation also provides shading, the shading should be documented here. </xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
