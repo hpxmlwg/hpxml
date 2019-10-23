@@ -1086,6 +1086,7 @@
 			<xs:enumeration value="CFM50"/>
 			<xs:enumeration value="CFM25"/>
 			<xs:enumeration value="CFM per Std 152"/>
+			<xs:enumeration value="Percent"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="LeakinessObservedVisualInspection">
