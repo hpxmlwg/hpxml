@@ -2201,4 +2201,16 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="DHWControllerTechnology">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="smart"/>
+			<xs:enumeration value="timer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DHWTemperatureControl">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="fixed"/>
+			<xs:enumeration value="variable"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
