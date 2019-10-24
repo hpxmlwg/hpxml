@@ -1698,7 +1698,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="NumberOfPanels" type="IntegerGreaterThanZero"/>
-									<xs:element minOccurs="0" name="InverterEfficiency" type="Efficiency"/>
+									<xs:element minOccurs="0" name="InverterEfficiency" type="Fraction"/>
 									<xs:element minOccurs="0" name="SystemLossesFraction" type="Fraction">
 										<xs:annotation>
 											<xs:documentation>System losses can be due to soiling, shading, snow, mismatch, wiring, electrical connections, light-induced degradation, nameplate rating
@@ -4853,10 +4853,8 @@
 			<xs:sequence>
 				<xs:group ref="SystemInfo"/>
 				<xs:element name="IsConnected" type="xs:boolean"/>
-				<xs:element maxOccurs="unbounded" minOccurs="0" name="CommunicatesWith"
-					type="LocalReference"/>
-				<xs:element minOccurs="0" name="CommunicationProtocol"
-					type="ConnectedDeviceCommunicationProtocol" maxOccurs="unbounded"/>
+				<xs:element maxOccurs="unbounded" minOccurs="0" name="CommunicatesWith" type="LocalReference"/>
+				<xs:element minOccurs="0" name="CommunicationProtocol" type="ConnectedDeviceCommunicationProtocol" maxOccurs="unbounded"/>
 				<xs:element minOccurs="0" name="DemandResponseCapability" type="xs:boolean"/>
 				<xs:element minOccurs="0" name="OccupancySensor" type="xs:boolean"/>
 				<xs:element minOccurs="0" ref="extension"/>
