@@ -397,10 +397,59 @@
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
 					<xs:element minOccurs="0" name="Location" type="DehumidifierLocation"/>
-					<xs:element minOccurs="0" name="Efficiency" type="xs:double">
+					<xs:element minOccurs="0" name="Configuration">
 						<xs:annotation>
-							<xs:documentation>[L/kWh]</xs:documentation>
+							<xs:documentation>Specifies whether the dehumidifier operates in portable or whole-home configuration (via ducting).</xs:documentation>
 						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="portable"/>
+								<xs:enumeration value="whole-home"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element minOccurs="0" name="Capacity" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>Rated water removal rate. [pints/day]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="EnergyFactor" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>The rated efficiency of the dehumidifier in liters of water removed per kilowatt-hour of energy consumed. [L/kWh]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="IntegratedEnergyFactor" type="xs:double">
+						<xs:annotation>
+							<xs:documentation>The rated efficiency of the dehumidifier in liters of water removed per kilowatt-hour of energy consumed. The IEF is a new metric used for dehumidifiers as of 2019 that incorporates energy consumed when the fan is running while the refrigeration system is off and standby power consumption, in addition to the energy consumed by the refrigeration system. [L/kWh]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="DehumidistatSetpoint" type="Fraction">
+						<xs:annotation>
+							<xs:documentation>Enter the setpoint as a fractional number between 0 and 1, i.e. 60% RH = 0.6.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element maxOccurs="3" minOccurs="0" name="Airflow">
+						<xs:annotation>
+							<xs:documentation/>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element minOccurs="0" name="FanSpeed">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="low"/>
+											<xs:enumeration value="medium"/>
+											<xs:enumeration value="high"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:element>
+								<xs:element minOccurs="0" name="Airflow" type="xs:double">
+									<xs:annotation>
+										<xs:documentation>[CFM]</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
 					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
