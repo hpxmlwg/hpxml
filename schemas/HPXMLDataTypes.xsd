@@ -1949,13 +1949,12 @@
 	</xs:simpleType>
 	<xs:simpleType name="GreenBuildingVerificationType">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="BPI-2101-compliant Certificate of Residential Energy Efficiency Features and Performance"/>
 			<xs:enumeration value="Certified Passive House"/>
 			<xs:enumeration value="ENERGY STAR Certified Homes"/>
 			<xs:enumeration value="EnerPHit"/>
 			<xs:enumeration value="HERS Index Score"/>
 			<xs:enumeration value="Home Energy Score"/>
-			<xs:enumeration value="Home Energy Upgrade Certificate of Energy Efficiency Improvements"/>
-			<xs:enumeration value="Home Energy Upgrade Certificate of Energy Efficiency Performance"/>
 			<xs:enumeration value="Home Performance with ENERGY STAR"/>
 			<xs:enumeration value="Indoor airPLUS"/>
 			<xs:enumeration value="LEED For Homes"/>
