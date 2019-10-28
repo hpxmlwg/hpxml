@@ -1713,7 +1713,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="NumberOfPanels" type="IntegerGreaterThanZero"/>
-									<xs:element minOccurs="0" name="InverterEfficiency" type="Efficiency"/>
+									<xs:element minOccurs="0" name="InverterEfficiency" type="Fraction"/>
 									<xs:element minOccurs="0" name="SystemLossesFraction" type="Fraction">
 										<xs:annotation>
 											<xs:documentation>System losses can be due to soiling, shading, snow, mismatch, wiring, electrical connections, light-induced degradation, nameplate rating
