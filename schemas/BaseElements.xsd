@@ -1749,8 +1749,7 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" name="Manufacturer"
-										type="Manufacturer"/>
+									<xs:element minOccurs="0" name="Manufacturer" type="Manufacturer"/>
 									<xs:element minOccurs="0" name="ModelNumber" type="Model"/>
 									<xs:element minOccurs="0" name="SerialNumber" type="xs:string"/>
 									<xs:element minOccurs="0" ref="ConnectedDevice"/>
@@ -1761,16 +1760,13 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="BatteryType" type="BatteryType"/>
-									<xs:element minOccurs="0" name="CoolingStrategy"
-										type="BatteryCoolingStrategy"/>
-									<xs:element minOccurs="0" name="NominalCapacity"
-										type="BatteryCapacity">
+									<xs:element minOccurs="0" name="CoolingStrategy" type="BatteryCoolingStrategy"/>
+									<xs:element minOccurs="0" name="NominalCapacity" type="BatteryCapacity">
 										<xs:annotation>
 											<xs:documentation>[Ah] The total Ampere hours available when the battery is discharged starting from 100% state of charge until it reaches the cut-off voltage. Capacity is computed by multiplying the discharge current (Amps) by the discharge time (hours).</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="UsableCapacity"
-										type="BatteryCapacity">
+									<xs:element minOccurs="0" name="UsableCapacity" type="BatteryCapacity">
 										<xs:annotation>
 											<xs:documentation>[Ah] The stored energy that can actually be used. In most cases usable capacity is less than the nominal capacity.</xs:documentation>
 										</xs:annotation>
@@ -1785,14 +1781,12 @@
 											<xs:documentation>[W] The peak power that the battery can generate for a short period of time.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="NominalVoltage"
-										type="xs:decimal">
+									<xs:element minOccurs="0" name="NominalVoltage" type="xs:decimal">
 										<xs:annotation>
 											<xs:documentation>[V] The nominal voltage is the battery voltage when the state of charge is 0.5 (midway between being fully charged, and fully discharged) with a 0.2C discharge current.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="RoundTripEfficiency"
-										type="Fraction">
+									<xs:element minOccurs="0" name="RoundTripEfficiency" type="Fraction">
 										<xs:annotation>
 											<xs:documentation>Not all the power that is used to charge the battery is available during discharge. Round trip efficiency is the ratio of the energy put in to the energy retrieved from storage.</xs:documentation>
 										</xs:annotation>
@@ -3621,14 +3615,12 @@
 											<xs:documentation>Many verifications or certifications have a rating system that provides an indication of the structure's level of energy efficiency. When expressed in a numeric value, please use the GreenVerificationMetric field. Verifications and Certifications can also be a name, such as Gold or Silver, which is the purpose of this field.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="Source"
-										type="GreenBuildingVerificationSource">
+									<xs:element minOccurs="0" name="Source" type="GreenBuildingVerificationSource">
 										<xs:annotation>
 											<xs:documentation>The source of the green data. May address photovoltaic characteristics, or a verified score, certification, label, etc. This may be a pick list of options showing the source. i.e. Program Sponsor, Program Verifier, Public Record, Assessor, etc.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="Status"
-										type="GreenBuildingVerificationStatus">
+									<xs:element minOccurs="0" name="Status" type="GreenBuildingVerificationStatus">
 										<xs:annotation>
 											<xs:documentation>Many verification programs include a multi-step process that may begin with plans and specs, involve testing and/or submission of building specifications along the way and include a final verification step. When ratings are involved it is not uncommon for the final rating to be either higher or lower than the target preliminary rating. Sometimes the final approval is not available until after sale and occupancy. Status indicates what the target was at the time of listing and may be updated when verification is complete. To limit liability concerns this field reflects information that was available at the time of listing or updated later and should be confirmed by the buyer.</xs:documentation>
 										</xs:annotation>
@@ -4201,78 +4193,96 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="Orientation" type="OrientationType"/>
-			<xs:element name="FrameType" minOccurs="0">
-				<xs:complexType>
-					<xs:choice>
-						<xs:element name="Aluminum">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" name="ThermalBreak" type="xs:boolean"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Composite">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Fiberglass">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Metal">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" name="ThermalBreak" type="xs:boolean"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Vinyl">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Wood">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-						<xs:element name="Other">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:element minOccurs="0" name="Description"/>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-							</xs:complexType>
-						</xs:element>
-					</xs:choice>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="FrameType" minOccurs="0" type="WindowFrameType"> </xs:element>
 			<xs:element minOccurs="0" name="GlassLayers" type="GlassLayers"/>
 			<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 			<xs:element minOccurs="0" name="GasFill" type="GasFill"/>
-			<xs:element name="Treatments" type="Treatments" minOccurs="0"/>
 			<xs:element name="Condition" type="WindowCondition" minOccurs="0"/>
 			<xs:element name="UFactor" type="UFactor" minOccurs="0"/>
 			<xs:element name="SHGC" type="SHGC" minOccurs="0"/>
+			<xs:element minOccurs="0" name="VisibleTransmittance" type="Fraction"/>
 			<xs:element name="NFRCCertified" type="xs:boolean" minOccurs="0"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification" type="WindowThirdPartyCertification"/>
-			<xs:element minOccurs="0" name="VisibleTransmittance" type="Fraction"/>
-			<xs:element minOccurs="0" name="InteriorShading" type="InteriorShading"/>
-			<xs:element minOccurs="0" name="InteriorShadingFactorSummer" type="Fraction"/>
-			<xs:element minOccurs="0" name="InteriorShadingFactorWinter" type="Fraction"/>
-			<xs:element minOccurs="0" name="ExteriorShading" type="ExteriorShading"/>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="WindowFilm">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="ShadingCoefficient" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Shading coefficients are defined as a multiplier on transmittance: 1 is transparent, 0 is opaque. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="ExteriorShading">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Type" type="ExteriorShading"/>
+						<xs:element minOccurs="0" name="SummerShadingCoefficient" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>The shading coefficient to apply during the summer months. Shading coefficients are defined as a multiplier on transmittance: 1 is transparent, 0 is opaque. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="WinterShadingCoefficient" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>The shading coefficient to apply during the winter months. Shading coefficients are defined as a multiplier on transmittance: 1 is transparent, 0 is opaque. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="InteriorShading">
+				<xs:annotation>
+					<xs:documentation>Used to describe drapes, blinds, etc. 
+
+If moveable insulation also provides shading, the shading should be documented here. </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Type" type="InteriorShading"/>
+						<xs:element minOccurs="0" name="SummerShadingCoefficient" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>The shading coefficient to apply during the summer months. Shading coefficients are defined as a multiplier on transmittance: 1 is transparent, 0 is opaque. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="WinterShadingCoefficient" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>The shading coefficient to apply during the winter months. Shading coefficients are defined as a multiplier on transmittance: 1 is transparent, 0 is opaque. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="StormWindow">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
+						<xs:element minOccurs="0" name="FrameType" type="WindowFrameType"/>
+						<xs:element minOccurs="0" name="Operable" type="xs:boolean"/>
+						<xs:element minOccurs="0" name="Condition" type="WindowCondition"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="MoveableInsulation">
+				<xs:annotation>
+					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="RValue" type="RValue"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" name="Overhangs">
 				<xs:complexType>
 					<xs:sequence>
@@ -4296,14 +4306,65 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="WeatherStripping" type="xs:boolean"/>
 			<xs:element minOccurs="0" name="Operable" type="xs:boolean"/>
-			<xs:element minOccurs="0" name="MovableInsulationRValue" type="RValue">
-				<xs:annotation>
-					<xs:documentation>Rigid opaque foam panels (permanently installed or not) or cellular shades that provide insulation. </xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
 		</xs:sequence>
 	</xs:group>
+	<xs:complexType name="WindowFrameType">
+		<xs:choice>
+			<xs:element name="Aluminum">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ThermalBreak" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Composite">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Fiberglass">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Metal">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ThermalBreak" type="xs:boolean"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Vinyl">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Wood">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Other">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Description"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
 	<xs:complexType name="AssociationsType">
 		<xs:all minOccurs="0">
 			<xs:element name="Job" minOccurs="0">

@@ -853,8 +853,6 @@
 			<xs:enumeration value="double-pane"/>
 			<xs:enumeration value="triple-pane"/>
 			<xs:enumeration value="multi-layered"/>
-			<xs:enumeration value="single-paned with storms"/>
-			<xs:enumeration value="single-paned with low-e storms"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -892,13 +890,6 @@
 			<xs:enumeration value="building"/>
 			<xs:enumeration value="other"/>
 			<xs:enumeration value="none"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="Treatments">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="window film"/>
-			<xs:enumeration value="solar screen"/>
-			<xs:enumeration value="shading"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="UFactor">
