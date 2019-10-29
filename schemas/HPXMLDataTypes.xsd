@@ -2,6 +2,13 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
 	<!-- Value Lists -->
 	<!--Address Information Below-->
+	<xs:complexType name="HPXMLString">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="schemaVersionType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="3.0"/>
