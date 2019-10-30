@@ -4387,23 +4387,51 @@
 			<xs:enumeration value="temperature"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="ClothesDryerControlType">
+		<xs:simpleContent>
+			<xs:extension base="ClothesDryerControlType_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="CollectorRatedThermalLosses_simple">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="CollectorRatedThermalLosses">
+		<xs:simpleContent>
+			<xs:extension base="CollectorRatedThermalLosses_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="SolarFraction_simple">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
 			<xs:maxInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="SolarFraction">
+		<xs:simpleContent>
+			<xs:extension base="SolarFraction_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="CollectorRatedOpticalEfficiency_simple">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
 			<xs:maxExclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="CollectorRatedOpticalEfficiency">
+		<xs:simpleContent>
+			<xs:extension base="CollectorRatedOpticalEfficiency_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="PVModuleType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="standard"/>
@@ -4411,6 +4439,13 @@
 			<xs:enumeration value="thin film"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="PVModuleType">
+		<xs:simpleContent>
+			<xs:extension base="PVModuleType_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="PVTracking_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="fixed"/>
@@ -4419,6 +4454,13 @@
 			<xs:enumeration value="2-axis"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="PVTracking">
+		<xs:simpleContent>
+			<xs:extension base="PVTracking_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="FanSpeed_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="low"/>
@@ -4426,18 +4468,39 @@
 			<xs:enumeration value="high"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="FanSpeed">
+		<xs:simpleContent>
+			<xs:extension base="FanSpeed_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="SodiumLight_Pressure_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="high"/>
 			<xs:enumeration value="low"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="SodiumLight_Pressure">
+		<xs:simpleContent>
+			<xs:extension base="SodiumLight_Pressure_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="HeatPumpBackupType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="integrated"/>
 			<xs:enumeration value="separate"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="HeatPumpBackupType">
+		<xs:simpleContent>
+			<xs:extension base="HeatPumpBackupType_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="ExternalResourceType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="photo"/>
@@ -4448,9 +4511,23 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="ExternalResourceType">
+		<xs:simpleContent>
+			<xs:extension base="ExternalResourceType_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="SolarThermalSystemEnergyFactor_simple">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:complexType name="SolarThermalSystemEnergyFactor">
+		<xs:simpleContent>
+			<xs:extension base="SolarThermalSystemEnergyFactor_simple">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 </xs:schema>

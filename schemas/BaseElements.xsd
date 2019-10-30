@@ -258,7 +258,7 @@
 								drying cycle energy as well as energy consumed during Stand-by and Off modes.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="ControlType" type="ClothesDryerControlType_simple"> </xs:element>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="ControlType" type="ClothesDryerControlType"> </xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1685,13 +1685,13 @@
 											<xs:documentation>[deg]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="CollectorRatedOpticalEfficiency" type="CollectorRatedOpticalEfficiency_simple">
+									<xs:element minOccurs="0" name="CollectorRatedOpticalEfficiency" type="CollectorRatedOpticalEfficiency">
 										<xs:annotation>
 											<xs:documentation>Often referred to as Fr-tau-alpha (FRta), this describes the optical efficiency portion of the overall collector efficiency. In the OG-100
 												SRCC Certified Solar Thermal Collector Directory, this is the y-intercept of the efficiency curve.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="CollectorRatedThermalLosses" type="CollectorRatedThermalLosses_simple">
+									<xs:element minOccurs="0" name="CollectorRatedThermalLosses" type="CollectorRatedThermalLosses">
 										<xs:annotation>
 											<xs:documentation>Often referred to as Fr-Ul (FRUl), this describes the collector thermal losses portion of the overall collector efficiency. In the OG-100
 												SRCC Certified Solar Thermal Collector Directory, this is the slope of the efficiency curve.</xs:documentation>
@@ -1703,14 +1703,14 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="ConnectedTo" type="LocalReference"/>
-									<xs:element minOccurs="0" name="SolarFraction" type="SolarFraction_simple">
+									<xs:element minOccurs="0" name="SolarFraction" type="SolarFraction">
 										<xs:annotation>
 											<xs:documentation>The Solar Fraction is the portion of the total conventional hot water heating load (delivered energy and tank standby losses). The higher
 												the solar fraction, the greater the solar contribution to water heating, which reduces the energy required by the backup water heater. This value can be
 												found in the OG-300 SRCC Certified Solar Water Heating System Directory.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="SolarEnergyFactor" type="SolarThermalSystemEnergyFactor_simple">
+									<xs:element minOccurs="0" name="SolarEnergyFactor" type="SolarThermalSystemEnergyFactor">
 										<xs:annotation>
 											<xs:documentation>The Solar Energy Factor is defined as the energy delivered by the system divided by the electrical or gas energy put into the system. The
 												higher the number, the more energy efficient. This value can be found in the OG-300 SRCC Certified Solar Water Heating System
@@ -1736,8 +1736,8 @@
 									<xs:element minOccurs="0" ref="ConnectedDevice"/>
 									<xs:element minOccurs="0" name="Location" type="PVSystemLocation"/>
 									<xs:element minOccurs="0" name="Ownership" type="PVSystemOwnership"/>
-									<xs:element minOccurs="0" name="ModuleType" type="PVModuleType_simple"> </xs:element>
-									<xs:element maxOccurs="1" minOccurs="0" name="Tracking" type="PVTracking_simple"> </xs:element>
+									<xs:element minOccurs="0" name="ModuleType" type="PVModuleType"> </xs:element>
+									<xs:element maxOccurs="1" minOccurs="0" name="Tracking" type="PVTracking"> </xs:element>
 									<xs:element minOccurs="0" name="ArrayOrientation" type="OrientationType"/>
 									<xs:element minOccurs="0" name="ArrayAzimuth" type="AzimuthType">
 										<xs:annotation>
@@ -2067,7 +2067,7 @@
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element minOccurs="0" name="FanSpeed" type="FanSpeed_simple"> </xs:element>
+									<xs:element minOccurs="0" name="FanSpeed" type="FanSpeed"> </xs:element>
 									<xs:element minOccurs="0" name="Airflow" type="HPXMLDouble">
 										<xs:annotation>
 											<xs:documentation>[CFM]</xs:documentation>
@@ -2146,7 +2146,7 @@
 									<xs:element name="Sodium">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element minOccurs="0" name="Pressure" type="SodiumLight_Pressure_simple"> </xs:element>
+												<xs:element minOccurs="0" name="Pressure" type="SodiumLight_Pressure"> </xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 											<xs:attribute ref="dataSource"/>
@@ -3215,7 +3215,7 @@
 					</xs:element>
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
 					<xs:element name="GeothermalLoop" type="GeothermalLoop" minOccurs="0"/>
-					<xs:element minOccurs="0" name="BackupType" type="HeatPumpBackupType_simple">
+					<xs:element minOccurs="0" name="BackupType" type="HeatPumpBackupType">
 						<xs:annotation>
 							<xs:documentation>Whether the heat pump backup is integrated into the unit (describe in BackupSystemFuel, BackupAnnualHeatingEfficiency, BackupHeatingCapacity), or a
 								separate heating system (add reference in BackupSystem).</xs:documentation>
@@ -5311,7 +5311,7 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="URL" type="xs:anyURI"/>
-				<xs:element name="Type" type="ExternalResourceType_simple"> </xs:element>
+				<xs:element name="Type" type="ExternalResourceType"> </xs:element>
 				<xs:element name="Description" type="HPXMLString"/>
 				<xs:element minOccurs="0" ref="extension"/>
 			</xs:sequence>
