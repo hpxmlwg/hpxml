@@ -30,14 +30,21 @@
 	</xs:complexType>
 	<xs:complexType name="HPXMLDouble">
 		<xs:simpleContent>
-			<xs:extension base="xs:boolean">
+			<xs:extension base="xs:double">
 				<xs:attribute ref="dataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:complexType name="HPXMLDecimal">
 		<xs:simpleContent>
-			<xs:extension base="xs:boolean">
+			<xs:extension base="xs:decimal">
+				<xs:attribute ref="dataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="HPXMLInteger">
+		<xs:simpleContent>
+			<xs:extension base="xs:integer">
 				<xs:attribute ref="dataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
