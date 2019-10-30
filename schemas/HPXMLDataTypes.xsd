@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
+	<xs:simpleType name="DataSource">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="user"/>
+			<xs:enumeration value="software"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="HPXMLString">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
@@ -4374,10 +4380,77 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="DataSource">
+	<xs:simpleType name="ClothesDryerControlType_simple">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="user"/>
-			<xs:enumeration value="software"/>
+			<xs:enumeration value="timer"/>
+			<xs:enumeration value="moisture"/>
+			<xs:enumeration value="temperature"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CollectorRatedThermalLosses_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SolarFraction_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CollectorRatedOpticalEfficiency_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+			<xs:maxExclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PVModuleType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="standard"/>
+			<xs:enumeration value="premium"/>
+			<xs:enumeration value="thin film"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PVTracking_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="fixed"/>
+			<xs:enumeration value="1-axis"/>
+			<xs:enumeration value="1-axis backtracked"/>
+			<xs:enumeration value="2-axis"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FanSpeed_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="low"/>
+			<xs:enumeration value="medium"/>
+			<xs:enumeration value="high"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SodiumLight_Pressure_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="high"/>
+			<xs:enumeration value="low"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HeatPumpBackupType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="integrated"/>
+			<xs:enumeration value="separate"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ExternalResourceType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="photo"/>
+			<xs:enumeration value="illustration"/>
+			<xs:enumeration value="document"/>
+			<xs:enumeration value="spreadsheet"/>
+			<xs:enumeration value="website"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SolarThermalSystemEnergyFactor_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
