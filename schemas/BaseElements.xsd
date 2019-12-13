@@ -404,10 +404,20 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element minOccurs="0" name="Type" type="DehumidifierType">
+						<xs:annotation>
+							<xs:documentation>Portable room dehumidifiers are typically used to dehumidify a single room or space and can be easily moved to where they are needed. Whole-home dehumidifiers are typically installed to use your home’s air ducts to dehumidify one or more rooms and are often permanent. Some dehumifiers can operate in both configurations by means of a ducting kit.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="DehumidifierLocation"/>
 					<xs:element minOccurs="0" name="Capacity" type="HPXMLDouble">
 						<xs:annotation>
-							<xs:documentation>Rated water removal rate. [pints/day]</xs:documentation>
+							<xs:documentation>Rated water removal rate. This represents the expected performance in a basement for portable dehumidifiers and expected performance in the average home for whole-home dehumifiiers. [pints/day]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="CaseVolume" type="HPXMLDouble">
+						<xs:annotation>
+							<xs:documentation>For whole-home dehumidifiers, this is a measure of the rectangular volume that the product case occupies, exclusive of any duct attachment collars or other external components. [ft^3]</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="EnergyFactor" type="HPXMLDouble">
