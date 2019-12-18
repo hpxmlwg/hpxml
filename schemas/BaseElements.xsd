@@ -244,12 +244,12 @@
 		<xs:complexContent>
 			<xs:extension base="InsulationLayerInfoBase">
 				<xs:sequence>
-					<xs:element name="DistanceToFoundationWallTop" type="HPXMLDouble">
+					<xs:element name="DistanceToFoundationWallTop" type="LengthMeasurement">
 						<xs:annotation>
 							<xs:documentation>[ft] Vertical distance from top of insulation layer to top of foundation wall.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element name="InsulationLayerHeight" type="HPXMLDouble">
+					<xs:element name="InsulationLayerHeight" type="LengthMeasurement">
 						<xs:annotation>
 							<xs:documentation>[ft] Height of vertical insulation layer.</xs:documentation>
 						</xs:annotation>
