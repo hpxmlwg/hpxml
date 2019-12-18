@@ -184,7 +184,7 @@
 		</xs:choice>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
-	<xs:complexType name="InsulationInfo">
+	<xs:complexType name="InsulationInfoBase">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
@@ -195,25 +195,69 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="MisalignedInsulation" type="HPXMLBoolean"/>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer">
-				<xs:complexType>
-					<xs:sequence maxOccurs="1">
-						<xs:element name="InstallationType" type="InstallationType" minOccurs="0"/>
-						<xs:element name="InsulationMaterial" type="InsulationMaterial" minOccurs="0"/>
-						<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
-						<xs:element name="Thickness" type="LengthMeasurement" minOccurs="0">
-							<xs:annotation>
-								<xs:documentation>[in]</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element ref="extension" minOccurs="0"/>
-					</xs:sequence>
-					<xs:attribute name="dataSource" type="DataSource"/>
-				</xs:complexType>
-			</xs:element>
-			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="InsulationInfo">
+		<xs:complexContent>
+			<xs:extension base="InsulationInfoBase">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer" type="InsulationLayerInfo"> </xs:element>
+					<xs:element ref="extension" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FoundationWallInsulationInfo">
+		<xs:complexContent>
+			<xs:extension base="InsulationInfoBase">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer" type="FoundationWallInsulationLayerInfo"> </xs:element>
+					<xs:element ref="extension" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="InsulationLayerInfoBase">
+		<xs:sequence>
+			<xs:element name="InstallationType" type="InstallationType" minOccurs="0"/>
+			<xs:element name="InsulationMaterial" type="InsulationMaterial" minOccurs="0"/>
+			<xs:element name="NominalRValue" type="RValue" minOccurs="0"/>
+			<xs:element name="Thickness" type="LengthMeasurement" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[in]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="InsulationLayerInfo">
+		<xs:complexContent>
+			<xs:extension base="InsulationLayerInfoBase">
+				<xs:sequence>
+					<xs:element ref="extension"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="FoundationWallInsulationLayerInfo">
+		<xs:complexContent>
+			<xs:extension base="InsulationLayerInfoBase">
+				<xs:sequence>
+					<xs:element name="DistanceToFoundationWallTop" type="HPXMLDouble">
+						<xs:annotation>
+							<xs:documentation>[ft] Vertical distance from top of insulation layer to top of foundation wall.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="InsulationLayerHeight" type="HPXMLDouble">
+						<xs:annotation>
+							<xs:documentation>[ft] Height of vertical insulation layer.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="extension"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:element name="CoolingSystemInfo" type="CoolingSystemInfoType"/>
 	<xs:element name="HeatPumpInfo" type="HeatPumpInfoType"/>
@@ -910,7 +954,7 @@
 											<xs:documentation>[ft] Vertical distance from top of foundation wall to bottom of insulation.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element maxOccurs="1" minOccurs="0" name="Insulation" type="InsulationInfo"/>
+									<xs:element maxOccurs="1" minOccurs="0" name="Insulation" type="FoundationWallInsulationInfo"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
