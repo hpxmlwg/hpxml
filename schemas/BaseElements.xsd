@@ -218,6 +218,26 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:complexType name="SlabPerimeterInsulationInfo">
+		<xs:complexContent>
+			<xs:extension base="InsulationInfoBase">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer" type="SlabPerimeterInsulationLayerInfo"> </xs:element>
+					<xs:element ref="extension" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="UnderSlabInsulationInfo">
+		<xs:complexContent>
+			<xs:extension base="InsulationInfoBase">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="Layer" type="UnderSlabInsulationLayerInfo"> </xs:element>
+					<xs:element ref="extension" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="InsulationLayerInfoBase">
 		<xs:sequence>
 			<xs:element name="InstallationType" type="InstallationType" minOccurs="0"/>
@@ -252,6 +272,39 @@
 					<xs:element name="InsulationLayerHeight" type="LengthMeasurement" minOccurs="0">
 						<xs:annotation>
 							<xs:documentation>[ft] Height of vertical insulation layer.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="extension" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SlabPerimeterInsulationLayerInfo">
+		<xs:complexContent>
+			<xs:extension base="InsulationLayerInfoBase">
+				<xs:sequence>
+					<xs:element name="PerimeterInsulationDepth" type="LengthMeasurement" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[ft] Depth from grade to bottom of vertical slab perimeter insulation</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="extension" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="UnderSlabInsulationLayerInfo">
+		<xs:complexContent>
+			<xs:extension base="InsulationLayerInfoBase">
+				<xs:sequence>
+					<xs:element name="UnderSlabInsulationWidth" type="LengthMeasurement" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>[ft] Width from slab edge inward of horizontal under-slab insulation</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="UnderSlabInsulationSpanEntireSlab" type="HPXMLBoolean" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation/>
 						</xs:annotation>
 					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
@@ -1018,17 +1071,6 @@
 											<xs:documentation>[ft] Perimeter of the slab exposed to ambient conditions</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="PerimeterInsulationDepth" type="LengthMeasurement">
-										<xs:annotation>
-											<xs:documentation>[ft] Depth from grade to bottom of vertical slab perimeter insulation</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element minOccurs="0" name="UnderSlabInsulationWidth" type="LengthMeasurement">
-										<xs:annotation>
-											<xs:documentation>[ft] Width from slab edge inward of horizontal under-slab insulation</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element minOccurs="0" name="UnderSlabInsulationSpansEntireSlab" type="HPXMLBoolean"/>
 									<xs:element minOccurs="0" name="OnGradeExposedPerimeter" type="LengthMeasurement">
 										<xs:annotation>
 											<xs:documentation>[ft] Perimeter of slab measured in feet that is on-grade (2 ft. below grade or less) and exposed to ambient conditions.</xs:documentation>
@@ -1040,8 +1082,8 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="FloorCovering" type="FloorCovering"/>
-									<xs:element maxOccurs="1" minOccurs="0" name="PerimeterInsulation" type="InsulationInfo"/>
-									<xs:element minOccurs="0" name="UnderSlabInsulation" type="InsulationInfo"/>
+									<xs:element maxOccurs="1" minOccurs="0" name="PerimeterInsulation" type="SlabPerimeterInsulationInfo"/>
+									<xs:element minOccurs="0" name="UnderSlabInsulation" type="UnderSlabInsulationInfo"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
