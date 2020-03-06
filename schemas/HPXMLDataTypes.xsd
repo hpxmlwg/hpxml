@@ -1996,6 +1996,12 @@
 			<xs:enumeration value="roof deck"/>
 			<xs:enumeration value="unconditioned space"/>
 			<xs:enumeration value="under slab"/>
+			<xs:enumeration value="other heated space"/>
+			<xs:enumeration value="other housing unit"/>
+			<xs:enumeration value="other housing unit above"/>
+			<xs:enumeration value="other housing unit below"/>
+			<xs:enumeration value="other multifamily buffer space"/>
+			<xs:enumeration value="other non-freezing space"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="DuctLocation">
@@ -2175,6 +2181,12 @@
 			<xs:enumeration value="other exterior"/>
 			<xs:enumeration value="roof deck"/>
 			<xs:enumeration value="unconditioned space"/>
+			<xs:enumeration value="other heated space"/>
+			<xs:enumeration value="other housing unit"/>
+			<xs:enumeration value="other housing unit above"/>
+			<xs:enumeration value="other housing unit below"/>
+			<xs:enumeration value="other multifamily buffer space"/>
+			<xs:enumeration value="other non-freezing space"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="UnitLocation">
