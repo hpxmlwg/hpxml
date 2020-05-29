@@ -1043,6 +1043,34 @@
 	</xs:complexType>
 	<!--Other Health and Safety Below-->
 	<!--Standard Measure Fields Below-->
+	<xs:simpleType name="FuelLoadFuelType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="natural gas"/>
+			<xs:enumeration value="renewable natural gas"/>
+			<xs:enumeration value="fuel oil"/>
+			<xs:enumeration value="fuel oil 1"/>
+			<xs:enumeration value="fuel oil 2"/>
+			<xs:enumeration value="fuel oil 4"/>
+			<xs:enumeration value="fuel oil 5/6"/>
+			<xs:enumeration value="solar hot water"/>
+			<xs:enumeration value="propane"/>
+			<xs:enumeration value="kerosene"/>
+			<xs:enumeration value="diesel"/>
+			<xs:enumeration value="anthracite coal"/>
+			<xs:enumeration value="bituminous coal"/>
+			<xs:enumeration value="coke"/>
+			<xs:enumeration value="wood"/>
+			<xs:enumeration value="wood pellets"/>
+			<xs:enumeration value="combination"/>
+			<xs:enumeration value="water"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FuelLoadFuelType">
+		<xs:simpleContent>
+			<xs:extension base="FuelLoadFuelType_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="EventType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="audit"/>
@@ -1530,6 +1558,16 @@
 			<xs:extension base="PlugLoadControlType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="FuelLoadControlType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FuelLoadControlType">
+		<xs:simpleContent>
+			<xs:extension base="FuelLoadControlType_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="RadiantBarrierLocation_simple">
@@ -2796,6 +2834,19 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="FuelLoadType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="grill"/>
+			<xs:enumeration value="lighting"/>
+			<xs:enumeration value="fireplace"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FuelLoadType">
+		<xs:simpleContent>
+			<xs:extension base="FuelLoadType_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="PlugLoadLocation_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="interior"/>
@@ -2809,6 +2860,17 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="FuelLoadLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="interior"/>
+			<xs:enumeration value="exterior"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FuelLoadLocation">
+		<xs:simpleContent>
+			<xs:extension base="FuelLoadLocation_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="PlugLoadUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="kWh/year"/>
@@ -2820,6 +2882,17 @@
 			<xs:extension base="PlugLoadUnits_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="FuelLoadUnits_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="therm/year"/>
+			<xs:enumeration value="Btu"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FuelLoadUnits">
+		<xs:simpleContent>
+			<xs:extension base="FuelLoadUnits_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="WindowCondition_simple">
