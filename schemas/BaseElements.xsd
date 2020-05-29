@@ -2515,12 +2515,12 @@
 												<xs:element minOccurs="0" name="Type" type="HotTubPumpType"/>
 												<xs:element minOccurs="0" name="Manufacturer" type="HPXMLString">
 													<xs:annotation>
-														<xs:documentation>Manufacturer of pool pump.</xs:documentation>
+														<xs:documentation>Manufacturer of hot tub pump.</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="SerialNumber" type="HPXMLString">
 													<xs:annotation>
-														<xs:documentation>Serial number of pool pump.</xs:documentation>
+														<xs:documentation>Serial number of hot tub pump.</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="ModelNumber" type="HPXMLString">
@@ -2555,7 +2555,7 @@
 												</xs:element>
 												<xs:element minOccurs="0" name="TotalHorsepower" type="Power">
 													<xs:annotation>
-														<xs:documentation>The total horsepower, or product of the rated horsepower and the service factor of a motor used on a pool pump (also known as
+														<xs:documentation>The total horsepower, or product of the rated horsepower and the service factor of a motor used on a hot tub pump (also known as
 															SFHP) based on the maximum continuous duty motor power output rating allowable for the nameplate ambient rating and motor insulation class
 															(e.g., total horsepower = rated horsepower * service factor) (ANSI/APSP/ICC-15 2011).</xs:documentation>
 													</xs:annotation>
