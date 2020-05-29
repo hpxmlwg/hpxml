@@ -3857,6 +3857,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HotTubType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="in ground"/>
+			<xs:enumeration value="on ground"/>
+			<xs:enumeration value="above ground"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HotTubType">
+		<xs:simpleContent>
+			<xs:extension base="HotTubType_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="MonthsPerYear_simple">
 		<xs:restriction base="xs:integer">
 			<xs:minInclusive value="0"/>
@@ -3887,6 +3902,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HotTubFilterType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sand"/>
+			<xs:enumeration value="diatomaceous earth"/>
+			<xs:enumeration value="cartridge"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HotTubFilterType">
+		<xs:simpleContent>
+			<xs:extension base="HotTubFilterType_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="PoolPumpType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="single speed"/>
@@ -3903,6 +3933,22 @@
 			<xs:extension base="PoolPumpType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HotTubPumpType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="single speed"/>
+			<xs:enumeration value="multi speed"/>
+			<xs:enumeration value="variable speed"/>
+			<xs:enumeration value="variable flow"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HotTubPumpType">
+		<xs:simpleContent>
+			<xs:extension base="HotTubPumpType_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="PoolPump3rdPartyCertification_simple">
@@ -3924,6 +3970,23 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HotTubPump3rdPartyCertification_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ENERGY STAR"/>
+			<xs:enumeration value="ENERGY STAR Most Efficient"/>
+			<xs:enumeration value="CEE Tier 1"/>
+			<xs:enumeration value="CEE Tier 2"/>
+			<xs:enumeration value="Cee Tier 3"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HotTubPump3rdPartyCertification">
+		<xs:simpleContent>
+			<xs:extension base="HotTubPump3rdPartyCertification_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="PoolPumpSpeedSetting_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="low"/>
@@ -3939,6 +4002,21 @@
 			<xs:extension base="PoolPumpSpeedSetting_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HotTubPumpSpeedSetting_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="low"/>
+			<xs:enumeration value="high"/>
+			<xs:enumeration value="most efficient"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HotTubPumpSpeedSetting">
+		<xs:simpleContent>
+			<xs:extension base="HotTubPumpSpeedSetting_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="Speed_simple">
@@ -3983,6 +4061,22 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HotTubCleanerType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="robotic"/>
+			<xs:enumeration value="suction side"/>
+			<xs:enumeration value="pressure side"/>
+			<xs:enumeration value="booster pump"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HotTubCleanerType">
+		<xs:simpleContent>
+			<xs:extension base="HotTubCleanerType_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="PoolHeaterType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="gas fired"/>
@@ -3999,6 +4093,22 @@
 			<xs:extension base="PoolHeaterType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HotTubHeaterType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gas fired"/>
+			<xs:enumeration value="electric resistance"/>
+			<xs:enumeration value="heat pump"/>
+			<xs:enumeration value="solar"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HotTubHeaterType">
+		<xs:simpleContent>
+			<xs:extension base="HotTubHeaterType_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="BPI2400CalibrationQualification_simple">
