@@ -2711,13 +2711,13 @@
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="ConnectedDevice"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element name="FuelLoadType" type="PlugLoadType" minOccurs="0"/>
-									<xs:element minOccurs="0" name="Location" type="PlugLoadLocation"/>
+									<xs:element name="FuelLoadType" type="FuelLoadType" minOccurs="0"/>
+									<xs:element minOccurs="0" name="Location" type="FuelLoadLocation"/>
 									<xs:element name="Count" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Load">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="Units" type="PlugLoadUnits"/>
+												<xs:element name="Units" type="FuelLoadUnits"/>
 												<xs:element name="Value" type="HPXMLDouble"/>
 											</xs:sequence>
 											<xs:attribute name="dataSource" type="DataSource"/>
@@ -2737,7 +2737,7 @@
 									<xs:element minOccurs="0" name="ControlsFuelLoad" type="LocalReference"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element name="Count" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
-									<xs:element name="FuelLoadControlType" minOccurs="0" type="PlugLoadControlType"/>
+									<xs:element name="FuelLoadControlType" minOccurs="0" type="FuelLoadControlType"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
