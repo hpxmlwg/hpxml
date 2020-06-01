@@ -2366,7 +2366,7 @@
 	</xs:complexType>
 	<xs:complexType name="MiscLoads">
 		<xs:sequence>
-			<xs:element name="PlugLoad" maxOccurs="unbounded">
+			<xs:element name="PlugLoad" maxOccurs="unbounded" minOccurs="0">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
