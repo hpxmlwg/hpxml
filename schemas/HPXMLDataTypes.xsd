@@ -2876,6 +2876,8 @@
 	<xs:complexType name="FuelLoadUnits">
 		<xs:simpleContent>
 			<xs:extension base="FuelLoadUnits_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="PoolHeaterUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="kWh/year"/>
