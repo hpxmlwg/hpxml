@@ -1043,34 +1043,6 @@
 	</xs:complexType>
 	<!--Other Health and Safety Below-->
 	<!--Standard Measure Fields Below-->
-	<xs:simpleType name="FuelLoadFuelType_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="natural gas"/>
-			<xs:enumeration value="renewable natural gas"/>
-			<xs:enumeration value="fuel oil"/>
-			<xs:enumeration value="fuel oil 1"/>
-			<xs:enumeration value="fuel oil 2"/>
-			<xs:enumeration value="fuel oil 4"/>
-			<xs:enumeration value="fuel oil 5/6"/>
-			<xs:enumeration value="solar hot water"/>
-			<xs:enumeration value="propane"/>
-			<xs:enumeration value="kerosene"/>
-			<xs:enumeration value="diesel"/>
-			<xs:enumeration value="anthracite coal"/>
-			<xs:enumeration value="bituminous coal"/>
-			<xs:enumeration value="coke"/>
-			<xs:enumeration value="wood"/>
-			<xs:enumeration value="wood pellets"/>
-			<xs:enumeration value="combination"/>
-			<xs:enumeration value="water"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="FuelLoadFuelType">
-		<xs:simpleContent>
-			<xs:extension base="FuelLoadFuelType_simple"/>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="EventType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="audit"/>
@@ -2887,7 +2859,7 @@
 	<xs:simpleType name="FuelLoadUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="therm/year"/>
-			<xs:enumeration value="Btu"/>
+			<xs:enumeration value="Btuh"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="FuelLoadUnits">
