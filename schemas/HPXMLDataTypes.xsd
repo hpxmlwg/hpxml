@@ -1747,6 +1747,7 @@
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="room air conditioner"/>
 			<xs:enumeration value="evaporative cooler"/>
+			<xs:enumeration value="chiller"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -1830,13 +1831,13 @@
 	</xs:complexType>
 	<xs:simpleType name="HeatPumpType_simple">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="water-to-air"/>
-			<xs:enumeration value="water-to-water"/>
 			<xs:enumeration value="air-to-air"/>
 			<xs:enumeration value="air-to-water"/>
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="ground-to-air"/>
 			<xs:enumeration value="ground-to-water"/>
+			<xs:enumeration value="water-to-air"/>
+			<xs:enumeration value="water-to-water"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="HeatPumpType">
