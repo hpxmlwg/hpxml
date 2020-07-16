@@ -1413,7 +1413,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="FractionDHWLoadServed" type="Fraction"/>
-									<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
+									<xs:element name="HeatingCapacity" type="WaterHeaterCapacity" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[Btuh]</xs:documentation>
 										</xs:annotation>
@@ -3069,6 +3069,12 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="HVACMaintenance" type="HVACMaintenance"/>
+			<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
+				<xs:annotation>
+					<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
@@ -3078,7 +3084,7 @@
 				<xs:sequence minOccurs="1" maxOccurs="1">
 					<xs:element name="HeatingSystemType" type="HeatingSystemType" minOccurs="0"/>
 					<xs:element name="HeatingSystemFuel" type="FuelType" minOccurs="0"/>
-					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
+					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0" maxOccurs="2">
 						<xs:annotation>
 							<xs:documentation>[Btuh] Input Heating Capacity</xs:documentation>
 						</xs:annotation>
@@ -3224,17 +3230,17 @@
 				<xs:sequence minOccurs="0">
 					<xs:element name="HeatPumpType" type="HeatPumpType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="HeatPumpFuel" type="FuelType"/>
-					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
+					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0" maxOccurs="2">
 						<xs:annotation>
 							<xs:documentation>[Btuh] Typically the nameplate capacity at 47F.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="HeatingCapacity17F" type="Capacity">
+					<xs:element minOccurs="0" name="HeatingCapacity17F" type="Capacity" maxOccurs="2">
 						<xs:annotation>
 							<xs:documentation>[Btuh] Capacity at 17F from AHRI database.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="CoolingCapacity" type="Capacity">
+					<xs:element minOccurs="0" name="CoolingCapacity" type="Capacity" maxOccurs="2">
 						<xs:annotation>
 							<xs:documentation>[Btuh]</xs:documentation>
 						</xs:annotation>
@@ -3254,7 +3260,7 @@
 					</xs:element>
 					<xs:element name="BackupSystemFuel" type="FuelType" minOccurs="0"/>
 					<xs:element name="BackupAnnualHeatingEfficiency" minOccurs="0" type="HeatingEfficiencyType" maxOccurs="unbounded"> </xs:element>
-					<xs:element minOccurs="0" name="BackupHeatingCapacity" type="Capacity">
+					<xs:element minOccurs="0" name="BackupHeatingCapacity" type="Capacity" maxOccurs="2">
 						<xs:annotation>
 							<xs:documentation>[Btuh]</xs:documentation>
 						</xs:annotation>
@@ -3284,7 +3290,7 @@
 				<xs:sequence>
 					<xs:element name="CoolingSystemType" type="CoolingSystemType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="CoolingSystemFuel" type="FuelType"/>
-					<xs:element minOccurs="0" name="CoolingCapacity" type="HPXMLDouble">
+					<xs:element minOccurs="0" name="CoolingCapacity" type="Capacity" maxOccurs="2">
 						<xs:annotation>
 							<xs:documentation>[Btuh]</xs:documentation>
 						</xs:annotation>
