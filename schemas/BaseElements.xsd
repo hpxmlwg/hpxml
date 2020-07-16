@@ -1240,17 +1240,17 @@
 												<xs:element minOccurs="0" name="Manufacturer" type="HPXMLString"/>
 												<xs:element minOccurs="0" name="SerialNumber" type="HPXMLString"/>
 												<xs:element minOccurs="0" name="FanType" type="VentilationFanType"/>
-												<xs:element minOccurs="0" name="RatedFlowRate" type="VentilationFlowRate">
+												<xs:element minOccurs="0" name="RatedFlowRate" type="VentilationFlowRate" maxOccurs="2">
 													<xs:annotation>
 														<xs:documentation>[CFM] as rated by manufacturer</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="CalculatedFlowRate" type="VentilationFlowRate">
+												<xs:element minOccurs="0" name="CalculatedFlowRate" type="VentilationFlowRate" maxOccurs="2">
 													<xs:annotation>
 														<xs:documentation>[CFM] as calculated using duct size, prescriptive approach</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="TestedFlowRate" type="VentilationFlowRate">
+												<xs:element minOccurs="0" name="TestedFlowRate" type="VentilationFlowRate" maxOccurs="2">
 													<xs:annotation>
 														<xs:documentation>[CFM] as tested by assessor/auditor/inspector</xs:documentation>
 													</xs:annotation>
@@ -1330,7 +1330,7 @@
 															accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="FanPower" type="VentilationFanPower">
+												<xs:element minOccurs="0" name="FanPower" type="VentilationFanPower" maxOccurs="2">
 													<xs:annotation>
 														<xs:documentation>[W]</xs:documentation>
 													</xs:annotation>
