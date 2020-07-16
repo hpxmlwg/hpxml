@@ -3439,6 +3439,7 @@
 					<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
