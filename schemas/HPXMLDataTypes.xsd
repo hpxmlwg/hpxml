@@ -2094,6 +2094,17 @@
 		<xs:simpleContent>
 			<xs:extension base="Capacity_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
+				<xs:attribute name="scope" type="DataScope"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="WaterHeaterCapacity_simple">
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:complexType name="WaterHeaterCapacity">
+		<xs:simpleContent>
+			<xs:extension base="WaterHeaterCapacity_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -4531,4 +4542,10 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="DataScope">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="building"/>
+			<xs:enumeration value="unit"/>
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
