@@ -2736,6 +2736,7 @@
 			<xs:enumeration value="baseboard"/>
 			<xs:enumeration value="radiant floor"/>
 			<xs:enumeration value="radiant ceiling"/>
+			<xs:enumeration value="fan coil"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
