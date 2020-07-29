@@ -1378,6 +1378,12 @@
 									<xs:element name="ModelNumber" type="Model" minOccurs="0"/>
 									<xs:element minOccurs="0" name="AHRINumber" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="SerialNumber" type="HPXMLString"/>
+									<xs:element minOccurs="0" name="IsSharedSystem" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Does the system serve multiple building/dwelling units or a shared laundry/equipment room?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="NumberofUnitsServed" type="xs:integer"/>
 									<xs:element minOccurs="0" name="PerformanceAdjustment" type="Fraction"/>
 									<xs:element minOccurs="0" name="ThirdPartyCertification" type="DHWThirdPartyCertification" maxOccurs="unbounded"/>
 									<xs:element name="TankVolume" type="Volume" minOccurs="0">
