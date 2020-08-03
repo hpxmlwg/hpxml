@@ -274,7 +274,7 @@
 
 				<xs:sequence>
 					<xs:choice minOccurs="0">
-						<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference"/>
+						<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference" maxOccurs="unbounded"/>
 						<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
 					</xs:choice>
 					<xs:element name="Type" type="ClothesWasherType" minOccurs="0"/>
@@ -348,7 +348,7 @@
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
 					<xs:choice minOccurs="0">
-						<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference"/>
+						<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference" maxOccurs="unbounded"/>
 						<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
 					</xs:choice>
 					<xs:element minOccurs="0" name="Type" type="DishwasherType"/>
@@ -1659,7 +1659,7 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" name="AttachedToWaterHeatingSystem" type="LocalReference">
+									<xs:element minOccurs="0" name="AttachedToWaterHeatingSystem" type="LocalReference" maxOccurs="unbounded">
 										<xs:annotation>
 											<xs:documentation>The water heating system that this distribution system serves.</xs:documentation>
 										</xs:annotation>
@@ -1739,7 +1739,7 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:choice minOccurs="0">
-										<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference"/>
+										<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference" maxOccurs="unbounded"/>
 										<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
 									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType" type="WaterFixtureType"/>
