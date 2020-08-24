@@ -1839,6 +1839,7 @@
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="ground-to-air"/>
 			<xs:enumeration value="ground-to-water"/>
+			<xs:enumeration value="water-loop-to-air"/>
 			<xs:enumeration value="variable refrigerant flow"/>
 		</xs:restriction>
 	</xs:simpleType>
