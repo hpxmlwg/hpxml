@@ -3406,44 +3406,7 @@
 	</xs:complexType>
 	<xs:complexType name="HydronicAndAirDistributionInfo">
 		<xs:sequence>
-			<xs:element name="FractionHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
-			<xs:element minOccurs="0" name="PipeRValue" type="RValue"/>
-			<xs:element minOccurs="0" name="PipeInsulationThickness" type="LengthMeasurement">
-				<xs:annotation>
-					<xs:documentation>[in]</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" name="PipeLength" type="LengthMeasurement">
-				<xs:annotation>
-					<xs:documentation>[ft]</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" name="PipeDiameter" type="PipeDiameterType"/>
-			<xs:element name="HydronicDistributionType" type="HydronicDistributionType" minOccurs="0"/>
-			<xs:element minOccurs="0" name="SupplyTemperature" type="Temperature">
-				<xs:annotation>
-					<xs:documentation>[degF]</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" name="ReturnTemperature" type="Temperature">
-				<xs:annotation>
-					<xs:documentation>[degF]</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element minOccurs="0" name="PumpandZoneValve">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element minOccurs="0" name="ValveCorrections" type="HPXMLBoolean">
-							<xs:annotation>
-								<xs:documentation>System Pump and Zone Valve Corrections made</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="ThermostaticRadiatorValves" type="HPXMLBoolean"/>
-						<xs:element minOccurs="0" name="VariableSpeedPump" type="HPXMLBoolean"/>
-					</xs:sequence>
-					<xs:attribute name="dataSource" type="DataSource"/>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="HydronicAndAirDistributionType" type="HydronicAndAirDistributionType" minOccurs="0"/>
 			<xs:element name="AirHandlerMotorType" type="AirHandlerMotorType" minOccurs="0"/>
 			<xs:element minOccurs="0" name="DuctLeakageMeasurement" type="DuctLeakageMeasurementType" maxOccurs="unbounded"/>
 			<xs:element minOccurs="0" name="DuctSystemSizingAppropriate" type="HPXMLBoolean"/>
@@ -3483,6 +3446,43 @@
 					<xs:sequence>
 						<xs:element minOccurs="0" name="Supply" type="TotalExternalStaticPressureMeasurement"/>
 						<xs:element minOccurs="0" name="Return" type="TotalExternalStaticPressureMeasurement"/>
+					</xs:sequence>
+					<xs:attribute name="dataSource" type="DataSource"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="FractionHydronicPipeInsulated" type="Fraction" minOccurs="0"/>
+			<xs:element minOccurs="0" name="PipeRValue" type="RValue"/>
+			<xs:element minOccurs="0" name="PipeInsulationThickness" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[in]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PipeLength" type="LengthMeasurement">
+				<xs:annotation>
+					<xs:documentation>[ft]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PipeDiameter" type="PipeDiameterType"/>
+			<xs:element minOccurs="0" name="SupplyTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[degF]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="ReturnTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[degF]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="PumpandZoneValve">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="ValveCorrections" type="HPXMLBoolean">
+							<xs:annotation>
+								<xs:documentation>System Pump and Zone Valve Corrections made</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="ThermostaticRadiatorValves" type="HPXMLBoolean"/>
+						<xs:element minOccurs="0" name="VariableSpeedPump" type="HPXMLBoolean"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
