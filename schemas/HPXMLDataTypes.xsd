@@ -1145,7 +1145,6 @@
 	</xs:complexType>
 	<xs:simpleType name="AdjacentTo_simple">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="adiabatic"/>
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
 			<xs:enumeration value="attic - unconditioned"/>
