@@ -1747,6 +1747,8 @@
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="room air conditioner"/>
 			<xs:enumeration value="evaporative cooler"/>
+			<xs:enumeration value="chiller"/>
+			<xs:enumeration value="cooling tower"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -1837,6 +1839,8 @@
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="ground-to-air"/>
 			<xs:enumeration value="ground-to-water"/>
+			<xs:enumeration value="water-loop-to-air"/>
+			<xs:enumeration value="variable refrigerant flow"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="HeatPumpType">
@@ -2092,6 +2096,17 @@
 	<xs:complexType name="Capacity">
 		<xs:simpleContent>
 			<xs:extension base="Capacity_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+				<xs:attribute name="scope" type="DataScope"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="WaterHeaterCapacity_simple">
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:complexType name="WaterHeaterCapacity">
+		<xs:simpleContent>
+			<xs:extension base="WaterHeaterCapacity_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2742,6 +2757,20 @@
 	<xs:complexType name="AirDistributionType">
 		<xs:simpleContent>
 			<xs:extension base="AirDistributionType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HydronicAndAirDistributionType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="fan coil"/>
+			<xs:enumeration value="water loop heat pump"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HydronicAndAirDistributionType">
+		<xs:simpleContent>
+			<xs:extension base="HydronicAndAirDistributionType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
