@@ -1255,17 +1255,17 @@
 												<xs:element minOccurs="0" name="Manufacturer" type="HPXMLString"/>
 												<xs:element minOccurs="0" name="SerialNumber" type="HPXMLString"/>
 												<xs:element minOccurs="0" name="FanType" type="VentilationFanType"/>
-												<xs:element minOccurs="0" name="RatedFlowRate" type="HPXMLDouble">
+												<xs:element minOccurs="0" name="RatedFlowRate" type="VentilationFlowRate" maxOccurs="2">
 													<xs:annotation>
 														<xs:documentation>[CFM] as rated by manufacturer</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="CalculatedFlowRate" type="HPXMLDouble">
+												<xs:element minOccurs="0" name="CalculatedFlowRate" type="VentilationFlowRate" maxOccurs="2">
 													<xs:annotation>
 														<xs:documentation>[CFM] as calculated using duct size, prescriptive approach</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="TestedFlowRate" type="HPXMLDouble">
+												<xs:element minOccurs="0" name="TestedFlowRate" type="VentilationFlowRate" maxOccurs="2">
 													<xs:annotation>
 														<xs:documentation>[CFM] as tested by assessor/auditor/inspector</xs:documentation>
 													</xs:annotation>
@@ -1287,6 +1287,21 @@
 												<xs:element minOccurs="0" name="UsedForWholeBuildingVentilation" type="HPXMLBoolean"/>
 												<xs:element minOccurs="0" name="UsedForSeasonalCoolingLoadReduction" type="HPXMLBoolean"/>
 												<xs:element minOccurs="0" name="UsedForGarageVentilation" type="HPXMLBoolean"/>
+												<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
+													<xs:annotation>
+														<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="FractionOutdoorAir" type="Fraction">
+													<xs:annotation>
+														<xs:documentation>The fraction of supply air that is from outside. Should sum to 1.0 with FractionRecirculation. </xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="FractionRecirculation" type="Fraction">
+													<xs:annotation>
+														<xs:documentation>The fraction of supply air that is from recirculation. Should sum to 1.0 with FractionOutdoorAir. </xs:documentation>
+													</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="RatedNoise" type="HPXMLDouble">
 													<xs:annotation>
 														<xs:documentation>[sones] from manufacturer's info</xs:documentation>
@@ -1330,7 +1345,7 @@
 															accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="FanPower" type="HPXMLDouble">
+												<xs:element minOccurs="0" name="FanPower" type="VentilationFanPower" maxOccurs="2">
 													<xs:annotation>
 														<xs:documentation>[W]</xs:documentation>
 													</xs:annotation>
@@ -1342,6 +1357,8 @@
 															to.</xs:documentation>
 													</xs:annotation>
 												</xs:element>
+												<xs:element name="AttachedToPreconditioningHeatingSystem" type="LocalReference" minOccurs="0" maxOccurs="1"> </xs:element>
+												<xs:element name="AttachedToPreconditioningCoolingSystem" type="LocalReference" minOccurs="0" maxOccurs="1"> </xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 											<xs:attribute name="dataSource" type="DataSource"/>
@@ -3085,6 +3102,11 @@
 			<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
 				<xs:annotation>
 					<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IsVentilationPreconditioningSystem" type="HPXMLBoolean">
+				<xs:annotation>
+					<xs:documentation>Does the system only provide preconditioning for mechanical ventilation?</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
