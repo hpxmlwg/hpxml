@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10"
+	targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.0">
 	<xs:simpleType name="DataSource">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="user"/>
@@ -3753,7 +3754,8 @@
 	</xs:complexType>
 	<xs:simpleType name="GreenBuildingVerificationType_simple">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="BPI-2101-compliant Certificate of Residential Energy Efficiency Features and Performance"/>
+			<xs:enumeration
+				value="BPI-2101-compliant Certificate of Residential Energy Efficiency Features and Performance"/>
 			<xs:enumeration value="Certified Passive House"/>
 			<xs:enumeration value="ENERGY STAR Certified Homes"/>
 			<xs:enumeration value="EnerPHit"/>
@@ -4526,6 +4528,25 @@
 	<xs:complexType name="SolarThermalSystemEnergyFactor">
 		<xs:simpleContent>
 			<xs:extension base="SolarThermalSystemEnergyFactor_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="PerformanceClass_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Residential (R)"/>
+			<xs:enumeration value="Light Commercial (LC)"/>
+			<xs:enumeration value="Commercial (C)"/>
+			<xs:enumeration value="Heavy Commercial (HC)"/>
+			<xs:enumeration value="Architectural (AW)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="PerformanceClass">
+		<xs:annotation>
+			<xs:documentation>The North American Fenestration Standard/Specification for windows, doors and, skylights provides a method for rating the structural performance, water resistance and air leakage of fenestration products.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="PerformanceClass_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
