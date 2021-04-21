@@ -3458,6 +3458,11 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="HVACMaintenance" type="HVACMaintenance"/>
+			<xs:element minOccurs="0" name="IsPackagedSystem" type="HPXMLBoolean">
+				<xs:annotation>
+					<xs:documentation>Is the system a packaged system?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
 				<xs:annotation>
 					<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
