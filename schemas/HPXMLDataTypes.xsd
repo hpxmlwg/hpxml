@@ -1587,6 +1587,33 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="WindowType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="double hung"/>
+			<xs:enumeration value="single hung"/>
+			<xs:enumeration value="casement"/>
+			<xs:enumeration value="sliding"/>
+			<xs:enumeration value="picture"/>
+			<xs:enumeration value="awning"/>
+			<xs:enumeration value="egress"/>
+			<xs:enumeration value="jalousie"/>
+			<xs:enumeration value="bay"/>
+			<xs:enumeration value="garden"/>
+			<xs:enumeration value="glass block"/>
+			<xs:enumeration value="bow"/>
+			<xs:enumeration value="hopper"/>
+			<xs:enumeration value="door window"/>
+			<xs:enumeration value="sliding glass door"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="WindowType">
+		<xs:simpleContent>
+			<xs:extension base="WindowType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="GlassLayers_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="single-pane"/>
