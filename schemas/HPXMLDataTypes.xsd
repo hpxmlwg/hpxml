@@ -1592,7 +1592,7 @@
 			<xs:enumeration value="double hung"/>
 			<xs:enumeration value="single hung"/>
 			<xs:enumeration value="casement"/>
-			<xs:enumeration value="sliding"/>
+			<xs:enumeration value="horizontal slider"/>
 			<xs:enumeration value="picture"/>
 			<xs:enumeration value="awning"/>
 			<xs:enumeration value="egress"/>
