@@ -3413,6 +3413,19 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HVACDeviation_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="-1"/>
+			<xs:maxExclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HVACDeviation">
+		<xs:simpleContent>
+			<xs:extension base="HVACDeviation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="ImprovementStatusType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Installed"/>
@@ -3542,15 +3555,15 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="Grade1to3_simple">
+	<xs:simpleType name="GradeOneToThree_simple">
 		<xs:restriction base="xs:integer">
 			<xs:minInclusive value="1"/>
 			<xs:maxInclusive value="3"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="Grade1to3">
+	<xs:complexType name="GradeOneToThree">
 		<xs:simpleContent>
-			<xs:extension base="Grade1to3_simple">
+			<xs:extension base="GradeOneToThree_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
