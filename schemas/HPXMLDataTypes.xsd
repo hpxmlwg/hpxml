@@ -4751,4 +4751,39 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:complexType name="Season">
+		<xs:sequence>
+			<xs:element name="BeginMonth" type="Month"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="BeginDayOfMonth" type="DayOfMonth"/>
+			<xs:element name="EndMonth" type="Month"/>
+			<xs:element minOccurs="0" name="EndDayOfMonth" type="DayOfMonth"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:simpleType name="Month_simple">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Month">
+		<xs:simpleContent>
+			<xs:extension base="Month_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DayOfMonth_simple">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="31"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DayOfMonth">
+		<xs:simpleContent>
+			<xs:extension base="DayOfMonth_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 </xs:schema>
