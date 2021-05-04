@@ -719,7 +719,7 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="InteriorAdjacentTo"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
 											<xs:documentation>[sq.ft.] Surface area of the roof itself</xs:documentation>
@@ -762,8 +762,8 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element minOccurs="0" name="ExteriorAdjacentTo" type="AdjacentTo"/>
-									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="ExteriorAdjacentTo" type="ExteriorAdjacentTo"/>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="InteriorAdjacentTo"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
 											<xs:documentation>[sq.ft.]</xs:documentation>
@@ -809,8 +809,8 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo" minOccurs="0"> </xs:element>
-									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
+									<xs:element name="ExteriorAdjacentTo" type="ExteriorAdjacentTo" minOccurs="0"> </xs:element>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="InteriorAdjacentTo"/>
 									<xs:element minOccurs="0" name="AtticWallType" type="AtticWallType"/>
 									<xs:element name="WallType" type="WallType" minOccurs="0"> </xs:element>
 									<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
@@ -860,8 +860,8 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo" minOccurs="0"> </xs:element>
-									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
+									<xs:element name="ExteriorAdjacentTo" type="ExteriorAdjacentTo" minOccurs="0"> </xs:element>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="InteriorAdjacentTo"/>
 									<xs:element minOccurs="0" name="Type" type="FoundationWallType"/>
 									<xs:element minOccurs="0" name="Length" type="LengthMeasurement">
 										<xs:annotation>
@@ -920,20 +920,43 @@
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element minOccurs="0" name="FrameFloors">
+			<xs:element minOccurs="0" name="Ceilings">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="FrameFloor" maxOccurs="unbounded" minOccurs="1">
-							<xs:annotation>
-								<xs:documentation>Use the FrameFloor element for all floors/ceilings. For example, living space ceilings/attic floors, floors above foundations, floors under bonus
-									rooms, cantilevered floors, etc.</xs:documentation>
-							</xs:annotation>
+						<xs:element name="Ceiling" maxOccurs="unbounded" minOccurs="1">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo" minOccurs="0"> </xs:element>
-									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
+									<xs:element name="ExteriorAdjacentTo" type="ExteriorAdjacentTo" minOccurs="0"> </xs:element>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="InteriorAdjacentTo"/>
+									<xs:element minOccurs="0" name="CeilingJoists" type="StudProperties"/>
+									<xs:element minOccurs="0" name="CeilingTrusses" type="StudProperties"/>
+									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>[sq.ft.]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"> </xs:element>
+									<xs:element minOccurs="0" ref="extension"/>
+								</xs:sequence>
+								<xs:attribute name="dataSource" type="DataSource"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="dataSource" type="DataSource"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="FrameFloors">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="FrameFloor" maxOccurs="unbounded" minOccurs="1">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" ref="AttachedToSpace"/>
+									<xs:element name="ExteriorAdjacentTo" type="ExteriorAdjacentTo" minOccurs="0"> </xs:element>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="InteriorAdjacentTo"/>
 									<xs:element minOccurs="0" name="FloorJoists" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorTrusses" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorCovering" type="FloorCovering"/>
@@ -963,7 +986,7 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="InteriorAdjacentTo"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
 											<xs:documentation>[sq.ft.] Area of the slab</xs:documentation>
