@@ -187,7 +187,7 @@
 	<xs:complexType name="InsulationInfo">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
-			<xs:element minOccurs="0" name="InsulationGrade" type="Grade1to3"/>
+			<xs:element minOccurs="0" name="InsulationGrade" type="GradeOneToThree"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
 			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="RValue">
 				<xs:annotation>
@@ -5027,12 +5027,12 @@
 								<xs:documentation>[CFM] Design-specified blower fan airflow</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element minOccurs="0" name="FlowRateDeviation" type="Fraction">
+						<xs:element minOccurs="0" name="Deviation" type="HVACDeviation">
 							<xs:annotation>
 								<xs:documentation>Percent deviation between design-specified and measured airflow rates. A negative value means that the tested airflow rate is less than the design airflow rate.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element minOccurs="0" name="Grade" type="Grade1to3"/>
+						<xs:element minOccurs="0" name="Grade" type="GradeOneToThree"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -5080,7 +5080,7 @@
 								<xs:documentation>[W/cfm]</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element minOccurs="0" name="Grade" type="Grade1to3"/>
+						<xs:element minOccurs="0" name="Grade" type="GradeOneToThree"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -5095,11 +5095,8 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element minOccurs="0" name="MeteringType" type="NonInvasiveMeteringType"/>
-												<xs:element name="DesignTemperatureDifference" minOccurs="0" type="Temperature">
-													<xs:annotation>
-														<xs:documentation>[F] Difference between measured line temperature and target line temperature. A negative value means that measured temperature is greater than the target temperature.</xs:documentation>
-													</xs:annotation>
-												</xs:element>
+												<xs:element name="TestedLineTemperature" minOccurs="0" type="Temperature"> </xs:element>
+												<xs:element name="DesignLineTemperature" minOccurs="0" type="Temperature"> </xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
@@ -5107,19 +5104,14 @@
 									<xs:element minOccurs="0" name="WeighIn">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element minOccurs="0" name="TestedRefrigerantWeight" type="HPXMLDouble">
+												<xs:element minOccurs="0" name="TestedWeight" type="HPXMLDouble">
 													<xs:annotation>
 														<xs:documentation>[oz]</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="DesignRefrigerantWeight" type="HPXMLDouble">
+												<xs:element minOccurs="0" name="DesignWeight" type="HPXMLDouble">
 													<xs:annotation>
 														<xs:documentation>[oz]</xs:documentation>
-													</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="RefrigerantWeightDeviation" type="Fraction">
-													<xs:annotation>
-														<xs:documentation>Percent deviation between design-specified and measured refrigerant weight. A negative value means that the tested refrigerant weight is less than the design refrigerant weight.</xs:documentation>
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
@@ -5137,7 +5129,12 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
-						<xs:element minOccurs="0" name="Grade" type="Grade1to3"/>
+						<xs:element minOccurs="0" name="Deviation" type="HVACDeviation">
+							<xs:annotation>
+								<xs:documentation>Percent deviation between design-specified and measured refrigerant weight. A negative value means that the tested refrigerant weight is less than the design refrigerant weight.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Grade" type="GradeOneToThree"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 				</xs:complexType>
