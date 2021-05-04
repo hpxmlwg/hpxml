@@ -1201,6 +1201,9 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="ExteriorAdjacentTo">
+		<xs:annotation>
+			<xs:documentation>DEPRECATION WARNING: Choices "other housing unit above" and "other housing unit below" will be deprecated in the future. Use Ceiling vs FrameFloor to describe whether "other housing unit" is above or below the given surface.</xs:documentation>
+		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="ExteriorAdjacentTo_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
