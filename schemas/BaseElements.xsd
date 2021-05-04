@@ -187,7 +187,7 @@
 	<xs:complexType name="InsulationInfo">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
-			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
+			<xs:element minOccurs="0" name="InsulationGrade" type="Grade1to3"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
 			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="RValue">
 				<xs:annotation>
@@ -3042,6 +3042,7 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="HVACMaintenance" type="HVACMaintenance"/>
+			<xs:element minOccurs="0" name="HVACCommissioning" type="HVACCommissioning"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
@@ -4960,6 +4961,187 @@
 			<xs:element name="DuctOutsideEnvelopeInsulatedaspartofRetrofit" type="HPXMLBoolean" minOccurs="0"/>
 			<xs:element name="DuctSystemReplaced" type="HPXMLBoolean" minOccurs="0"/>
 			<xs:element name="SystemPumpandZoneValveCorrectionsMade" type="HPXMLBoolean" minOccurs="0"/>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="HVACCommissioning">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="BlowerFanAirflow">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="AirflowTestMethod">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="PressureMatching">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="FlowGrid">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="FlowHood">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="StaticPressureTable">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="PressureDifference">
+													<xs:annotation>
+														<xs:documentation>[IWC]</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="Other">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="None"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="TestedFlowRate" type="FlowRate">
+							<xs:annotation>
+								<xs:documentation>[CFM] Blower fan airflow at operating conditions</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="DesignFlowRate" type="FlowRate">
+							<xs:annotation>
+								<xs:documentation>[CFM] Design-specified blower fan airflow</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FlowRateDeviation" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Percent deviation between design-specified and measured airflow rates. A negative value means that the tested airflow rate is less than the design airflow rate.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Grade" type="Grade1to3"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="BlowerFanPower">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="PowerTestMethod">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="WattMeter">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="WattMeterType" type="WattMeterType"/>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="UtilityRevenueMeter">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="UtilityRevenueMeterType" type="UtilityRevenueMeterType"/>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="Other">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="None"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="FanPower" type="Power">
+							<xs:annotation>
+								<xs:documentation>[W]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FanEfficiency" type="Efficiency">
+							<xs:annotation>
+								<xs:documentation>[W/cfm]</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Grade" type="Grade1to3"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="RefrigerantCharge">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="RefrigerantChargeTestMethod">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="NonInvasive">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="MeteringType" type="NonInvasiveMeteringType"/>
+												<xs:element name="DesignTemperatureDifference" minOccurs="0" type="Temperature">
+													<xs:annotation>
+														<xs:documentation>[F] Difference between measured line temperature and target line temperature. A negative value means that measured temperature is greater than the target temperature.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="WeighIn">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="TestedRefrigerantWeight" type="HPXMLDouble">
+													<xs:annotation>
+														<xs:documentation>[oz]</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="DesignRefrigerantWeight" type="HPXMLDouble">
+													<xs:annotation>
+														<xs:documentation>[oz]</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="RefrigerantWeightDeviation" type="Fraction">
+													<xs:annotation>
+														<xs:documentation>Percent deviation between design-specified and measured refrigerant weight. A negative value means that the tested refrigerant weight is less than the design refrigerant weight.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="Other">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="None"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element minOccurs="0" name="Grade" type="Grade1to3"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
