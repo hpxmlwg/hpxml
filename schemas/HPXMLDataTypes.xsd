@@ -3413,19 +3413,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="HVACDeviation_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="-1"/>
-			<xs:maxExclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="HVACDeviation">
-		<xs:simpleContent>
-			<xs:extension base="HVACDeviation_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="ImprovementStatusType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Installed"/>
@@ -3555,15 +3542,15 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="GradeOneToThree_simple">
+	<xs:simpleType name="InsulationGrade_simple">
 		<xs:restriction base="xs:integer">
 			<xs:minInclusive value="1"/>
 			<xs:maxInclusive value="3"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="GradeOneToThree">
+	<xs:complexType name="InsulationGrade">
 		<xs:simpleContent>
-			<xs:extension base="GradeOneToThree_simple">
+			<xs:extension base="InsulationGrade_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -4303,49 +4290,6 @@
 	<xs:complexType name="RecirculationControlType">
 		<xs:simpleContent>
 			<xs:extension base="RecirculationControlType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="UtilityRevenueMeterType_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="digital"/>
-			<xs:enumeration value="analog"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="UtilityRevenueMeterType">
-		<xs:simpleContent>
-			<xs:extension base="UtilityRevenueMeterType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="WattMeterType_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="portable plug-in"/>
-			<xs:enumeration value="clamp-on"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="WattMeterType">
-		<xs:simpleContent>
-			<xs:extension base="WattMeterType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="NonInvasiveMeteringType_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="piston or capillary tube"/>
-			<xs:enumeration value="thermal expansion valve"/>
-			<xs:enumeration value="electronic expansion valve"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="NonInvasiveMeteringType">
-		<xs:simpleContent>
-			<xs:extension base="NonInvasiveMeteringType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
