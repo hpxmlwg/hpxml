@@ -5458,7 +5458,7 @@
 			</xs:element>
 			<xs:element name="HVACSystemsServed" type="LocalReference" minOccurs="0" maxOccurs="unbounded"/>
 			<xs:element maxOccurs="1" minOccurs="0" name="HeatingSeason" type="Season"/>
-			<xs:element minOccurs="0" name="CoolingSeason" type="Season"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="CoolingSeason" type="Season"/>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
