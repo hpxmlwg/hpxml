@@ -4211,6 +4211,7 @@
 			<xs:enumeration value="platform"/>
 			<xs:enumeration value="balloon"/>
 			<xs:enumeration value="timber"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="FramingType">
