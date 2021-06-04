@@ -4957,6 +4957,7 @@
 						<xs:element minOccurs="0" name="GlazingMaterial" type="GlazingMaterial"/>
 						<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 						<xs:element minOccurs="0" name="FrameType" type="WindowFrameType"/>
+						<xs:element minOccurs="0" name="Location" type="StormLocation"/>
 						<xs:element minOccurs="0" name="Operable" type="HPXMLBoolean">
 							<xs:annotation>
 								<xs:documentation>DEPRECATED. This will be removed in v4.0. Use FractionOperable element instead.</xs:documentation>

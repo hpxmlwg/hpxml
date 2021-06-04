@@ -4743,4 +4743,15 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="StormLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="interior"/>
+			<xs:enumeration value="exterior"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StormLocation">
+		<xs:simpleContent>
+			<xs:extension base="StormLocation_simple">
+		</xs:simpleContent>
+	</xs:complexType>
 </xs:schema>
