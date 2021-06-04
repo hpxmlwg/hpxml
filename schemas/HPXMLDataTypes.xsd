@@ -1144,9 +1144,6 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="AdjacentTo_simple">
-		<xs:annotation>
-			<xs:documentation>NOTE: "other housing unit above" and "other housing unit below" will be deprecated in v4.0. Use "other housing unit" instead.</xs:documentation>
-		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
