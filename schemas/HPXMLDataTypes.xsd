@@ -458,6 +458,9 @@
 	</xs:complexType>
 	<xs:simpleType name="IECCYear_simple">
 		<xs:restriction base="xs:integer">
+			<xs:enumeration value="2021"/>
+			<xs:enumeration value="2018"/>
+			<xs:enumeration value="2015"/>
 			<xs:enumeration value="2012"/>
 			<xs:enumeration value="2009"/>
 			<xs:enumeration value="2006"/>
