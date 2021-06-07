@@ -838,7 +838,11 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element minOccurs="0" name="Type" type="InteriorFinish"/>
-												<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement"/>
+												<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
+													<xs:annotation>
+														<xs:documentation>[in]</xs:documentation>
+													</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="Color" type="WallAndRoofColor"/>
 											</xs:sequence>
 										</xs:complexType>
@@ -913,7 +917,11 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element minOccurs="0" name="Type" type="InteriorFinish"/>
-												<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement"/>
+												<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
+													<xs:annotation>
+														<xs:documentation>[in]</xs:documentation>
+													</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="Color" type="WallAndRoofColor"/>
 											</xs:sequence>
 										</xs:complexType>
