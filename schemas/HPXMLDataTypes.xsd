@@ -4769,6 +4769,8 @@
 	<xs:complexType name="StormLocation">
 		<xs:simpleContent>
 			<xs:extension base="StormLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 </xs:schema>
