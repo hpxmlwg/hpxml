@@ -189,7 +189,7 @@
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
-			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="RValue">
+			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="AssemblyRValue">
 				<xs:annotation>
 					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments.</xs:documentation>
 				</xs:annotation>
@@ -744,6 +744,7 @@
 									</xs:element>
 									<xs:element name="RadiantBarrier" type="HPXMLBoolean" minOccurs="0"/>
 									<xs:element name="RadiantBarrierLocation" type="RadiantBarrierLocation" minOccurs="0"/>
+									<xs:element name="RadiantBarrierGrade" type="InsulationGrade" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Insulation" type="InsulationInfo"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
@@ -1108,6 +1109,7 @@
 									<xs:element name="StormDoor" type="HPXMLBoolean" minOccurs="0"/>
 									<xs:element name="RValue" type="RValue" minOccurs="0"/>
 									<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
+									<xs:element minOccurs="0" name="PerformanceClass" type="PerformanceClass"/>
 									<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification" type="DoorThirdPartyCertifications"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
@@ -1183,18 +1185,14 @@
 											<xs:documentation>[sq.ft.] Conditioned floor area that this distribution system serves.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="AnnualHeatingDistributionSystemEfficiency" type="HPXMLDouble">
+									<xs:element minOccurs="0" name="AnnualHeatingDistributionSystemEfficiency" type="Fraction">
 										<xs:annotation>
-											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for heating, the DSE may be approximated by equation
-												3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use
-												History.</xs:documentation>
+											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for heating, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History. Enter values as a fractional number between 0 and 1, i.e. 80% = 0.8</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="AnnualCoolingDistributionSystemEfficiency" type="HPXMLDouble">
+									<xs:element minOccurs="0" name="AnnualCoolingDistributionSystemEfficiency" type="Fraction">
 										<xs:annotation>
-											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for cooling, the DSE may be approximated by equation
-												3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use
-												History.</xs:documentation>
+											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for cooling, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History. Enter values as a fractional number between 0 and 1, i.e. 80% = 0.8</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HVACDistributionImprovement" type="HVACDistributionImprovementInfo"/>
@@ -4445,6 +4443,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="GlazingMaterial" type="GlazingMaterial"/>
 						<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 						<xs:element minOccurs="0" name="FrameType" type="WindowFrameType"/>
 						<xs:element minOccurs="0" name="Operable" type="HPXMLBoolean"/>
@@ -4492,6 +4491,7 @@
 			<xs:element minOccurs="0" name="WeatherStripping" type="HPXMLBoolean"/>
 			<xs:element minOccurs="0" name="Operable" type="HPXMLBoolean"/>
 			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
+			<xs:element minOccurs="0" name="PerformanceClass" type="PerformanceClass"/>
 		</xs:sequence>
 	</xs:group>
 	<xs:complexType name="WindowFrameType">
@@ -4765,6 +4765,11 @@
 						<xs:element minOccurs="0" name="OptimumValueEngineering" type="HPXMLBoolean">
 							<xs:annotation>
 								<xs:documentation>Please specify stud spacing and framing factor in the appropriate places as well.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FramingType" type="FramingType">
+							<xs:annotation>
+								<xs:documentation>See https://thecraftsmanblog.com/framing-timber-balloon-platform for a description of different framing types.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
