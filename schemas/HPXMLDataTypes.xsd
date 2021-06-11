@@ -2792,6 +2792,20 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="GlazingMaterial_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="glass"/>
+			<xs:enumeration value="plastic"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GlazingMaterial">
+		<xs:simpleContent>
+			<xs:extension base="GlazingMaterial_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="ClothesWasherType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="top loader"/>
