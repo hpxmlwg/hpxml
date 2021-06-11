@@ -1498,6 +1498,11 @@
 											<xs:attribute name="dataSource" type="DataSource"/>
 										</xs:complexType>
 									</xs:element>
+									<xs:element minOccurs="0" name="StandbyLoss" type="HPXMLDouble">
+										<xs:annotation>
+											<xs:documentation>[degF/hr] The standby heat loss rate for, e.g., indirect water heaters in degrees per hour. Published in the AHRI Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="MeetsACCA5QIHVACSpecification" type="HPXMLBoolean" minOccurs="0"/>
 									<xs:element name="HotWaterTemperature" type="Temperature" minOccurs="0">
 										<xs:annotation>
