@@ -4132,6 +4132,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="FramingType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="platform"/>
+			<xs:enumeration value="balloon"/>
+			<xs:enumeration value="timber"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FramingType">
+		<xs:simpleContent>
+			<xs:extension base="FramingType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="AtticWallType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="gable"/>
