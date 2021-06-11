@@ -189,7 +189,7 @@
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="InsulationGrade" type="InsulationGrade"/>
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
-			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="RValue">
+			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="AssemblyRValue">
 				<xs:annotation>
 					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments.</xs:documentation>
 				</xs:annotation>
@@ -4446,6 +4446,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="GlazingMaterial" type="GlazingMaterial"/>
 						<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 						<xs:element minOccurs="0" name="FrameType" type="WindowFrameType"/>
 						<xs:element minOccurs="0" name="Operable" type="HPXMLBoolean"/>
@@ -4755,9 +4756,6 @@
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
 	<xs:complexType name="WallType">
-		<xs:annotation>
-			<xs:documentation>Wall type enumerations are further explained at https://hpxml.nrel.gov/wiki/WallTypes</xs:documentation>
-		</xs:annotation>
 		<xs:choice>
 			<xs:element name="WoodStud">
 				<xs:complexType>
@@ -4770,6 +4768,11 @@
 						<xs:element minOccurs="0" name="OptimumValueEngineering" type="HPXMLBoolean">
 							<xs:annotation>
 								<xs:documentation>Please specify stud spacing and framing factor in the appropriate places as well.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FramingType" type="FramingType">
+							<xs:annotation>
+								<xs:documentation>See https://thecraftsmanblog.com/framing-timber-balloon-platform for a description of different framing types.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
