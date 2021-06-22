@@ -1256,6 +1256,18 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<!--Insulation Below-->
+	<xs:simpleType name="AssemblyRValue_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="AssemblyRValue">
+		<xs:simpleContent>
+			<xs:extension base="AssemblyRValue_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="DoorThirdPartyCertifications_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Energy Star"/>
@@ -1760,6 +1772,7 @@
 	<xs:simpleType name="CoolingEfficiencyUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="SEER"/>
+			<xs:enumeration value="CEER"/>
 			<xs:enumeration value="EER"/>
 			<xs:enumeration value="COP"/>
 			<xs:enumeration value="kW/ton"/>
@@ -1863,81 +1876,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<!--Heating System Information Below-->
-	<xs:simpleType name="AFUE_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="1"/>
-			<xs:maxInclusive value="100"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="AFUE">
-		<xs:simpleContent>
-			<xs:extension base="AFUE_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="COP_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="COP">
-		<xs:simpleContent>
-			<xs:extension base="COP_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<!--HVAC Distribution Below-->
-	<xs:simpleType name="HSPF_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="HSPF">
-		<xs:simpleContent>
-			<xs:extension base="HSPF_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="SEER_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="SEER">
-		<xs:simpleContent>
-			<xs:extension base="SEER_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="EER_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="EER">
-		<xs:simpleContent>
-			<xs:extension base="EER_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="kWperTon_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="kWperTon">
-		<xs:simpleContent>
-			<xs:extension base="kWperTon_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="DuctType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="supply"/>
@@ -2862,6 +2801,20 @@
 	<xs:complexType name="GlassType">
 		<xs:simpleContent>
 			<xs:extension base="GlassType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="GlazingMaterial_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="glass"/>
+			<xs:enumeration value="plastic"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GlazingMaterial">
+		<xs:simpleContent>
+			<xs:extension base="GlazingMaterial_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -4206,6 +4159,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="FramingType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="platform"/>
+			<xs:enumeration value="balloon"/>
+			<xs:enumeration value="timber"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FramingType">
+		<xs:simpleContent>
+			<xs:extension base="FramingType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="AtticWallType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="gable"/>
@@ -4539,6 +4507,25 @@
 	<xs:complexType name="StormLocation">
 		<xs:simpleContent>
 			<xs:extension base="StormLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="PerformanceClass_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="residential"/>
+			<xs:enumeration value="architectural"/>
+			<xs:enumeration value="light commercial"/>
+			<xs:enumeration value="commercial"/>
+			<xs:enumeration value="heavy commercial"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="PerformanceClass">
+		<xs:annotation>
+			<xs:documentation>The North American Fenestration Standard/Specification for windows, doors and, skylights provides a method for rating the structural performance, water resistance and air leakage of fenestration products.</xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="PerformanceClass_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
