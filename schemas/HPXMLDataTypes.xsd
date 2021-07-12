@@ -4218,6 +4218,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="UsageBin_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="very small"/>
+			<xs:enumeration value="low"/>
+			<xs:enumeration value="medium"/>
+			<xs:enumeration value="high"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="UsageBin">
+		<xs:simpleContent>
+			<xs:extension base="UsageBin_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="VentilationUnit_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="SLA"/>
