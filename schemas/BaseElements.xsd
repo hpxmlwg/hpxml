@@ -352,6 +352,7 @@
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
 					<xs:element minOccurs="0" name="Type" type="DishwasherType"/>
+					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element minOccurs="0" name="Fuel" type="FuelType"/>
 					<xs:element name="HeatDryDefaultOff" type="HPXMLBoolean" minOccurs="0"/>
 					<xs:element name="AuxillaryWaterHeaterDefaultOff" type="HPXMLBoolean" minOccurs="0"/>
@@ -457,6 +458,7 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IsInduction" type="HPXMLBoolean"/>
 					<xs:element ref="extension" minOccurs="0"/>
@@ -468,6 +470,7 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IsConvection" type="HPXMLBoolean"/>
 					<xs:element ref="extension" minOccurs="0"/>
