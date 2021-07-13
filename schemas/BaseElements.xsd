@@ -1153,6 +1153,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="Orientation" type="OrientationType"/>
 									<xs:element minOccurs="0" name="DoorType" type="DoorType"/>
+									<xs:element minOccurs="0" name="DoorDescription" type="DoorDescription"/>
 									<xs:element name="DoorMaterial" type="DoorMaterial" minOccurs="0"/>
 									<xs:element minOccurs="0" name="WeatherStripping" type="HPXMLBoolean"/>
 									<xs:element name="StormDoor" type="HPXMLBoolean" minOccurs="0"/>
