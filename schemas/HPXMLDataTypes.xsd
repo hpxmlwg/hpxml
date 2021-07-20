@@ -4592,4 +4592,23 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="DoorDescription_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="embossed"/>
+			<xs:enumeration value="flush"/>
+			<xs:enumeration value="full lite"/>
+			<xs:enumeration value="1/2 - lite"/>
+			<xs:enumeration value="1/4 - lite"/>
+			<xs:enumeration value="3/4 - lite"/>
+			<xs:enumeration value="raised panel"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DoorDescription">
+		<xs:simpleContent>
+			<xs:extension base="DoorDescription_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 </xs:schema>
