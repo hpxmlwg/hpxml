@@ -1595,6 +1595,7 @@
 			<xs:enumeration value="horizontal slider"/>
 			<xs:enumeration value="picture"/>
 			<xs:enumeration value="awning"/>
+			<xs:enumeration value="tilt and turn"/>
 			<xs:enumeration value="egress"/>
 			<xs:enumeration value="jalousie"/>
 			<xs:enumeration value="bay"/>
@@ -1602,7 +1603,7 @@
 			<xs:enumeration value="glass block"/>
 			<xs:enumeration value="bow"/>
 			<xs:enumeration value="hopper"/>
-			<xs:enumeration value="door window"/>
+			<xs:enumeration value="door glazing"/>
 			<xs:enumeration value="sliding glass door"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
