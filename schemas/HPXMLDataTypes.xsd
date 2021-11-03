@@ -4592,4 +4592,17 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="BatteryCapacityUnits_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kWh"/>
+			<xs:enumeration value="Ah"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BatteryCapacityUnits">
+		<xs:simpleContent>
+			<xs:extension base="BatteryCapacityUnits_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 </xs:schema>
