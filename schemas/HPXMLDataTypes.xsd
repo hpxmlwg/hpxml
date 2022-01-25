@@ -4654,4 +4654,35 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="CambiumGEAs_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AZNMc"/>
+			<xs:enumeration value="CAMXc"/>
+			<xs:enumeration value="ERCTc"/>
+			<xs:enumeration value="FRCCc"/>
+			<xs:enumeration value="MROEc"/>
+			<xs:enumeration value="MROWc"/>
+			<xs:enumeration value="NEWEc"/>
+			<xs:enumeration value="NWPPc"/>
+			<xs:enumeration value="NYSTc"/>
+			<xs:enumeration value="RFCEc"/>
+			<xs:enumeration value="RFCMc"/>
+			<xs:enumeration value="RFCWc"/>
+			<xs:enumeration value="RMPAc"/>
+			<xs:enumeration value="SPNOc"/>
+			<xs:enumeration value="SPSOc"/>
+			<xs:enumeration value="SRMVc"/>
+			<xs:enumeration value="SRMWc"/>
+			<xs:enumeration value="SRSOc"/>
+			<xs:enumeration value="SRTVc"/>
+			<xs:enumeration value="SRVCc"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CambiumGEAS">
+		<xs:simpleContent>
+			<xs:extension base="CambiumGEAs_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 </xs:schema>
