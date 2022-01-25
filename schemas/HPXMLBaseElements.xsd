@@ -5258,7 +5258,7 @@
 											<xs:documentation>For example, Eastern Time.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="Abbreviation">
+									<xs:element minOccurs="0" name="Abbreviation" type="HPXMLString">
 										<xs:annotation>
 											<xs:documentation>For example, ET for Eastern Time.</xs:documentation>
 										</xs:annotation>
