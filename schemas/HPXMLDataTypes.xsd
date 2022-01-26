@@ -1638,6 +1638,7 @@
 			<xs:enumeration value="double-pane"/>
 			<xs:enumeration value="triple-pane"/>
 			<xs:enumeration value="multi-layered"/>
+			<xs:enumeration value="glass block"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -2847,6 +2848,9 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="air"/>
 			<xs:enumeration value="argon"/>
+			<xs:enumeration value="krypton"/>
+			<xs:enumeration value="xenon"/>
+			<xs:enumeration value="nitrogen"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -2859,6 +2863,7 @@
 	</xs:complexType>
 	<xs:simpleType name="GlassType_simple">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="clear"/>
 			<xs:enumeration value="low-e"/>
 			<xs:enumeration value="tinted"/>
 			<xs:enumeration value="reflective"/>
