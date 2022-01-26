@@ -4590,6 +4590,20 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="CompressorType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="single stage"/>
+			<xs:enumeration value="two stage"/>
+			<xs:enumeration value="variable speed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CompressorType">
+		<xs:simpleContent>
+			<xs:extension base="CompressorType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="DehumidifierType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="portable"/>
