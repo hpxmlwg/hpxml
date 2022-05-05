@@ -4614,7 +4614,6 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="StormInfo"/>
-						<xs:element minOccurs="0" name="Operable" type="HPXMLBoolean"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
@@ -5539,6 +5538,7 @@
 			<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 			<xs:element minOccurs="0" name="FrameType" type="WindowFrameType"/>
 			<xs:element minOccurs="0" name="Location" type="StormLocation"/>
+			<xs:element minOccurs="0" name="Operable" type="HPXMLBoolean"/>
 			<xs:element minOccurs="0" name="Condition" type="WindowCondition"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
