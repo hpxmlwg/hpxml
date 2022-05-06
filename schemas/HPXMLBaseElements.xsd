@@ -3400,9 +3400,9 @@
 							<xs:documentation>[deg F] Temperature at which the backup heating is activated.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
-					<xs:element minOccurs="0" name="BackupHeatingLockout" type="HPXMLBoolean">
+					<xs:element minOccurs="0" name="BackupHeatingLockoutTemperature" type="Temperature">
 						<xs:annotation>
-							<xs:documentation>Does the heat pump have the ability to lock out the backup heating above a certain outdoor temperature to prevent, e.g., backup heating operation during recovery from a thermostat setback? Newer heat pump installations have "smart thermostats" connected to outdoor temperature sensors that allow this.</xs:documentation>
+							<xs:documentation>[deg F] Temperature at which the backup heating is disabled, often to prevent backup heating usage during recovery from a thermostat heating setback.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
