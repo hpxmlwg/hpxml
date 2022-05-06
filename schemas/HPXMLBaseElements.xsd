@@ -3402,7 +3402,7 @@
 					</xs:element>
 					<xs:element minOccurs="0" name="BackupHeatingLockout" type="HPXMLBoolean">
 						<xs:annotation>
-							<xs:documentation>Does the heat pump have the ability to lock out the backup heating above a certain outdoor temperature to prevent, e.g., backup heating operation during recovery from a thermostat setback? Newer heat pump installations have "smart thermostats" connected to outoor temperature sensors that allow this.</xs:documentation>
+							<xs:documentation>Does the heat pump have the ability to lock out the backup heating above a certain outdoor temperature to prevent, e.g., backup heating operation during recovery from a thermostat setback? Newer heat pump installations have "smart thermostats" connected to outdoor temperature sensors that allow this.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
