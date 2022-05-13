@@ -32,6 +32,28 @@
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
+	<xs:complexType name="GeoLocationInformation">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="Latitude" type="Latitude">
+				<xs:annotation>
+					<xs:documentation>[deg] North-south position of a point on the Earth's surface. Use negative values for southern hemisphere.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Longitude" type="Longitude">
+				<xs:annotation>
+					<xs:documentation>[deg] East-west position of a point on the Earth's surface. Use negative values for the western hemisphere.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="GooglePlaceID" type="HPXMLString"/>
+			<xs:element minOccurs="0" name="UBID" type="HPXMLString">
+				<xs:annotation>
+					<xs:documentation>Unique Building ID. See https://ubid.pnnl.gov.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
 	<xs:complexType name="SystemIdentifiersInfoType">
 		<xs:annotation>
 			<xs:documentation>System identifiers contain type codes and an identifier for both a sending and a receiving system. These fields are needed to be able to transmit data between two
@@ -5236,6 +5258,7 @@
 						<xs:element name="SiteID" type="SystemIdentifiersInfoType"/>
 						<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 						<xs:element name="Address" type="AddressInformation"/>
+						<xs:element minOccurs="0" name="GeoLocation" type="GeoLocationInformation"/>
 						<xs:element minOccurs="0" name="SchoolDistrict" type="HPXMLString"/>
 						<xs:element minOccurs="0" name="eGridRegion" type="eGridRegions">
 							<xs:annotation>
@@ -5260,19 +5283,21 @@
 								<xs:sequence>
 									<xs:element minOccurs="0" name="Name" type="HPXMLString">
 										<xs:annotation>
-											<xs:documentation>For example, Eastern Time.</xs:documentation>
+											<xs:documentation>For example, US/Eastern for U.S. Eastern Time. See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Abbreviation" type="HPXMLString">
 										<xs:annotation>
-											<xs:documentation>For example, ET for Eastern Time.</xs:documentation>
+											<xs:documentation>For example, ET for US Eastern Time.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="UTCOffset" type="HPXMLDouble">
+									<xs:element minOccurs="0" name="UTCOffset" type="UTCOffset">
 										<xs:annotation>
-											<xs:documentation>Positive or negative offset from Coordinated Universal Time (UTC). For example, -5 for Eastern Time.</xs:documentation>
+											<xs:documentation>Positive or negative offset from Coordinated Universal Time (UTC) using Standard Time. For example, -5 for Eastern Time.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="DSTObserved" type="HPXMLBoolean"/>
+									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
