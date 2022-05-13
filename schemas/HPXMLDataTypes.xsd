@@ -2487,6 +2487,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="energyUnitType_simple">
+		<xs:annotation>
+			<xs:documentation>MBtu refers to million Btu.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="cmh"/>
 			<xs:enumeration value="ccf"/>

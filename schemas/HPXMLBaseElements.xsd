@@ -4295,7 +4295,7 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
-					<xs:documentation>Eqn. 3.2.3.A.ii of BPI-2400. In either kWh for electricity or MBtu for all other fuels.</xs:documentation>
+					<xs:documentation>Eqn. 3.2.3.A.ii of BPI-2400. In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingBiasError" type="HPXMLDouble">
@@ -4305,7 +4305,7 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
-					<xs:documentation>In either kWh for electricity or MBtu for all other fuels.</xs:documentation>
+					<xs:documentation>In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadBiasError" type="HPXMLDouble">
@@ -4315,7 +4315,7 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
-					<xs:documentation>In either kWh for electricity or MBtu for all other fuels.</xs:documentation>
+					<xs:documentation>In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="SimplifiedModelCalibrationHeatingBiasError" nillable="true" type="HPXMLDouble">
