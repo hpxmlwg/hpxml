@@ -4638,17 +4638,17 @@
 					<xs:sequence>
 						<xs:element name="Depth" type="LengthMeasurement">
 							<xs:annotation>
-								<xs:documentation>[in] Depth of overhang</xs:documentation>
+								<xs:documentation>[ft] Depth of overhang</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="DistanceToTopOfWindow" type="LengthMeasurement">
 							<xs:annotation>
-								<xs:documentation>[in] Vertical distance from overhang to top of window</xs:documentation>
+								<xs:documentation>[ft] Vertical distance from overhang to top of window</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="DistanceToBottomOfWindow" type="LengthMeasurement">
 							<xs:annotation>
-								<xs:documentation>[in] Vertical distance from overhang to bottom of window</xs:documentation>
+								<xs:documentation>[ft] Vertical distance from overhang to bottom of window</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
