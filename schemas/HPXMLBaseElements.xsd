@@ -3832,7 +3832,7 @@
 					</xs:element>
 					<xs:element minOccurs="0" name="BackupHeatingLockoutTemperature" type="Temperature">
 						<xs:annotation>
-							<xs:documentation>[deg F] Temperature at which the backup heating is disabled, often to prevent backup heating usage during recovery from a thermostat heating setback.</xs:documentation>
+							<xs:documentation>[deg F] Temperature above which the backup heating is disabled, often to prevent backup heating usage during recovery from a thermostat heating setback.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
