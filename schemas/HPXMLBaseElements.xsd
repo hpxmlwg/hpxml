@@ -3822,6 +3822,11 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="CompressorType" type="CompressorType"/>
+					<xs:element minOccurs="0" name="CompressorLockoutTemperature" type="Temperature">
+						<xs:annotation>
+							<xs:documentation>[deg F] Temperature below which the compressor is disabled, often to prevent damage or occupant comfort issues. The default is the manufacturer's minimum operating temperature, but the value may be set higher. For a duel-fuel heat pump, use the BackupHeatingSwitchoverTemperature element.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
 					<xs:element name="GeothermalLoop" type="GeothermalLoop" minOccurs="0"/>
 					<xs:element minOccurs="0" name="BackupType" type="HeatPumpBackupType">
@@ -3849,12 +3854,12 @@
 					</xs:element>
 					<xs:element minOccurs="0" name="BackupHeatingSwitchoverTemperature" type="Temperature">
 						<xs:annotation>
-							<xs:documentation>[deg F] Temperature at which the backup heating is activated.</xs:documentation>
+							<xs:documentation>[deg F] Temperature at which the backup heating is activated and the compressor is disabled in, e.g., a dual-fuel heat pump.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="BackupHeatingLockoutTemperature" type="Temperature">
 						<xs:annotation>
-							<xs:documentation>[deg F] Temperature above which the backup heating is disabled, often to prevent backup heating usage during recovery from a thermostat heating setback.</xs:documentation>
+							<xs:documentation>[deg F] Temperature above which the backup heating is disabled, often to prevent backup heating usage during recovery from a thermostat heating setback. For a duel-fuel heat pump, use the BackupHeatingSwitchoverTemperature element.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
