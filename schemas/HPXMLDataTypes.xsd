@@ -1158,6 +1158,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+      <xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
 			<xs:enumeration value="crawlspace - unconditioned"/>
@@ -1951,6 +1952,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+      <xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
 			<xs:enumeration value="crawlspace - unconditioned"/>
@@ -2131,6 +2133,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+      <xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
 			<xs:enumeration value="crawlspace - unconditioned"/>
@@ -2926,6 +2929,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+      <xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="garage - conditioned"/>
 			<xs:enumeration value="garage - unconditioned"/>
@@ -2986,6 +2990,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+      <xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="garage - conditioned"/>
 			<xs:enumeration value="garage - unconditioned"/>
@@ -4359,6 +4364,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+      <xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
 			<xs:enumeration value="crawlspace - unconditioned"/>
