@@ -1135,6 +1135,8 @@
 			<xs:enumeration value="concrete block"/>
 			<xs:enumeration value="concrete block foam core"/>
 			<xs:enumeration value="concrete block vermiculite core"/>
+			<xs:enumeration value="concrete block perlite core"/>
+			<xs:enumeration value="concrete block solid core"/>
 			<xs:enumeration value="double brick"/>
 			<xs:enumeration value="wood"/>
 		</xs:restriction>
@@ -1636,6 +1638,7 @@
 			<xs:enumeration value="double-pane"/>
 			<xs:enumeration value="triple-pane"/>
 			<xs:enumeration value="multi-layered"/>
+			<xs:enumeration value="glass block"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -2848,6 +2851,9 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="air"/>
 			<xs:enumeration value="argon"/>
+			<xs:enumeration value="krypton"/>
+			<xs:enumeration value="xenon"/>
+			<xs:enumeration value="nitrogen"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -2860,6 +2866,7 @@
 	</xs:complexType>
 	<xs:simpleType name="GlassType_simple">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="clear"/>
 			<xs:enumeration value="low-e"/>
 			<xs:enumeration value="tinted"/>
 			<xs:enumeration value="reflective"/>
@@ -4582,6 +4589,20 @@
 	<xs:complexType name="SolarThermalSystemEnergyFactor">
 		<xs:simpleContent>
 			<xs:extension base="SolarThermalSystemEnergyFactor_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="CompressorType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="single stage"/>
+			<xs:enumeration value="two stage"/>
+			<xs:enumeration value="variable speed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CompressorType">
+		<xs:simpleContent>
+			<xs:extension base="CompressorType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
