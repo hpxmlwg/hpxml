@@ -3391,6 +3391,12 @@
 							<xs:documentation>[Btuh] Output cooling capacity</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="CompressorType" type="CompressorType"/>
+					<xs:element minOccurs="0" name="CompressorLockoutTemperature" type="Temperature">
+						<xs:annotation>
+							<xs:documentation>[deg F] Temperature below which the compressor is disabled, often to prevent damage or occupant comfort issues. The default is the manufacturer's minimum operating temperature, but the value may be set higher. For a duel-fuel heat pump, use the BackupHeatingSwitchoverTemperature element.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
 					<xs:element name="GeothermalLoop" type="GeothermalLoop" minOccurs="0"/>
 					<xs:element minOccurs="0" name="BackupType" type="HeatPumpBackupType">
@@ -3418,7 +3424,12 @@
 					</xs:element>
 					<xs:element minOccurs="0" name="BackupHeatingSwitchoverTemperature" type="Temperature">
 						<xs:annotation>
-							<xs:documentation>[deg F] Temperature at which the backup heating is activated.</xs:documentation>
+							<xs:documentation>[deg F] Temperature at which the backup heating is activated and the compressor is disabled in, e.g., a dual-fuel heat pump.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="BackupHeatingLockoutTemperature" type="Temperature">
+						<xs:annotation>
+							<xs:documentation>[deg F] Temperature above which the backup heating is disabled, often to prevent backup heating usage during recovery from a thermostat heating setback. For a duel-fuel heat pump, use the BackupHeatingSwitchoverTemperature element.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element name="FractionHeatLoadServed" type="Fraction" minOccurs="0"/>
@@ -3446,6 +3457,7 @@
 							<xs:documentation>[Btuh] Output cooling capacity</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="CompressorType" type="CompressorType"/>
 					<xs:element name="FractionCoolLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element minOccurs="0" name="FloorAreaServed" type="SurfaceArea">
 						<xs:annotation>
@@ -3724,7 +3736,16 @@
 											<xs:documentation>[ft] height of building</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="NumberofUnits" type="IntegerGreaterThanZero"/>
+									<xs:element minOccurs="0" name="NumberofUnits" type="IntegerGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>Number of dwelling units represented by the HPXML Building element. Used as a multiplier.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="NumberofUnitsInBuilding" type="IntegerGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>Total number of dwelling units in the physical building.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="NumberofFloors" type="NumberOfFloorsType">
 										<xs:annotation>
 											<xs:documentation>Total number of floors including a basement, whether conditioned or unconditioned</xs:documentation>
@@ -4317,7 +4338,7 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationHeatingAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
-					<xs:documentation>Eqn. 3.2.3.A.ii of BPI-2400. In either kWh for electricity or MMBTU for all other fuels.</xs:documentation>
+					<xs:documentation>Eqn. 3.2.3.A.ii of BPI-2400. In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingBiasError" type="HPXMLDouble">
@@ -4327,7 +4348,7 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationCoolingAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
-					<xs:documentation>In either kWh for electricity or MMBTU for all other fuels.</xs:documentation>
+					<xs:documentation>In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadBiasError" type="HPXMLDouble">
@@ -4337,7 +4358,7 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="DetailedModelCalibrationBaseloadAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
-					<xs:documentation>In either kWh for electricity or MMBTU for all other fuels.</xs:documentation>
+					<xs:documentation>In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="SimplifiedModelCalibrationHeatingBiasError" nillable="true" type="HPXMLDouble">
@@ -4658,17 +4679,17 @@
 					<xs:sequence>
 						<xs:element name="Depth" type="LengthMeasurement">
 							<xs:annotation>
-								<xs:documentation>[in] Depth of overhang</xs:documentation>
+								<xs:documentation>[ft] Depth of overhang</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="DistanceToTopOfWindow" type="LengthMeasurement">
 							<xs:annotation>
-								<xs:documentation>[in] Vertical distance from overhang to top of window</xs:documentation>
+								<xs:documentation>[ft] Vertical distance from overhang to top of window</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="DistanceToBottomOfWindow" type="LengthMeasurement">
 							<xs:annotation>
-								<xs:documentation>[in] Vertical distance from overhang to bottom of window</xs:documentation>
+								<xs:documentation>[ft] Vertical distance from overhang to bottom of window</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
@@ -4836,6 +4857,11 @@
 				<xs:annotation>
 					<xs:documentation>[sq. ft.] The volume of the building that is applicable to the air infiltration measurement test. The volume can be defined as the conditioned building volume
 						plus the volume of crawlspaces, attics, and/or basements that are connected to the building's conditioned space via open doors or hatches.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="InfiltrationHeight" type="HPXMLDouble">
+				<xs:annotation>
+					<xs:documentation>[ft] Vertical distance between lowest and highest above-grade points within the pressure boundary, per ASHRAE 62.2.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
@@ -5257,7 +5283,7 @@
 					<xs:sequence>
 						<xs:element name="SiteID" type="SystemIdentifiersInfoType"/>
 						<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
-						<xs:element name="Address" type="AddressInformation"/>
+						<xs:element name="Address" type="AddressInformation" minOccurs="0"/>
 						<xs:element minOccurs="0" name="GeoLocation" type="GeoLocationInformation"/>
 						<xs:element minOccurs="0" name="SchoolDistrict" type="HPXMLString"/>
 						<xs:element minOccurs="0" name="eGridRegion" type="eGridRegions">
@@ -5503,6 +5529,14 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="FlatRoof">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+					<xs:attribute name="dataSource" type="DataSource"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BelowApartment">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" ref="extension"/>
