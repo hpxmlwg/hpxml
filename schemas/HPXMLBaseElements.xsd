@@ -945,7 +945,7 @@
 									<xs:element name="WallType" type="WallType" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
 										<xs:annotation>
-											<xs:documentation>[in] Thickness of the wall assembly</xs:documentation>
+											<xs:documentation>[in] Thickness of the entire wall assembly, including any siding, sheathing, continuous insulation, and interior finish.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
@@ -1017,7 +1017,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
 										<xs:annotation>
-											<xs:documentation>[in] Thickness of foundation wall excluding interior framing.</xs:documentation>
+											<xs:documentation>[in] Thickness of the foundation wall structural element (e.g., concrete), excluding any interior framing and continuous insulation.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="DepthBelowGrade" type="LengthMeasurement">
@@ -1104,7 +1104,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
 										<xs:annotation>
-											<xs:documentation>[in] Thickness of foundation slab.</xs:documentation>
+											<xs:documentation>[in] Thickness of the foundation slab structural element (e.g., concrete), excluding any floor coverings and continuous insulation.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Perimeter" type="LengthMeasurement">
