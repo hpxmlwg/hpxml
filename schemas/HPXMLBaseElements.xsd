@@ -2223,7 +2223,7 @@
 											<xs:documentation>[CFM]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="Efficiency" type="HPXMLDouble">
+									<xs:element minOccurs="0" name="Efficiency" type="Efficiency">
 										<xs:annotation>
 											<xs:documentation>[CFM/watt] The efficiency rating of a ceiling fan as determined by the test procedure defined by the Environmental Protection Agency's
 												ENERGY STAR Testing Facility Guidance Manual: Building a Testing Facility and Performing the Solid State Test Method for ENERGY STAR Qualified Ceiling
