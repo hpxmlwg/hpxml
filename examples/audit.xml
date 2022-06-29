@@ -662,11 +662,6 @@
         </Measure>
       </Measures>
     </ProjectDetails>
-    <extension>
-      <BuildingID id="bldg1p"/>
-      <ProjectSystemIdentifiers id="bldg1"/>
-      <ProjectSystemIdentifiers id="bldg1p"/>
-    </extension>
   </Project>
   <Utility>
     <UtilitiesorFuelProviders>
