@@ -5083,21 +5083,22 @@
 			<xs:element name="WoodStud">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element minOccurs="0" name="ExpandedPolystyreneSheathing" type="HPXMLBoolean">
-							<xs:annotation>
-								<xs:documentation>Sheathing insulation should be specified in the Insulation element as well.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="OptimumValueEngineering" type="HPXMLBoolean">
-							<xs:annotation>
-								<xs:documentation>Please specify stud spacing and framing factor in the appropriate places as well.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="FramingType" type="FramingType">
-							<xs:annotation>
-								<xs:documentation>See https://thecraftsmanblog.com/framing-timber-balloon-platform for a description of different framing types.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+					<xs:attribute name="dataSource" type="DataSource"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StructurallyInsulatedPanel">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+					<xs:attribute name="dataSource" type="DataSource"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SteelFrame">
+				<xs:complexType>
+					<xs:sequence>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
