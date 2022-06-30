@@ -3331,7 +3331,7 @@
 	</xs:complexType>
 	<xs:simpleType name="FoundationThermalBoundary_simple">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="frame floor"/>
+			<xs:enumeration value="floor"/>
 			<xs:enumeration value="foundation wall"/>
 		</xs:restriction>
 	</xs:simpleType>
