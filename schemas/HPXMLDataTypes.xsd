@@ -59,6 +59,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="3.0"/>
 			<xs:enumeration value="3.1"/>
+			<xs:enumeration value="4.0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Address Information Below-->

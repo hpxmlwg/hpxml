@@ -5574,7 +5574,7 @@
 	</xs:complexType>
 	<xs:complexType name="FloorType">
 		<xs:choice>
-			<xs:element name="WoodStud">
+			<xs:element name="WoodFrame">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" ref="extension"/>
