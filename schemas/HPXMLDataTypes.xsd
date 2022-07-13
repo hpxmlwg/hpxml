@@ -2876,6 +2876,8 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="clear"/>
 			<xs:enumeration value="low-e"/>
+			<xs:enumeration value="low-e, high-solar-gain"/>
+			<xs:enumeration value="low-e, low-solar-gain"/>
 			<xs:enumeration value="tinted"/>
 			<xs:enumeration value="reflective"/>
 			<xs:enumeration value="tinted/reflective"/>
