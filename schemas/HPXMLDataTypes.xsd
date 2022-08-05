@@ -1182,7 +1182,7 @@
 	</xs:simpleType>
 	<xs:complexType name="AdjacentTo">
 		<xs:annotation>
-			<xs:documentation>DEPRECATION WARNING: Choices "other housing unit above" and "other housing unit below" will be deprecated in the future. Use Ceiling vs FrameFloor to describe whether "other housing unit" is above or below the given surface.</xs:documentation>
+			<xs:documentation>DEPRECATION WARNING: Choices "other housing unit above" and "other housing unit below" will be deprecated in the future. Use Ceiling vs Floor to describe whether "other housing unit" is above or below the given surface.</xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="AdjacentTo_simple">

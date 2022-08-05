@@ -1213,6 +1213,7 @@
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo" minOccurs="0"/>
 									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
+									<xs:element name="FloorType" type="FloorType" minOccurs="0"/>
 									<xs:element minOccurs="0" name="FloorJoists" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorTrusses" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorCovering" type="FloorCovering"/>
