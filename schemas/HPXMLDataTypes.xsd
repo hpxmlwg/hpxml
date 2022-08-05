@@ -1158,6 +1158,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+			<xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
 			<xs:enumeration value="crawlspace - unconditioned"/>
@@ -1815,8 +1816,10 @@
 	<xs:simpleType name="CoolingEfficiencyUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="SEER"/>
+			<xs:enumeration value="SEER2"/>
 			<xs:enumeration value="CEER"/>
 			<xs:enumeration value="EER"/>
+			<xs:enumeration value="EER2"/>
 			<xs:enumeration value="COP"/>
 			<xs:enumeration value="kW/ton"/>
 		</xs:restriction>
@@ -1831,6 +1834,7 @@
 	<xs:simpleType name="HeatingEfficiencyUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="HSPF"/>
+			<xs:enumeration value="HSPF2"/>
 			<xs:enumeration value="COP"/>
 			<xs:enumeration value="AFUE"/>
 			<xs:enumeration value="Percent"/>
@@ -1839,6 +1843,20 @@
 	<xs:complexType name="HeatingEfficiencyUnits">
 		<xs:simpleContent>
 			<xs:extension base="HeatingEfficiencyUnits_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="StandbyLossUnits_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="F/hr"/>
+			<xs:enumeration value="%/hr"/>
+			<xs:enumeration value="Btu/hr"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="StandbyLossUnits">
+		<xs:simpleContent>
+			<xs:extension base="StandbyLossUnits_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -1859,7 +1877,7 @@
 	</xs:complexType>
 	<xs:simpleType name="Efficiency_simple">
 		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
+			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="Efficiency">
@@ -1964,6 +1982,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+			<xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
 			<xs:enumeration value="crawlspace - unconditioned"/>
@@ -2148,6 +2167,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+			<xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
 			<xs:enumeration value="crawlspace - unconditioned"/>
@@ -2965,6 +2985,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+			<xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="garage - conditioned"/>
 			<xs:enumeration value="garage - unconditioned"/>
@@ -3029,6 +3050,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+			<xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="garage - conditioned"/>
 			<xs:enumeration value="garage - unconditioned"/>
@@ -4407,6 +4429,7 @@
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
 			<xs:enumeration value="basement - unconditioned"/>
+			<xs:enumeration value="conditioned space"/>
 			<xs:enumeration value="crawlspace"/>
 			<xs:enumeration value="crawlspace - conditioned"/>
 			<xs:enumeration value="crawlspace - unconditioned"/>
