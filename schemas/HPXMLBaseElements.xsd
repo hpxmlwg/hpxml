@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.1">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:element name="XMLTransactionHeaderInformation">
 		<xs:annotation>
@@ -1609,9 +1608,9 @@
 											<xs:attribute name="dataSource" type="DataSource"/>
 										</xs:complexType>
 									</xs:element>
-									<xs:element minOccurs="0" name="StandbyLoss" type="HPXMLDouble">
+									<xs:element minOccurs="0" name="StandbyLoss" type="StandbyLossType">
 										<xs:annotation>
-											<xs:documentation>[degF/hr] The standby heat loss rate for, e.g., indirect water heaters in degrees per hour. Published in the AHRI Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
+											<xs:documentation>The standby heat loss rate for, e.g., indirect or commercial water heaters. Published in the AHRI Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="MeetsACCA5QIHVACSpecification" type="HPXMLBoolean" minOccurs="0"/>
@@ -3488,6 +3487,17 @@
 			<xs:element name="Units" type="HeatingEfficiencyUnits">
 				<xs:annotation>
 					<xs:documentation>For AFUE and Percent enter values as a fractional number between 0 and 1, i.e. 80% = 0.8</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Value" type="Efficiency"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="StandbyLossType">
+		<xs:sequence>
+			<xs:element name="Units" type="StandbyLossUnits">
+				<xs:annotation>
+					<xs:documentation>For %/hr enter values as a percent, i.e. 1.20%/hr = 1.20 and 0.68%/hr = 0.68.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Value" type="Efficiency"/>
