@@ -1709,7 +1709,7 @@
 												430, Subpart B, Appendix E.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="HeatingCOP" type="Efficiency">
+									<xs:element minOccurs="0" name="HeatPumpCOP" type="Efficiency">
 										<xs:annotation>
 											<xs:documentation>The dimensionless coefficient of performance, used to measure the efficiency of a commercial heat pump water heater.</xs:documentation>
 										</xs:annotation>
