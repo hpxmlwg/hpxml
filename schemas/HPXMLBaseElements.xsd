@@ -1522,7 +1522,12 @@
 									<xs:element minOccurs="0" name="ThirdPartyCertification" type="DHWThirdPartyCertification" maxOccurs="unbounded"/>
 									<xs:element name="TankVolume" type="Volume" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>[gal]</xs:documentation>
+											<xs:documentation>[gal] Nominal capacity</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="MeasuredTankVolume" type="Volume" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[gal] Measured capacity</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="FractionDHWLoadServed" type="Fraction"/>
