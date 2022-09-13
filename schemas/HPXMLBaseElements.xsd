@@ -1,6 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.1">
 	<xs:include schemaLocation="HPXMLDataTypes.xsd"/>
 	<xs:element name="XMLTransactionHeaderInformation">
 		<xs:annotation>
@@ -1544,6 +1543,11 @@
 												430, Subpart B, Appendix E.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="HeatPumpCOP" type="Efficiency">
+										<xs:annotation>
+											<xs:documentation>The dimensionless coefficient of performance, used to measure the efficiency of a commercial heat pump water heater.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="FirstHourRating" type="Volume">
 										<xs:annotation>
 											<xs:documentation>[gal per hour] An estimate of the maximum volume of hot water in gallons that a storage water heater can supply within an hour that begins
@@ -1609,9 +1613,9 @@
 											<xs:attribute name="dataSource" type="DataSource"/>
 										</xs:complexType>
 									</xs:element>
-									<xs:element minOccurs="0" name="StandbyLoss" type="HPXMLDouble">
+									<xs:element minOccurs="0" name="StandbyLoss" type="StandbyLossType">
 										<xs:annotation>
-											<xs:documentation>[degF/hr] The standby heat loss rate for, e.g., indirect water heaters in degrees per hour. Published in the AHRI Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
+											<xs:documentation>The standby heat loss rate for, e.g., indirect or commercial water heaters. Published in the AHRI Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="MeetsACCA5QIHVACSpecification" type="HPXMLBoolean" minOccurs="0"/>
@@ -3491,6 +3495,17 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="Value" type="Efficiency"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="StandbyLossType">
+		<xs:sequence>
+			<xs:element name="Units" type="StandbyLossUnits">
+				<xs:annotation>
+					<xs:documentation>For %/hr enter values as a fraction, i.e. 1.20%/hr = 0.0120 and 0.68%/hr = 0.0068.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Value" type="HPXMLDouble"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
