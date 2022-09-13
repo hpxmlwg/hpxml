@@ -1952,6 +1952,12 @@
 									<xs:element minOccurs="0" name="ModelNumber" type="Model"/>
 									<xs:element minOccurs="0" name="SerialNumber" type="HPXMLString"/>
 									<xs:element minOccurs="0" ref="ConnectedDevice"/>
+									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
+									<xs:element minOccurs="0" name="Quantity" type="IntegerGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>Number of similar batteries.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Location" type="BatteryLocation"/>
 									<xs:element minOccurs="0" name="GridConnected" type="HPXMLBoolean">
 										<xs:annotation>
