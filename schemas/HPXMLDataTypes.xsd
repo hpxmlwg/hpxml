@@ -1746,16 +1746,32 @@
 			<xs:enumeration value="central air conditioner"/>
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="room air conditioner"/>
+			<xs:enumeration value="room air conditioner with heating"/>
 			<xs:enumeration value="evaporative cooler"/>
 			<xs:enumeration value="chiller"/>
 			<xs:enumeration value="cooling tower"/>
 			<xs:enumeration value="packaged terminal air conditioner"/>
+			<xs:enumeration value="packaged terminal air conditioner with heating"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="CoolingSystemType">
 		<xs:simpleContent>
 			<xs:extension base="CoolingSystemType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="RoomCoolingType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="portable"/>
+			<xs:enumeration value="wall"/>
+			<xs:enumeration value="window"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="RoomCoolingType">
+		<xs:simpleContent>
+			<xs:extension base="RoomCoolingType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -1843,7 +1859,7 @@
 			<xs:enumeration value="water-loop-to-air"/>
 			<xs:enumeration value="variable refrigerant flow"/>
 			<xs:enumeration value="packaged terminal heat pump"/>
-			<xs:enumeration value="room heat pump"/>
+			<xs:enumeration value="room air conditioner with reverse cycle"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="HeatPumpType">
