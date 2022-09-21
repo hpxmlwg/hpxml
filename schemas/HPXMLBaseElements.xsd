@@ -1953,7 +1953,7 @@
 									<xs:element minOccurs="0" name="SerialNumber" type="HPXMLString"/>
 									<xs:element minOccurs="0" ref="ConnectedDevice"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
-									<xs:element minOccurs="0" name="Quantity" type="IntegerGreaterThanZero">
+									<xs:element minOccurs="0" name="Count" type="IntegerGreaterThanZero">
 										<xs:annotation>
 											<xs:documentation>Number of similar batteries.</xs:documentation>
 										</xs:annotation>
