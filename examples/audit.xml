@@ -264,7 +264,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1"/>
-          <NumberofUnits>20</NumberofUnits>
+          <Count>20</Count>
           <LightingType>
             <Incandescent/>
           </LightingType>
@@ -520,7 +520,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1p" sameas="lights1"/>
-          <NumberofUnits>20</NumberofUnits>
+          <Count>20</Count>
           <LightingType>
             <Incandescent/>
           </LightingType>

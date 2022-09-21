@@ -105,7 +105,7 @@
           <Window>
             <SystemIdentifier id="windows"/>
             <Area>120</Area>
-            <Quantity>15</Quantity>
+            <Count>15</Count>
             <FrameType>
               <Vinyl/>
             </FrameType>
@@ -200,7 +200,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1"/>
-          <NumberofUnits>10</NumberofUnits>
+          <Count>10</Count>
           <LightingType>
             <Incandescent/>
           </LightingType>
@@ -294,7 +294,7 @@
           <Window>
             <SystemIdentifier id="windowsproposed" sameas="windows"/>
             <Area>120</Area>
-            <Quantity>15</Quantity>
+            <Count>15</Count>
             <FrameType>
               <Vinyl/>
             </FrameType>
@@ -390,7 +390,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1proposed" sameas="lights1"/>
-          <NumberofUnits>10</NumberofUnits>
+          <Count>10</Count>
           <LightingType>
             <Incandescent/>
           </LightingType>
@@ -492,7 +492,7 @@
           <Window>
             <SystemIdentifier id="windowscompletion" sameas="windows"/>
             <Area>120</Area>
-            <Quantity>15</Quantity>
+            <Count>15</Count>
             <FrameType>
               <Vinyl/>
             </FrameType>
@@ -588,7 +588,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1completion" sameas="lights1"/>
-          <NumberofUnits>10</NumberofUnits>
+          <Count>10</Count>
           <LightingType>
             <Incandescent/>
           </LightingType>
