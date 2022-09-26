@@ -4906,7 +4906,7 @@
 			<xs:enumeration value="none"/>
 			<xs:enumeration value="air handler fan"/>
 			<xs:enumeration value="supplemental fan"/>
-      <xs:enumeration value="other"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="AdditionalRuntimeOperatingMode">
