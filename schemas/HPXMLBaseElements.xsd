@@ -1462,8 +1462,12 @@
 																	<xs:documentation>Has controls to block the flow of outside air when the CFIS system is not ventilating. For example, an electronically-controlled mechanical damper, or an in-line fan that substantially blocks the flow when not running.</xs:documentation>
 																</xs:annotation>
 															</xs:element>
-															<xs:element minOccurs="0" name="AdditionalRuntimeOperatingMode" type="AdditionalRuntimeOperatingMode"/>
-															<xs:element name="AttachedToHVACDistributionSystem" type="LocalReference" minOccurs="0" maxOccurs="1">
+															<xs:element minOccurs="0" name="AdditionalRuntimeOperatingMode" type="AdditionalRuntimeOperatingMode">
+																<xs:annotation>
+																	<xs:documentation>Describes if/how the CFIS system provides additional ventilation beyond when the HVAC system is running to meet a given ventilation target.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element name="SupplementalFan" type="LocalReference" minOccurs="0" maxOccurs="1">
 																<xs:annotation>
 																	<xs:documentation>When AdditionalRuntimeOperatingMode="supplemental fan", specifies the VentilationFan that serves as that supplemental fan.</xs:documentation>
 																</xs:annotation>
