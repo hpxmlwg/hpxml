@@ -1,724 +1,769 @@
-<HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.3">
-    <XMLTransactionHeaderInformation>
-        <XMLType>BPI-2101</XMLType>
-        <XMLGeneratedBy>Noel</XMLGeneratedBy>
-        <CreatedDateAndTime>2015-12-23T16:46:51.188445</CreatedDateAndTime>
-        <Transaction>create</Transaction>
-    </XMLTransactionHeaderInformation>
-    <SoftwareInfo/>
-    <Customer>
-        <CustomerDetails>
-            <Person>
-                <SystemIdentifier id="person1"/>
-                <Name>
-                    <FirstName>John</FirstName>
-                    <LastName>Doe</LastName>
-                </Name>
-            </Person>
-        </CustomerDetails>
-    </Customer>
-    <Building>
-        <BuildingID id="bldg-audit"/>
-        <Site>
-            <SiteID id="site1"/>
-            <Address>
-                <Address1>123 Main St</Address1>
-                <Address2/>
-                <CityMunicipality>Golden</CityMunicipality>
-                <StateCode>CO</StateCode>
-                <ZipCode>80401</ZipCode>
-            </Address>
-        </Site>
-        <ProjectStatus>
-            <EventType>audit</EventType>
-        </ProjectStatus>
-        <BuildingDetails>
-            <Enclosure>
-                <AirInfiltration>
-                    <AirInfiltrationMeasurement>
-                        <SystemIdentifier id="airinfilt1"/>
-                        <TypeOfBlowerDoorTest>depressurization</TypeOfBlowerDoorTest>
-                        <HousePressure>50</HousePressure>
-                        <BuildingAirLeakage>
-                            <UnitofMeasure>CFM</UnitofMeasure>
-                            <AirLeakage>1300</AirLeakage>
-                        </BuildingAirLeakage>
-                    </AirInfiltrationMeasurement>
-                </AirInfiltration>
-                <AtticAndRoof>
-                    <Roofs>
-                        <Roof>
-                            <SystemIdentifier id="roof1"/>
-                            <RoofType>shingles</RoofType>
-                            <RadiantBarrier>false</RadiantBarrier>
-                        </Roof>
-                    </Roofs>
-                    <Attics>
-                        <Attic>
-                            <SystemIdentifier id="attic1"/>
-                            <AttachedToRoof idref="roof1"/>
-                            <AtticFloorInsulation>
-                                <SystemIdentifier id="attic1flrins"/>
-                                <Layer>
-                                    <InsulationMaterial>
-                                        <LooseFill>cellulose</LooseFill>
-                                    </InsulationMaterial>
-                                    <NominalRValue>19</NominalRValue>
-                                </Layer>
-                            </AtticFloorInsulation>
-                            <AtticRoofInsulation>
-                                <SystemIdentifier id="attic1roofins"/>
-                                <Layer>
-                                    <InsulationMaterial>
-                                        <None/>
-                                    </InsulationMaterial>
-                                    <NominalRValue>0</NominalRValue>
-                                </Layer>
-                            </AtticRoofInsulation>
-                        </Attic>
-                    </Attics>
-                </AtticAndRoof>
-                <Walls>
-                    <Wall>
-                        <SystemIdentifier id="walls"/>
-                        <Insulation>
-                            <SystemIdentifier id="wallsins"/>
-                            <Layer>
-                                <InsulationMaterial>
-                                    <Batt>fiberglass</Batt>
-                                </InsulationMaterial>
-                                <NominalRValue>11</NominalRValue>
-                            </Layer>
-                        </Insulation>
-                    </Wall>
-                </Walls>
-                <Windows>
-                    <Window>
-                        <SystemIdentifier id="windows"/>
-                        <Area>120</Area>
-                        <Quantity>15</Quantity>
-                        <FrameType>
-                            <Vinyl/>
-                        </FrameType>
-                        <GlassLayers>double-pane</GlassLayers>
-                        <GlassType>other</GlassType>
-                        <UFactor>0.29</UFactor>
-                        <SHGC>0.25</SHGC>
-                    </Window>
-                </Windows>
-                <Doors>
-                    <Door>
-                        <SystemIdentifier id="door1"/>
-                        <StormDoor>false</StormDoor>
-                        <RValue>5</RValue>
-                    </Door>
-                </Doors>
-            </Enclosure>
-            <Systems>
-                <HVAC>
-                    <HVACPlant>
-                        <HeatingSystem>
-                            <SystemIdentifier id="furnace1"/>
-                            <HeatingSystemType>
-                                <Furnace/>
-                            </HeatingSystemType>
-                            <HeatingSystemFuel>natural gas</HeatingSystemFuel>
-                            <AnnualHeatingEfficiency>
-                                <Units>AFUE</Units>
-                                <Value>0.95</Value>
-                            </AnnualHeatingEfficiency>
-                            <FractionHeatLoadServed>1</FractionHeatLoadServed>
-                        </HeatingSystem>
-                        <CoolingSystem>
-                            <SystemIdentifier id="clgsys1"/>
-                            <CoolingSystemType>central air conditioning</CoolingSystemType>
-                            <CoolingSystemFuel>electricity</CoolingSystemFuel>
-                            <CoolingCapacity>36000</CoolingCapacity>
-                            <FractionCoolLoadServed>1</FractionCoolLoadServed>
-                            <AnnualCoolingEfficiency>
-                                <Units>SEER</Units>
-                                <Value>13</Value>
-                            </AnnualCoolingEfficiency>
-                        </CoolingSystem>
-                    </HVACPlant>
-                    <HVACControl>
-                        <SystemIdentifier id="hvacctrl1"/>
-                        <ControlType>manual thermostat</ControlType>
-                        <HVACSystemsServed idref="clgsys1"/>
-                    </HVACControl>
-                    <HVACDistribution>
-                        <SystemIdentifier id="hvacdist1"/>
-                        <DistributionSystemType>
-                            <AirDistribution>
-                                <DuctLeakageMeasurement>
-                                    <DuctLeakage>
-                                        <Units>CFM25</Units>
-                                        <Value>1</Value>
-                                    </DuctLeakage>
-                                </DuctLeakageMeasurement>
-                                <Ducts>
-                                    <DuctInsulationRValue>0</DuctInsulationRValue>
-                                </Ducts>
-                            </AirDistribution>
-                        </DistributionSystemType>
-                        <HVACDistributionImprovement>
-                            <DuctSystemSealed>false</DuctSystemSealed>
-                        </HVACDistributionImprovement>
-                    </HVACDistribution>
-                </HVAC>
-                <WaterHeating>
-                    <WaterHeatingSystem>
-                        <SystemIdentifier id="waterheater1"/>
-                        <FuelType>natural gas</FuelType>
-                        <WaterHeaterType>storage water heater</WaterHeaterType>
-                        <TankVolume>50</TankVolume>
-                        <EnergyFactor>0.6</EnergyFactor>
-                        <RecoveryEfficiency>0.75</RecoveryEfficiency>
-                        <WaterHeaterImprovement>
-                            <LengthofPipeInsulated>20</LengthofPipeInsulated>
-                        </WaterHeaterImprovement>
-                    </WaterHeatingSystem>
-                </WaterHeating>
-            </Systems>
-            <Appliances>
-                <ClothesWasher>
-                    <SystemIdentifier id="clotheswasher1"/>
-                </ClothesWasher>
-                <Refrigerator>
-                    <SystemIdentifier id="refrigerator1"/>
-                </Refrigerator>
-            </Appliances>
-            <Lighting>
-                <LightingGroup>
-                    <SystemIdentifier id="lights1"/>
-                    <NumberofUnits>10</NumberofUnits>
-                    <LightingType>
-                        <Incandescent/>
-                    </LightingType>
-                    <AverageWattage>60</AverageWattage>
-                </LightingGroup>
-            </Lighting>
-            <HealthAndSafety>
-                <CombustionAppliances>
-                    <CombustionApplianceZone>
-                        <SystemIdentifier id="caz1"/>
-                    </CombustionApplianceZone>
-                </CombustionAppliances>
-            </HealthAndSafety>
-        </BuildingDetails>
-    </Building>
-    <Building>
-        <BuildingID id="bldg-proposed"/>
-        <ProjectStatus>
-            <EventType>proposed workscope</EventType>
-        </ProjectStatus>
-        <BuildingDetails>
-            <Enclosure>
-                <AirInfiltration>
-                    <AirInfiltrationMeasurement>
-                        <SystemIdentifier id="airinfilt1proposed" sameas="airinfilt1"/>
-                        <TypeOfBlowerDoorTest>depressurization</TypeOfBlowerDoorTest>
-                        <HousePressure>50</HousePressure>
-                        <BuildingAirLeakage>
-                            <UnitofMeasure>CFM</UnitofMeasure>
-                            <AirLeakage>1300</AirLeakage>
-                        </BuildingAirLeakage>
-                    </AirInfiltrationMeasurement>
-                </AirInfiltration>
-                <AtticAndRoof>
-                    <Roofs>
-                        <Roof>
-                            <SystemIdentifier id="roof1proposed" sameas="roof1"/>
-                            <RoofType>shingles</RoofType>
-                            <RadiantBarrier>false</RadiantBarrier>
-                        </Roof>
-                    </Roofs>
-                    <Attics>
-                        <Attic>
-                            <SystemIdentifier id="attic1proposed" sameas="attic1"/>
-                            <AttachedToRoof idref="roof1"/>
-                            <AtticFloorInsulation>
-                                <SystemIdentifier id="attic1flrinsproposed"/>
-                                <Layer>
-                                    <InsulationMaterial>
-                                        <LooseFill>cellulose</LooseFill>
-                                    </InsulationMaterial>
-                                    <NominalRValue>50</NominalRValue>
-                                </Layer>
-                            </AtticFloorInsulation>
-                            <AtticRoofInsulation>
-                                <SystemIdentifier id="attic1roofinsproposed" sameas="attic1roofins"/>
-                                <Layer>
-                                    <InsulationMaterial>
-                                        <None/>
-                                    </InsulationMaterial>
-                                    <NominalRValue>0</NominalRValue>
-                                </Layer>
-                            </AtticRoofInsulation>
-                        </Attic>
-                    </Attics>
-                </AtticAndRoof>
-                <Walls>
-                    <Wall>
-                        <SystemIdentifier id="wallsproposed" sameas="walls"/>
-                        <Insulation>
-                            <SystemIdentifier id="wallsinsproposed" sameas="wallsins"/>
-                            <Layer>
-                                <InsulationMaterial>
-                                    <Batt>fiberglass</Batt>
-                                </InsulationMaterial>
-                                <NominalRValue>11</NominalRValue>
-                            </Layer>
-                        </Insulation>
-                    </Wall>
-                </Walls>
-                <Windows>
-                    <Window>
-                        <SystemIdentifier id="windowsproposed" sameas="windows"/>
-                        <Area>120</Area>
-                        <Quantity>15</Quantity>
-                        <FrameType>
-                            <Vinyl/>
-                        </FrameType>
-                        <GlassLayers>double-pane</GlassLayers>
-                        <GlassType>other</GlassType>
-                        <UFactor>0.29</UFactor>
-                        <SHGC>0.25</SHGC>
-                    </Window>
-                </Windows>
-                <Doors>
-                    <Door>
-                        <SystemIdentifier id="door1proposed" sameas="door1"/>
-                        <StormDoor>false</StormDoor>
-                        <RValue>5</RValue>
-                    </Door>
-                </Doors>
-            </Enclosure>
-            <Systems>
-                <HVAC>
-                    <HVACPlant>
-                        <HeatingSystem>
-                            <SystemIdentifier id="furnace1proposed" sameas="furnace1"/>
-                            <HeatingSystemType>
-                                <Furnace/>
-                            </HeatingSystemType>
-                            <HeatingSystemFuel>natural gas</HeatingSystemFuel>
-                            <AnnualHeatingEfficiency>
-                                <Units>AFUE</Units>
-                                <Value>0.95</Value>
-                            </AnnualHeatingEfficiency>
-                            <FractionHeatLoadServed>1</FractionHeatLoadServed>
-                        </HeatingSystem>
-                        <CoolingSystem>
-                            <SystemIdentifier id="clgsys1proposed" sameas="clgsys1"/>
-                            <CoolingSystemType>central air conditioning</CoolingSystemType>
-                            <CoolingSystemFuel>electricity</CoolingSystemFuel>
-                            <CoolingCapacity>36000</CoolingCapacity>
-                            <FractionCoolLoadServed>1</FractionCoolLoadServed>
-                            <AnnualCoolingEfficiency>
-                                <Units>SEER</Units>
-                                <Value>13</Value>
-                            </AnnualCoolingEfficiency>
-                        </CoolingSystem>
-                    </HVACPlant>
-                    <HVACControl>
-                        <SystemIdentifier id="hvacctrl1proposed" sameas="hvacctrl1"/>
-                        <ControlType>manual thermostat</ControlType>
-                        <HVACSystemsServed idref="clgsys1"/>
-                    </HVACControl>
-                    <HVACDistribution>
-                        <SystemIdentifier id="hvacdist1proposed" sameas="hvacdist1"/>
-                        <DistributionSystemType>
-                            <AirDistribution>
-                                <DuctLeakageMeasurement>
-                                    <DuctLeakage>
-                                        <Units>CFM25</Units>
-                                        <Value>1</Value>
-                                    </DuctLeakage>
-                                </DuctLeakageMeasurement>
-                                <Ducts>
-                                    <DuctInsulationRValue>0</DuctInsulationRValue>
-                                </Ducts>
-                            </AirDistribution>
-                        </DistributionSystemType>
-                        <HVACDistributionImprovement>
-                            <DuctSystemSealed>false</DuctSystemSealed>
-                        </HVACDistributionImprovement>
-                    </HVACDistribution>
-                </HVAC>
-                <WaterHeating>
-                    <WaterHeatingSystem>
-                        <SystemIdentifier id="waterheater1proposed" sameas="waterheater1"/>
-                        <FuelType>natural gas</FuelType>
-                        <WaterHeaterType>storage water heater</WaterHeaterType>
-                        <TankVolume>50</TankVolume>
-                        <EnergyFactor>0.6</EnergyFactor>
-                        <RecoveryEfficiency>0.75</RecoveryEfficiency>
-                        <WaterHeaterImprovement>
-                            <LengthofPipeInsulated>20</LengthofPipeInsulated>
-                        </WaterHeaterImprovement>
-                    </WaterHeatingSystem>
-                </WaterHeating>
-            </Systems>
-            <Appliances>
-                <ClothesWasher>
-                    <SystemIdentifier id="clotheswasher1proposed" sameas="clotheswasher1"/>
-                </ClothesWasher>
-                <Refrigerator>
-                    <SystemIdentifier id="refrigerator1proposed"/>
-                    <ThirdPartyCertification>Energy Star</ThirdPartyCertification>
-                </Refrigerator>
-            </Appliances>
-            <Lighting>
-                <LightingGroup>
-                    <SystemIdentifier id="lights1proposed" sameas="lights1"/>
-                    <NumberofUnits>10</NumberofUnits>
-                    <LightingType>
-                        <Incandescent/>
-                    </LightingType>
-                    <AverageWattage>60</AverageWattage>
-                </LightingGroup>
-            </Lighting>
-            <HealthAndSafety>
-                <CombustionAppliances>
-                    <CombustionApplianceZone>
-                        <SystemIdentifier id="caz1proposed" sameas="caz1"/>
-                        <CombustionApplianceTest>
-                            <CAZAppliance/>
-                            <CarbonMonoxideTest>
-                                <PoorScenario>2</PoorScenario>
-                                <CurrentCondition>1</CurrentCondition>
-                                <TestResult>passed</TestResult>
-                            </CarbonMonoxideTest>
-                        </CombustionApplianceTest>
-                    </CombustionApplianceZone>
-                </CombustionAppliances>
-            </HealthAndSafety>
-        </BuildingDetails>
-    </Building>
-    <Building>
-        <BuildingID id="bldg-completion"/>
-        <ProjectStatus>
-            <EventType>job completion testing/final inspection</EventType>
-        </ProjectStatus>
-        <BuildingDetails>
-            <Enclosure>
-                <AirInfiltration>
-                    <AirInfiltrationMeasurement>
-                        <SystemIdentifier id="airinfilt1completion" sameas="airinfilt1"/>
-                        <TypeOfBlowerDoorTest>depressurization</TypeOfBlowerDoorTest>
-                        <HousePressure>50</HousePressure>
-                        <BuildingAirLeakage>
-                            <UnitofMeasure>CFM</UnitofMeasure>
-                            <AirLeakage>1300</AirLeakage>
-                        </BuildingAirLeakage>
-                    </AirInfiltrationMeasurement>
-                </AirInfiltration>
-                <AtticAndRoof>
-                    <Roofs>
-                        <Roof>
-                            <SystemIdentifier id="roof1completion" sameas="roof1"/>
-                            <RoofType>shingles</RoofType>
-                            <RadiantBarrier>false</RadiantBarrier>
-                        </Roof>
-                    </Roofs>
-                    <Attics>
-                        <Attic>
-                            <SystemIdentifier id="attic1completion" sameas="attic1"/>
-                            <AttachedToRoof idref="roof1"/>
-                            <AtticFloorInsulation>
-                                <SystemIdentifier id="attic1flrinscompletion"/>
-                                <Layer>
-                                    <InsulationMaterial>
-                                        <LooseFill>cellulose</LooseFill>
-                                    </InsulationMaterial>
-                                    <NominalRValue>49</NominalRValue>
-                                </Layer>
-                            </AtticFloorInsulation>
-                            <AtticRoofInsulation>
-                                <SystemIdentifier id="attic1roofinscompletion" sameas="attic1roofins"/>
-                                <Layer>
-                                    <InsulationMaterial>
-                                        <None/>
-                                    </InsulationMaterial>
-                                    <NominalRValue>0</NominalRValue>
-                                </Layer>
-                            </AtticRoofInsulation>
-                        </Attic>
-                    </Attics>
-                </AtticAndRoof>
-                <Walls>
-                    <Wall>
-                        <SystemIdentifier id="wallscompletion" sameas="walls"/>
-                        <Insulation>
-                            <SystemIdentifier id="wallsinscompletion" sameas="wallsins"/>
-                            <Layer>
-                                <InsulationMaterial>
-                                    <Batt>fiberglass</Batt>
-                                </InsulationMaterial>
-                                <NominalRValue>11</NominalRValue>
-                            </Layer>
-                        </Insulation>
-                    </Wall>
-                </Walls>
-                <Windows>
-                    <Window>
-                        <SystemIdentifier id="windowscompletion" sameas="windows"/>
-                        <Area>120</Area>
-                        <Quantity>15</Quantity>
-                        <FrameType>
-                            <Vinyl/>
-                        </FrameType>
-                        <GlassLayers>double-pane</GlassLayers>
-                        <GlassType>other</GlassType>
-                        <UFactor>0.29</UFactor>
-                        <SHGC>0.25</SHGC>
-                    </Window>
-                </Windows>
-                <Doors>
-                    <Door>
-                        <SystemIdentifier id="door1completion" sameas="door1"/>
-                        <StormDoor>false</StormDoor>
-                        <RValue>5</RValue>
-                    </Door>
-                </Doors>
-            </Enclosure>
-            <Systems>
-                <HVAC>
-                    <HVACPlant>
-                        <HeatingSystem>
-                            <SystemIdentifier id="furnace1completion" sameas="furnace1"/>
-                            <HeatingSystemType>
-                                <Furnace/>
-                            </HeatingSystemType>
-                            <HeatingSystemFuel>natural gas</HeatingSystemFuel>
-                            <AnnualHeatingEfficiency>
-                                <Units>AFUE</Units>
-                                <Value>0.95</Value>
-                            </AnnualHeatingEfficiency>
-                            <FractionHeatLoadServed>1</FractionHeatLoadServed>
-                        </HeatingSystem>
-                        <CoolingSystem>
-                            <SystemIdentifier id="clgsys1completion" sameas="clgsys1"/>
-                            <CoolingSystemType>central air conditioning</CoolingSystemType>
-                            <CoolingSystemFuel>electricity</CoolingSystemFuel>
-                            <CoolingCapacity>36000</CoolingCapacity>
-                            <FractionCoolLoadServed>1</FractionCoolLoadServed>
-                            <AnnualCoolingEfficiency>
-                                <Units>SEER</Units>
-                                <Value>13</Value>
-                            </AnnualCoolingEfficiency>
-                        </CoolingSystem>
-                    </HVACPlant>
-                    <HVACControl>
-                        <SystemIdentifier id="hvacctrl1completion" sameas="hvacctrl1"/>
-                        <ControlType>manual thermostat</ControlType>
-                        <HVACSystemsServed idref="clgsys1"/>
-                    </HVACControl>
-                    <HVACDistribution>
-                        <SystemIdentifier id="hvacdist1completion" sameas="hvacdist1"/>
-                        <DistributionSystemType>
-                            <AirDistribution>
-                                <DuctLeakageMeasurement>
-                                    <DuctLeakage>
-                                        <Units>CFM25</Units>
-                                        <Value>1</Value>
-                                    </DuctLeakage>
-                                </DuctLeakageMeasurement>
-                                <Ducts>
-                                    <DuctInsulationRValue>0</DuctInsulationRValue>
-                                </Ducts>
-                            </AirDistribution>
-                        </DistributionSystemType>
-                        <HVACDistributionImprovement>
-                            <DuctSystemSealed>false</DuctSystemSealed>
-                        </HVACDistributionImprovement>
-                    </HVACDistribution>
-                </HVAC>
-                <WaterHeating>
-                    <WaterHeatingSystem>
-                        <SystemIdentifier id="waterheater1completion" sameas="waterheater1"/>
-                        <FuelType>natural gas</FuelType>
-                        <WaterHeaterType>storage water heater</WaterHeaterType>
-                        <TankVolume>50</TankVolume>
-                        <EnergyFactor>0.6</EnergyFactor>
-                        <RecoveryEfficiency>0.75</RecoveryEfficiency>
-                        <WaterHeaterImprovement>
-                            <LengthofPipeInsulated>20</LengthofPipeInsulated>
-                        </WaterHeaterImprovement>
-                    </WaterHeatingSystem>
-                </WaterHeating>
-            </Systems>
-            <Appliances>
-                <ClothesWasher>
-                    <SystemIdentifier id="clotheswasher1completion" sameas="clotheswasher1"/>
-                </ClothesWasher>
-                <Refrigerator>
-                    <SystemIdentifier id="refrigerator1completion"/>
-                    <ThirdPartyCertification>Energy Star</ThirdPartyCertification>
-                </Refrigerator>
-            </Appliances>
-            <Lighting>
-                <LightingGroup>
-                    <SystemIdentifier id="lights1completion" sameas="lights1"/>
-                    <NumberofUnits>10</NumberofUnits>
-                    <LightingType>
-                        <Incandescent/>
-                    </LightingType>
-                    <AverageWattage>60</AverageWattage>
-                </LightingGroup>
-            </Lighting>
-            <HealthAndSafety>
-                <CombustionAppliances>
-                    <CombustionApplianceZone>
-                        <SystemIdentifier id="caz1completion" sameas="caz1"/>
-                        <CombustionApplianceTest>
-                            <CAZAppliance/>
-                            <CarbonMonoxideTest>
-                                <PoorScenario>2</PoorScenario>
-                                <CurrentCondition>1</CurrentCondition>
-                                <TestResult>passed</TestResult>
-                            </CarbonMonoxideTest>
-                        </CombustionApplianceTest>
-                    </CombustionApplianceZone>
-                </CombustionAppliances>
-            </HealthAndSafety>
-        </BuildingDetails>
-    </Building>
-    <Project>
-        <BuildingID id="bldg-proposed"/>
-        <ProjectDetails>
-            <ProjectSystemIdentifiers id="bldg-audit"/>
-            <ProjectSystemIdentifiers id="bldg-proposed"/>
-            <ProjectStatus>
-                <EventType>proposed workscope</EventType>
-            </ProjectStatus>
-            <CompleteDateEstimated>2015-12-25</CompleteDateEstimated>
-            <EnergySavingsInfo>
-                <FuelSavings>
-                    <Fuel>electricity</Fuel>
-                    <TotalSavings>80</TotalSavings>
-                    <TotalDollarSavings>100</TotalDollarSavings>
-                </FuelSavings>
-            </EnergySavingsInfo>
-            <Measures>
-                <Measure>
-                    <MeasureSystemIdentifiers>
-                        <SystemIdentifiersInfo id="measure1"/>
-                    </MeasureSystemIdentifiers>
-                    <MeasureDescription>Blow in cellulose insulation in attic to R-50.</MeasureDescription>
-                    <Cost>1000</Cost>
-                    <ReplacedComponents>
-                        <ReplacedComponent id="attic1flrins"/>
-                    </ReplacedComponents>
-                    <InstalledComponent id="attic1flrinsproposed"/>
-                </Measure>
-                <Measure>
-                    <MeasureSystemIdentifiers>
-                        <SystemIdentifiersInfo id="measure2"/>
-                    </MeasureSystemIdentifiers>
-                    <MeasureDescription>Replace Refrigerator with EnergyStar version</MeasureDescription>
-                    <Cost>1200</Cost>
-                    <ReplacedComponents>
-                        <ReplacedComponent id="refrigerator1"/>
-                    </ReplacedComponents>
-                    <InstalledComponent id="refrigerator1proposed"/>
-                </Measure>
-            </Measures>
-        </ProjectDetails>
-    </Project>
-    <Project>
-        <BuildingID id="bldg-completion"/>
-        <ProjectDetails>
-            <ProjectSystemIdentifiers id="bldg-audit"/>
-            <ProjectSystemIdentifiers id="bldg-completion"/>
-            <ProjectStatus>
-                <EventType>job completion testing/final inspection</EventType>
-            </ProjectStatus>
-            <CompleteDateActual>2015-12-25</CompleteDateActual>
-            <EnergySavingsInfo>
-                <FuelSavings>
-                    <Fuel>electricity</Fuel>
-                    <TotalSavings>80</TotalSavings>
-                    <TotalDollarSavings>100</TotalDollarSavings>
-                </FuelSavings>
-            </EnergySavingsInfo>
-            <Measures>
-                <Measure>
-                    <MeasureSystemIdentifiers>
-                        <SystemIdentifiersInfo id="measure3"/>
-                    </MeasureSystemIdentifiers>
-                    <MeasureDescription>Blow in cellulose insulation in attic to R-49.</MeasureDescription>
-                    <Cost>1032.12</Cost>
-                    <ReplacedComponents>
-                        <ReplacedComponent id="attic1flrins"/>
-                    </ReplacedComponents>
-                    <InstalledComponent id="attic1flrinscompletion"/>
-                </Measure>
-                <Measure>
-                    <MeasureSystemIdentifiers>
-                        <SystemIdentifiersInfo id="measure4"/>
-                    </MeasureSystemIdentifiers>
-                    <MeasureDescription>Replace Refrigerator with EnergyStar version</MeasureDescription>
-                    <Cost>1234.56</Cost>
-                    <ReplacedComponents>
-                        <ReplacedComponent id="refrigerator1"/>
-                    </ReplacedComponents>
-                    <InstalledComponent id="refrigerator1completion"/>
-                </Measure>
-            </Measures>
-        </ProjectDetails>
-    </Project>
-    <Utility>
-        <UtilitiesorFuelProviders>
-            <UtilityFuelProvider>
-                <SystemIdentifier id="xcel"/>
-                <UtilityName>Xcel Energy</UtilityName>
-                <UtilityServiceTypeProvided>electricity</UtilityServiceTypeProvided>
-                <UtilityServiceTypeProvided>natural gas</UtilityServiceTypeProvided>
-            </UtilityFuelProvider>
-        </UtilitiesorFuelProviders>
-    </Utility>
-    <Consumption>
-        <BuildingID id="bldg-audit"/>
-        <CustomerID id="person1"/>
-        <ConsumptionDetails>
-            <ConsumptionInfo>
-                <UtilityID id="xcel"/>
-                <ConsumptionType>
-                    <Energy>
-                        <FuelType>electricity</FuelType>
-                        <UnitofMeasure>kWh</UnitofMeasure>
-                    </Energy>
-                </ConsumptionType>
-                <ConsumptionDetail>
-                    <Consumption>300</Consumption>
-                    <StartDateTime>2015-11-23T16:46:51.188445</StartDateTime>
-                    <EndDateTime>2015-12-23T16:46:51.188445</EndDateTime>
-                    <ConsumptionCost>70</ConsumptionCost>
-                </ConsumptionDetail>
-            </ConsumptionInfo>
-        </ConsumptionDetails>
-    </Consumption>
-    <Consumption>
-        <BuildingID id="bldg-completion"/>
-        <CustomerID id="person1"/>
-        <ConsumptionDetails>
-            <ConsumptionInfo>
-                <UtilityID id="xcel"/>
-                <ConsumptionType>
-                    <Energy>
-                        <FuelType>electricity</FuelType>
-                        <UnitofMeasure>kWh</UnitofMeasure>
-                    </Energy>
-                </ConsumptionType>
-                <ConsumptionDetail>
-                    <Consumption>250</Consumption>
-                    <StartDateTime>2016-01-04T18:08:59.777297</StartDateTime>
-                    <EndDateTime>2016-02-02T18:08:59.777297</EndDateTime>
-                    <ConsumptionCost>58.33</ConsumptionCost>
-                </ConsumptionDetail>
-            </ConsumptionInfo>
-        </ConsumptionDetails>
-    </Consumption>
+<HPXML xmlns="http://hpxmlonline.com/2019/10" schemaVersion="3.1">
+  <XMLTransactionHeaderInformation>
+    <XMLType>BPI-2101</XMLType>
+    <XMLGeneratedBy>Noel</XMLGeneratedBy>
+    <CreatedDateAndTime>2015-12-23T16:46:51.188445</CreatedDateAndTime>
+    <Transaction>create</Transaction>
+  </XMLTransactionHeaderInformation>
+  <SoftwareInfo/>
+  <Customer>
+    <CustomerDetails>
+      <Person>
+        <SystemIdentifier id="person1"/>
+        <Name>
+          <FirstName>John</FirstName>
+          <LastName>Doe</LastName>
+        </Name>
+      </Person>
+    </CustomerDetails>
+  </Customer>
+  <Building>
+    <BuildingID id="bldg-audit"/>
+    <Site>
+      <SiteID id="site1"/>
+      <Address>
+        <Address1>123 Main St</Address1>
+        <Address2/>
+        <CityMunicipality>Golden</CityMunicipality>
+        <StateCode>CO</StateCode>
+        <ZipCode>80401</ZipCode>
+      </Address>
+    </Site>
+    <ProjectStatus>
+      <EventType>audit</EventType>
+    </ProjectStatus>
+    <BuildingDetails>
+      <Enclosure>
+        <AirInfiltration>
+          <AirInfiltrationMeasurement>
+            <SystemIdentifier id="airinfilt1"/>
+            <TypeOfBlowerDoorTest>depressurization</TypeOfBlowerDoorTest>
+            <HousePressure>50</HousePressure>
+            <BuildingAirLeakage>
+              <UnitofMeasure>CFM</UnitofMeasure>
+              <AirLeakage>1300</AirLeakage>
+            </BuildingAirLeakage>
+          </AirInfiltrationMeasurement>
+        </AirInfiltration>
+        <Attics>
+          <Attic>
+            <SystemIdentifier id="attic1"/>
+            <AtticType>
+              <Attic>
+                <Vented>true</Vented>
+              </Attic>
+            </AtticType>
+            <AttachedToRoof idref="roof1"/>
+            <AttachedToFrameFloor idref="attic-floor-0"/>
+          </Attic>
+        </Attics>
+        <Roofs>
+          <Roof>
+            <SystemIdentifier id="roof1"/>
+            <RoofType>shingles</RoofType>
+            <RadiantBarrier>false</RadiantBarrier>
+            <Insulation>
+              <SystemIdentifier id="attic1roofins"/>
+              <Layer>
+                <InsulationMaterial>
+                  <None/>
+                </InsulationMaterial>
+                <NominalRValue>0</NominalRValue>
+              </Layer>
+            </Insulation>
+          </Roof>
+        </Roofs>
+        <Walls>
+          <Wall>
+            <SystemIdentifier id="walls"/>
+            <Insulation>
+              <SystemIdentifier id="wallsins"/>
+              <Layer>
+                <InsulationMaterial>
+                  <Batt>fiberglass</Batt>
+                </InsulationMaterial>
+                <NominalRValue>11</NominalRValue>
+              </Layer>
+            </Insulation>
+          </Wall>
+        </Walls>
+        <FrameFloors>
+          <FrameFloor>
+            <SystemIdentifier id="attic-floor-0"/>
+            <Insulation>
+              <SystemIdentifier id="attic1flrins"/>
+              <Layer>
+                <InsulationMaterial>
+                  <LooseFill>cellulose</LooseFill>
+                </InsulationMaterial>
+                <NominalRValue>19</NominalRValue>
+              </Layer>
+            </Insulation>
+          </FrameFloor>
+        </FrameFloors>
+        <Windows>
+          <Window>
+            <SystemIdentifier id="windows"/>
+            <Area>120</Area>
+            <Quantity>15</Quantity>
+            <FrameType>
+              <Vinyl/>
+            </FrameType>
+            <GlassLayers>double-pane</GlassLayers>
+            <GlassType>other</GlassType>
+            <UFactor>0.29</UFactor>
+            <SHGC>0.25</SHGC>
+          </Window>
+        </Windows>
+        <Doors>
+          <Door>
+            <SystemIdentifier id="door1"/>
+            <StormDoor>false</StormDoor>
+            <RValue>5</RValue>
+          </Door>
+        </Doors>
+      </Enclosure>
+      <Systems>
+        <HVAC>
+          <HVACPlant>
+            <HeatingSystem>
+              <SystemIdentifier id="furnace1"/>
+              <HeatingSystemType>
+                <Furnace/>
+              </HeatingSystemType>
+              <HeatingSystemFuel>natural gas</HeatingSystemFuel>
+              <AnnualHeatingEfficiency>
+                <Units>AFUE</Units>
+                <Value>0.95</Value>
+              </AnnualHeatingEfficiency>
+              <FractionHeatLoadServed>1</FractionHeatLoadServed>
+            </HeatingSystem>
+            <CoolingSystem>
+              <SystemIdentifier id="clgsys1"/>
+              <CoolingSystemType>central air conditioner</CoolingSystemType>
+              <CoolingSystemFuel>electricity</CoolingSystemFuel>
+              <CoolingCapacity>36000</CoolingCapacity>
+              <FractionCoolLoadServed>1</FractionCoolLoadServed>
+              <AnnualCoolingEfficiency>
+                <Units>SEER</Units>
+                <Value>13</Value>
+              </AnnualCoolingEfficiency>
+            </CoolingSystem>
+          </HVACPlant>
+          <HVACControl>
+            <SystemIdentifier id="hvacctrl1"/>
+            <ControlType>manual thermostat</ControlType>
+            <HVACSystemsServed idref="clgsys1"/>
+          </HVACControl>
+          <HVACDistribution>
+            <SystemIdentifier id="hvacdist1"/>
+            <DistributionSystemType>
+              <AirDistribution>
+                <DuctLeakageMeasurement>
+                  <DuctLeakage>
+                    <Units>CFM25</Units>
+                    <Value>1</Value>
+                  </DuctLeakage>
+                </DuctLeakageMeasurement>
+                <Ducts>
+                  <DuctInsulationRValue>0</DuctInsulationRValue>
+                </Ducts>
+              </AirDistribution>
+            </DistributionSystemType>
+            <HVACDistributionImprovement>
+              <DuctSystemSealed>false</DuctSystemSealed>
+            </HVACDistributionImprovement>
+          </HVACDistribution>
+        </HVAC>
+        <WaterHeating>
+          <WaterHeatingSystem>
+            <SystemIdentifier id="waterheater1"/>
+            <FuelType>natural gas</FuelType>
+            <WaterHeaterType>storage water heater</WaterHeaterType>
+            <TankVolume>50</TankVolume>
+            <EnergyFactor>0.6</EnergyFactor>
+            <RecoveryEfficiency>0.75</RecoveryEfficiency>
+            <WaterHeaterImprovement>
+              <LengthofPipeInsulated>20</LengthofPipeInsulated>
+            </WaterHeaterImprovement>
+          </WaterHeatingSystem>
+        </WaterHeating>
+      </Systems>
+      <Appliances>
+        <ClothesWasher>
+          <SystemIdentifier id="clotheswasher1"/>
+        </ClothesWasher>
+        <Refrigerator>
+          <SystemIdentifier id="refrigerator1"/>
+        </Refrigerator>
+      </Appliances>
+      <Lighting>
+        <LightingGroup>
+          <SystemIdentifier id="lights1"/>
+          <NumberofUnits>10</NumberofUnits>
+          <LightingType>
+            <Incandescent/>
+          </LightingType>
+          <AverageWattage>60</AverageWattage>
+        </LightingGroup>
+      </Lighting>
+      <HealthAndSafety>
+        <CombustionAppliances>
+          <CombustionApplianceZone>
+            <SystemIdentifier id="caz1"/>
+          </CombustionApplianceZone>
+        </CombustionAppliances>
+      </HealthAndSafety>
+    </BuildingDetails>
+  </Building>
+  <Building>
+    <BuildingID id="bldg-proposed"/>
+    <ProjectStatus>
+      <EventType>proposed workscope</EventType>
+    </ProjectStatus>
+    <BuildingDetails>
+      <Enclosure>
+        <AirInfiltration>
+          <AirInfiltrationMeasurement>
+            <SystemIdentifier id="airinfilt1proposed" sameas="airinfilt1"/>
+            <TypeOfBlowerDoorTest>depressurization</TypeOfBlowerDoorTest>
+            <HousePressure>50</HousePressure>
+            <BuildingAirLeakage>
+              <UnitofMeasure>CFM</UnitofMeasure>
+              <AirLeakage>1300</AirLeakage>
+            </BuildingAirLeakage>
+          </AirInfiltrationMeasurement>
+        </AirInfiltration>
+        <Attics>
+          <Attic>
+            <SystemIdentifier id="attic1proposed" sameas="attic1"/>
+            <AtticType>
+              <Attic>
+                <Vented>true</Vented>
+              </Attic>
+            </AtticType>
+            <AttachedToRoof idref="roof1proposed"/>
+            <AttachedToFrameFloor idref="attic-floor-1"/>
+          </Attic>
+        </Attics>
+        <Roofs>
+          <Roof>
+            <SystemIdentifier id="roof1proposed" sameas="roof1"/>
+            <RoofType>shingles</RoofType>
+            <RadiantBarrier>false</RadiantBarrier>
+            <Insulation>
+              <SystemIdentifier id="attic1roofinsproposed" sameas="attic1roofins"/>
+              <Layer>
+                <InsulationMaterial>
+                  <None/>
+                </InsulationMaterial>
+                <NominalRValue>0</NominalRValue>
+              </Layer>
+            </Insulation>
+          </Roof>
+        </Roofs>
+        <Walls>
+          <Wall>
+            <SystemIdentifier id="wallsproposed" sameas="walls"/>
+            <Insulation>
+              <SystemIdentifier id="wallsinsproposed" sameas="wallsins"/>
+              <Layer>
+                <InsulationMaterial>
+                  <Batt>fiberglass</Batt>
+                </InsulationMaterial>
+                <NominalRValue>11</NominalRValue>
+              </Layer>
+            </Insulation>
+          </Wall>
+        </Walls>
+        <FrameFloors>
+          <FrameFloor>
+            <SystemIdentifier id="attic-floor-1"/>
+            <Insulation>
+              <SystemIdentifier id="attic1flrinsproposed"/>
+              <Layer>
+                <InsulationMaterial>
+                  <LooseFill>cellulose</LooseFill>
+                </InsulationMaterial>
+                <NominalRValue>50</NominalRValue>
+              </Layer>
+            </Insulation>
+          </FrameFloor>
+        </FrameFloors>
+        <Windows>
+          <Window>
+            <SystemIdentifier id="windowsproposed" sameas="windows"/>
+            <Area>120</Area>
+            <Quantity>15</Quantity>
+            <FrameType>
+              <Vinyl/>
+            </FrameType>
+            <GlassLayers>double-pane</GlassLayers>
+            <GlassType>other</GlassType>
+            <UFactor>0.29</UFactor>
+            <SHGC>0.25</SHGC>
+          </Window>
+        </Windows>
+        <Doors>
+          <Door>
+            <SystemIdentifier id="door1proposed" sameas="door1"/>
+            <StormDoor>false</StormDoor>
+            <RValue>5</RValue>
+          </Door>
+        </Doors>
+      </Enclosure>
+      <Systems>
+        <HVAC>
+          <HVACPlant>
+            <HeatingSystem>
+              <SystemIdentifier id="furnace1proposed" sameas="furnace1"/>
+              <HeatingSystemType>
+                <Furnace/>
+              </HeatingSystemType>
+              <HeatingSystemFuel>natural gas</HeatingSystemFuel>
+              <AnnualHeatingEfficiency>
+                <Units>AFUE</Units>
+                <Value>0.95</Value>
+              </AnnualHeatingEfficiency>
+              <FractionHeatLoadServed>1</FractionHeatLoadServed>
+            </HeatingSystem>
+            <CoolingSystem>
+              <SystemIdentifier id="clgsys1proposed" sameas="clgsys1"/>
+              <CoolingSystemType>central air conditioner</CoolingSystemType>
+              <CoolingSystemFuel>electricity</CoolingSystemFuel>
+              <CoolingCapacity>36000</CoolingCapacity>
+              <FractionCoolLoadServed>1</FractionCoolLoadServed>
+              <AnnualCoolingEfficiency>
+                <Units>SEER</Units>
+                <Value>13</Value>
+              </AnnualCoolingEfficiency>
+            </CoolingSystem>
+          </HVACPlant>
+          <HVACControl>
+            <SystemIdentifier id="hvacctrl1proposed" sameas="hvacctrl1"/>
+            <ControlType>manual thermostat</ControlType>
+            <HVACSystemsServed idref="clgsys1"/>
+          </HVACControl>
+          <HVACDistribution>
+            <SystemIdentifier id="hvacdist1proposed" sameas="hvacdist1"/>
+            <DistributionSystemType>
+              <AirDistribution>
+                <DuctLeakageMeasurement>
+                  <DuctLeakage>
+                    <Units>CFM25</Units>
+                    <Value>1</Value>
+                  </DuctLeakage>
+                </DuctLeakageMeasurement>
+                <Ducts>
+                  <DuctInsulationRValue>0</DuctInsulationRValue>
+                </Ducts>
+              </AirDistribution>
+            </DistributionSystemType>
+            <HVACDistributionImprovement>
+              <DuctSystemSealed>false</DuctSystemSealed>
+            </HVACDistributionImprovement>
+          </HVACDistribution>
+        </HVAC>
+        <WaterHeating>
+          <WaterHeatingSystem>
+            <SystemIdentifier id="waterheater1proposed" sameas="waterheater1"/>
+            <FuelType>natural gas</FuelType>
+            <WaterHeaterType>storage water heater</WaterHeaterType>
+            <TankVolume>50</TankVolume>
+            <EnergyFactor>0.6</EnergyFactor>
+            <RecoveryEfficiency>0.75</RecoveryEfficiency>
+            <WaterHeaterImprovement>
+              <LengthofPipeInsulated>20</LengthofPipeInsulated>
+            </WaterHeaterImprovement>
+          </WaterHeatingSystem>
+        </WaterHeating>
+      </Systems>
+      <Appliances>
+        <ClothesWasher>
+          <SystemIdentifier id="clotheswasher1proposed" sameas="clotheswasher1"/>
+        </ClothesWasher>
+        <Refrigerator>
+          <SystemIdentifier id="refrigerator1proposed"/>
+          <ThirdPartyCertification>Energy Star</ThirdPartyCertification>
+        </Refrigerator>
+      </Appliances>
+      <Lighting>
+        <LightingGroup>
+          <SystemIdentifier id="lights1proposed" sameas="lights1"/>
+          <NumberofUnits>10</NumberofUnits>
+          <LightingType>
+            <Incandescent/>
+          </LightingType>
+          <AverageWattage>60</AverageWattage>
+        </LightingGroup>
+      </Lighting>
+      <HealthAndSafety>
+        <CombustionAppliances>
+          <CombustionApplianceZone>
+            <SystemIdentifier id="caz1proposed" sameas="caz1"/>
+            <CombustionApplianceTest>
+              <CAZAppliance/>
+              <CarbonMonoxideTest>
+                <PoorScenario>2</PoorScenario>
+                <CurrentCondition>1</CurrentCondition>
+                <TestResult>passed</TestResult>
+              </CarbonMonoxideTest>
+            </CombustionApplianceTest>
+          </CombustionApplianceZone>
+        </CombustionAppliances>
+      </HealthAndSafety>
+    </BuildingDetails>
+  </Building>
+  <Building>
+    <BuildingID id="bldg-completion"/>
+    <ProjectStatus>
+      <EventType>job completion testing/final inspection</EventType>
+    </ProjectStatus>
+    <BuildingDetails>
+      <Enclosure>
+        <AirInfiltration>
+          <AirInfiltrationMeasurement>
+            <SystemIdentifier id="airinfilt1completion" sameas="airinfilt1"/>
+            <TypeOfBlowerDoorTest>depressurization</TypeOfBlowerDoorTest>
+            <HousePressure>50</HousePressure>
+            <BuildingAirLeakage>
+              <UnitofMeasure>CFM</UnitofMeasure>
+              <AirLeakage>1300</AirLeakage>
+            </BuildingAirLeakage>
+          </AirInfiltrationMeasurement>
+        </AirInfiltration>
+        <Attics>
+          <Attic>
+            <SystemIdentifier id="attic1completion" sameas="attic1"/>
+            <AtticType>
+              <Attic>
+                <Vented>true</Vented>
+              </Attic>
+            </AtticType>
+            <AttachedToRoof idref="roof1completion"/>
+            <AttachedToFrameFloor idref="attic-floor-2"/>
+          </Attic>
+        </Attics>
+        <Roofs>
+          <Roof>
+            <SystemIdentifier id="roof1completion" sameas="roof1"/>
+            <RoofType>shingles</RoofType>
+            <RadiantBarrier>false</RadiantBarrier>
+            <Insulation>
+              <SystemIdentifier id="attic1roofinscompletion" sameas="attic1roofins"/>
+              <Layer>
+                <InsulationMaterial>
+                  <None/>
+                </InsulationMaterial>
+                <NominalRValue>0</NominalRValue>
+              </Layer>
+            </Insulation>
+          </Roof>
+        </Roofs>
+        <Walls>
+          <Wall>
+            <SystemIdentifier id="wallscompletion" sameas="walls"/>
+            <Insulation>
+              <SystemIdentifier id="wallsinscompletion" sameas="wallsins"/>
+              <Layer>
+                <InsulationMaterial>
+                  <Batt>fiberglass</Batt>
+                </InsulationMaterial>
+                <NominalRValue>11</NominalRValue>
+              </Layer>
+            </Insulation>
+          </Wall>
+        </Walls>
+        <FrameFloors>
+          <FrameFloor>
+            <SystemIdentifier id="attic-floor-2"/>
+            <Insulation>
+              <SystemIdentifier id="attic1flrinscompletion"/>
+              <Layer>
+                <InsulationMaterial>
+                  <LooseFill>cellulose</LooseFill>
+                </InsulationMaterial>
+                <NominalRValue>49</NominalRValue>
+              </Layer>
+            </Insulation>
+          </FrameFloor>
+        </FrameFloors>
+        <Windows>
+          <Window>
+            <SystemIdentifier id="windowscompletion" sameas="windows"/>
+            <Area>120</Area>
+            <Quantity>15</Quantity>
+            <FrameType>
+              <Vinyl/>
+            </FrameType>
+            <GlassLayers>double-pane</GlassLayers>
+            <GlassType>other</GlassType>
+            <UFactor>0.29</UFactor>
+            <SHGC>0.25</SHGC>
+          </Window>
+        </Windows>
+        <Doors>
+          <Door>
+            <SystemIdentifier id="door1completion" sameas="door1"/>
+            <StormDoor>false</StormDoor>
+            <RValue>5</RValue>
+          </Door>
+        </Doors>
+      </Enclosure>
+      <Systems>
+        <HVAC>
+          <HVACPlant>
+            <HeatingSystem>
+              <SystemIdentifier id="furnace1completion" sameas="furnace1"/>
+              <HeatingSystemType>
+                <Furnace/>
+              </HeatingSystemType>
+              <HeatingSystemFuel>natural gas</HeatingSystemFuel>
+              <AnnualHeatingEfficiency>
+                <Units>AFUE</Units>
+                <Value>0.95</Value>
+              </AnnualHeatingEfficiency>
+              <FractionHeatLoadServed>1</FractionHeatLoadServed>
+            </HeatingSystem>
+            <CoolingSystem>
+              <SystemIdentifier id="clgsys1completion" sameas="clgsys1"/>
+              <CoolingSystemType>central air conditioner</CoolingSystemType>
+              <CoolingSystemFuel>electricity</CoolingSystemFuel>
+              <CoolingCapacity>36000</CoolingCapacity>
+              <FractionCoolLoadServed>1</FractionCoolLoadServed>
+              <AnnualCoolingEfficiency>
+                <Units>SEER</Units>
+                <Value>13</Value>
+              </AnnualCoolingEfficiency>
+            </CoolingSystem>
+          </HVACPlant>
+          <HVACControl>
+            <SystemIdentifier id="hvacctrl1completion" sameas="hvacctrl1"/>
+            <ControlType>manual thermostat</ControlType>
+            <HVACSystemsServed idref="clgsys1"/>
+          </HVACControl>
+          <HVACDistribution>
+            <SystemIdentifier id="hvacdist1completion" sameas="hvacdist1"/>
+            <DistributionSystemType>
+              <AirDistribution>
+                <DuctLeakageMeasurement>
+                  <DuctLeakage>
+                    <Units>CFM25</Units>
+                    <Value>1</Value>
+                  </DuctLeakage>
+                </DuctLeakageMeasurement>
+                <Ducts>
+                  <DuctInsulationRValue>0</DuctInsulationRValue>
+                </Ducts>
+              </AirDistribution>
+            </DistributionSystemType>
+            <HVACDistributionImprovement>
+              <DuctSystemSealed>false</DuctSystemSealed>
+            </HVACDistributionImprovement>
+          </HVACDistribution>
+        </HVAC>
+        <WaterHeating>
+          <WaterHeatingSystem>
+            <SystemIdentifier id="waterheater1completion" sameas="waterheater1"/>
+            <FuelType>natural gas</FuelType>
+            <WaterHeaterType>storage water heater</WaterHeaterType>
+            <TankVolume>50</TankVolume>
+            <EnergyFactor>0.6</EnergyFactor>
+            <RecoveryEfficiency>0.75</RecoveryEfficiency>
+            <WaterHeaterImprovement>
+              <LengthofPipeInsulated>20</LengthofPipeInsulated>
+            </WaterHeaterImprovement>
+          </WaterHeatingSystem>
+        </WaterHeating>
+      </Systems>
+      <Appliances>
+        <ClothesWasher>
+          <SystemIdentifier id="clotheswasher1completion" sameas="clotheswasher1"/>
+        </ClothesWasher>
+        <Refrigerator>
+          <SystemIdentifier id="refrigerator1completion"/>
+          <ThirdPartyCertification>Energy Star</ThirdPartyCertification>
+        </Refrigerator>
+      </Appliances>
+      <Lighting>
+        <LightingGroup>
+          <SystemIdentifier id="lights1completion" sameas="lights1"/>
+          <NumberofUnits>10</NumberofUnits>
+          <LightingType>
+            <Incandescent/>
+          </LightingType>
+          <AverageWattage>60</AverageWattage>
+        </LightingGroup>
+      </Lighting>
+      <HealthAndSafety>
+        <CombustionAppliances>
+          <CombustionApplianceZone>
+            <SystemIdentifier id="caz1completion" sameas="caz1"/>
+            <CombustionApplianceTest>
+              <CAZAppliance/>
+              <CarbonMonoxideTest>
+                <PoorScenario>2</PoorScenario>
+                <CurrentCondition>1</CurrentCondition>
+                <TestResult>passed</TestResult>
+              </CarbonMonoxideTest>
+            </CombustionApplianceTest>
+          </CombustionApplianceZone>
+        </CombustionAppliances>
+      </HealthAndSafety>
+    </BuildingDetails>
+  </Building>
+  <Project>
+    <ProjectID id="project-1"/>
+    <PreBuildingID id="bldg-audit"/>
+    <PostBuildingID id="bldg-proposed"/>
+    <ProjectDetails>
+      <ProjectStatus>
+        <EventType>proposed workscope</EventType>
+      </ProjectStatus>
+      <CompleteDateEstimated>2015-12-25</CompleteDateEstimated>
+      <EnergySavingsInfo>
+        <FuelSavings>
+          <Fuel>electricity</Fuel>
+          <TotalSavings>80</TotalSavings>
+          <TotalDollarSavings>100</TotalDollarSavings>
+        </FuelSavings>
+      </EnergySavingsInfo>
+      <Measures>
+        <Measure>
+          <MeasureSystemIdentifiers>
+            <SystemIdentifiersInfo id="measure1"/>
+          </MeasureSystemIdentifiers>
+          <MeasureDescription>Blow in cellulose insulation in attic to R-50.</MeasureDescription>
+          <Cost>1000</Cost>
+          <ReplacedComponents>
+            <ReplacedComponent id="attic1flrins"/>
+          </ReplacedComponents>
+          <InstalledComponents>
+            <InstalledComponent id="attic1flrinsproposed"/>
+          </InstalledComponents>
+        </Measure>
+        <Measure>
+          <MeasureSystemIdentifiers>
+            <SystemIdentifiersInfo id="measure2"/>
+          </MeasureSystemIdentifiers>
+          <MeasureDescription>Replace Refrigerator with EnergyStar version</MeasureDescription>
+          <Cost>1200</Cost>
+          <ReplacedComponents>
+            <ReplacedComponent id="refrigerator1"/>
+          </ReplacedComponents>
+          <InstalledComponents>
+            <InstalledComponent id="refrigerator1proposed"/>
+          </InstalledComponents>
+        </Measure>
+      </Measures>
+    </ProjectDetails>
+    <extension>
+      <BuildingID id="bldg-proposed"/>
+      <ProjectSystemIdentifiers id="bldg-audit"/>
+      <ProjectSystemIdentifiers id="bldg-proposed"/>
+    </extension>
+  </Project>
+  <Project>
+    <ProjectID id="project-2"/>
+    <PreBuildingID id="bldg-audit"/>
+    <PostBuildingID id="bldg-completion"/>
+    <ProjectDetails>
+      <ProjectStatus>
+        <EventType>job completion testing/final inspection</EventType>
+      </ProjectStatus>
+      <CompleteDateActual>2015-12-25</CompleteDateActual>
+      <EnergySavingsInfo>
+        <FuelSavings>
+          <Fuel>electricity</Fuel>
+          <TotalSavings>80</TotalSavings>
+          <TotalDollarSavings>100</TotalDollarSavings>
+        </FuelSavings>
+      </EnergySavingsInfo>
+      <Measures>
+        <Measure>
+          <MeasureSystemIdentifiers>
+            <SystemIdentifiersInfo id="measure3"/>
+          </MeasureSystemIdentifiers>
+          <MeasureDescription>Blow in cellulose insulation in attic to R-49.</MeasureDescription>
+          <Cost>1032.12</Cost>
+          <ReplacedComponents>
+            <ReplacedComponent id="attic1flrins"/>
+          </ReplacedComponents>
+          <InstalledComponents>
+            <InstalledComponent id="attic1flrinscompletion"/>
+          </InstalledComponents>
+        </Measure>
+        <Measure>
+          <MeasureSystemIdentifiers>
+            <SystemIdentifiersInfo id="measure4"/>
+          </MeasureSystemIdentifiers>
+          <MeasureDescription>Replace Refrigerator with EnergyStar version</MeasureDescription>
+          <Cost>1234.56</Cost>
+          <ReplacedComponents>
+            <ReplacedComponent id="refrigerator1"/>
+          </ReplacedComponents>
+          <InstalledComponents>
+            <InstalledComponent id="refrigerator1completion"/>
+          </InstalledComponents>
+        </Measure>
+      </Measures>
+    </ProjectDetails>
+    <extension>
+      <BuildingID id="bldg-completion"/>
+      <ProjectSystemIdentifiers id="bldg-audit"/>
+      <ProjectSystemIdentifiers id="bldg-completion"/>
+    </extension>
+  </Project>
+  <Utility>
+    <UtilitiesorFuelProviders>
+      <UtilityFuelProvider>
+        <SystemIdentifier id="xcel"/>
+        <UtilityName>Xcel Energy</UtilityName>
+        <UtilityServiceTypeProvided>electricity</UtilityServiceTypeProvided>
+        <UtilityServiceTypeProvided>natural gas</UtilityServiceTypeProvided>
+      </UtilityFuelProvider>
+    </UtilitiesorFuelProviders>
+  </Utility>
+  <Consumption>
+    <BuildingID id="bldg-audit"/>
+    <CustomerID id="person1"/>
+    <ConsumptionDetails>
+      <ConsumptionInfo>
+        <UtilityID id="xcel"/>
+        <ConsumptionType>
+          <Energy>
+            <FuelType>electricity</FuelType>
+            <UnitofMeasure>kWh</UnitofMeasure>
+          </Energy>
+        </ConsumptionType>
+        <ConsumptionDetail>
+          <Consumption>300</Consumption>
+          <StartDateTime>2015-11-23T16:46:51.188445</StartDateTime>
+          <EndDateTime>2015-12-23T16:46:51.188445</EndDateTime>
+          <ConsumptionCost>70</ConsumptionCost>
+        </ConsumptionDetail>
+      </ConsumptionInfo>
+    </ConsumptionDetails>
+  </Consumption>
+  <Consumption>
+    <BuildingID id="bldg-completion"/>
+    <CustomerID id="person1"/>
+    <ConsumptionDetails>
+      <ConsumptionInfo>
+        <UtilityID id="xcel"/>
+        <ConsumptionType>
+          <Energy>
+            <FuelType>electricity</FuelType>
+            <UnitofMeasure>kWh</UnitofMeasure>
+          </Energy>
+        </ConsumptionType>
+        <ConsumptionDetail>
+          <Consumption>250</Consumption>
+          <StartDateTime>2016-01-04T18:08:59.777297</StartDateTime>
+          <EndDateTime>2016-02-02T18:08:59.777297</EndDateTime>
+          <ConsumptionCost>58.33</ConsumptionCost>
+        </ConsumptionDetail>
+      </ConsumptionInfo>
+    </ConsumptionDetails>
+  </Consumption>
 </HPXML>
