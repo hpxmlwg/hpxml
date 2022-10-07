@@ -222,6 +222,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="duct1"/>
                   <DuctMaterial>duct board</DuctMaterial>
                   <DuctInsulationRValue>2</DuctInsulationRValue>
                   <DuctLocation>living space</DuctLocation>
@@ -480,6 +481,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="duct1c" sameas="duct1"/>
                   <DuctMaterial>duct board</DuctMaterial>
                   <DuctInsulationRValue>2</DuctInsulationRValue>
                   <DuctLocation>living space</DuctLocation>
