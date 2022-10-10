@@ -2020,6 +2020,7 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="InverterType" type="InverterType"/>
 									<xs:element minOccurs="0" name="InverterEfficiency" type="Fraction"/>
 									<xs:element minOccurs="0" name="YearInverterManufactured" type="Year"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
