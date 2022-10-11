@@ -574,11 +574,6 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="AdjacentTo"/>
-					<xs:element minOccurs="0" name="Efficiency" type="HPXMLDouble">
-						<xs:annotation>
-							<xs:documentation>[L/kWh] DEPRECATED. This will be removed in v4.0. Use EnergyFactor or IntegratedEnergyFactor instead.</xs:documentation>
-						</xs:annotation>
-					</xs:element>
 					<xs:element minOccurs="0" name="Capacity" type="HPXMLDouble">
 						<xs:annotation>
 							<xs:documentation>Rated water removal rate. This represents the expected performance in a basement for portable dehumidifiers and expected performance in the average home for whole-home dehumifiiers. [pints/day]</xs:documentation>
