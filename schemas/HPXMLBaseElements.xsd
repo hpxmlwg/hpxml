@@ -1065,6 +1065,7 @@
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
 									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo" minOccurs="0"/>
 									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
+									<xs:element minOccurs="0" name="FloorType" type="FloorType"/>
 									<xs:element minOccurs="0" name="FloorJoists" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorTrusses" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorCovering" type="FloorCovering"/>
@@ -5004,9 +5005,6 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="ConcreteMasonryUnit">
-				<xs:annotation>
-					<xs:documentation>Concrete Masonry Unit</xs:documentation>
-				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" ref="extension"/>
@@ -5014,10 +5012,7 @@
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="StructurallyInsulatedPanel">
-				<xs:annotation>
-					<xs:documentation>Structurally Insulated Panel</xs:documentation>
-				</xs:annotation>
+			<xs:element name="StructuralInsulatedPanel">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" ref="extension"/>
@@ -5026,9 +5021,6 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="InsulatedConcreteForms">
-				<xs:annotation>
-					<xs:documentation>Insulated Concrete Forms</xs:documentation>
-				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" ref="extension"/>
@@ -5113,10 +5105,7 @@
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="StructurallyInsulatedPanel">
-				<xs:annotation>
-					<xs:documentation>Structurally Insulated Panel</xs:documentation>
-				</xs:annotation>
+			<xs:element name="StructuralInsulatedPanel">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" ref="extension"/>
