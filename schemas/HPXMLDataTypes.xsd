@@ -1746,12 +1746,10 @@
 			<xs:enumeration value="central air conditioner"/>
 			<xs:enumeration value="mini-split"/>
 			<xs:enumeration value="room air conditioner"/>
-			<xs:enumeration value="room air conditioner with heating"/>
 			<xs:enumeration value="evaporative cooler"/>
 			<xs:enumeration value="chiller"/>
 			<xs:enumeration value="cooling tower"/>
 			<xs:enumeration value="packaged terminal air conditioner"/>
-			<xs:enumeration value="packaged terminal air conditioner with heating"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -1767,6 +1765,7 @@
 			<xs:enumeration value="portable"/>
 			<xs:enumeration value="wall"/>
 			<xs:enumeration value="window"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="RoomCoolingType">
