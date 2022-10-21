@@ -1,43 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<HPXML xmlns="http://hpxmlonline.com/2014/6"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://hpxmlonline.com/2014/6 ../schemas/HPXML.xsd"
- schemaVersion="2.3">
-    <XMLTransactionHeaderInformation>
-        <XMLType></XMLType>
-        <XMLGeneratedBy></XMLGeneratedBy>
-        <CreatedDateAndTime>2014-09-03T16:06:24Z</CreatedDateAndTime>
-        <Transaction>create</Transaction>
-    </XMLTransactionHeaderInformation>
-    <SoftwareInfo/>
-    <Building>
-        <BuildingID id="bldg1"/>
-        <ProjectStatus>
-            <EventType>audit</EventType>
-        </ProjectStatus>
-        <BuildingDetails>
-            <Enclosure>
-                <Walls>
-                    <Wall>
-                        <SystemIdentifier id="wall1"/>
-                    </Wall>
-                </Walls>
-            </Enclosure>
-        </BuildingDetails>
-    </Building>
-    <Building>
-        <BuildingID id="bldg1post"/>
-        <ProjectStatus>
-            <EventType>proposed workscope</EventType>
-        </ProjectStatus>
-        <BuildingDetails>
-            <Enclosure>
-                <Walls>
-                    <Wall>
-                        <SystemIdentifier id="wall1post" sameas="wall1"/>
-                    </Wall>
-                </Walls>
-            </Enclosure>
-        </BuildingDetails>
-    </Building>
+<HPXML xmlns="http://hpxmlonline.com/2019/10" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hpxmlonline.com/2014/6 ../schemas/HPXML.xsd" schemaVersion="3.1">
+  <XMLTransactionHeaderInformation>
+    <XMLType/>
+    <XMLGeneratedBy/>
+    <CreatedDateAndTime>2014-09-03T16:06:24Z</CreatedDateAndTime>
+    <Transaction>create</Transaction>
+  </XMLTransactionHeaderInformation>
+  <SoftwareInfo/>
+  <Building>
+    <BuildingID id="bldg1"/>
+    <ProjectStatus>
+      <EventType>audit</EventType>
+    </ProjectStatus>
+    <BuildingDetails>
+      <Enclosure>
+        <Walls>
+          <Wall>
+            <SystemIdentifier id="wall1"/>
+          </Wall>
+        </Walls>
+      </Enclosure>
+    </BuildingDetails>
+  </Building>
+  <Building>
+    <BuildingID id="bldg1post"/>
+    <ProjectStatus>
+      <EventType>proposed workscope</EventType>
+    </ProjectStatus>
+    <BuildingDetails>
+      <Enclosure>
+        <Walls>
+          <Wall>
+            <SystemIdentifier id="wall1post" sameas="wall1"/>
+          </Wall>
+        </Walls>
+      </Enclosure>
+    </BuildingDetails>
+  </Building>
 </HPXML>
