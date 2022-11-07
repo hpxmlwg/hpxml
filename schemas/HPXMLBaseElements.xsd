@@ -1447,6 +1447,31 @@
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="FanType" type="VentilationFanType"/>
+												<xs:element minOccurs="0" name="CFISControls">
+													<xs:annotation>
+														<xs:documentation>Relevant when FanType="central fan integrated supply".</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="HasOutdoorAirControl" type="HPXMLBoolean">
+																<xs:annotation>
+																	<xs:documentation>Has controls to block the flow of outside air when the CFIS system is not ventilating. For example, an electronically-controlled mechanical damper, or an in-line fan that substantially blocks the flow when not running.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" name="AdditionalRuntimeOperatingMode" type="AdditionalRuntimeOperatingMode">
+																<xs:annotation>
+																	<xs:documentation>Describes if/how the CFIS system provides additional ventilation beyond when the HVAC system is running to meet a given ventilation target.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element name="SupplementalFan" type="LocalReference" minOccurs="0" maxOccurs="1">
+																<xs:annotation>
+																	<xs:documentation>When AdditionalRuntimeOperatingMode="supplemental fan", specifies the VentilationFan that serves as that supplemental fan.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" ref="extension"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
 												<xs:element minOccurs="0" name="RatedFlowRate" type="HPXMLDouble">
 													<xs:annotation>
 														<xs:documentation>[CFM] as rated by manufacturer</xs:documentation>
