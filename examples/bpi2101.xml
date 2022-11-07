@@ -166,6 +166,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="hvacduct1"/>
                   <DuctInsulationRValue>0</DuctInsulationRValue>
                 </Ducts>
               </AirDistribution>
@@ -355,6 +356,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="hvacduct1proposed" sameas="hvacduct1"/>
                   <DuctInsulationRValue>0</DuctInsulationRValue>
                 </Ducts>
               </AirDistribution>
@@ -553,6 +555,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="hvacduct1completion" sameas="hvacduct1"/>
                   <DuctInsulationRValue>0</DuctInsulationRValue>
                 </Ducts>
               </AirDistribution>
