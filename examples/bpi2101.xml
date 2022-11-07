@@ -54,7 +54,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1"/>
-            <AttachedToFrameFloor idref="attic-floor-0"/>
+            <AttachedToFloor idref="attic-floor-0"/>
           </Attic>
         </Attics>
         <Roofs>
@@ -87,8 +87,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-0"/>
             <Insulation>
               <SystemIdentifier id="attic1flrins"/>
@@ -99,8 +99,8 @@
                 <NominalRValue>19</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Windows>
           <Window>
             <SystemIdentifier id="windows"/>
@@ -244,7 +244,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1proposed"/>
-            <AttachedToFrameFloor idref="attic-floor-1"/>
+            <AttachedToFloor idref="attic-floor-1"/>
           </Attic>
         </Attics>
         <Roofs>
@@ -277,8 +277,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-1"/>
             <Insulation>
               <SystemIdentifier id="attic1flrinsproposed"/>
@@ -289,8 +289,8 @@
                 <NominalRValue>50</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Windows>
           <Window>
             <SystemIdentifier id="windowsproposed" sameas="windows"/>
@@ -443,7 +443,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1completion"/>
-            <AttachedToFrameFloor idref="attic-floor-2"/>
+            <AttachedToFloor idref="attic-floor-2"/>
           </Attic>
         </Attics>
         <Roofs>
@@ -476,8 +476,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-2"/>
             <Insulation>
               <SystemIdentifier id="attic1flrinscompletion"/>
@@ -488,8 +488,8 @@
                 <NominalRValue>49</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Windows>
           <Window>
             <SystemIdentifier id="windowscompletion" sameas="windows"/>

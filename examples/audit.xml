@@ -98,7 +98,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1"/>
-            <AttachedToFrameFloor idref="attic-floor-0"/>
+            <AttachedToFloor idref="attic-floor-0"/>
           </Attic>
         </Attics>
         <Foundations>
@@ -110,7 +110,7 @@
                 <Conditioned>true</Conditioned>
               </Basement>
             </FoundationType>
-            <AttachedToFrameFloor idref="fnd1flr1"/>
+            <AttachedToFloor idref="fnd1flr1"/>
           </Foundation>
         </Foundations>
         <Roofs>
@@ -136,8 +136,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-0"/>
             <Insulation>
               <SystemIdentifier id="attic1ins"/>
@@ -145,8 +145,8 @@
                 <NominalRValue>19</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-          <FrameFloor>
+          </Floor>
+          <Floor>
             <SystemIdentifier id="fnd1flr1"/>
             <Insulation>
               <SystemIdentifier id="fnd1flr1ins"/>
@@ -154,8 +154,8 @@
                 <NominalRValue>0</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Doors>
           <Door>
             <SystemIdentifier id="frontdoor1"/>
@@ -355,7 +355,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1p"/>
-            <AttachedToFrameFloor idref="attic-floor-1"/>
+            <AttachedToFloor idref="attic-floor-1"/>
           </Attic>
         </Attics>
         <Foundations>
@@ -367,7 +367,7 @@
                 <Conditioned>true</Conditioned>
               </Basement>
             </FoundationType>
-            <AttachedToFrameFloor idref="fnd1flr1p"/>
+            <AttachedToFloor idref="fnd1flr1p"/>
           </Foundation>
         </Foundations>
         <Roofs>
@@ -393,8 +393,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-1"/>
             <Insulation>
               <SystemIdentifier id="attic1insp"/>
@@ -402,8 +402,8 @@
                 <NominalRValue>49</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-          <FrameFloor>
+          </Floor>
+          <Floor>
             <SystemIdentifier id="fnd1flr1p" sameas="fnd1flr1"/>
             <Insulation>
               <SystemIdentifier id="fnd1flr1insp" sameas="fnd1flr1ins"/>
@@ -411,8 +411,8 @@
                 <NominalRValue>0</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Doors>
           <Door>
             <SystemIdentifier id="frontdoor1p" sameas="frontdoor1"/>
