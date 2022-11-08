@@ -1155,6 +1155,7 @@
 									<xs:element minOccurs="0" name="FloorType" type="FloorType"/>
 									<xs:element minOccurs="0" name="FloorJoists" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorTrusses" type="StudProperties"/>
+									<xs:element minOccurs="0" name="SubfloorType" type="SubfloorType"/>
 									<xs:element minOccurs="0" name="FloorCovering" type="FloorCovering"/>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
