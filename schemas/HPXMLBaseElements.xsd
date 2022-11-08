@@ -1968,10 +1968,7 @@
 											<xs:documentation>[gal]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:choice minOccurs="0">
-										<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference"/>
-										<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
-									</xs:choice>
+									<xs:element minOccurs="0" name="ConnectedTo" type="LocalReference"/>
 									<xs:element minOccurs="0" name="SolarFraction" type="SolarFraction">
 										<xs:annotation>
 											<xs:documentation>The Solar Fraction is the portion of the total conventional hot water heating load (delivered energy and tank standby losses). The higher
