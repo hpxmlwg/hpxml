@@ -412,10 +412,6 @@
 			<xs:extension base="ApplianceTypeSummaryInfo">
 
 				<xs:sequence>
-					<xs:choice minOccurs="0">
-						<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference"/>
-						<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
-					</xs:choice>
 					<xs:element name="Type" type="ClothesWasherType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
 					<xs:element name="ModifiedEnergyFactor" type="HPXMLDouble" minOccurs="0">
@@ -486,10 +482,6 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
-					<xs:choice minOccurs="0">
-						<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference"/>
-						<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
-					</xs:choice>
 					<xs:element minOccurs="0" name="Type" type="DishwasherType"/>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element minOccurs="0" name="Fuel" type="FuelType"/>
@@ -2002,15 +1994,7 @@
 											<xs:documentation>[gal]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:choice minOccurs="0">
-										<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference"/>
-										<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
-									</xs:choice>
-									<xs:element minOccurs="0" name="ConnectedTo" type="LocalReference">
-										<xs:annotation>
-											<xs:documentation>DEPRECATED. This will be removed in v4.0. Use AttachedToWaterHeatingSystem or AttachedToHotWaterDistribution instead.</xs:documentation>
-										</xs:annotation>
-									</xs:element>
+									<xs:element minOccurs="0" name="ConnectedTo" type="LocalReference"/>
 									<xs:element minOccurs="0" name="SolarFraction" type="SolarFraction">
 										<xs:annotation>
 											<xs:documentation>The Solar Fraction is the portion of the total conventional hot water heating load (delivered energy and tank standby losses). The higher
