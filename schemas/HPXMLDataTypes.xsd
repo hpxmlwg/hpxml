@@ -4845,6 +4845,19 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="FloorOrCeiling_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="floor"/>
+			<xs:enumeration value="ceiling"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FloorOrCeiling">
+		<xs:simpleContent>
+			<xs:extension base="FloorOrCeiling_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="AdditionalRuntimeOperatingModeType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="none"/>
@@ -4856,19 +4869,6 @@
 	<xs:complexType name="AdditionalRuntimeOperatingMode">
 		<xs:simpleContent>
 			<xs:extension base="AdditionalRuntimeOperatingModeType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="FloorOrCeiling_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="floor"/>
-			<xs:enumeration value="ceiling"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="FloorOrCeiling">
-		<xs:simpleContent>
-			<xs:extension base="FloorOrCeiling_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
