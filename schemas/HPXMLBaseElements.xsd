@@ -470,11 +470,9 @@
 					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
-
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-
 	<xs:complexType name="DishwasherInfoType">
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
