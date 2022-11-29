@@ -3562,6 +3562,62 @@
 					</xs:element>
 					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="AnnualHeatingEfficiency" minOccurs="0" type="HeatingEfficiencyType" maxOccurs="unbounded"/>
+					<xs:element minOccurs="0" name="CoolingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="OutdoorTemperature" type="HPXMLDouble">
+												<xs:annotation>
+													<xs:documentation>[F] drybulb</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element minOccurs="0" name="IndoorTemperature" type="HPXMLDouble">
+												<xs:annotation>
+													<xs:documentation>[F] drybulb</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element minOccurs="0" name="MinimumCapacity" type="Capacity"/>
+											<xs:element minOccurs="0" name="MaximumCapacity" type="Capacity"/>
+											<xs:element minOccurs="0" name="EfficiencyAtMinimumCapacity" type="CoolingEfficiencyType"/>
+											<xs:element minOccurs="0" name="EfficiencyAtMaximumCapacity" type="CoolingEfficiencyType"/>
+											<xs:element minOccurs="0" name="extension" type="extensionType"/>
+										</xs:sequence>
+										<xs:attribute name="dataSource" type="DataSource"/>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element minOccurs="0" name="HeatingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="OutdoorTemperature" type="HPXMLDouble">
+												<xs:annotation>
+													<xs:documentation>[F] drybulb</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element minOccurs="0" name="IndoorTemperature" type="HPXMLDouble">
+												<xs:annotation>
+													<xs:documentation>[F] drybulb</xs:documentation>
+												</xs:annotation>
+											</xs:element>
+											<xs:element minOccurs="0" name="MinimumCapacity" type="Capacity"/>
+											<xs:element minOccurs="0" name="MaximumCapacity" type="Capacity"/>
+											<xs:element minOccurs="0" name="EfficiencyAtMinimumCapacity" type="HeatingEfficiencyType"/>
+											<xs:element minOccurs="0" name="EfficiencyAtMaximumCapacity" type="HeatingEfficiencyType"/>
+											<xs:element minOccurs="0" name="extension" type="extensionType"/>
+										</xs:sequence>
+										<xs:attribute name="dataSource" type="DataSource"/>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
 					<xs:element minOccurs="0" ref="extension"/>
 				</xs:sequence>
 			</xs:extension>
