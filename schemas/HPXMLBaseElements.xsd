@@ -5115,6 +5115,10 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="BellyAndWing">
+				<xs:annotation>
+					<xs:documentation>The floor is supported on a pair of I-beams spanning across the length of the mobile home. The floor wing is the part of the floor outside the supports, and the floor belly is the part between the supports. The floor wing and belly sections are protected from outside elements including water, wind, and rodents using a wrap attached to the underside of floor joists, and may contain insulation. Use separate Floor elements to describe the floor insulation above the belly and wing sections respsectively.
+</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" name="SkirtPresent" type="HPXMLBoolean"/>
