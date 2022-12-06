@@ -54,7 +54,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1"/>
-            <AttachedToFrameFloor idref="attic-floor-0"/>
+            <AttachedToFloor idref="attic-floor-0"/>
           </Attic>
         </Attics>
         <Roofs>
@@ -87,8 +87,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-0"/>
             <Insulation>
               <SystemIdentifier id="attic1flrins"/>
@@ -99,13 +99,13 @@
                 <NominalRValue>19</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Windows>
           <Window>
             <SystemIdentifier id="windows"/>
             <Area>120</Area>
-            <Quantity>15</Quantity>
+            <Count>15</Count>
             <FrameType>
               <Vinyl/>
             </FrameType>
@@ -166,6 +166,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="hvacduct1"/>
                   <DuctInsulationRValue>0</DuctInsulationRValue>
                 </Ducts>
               </AirDistribution>
@@ -200,7 +201,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1"/>
-          <NumberofUnits>10</NumberofUnits>
+          <Count>10</Count>
           <LightingType>
             <Incandescent/>
           </LightingType>
@@ -243,7 +244,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1proposed"/>
-            <AttachedToFrameFloor idref="attic-floor-1"/>
+            <AttachedToFloor idref="attic-floor-1"/>
           </Attic>
         </Attics>
         <Roofs>
@@ -276,8 +277,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-1"/>
             <Insulation>
               <SystemIdentifier id="attic1flrinsproposed"/>
@@ -288,13 +289,13 @@
                 <NominalRValue>50</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Windows>
           <Window>
             <SystemIdentifier id="windowsproposed" sameas="windows"/>
             <Area>120</Area>
-            <Quantity>15</Quantity>
+            <Count>15</Count>
             <FrameType>
               <Vinyl/>
             </FrameType>
@@ -355,6 +356,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="hvacduct1proposed" sameas="hvacduct1"/>
                   <DuctInsulationRValue>0</DuctInsulationRValue>
                 </Ducts>
               </AirDistribution>
@@ -390,7 +392,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1proposed" sameas="lights1"/>
-          <NumberofUnits>10</NumberofUnits>
+          <Count>10</Count>
           <LightingType>
             <Incandescent/>
           </LightingType>
@@ -441,7 +443,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1completion"/>
-            <AttachedToFrameFloor idref="attic-floor-2"/>
+            <AttachedToFloor idref="attic-floor-2"/>
           </Attic>
         </Attics>
         <Roofs>
@@ -474,8 +476,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-2"/>
             <Insulation>
               <SystemIdentifier id="attic1flrinscompletion"/>
@@ -486,13 +488,13 @@
                 <NominalRValue>49</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Windows>
           <Window>
             <SystemIdentifier id="windowscompletion" sameas="windows"/>
             <Area>120</Area>
-            <Quantity>15</Quantity>
+            <Count>15</Count>
             <FrameType>
               <Vinyl/>
             </FrameType>
@@ -553,6 +555,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="hvacduct1completion" sameas="hvacduct1"/>
                   <DuctInsulationRValue>0</DuctInsulationRValue>
                 </Ducts>
               </AirDistribution>
@@ -588,7 +591,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1completion" sameas="lights1"/>
-          <NumberofUnits>10</NumberofUnits>
+          <Count>10</Count>
           <LightingType>
             <Incandescent/>
           </LightingType>

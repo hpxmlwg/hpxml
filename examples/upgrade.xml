@@ -94,7 +94,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1"/>
-            <AttachedToFrameFloor idref="attic-floor-0"/>
+            <AttachedToFloor idref="attic-floor-0"/>
           </Attic>
         </Attics>
         <Foundations>
@@ -105,7 +105,7 @@
                 <Conditioned>false</Conditioned>
               </Basement>
             </FoundationType>
-            <AttachedToFrameFloor idref="fnd1flr1"/>
+            <AttachedToFloor idref="fnd1flr1"/>
           </Foundation>
         </Foundations>
         <Roofs>
@@ -131,8 +131,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-0"/>
             <Insulation>
               <SystemIdentifier id="insul1"/>
@@ -140,8 +140,8 @@
                 <NominalRValue>13.0</NominalRValue>
               </Layer>
             </Insulation>
-          </FrameFloor>
-          <FrameFloor>
+          </Floor>
+          <Floor>
             <SystemIdentifier id="fnd1flr1"/>
             <Insulation>
               <SystemIdentifier id="fnd1flr1ins1"/>
@@ -154,13 +154,13 @@
                 <Thickness>2.0</Thickness>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Windows>
           <Window>
             <SystemIdentifier id="window1"/>
             <Area>250.0</Area>
-            <Quantity>1</Quantity>
+            <Count>1</Count>
             <UFactor>0.3</UFactor>
             <SHGC>0.4</SHGC>
           </Window>
@@ -222,6 +222,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="duct1"/>
                   <DuctMaterial>duct board</DuctMaterial>
                   <DuctInsulationRValue>2</DuctInsulationRValue>
                   <DuctLocation>living space</DuctLocation>
@@ -272,7 +273,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1"/>
-          <NumberofUnits>20</NumberofUnits>
+          <Count>20</Count>
           <LightingType>
             <CompactFluorescent/>
           </LightingType>
@@ -334,7 +335,7 @@
               </Attic>
             </AtticType>
             <AttachedToRoof idref="roof1c"/>
-            <AttachedToFrameFloor idref="attic-floor-1"/>
+            <AttachedToFloor idref="attic-floor-1"/>
           </Attic>
         </Attics>
         <Foundations>
@@ -345,7 +346,7 @@
                 <Conditioned>false</Conditioned>
               </Basement>
             </FoundationType>
-            <AttachedToFrameFloor idref="fnd1cflr1c"/>
+            <AttachedToFloor idref="fnd1cflr1c"/>
           </Foundation>
         </Foundations>
         <Roofs>
@@ -381,8 +382,8 @@
             </Insulation>
           </Wall>
         </Walls>
-        <FrameFloors>
-          <FrameFloor>
+        <Floors>
+          <Floor>
             <SystemIdentifier id="attic-floor-1"/>
             <Insulation>
               <SystemIdentifier id="insul1c" sameas="insul1"/>
@@ -395,8 +396,8 @@
                 <Thickness>1.0</Thickness>
               </Layer>
             </Insulation>
-          </FrameFloor>
-          <FrameFloor>
+          </Floor>
+          <Floor>
             <SystemIdentifier id="fnd1cflr1c" sameas="fnd1flr1"/>
             <Insulation>
               <SystemIdentifier id="fnd1cflr1cins1c" sameas="fnd1flr1ins1"/>
@@ -409,13 +410,13 @@
                 <Thickness>2.0</Thickness>
               </Layer>
             </Insulation>
-          </FrameFloor>
-        </FrameFloors>
+          </Floor>
+        </Floors>
         <Windows>
           <Window>
             <SystemIdentifier id="window1c"/>
             <Area>250.0</Area>
-            <Quantity>1</Quantity>
+            <Count>1</Count>
             <UFactor>0.3</UFactor>
             <SHGC>0.4</SHGC>
             <ThirdPartyCertification>Energy Star</ThirdPartyCertification>
@@ -480,6 +481,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
+                  <SystemIdentifier id="duct1c" sameas="duct1"/>
                   <DuctMaterial>duct board</DuctMaterial>
                   <DuctInsulationRValue>2</DuctInsulationRValue>
                   <DuctLocation>living space</DuctLocation>
@@ -547,7 +549,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1c" sameas="lights1"/>
-          <NumberofUnits>20</NumberofUnits>
+          <Count>20</Count>
           <LightingType>
             <CompactFluorescent/>
           </LightingType>
