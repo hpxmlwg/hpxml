@@ -160,7 +160,7 @@
           <Window>
             <SystemIdentifier id="window1"/>
             <Area>250.0</Area>
-            <Quantity>1</Quantity>
+            <Count>1</Count>
             <UFactor>0.3</UFactor>
             <SHGC>0.4</SHGC>
           </Window>
@@ -273,7 +273,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1"/>
-          <NumberofUnits>20</NumberofUnits>
+          <Count>20</Count>
           <LightingType>
             <CompactFluorescent/>
           </LightingType>
@@ -416,7 +416,7 @@
           <Window>
             <SystemIdentifier id="window1c"/>
             <Area>250.0</Area>
-            <Quantity>1</Quantity>
+            <Count>1</Count>
             <UFactor>0.3</UFactor>
             <SHGC>0.4</SHGC>
             <ThirdPartyCertification>Energy Star</ThirdPartyCertification>
@@ -549,7 +549,7 @@
       <Lighting>
         <LightingGroup>
           <SystemIdentifier id="lights1c" sameas="lights1"/>
-          <NumberofUnits>20</NumberofUnits>
+          <Count>20</Count>
           <LightingType>
             <CompactFluorescent/>
           </LightingType>
