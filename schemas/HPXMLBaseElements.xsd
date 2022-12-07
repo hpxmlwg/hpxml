@@ -3369,6 +3369,13 @@
 								Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="HeatingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="HeatingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -3565,56 +3572,14 @@
 					<xs:element minOccurs="0" name="CoolingDetailedPerformanceData">
 						<xs:complexType>
 							<xs:sequence>
-								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint">
-									<xs:complexType>
-										<xs:sequence>
-											<xs:element name="OutdoorTemperature" type="Temperature">
-												<xs:annotation>
-													<xs:documentation>[F] drybulb</xs:documentation>
-												</xs:annotation>
-											</xs:element>
-											<xs:element minOccurs="0" name="IndoorTemperature" type="Temperature">
-												<xs:annotation>
-													<xs:documentation>[F] drybulb</xs:documentation>
-												</xs:annotation>
-											</xs:element>
-											<xs:element minOccurs="0" name="MinimumCapacity" type="Capacity"/>
-											<xs:element minOccurs="0" name="MaximumCapacity" type="Capacity"/>
-											<xs:element minOccurs="0" name="EfficiencyAtMinimumCapacity" type="CoolingEfficiencyType"/>
-											<xs:element minOccurs="0" name="EfficiencyAtMaximumCapacity" type="CoolingEfficiencyType"/>
-											<xs:element minOccurs="0" name="extension" type="extensionType"/>
-										</xs:sequence>
-										<xs:attribute name="dataSource" type="DataSource"/>
-									</xs:complexType>
-								</xs:element>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="CoolingPerformanceDataPoint"> </xs:element>
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
 					<xs:element minOccurs="0" name="HeatingDetailedPerformanceData">
 						<xs:complexType>
 							<xs:sequence>
-								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint">
-									<xs:complexType>
-										<xs:sequence>
-											<xs:element name="OutdoorTemperature" type="Temperature">
-												<xs:annotation>
-													<xs:documentation>[F] drybulb</xs:documentation>
-												</xs:annotation>
-											</xs:element>
-											<xs:element minOccurs="0" name="IndoorTemperature" type="Temperature">
-												<xs:annotation>
-													<xs:documentation>[F] drybulb</xs:documentation>
-												</xs:annotation>
-											</xs:element>
-											<xs:element minOccurs="0" name="MinimumCapacity" type="Capacity"/>
-											<xs:element minOccurs="0" name="MaximumCapacity" type="Capacity"/>
-											<xs:element minOccurs="0" name="EfficiencyAtMinimumCapacity" type="HeatingEfficiencyType"/>
-											<xs:element minOccurs="0" name="EfficiencyAtMaximumCapacity" type="HeatingEfficiencyType"/>
-											<xs:element minOccurs="0" name="extension" type="extensionType"/>
-										</xs:sequence>
-										<xs:attribute name="dataSource" type="DataSource"/>
-									</xs:complexType>
-								</xs:element>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="HeatingPerformanceDataPoint"> </xs:element>
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
@@ -3643,6 +3608,13 @@
 					</xs:element>
 					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element minOccurs="0" name="SensibleHeatFraction" type="Fraction"/>
+					<xs:element minOccurs="0" name="CoolingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="CoolingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -5848,6 +5820,133 @@
 			<xs:element maxOccurs="1" minOccurs="0" name="BeginDayOfMonth" type="DayOfMonth"/>
 			<xs:element maxOccurs="1" minOccurs="0" name="EndMonth" type="Month"/>
 			<xs:element maxOccurs="1" minOccurs="0" name="EndDayOfMonth" type="DayOfMonth"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="CoolingPerformanceDataPoint">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
+			<xs:element name="OutdoorTemperature" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IndoorTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IndoorWetbulbTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[F] wetbulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MinimumCapacity">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Value" type="Capacity">
+							<xs:annotation>
+								<xs:documentation>[Btuh] output capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FractionOfNominalCapacity" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Fraction of the nominal rated capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
+							<xs:annotation>
+								<xs:documentation>Efficiency at the minimum capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="extension" type="extensionType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="MaximumCapacity">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Value" type="Capacity">
+							<xs:annotation>
+								<xs:documentation>[Btuh] output capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FractionOfNominalCapacity" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Fraction of the nominal rated capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
+							<xs:annotation>
+								<xs:documentation>Efficiency at the maximum capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="extension" type="extensionType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="extension" type="extensionType"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="HeatingPerformanceDataPoint">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
+			<xs:element name="OutdoorTemperature" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IndoorTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MinimumCapacity">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Value" type="Capacity">
+							<xs:annotation>
+								<xs:documentation>[Btuh] output capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FractionOfNominalCapacity" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Fraction of the nominal rated capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
+							<xs:annotation>
+								<xs:documentation>Efficiency at the minimum capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="extension" type="extensionType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="MaximumCapacity">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Value" type="Capacity">
+							<xs:annotation>
+								<xs:documentation>[Btuh] output capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="FractionOfNominalCapacity" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Fraction of the nominal rated capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
+							<xs:annotation>
+								<xs:documentation>Efficiency at the maximum capacity</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="extension" type="extensionType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="extension" type="extensionType"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
