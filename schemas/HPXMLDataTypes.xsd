@@ -4801,7 +4801,7 @@
 		<xs:restriction base="xs:string">
 			<xs:pattern value="hybrid/auto"/>
 			<xs:pattern value="heat pump only"/>
-			<xs:pattern value="electric only"/>
+			<xs:pattern value="electric heater only"/>
 			<xs:pattern value="high demand"/>
 			<xs:pattern value="other"/>
 		</xs:restriction>
