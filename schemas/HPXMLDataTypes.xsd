@@ -4781,4 +4781,31 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="CapacityDescription_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="minimum"/>
+			<xs:enumeration value="intermediate"/>
+			<xs:enumeration value="nominal"/>
+			<xs:enumeration value="maximum"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CapacityDescription">
+		<xs:simpleContent>
+			<xs:extension base="CapacityDescription_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="CompressorStage_simple">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CompressorStage">
+		<xs:simpleContent>
+			<xs:extension base="CompressorStage_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 </xs:schema>

@@ -5841,49 +5841,21 @@
 					<xs:documentation>[F] wetbulb</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="MinimumCapacity">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element minOccurs="0" name="Value" type="Capacity">
-							<xs:annotation>
-								<xs:documentation>[Btuh] output capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="FractionOfNominalCapacity" type="FractionGreaterThanOne">
-							<xs:annotation>
-								<xs:documentation>Fraction of the nominal rated capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
-							<xs:annotation>
-								<xs:documentation>Efficiency at the minimum capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="extension" type="extensionType"/>
-					</xs:sequence>
-				</xs:complexType>
+			<xs:element minOccurs="0" name="Capacity" type="Capacity">
+				<xs:annotation>
+					<xs:documentation>[Btuh] output capacity</xs:documentation>
+				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="MaximumCapacity">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element minOccurs="0" name="Value" type="Capacity">
-							<xs:annotation>
-								<xs:documentation>[Btuh] output capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="FractionOfNominalCapacity" type="FractionGreaterThanOne">
-							<xs:annotation>
-								<xs:documentation>Fraction of the nominal rated capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
-							<xs:annotation>
-								<xs:documentation>Efficiency at the maximum capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="extension" type="extensionType"/>
-					</xs:sequence>
-				</xs:complexType>
+			<xs:element minOccurs="0" name="CapacityFractionOfNominal" type="FractionGreaterThanOne">
+				<xs:annotation>
+					<xs:documentation>Fraction of the nominal output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityDescription" type="CapacityDescription"/>
+			<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="extension" type="extensionType"/>
 		</xs:sequence>
@@ -5902,49 +5874,21 @@
 					<xs:documentation>[F] drybulb</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="MinimumCapacity">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element minOccurs="0" name="Value" type="Capacity">
-							<xs:annotation>
-								<xs:documentation>[Btuh] output capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="FractionOfNominalCapacity" type="FractionGreaterThanOne">
-							<xs:annotation>
-								<xs:documentation>Fraction of the nominal rated capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
-							<xs:annotation>
-								<xs:documentation>Efficiency at the minimum capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="extension" type="extensionType"/>
-					</xs:sequence>
-				</xs:complexType>
+			<xs:element minOccurs="0" name="Capacity" type="Capacity">
+				<xs:annotation>
+					<xs:documentation>[Btuh] output capacity</xs:documentation>
+				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="MaximumCapacity">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element minOccurs="0" name="Value" type="Capacity">
-							<xs:annotation>
-								<xs:documentation>[Btuh] output capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="FractionOfNominalCapacity" type="FractionGreaterThanOne">
-							<xs:annotation>
-								<xs:documentation>Fraction of the nominal rated capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
-							<xs:annotation>
-								<xs:documentation>Efficiency at the maximum capacity</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="extension" type="extensionType"/>
-					</xs:sequence>
-				</xs:complexType>
+			<xs:element minOccurs="0" name="CapacityFractionOfNominal" type="FractionGreaterThanOne">
+				<xs:annotation>
+					<xs:documentation>Fraction of the nominal output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityDescription" type="CapacityDescription"/>
+			<xs:element minOccurs="0" name="Efficiency" type="HeatingEfficiencyType">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="extension" type="extensionType"/>
 		</xs:sequence>
