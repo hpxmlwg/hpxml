@@ -2968,12 +2968,14 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="WaterHeaterType_simple">
+		<xs:annotation>
+			<xs:documentation>The generic "heat pump water heater" enumeration is assumed to refer to an integrated (not split) heat pump water heater.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="storage water heater"/>
 			<xs:enumeration value="dedicated boiler with storage tank"/>
 			<xs:enumeration value="instantaneous water heater"/>
 			<xs:enumeration value="heat pump water heater"/>
-			<xs:enumeration value="integrated heat pump water heater"/>
 			<xs:enumeration value="split heat pump water heater"/>
 			<xs:enumeration value="space-heating boiler with storage tank"/>
 			<xs:enumeration value="space-heating boiler with tankless coil"/>
@@ -4804,7 +4806,7 @@
 			<xs:pattern value="hybrid/auto"/>
 			<xs:pattern value="heat pump only"/>
 			<xs:pattern value="electric heater only"/>
-			<xs:pattern value="high demand"/>
+			<xs:pattern value="high demand/recovery"/>
 			<xs:pattern value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
