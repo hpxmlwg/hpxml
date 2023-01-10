@@ -1280,6 +1280,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="AttachedToRoof" type="LocalReference"/>
+									<xs:element minOccurs="0" name="AttachedToFloor" type="LocalReference"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
