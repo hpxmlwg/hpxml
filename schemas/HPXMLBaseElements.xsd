@@ -1369,6 +1369,7 @@
 									<xs:element minOccurs="0" maxOccurs="unbounded" name="HeatingSystem" type="HeatingSystemInfoType"/>
 									<xs:element minOccurs="0" maxOccurs="unbounded" name="CoolingSystem" type="CoolingSystemInfoType"/>
 									<xs:element minOccurs="0" maxOccurs="unbounded" name="HeatPump" type="HeatPumpInfoType"/>
+									<xs:element maxOccurs="unbounded" minOccurs="0" name="GeothermalLoop" type="GeothermalLoopType"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -3535,7 +3536,6 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="Fraction"/>
-					<xs:element name="GeothermalLoop" type="GeothermalLoop" minOccurs="0"/>
 					<xs:element minOccurs="0" name="BackupType" type="HeatPumpBackupType">
 						<xs:annotation>
 							<xs:documentation>Whether the heat pump backup is integrated into the unit (describe in BackupSystemFuel, BackupAnnualHeatingEfficiency, BackupHeatingCapacity), or a
@@ -3578,6 +3578,7 @@
 					</xs:element>
 					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="AnnualHeatingEfficiency" minOccurs="0" type="HeatingEfficiencyType" maxOccurs="unbounded"/>
+					<xs:element minOccurs="0" name="AttachedToGeothermalLoop" type="LocalReference"/>
 					<xs:element minOccurs="0" ref="extension"/>
 				</xs:sequence>
 			</xs:extension>
@@ -3607,6 +3608,52 @@
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="GeothermalLoopType">
+		<xs:sequence>
+			<xs:group ref="SystemInfo"/>
+			<xs:element minOccurs="0" name="LoopType" type="LoopType"/>
+			<xs:element minOccurs="0" name="LoopConfiguration" type="LoopConfiguration"/>
+			<xs:element minOccurs="0" name="NumberofWells" type="IntegerGreaterThanZero"/>
+			<xs:element minOccurs="0" name="WellDepth">
+				<xs:annotation>
+					<xs:documentation>[ft] Depth of each well</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:double">
+						<xs:minExclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" name="NumberofTrenches" type="IntegerGreaterThanZero"/>
+			<xs:element minOccurs="0" name="TrenchLength">
+				<xs:annotation>
+					<xs:documentation>[ft] Length of each trench</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:double">
+						<xs:minExclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" name="GroutType" type="GroutType">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="LoopFlow">
+				<xs:annotation>
+					<xs:documentation>[gpm] Water flow rate through the geothermal loop</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:double">
+						<xs:minExclusive value="0"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
 	<xs:complexType name="CoolingEfficiencyType">
 		<xs:sequence>
