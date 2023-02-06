@@ -6,19 +6,31 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r tests/requirements.txt
-      - name: Create single XSD and commit
+      - name: Test with pytest
+        run: |
+          pytest tests
+
+  flatten-xsd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Flatten XSD
         run: |
           cd schemas
           python ../scripts/xsdflatten.py HPXML.xsd HPXMLCombined.xsd
+      - name: Commit XSD
+        run: |
           branch_name="${{ github.head_ref }}"
           git pull origin $branch_name
           git add HPXMLCombined.xsd
@@ -30,6 +42,3 @@ jobs:
             echo "Pushing to branch: $branch_name"
             git push -u origin $branch_name
           fi
-      - name: Test with pytest
-        run: |
-          pytest tests
