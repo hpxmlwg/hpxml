@@ -47,7 +47,7 @@ def flatten_file(filename, outfilename):
     root = remove_includes(root)
 
     # Merge in the elements of the includes
-    for inc_file in include_set:
+    for inc_file in sorted(include_set):
         inc_root = get_xml_tree_from_file(inc_file)
         inc_root = remove_includes(inc_root)
         # root.append(etree.Comment('Imported from %s' % inc_file))
