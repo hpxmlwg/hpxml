@@ -15,10 +15,21 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r tests/requirements.txt
-      - name: Create single XSD
+      - name: Create single XSD and commit
         run: |
           cd schemas
           python ../scripts/xsdflatten.py HPXML.xsd HPXMLCombined.xsd
+          branch_name="${{ github.head_ref }}"
+          git pull origin $branch_name
+          git add HPXMLCombined.xsd
+          git status
+          if [[ $(git diff --cached --exit-code) ]]; then
+            git config --global user.email "github-action@users.noreply.github.com"
+            git config --global user.name "GitHub Action"
+            git commit -m "Latest HPXMLCombined.xsd"
+            echo "Pushing to branch: $branch_name"
+            git push -u origin $branch_name
+          fi
       - name: Test with pytest
         run: |
           pytest tests
