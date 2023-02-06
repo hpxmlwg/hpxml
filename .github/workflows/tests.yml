@@ -3,7 +3,7 @@ name: Test Schemas
 on: [pull_request]
 
 jobs:
-  build:
+  test-xsd:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -46,3 +46,7 @@ jobs:
             echo "Pushing to branch: $branch_name"
             git push -u origin $branch_name
           fi
+      - name: Validate XSD
+        run: |
+          export XSDPATH=schemas/HPXMLCombined.xsd
+          xmllint --schema $XSDPATH examples/audit.xml --noout
