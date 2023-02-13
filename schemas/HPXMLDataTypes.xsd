@@ -2807,7 +2807,7 @@
 	<xs:simpleType name="HotWaterLoadUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="gal/day"/>
-			<xs:enumeration value="gal/min"/>
+			<xs:enumeration value="gal/year"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="HotWaterLoadUnits">
