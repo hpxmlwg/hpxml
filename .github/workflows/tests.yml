@@ -38,21 +38,21 @@ jobs:
       - name: Flatten XSD
         run: |
           cd schemas
-          python ../scripts/xsdflatten.py HPXML.xsd HPXMLCombined.xsd
+          python ../scripts/xsdflatten.py HPXML.xsd ../merged_schema/HPXMLMerged.xsd
       - name: Commit XSD
         run: |
           branch_name="${{ github.head_ref }}"
           git pull origin $branch_name
-          git add schemas/HPXMLCombined.xsd
+          git add merged_schema/HPXMLMerged.xsd
           git status
           if [[ $(git diff --cached --exit-code) ]]; then
             git config --global user.email "github-action@users.noreply.github.com"
             git config --global user.name "GitHub Action"
-            git commit -m "Latest HPXMLCombined.xsd"
+            git commit -m "Latest HPXMLMerged.xsd"
             echo "Pushing to branch: $branch_name"
             git push -u origin $branch_name
           fi
       - name: Validate XSD
         run: |
-          export XSDPATH=schemas/HPXMLCombined.xsd
+          export XSDPATH=merged_schema/HPXMLMerged.xsd
           xmllint --schema $XSDPATH examples/audit.xml --noout

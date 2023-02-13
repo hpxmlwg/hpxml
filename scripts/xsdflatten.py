@@ -6,9 +6,9 @@ from lxml import etree
 
 
 def get_includes_from_file(filename):
-    pattern = re.compile('(<xs:include schemaLocation)')
-    lines = [line.strip() for line in open(filename).readlines()]
-    includes = [line.split('=')[1].split('"')[1] for line in lines if pattern.match(line)]
+    root = get_xml_tree_from_file(filename)
+    ns = {"xs": root.nsmap["xs"]}
+    includes = root.xpath('//xs:include/@schemaLocation', namespaces=ns)
 
     # sanity check
     for inc in includes:
