@@ -1168,6 +1168,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
+									<xs:element minOccurs="0" name="MobileHomeBellyOrWing" type="MobileHomeBellyOrWing"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -5128,6 +5129,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" name="SkirtPresent" type="HPXMLBoolean"/>
+						<xs:element minOccurs="0" name="BellyWrapCondition" type="MobileHomeBellyWrapCondition"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>

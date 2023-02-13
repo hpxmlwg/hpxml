@@ -1143,6 +1143,7 @@
 			<xs:enumeration value="crawlspace - unvented"/>
 			<xs:enumeration value="crawlspace - vented"/>
 			<xs:enumeration value="mobile home belly"/>
+			<xs:enumeration value="mobile home wing"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="garage - conditioned"/>
 			<xs:enumeration value="garage - unconditioned"/>
@@ -3296,6 +3297,35 @@
 	<xs:complexType name="FoundationThermalBoundary">
 		<xs:simpleContent>
 			<xs:extension base="FoundationThermalBoundary_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="MobileHomeBellyWrapCondition_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="good"/>
+			<xs:enumeration value="fair"/>
+			<xs:enumeration value="poor"/>
+			<xs:enumeration value="catastrophic"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MobileHomeBellyWrapCondition">
+		<xs:simpleContent>
+			<xs:extension base="MobileHomeBellyWrapCondition_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="MobileHomeBellyOrWing_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="belly"/>
+			<xs:enumeration value="wing"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MobileHomeBellyOrWing">
+		<xs:simpleContent>
+			<xs:extension base="MobileHomeBellyOrWing_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
