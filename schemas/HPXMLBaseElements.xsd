@@ -186,6 +186,29 @@
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
+	<xs:complexType name="DetailedConstruction">
+		<xs:sequence>
+			<xs:group ref="SystemInfo"/>
+			<xs:element maxOccurs="unbounded" name="ConstructionLayer">
+				<xs:annotation>
+					<xs:documentation>Layers should be ordered from exterior to interior. Do not include air films.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="Material" type="xs:string"/>
+						<xs:element minOccurs="0" name="Thickness" type="HPXMLDouble"/>
+						<xs:element minOccurs="0" name="Conductivity" type="HPXMLDouble"/>
+						<xs:element minOccurs="0" name="Density" type="HPXMLDouble"/>
+						<xs:element minOccurs="0" name="SpecificHeat" type="HPXMLDouble"/>
+						<xs:element minOccurs="0" name="RValue" type="HPXMLDouble"/>
+						<xs:element ref="extension" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="extension" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
 	<xs:complexType name="InsulationMaterial">
 		<xs:choice>
 			<xs:element name="Batt" type="InsulationBattType"/>
@@ -1062,6 +1085,7 @@
 									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
+									<xs:element minOccurs="0" name="DetailedConstruction" type="DetailedConstruction"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
