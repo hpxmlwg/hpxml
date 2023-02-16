@@ -1082,11 +1082,6 @@
 									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
-									<xs:element minOccurs="0" name="Vented" type="HPXMLBoolean">
-										<xs:annotation>
-											<xs:documentation>Indicates whether the walls are vented or not. For example, the walls of a mobile home may be intentionally ventilated to remove accumulated moisture by having corrugated metal siding open at the bottom to provide space for air to flow between the exterior and interior wall materials.</xs:documentation>
-										</xs:annotation>
-									</xs:element>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
@@ -1342,11 +1337,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Orientation" type="OrientationType"/>
-									<xs:element minOccurs="0" name="DoorType" type="DoorType">
-										<xs:annotation>
-											<xs:documentation>DEPRECATION WARNING: The "storm" choice will be deprecated in the future; use the StormDoor element instead.</xs:documentation>
-										</xs:annotation>
-									</xs:element>
+									<xs:element minOccurs="0" name="DoorType" type="DoorType"/>
 									<xs:element name="DoorMaterial" type="DoorMaterial" minOccurs="0"/>
 									<xs:element minOccurs="0" name="WeatherStripping" type="HPXMLBoolean"/>
 									<xs:element name="StormDoor" type="HPXMLBoolean" minOccurs="0"/>
@@ -3642,11 +3633,6 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="HVACMaintenance" type="HVACMaintenance"/>
-			<xs:element minOccurs="0" name="IsPackagedSystem" type="HPXMLBoolean">
-				<xs:annotation>
-					<xs:documentation>Is the system a packaged system?</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
 				<xs:annotation>
 					<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
