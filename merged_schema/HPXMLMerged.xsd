@@ -1170,7 +1170,11 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo" minOccurs="0"/>
+									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>The space type that this floor is above if the FloorOrCeiling = 'floor' or below if the FloorOrCeiling = 'ceiling'. For a mobile home, if the foundation type is a belly and wing, this should be set to 'ambient'.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
 									<xs:element minOccurs="0" name="FloorOrCeiling" type="FloorOrCeiling">
 										<xs:annotation>
@@ -1188,6 +1192,11 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
+									<xs:element minOccurs="0" name="MobileHomeBellyOrWing" type="MobileHomeBellyOrWing">
+										<xs:annotation>
+											<xs:documentation>Indicate whether the floor section is a mobile home belly or wing section. Omit if not applicable.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -5441,6 +5450,24 @@
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="BellyAndWing">
+				<xs:annotation>
+					<xs:documentation>The floor is supported on a pair of I-beams spanning across the length of the mobile home. The floor wing is the part of the floor outside the supports, and the floor belly is the part between the supports. The floor wing and belly sections are protected from outside elements including water, wind, and rodents using a wrap attached to the underside of floor joists, and may contain insulation. Use separate Floor elements to describe the floor insulation above the belly and wing sections respsectively.
+</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="SkirtPresent" type="HPXMLBoolean"/>
+						<xs:element minOccurs="0" name="BellyWrapCondition" type="MobileHomeBellyWrapCondition">
+							<xs:annotation>
+								<xs:documentation>Use the 'none' choice for cases where the belly wrap is functionally missing even if pieces of the wrap are still present. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+					<xs:attribute name="dataSource" type="DataSource"/>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="Other">
 				<xs:complexType>
 					<xs:sequence>
@@ -7279,6 +7306,8 @@
 			<xs:enumeration value="crawlspace - unconditioned"/>
 			<xs:enumeration value="crawlspace - unvented"/>
 			<xs:enumeration value="crawlspace - vented"/>
+			<xs:enumeration value="mobile home belly"/>
+			<xs:enumeration value="mobile home wing"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="garage - conditioned"/>
 			<xs:enumeration value="garage - unconditioned"/>
@@ -8105,6 +8134,7 @@
 			<xs:enumeration value="crawlspace - unconditioned"/>
 			<xs:enumeration value="crawlspace - unvented"/>
 			<xs:enumeration value="crawlspace - vented"/>
+			<xs:enumeration value="mobile home belly"/>
 			<xs:enumeration value="exterior wall"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="garage - conditioned"/>
@@ -9490,6 +9520,35 @@
 	<xs:complexType name="FoundationThermalBoundary">
 		<xs:simpleContent>
 			<xs:extension base="FoundationThermalBoundary_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="MobileHomeBellyWrapCondition_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="good"/>
+			<xs:enumeration value="fair"/>
+			<xs:enumeration value="poor"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MobileHomeBellyWrapCondition">
+		<xs:simpleContent>
+			<xs:extension base="MobileHomeBellyWrapCondition_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="MobileHomeBellyOrWing_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="belly"/>
+			<xs:enumeration value="wing"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MobileHomeBellyOrWing">
+		<xs:simpleContent>
+			<xs:extension base="MobileHomeBellyOrWing_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
