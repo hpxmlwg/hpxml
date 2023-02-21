@@ -1150,11 +1150,6 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="AttachedToSpace"/>
-									<xs:element name="ExteriorAdjacentTo" type="AdjacentTo" minOccurs="0">
-										<xs:annotation>
-											<xs:documentation>The space type that this floor is above if the FloorOrCeiling = 'floor' or below if the FloorOrCeiling = 'ceiling'. For a mobile home, if the foundation type is a belly and wing, this should be set to 'ambient'.</xs:documentation>
-										</xs:annotation>
-									</xs:element>
 									<xs:element minOccurs="0" name="InteriorAdjacentTo" type="AdjacentTo"/>
 									<xs:element minOccurs="0" name="FloorOrCeiling" type="FloorOrCeiling">
 										<xs:annotation>
@@ -1174,7 +1169,7 @@
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
 									<xs:element minOccurs="0" name="MobileHomeBellyOrWing" type="MobileHomeBellyOrWing">
 										<xs:annotation>
-											<xs:documentation>Indicate whether the floor section is a mobile home belly or wing section. Omit if not applicable.</xs:documentation>
+											<xs:documentation>Indicate whether the floor section is a mobile home belly or wing section. Omit if not applicable. For a mobile home, if the foundation type is a belly and wing, ExteriorAdjacentTo should be set to 'outside'.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
