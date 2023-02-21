@@ -3306,7 +3306,7 @@
 			<xs:enumeration value="good"/>
 			<xs:enumeration value="fair"/>
 			<xs:enumeration value="poor"/>
-			<xs:enumeration value="catastrophic"/>
+			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="MobileHomeBellyWrapCondition">
