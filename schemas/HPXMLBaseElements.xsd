@@ -3638,6 +3638,7 @@
 								<xs:documentation>[in]</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -3654,6 +3655,7 @@
 								<xs:documentation>[Btu/hr-ft-F]</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -3676,6 +3678,7 @@
 								<xs:documentation>[in] Measured as center-to-center (not edge-to-edge) distance between two branches of a vertical U-tube</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
