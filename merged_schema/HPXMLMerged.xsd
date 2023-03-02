@@ -10679,16 +10679,16 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="SoilMoistureType_Type">
+	<xs:simpleType name="MoistureType_Type">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="wet"/>
 			<xs:enumeration value="dry"/>
 			<xs:enumeration value="mixed"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="SoilMoisureType">
+	<xs:complexType name="MoisureType">
 		<xs:simpleContent>
-			<xs:extension base="SoilMoistureType_Type">
+			<xs:extension base="MoistureType_Type">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
