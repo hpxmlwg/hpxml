@@ -198,7 +198,6 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element ref="extension" minOccurs="0"/>
 						<xs:element maxOccurs="unbounded" name="LayerMaterial">
 							<xs:complexType>
 								<xs:sequence>
@@ -234,6 +233,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="RValue" type="RValue"/>
+									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
