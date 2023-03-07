@@ -187,6 +187,9 @@
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
 	<xs:complexType name="DetailedConstruction">
+		<xs:annotation>
+			<xs:documentation>Can be used to describe properties for each individual material in the construction</xs:documentation>
+		</xs:annotation>
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element maxOccurs="unbounded" name="ConstructionLayer">
@@ -195,29 +198,45 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element minOccurs="0" name="Material" type="xs:string"/>
-						<xs:element minOccurs="0" name="Thickness" type="HPXMLDouble">
-							<xs:annotation>
-								<xs:documentation>[in]</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="Conductivity" type="HPXMLDouble">
-							<xs:annotation>
-								<xs:documentation>[Btu/hr-ft-F]</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="Density" type="HPXMLDouble">
-							<xs:annotation>
-								<xs:documentation>[lb/ft3]</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="SpecificHeat" type="HPXMLDouble">
-							<xs:annotation>
-								<xs:documentation>[Btu/lb-F]</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="RValue" type="HPXMLDouble"/>
 						<xs:element ref="extension" minOccurs="0"/>
+						<xs:element maxOccurs="unbounded" name="LayerMaterial">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element minOccurs="0" name="AreaFraction" type="FractionGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>Fraction of the layer's area defined by this material. Values across all materials in a layer should sum to 1.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="LayerType" type="ConstructionLayerType"/>
+									<xs:element minOccurs="0" name="MaterialType" type="xs:string">
+										<xs:annotation>
+											<xs:documentation>E.g., "wood", "concrete", "drywall", etc.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
+										<xs:annotation>
+											<xs:documentation>[in]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Conductivity" type="HPXMLDoubleGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>[Btu/hr-ft-F]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="Density" type="HPXMLDoubleGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>[lb/ft3]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="SpecificHeat" type="HPXMLDoubleGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>[Btu/lb-F]</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RValue" type="RValue"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1008,6 +1027,7 @@
 									<xs:element name="RadiantBarrierLocation" type="RadiantBarrierLocation" minOccurs="0"/>
 									<xs:element name="RadiantBarrierGrade" type="InsulationGrade" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Insulation" type="InsulationInfo"/>
+									<xs:element minOccurs="0" name="DetailedConstruction" type="DetailedConstruction"/>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -1048,6 +1068,7 @@
 									<xs:element minOccurs="0" name="SolarAbsorptance" type="SolarAbsorptance"/>
 									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
 									<xs:element minOccurs="0" name="Insulation" type="InsulationInfo"/>
+									<xs:element minOccurs="0" name="DetailedConstruction" type="DetailedConstruction"/>
 									<xs:element minOccurs="0" name="FloorJoists" type="StudProperties"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
@@ -1169,6 +1190,7 @@
 									<xs:element minOccurs="0" name="InteriorStuds" type="StudProperties"/>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
 									<xs:element maxOccurs="1" minOccurs="0" name="Insulation" type="FoundationWallInsulationInfo"/>
+									<xs:element minOccurs="0" name="DetailedConstruction" type="DetailedConstruction"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -1208,6 +1230,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
+									<xs:element minOccurs="0" name="DetailedConstruction" type="DetailedConstruction"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -1262,6 +1285,7 @@
 									<xs:element minOccurs="0" name="FloorCovering" type="FloorCovering"/>
 									<xs:element maxOccurs="1" minOccurs="0" name="PerimeterInsulation" type="SlabPerimeterInsulationInfo"/>
 									<xs:element minOccurs="0" name="UnderSlabInsulation" type="UnderSlabInsulationInfo"/>
+									<xs:element minOccurs="0" name="DetailedConstruction" type="DetailedConstruction"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
