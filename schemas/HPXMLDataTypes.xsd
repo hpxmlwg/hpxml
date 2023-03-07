@@ -4852,7 +4852,6 @@
 			<xs:enumeration value="interior finish"/>
 			<xs:enumeration value="subfloor"/>
 			<xs:enumeration value="other"/>
-			<xs:pattern value=""/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="ConstructionLayerType">
