@@ -4846,14 +4846,12 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="exterior finish"/>
 			<xs:enumeration value="sheathing"/>
-			<xs:enumeration value="framing"/>
 			<xs:enumeration value="continuous insulation"/>
-			<xs:enumeration value="cavity insulation"/>
-			<xs:enumeration value="air gap"/>
+			<xs:enumeration value="framing/cavity insulation"/>
 			<xs:enumeration value="structural core"/>
-			<xs:enumeration value="other"/>
 			<xs:enumeration value="interior finish"/>
 			<xs:enumeration value="subfloor"/>
+			<xs:enumeration value="other"/>
 			<xs:pattern value=""/>
 		</xs:restriction>
 	</xs:simpleType>
