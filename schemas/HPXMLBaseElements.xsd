@@ -198,6 +198,7 @@
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="LayerType" type="ConstructionLayerType"/>
 						<xs:element maxOccurs="unbounded" name="LayerMaterial">
 							<xs:complexType>
 								<xs:sequence>
@@ -206,7 +207,6 @@
 											<xs:documentation>Fraction of the layer's area defined by this material. Values across all materials in a layer should sum to 1.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="LayerType" type="ConstructionLayerType"/>
 									<xs:element minOccurs="0" name="MaterialType" type="xs:string">
 										<xs:annotation>
 											<xs:documentation>E.g., "wood", "concrete", "drywall", etc.</xs:documentation>
