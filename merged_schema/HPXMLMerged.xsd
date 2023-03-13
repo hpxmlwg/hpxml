@@ -1418,12 +1418,12 @@
 											<xs:documentation>[sq.ft.] Conditioned floor area that this distribution system serves.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="AnnualHeatingDistributionSystemEfficiency" type="Fraction">
+									<xs:element minOccurs="0" name="AnnualHeatingDistributionSystemEfficiency" type="FractionExcludingZero">
 										<xs:annotation>
 											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for heating, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History. Enter values as a fractional number between 0 and 1, i.e. 80% = 0.8</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="AnnualCoolingDistributionSystemEfficiency" type="Fraction">
+									<xs:element minOccurs="0" name="AnnualCoolingDistributionSystemEfficiency" type="FractionExcludingZero">
 										<xs:annotation>
 											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for cooling, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History. Enter values as a fractional number between 0 and 1, i.e. 80% = 0.8</xs:documentation>
 										</xs:annotation>
@@ -1543,7 +1543,7 @@
 														<xs:documentation>[sones] as tested in field</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="TotalRecoveryEfficiency" type="Fraction">
+												<xs:element minOccurs="0" name="TotalRecoveryEfficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by electric
 															consumption, case heat loss or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential
@@ -1551,7 +1551,7 @@
 															(hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="SensibleRecoveryEfficiency" type="Fraction">
+												<xs:element minOccurs="0" name="SensibleRecoveryEfficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by electric consumption, case heat loss or heat gain,
 															air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test),
@@ -1559,7 +1559,7 @@
 															the Home Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="AdjustedTotalRecoveryEfficiency" type="Fraction">
+												<xs:element minOccurs="0" name="AdjustedTotalRecoveryEfficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by case heat loss
 															or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential total energy that could be
@@ -1568,7 +1568,7 @@
 															Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="AdjustedSensibleRecoveryEfficiency" type="Fraction">
+												<xs:element minOccurs="0" name="AdjustedSensibleRecoveryEfficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by case heat loss or heat gain, air leakage, airflow
 															mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the
@@ -1873,7 +1873,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" name="FacilitiesConnected" type="DrainWaterHeatRecoveryFacilitiesConnected"/>
 												<xs:element minOccurs="0" name="EqualFlow" type="HPXMLBoolean"/>
-												<xs:element minOccurs="0" name="Efficiency" type="Fraction">
+												<xs:element minOccurs="0" name="Efficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
 													</xs:annotation>
@@ -2082,7 +2082,7 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="InverterType" type="InverterType"/>
-									<xs:element minOccurs="0" name="InverterEfficiency" type="Fraction"/>
+									<xs:element minOccurs="0" name="InverterEfficiency" type="FractionExcludingZero"/>
 									<xs:element minOccurs="0" name="YearInverterManufactured" type="Year"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
 									<xs:element ref="extension" minOccurs="0"/>
@@ -2144,7 +2144,7 @@
 												with a 0.2C discharge current.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="RoundTripEfficiency" type="Fraction">
+									<xs:element minOccurs="0" name="RoundTripEfficiency" type="FractionExcludingZero">
 										<xs:annotation>
 											<xs:documentation>Not all the power that is used to charge the battery is available during discharge. Round trip efficiency is the ratio of the energy put
 												in to the energy retrieved from storage.</xs:documentation>
@@ -9173,6 +9173,19 @@
 	<xs:complexType name="Fraction">
 		<xs:simpleContent>
 			<xs:extension base="Fraction_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="FractionExcludingZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FractionExcludingZero">
+		<xs:simpleContent>
+			<xs:extension base="FractionExcludingZero_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
