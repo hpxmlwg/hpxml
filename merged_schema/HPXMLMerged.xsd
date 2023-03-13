@@ -1653,7 +1653,12 @@
 									<xs:element minOccurs="0" name="FractionDHWLoadServed" type="Fraction"/>
 									<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
 										<xs:annotation>
-											<xs:documentation>[Btuh]</xs:documentation>
+											<xs:documentation>[Btuh] For a heat pump water heater, the capacity of the heat pump.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="BackupHeatingCapacity" type="Capacity" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>[Btuh] The capacity of the electric resistance heating in a heat pump water heater.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="EnergyFactor" type="EnergyFactor" minOccurs="0">
@@ -1674,6 +1679,7 @@
 											<xs:documentation>The dimensionless coefficient of performance, used to measure the efficiency of a commercial heat pump water heater.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="HPWHOperatingMode" type="HPWHOperatingMode"/>
 									<xs:element minOccurs="0" name="FirstHourRating" type="Volume">
 										<xs:annotation>
 											<xs:documentation>[gal per hour] An estimate of the maximum volume of hot water in gallons that a storage water heater can supply within an hour that begins
@@ -3399,6 +3405,13 @@
 								Consumer&#8217;s Directory of Certified Efficiency Ratings.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="HeatingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="HeatingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -3592,6 +3605,20 @@
 					</xs:element>
 					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="AnnualHeatingEfficiency" minOccurs="0" type="HeatingEfficiencyType" maxOccurs="unbounded"/>
+					<xs:element minOccurs="0" name="CoolingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="CoolingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element minOccurs="0" name="HeatingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="HeatingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
 					<xs:element minOccurs="0" ref="extension"/>
 				</xs:sequence>
 			</xs:extension>
@@ -3617,6 +3644,13 @@
 					</xs:element>
 					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element minOccurs="0" name="SensibleHeatFraction" type="Fraction"/>
+					<xs:element minOccurs="0" name="CoolingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="CoolingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -5822,6 +5856,77 @@
 			<xs:element maxOccurs="1" minOccurs="0" name="BeginDayOfMonth" type="DayOfMonth"/>
 			<xs:element maxOccurs="1" minOccurs="0" name="EndMonth" type="Month"/>
 			<xs:element maxOccurs="1" minOccurs="0" name="EndDayOfMonth" type="DayOfMonth"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="CoolingPerformanceDataPoint">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
+			<xs:element name="OutdoorTemperature" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IndoorTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IndoorWetbulbTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[F] wetbulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Capacity" type="Capacity">
+				<xs:annotation>
+					<xs:documentation>[Btuh] output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityFractionOfNominal" type="FractionGreaterThanOne">
+				<xs:annotation>
+					<xs:documentation>Fraction of the nominal output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityDescription" type="CapacityDescription"/>
+			<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="extension" type="extensionType"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="HeatingPerformanceDataPoint">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
+			<xs:element name="OutdoorTemperature" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IndoorTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Capacity" type="Capacity">
+				<xs:annotation>
+					<xs:documentation>[Btuh] output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityFractionOfNominal" type="FractionGreaterThanOne">
+				<xs:annotation>
+					<xs:documentation>Fraction of the nominal output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityDescription" type="CapacityDescription"/>
+			<xs:element minOccurs="0" name="Efficiency" type="HeatingEfficiencyType">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="extension" type="extensionType"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
@@ -8793,11 +8898,15 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="WaterHeaterType_simple">
+		<xs:annotation>
+			<xs:documentation>The generic "heat pump water heater" enumeration is assumed to refer to an integrated (not split) heat pump water heater.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="storage water heater"/>
 			<xs:enumeration value="dedicated boiler with storage tank"/>
 			<xs:enumeration value="instantaneous water heater"/>
 			<xs:enumeration value="heat pump water heater"/>
+			<xs:enumeration value="split heat pump water heater"/>
 			<xs:enumeration value="space-heating boiler with storage tank"/>
 			<xs:enumeration value="space-heating boiler with tankless coil"/>
 		</xs:restriction>
@@ -10618,6 +10727,37 @@
 	<xs:complexType name="AdditionalRuntimeOperatingMode">
 		<xs:simpleContent>
 			<xs:extension base="AdditionalRuntimeOperatingModeType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="CapacityDescription_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="minimum"/>
+			<xs:enumeration value="intermediate"/>
+			<xs:enumeration value="nominal"/>
+			<xs:enumeration value="maximum"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CapacityDescription">
+		<xs:simpleContent>
+			<xs:extension base="CapacityDescription_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HPWHOperatingModeType_simple">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="hybrid/auto"/>
+			<xs:pattern value="heat pump only"/>
+			<xs:pattern value="electric heater only"/>
+			<xs:pattern value="high demand/recovery"/>
+			<xs:pattern value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPWHOperatingMode">
+		<xs:simpleContent>
+			<xs:extension base="HPWHOperatingModeType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
