@@ -4801,6 +4801,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="CapacityDescription_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="minimum"/>
+			<xs:enumeration value="intermediate"/>
+			<xs:enumeration value="nominal"/>
+			<xs:enumeration value="maximum"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CapacityDescription">
+		<xs:simpleContent>
+			<xs:extension base="CapacityDescription_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="HPWHOperatingModeType_simple">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="hybrid/auto"/>
