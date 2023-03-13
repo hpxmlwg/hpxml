@@ -1280,6 +1280,11 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="AttachedToRoof" type="LocalReference"/>
+									<xs:element minOccurs="0" name="AttachedToFloor" type="LocalReference">
+										<xs:annotation>
+											<xs:documentation>For a skylight that includes a shaft or a sun tunnel, reference the attic floor that it penetrates.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
