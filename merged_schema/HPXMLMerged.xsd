@@ -231,7 +231,7 @@
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
 			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="AssemblyRValue">
 				<xs:annotation>
-					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments.</xs:documentation>
+					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments. For below-grade surfaces adjacent to ground, it should not include the insulating effect of the ground.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="MisalignedInsulation" type="HPXMLBoolean"/>
