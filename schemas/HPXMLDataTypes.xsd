@@ -3242,6 +3242,19 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="FractionExcludingZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FractionExcludingZero">
+		<xs:simpleContent>
+			<xs:extension base="FractionExcludingZero_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="FractionGreaterThanOne_simple">
 		<xs:annotation>
 			<xs:documentation>A fraction that can be greater than one (ie 110%)</xs:documentation>
