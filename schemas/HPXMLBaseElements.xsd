@@ -3843,11 +3843,12 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" name="SoilType" type="SoilType"/>
 												<xs:element minOccurs="0" name="MoistureType" type="MoisureType"/>
-												<xs:element minOccurs="0" name="Conductivity">
+												<xs:element minOccurs="0" name="Conductivity" type="HPXMLDouble">
 													<xs:annotation>
 														<xs:documentation>[Btu/hr-ft-F]</xs:documentation>
 													</xs:annotation>
 												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
