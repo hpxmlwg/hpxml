@@ -617,8 +617,8 @@
   </Building>
   <Project>
     <ProjectID id="project-1"/>
-    <PreBuildingID id="bldg-audit"/>
-    <PostBuildingID id="bldg-proposed"/>
+    <PreBuildingID idref="bldg-audit"/>
+    <PostBuildingID idref="bldg-proposed"/>
     <ProjectDetails>
       <ProjectStatus>
         <EventType>proposed workscope</EventType>
@@ -639,10 +639,10 @@
           <MeasureDescription>Blow in cellulose insulation in attic to R-50.</MeasureDescription>
           <Cost>1000</Cost>
           <ReplacedComponents>
-            <ReplacedComponent id="attic1flrins"/>
+            <ReplacedComponent idref="attic1flrins"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="attic1flrinsproposed"/>
+            <InstalledComponent idref="attic1flrinsproposed"/>
           </InstalledComponents>
         </Measure>
         <Measure>
@@ -652,24 +652,24 @@
           <MeasureDescription>Replace Refrigerator with EnergyStar version</MeasureDescription>
           <Cost>1200</Cost>
           <ReplacedComponents>
-            <ReplacedComponent id="refrigerator1"/>
+            <ReplacedComponent idref="refrigerator1"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="refrigerator1proposed"/>
+            <InstalledComponent idref="refrigerator1proposed"/>
           </InstalledComponents>
         </Measure>
       </Measures>
     </ProjectDetails>
     <extension>
       <BuildingID id="bldg-proposed"/>
-      <ProjectSystemIdentifiers id="bldg-audit"/>
-      <ProjectSystemIdentifiers id="bldg-proposed"/>
+      <ProjectSystemIdentifiers idref="bldg-audit"/>
+      <ProjectSystemIdentifiers idref="bldg-proposed"/>
     </extension>
   </Project>
   <Project>
     <ProjectID id="project-2"/>
-    <PreBuildingID id="bldg-audit"/>
-    <PostBuildingID id="bldg-completion"/>
+    <PreBuildingID idref="bldg-audit"/>
+    <PostBuildingID idref="bldg-completion"/>
     <ProjectDetails>
       <ProjectStatus>
         <EventType>job completion testing/final inspection</EventType>
@@ -690,10 +690,10 @@
           <MeasureDescription>Blow in cellulose insulation in attic to R-49.</MeasureDescription>
           <Cost>1032.12</Cost>
           <ReplacedComponents>
-            <ReplacedComponent id="attic1flrins"/>
+            <ReplacedComponent idref="attic1flrins"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="attic1flrinscompletion"/>
+            <InstalledComponent idref="attic1flrinscompletion"/>
           </InstalledComponents>
         </Measure>
         <Measure>
@@ -703,18 +703,18 @@
           <MeasureDescription>Replace Refrigerator with EnergyStar version</MeasureDescription>
           <Cost>1234.56</Cost>
           <ReplacedComponents>
-            <ReplacedComponent id="refrigerator1"/>
+            <ReplacedComponent idref="refrigerator1"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="refrigerator1completion"/>
+            <InstalledComponent idref="refrigerator1completion"/>
           </InstalledComponents>
         </Measure>
       </Measures>
     </ProjectDetails>
     <extension>
       <BuildingID id="bldg-completion"/>
-      <ProjectSystemIdentifiers id="bldg-audit"/>
-      <ProjectSystemIdentifiers id="bldg-completion"/>
+      <ProjectSystemIdentifiers idref="bldg-audit"/>
+      <ProjectSystemIdentifiers idref="bldg-completion"/>
     </extension>
   </Project>
   <Utility>
@@ -728,11 +728,11 @@
     </UtilitiesorFuelProviders>
   </Utility>
   <Consumption>
-    <BuildingID id="bldg-audit"/>
-    <CustomerID id="person1"/>
+    <BuildingID idref="bldg-audit"/>
+    <CustomerID idref="person1"/>
     <ConsumptionDetails>
       <ConsumptionInfo>
-        <UtilityID id="xcel"/>
+        <UtilityID idref="xcel"/>
         <ConsumptionType>
           <Energy>
             <FuelType>electricity</FuelType>
@@ -749,11 +749,11 @@
     </ConsumptionDetails>
   </Consumption>
   <Consumption>
-    <BuildingID id="bldg-completion"/>
-    <CustomerID id="person1"/>
+    <BuildingID idref="bldg-completion"/>
+    <CustomerID idref="person1"/>
     <ConsumptionDetails>
       <ConsumptionInfo>
-        <UtilityID id="xcel"/>
+        <UtilityID idref="xcel"/>
         <ConsumptionType>
           <Energy>
             <FuelType>electricity</FuelType>

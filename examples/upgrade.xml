@@ -302,7 +302,7 @@
           <CombustionApplianceZone>
             <SystemIdentifier id="cazzone1"/>
             <CombustionApplianceTest>
-              <CAZAppliance id="dhw1c"/>
+              <CAZAppliance idref="dhw1c"/>
             </CombustionApplianceTest>
           </CombustionApplianceZone>
         </CombustionAppliances>
@@ -585,7 +585,7 @@
             <DepressurizationFindingPoorCase>fail</DepressurizationFindingPoorCase>
             <AmountAmbientCOinCAZduringTesting>0.0</AmountAmbientCOinCAZduringTesting>
             <CombustionApplianceTest>
-              <CAZAppliance id="dhw1c"/>
+              <CAZAppliance idref="dhw1c"/>
               <FlueDraftTest>
                 <PoorScenario>0.0</PoorScenario>
                 <CurrentCondition>0.0</CurrentCondition>
@@ -615,8 +615,8 @@
   </Building>
   <Project>
     <ProjectID id="project-1"/>
-    <PreBuildingID id="bldg1"/>
-    <PostBuildingID id="bldg1c"/>
+    <PreBuildingID idref="bldg1"/>
+    <PostBuildingID idref="bldg1c"/>
     <ProjectDetails>
       <ProjectStatus>
         <EventType>job completion testing/final inspection</EventType>
@@ -638,7 +638,7 @@
             <SystemIdentifiersInfo id="dishwasherreplacement"/>
           </MeasureSystemIdentifiers>
           <InstalledComponents>
-            <InstalledComponent id="dishwasher1c"/>
+            <InstalledComponent idref="dishwasher1c"/>
           </InstalledComponents>
         </Measure>
         <Measure>
@@ -646,7 +646,7 @@
             <SystemIdentifiersInfo id="freezerreplacement"/>
           </MeasureSystemIdentifiers>
           <InstalledComponents>
-            <InstalledComponent id="freezer1c"/>
+            <InstalledComponent idref="freezer1c"/>
           </InstalledComponents>
         </Measure>
         <Measure>
@@ -654,10 +654,10 @@
             <SystemIdentifiersInfo id="htgsysreplacement"/>
           </MeasureSystemIdentifiers>
           <ReplacedComponents>
-            <ReplacedComponent id="htgsys1"/>
+            <ReplacedComponent idref="htgsys1"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="htgsys1c"/>
+            <InstalledComponent idref="htgsys1c"/>
           </InstalledComponents>
         </Measure>
         <Measure>
@@ -665,10 +665,10 @@
             <SystemIdentifiersInfo id="windowreplacement"/>
           </MeasureSystemIdentifiers>
           <ReplacedComponents>
-            <ReplacedComponent id="window1"/>
+            <ReplacedComponent idref="window1"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="window1c"/>
+            <InstalledComponent idref="window1c"/>
           </InstalledComponents>
         </Measure>
         <Measure>
@@ -676,10 +676,10 @@
             <SystemIdentifiersInfo id="doorreplacement"/>
           </MeasureSystemIdentifiers>
           <ReplacedComponents>
-            <ReplacedComponent id="door2"/>
+            <ReplacedComponent idref="door2"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="door2c"/>
+            <InstalledComponent idref="door2c"/>
           </InstalledComponents>
         </Measure>
         <Measure>
@@ -687,10 +687,10 @@
             <SystemIdentifiersInfo id="atticfloorreplacement"/>
           </MeasureSystemIdentifiers>
           <ReplacedComponents>
-            <ReplacedComponent id="insul1"/>
+            <ReplacedComponent idref="insul1"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="insul1c"/>
+            <InstalledComponent idref="insul1c"/>
           </InstalledComponents>
         </Measure>
         <Measure>
@@ -698,18 +698,18 @@
             <SystemIdentifiersInfo id="dehumidifierrreplacement"/>
           </MeasureSystemIdentifiers>
           <ReplacedComponents>
-            <ReplacedComponent id="dehumidifier1"/>
+            <ReplacedComponent idref="dehumidifier1"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="dehumidifier1c"/>
+            <InstalledComponent idref="dehumidifier1c"/>
           </InstalledComponents>
         </Measure>
       </Measures>
     </ProjectDetails>
     <extension>
-      <BuildingID id="bldg1c"/>
-      <ProjectSystemIdentifiers id="bldg1"/>
-      <ProjectSystemIdentifiers id="bldg1c"/>
+      <BuildingID idref="bldg1c"/>
+      <ProjectSystemIdentifiers idref="bldg1"/>
+      <ProjectSystemIdentifiers idref="bldg1c"/>
     </extension>
   </Project>
   <Utility>
