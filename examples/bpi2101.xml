@@ -661,7 +661,7 @@
       </Measures>
     </ProjectDetails>
     <extension>
-      <BuildingID id="bldg-proposed"/>
+      <BuildingID idref="bldg-proposed"/>
       <ProjectSystemIdentifiers idref="bldg-audit"/>
       <ProjectSystemIdentifiers idref="bldg-proposed"/>
     </extension>
@@ -712,7 +712,7 @@
       </Measures>
     </ProjectDetails>
     <extension>
-      <BuildingID id="bldg-completion"/>
+      <BuildingID idref="bldg-completion"/>
       <ProjectSystemIdentifiers idref="bldg-audit"/>
       <ProjectSystemIdentifiers idref="bldg-completion"/>
     </extension>
