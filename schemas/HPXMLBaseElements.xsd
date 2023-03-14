@@ -3743,6 +3743,7 @@
 						<xs:group ref="SystemInfo"/>
 						<xs:element name="DuctType" type="DuctType" minOccurs="0"/>
 						<xs:element name="DuctMaterial" type="DuctMaterial" minOccurs="0"/>
+						<xs:element minOccurs="0" name="DuctInsulationLocation" type="DuctInsulationLocation"/>
 						<xs:element minOccurs="0" name="DuctInsulationMaterial" type="InsulationMaterial"/>
 						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0"/>
 						<xs:element minOccurs="0" name="DuctInsulationThickness" type="LengthMeasurement">
