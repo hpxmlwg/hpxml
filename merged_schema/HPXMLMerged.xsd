@@ -3757,6 +3757,7 @@
 						<xs:group ref="SystemInfo"/>
 						<xs:element name="DuctType" type="DuctType" minOccurs="0"/>
 						<xs:element name="DuctMaterial" type="DuctMaterial" minOccurs="0"/>
+						<xs:element minOccurs="0" name="DuctInsulationLocation" type="DuctInsulationLocation"/>
 						<xs:element minOccurs="0" name="DuctInsulationMaterial" type="InsulationMaterial"/>
 						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0"/>
 						<xs:element minOccurs="0" name="DuctInsulationThickness" type="LengthMeasurement">
@@ -7855,6 +7856,23 @@
 	<xs:complexType name="DuctMaterial">
 		<xs:simpleContent>
 			<xs:extension base="DuctMaterial_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DuctInsulationLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="around duct or ductboard"/>
+			<xs:enumeration value="buried in attic"/>
+			<xs:enumeration value="above duct"/>
+			<xs:enumeration value="below duct"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="none"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DuctInsulationLocation">
+		<xs:simpleContent>
+			<xs:extension base="DuctInsulationLocation_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
