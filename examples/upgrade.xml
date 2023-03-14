@@ -576,6 +576,7 @@
           </MoistureControlImprovement>
         </MoistureControl>
         <CombustionAppliances>
+          <MaxAmbientCOinLivingSpaceDuringAudit>0.0</MaxAmbientCOinLivingSpaceDuringAudit>
           <CombustionApplianceZone>
             <SystemIdentifier id="cazzone1c" sameas="cazzone1"/>
             <CAZDepressurizationLimit>0.0</CAZDepressurizationLimit>
@@ -600,7 +601,6 @@
                 <PoorScenario>0.0</PoorScenario>
                 <CurrentCondition>0.0</CurrentCondition>
                 <TestResult>failed</TestResult>
-                <MaxAmbientCOinLivingSpaceDuringAudit>0.0</MaxAmbientCOinLivingSpaceDuringAudit>
               </CarbonMonoxideTest>
               <FuelLeaks>
                 <FuelType>anthracite coal</FuelType>

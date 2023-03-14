@@ -549,6 +549,7 @@
         </MoistureControl>
         <CombustionAppliances>
           <!-- Seems odd to have all these on the proposed workscope. -->
+          <MaxAmbientCOinLivingSpaceDuringAudit>2</MaxAmbientCOinLivingSpaceDuringAudit>
           <CombustionApplianceZone>
             <SystemIdentifier id="cazzone1p" sameas="cazzone1"/>
             <CAZDepressurizationLimit>1</CAZDepressurizationLimit>
@@ -573,7 +574,6 @@
                 <PoorScenario>456.7</PoorScenario>
                 <CurrentCondition>123.4</CurrentCondition>
                 <TestResult>passed</TestResult>
-                <MaxAmbientCOinLivingSpaceDuringAudit>2</MaxAmbientCOinLivingSpaceDuringAudit>
               </CarbonMonoxideTest>
               <FuelLeaks>
                 <FuelType>natural gas</FuelType>
@@ -597,7 +597,6 @@
                 <PoorScenario>456.7</PoorScenario>
                 <CurrentCondition>123.4</CurrentCondition>
                 <TestResult>passed</TestResult>
-                <MaxAmbientCOinLivingSpaceDuringAudit>2</MaxAmbientCOinLivingSpaceDuringAudit>
               </CarbonMonoxideTest>
               <FuelLeaks>
                 <FuelType>natural gas</FuelType>
