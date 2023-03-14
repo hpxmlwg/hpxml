@@ -1931,6 +1931,7 @@
 			<xs:enumeration value="above duct"/>
 			<xs:enumeration value="below duct"/>
 			<xs:enumeration value="other"/>
+			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="DuctInsulationLocation">
