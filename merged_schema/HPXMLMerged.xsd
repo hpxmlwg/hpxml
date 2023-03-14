@@ -10794,7 +10794,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="SoilType_Type">
+	<xs:simpleType name="SoilType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="sand"/>
 			<xs:enumeration value="silt"/>
@@ -10807,12 +10807,12 @@
 	</xs:simpleType>
 	<xs:complexType name="SoilType">
 		<xs:simpleContent>
-			<xs:extension base="SoilType_Type">
+			<xs:extension base="SoilType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="MoistureType_Type">
+	<xs:simpleType name="MoistureType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="wet"/>
 			<xs:enumeration value="dry"/>
@@ -10821,7 +10821,7 @@
 	</xs:simpleType>
 	<xs:complexType name="MoisureType">
 		<xs:simpleContent>
-			<xs:extension base="MoistureType_Type">
+			<xs:extension base="MoistureType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
