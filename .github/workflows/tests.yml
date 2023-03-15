@@ -1,6 +1,11 @@
 name: Test Schemas
 
-on: [pull_request]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    types: [ synchronize, opened ]
+  workflow_dispatch:
 
 jobs:
   test-xsd:
