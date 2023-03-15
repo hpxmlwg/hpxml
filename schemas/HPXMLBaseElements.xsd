@@ -237,6 +237,7 @@
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
+						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
