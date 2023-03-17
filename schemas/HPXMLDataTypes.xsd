@@ -399,7 +399,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="TypeOfMultifamilyInfiltrationTest_simple">
+	<xs:simpleType name="TypeOfInfiltrationTest_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="whole building test"/>
 			<xs:enumeration value="compartmentalization test"/>
@@ -407,9 +407,9 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="TypeOfMultifamilyInfiltrationTest">
+	<xs:complexType name="TypeOfInfiltrationTest">
 		<xs:simpleContent>
-			<xs:extension base="TypeOfMultifamilyInfiltrationTest_simple">
+			<xs:extension base="TypeOfInfiltrationTest_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
