@@ -1147,6 +1147,7 @@
 			<xs:enumeration value="garage - unconditioned"/>
 			<xs:enumeration value="ground"/>
 			<xs:enumeration value="living space"/>
+			<xs:enumeration value="manufactured home underbelly"/>
 			<xs:enumeration value="other"/>
 			<xs:enumeration value="other housing unit"/>
 			<xs:enumeration value="other housing unit above"/>
