@@ -1956,7 +1956,7 @@
 			<xs:enumeration value="crawlspace - unconditioned"/>
 			<xs:enumeration value="crawlspace - unvented"/>
 			<xs:enumeration value="crawlspace - vented"/>
-			<xs:enumeration value="mobile home belly"/>
+			<xs:enumeration value="manufactured home belly"/>
 			<xs:enumeration value="exterior wall"/>
 			<xs:enumeration value="garage"/>
 			<xs:enumeration value="garage - conditioned"/>
@@ -3328,7 +3328,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="MobileHomeBellyWrapCondition_simple">
+	<xs:simpleType name="ManufacturedHomeBellyWrapCondition_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="good"/>
 			<xs:enumeration value="fair"/>
@@ -3336,23 +3336,23 @@
 			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="MobileHomeBellyWrapCondition">
+	<xs:complexType name="ManufacturedHomeBellyWrapCondition">
 		<xs:simpleContent>
-			<xs:extension base="MobileHomeBellyWrapCondition_simple">
+			<xs:extension base="ManufacturedHomeBellyWrapCondition_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="MobileHomeBellyOrWing_simple">
+	<xs:simpleType name="ManufacturedHomeBellyOrWing_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="belly"/>
 			<xs:enumeration value="wing"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="MobileHomeBellyOrWing">
+	<xs:complexType name="ManufacturedHomeBellyOrWing">
 		<xs:simpleContent>
-			<xs:extension base="MobileHomeBellyOrWing_simple">
+			<xs:extension base="ManufacturedHomeBellyOrWing_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
