@@ -726,6 +726,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="ManufacturedHomeSections_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="single-wide"/>
+			<xs:enumeration value="double-wide"/>
+			<xs:enumeration value="triple-wide"/>
+			<xs:enumeration value="CrossMod"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ManufacturedHomeSections">
+		<xs:simpleContent>
+			<xs:extension base="ManufacturedHomeSections_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="HouseholdType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="family household"/>

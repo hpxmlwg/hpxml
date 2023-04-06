@@ -4076,6 +4076,7 @@
 									<xs:element minOccurs="0" name="GaragePresent" type="HPXMLBoolean"/>
 									<xs:element minOccurs="0" name="GarageLocation" type="GarageLocation"/>
 									<xs:element minOccurs="0" name="SpaceAboveGarage" type="SpaceAboveGarage"/>
+									<xs:element minOccurs="0" name="ManufacturedHomeSections" type="ManufacturedHomeSections"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
