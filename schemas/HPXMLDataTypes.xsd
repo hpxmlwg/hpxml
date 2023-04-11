@@ -349,7 +349,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="BuildingAirLeakageType_simple">
+	<xs:simpleType name="TypeofInfiltrationLeakage_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="building total"/>
 			<xs:enumeration value="unit total"/>
@@ -357,9 +357,9 @@
 			<xs:enumeration value="unit interior only"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="BuildingAirLeakageType">
+	<xs:complexType name="TypeofInfiltrationLeakage">
 		<xs:simpleContent>
-			<xs:extension base="BuildingAirLeakageType_simple">
+			<xs:extension base="TypeofInfiltrationLeakage_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
