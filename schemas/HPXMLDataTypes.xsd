@@ -1862,16 +1862,45 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<!--Heat Pump Information Below-->
-	<xs:simpleType name="GeothermalLoop_simple">
+	<xs:simpleType name="LoopType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="open"/>
 			<xs:enumeration value="closed"/>
 			<xs:enumeration value="direct expansion"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="GeothermalLoop">
+	<xs:complexType name="LoopType">
 		<xs:simpleContent>
-			<xs:extension base="GeothermalLoop_simple">
+			<xs:extension base="LoopType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="LoopConfiguration_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="horizontal"/>
+			<xs:enumeration value="vertical"/>
+			<xs:enumeration value="diagonal"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="LoopConfiguration">
+		<xs:simpleContent>
+			<xs:extension base="LoopConfiguration_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="GroutOrPipeType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="standard"/>
+			<xs:enumeration value="thermally enhanced"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GroutOrPipeType">
+		<xs:simpleContent>
+			<xs:extension base="GroutOrPipeType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2992,11 +3021,15 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="WaterHeaterType_simple">
+		<xs:annotation>
+			<xs:documentation>The generic "heat pump water heater" enumeration is assumed to refer to an integrated (not split) heat pump water heater.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="storage water heater"/>
 			<xs:enumeration value="dedicated boiler with storage tank"/>
 			<xs:enumeration value="instantaneous water heater"/>
 			<xs:enumeration value="heat pump water heater"/>
+			<xs:enumeration value="split heat pump water heater"/>
 			<xs:enumeration value="space-heating boiler with storage tank"/>
 			<xs:enumeration value="space-heating boiler with tankless coil"/>
 		</xs:restriction>
@@ -3258,6 +3291,19 @@
 	<xs:complexType name="Fraction">
 		<xs:simpleContent>
 			<xs:extension base="Fraction_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="FractionExcludingZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FractionExcludingZero">
+		<xs:simpleContent>
+			<xs:extension base="FractionExcludingZero_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -4777,6 +4823,22 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="InverterType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="central inverter"/>
+			<xs:enumeration value="string inverter"/>
+			<xs:enumeration value="multi-string inverter"/>
+			<xs:enumeration value="micro inverter"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="InverterType">
+		<xs:simpleContent>
+			<xs:extension base="InverterType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="FloorOrCeiling_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="floor"/>
@@ -4801,6 +4863,69 @@
 	<xs:complexType name="AdditionalRuntimeOperatingMode">
 		<xs:simpleContent>
 			<xs:extension base="AdditionalRuntimeOperatingModeType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="CapacityDescription_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="minimum"/>
+			<xs:enumeration value="intermediate"/>
+			<xs:enumeration value="nominal"/>
+			<xs:enumeration value="maximum"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="CapacityDescription">
+		<xs:simpleContent>
+			<xs:extension base="CapacityDescription_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HPWHOperatingModeType_simple">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="hybrid/auto"/>
+			<xs:pattern value="heat pump only"/>
+			<xs:pattern value="electric heater only"/>
+			<xs:pattern value="high demand/recovery"/>
+			<xs:pattern value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPWHOperatingMode">
+		<xs:simpleContent>
+			<xs:extension base="HPWHOperatingModeType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="SoilType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sand"/>
+			<xs:enumeration value="silt"/>
+			<xs:enumeration value="clay"/>
+			<xs:enumeration value="loam"/>
+			<xs:enumeration value="gravel"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SoilType">
+		<xs:simpleContent>
+			<xs:extension base="SoilType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="MoistureType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="wet"/>
+			<xs:enumeration value="dry"/>
+			<xs:enumeration value="mixed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MoisureType">
+		<xs:simpleContent>
+			<xs:extension base="MoistureType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>

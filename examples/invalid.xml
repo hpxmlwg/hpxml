@@ -45,7 +45,7 @@
     </CustomerDetails>
   </Customer>
   <Building>
-    <BuildingID id="bldg1"/>
+    <BuildingID/>
     <Site>
       <SiteID id="bldg1site"/>
       <Address>
