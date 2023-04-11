@@ -1182,11 +1182,6 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
-									<xs:element minOccurs="0" name="ManufacturedHomeBellyOrWing" type="ManufacturedHomeBellyOrWing">
-										<xs:annotation>
-											<xs:documentation>Indicate whether the floor section is a manufactured home belly or wing section. Omit if not applicable.</xs:documentation>
-										</xs:annotation>
-									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
