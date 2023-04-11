@@ -5044,7 +5044,7 @@
 						<xs:element name="AirLeakage" type="BuildingAirLeakage" minOccurs="0"/>
 						<xs:element minOccurs="0" name="AirLeakageType" type="BuildingAirLeakageType">
 							<xs:annotation>
-								<xs:documentation>This element is intended to describe the type of air leakage measured for an individual single-family attached or multifamily dwelling unit. Either building-level or unit-level air leakage can be measured. For unit-level air leakage, leakage can be through exterior surfaces (adjacent to outside) only, interior surfaces (adjacent to other units or common spaces), or both. For example, guarded tests measure unit exterior leakage, unguarded (or compartmentalization) tests measure unit total leakage, and combining both tests can measure unit interior leakage.</xs:documentation>
+								<xs:documentation>This element is intended to describe the type of air leakage measured for an individual single-family attached or multifamily dwelling unit. Either building-level or unit-level air leakage can be measured. For unit-level air leakage, leakage can be through exterior surfaces (adjacent to outside) only, interior surfaces (adjacent to other units or common spaces) only, or both. For example, guarded tests measure unit exterior leakage, unguarded (or compartmentalization) tests measure unit total leakage, and combining both tests can measure unit interior leakage.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
