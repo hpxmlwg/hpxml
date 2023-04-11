@@ -5056,7 +5056,7 @@
 			</xs:element>
 			<xs:element name="FanRingUsed" type="FanRingUsed" minOccurs="0"/>
 			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
-			<xs:element minOccurs="0" name="BuildingAirLeakage" maxOccurs="1">
+			<xs:element minOccurs="0" name="BuildingAirLeakage">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="UnitofMeasure" type="BuildingAirLeakageUnit" minOccurs="0"/>
