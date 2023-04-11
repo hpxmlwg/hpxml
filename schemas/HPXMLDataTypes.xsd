@@ -3372,20 +3372,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="ManufacturedHomeBellyOrWing_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="belly"/>
-			<xs:enumeration value="wing"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="ManufacturedHomeBellyOrWing">
-		<xs:simpleContent>
-			<xs:extension base="ManufacturedHomeBellyOrWing_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="WallAndRoofColor_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="light"/>
