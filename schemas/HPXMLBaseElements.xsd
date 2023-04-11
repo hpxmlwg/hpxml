@@ -5429,11 +5429,6 @@
 			<xs:element minOccurs="0" name="WindConditions" type="WindConditions"/>
 			<xs:element name="TypeOfInfiltrationMeasurement" type="TypeofInfiltrationMeasurement" minOccurs="0"/>
 			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
-			<xs:element minOccurs="0" name="TypeOfInfiltrationTest" type="TypeOfInfiltrationTest">
-				<xs:annotation>
-					<xs:documentation>Applies to single-family attached and multifamily. Whole building tests measure the infiltration through the total exterior envelope of the building. Compartmentalization tests measure the infiltration for a single dwelling unit through both exterior (adjacent to outside) and interior/shared (adjacent to other spaces/units) surfaces. Guarded tests measure the infiltration for a single dwelling unit through only exterior (adjacent to outside) surfaces.</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element name="HousePressure" type="HousePressure" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[Pa] with respect to outside</xs:documentation>
@@ -5446,11 +5441,16 @@
 			</xs:element>
 			<xs:element name="FanRingUsed" type="FanRingUsed" minOccurs="0"/>
 			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
-			<xs:element minOccurs="0" name="BuildingAirLeakage">
+			<xs:element minOccurs="0" name="BuildingAirLeakage" maxOccurs="unbounded">
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="UnitofMeasure" type="BuildingAirLeakageUnit" minOccurs="0"/>
 						<xs:element name="AirLeakage" type="BuildingAirLeakage" minOccurs="0"/>
+						<xs:element minOccurs="0" name="AirLeakageType" type="BuildingAirLeakageType">
+							<xs:annotation>
+								<xs:documentation>This element is intended to describe the type of air leakage measured for an individual single-family attached or multifamily dwelling unit. Either building-level or unit-level air leakage can be measured. For unit-level air leakage, leakage can be through exterior surfaces (adjacent to outside) only, interior surfaces (adjacent to other units or common spaces) only, or both. For example, guarded tests measure unit exterior leakage, unguarded (or compartmentalization) tests measure unit total leakage, and combining both tests can measure unit interior leakage.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
