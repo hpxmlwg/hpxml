@@ -350,6 +350,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="BuildingAirLeakageType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="building total"/>
+			<xs:enumeration value="unit total"/>
+			<xs:enumeration value="unit exterior only"/>
+			<xs:enumeration value="unit interior only"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BuildingAirLeakageType">
+		<xs:simpleContent>
+			<xs:extension base="BuildingAirLeakageType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="FanPressure_simple">
 		<xs:restriction base="xs:double"/>
 	</xs:simpleType>
@@ -395,21 +410,6 @@
 	<xs:complexType name="HousePressure">
 		<xs:simpleContent>
 			<xs:extension base="HousePressure_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="TypeOfInfiltrationTest_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="whole building test"/>
-			<xs:enumeration value="compartmentalization test"/>
-			<xs:enumeration value="guarded test"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="TypeOfInfiltrationTest">
-		<xs:simpleContent>
-			<xs:extension base="TypeOfInfiltrationTest_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
