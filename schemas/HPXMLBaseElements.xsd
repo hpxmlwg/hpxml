@@ -217,7 +217,7 @@
 			<xs:element minOccurs="0" name="InsulationCondition" type="InsulationCondition"/>
 			<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="AssemblyRValue">
 				<xs:annotation>
-					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments.</xs:documentation>
+					<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments. For below-grade surfaces adjacent to ground, it should not include the insulating effect of the ground.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="MisalignedInsulation" type="HPXMLBoolean"/>
@@ -1280,6 +1280,11 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="AttachedToRoof" type="LocalReference"/>
+									<xs:element minOccurs="0" name="AttachedToFloor" type="LocalReference">
+										<xs:annotation>
+											<xs:documentation>For a skylight that includes a shaft or a sun tunnel, reference the attic floor that it penetrates.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
@@ -1400,12 +1405,12 @@
 											<xs:documentation>[sq.ft.] Conditioned floor area that this distribution system serves.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="AnnualHeatingDistributionSystemEfficiency" type="Fraction">
+									<xs:element minOccurs="0" name="AnnualHeatingDistributionSystemEfficiency" type="FractionExcludingZero">
 										<xs:annotation>
 											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for heating, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History. Enter values as a fractional number between 0 and 1, i.e. 80% = 0.8</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="AnnualCoolingDistributionSystemEfficiency" type="Fraction">
+									<xs:element minOccurs="0" name="AnnualCoolingDistributionSystemEfficiency" type="FractionExcludingZero">
 										<xs:annotation>
 											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for cooling, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History. Enter values as a fractional number between 0 and 1, i.e. 80% = 0.8</xs:documentation>
 										</xs:annotation>
@@ -1525,7 +1530,7 @@
 														<xs:documentation>[sones] as tested in field</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="TotalRecoveryEfficiency" type="Fraction">
+												<xs:element minOccurs="0" name="TotalRecoveryEfficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by electric
 															consumption, case heat loss or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential
@@ -1533,7 +1538,7 @@
 															(hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="SensibleRecoveryEfficiency" type="Fraction">
+												<xs:element minOccurs="0" name="SensibleRecoveryEfficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by electric consumption, case heat loss or heat gain,
 															air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test),
@@ -1541,7 +1546,7 @@
 															the Home Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="AdjustedTotalRecoveryEfficiency" type="Fraction">
+												<xs:element minOccurs="0" name="AdjustedTotalRecoveryEfficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by case heat loss
 															or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential total energy that could be
@@ -1550,7 +1555,7 @@
 															Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="AdjustedSensibleRecoveryEfficiency" type="Fraction">
+												<xs:element minOccurs="0" name="AdjustedSensibleRecoveryEfficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by case heat loss or heat gain, air leakage, airflow
 															mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the
@@ -1855,7 +1860,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" name="FacilitiesConnected" type="DrainWaterHeatRecoveryFacilitiesConnected"/>
 												<xs:element minOccurs="0" name="EqualFlow" type="HPXMLBoolean"/>
-												<xs:element minOccurs="0" name="Efficiency" type="Fraction">
+												<xs:element minOccurs="0" name="Efficiency" type="FractionExcludingZero">
 													<xs:annotation>
 														<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
 													</xs:annotation>
@@ -2064,7 +2069,7 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="InverterType" type="InverterType"/>
-									<xs:element minOccurs="0" name="InverterEfficiency" type="Fraction"/>
+									<xs:element minOccurs="0" name="InverterEfficiency" type="FractionExcludingZero"/>
 									<xs:element minOccurs="0" name="YearInverterManufactured" type="Year"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
 									<xs:element ref="extension" minOccurs="0"/>
@@ -2126,7 +2131,7 @@
 												with a 0.2C discharge current.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="RoundTripEfficiency" type="Fraction">
+									<xs:element minOccurs="0" name="RoundTripEfficiency" type="FractionExcludingZero">
 										<xs:annotation>
 											<xs:documentation>Not all the power that is used to charge the battery is available during discharge. Round trip efficiency is the ratio of the energy put
 												in to the energy retrieved from storage.</xs:documentation>
@@ -3392,6 +3397,13 @@
 								Consumer’s Directory of Certified Efficiency Ratings.</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="HeatingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="HeatingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -3585,6 +3597,20 @@
 					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="AnnualHeatingEfficiency" minOccurs="0" type="HeatingEfficiencyType" maxOccurs="unbounded"/>
 					<xs:element minOccurs="0" name="AttachedToGeothermalLoop" type="LocalReference"/>
+					<xs:element minOccurs="0" name="CoolingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="CoolingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element minOccurs="0" name="HeatingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="HeatingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
 					<xs:element minOccurs="0" ref="extension"/>
 				</xs:sequence>
 			</xs:extension>
@@ -3610,6 +3636,13 @@
 					</xs:element>
 					<xs:element name="AnnualCoolingEfficiency" type="CoolingEfficiencyType" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element minOccurs="0" name="SensibleHeatFraction" type="Fraction"/>
+					<xs:element minOccurs="0" name="CoolingDetailedPerformanceData">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element maxOccurs="unbounded" name="PerformanceDataPoint" type="CoolingPerformanceDataPoint"> </xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -3914,6 +3947,20 @@
 												<xs:element maxOccurs="unbounded" name="Fuel" type="FuelType"/>
 											</xs:sequence>
 											<xs:attribute name="dataSource" type="DataSource"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="Soil">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="SoilType" type="SoilType"/>
+												<xs:element minOccurs="0" name="MoistureType" type="MoisureType"/>
+												<xs:element minOccurs="0" name="Conductivity" type="HPXMLDouble">
+													<xs:annotation>
+														<xs:documentation>[Btu/hr-ft-F]</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
@@ -5892,6 +5939,77 @@
 			<xs:element maxOccurs="1" minOccurs="0" name="BeginDayOfMonth" type="DayOfMonth"/>
 			<xs:element maxOccurs="1" minOccurs="0" name="EndMonth" type="Month"/>
 			<xs:element maxOccurs="1" minOccurs="0" name="EndDayOfMonth" type="DayOfMonth"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="CoolingPerformanceDataPoint">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
+			<xs:element name="OutdoorTemperature" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IndoorTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IndoorWetbulbTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[F] wetbulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Capacity" type="Capacity">
+				<xs:annotation>
+					<xs:documentation>[Btuh] output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityFractionOfNominal" type="FractionGreaterThanOne">
+				<xs:annotation>
+					<xs:documentation>Fraction of the nominal output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityDescription" type="CapacityDescription"/>
+			<xs:element minOccurs="0" name="Efficiency" type="CoolingEfficiencyType">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="extension" type="extensionType"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="HeatingPerformanceDataPoint">
+		<xs:sequence>
+			<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
+			<xs:element name="OutdoorTemperature" type="Temperature" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="IndoorTemperature" type="Temperature">
+				<xs:annotation>
+					<xs:documentation>[F] drybulb</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="Capacity" type="Capacity">
+				<xs:annotation>
+					<xs:documentation>[Btuh] output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityFractionOfNominal" type="FractionGreaterThanOne">
+				<xs:annotation>
+					<xs:documentation>Fraction of the nominal output capacity</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="CapacityDescription" type="CapacityDescription"/>
+			<xs:element minOccurs="0" name="Efficiency" type="HeatingEfficiencyType">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="extension" type="extensionType"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
