@@ -1844,16 +1844,45 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<!--Heat Pump Information Below-->
-	<xs:simpleType name="GeothermalLoop_simple">
+	<xs:simpleType name="LoopType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="open"/>
 			<xs:enumeration value="closed"/>
 			<xs:enumeration value="direct expansion"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="GeothermalLoop">
+	<xs:complexType name="LoopType">
 		<xs:simpleContent>
-			<xs:extension base="GeothermalLoop_simple">
+			<xs:extension base="LoopType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="LoopConfiguration_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="horizontal"/>
+			<xs:enumeration value="vertical"/>
+			<xs:enumeration value="diagonal"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="LoopConfiguration">
+		<xs:simpleContent>
+			<xs:extension base="LoopConfiguration_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="GroutOrPipeType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="standard"/>
+			<xs:enumeration value="thermally enhanced"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GroutOrPipeType">
+		<xs:simpleContent>
+			<xs:extension base="GroutOrPipeType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -4858,6 +4887,38 @@
 	<xs:complexType name="HPWHOperatingMode">
 		<xs:simpleContent>
 			<xs:extension base="HPWHOperatingModeType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="SoilType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sand"/>
+			<xs:enumeration value="silt"/>
+			<xs:enumeration value="clay"/>
+			<xs:enumeration value="loam"/>
+			<xs:enumeration value="gravel"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SoilType">
+		<xs:simpleContent>
+			<xs:extension base="SoilType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="MoistureType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="wet"/>
+			<xs:enumeration value="dry"/>
+			<xs:enumeration value="mixed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="MoisureType">
+		<xs:simpleContent>
+			<xs:extension base="MoistureType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
