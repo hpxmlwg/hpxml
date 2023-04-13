@@ -3835,7 +3835,6 @@
 						<xs:group ref="SystemInfo"/>
 						<xs:element name="DuctType" type="DuctType" minOccurs="0"/>
 						<xs:element name="DuctMaterial" type="DuctMaterial" minOccurs="0"/>
-						<xs:element minOccurs="0" name="DuctInsulationLocation" type="DuctInsulationLocation"/>
 						<xs:element minOccurs="0" name="DuctInsulationMaterial" type="InsulationMaterial"/>
 						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0"/>
 						<xs:element minOccurs="0" name="DuctInsulationThickness" type="LengthMeasurement">
@@ -3844,6 +3843,11 @@
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="DuctInsulationCondition" type="InsulationCondition"/>
+						<xs:element minOccurs="0" name="DuctBuriedInsulationLevel" type="DuctBuriedInsulationLevel">
+							<xs:annotation>
+								<xs:documentation>Describes ducts buried in, e.g., attic loose-fill insulation. Partially buried ducts have insulation that does not cover the top of the ducts. Fully buried ducts have insulation just covers the top of the ducts. Deeply buried ducts means the insulation continues above the top of the ducts. See https://basc.pnnl.gov/resource-guides/ducts-buried-attic-insulation for more information.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element name="DuctLocation" type="DuctLocation" minOccurs="0"/>
 						<xs:element minOccurs="0" name="FractionDuctArea" type="Fraction">
 							<xs:annotation>
@@ -7981,19 +7985,17 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="DuctInsulationLocation_simple">
+	<xs:simpleType name="DuctBuriedInsulationLevel_simple">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="around duct or ductboard"/>
-			<xs:enumeration value="buried in attic"/>
-			<xs:enumeration value="above duct"/>
-			<xs:enumeration value="below duct"/>
-			<xs:enumeration value="other"/>
-			<xs:enumeration value="none"/>
+			<xs:enumeration value="not buried"/>
+			<xs:enumeration value="partially buried"/>
+			<xs:enumeration value="fully buried"/>
+			<xs:enumeration value="deeply buried"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="DuctInsulationLocation">
+	<xs:complexType name="DuctBuriedInsulationLevel">
 		<xs:simpleContent>
-			<xs:extension base="DuctInsulationLocation_simple">
+			<xs:extension base="DuctBuriedInsulationLevel_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
