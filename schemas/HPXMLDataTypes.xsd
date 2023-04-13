@@ -1953,19 +1953,17 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="DuctInsulationLocation_simple">
+	<xs:simpleType name="DuctBuriedInsulationLevel_simple">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="around duct or ductboard"/>
-			<xs:enumeration value="buried in attic"/>
-			<xs:enumeration value="above duct"/>
-			<xs:enumeration value="below duct"/>
-			<xs:enumeration value="other"/>
-			<xs:enumeration value="none"/>
+			<xs:enumeration value="not buried"/>
+			<xs:enumeration value="partially buried"/>
+			<xs:enumeration value="fully buried"/>
+			<xs:enumeration value="deeply buried"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="DuctInsulationLocation">
+	<xs:complexType name="DuctBuriedInsulationLevel">
 		<xs:simpleContent>
-			<xs:extension base="DuctInsulationLocation_simple">
+			<xs:extension base="DuctBuriedInsulationLevel_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
