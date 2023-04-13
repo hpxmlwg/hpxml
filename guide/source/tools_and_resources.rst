@@ -6,7 +6,7 @@ A number of tool and resources exist to help software developers, programs, and 
 HPXML Website
 *************
 
-The Home Performance Coalition hosts a website that has information, tools, and resources on HPXML and its business cases. The website is: http://www.hpxmlonline.com.
+The Home Performance Coalition hosts a website that has information, tools, and resources on HPXML and its business cases. The website is: https://www.hpxmlonline.com.
 
 HPXML Implementation Guide 
 **************************
