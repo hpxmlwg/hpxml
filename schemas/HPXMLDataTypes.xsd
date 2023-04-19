@@ -41,6 +41,18 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HPXMLDoubleGreaterThanZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLDoubleGreaterThanZero">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLDoubleGreaterThanZero_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:complexType name="HPXMLDecimal">
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
@@ -3360,6 +3372,19 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="FractionGreaterThanZero_simple">
+		<xs:annotation>
+			<xs:documentation>A fraction that has to be between 0 (exclusive) and 1 (inclusive)</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double"/>
+	</xs:simpleType>
+	<xs:complexType name="FractionGreaterThanZero">
+		<xs:simpleContent>
+			<xs:extension base="FractionGreaterThanOne_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="FractionExcludingZero_simple">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
@@ -5024,6 +5049,25 @@
 	<xs:complexType name="MoisureType">
 		<xs:simpleContent>
 			<xs:extension base="MoistureType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ConstructionLayerType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="exterior finish"/>
+			<xs:enumeration value="sheathing"/>
+			<xs:enumeration value="continuous insulation"/>
+			<xs:enumeration value="framing/cavity insulation"/>
+			<xs:enumeration value="structural core"/>
+			<xs:enumeration value="interior finish"/>
+			<xs:enumeration value="subfloor"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ConstructionLayerType">
+		<xs:simpleContent>
+			<xs:extension base="ConstructionLayerType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
