@@ -1672,6 +1672,17 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HPWHOperatingMode" type="HPWHOperatingMode"/>
+									<xs:element minOccurs="0" name="HPWHDucting">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="1" name="HasSupplyDucting" type="HPXMLBoolean"/>
+												<xs:element minOccurs="1" name="HasExhaustDucting" type="HPXMLBoolean"/>
+												<xs:element minOccurs="0" name="SupplyDuctingLocation" type="AdjacentTo"/>
+												<xs:element minOccurs="0" name="ExhaustDuctingLocation" type="AdjacentTo"/>
+												<xs:element ref="extension" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" name="FirstHourRating" type="Volume">
 										<xs:annotation>
 											<xs:documentation>[gal per hour] An estimate of the maximum volume of hot water in gallons that a storage water heater can supply within an hour that begins
