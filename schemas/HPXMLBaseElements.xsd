@@ -1675,8 +1675,6 @@
 									<xs:element minOccurs="0" name="HPWHDucting">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element minOccurs="1" name="HasSupplyDucting" type="HPXMLBoolean"/>
-												<xs:element minOccurs="1" name="HasExhaustDucting" type="HPXMLBoolean"/>
 												<xs:element minOccurs="0" name="SupplyDuctingLocation" type="AdjacentTo"/>
 												<xs:element minOccurs="0" name="ExhaustDuctingLocation" type="AdjacentTo"/>
 												<xs:element ref="extension" minOccurs="0"/>
