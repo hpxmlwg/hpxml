@@ -3840,7 +3840,7 @@
 						</xs:element>
 						<xs:element minOccurs="0" name="DuctEffectiveRValue" type="RValue">
 							<xs:annotation>
-								<xs:documentation>The overall efective R-value. Includes the exterior air film as well as other effects such as adjustments for insulation wrapped around round ducts, or ducts buried in attic insulation.</xs:documentation>
+								<xs:documentation>The overall effective R-value. Includes the exterior air film as well as other effects such as adjustments for insulation wrapped around round ducts, or ducts buried in attic insulation.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="DuctLocation" type="DuctLocation" minOccurs="0"/>
