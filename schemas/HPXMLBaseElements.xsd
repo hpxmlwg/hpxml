@@ -5027,7 +5027,7 @@
 			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
 			<xs:element minOccurs="0" name="TypeOfInfiltrationLeakage" type="TypeofInfiltrationLeakage">
 				<xs:annotation>
-					<xs:documentation>This element is intended to describe the type of infiltration measured, e.g., for an individual single-family attached or multifamily dwelling unit. Either whole building or single unit infiltration can be measured. For single unit infiltration, leakage can occur through only exterior surfaces, only interior surfaces, or both. For example, guarded tests measure unit exterior leakage, unguarded or compartmentalization tests measure unit total leakage, and combining both tests can measure unit interior leakage.</xs:documentation>
+					<xs:documentation>This element is intended to describe the type of infiltration measured, e.g., for an individual single-family attached or multifamily dwelling unit. Either whole building or single unit infiltration can be measured. For single unit infiltration, leakage can occur through exterior surfaces, interior surfaces, or both. For example, guarded tests measure unit exterior leakage, unguarded or compartmentalization tests measure unit total leakage, and combining both tests can measure unit interior leakage.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="HousePressure" type="HousePressure" minOccurs="0">
