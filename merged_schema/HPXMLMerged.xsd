@@ -3836,7 +3836,16 @@
 						<xs:element name="DuctType" type="DuctType" minOccurs="0"/>
 						<xs:element name="DuctMaterial" type="DuctMaterial" minOccurs="0"/>
 						<xs:element minOccurs="0" name="DuctInsulationMaterial" type="InsulationMaterial"/>
-						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0"/>
+						<xs:element name="DuctInsulationRValue" type="RValue" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>This should exclude the exterior air film -- e.g., use zero for uninsulated ducts. For ducts buried in insulation, this should only represent any surrounding insulation duct wrap and not the entire attic insulation R-value.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="DuctEffectiveRValue">
+							<xs:annotation>
+								<xs:documentation>The overall efective R-value. Includes the exterior air film as well as other effects such as adjustments for insulation wrapped around round ducts, or ducts buried in attic insulation.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="DuctInsulationThickness" type="LengthMeasurement">
 							<xs:annotation>
 								<xs:documentation>[in]</xs:documentation>
