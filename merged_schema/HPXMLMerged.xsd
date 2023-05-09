@@ -1694,7 +1694,7 @@
 														<xs:documentation>Where the air is supplied from; not the location where the supply ducts are running through.</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="ExhaustAirDestination" type="AdjacentTo">
+												<xs:element minOccurs="0" name="ExhaustAirTermination" type="AdjacentTo">
 													<xs:annotation>
 														<xs:documentation>Where the air is exhausted to; not the location where the exhaust ducts are running through.</xs:documentation>
 													</xs:annotation>
