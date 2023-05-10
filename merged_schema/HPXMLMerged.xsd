@@ -110,7 +110,7 @@
 			<xs:element name="ReceivingSystemIdentifierType" type="ReceivingSystemIdentifierType" minOccurs="0"/>
 			<xs:element name="ReceivingSystemIdentifierValue" type="ReceivingSystemIdentifierValue" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="id" type="xs:IDREF">
+		<xs:attribute name="idref" type="xs:IDREF">
 			<xs:annotation>
 				<xs:documentation>Id reference in the current document. Optional. If the element isn't available in the current document, don't use this.</xs:documentation>
 			</xs:annotation>
