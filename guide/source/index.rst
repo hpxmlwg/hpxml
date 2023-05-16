@@ -21,7 +21,7 @@ If you are thinking about implementing HPXML, or just want to learn more about t
 
    * The :doc:`Software Developer Guide </software_developer/index>` provides developers with information on versioning, document structure, XML element references, and use case validation. The section also provides links to sample HPXML files.
 
-HPXML is periodically updated to reflect changes in the needs of the market and the stakeholders that are using the standard. Whenever a new version of HXPML is released, the Implementation Guide will be updated to reflect changes to the data standard and how it is being used in the market. If you have questions about HPXML or believe you can contribute to the overall success of its deployment, please email us at hpxml@homeperformance.org. For more information on HPXML, visit http://www.hpxmlonline.com.   
+HPXML is periodically updated to reflect changes in the needs of the market and the stakeholders that are using the standard. Whenever a new version of HXPML is released, the Implementation Guide will be updated to reflect changes to the data standard and how it is being used in the market. If you have questions about HPXML or believe you can contribute to the overall success of its deployment, please email us at hpxml@homeperformance.org. For more information on HPXML, visit https://www.hpxmlonline.com.   
 
 .. toctree::
    :maxdepth: 2
