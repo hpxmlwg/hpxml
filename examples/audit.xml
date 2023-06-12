@@ -294,7 +294,7 @@
           <CombustionApplianceZone>
             <SystemIdentifier id="cazzone1"/>
             <CombustionApplianceTest>
-              <CAZAppliance id="dhw1"/>
+              <CAZAppliance idref="dhw1"/>
             </CombustionApplianceTest>
           </CombustionApplianceZone>
         </CombustionAppliances>
@@ -549,6 +549,7 @@
         </MoistureControl>
         <CombustionAppliances>
           <!-- Seems odd to have all these on the proposed workscope. -->
+          <MaxAmbientCOinLivingSpaceDuringAudit>2</MaxAmbientCOinLivingSpaceDuringAudit>
           <CombustionApplianceZone>
             <SystemIdentifier id="cazzone1p" sameas="cazzone1"/>
             <CAZDepressurizationLimit>1</CAZDepressurizationLimit>
@@ -558,7 +559,7 @@
             <DepressurizationFindingPoorCase>pass</DepressurizationFindingPoorCase>
             <AmountAmbientCOinCAZduringTesting>2</AmountAmbientCOinCAZduringTesting>
             <CombustionApplianceTest>
-              <CAZAppliance id="dhw1p"/>
+              <CAZAppliance idref="dhw1p"/>
               <FlueDraftTest>
                 <PoorScenario>456</PoorScenario>
                 <CurrentCondition>123</CurrentCondition>
@@ -573,7 +574,6 @@
                 <PoorScenario>456.7</PoorScenario>
                 <CurrentCondition>123.4</CurrentCondition>
                 <TestResult>passed</TestResult>
-                <MaxAmbientCOinLivingSpaceDuringAudit>2</MaxAmbientCOinLivingSpaceDuringAudit>
               </CarbonMonoxideTest>
               <FuelLeaks>
                 <FuelType>natural gas</FuelType>
@@ -582,7 +582,7 @@
               </FuelLeaks>
             </CombustionApplianceTest>
             <CombustionApplianceTest>
-              <CAZAppliance id="htgsys1p"/>
+              <CAZAppliance idref="htgsys1p"/>
               <FlueDraftTest>
                 <PoorScenario>456</PoorScenario>
                 <CurrentCondition>123</CurrentCondition>
@@ -597,7 +597,6 @@
                 <PoorScenario>456.7</PoorScenario>
                 <CurrentCondition>123.4</CurrentCondition>
                 <TestResult>passed</TestResult>
-                <MaxAmbientCOinLivingSpaceDuringAudit>2</MaxAmbientCOinLivingSpaceDuringAudit>
               </CarbonMonoxideTest>
               <FuelLeaks>
                 <FuelType>natural gas</FuelType>
@@ -612,8 +611,8 @@
   </Building>
   <Project>
     <ProjectID id="project-1"/>
-    <PreBuildingID id="bldg1"/>
-    <PostBuildingID id="bldg1p"/>
+    <PreBuildingID idref="bldg1"/>
+    <PostBuildingID idref="bldg1p"/>
     <ProjectDetails>
       <ProjectStatus>
         <EventType>proposed workscope</EventType>
@@ -644,10 +643,10 @@
           </MeasureSystemIdentifiers>
           <Cost>1200</Cost>
           <ReplacedComponents>
-            <ReplacedComponent id="attic1ins"/>
+            <ReplacedComponent idref="attic1ins"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="attic1insp"/>
+            <InstalledComponent idref="attic1insp"/>
           </InstalledComponents>
         </Measure>
         <Measure>
@@ -656,10 +655,10 @@
           </MeasureSystemIdentifiers>
           <Cost>3000</Cost>
           <ReplacedComponents>
-            <ReplacedComponent id="htgsys1"/>
+            <ReplacedComponent idref="htgsys1"/>
           </ReplacedComponents>
           <InstalledComponents>
-            <InstalledComponent id="htgsys1p"/>
+            <InstalledComponent idref="htgsys1p"/>
           </InstalledComponents>
         </Measure>
       </Measures>

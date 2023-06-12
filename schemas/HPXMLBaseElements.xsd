@@ -96,7 +96,7 @@
 			<xs:element name="ReceivingSystemIdentifierType" type="ReceivingSystemIdentifierType" minOccurs="0"/>
 			<xs:element name="ReceivingSystemIdentifierValue" type="ReceivingSystemIdentifierValue" minOccurs="0"/>
 		</xs:sequence>
-		<xs:attribute name="id" type="xs:IDREF">
+		<xs:attribute name="idref" type="xs:IDREF">
 			<xs:annotation>
 				<xs:documentation>Id reference in the current document. Optional. If the element isn't available in the current document, don't use this.</xs:documentation>
 			</xs:annotation>
@@ -2344,6 +2344,15 @@
 								<xs:documentation>[sq.ft.]</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="Load">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Units" type="PlugLoadUnits"/>
+									<xs:element name="Value" type="HPXMLDouble"/>
+								</xs:sequence>
+								<xs:attribute name="dataSource" type="DataSource"/>
+							</xs:complexType>
+						</xs:element>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
@@ -2786,6 +2795,11 @@
 			<xs:element minOccurs="0" name="CombustionAppliances">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element name="MaxAmbientCOinLivingSpaceDuringAudit" minOccurs="0" type="HPXMLDouble">
+							<xs:annotation>
+								<xs:documentation>Monitored throughout assessment, not just appliance testing</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="CombustionApplianceZone" maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:sequence>
@@ -2873,11 +2887,6 @@
 														<xs:complexContent>
 															<xs:extension base="CAZApplianceReading">
 																<xs:sequence>
-																	<xs:element name="MaxAmbientCOinLivingSpaceDuringAudit" minOccurs="0" type="HPXMLDouble">
-																		<xs:annotation>
-																			<xs:documentation>Monitored throughout assessment, not just appliance testing</xs:documentation>
-																		</xs:annotation>
-																	</xs:element>
 																	<xs:element minOccurs="0" name="AmbientCOActionDuringCAZTesting" type="HPXMLString">
 																		<xs:annotation>
 																			<xs:documentation>BPI Gold Sheet is one example that shows action levels based upon decision logic</xs:documentation>
@@ -5147,6 +5156,11 @@
 			<xs:element minOccurs="0" name="WindConditions" type="WindConditions"/>
 			<xs:element name="TypeOfInfiltrationMeasurement" type="TypeofInfiltrationMeasurement" minOccurs="0"/>
 			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
+			<xs:element minOccurs="0" name="TypeOfInfiltrationLeakage" type="TypeofInfiltrationLeakage">
+				<xs:annotation>
+					<xs:documentation>This element is intended to describe the type of infiltration measured, e.g., for an individual single-family attached or multifamily dwelling unit. Either whole building or single unit infiltration can be measured. For single unit infiltration, leakage can occur through exterior surfaces, interior surfaces, or both. For example, guarded tests measure unit exterior leakage, unguarded or compartmentalization tests measure unit total leakage, and combining both tests can measure unit interior leakage.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="HousePressure" type="HousePressure" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[Pa] with respect to outside</xs:documentation>
