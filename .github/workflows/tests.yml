@@ -1,14 +1,19 @@
 name: Test Schemas
 
-on: [pull_request]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    types: [ synchronize, opened ]
+  workflow_dispatch:
 
 jobs:
-  build:
+  test-xsd:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9
       - name: Install dependencies
@@ -18,3 +23,41 @@ jobs:
       - name: Test with pytest
         run: |
           pytest tests
+
+  flatten-xsd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install lxml
+      - name: Install software
+        shell: bash
+        run: |
+          export DEBIAN_FRONTEND=noninteractive
+          sudo apt update
+          sudo -E apt-get install -y libxml2-utils
+      - name: Flatten XSD
+        run: |
+          cd schemas
+          python ../scripts/xsdflatten.py HPXML.xsd ../merged_schema/HPXMLMerged.xsd
+      - name: Commit XSD
+        run: |
+          branch_name="${{ github.head_ref }}"
+          git pull origin $branch_name
+          git add merged_schema/HPXMLMerged.xsd
+          git status
+          if [[ $(git diff --cached --exit-code) ]]; then
+            git config --global user.email "github-action@users.noreply.github.com"
+            git config --global user.name "GitHub Action"
+            git commit -m "Latest HPXMLMerged.xsd"
+            echo "Pushing to branch: $branch_name"
+            git push -u origin $branch_name
+          fi
+      - name: Validate XSD
+        run: |
+          export XSDPATH=merged_schema/HPXMLMerged.xsd
+          xmllint --schema $XSDPATH examples/audit.xml --noout

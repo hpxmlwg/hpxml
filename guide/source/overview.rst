@@ -64,7 +64,7 @@ The HPXML schema follows the `Semantic Versioning 2.0 specification <http://semv
 
 The minor version number is incremented when the schemas are changed in a manner that is backwards compatible with previous versions that share the same major version. In other words, a document created in a previous version of the schema will also validate against the new schema. Examples of changes that require a minor version change include adding elements, adding enumerations, and changing the annotation in the schema for an element. 
 
-Technical documentation can be found at http://www.hpxmlonline.com/.
+Technical documentation can be found at https://www.hpxmlonline.com/.
 
 HPXML Compliance
 ****************
