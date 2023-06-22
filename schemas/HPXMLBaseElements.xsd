@@ -366,6 +366,12 @@
 			<xs:element minOccurs="0" name="SerialNumber" type="HPXMLString"/>
 			<xs:element name="ModelYear" type="Year" minOccurs="0"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification" type="ApplianceThirdPartyCertifications"/>
+			<xs:element minOccurs="0" name="IsSharedAppliance" type="HPXMLBoolean">
+				<xs:annotation>
+					<xs:documentation>Does the appliance serve multiple building/dwelling units?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
@@ -1520,6 +1526,12 @@
 												<xs:element minOccurs="0" name="UsedForWholeBuildingVentilation" type="HPXMLBoolean"/>
 												<xs:element minOccurs="0" name="UsedForSeasonalCoolingLoadReduction" type="HPXMLBoolean"/>
 												<xs:element minOccurs="0" name="UsedForGarageVentilation" type="HPXMLBoolean"/>
+												<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
+													<xs:annotation>
+														<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
 												<xs:element minOccurs="0" name="RatedNoise" type="HPXMLDouble">
 													<xs:annotation>
 														<xs:documentation>[sones] from manufacturer's info</xs:documentation>
@@ -1626,6 +1638,12 @@
 									<xs:element name="ModelNumber" type="Model" minOccurs="0"/>
 									<xs:element minOccurs="0" name="AHRINumber" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="SerialNumber" type="HPXMLString"/>
+									<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
+										<xs:annotation>
+											<xs:documentation>Does the system serve multiple building/dwelling units or a shared laundry/equipment room?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
 									<xs:element minOccurs="0" name="PerformanceAdjustment" type="Fraction">
 										<xs:annotation>
 											<xs:documentation>A multiplier on the performance of the system. A value of 1 implies no performance adjustment.</xs:documentation>
@@ -2012,6 +2030,12 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="ConnectedDevice"/>
+									<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
+										<xs:annotation>
+											<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
 									<xs:element minOccurs="0" name="Location" type="PVSystemLocation"/>
 									<xs:element minOccurs="0" name="Ownership" type="PVSystemOwnership"/>
 									<xs:element minOccurs="0" name="ModuleType" type="PVModuleType"/>
@@ -2319,6 +2343,15 @@
 							<xs:annotation>
 								<xs:documentation>[sq.ft.]</xs:documentation>
 							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Load">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Units" type="PlugLoadUnits"/>
+									<xs:element name="Value" type="HPXMLDouble"/>
+								</xs:sequence>
+								<xs:attribute name="dataSource" type="DataSource"/>
+							</xs:complexType>
 						</xs:element>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
@@ -3365,6 +3398,12 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="HVACMaintenance" type="HVACMaintenance"/>
+			<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
+				<xs:annotation>
+					<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
@@ -3622,7 +3661,7 @@
 				<xs:sequence>
 					<xs:element name="CoolingSystemType" type="CoolingSystemType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="CoolingSystemFuel" type="FuelType"/>
-					<xs:element minOccurs="0" name="CoolingCapacity" type="HPXMLDouble">
+					<xs:element minOccurs="0" name="CoolingCapacity" type="Capacity">
 						<xs:annotation>
 							<xs:documentation>[Btuh] Output cooling capacity</xs:documentation>
 						</xs:annotation>
@@ -5117,6 +5156,11 @@
 			<xs:element minOccurs="0" name="WindConditions" type="WindConditions"/>
 			<xs:element name="TypeOfInfiltrationMeasurement" type="TypeofInfiltrationMeasurement" minOccurs="0"/>
 			<xs:element name="TypeOfBlowerDoorTest" type="TypeofBlowerDoorTest" minOccurs="0"/>
+			<xs:element minOccurs="0" name="TypeOfInfiltrationLeakage" type="TypeofInfiltrationLeakage">
+				<xs:annotation>
+					<xs:documentation>This element is intended to describe the type of infiltration measured, e.g., for an individual single-family attached or multifamily dwelling unit. Either whole building or single unit infiltration can be measured. For single unit infiltration, leakage can occur through exterior surfaces, interior surfaces, or both. For example, guarded tests measure unit exterior leakage, unguarded or compartmentalization tests measure unit total leakage, and combining both tests can measure unit interior leakage.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="HousePressure" type="HousePressure" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[Pa] with respect to outside</xs:documentation>
