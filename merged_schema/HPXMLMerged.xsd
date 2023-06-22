@@ -5233,7 +5233,11 @@
 					<xs:sequence>
 						<xs:element minOccurs="0" name="Finished" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="Conditioned" type="HPXMLBoolean"/>
-						<xs:element minOccurs="0" name="Walkout" type="HPXMLBoolean"/>
+						<xs:element minOccurs="0" name="Walkout" type="HPXMLBoolean">
+							<xs:annotation>
+								<xs:documentation>A partially underground basement that has a door directly to the outside, typically built on a sloping lot.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
@@ -5261,7 +5265,6 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element minOccurs="0" name="Conditioned" type="HPXMLBoolean"/>
-						<xs:element minOccurs="0" name="Walkout" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
