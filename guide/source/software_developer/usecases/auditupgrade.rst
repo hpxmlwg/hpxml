@@ -22,7 +22,8 @@ who is proposing and or completing the work), company and the email address.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
-   :lines: 13-33
+   :lines: 12-32
+   :dedent: 2
    :emphasize-lines: 11-12,15
 
 Customer
@@ -33,8 +34,9 @@ include the customer's name and phone number.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml 
-   :dedent: 4
-   :lines: 34-47
+   :dedent: 2
+   :start-at: <Customer>
+   :end-at: </Customer>
    :emphasize-lines: 6-7,10
 
 Building
@@ -57,8 +59,8 @@ of ``audit``.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml 
-   :dedent: 4
-   :lines: 48-49,60-62,286
+   :dedent: 2
+   :lines: 47-48,59-61,302
    :emphasize-lines: 4
 
 Many items within the building require a unique ``SystemIdentifier`` element.
@@ -69,8 +71,8 @@ For example, the water heater in the pre-upgrade building has an id of ``dhw1``.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
-   :dedent: 20
-   :lines: 228-234
+   :dedent: 10
+   :lines: 244-250
    :emphasize-lines: 2
 
 .. _postupgrade:
@@ -105,8 +107,8 @@ pre-upgrade water heater and indicate it is indeed the same equipment.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
-   :dedent: 20
-   :lines: 467-473
+   :dedent: 10
+   :lines: 500-506
    :emphasize-lines: 2
 
 .. note::
@@ -122,15 +124,14 @@ In this paradigm, the :ref:`preupgrade` and :ref:`postupgrade` building elements
 describe the state of the building at points in time. The ``Project`` element
 describes what was done, or is planning to be done, to the building to get from one scenario to another. 
 
-The ``ProjectSystemIdentifiers`` are used to reference the pre- and post-
-building ids. The redundant ``BuildingID`` element should reference the post-
-building.
+``PreBuildingID`` and ``PostBuildingID`` are used to reference the pre- and post-
+building ids, respectively.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
-   :dedent: 4
-   :lines: 578-586,603-604,625-627
-   :emphasize-lines: 2,4-5
+   :dedent: 2
+   :lines: 611-618,664-665
+   :emphasize-lines: 2-4
 
 Energy Savings
 ==============
@@ -140,8 +141,9 @@ measured energy use and savings achieved in an upgrade.
 
 .. literalinclude:: /../../examples/audit.xml
    :language: xml
-   :dedent: 12
-   :lines: 586-603
+   :dedent: 6
+   :start-at: <EnergySavingsInfo>
+   :end-at: </EnergySavingsInfo>
 
 .. note::
 
@@ -163,22 +165,22 @@ From the example file below, this measure replaces this furnace in the pre-upgra
 
 .. literalinclude:: /../../examples/audit.xml 
    :language: xml
-   :dedent: 16
-   :lines: 615-624 
-   :emphasize-lines: 7,9
+   :dedent: 8
+   :lines: 651-662
+   :emphasize-lines: 7,10
 
 
 .. literalinclude:: /../../examples/audit.xml 
    :language: xml 
-   :dedent: 24
-   :lines: 154-167 
+   :dedent: 12
+   :lines: 170-183 
    :emphasize-lines: 2
 
 
 .. literalinclude:: /../../examples/audit.xml 
    :language: xml
-   :dedent: 24
-   :lines: 393-406
+   :dedent: 12
+   :lines: 426-439
    :emphasize-lines: 2
 
 
