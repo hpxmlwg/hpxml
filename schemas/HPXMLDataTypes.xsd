@@ -1968,6 +1968,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="DuctBuriedInsulationLevel_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="not buried"/>
+			<xs:enumeration value="partially buried"/>
+			<xs:enumeration value="fully buried"/>
+			<xs:enumeration value="deeply buried"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DuctBuriedInsulationLevel">
+		<xs:simpleContent>
+			<xs:extension base="DuctBuriedInsulationLevel_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="DuctLocation_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
