@@ -5252,7 +5252,7 @@
 						<xs:element minOccurs="0" name="Conditioned" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="Walkout" type="HPXMLBoolean">
 							<xs:annotation>
-								<xs:documentation>A partially underground basement that has a door directly to the outside, typically built on a sloping lot.</xs:documentation>
+								<xs:documentation>A partially underground basement that has a door directly on grade to the outside, typically built on a sloping lot.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
