@@ -3837,7 +3837,7 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="PipeDiameter" type="PipeDiameterType"/>
 			<xs:element name="HydronicDistributionType" type="HydronicDistributionType" minOccurs="0"/>
-			<xs:element minOccurs="0" name="SupplyTemperature" type="HPXMLDoubleG">
+			<xs:element minOccurs="0" name="SupplyTemperature" type="HPXMLDouble">
 				<xs:annotation>
 					<xs:documentation>[degF]</xs:documentation>
 				</xs:annotation>
