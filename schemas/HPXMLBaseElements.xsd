@@ -1411,12 +1411,12 @@
 											<xs:documentation>[sq.ft.] Conditioned floor area that this distribution system serves.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="AnnualHeatingDistributionSystemEfficiency" type="HPXMLFractionExcludingZero">
+									<xs:element minOccurs="0" name="AnnualHeatingDistributionSystemEfficiency" type="HPXMLFractionGreaterThanZero">
 										<xs:annotation>
 											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for heating, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History. Enter values as a fractional number between 0 and 1, i.e. 80% = 0.8</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="AnnualCoolingDistributionSystemEfficiency" type="HPXMLFractionExcludingZero">
+									<xs:element minOccurs="0" name="AnnualCoolingDistributionSystemEfficiency" type="HPXMLFractionGreaterThanZero">
 										<xs:annotation>
 											<xs:documentation>For software that does not calculate an annual distribution system efficiency (DSE) for cooling, the DSE may be approximated by equation 3.4.i in ANSI/BPI-2400-S-2012: Standard Practice for Standardized Qualification of Whole-House Energy Savings, Predictions by Calibration to Energy Use History. Enter values as a fractional number between 0 and 1, i.e. 80% = 0.8</xs:documentation>
 										</xs:annotation>
@@ -1542,7 +1542,7 @@
 														<xs:documentation>[sones] as tested in field</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="TotalRecoveryEfficiency" type="HPXMLFractionExcludingZero">
+												<xs:element minOccurs="0" name="TotalRecoveryEfficiency" type="HPXMLFractionGreaterThanZero">
 													<xs:annotation>
 														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by electric
 															consumption, case heat loss or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential
@@ -1550,7 +1550,7 @@
 															(hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="SensibleRecoveryEfficiency" type="HPXMLFractionExcludingZero">
+												<xs:element minOccurs="0" name="SensibleRecoveryEfficiency" type="HPXMLFractionGreaterThanZero">
 													<xs:annotation>
 														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by electric consumption, case heat loss or heat gain,
 															air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test),
@@ -1558,7 +1558,7 @@
 															the Home Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="AdjustedTotalRecoveryEfficiency" type="HPXMLFractionExcludingZero">
+												<xs:element minOccurs="0" name="AdjustedTotalRecoveryEfficiency" type="HPXMLFractionGreaterThanZero">
 													<xs:annotation>
 														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by case heat loss
 															or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential total energy that could be
@@ -1567,7 +1567,7 @@
 															Ventilating Institute (hvi.org).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="AdjustedSensibleRecoveryEfficiency" type="HPXMLFractionExcludingZero">
+												<xs:element minOccurs="0" name="AdjustedSensibleRecoveryEfficiency" type="HPXMLFractionGreaterThanZero">
 													<xs:annotation>
 														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by case heat loss or heat gain, air leakage, airflow
 															mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the
@@ -1730,7 +1730,7 @@
 												DOE testing procedure.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="ThermalEfficiency" type="HPXMLFractionExcludingZero" minOccurs="0"/>
+									<xs:element name="ThermalEfficiency" type="HPXMLFractionGreaterThanZero" minOccurs="0"/>
 									<xs:element minOccurs="0" name="WaterHeaterInsulation">
 										<xs:complexType>
 											<xs:sequence>
@@ -1895,7 +1895,7 @@
 											<xs:sequence>
 												<xs:element minOccurs="0" name="FacilitiesConnected" type="DrainWaterHeatRecoveryFacilitiesConnected"/>
 												<xs:element minOccurs="0" name="EqualFlow" type="HPXMLBoolean"/>
-												<xs:element minOccurs="0" name="Efficiency" type="HPXMLFractionExcludingZero">
+												<xs:element minOccurs="0" name="Efficiency" type="HPXMLFractionGreaterThanZero">
 													<xs:annotation>
 														<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
 													</xs:annotation>
@@ -2016,7 +2016,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="ConnectedTo" type="LocalReference"/>
-									<xs:element minOccurs="0" name="SolarFraction" type="HPXMLFractionExcludingZero">
+									<xs:element minOccurs="0" name="SolarFraction" type="HPXMLFractionGreaterThanZero">
 										<xs:annotation>
 											<xs:documentation>The Solar Fraction is the portion of the total conventional hot water heating load (delivered energy and tank standby losses). The higher
 												the solar fraction, the greater the solar contribution to water heating, which reduces the energy required by the backup water heater. This value can be
@@ -2110,7 +2110,7 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="InverterType" type="InverterType"/>
-									<xs:element minOccurs="0" name="InverterEfficiency" type="HPXMLFractionExcludingZero"/>
+									<xs:element minOccurs="0" name="InverterEfficiency" type="HPXMLFractionGreaterThanZero"/>
 									<xs:element minOccurs="0" name="YearInverterManufactured" type="HPXMLInteger"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="HPXMLInteger"/>
 									<xs:element ref="extension" minOccurs="0"/>
@@ -2172,7 +2172,7 @@
 												with a 0.2C discharge current.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="RoundTripEfficiency" type="HPXMLFractionExcludingZero">
+									<xs:element minOccurs="0" name="RoundTripEfficiency" type="HPXMLFractionGreaterThanZero">
 										<xs:annotation>
 											<xs:documentation>Not all the power that is used to charge the battery is available during discharge. Round trip efficiency is the ratio of the energy put
 												in to the energy retrieved from storage.</xs:documentation>

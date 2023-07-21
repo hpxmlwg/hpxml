@@ -100,7 +100,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="HPXMLFractionExcludingZero_simple">
+	<xs:simpleType name="HPXMLFractionGreaterThanZero_simple">
 		<xs:annotation>
 			<xs:documentation>A fraction that has to be between 0 exclusive and 1 inclusive</xs:documentation>
 		</xs:annotation>
@@ -109,9 +109,9 @@
 			<xs:maxInclusive value="1"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="HPXMLFractionExcludingZero">
+	<xs:complexType name="HPXMLFractionGreaterThanZero">
 		<xs:simpleContent>
-			<xs:extension base="HPXMLFractionExcludingZero_simple">
+			<xs:extension base="HPXMLFractionGreaterThanZero_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
