@@ -169,12 +169,12 @@
           <Door>
             <SystemIdentifier id="door1"/>
             <StormDoor>false</StormDoor>
-            <RValue>0.0</RValue>
+            <RValue>3.0</RValue>
           </Door>
           <Door>
             <SystemIdentifier id="door2"/>
             <StormDoor>false</StormDoor>
-            <RValue>0.0</RValue>
+            <RValue>3.0</RValue>
           </Door>
         </Doors>
       </Enclosure>
@@ -426,12 +426,12 @@
           <Door>
             <SystemIdentifier id="door1c" sameas="door1"/>
             <StormDoor>false</StormDoor>
-            <RValue>0.0</RValue>
+            <RValue>3.0</RValue>
           </Door>
           <Door>
             <SystemIdentifier id="door2c"/>
             <StormDoor>false</StormDoor>
-            <RValue>0.0</RValue>
+            <RValue>3.0</RValue>
           </Door>
         </Doors>
       </Enclosure>
