@@ -53,6 +53,18 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HPXMLDoubleGreaterThanOrEqualToZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLDoubleGreaterThanOrEqualToZero">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLDoubleGreaterThanOrEqualToZero_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:complexType name="HPXMLDecimal">
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
@@ -60,9 +72,93 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HPXMLDecimalGreaterThanZero_simple">
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLDecimalGreaterThanZero">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLDecimalGreaterThanZero_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HPXMLFractionInclusive_simple">
+		<xs:annotation>
+			<xs:documentation>A fraction that has to be between 0 and 1 inclusive</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLFractionInclusive">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLFractionInclusive_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HPXMLFractionGreaterThanZero_simple">
+		<xs:annotation>
+			<xs:documentation>A fraction that has to be between 0 exclusive and 1 inclusive</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLFractionGreaterThanZero">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLFractionGreaterThanZero_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HPXMLFractionExclusive_simple">
+		<xs:annotation>
+			<xs:documentation>A fraction that has to be between 0 and 1 exclusive</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+			<xs:maxExclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLFractionExclusive">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLFractionExclusive_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:complexType name="HPXMLInteger">
 		<xs:simpleContent>
 			<xs:extension base="xs:integer">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HPXMLIntegerGreaterThanZero_simple">
+		<xs:restriction base="xs:integer">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLIntegerGreaterThanZero">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLIntegerGreaterThanZero_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HPXMLIntegerGreaterThanOrEqualToZero_simple">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLIntegerGreaterThanOrEqualToZero">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLIntegerGreaterThanOrEqualToZero_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -86,16 +182,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="StateCode_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="StateCode">
-		<xs:simpleContent>
-			<xs:extension base="StateCode_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="ZipCode_simple">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="[0-9]{5}(-[0-9]{4})?"/>
@@ -108,37 +194,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="USPSBarCode_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="USPSBarCode">
-		<xs:simpleContent>
-			<xs:extension base="USPSBarCode_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<!--Name Information Below-->
-	<xs:simpleType name="PrefixName_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="PrefixName">
-		<xs:simpleContent>
-			<xs:extension base="PrefixName_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="SuffixName_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="SuffixName">
-		<xs:simpleContent>
-			<xs:extension base="SuffixName_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="IndividualType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="owner-occupant"/>
@@ -185,26 +241,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="TelephoneNumber_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="TelephoneNumber">
-		<xs:simpleContent>
-			<xs:extension base="TelephoneNumber_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="TelephoneExtension_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="TelephoneExtension">
-		<xs:simpleContent>
-			<xs:extension base="TelephoneExtension_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<!--Email Information Below-->
 	<xs:simpleType name="EmailTypeCode_simple">
 		<xs:restriction base="xs:string">
@@ -220,90 +256,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="EmailAddress_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="EmailAddress">
-		<xs:simpleContent>
-			<xs:extension base="EmailAddress_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<!--System Identifiers Below-->
-	<xs:simpleType name="SendingSystemIdentifierType_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="SendingSystemIdentifierType">
-		<xs:simpleContent>
-			<xs:extension base="SendingSystemIdentifierType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="SendingSystemIdentifierValue_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="SendingSystemIdentifierValue">
-		<xs:simpleContent>
-			<xs:extension base="SendingSystemIdentifierValue_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="ReceivingSystemIdentifierType_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="ReceivingSystemIdentifierType">
-		<xs:simpleContent>
-			<xs:extension base="ReceivingSystemIdentifierType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="ReceivingSystemIdentifierValue_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="ReceivingSystemIdentifierValue">
-		<xs:simpleContent>
-			<xs:extension base="ReceivingSystemIdentifierValue_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<!--XMLTransaction Header Information Below-->
-	<xs:simpleType name="XMLType_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="XMLType">
-		<xs:simpleContent>
-			<xs:extension base="XMLType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="XMLGeneratedBy_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="XMLGeneratedBy">
-		<xs:simpleContent>
-			<xs:extension base="XMLGeneratedBy_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="CreatedDateAndTime_simple">
-		<xs:restriction base="xs:dateTime"/>
-	</xs:simpleType>
-	<xs:complexType name="CreatedDateAndTime">
-		<xs:simpleContent>
-			<xs:extension base="CreatedDateAndTime_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<!--Utility Information Below-->
-	<!--Misc Data Fields Below-->
 	<!--Air Infiltration Below-->
 	<xs:simpleType name="BuildingLeakiness_simple">
 		<xs:restriction base="xs:string">
@@ -330,18 +282,6 @@
 	<xs:complexType name="WindConditions">
 		<xs:simpleContent>
 			<xs:extension base="WindConditions_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="BuildingAirLeakage_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="BuildingAirLeakage">
-		<xs:simpleContent>
-			<xs:extension base="BuildingAirLeakage_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -376,16 +316,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="FanPressure_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="FanPressure">
-		<xs:simpleContent>
-			<xs:extension base="FanPressure_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="FanRingUsed_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="open"/>
@@ -409,18 +339,6 @@
 	<xs:complexType name="TypeofBlowerDoorTest">
 		<xs:simpleContent>
 			<xs:extension base="TypeofBlowerDoorTest_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="HousePressure_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="HousePressure">
-		<xs:simpleContent>
-			<xs:extension base="HousePressure_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -505,16 +423,6 @@
 	<xs:complexType name="ClimateZoneIECC">
 		<xs:simpleContent>
 			<xs:extension base="ClimateZoneIECC_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="EarthquakeZone_simple">
-		<xs:restriction base="xs:boolean"/>
-	</xs:simpleType>
-	<xs:complexType name="EarthquakeZone">
-		<xs:simpleContent>
-			<xs:extension base="EarthquakeZone_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -626,42 +534,6 @@
 	<xs:complexType name="OrientationType">
 		<xs:simpleContent>
 			<xs:extension base="OrientationType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="NumberOfFloorsType_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="NumberOfFloorsType">
-		<xs:simpleContent>
-			<xs:extension base="NumberOfFloorsType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="IntegerGreaterThanZero_simple">
-		<xs:restriction base="xs:integer">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="IntegerGreaterThanZero">
-		<xs:simpleContent>
-			<xs:extension base="IntegerGreaterThanZero_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="IntegerGreaterThanOrEqualToZero_simple">
-		<xs:restriction base="xs:integer">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="IntegerGreaterThanOrEqualToZero">
-		<xs:simpleContent>
-			<xs:extension base="IntegerGreaterThanOrEqualToZero_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -836,16 +708,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="Year_simple">
-		<xs:restriction base="xs:integer"/>
-	</xs:simpleType>
-	<xs:complexType name="Year">
-		<xs:simpleContent>
-			<xs:extension base="Year_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<!-- Make sure to update FuelType with changes to this list as well. -->
 	<xs:simpleType name="ConsumptionType_simple">
 		<xs:restriction base="xs:string">
@@ -979,16 +841,6 @@
 	<xs:complexType name="PeakSeason">
 		<xs:simpleContent>
 			<xs:extension base="PeakSeason_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="COReading_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="COReading">
-		<xs:simpleContent>
-			<xs:extension base="COReading_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -1275,31 +1127,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="RValue_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="RValue">
-		<xs:simpleContent>
-			<xs:extension base="RValue_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<!--Insulation Below-->
-	<xs:simpleType name="AssemblyRValue_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="AssemblyRValue">
-		<xs:simpleContent>
-			<xs:extension base="AssemblyRValue_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="DoorThirdPartyCertifications_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Energy Star"/>
@@ -1676,19 +1504,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="SHGC_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-			<xs:maxExclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="SHGC">
-		<xs:simpleContent>
-			<xs:extension base="SHGC_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="InteriorShading_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="light blinds"/>
@@ -1727,18 +1542,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="UFactor_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="UFactor">
-		<xs:simpleContent>
-			<xs:extension base="UFactor_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<!--Combustion Appliance Tests Below-->
 	<xs:simpleType name="FlueCondition_simple">
 		<xs:restriction base="xs:string">
@@ -1754,16 +1557,6 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<!--Combustion Appliance Zone Test Below-->
-	<xs:simpleType name="CAZDepressurizationLimit_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="CAZDepressurizationLimit">
-		<xs:simpleContent>
-			<xs:extension base="CAZDepressurizationLimit_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="OpenClosed_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="open"/>
@@ -1786,16 +1579,6 @@
 	<xs:complexType name="DepressurizationFindingPoorCase">
 		<xs:simpleContent>
 			<xs:extension base="DepressurizationFindingPoorCase_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="NetPressureChange_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="NetPressureChange">
-		<xs:simpleContent>
-			<xs:extension base="NetPressureChange_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -1893,18 +1676,6 @@
 	<xs:complexType name="DistrictSteamType">
 		<xs:simpleContent>
 			<xs:extension base="DistrictSteamType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Efficiency_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="Efficiency">
-		<xs:simpleContent>
-			<xs:extension base="Efficiency_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2124,16 +1895,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="MeasuredDuctLeakage_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="MeasuredDuctLeakage">
-		<xs:simpleContent>
-			<xs:extension base="MeasuredDuctLeakage_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<!--HVAC System Below-->
 	<xs:simpleType name="AirHandlerStaticPressureMeasurementLocation_simple">
 		<xs:restriction base="xs:string">
@@ -2162,16 +1923,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="Capacity_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="Capacity">
-		<xs:simpleContent>
-			<xs:extension base="Capacity_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="HVACMaintenanceSchedule_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="none"/>
@@ -2190,36 +1941,6 @@
 	<xs:complexType name="HVACMaintenanceSchedule">
 		<xs:simpleContent>
 			<xs:extension base="HVACMaintenanceSchedule_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="DispositionofExistingSystem_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="DispositionofExistingSystem">
-		<xs:simpleContent>
-			<xs:extension base="DispositionofExistingSystem_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Manufacturer_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="Manufacturer">
-		<xs:simpleContent>
-			<xs:extension base="Manufacturer_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Model_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="Model">
-		<xs:simpleContent>
-			<xs:extension base="Model_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2264,16 +1985,6 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<!--Thermostats Below-->
-	<xs:simpleType name="Temperature_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="Temperature">
-		<xs:simpleContent>
-			<xs:extension base="Temperature_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="ThermostatType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="programmable thermostat"/>
@@ -2304,16 +2015,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="Hours_simple">
-		<xs:restriction base="xs:integer"/>
-	</xs:simpleType>
-	<xs:complexType name="Hours">
-		<xs:simpleContent>
-			<xs:extension base="Hours_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<!--Water Heating System Below-->
 	<xs:simpleType name="EnergyFactor_simple">
 		<xs:restriction base="xs:double">
@@ -2328,16 +2029,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="PipeInsulated_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="PipeInsulated">
-		<xs:simpleContent>
-			<xs:extension base="PipeInsulated_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="RecoveryEfficiency_simple">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
@@ -2347,41 +2038,6 @@
 	<xs:complexType name="RecoveryEfficiency">
 		<xs:simpleContent>
 			<xs:extension base="RecoveryEfficiency_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Volume_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="Volume">
-		<xs:simpleContent>
-			<xs:extension base="Volume_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="ThermalEfficiency_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="ThermalEfficiency">
-		<xs:simpleContent>
-			<xs:extension base="ThermalEfficiency_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="ProjectType_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="ProjectType">
-		<xs:simpleContent>
-			<xs:extension base="ProjectType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2419,74 +2075,6 @@
 	<xs:complexType name="DishwasherType">
 		<xs:simpleContent>
 			<xs:extension base="DishwasherType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="RatedAnnualkWh_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="RatedAnnualkWh">
-		<xs:simpleContent>
-			<xs:extension base="RatedAnnualkWh_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="RatedWaterGalPerCycle_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="RatedWaterGalPerCycle">
-		<xs:simpleContent>
-			<xs:extension base="RatedWaterGalPerCycle_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<!--Freezer Below-->
-	<!--Refrigerators Below-->
-	<!--Energy Savings Information Below-->
-	<xs:simpleType name="TotalCostHealthSafetyMeasures_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="TotalCostHealthSafetyMeasures">
-		<xs:simpleContent>
-			<xs:extension base="TotalCostHealthSafetyMeasures_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="TotalCostQualEnergyMeasures_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="TotalCostQualEnergyMeasures">
-		<xs:simpleContent>
-			<xs:extension base="TotalCostQualEnergyMeasures_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<!--Software Information Below-->
-	<xs:simpleType name="SoftwareProgramUsed_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="SoftwareProgramUsed">
-		<xs:simpleContent>
-			<xs:extension base="SoftwareProgramUsed_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="SoftwareProgramVersion_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="SoftwareProgramVersion">
-		<xs:simpleContent>
-			<xs:extension base="SoftwareProgramVersion_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2718,18 +2306,6 @@
 	<xs:complexType name="GrossOrNet">
 		<xs:simpleContent>
 			<xs:extension base="GrossOrNet_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="SurfaceArea_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="SurfaceArea">
-		<xs:simpleContent>
-			<xs:extension base="SurfaceArea_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -3183,253 +2759,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="ResourceTypeCode_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="ResourceTypeCode">
-		<xs:simpleContent>
-			<xs:extension base="ResourceTypeCode_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Quantity_simple">
-		<xs:restriction base="xs:decimal"/>
-	</xs:simpleType>
-	<xs:complexType name="Quantity">
-		<xs:simpleContent>
-			<xs:extension base="Quantity_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="ProgramName_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="ProgramName">
-		<xs:simpleContent>
-			<xs:extension base="ProgramName_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Title_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="Title">
-		<xs:simpleContent>
-			<xs:extension base="Title_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="StartDate_simple">
-		<xs:restriction base="xs:date"/>
-	</xs:simpleType>
-	<xs:complexType name="StartDate">
-		<xs:simpleContent>
-			<xs:extension base="StartDate_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="CompleteDateEstimated_simple">
-		<xs:restriction base="xs:date"/>
-	</xs:simpleType>
-	<xs:complexType name="CompleteDateEstimated">
-		<xs:simpleContent>
-			<xs:extension base="CompleteDateEstimated_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="CompleteDateActual_simple">
-		<xs:restriction base="xs:date"/>
-	</xs:simpleType>
-	<xs:complexType name="CompleteDateActual">
-		<xs:simpleContent>
-			<xs:extension base="CompleteDateActual_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Notes_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="Notes">
-		<xs:simpleContent>
-			<xs:extension base="Notes_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="MeasureCode_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="MeasureCode">
-		<xs:simpleContent>
-			<xs:extension base="MeasureCode_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="MeasureDescription_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="MeasureDescription">
-		<xs:simpleContent>
-			<xs:extension base="MeasureDescription_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="EstimatedLife_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="EstimatedLife">
-		<xs:simpleContent>
-			<xs:extension base="EstimatedLife_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="InstallationDate_simple">
-		<xs:restriction base="xs:date"/>
-	</xs:simpleType>
-	<xs:complexType name="InstallationDate">
-		<xs:simpleContent>
-			<xs:extension base="InstallationDate_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Cost_simple">
-		<xs:restriction base="xs:decimal"/>
-	</xs:simpleType>
-	<xs:complexType name="Cost">
-		<xs:simpleContent>
-			<xs:extension base="Cost_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="FundingSourceCode_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="FundingSourceCode">
-		<xs:simpleContent>
-			<xs:extension base="FundingSourceCode_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="FundingSourceName_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="FundingSourceName">
-		<xs:simpleContent>
-			<xs:extension base="FundingSourceName_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="IncentiveAmount_simple">
-		<xs:restriction base="xs:decimal"/>
-	</xs:simpleType>
-	<xs:complexType name="IncentiveAmount">
-		<xs:simpleContent>
-			<xs:extension base="IncentiveAmount_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="LoadProfile_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="LoadProfile">
-		<xs:simpleContent>
-			<xs:extension base="LoadProfile_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="AnnualAmount_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="AnnualAmount">
-		<xs:simpleContent>
-			<xs:extension base="AnnualAmount_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="JobRole_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="JobRole">
-		<xs:simpleContent>
-			<xs:extension base="JobRole_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Fraction_simple">
-		<xs:annotation>
-			<xs:documentation>A fraction that has to be between 0 and 1 inclusive</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="Fraction">
-		<xs:simpleContent>
-			<xs:extension base="Fraction_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="FractionGreaterThanZero_simple">
-		<xs:annotation>
-			<xs:documentation>A fraction that has to be between 0 (exclusive) and 1 (inclusive)</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="FractionGreaterThanZero">
-		<xs:simpleContent>
-			<xs:extension base="FractionGreaterThanOne_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="FractionExcludingZero_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="FractionExcludingZero">
-		<xs:simpleContent>
-			<xs:extension base="FractionExcludingZero_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="FractionGreaterThanOne_simple">
-		<xs:annotation>
-			<xs:documentation>A fraction that can be greater than one (ie 110%)</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="FractionGreaterThanOne">
-		<xs:simpleContent>
-			<xs:extension base="FractionGreaterThanOne_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="ImprovementStatusType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Installed"/>
@@ -3580,18 +2909,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="LengthMeasurement_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="LengthMeasurement">
-		<xs:simpleContent>
-			<xs:extension base="LengthMeasurement_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="InsulationGrade_simple">
 		<xs:restriction base="xs:integer">
 			<xs:minInclusive value="1"/>
@@ -3617,18 +2934,6 @@
 	<xs:complexType name="FloorCovering">
 		<xs:simpleContent>
 			<xs:extension base="FloorCovering_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Pitch_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="Pitch">
-		<xs:simpleContent>
-			<xs:extension base="Pitch_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -3700,42 +3005,6 @@
 	<xs:complexType name="EVChargingConnector">
 		<xs:simpleContent>
 			<xs:extension base="EVChargingConnector_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Current_simple">
-		<xs:restriction base="xs:decimal">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="Current">
-		<xs:simpleContent>
-			<xs:extension base="Current_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Voltage_simple">
-		<xs:restriction base="xs:decimal">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="Voltage">
-		<xs:simpleContent>
-			<xs:extension base="Voltage_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Power_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="Power">
-		<xs:simpleContent>
-			<xs:extension base="Power_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -3915,16 +3184,6 @@
 	<xs:complexType name="eGridRegions">
 		<xs:simpleContent>
 			<xs:extension base="eGridRegions_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="ProgramSponsor_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="ProgramSponsor">
-		<xs:simpleContent>
-			<xs:extension base="ProgramSponsor_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -4119,30 +3378,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="Speed_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="Speed">
-		<xs:simpleContent>
-			<xs:extension base="Speed_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="FlowRate_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="FlowRate">
-		<xs:simpleContent>
-			<xs:extension base="FlowRate_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="PoolCleanerType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="robotic"/>
@@ -4291,18 +3526,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="PeopleCount_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="PeopleCount">
-		<xs:simpleContent>
-			<xs:extension base="PeopleCount_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="WindThirdPartyCertification_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="AWEA 9.1-2009"/>
@@ -4354,32 +3577,6 @@
 	<xs:complexType name="MERV">
 		<xs:simpleContent>
 			<xs:extension base="MERV_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="SolarAbsorptance_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="SolarAbsorptance">
-		<xs:simpleContent>
-			<xs:extension base="SolarAbsorptance_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="Emittance_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="Emittance">
-		<xs:simpleContent>
-			<xs:extension base="Emittance_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -4467,18 +3664,6 @@
 	<xs:complexType name="BatteryType">
 		<xs:simpleContent>
 			<xs:extension base="BatteryType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="BatteryCapacity_simple">
-		<xs:restriction base="xs:decimal">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="BatteryCapacity">
-		<xs:simpleContent>
-			<xs:extension base="BatteryCapacity_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -4607,44 +3792,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="CollectorRatedThermalLosses_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="CollectorRatedThermalLosses">
-		<xs:simpleContent>
-			<xs:extension base="CollectorRatedThermalLosses_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="SolarFraction_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-			<xs:maxInclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="SolarFraction">
-		<xs:simpleContent>
-			<xs:extension base="SolarFraction_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="CollectorRatedOpticalEfficiency_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-			<xs:maxExclusive value="1"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="CollectorRatedOpticalEfficiency">
-		<xs:simpleContent>
-			<xs:extension base="CollectorRatedOpticalEfficiency_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="PVModuleType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="standard"/>
@@ -4727,18 +3874,6 @@
 	<xs:complexType name="ExternalResourceType">
 		<xs:simpleContent>
 			<xs:extension base="ExternalResourceType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="SolarThermalSystemEnergyFactor_simple">
-		<xs:restriction base="xs:double">
-			<xs:minExclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="SolarThermalSystemEnergyFactor">
-		<xs:simpleContent>
-			<xs:extension base="SolarThermalSystemEnergyFactor_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
