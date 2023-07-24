@@ -2324,7 +2324,7 @@
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
-						<xs:element minOccurs="0" name="Location" type="LightingLocation"/>
+						<xs:element minOccurs="0" name="Location" type="LightingAndPlugLoadLocation"/>
 						<xs:element name="Count" type="HPXMLInteger" minOccurs="0"/>
 						<xs:element minOccurs="0" name="FractionofUnitsInLocation" type="Fraction">
 							<xs:annotation>
@@ -2394,7 +2394,7 @@
 						<xs:element minOccurs="0" name="AttachedToLightingGroup" type="LocalReference"/>
 						<xs:element name="LightingControlType" type="LightingControls" minOccurs="0"/>
 						<xs:element name="NumberofLightingControls" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
-						<xs:element name="Location" type="LightingLocation" minOccurs="0"/>
+						<xs:element name="Location" type="LightingAndPlugLoadLocation" minOccurs="0"/>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
@@ -2718,7 +2718,7 @@
 						<xs:element minOccurs="0" ref="ConnectedDevice"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element name="PlugLoadType" type="PlugLoadType" minOccurs="0"/>
-						<xs:element minOccurs="0" name="Location" type="PlugLoadLocation"/>
+						<xs:element minOccurs="0" name="Location" type="LightingAndPlugLoadLocation"/>
 						<xs:element name="Count" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 						<xs:element minOccurs="0" name="Load">
 							<xs:complexType>
@@ -2755,7 +2755,7 @@
 						<xs:element minOccurs="0" ref="ConnectedDevice"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element name="FuelLoadType" type="FuelLoadType" minOccurs="0"/>
-						<xs:element minOccurs="0" name="Location" type="FuelLoadLocation"/>
+						<xs:element minOccurs="0" name="Location" type="LightingAndPlugLoadLocation"/>
 						<xs:element name="Count" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 						<xs:element minOccurs="0" name="Load">
 							<xs:complexType>
