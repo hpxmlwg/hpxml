@@ -4420,12 +4420,12 @@
 											<xs:documentation>Total number of floors including a basement, whether conditioned or unconditioned</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="NumberofConditionedFloors" type="HPXMLDoubleGreaterThanZero">
+									<xs:element minOccurs="0" name="NumberofConditionedFloors" type="HPXMLDoubleGreaterThanOrEqualToZero">
 										<xs:annotation>
 											<xs:documentation>Number of floors that are heated/cooled including a basement</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="NumberofConditionedFloorsAboveGrade" type="HPXMLDoubleGreaterThanZero">
+									<xs:element minOccurs="0" name="NumberofConditionedFloorsAboveGrade" type="HPXMLDoubleGreaterThanOrEqualToZero">
 										<xs:annotation>
 											<xs:documentation>Number of floors above grade that are heated/cooled</xs:documentation>
 										</xs:annotation>
