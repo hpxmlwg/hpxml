@@ -1157,6 +1157,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="AdjacentTo_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
@@ -1179,9 +1182,12 @@
 			<xs:enumeration value="living space"/>
 			<xs:enumeration value="manufactured home underbelly"/>
 			<xs:enumeration value="other"/>
+			<xs:enumeration value="other heated space"/>
 			<xs:enumeration value="other housing unit"/>
 			<xs:enumeration value="other housing unit above"/>
 			<xs:enumeration value="other housing unit below"/>
+			<xs:enumeration value="other multifamily buffer space"/>
+			<xs:enumeration value="other non-freezing space"/>
 			<xs:enumeration value="outside"/>
 			<xs:enumeration value="unconditioned space"/>
 		</xs:restriction>
@@ -2000,6 +2006,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="DuctLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
@@ -2022,6 +2031,10 @@
 			<xs:enumeration value="garage - unconditioned"/>
 			<xs:enumeration value="interstitial space"/>
 			<xs:enumeration value="living space"/>
+			<xs:enumeration value="other heated space"/>
+			<xs:enumeration value="other housing unit"/>
+			<xs:enumeration value="other multifamily buffer space"/>
+			<xs:enumeration value="other non-freezing space"/>
 			<xs:enumeration value="outside"/>
 			<xs:enumeration value="roof deck"/>
 			<xs:enumeration value="unconditioned space"/>
@@ -2182,6 +2195,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="UnitLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
@@ -2203,8 +2219,12 @@
 			<xs:enumeration value="garage - unconditioned"/>
 			<xs:enumeration value="living space"/>
 			<xs:enumeration value="mechanical closet"/>
-			<xs:enumeration value="other interior"/>
 			<xs:enumeration value="other exterior"/>
+			<xs:enumeration value="other heated space"/>
+			<xs:enumeration value="other housing unit"/>
+			<xs:enumeration value="other interior"/>
+			<xs:enumeration value="other multifamily buffer space"/>
+			<xs:enumeration value="other non-freezing space"/>
 			<xs:enumeration value="roof deck"/>
 			<xs:enumeration value="unconditioned space"/>
 		</xs:restriction>
@@ -2962,6 +2982,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="LaundryMachineLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
@@ -2973,6 +2996,10 @@
 			<xs:enumeration value="laundry room"/>
 			<xs:enumeration value="living space"/>
 			<xs:enumeration value="other"/>
+			<xs:enumeration value="other heated space"/>
+			<xs:enumeration value="other housing unit"/>
+			<xs:enumeration value="other multifamily buffer space"/>
+			<xs:enumeration value="other non-freezing space"/>
 			<xs:enumeration value="unconditioned space"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -3023,6 +3050,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="RefrigeratorLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
@@ -3034,6 +3064,10 @@
 			<xs:enumeration value="kitchen"/>
 			<xs:enumeration value="living space"/>
 			<xs:enumeration value="other"/>
+			<xs:enumeration value="other heated space"/>
+			<xs:enumeration value="other housing unit"/>
+			<xs:enumeration value="other multifamily buffer space"/>
+			<xs:enumeration value="other non-freezing space"/>
 			<xs:enumeration value="unconditioned space"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -4415,6 +4449,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="BatteryLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
@@ -4435,6 +4472,10 @@
 			<xs:enumeration value="garage - conditioned"/>
 			<xs:enumeration value="garage - unconditioned"/>
 			<xs:enumeration value="living space"/>
+			<xs:enumeration value="other heated space"/>
+			<xs:enumeration value="other housing unit"/>
+			<xs:enumeration value="other multifamily buffer space"/>
+			<xs:enumeration value="other non-freezing space"/>
 			<xs:enumeration value="outside"/>
 			<xs:enumeration value="roof deck"/>
 			<xs:enumeration value="unconditioned space"/>
