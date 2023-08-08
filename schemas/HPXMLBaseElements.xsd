@@ -3704,7 +3704,6 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
-					<xs:element name="RoomCoolingType" type="RoomCoolingType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IntegratedHeatingSystemFuel" type="FuelType"/>
 					<xs:element minOccurs="0" name="IntegratedHeatingSystemCapacity" type="Capacity">
 						<xs:annotation>
