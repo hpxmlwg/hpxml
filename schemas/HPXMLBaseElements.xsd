@@ -3548,7 +3548,6 @@
 			<xs:element name="SpaceHeater">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element minOccurs="0" name="Portable" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="AtmosphericBurner" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="AutomaticVentDamper" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="PilotLight" type="HPXMLBoolean"/>
