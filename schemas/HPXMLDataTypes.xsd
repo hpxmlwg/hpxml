@@ -2864,15 +2864,15 @@
 			<xs:extension base="FuelLoadLocation_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="PlugLoadUnits_simple">
+	<xs:simpleType name="ElectricLoadUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="kWh/year"/>
 			<xs:enumeration value="W"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="PlugLoadUnits">
+	<xs:complexType name="ElectricLoadUnits">
 		<xs:simpleContent>
-			<xs:extension base="PlugLoadUnits_simple">
+			<xs:extension base="ElectricLoadUnits_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2886,6 +2886,30 @@
 	<xs:complexType name="FuelLoadUnits">
 		<xs:simpleContent>
 			<xs:extension base="FuelLoadUnits_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ElectricOrFuelLoadUnits_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kWh/year"/>
+			<xs:enumeration value="W"/>
+			<xs:enumeration value="therm/year"/>
+			<xs:enumeration value="Btuh"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ElectricOrFuelLoadUnits">
+		<xs:simpleContent>
+			<xs:extension base="ElectricOrFuelLoadUnits_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HotWaterLoadUnits_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gal/day"/>
+			<xs:enumeration value="gal/year"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HotWaterLoadUnits">
+		<xs:simpleContent>
+			<xs:extension base="HotWaterLoadUnits_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="WindowCondition_simple">
