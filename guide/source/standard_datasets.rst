@@ -25,7 +25,7 @@ The audit dataset is designed for use by Home Performance with ENERGY STAR® or 
 
 The audit dataset was established through a consensus process of three geographically diverse existing whole-house programs, and is intended to meet the needs of most programs.
 
-Programs that wish to adopt the audit dataset may download the `Data Selection Tool <http://www.hpxmlonline.com/tools-resources/data-selection-tool/>`_ for guidance on the required data fields. Software developers may visit Github for an example of an HPXML audit file.
+Programs that wish to adopt the audit dataset may download the `Data Selection Tool <https://www.hpxmlonline.com/tools-resources/data-selection-tool/>`_ for guidance on the required data fields. Software developers may visit Github for an example of an HPXML audit file.
 
 .. _upgrade-use-case-defn:
 
