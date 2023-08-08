@@ -4555,7 +4555,11 @@
 									<xs:element minOccurs="0" name="GaragePresent" type="HPXMLBoolean"/>
 									<xs:element minOccurs="0" name="GarageLocation" type="GarageLocation"/>
 									<xs:element minOccurs="0" name="SpaceAboveGarage" type="SpaceAboveGarage"/>
-									<xs:element minOccurs="0" name="ManufacturedHomeSections" type="ManufacturedHomeSections"/>
+									<xs:element minOccurs="0" name="ManufacturedHomeSections" type="ManufacturedHomeSections">
+										<xs:annotation>
+											<xs:documentation>The number of sections (width) of the manufactured home. CrossMod is a new style of manufactured home with more flexibility in configuration, higher roof pitch, covered porches, and garages or carports. They look more like a site-built single family detached home, but are manufactured in a factory and assembled on site. </xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -5592,6 +5596,11 @@
 					<xs:sequence>
 						<xs:element minOccurs="0" name="Finished" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="Conditioned" type="HPXMLBoolean"/>
+						<xs:element minOccurs="0" name="Walkout" type="HPXMLBoolean">
+							<xs:annotation>
+								<xs:documentation>A partially underground basement that has a door directly on grade to the outside, typically built on a sloping lot.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
@@ -7467,6 +7476,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="AdjacentTo_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
@@ -8257,6 +8269,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="DuctLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
@@ -8393,6 +8408,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="UnitLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
@@ -9023,6 +9041,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="LaundryMachineLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
@@ -9088,6 +9109,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="RefrigeratorLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="basement"/>
 			<xs:enumeration value="basement - conditioned"/>
@@ -10106,6 +10130,9 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="BatteryLocation_simple">
+		<xs:annotation>
+			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
+		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="attic"/>
 			<xs:enumeration value="attic - conditioned"/>
