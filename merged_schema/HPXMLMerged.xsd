@@ -10161,7 +10161,7 @@
 			<xs:enumeration value="ENERGY STAR Most Efficient"/>
 			<xs:enumeration value="CEE Tier 1"/>
 			<xs:enumeration value="CEE Tier 2"/>
-			<xs:enumeration value="Cee Tier 3"/>
+			<xs:enumeration value="CEE Tier 3"/>
 			<xs:enumeration value="other"/>
 			<xs:enumeration value="unknown"/>
 			<xs:enumeration value="none"/>
