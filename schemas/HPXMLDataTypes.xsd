@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10" targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10"
+	targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.1">
 	<xs:simpleType name="DataSource">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="user"/>
@@ -1552,7 +1553,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="RadiantBarrierLocation_simple">
+	<xs:simpleType name="RadiantBarrierLocation_roof_simple">
 		<xs:annotation>
 			<xs:documentation>Enumerations from http://www.fsec.ucf.edu/en/publications/pdf/FSEC-DN-7-84.pdf</xs:documentation>
 		</xs:annotation>
@@ -1564,15 +1565,35 @@
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="RadiantBarrierLocation">
+	<xs:simpleType name="RadiantBarrierLocation_wall_simple">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="RadiantBarrierLocation_floor_simple">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:complexType name="RadiantBarrierLocation_roof">
 		<xs:simpleContent>
-			<xs:extension base="RadiantBarrierLocation_simple">
+			<xs:extension base="RadiantBarrierLocation_roof_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="RadiantBarrierLocation_wall">
+		<xs:simpleContent>
+			<xs:extension base="RadiantBarrierLocation_wall_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<!--Ventilation Below-->
 	<!--Window Group Below-->
+	<xs:complexType name="RadiantBarrierLocation_floor">
+		<xs:simpleContent>
+			<xs:extension base="RadiantBarrierLocation_floor_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="HVACThirdPartyCertification_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Energy Star"/>
@@ -3882,7 +3903,8 @@
 	</xs:complexType>
 	<xs:simpleType name="GreenBuildingVerificationType_simple">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="BPI-2101-compliant Certificate of Residential Energy Efficiency Features and Performance"/>
+			<xs:enumeration
+				value="BPI-2101-compliant Certificate of Residential Energy Efficiency Features and Performance"/>
 			<xs:enumeration value="Certified Passive House"/>
 			<xs:enumeration value="ENERGY STAR Certified Homes"/>
 			<xs:enumeration value="EnerPHit"/>
@@ -5010,4 +5032,5 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+
 </xs:schema>
