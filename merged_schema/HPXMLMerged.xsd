@@ -5077,7 +5077,11 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="WeatherStripping" type="HPXMLBoolean"/>
-			<xs:element minOccurs="0" name="Operable" type="HPXMLBoolean"/>
+			<xs:element minOccurs="0" name="FractionOperable" type="Fraction">
+				<xs:annotation>
+					<xs:documentation>Defined as the sum of the areas for operable windows divided by the sum of the areas for all windows. The fraction should not take into account how much a window can be opened (e.g., 50% for a double hung window). If the Window/Skylight element represents a single window/skylight, the value should be 0 or 1.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="LeakinessDescription" type="BuildingLeakiness"/>
 			<xs:element minOccurs="0" name="PerformanceClass" type="PerformanceClass"/>
 		</xs:sequence>
