@@ -1532,6 +1532,11 @@
 													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
+												<xs:element minOccurs="0" name="FractionRecirculation" type="Fraction">
+													<xs:annotation>
+														<xs:documentation>The fraction of supply air that is from recirculation.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="RatedNoise" type="HPXMLDouble">
 													<xs:annotation>
 														<xs:documentation>[sones] from manufacturer's info</xs:documentation>
@@ -3699,6 +3704,14 @@
 							</xs:sequence>
 						</xs:complexType>
 					</xs:element>
+					<xs:element minOccurs="0" name="IntegratedHeatingSystemFuel" type="FuelType"/>
+					<xs:element minOccurs="0" name="IntegratedHeatingSystemCapacity" type="Capacity">
+						<xs:annotation>
+							<xs:documentation>[Btuh]</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="IntegratedHeatingSystemAnnualEfficiency" type="HeatingEfficiencyType" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="IntegratedHeatingSystemFractionHeatLoadServed" type="Fraction" minOccurs="0"/>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
