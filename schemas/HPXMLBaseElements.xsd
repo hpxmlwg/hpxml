@@ -5020,7 +5020,11 @@
 						<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 						<xs:element minOccurs="0" name="FrameType" type="WindowFrameType"/>
 						<xs:element minOccurs="0" name="Location" type="StormLocation"/>
-						<xs:element minOccurs="0" name="Operable" type="HPXMLBoolean"/>
+						<xs:element minOccurs="0" name="FractionOperable" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Defined as the sum of the areas for operable storms divided by the sum of the areas for all storms. The fraction should not take into account how much a storm can be opened (e.g., 50% for a double hung storm). If the StormWindow element represents a single storm, the value should be 0 or 1.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="Condition" type="WindowCondition"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
