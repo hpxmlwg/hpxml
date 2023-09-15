@@ -2733,7 +2733,7 @@
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
-	<xs:complexType name="InGroundSpas">
+	<xs:complexType name="StationarySpas">
 		<xs:sequence>
 			<xs:element maxOccurs="unbounded" name="StationarySpa">
 				<xs:complexType>
@@ -4468,7 +4468,7 @@
 			<xs:element name="Appliances" type="Appliances" minOccurs="0"/>
 			<xs:element name="Lighting" type="Lighting" minOccurs="0"/>
 			<xs:element minOccurs="0" name="Pools" type="Pools"/>
-			<xs:element minOccurs="0" name="StationarySpas" type="InGroundSpas"/>
+			<xs:element minOccurs="0" name="StationarySpas" type="StationarySpas"/>
 			<xs:element minOccurs="0" name="PortableSpas" type="PortableSpas"/>
 			<xs:element name="MiscLoads" type="MiscLoads" minOccurs="0"/>
 			<xs:element minOccurs="0" name="HealthAndSafety" type="HealthAndSafety"/>
