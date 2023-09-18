@@ -4396,7 +4396,7 @@
 			<xs:element minOccurs="0" name="Spas">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="StationarySpa">
+						<xs:element maxOccurs="unbounded" name="StationarySpa" minOccurs="0">
 							<xs:complexType>
 								<xs:complexContent>
 									<xs:extension base="PoolSpaType">
@@ -4407,7 +4407,7 @@
 								</xs:complexContent>
 							</xs:complexType>
 						</xs:element>
-						<xs:element maxOccurs="unbounded" name="PortableSpa">
+						<xs:element maxOccurs="unbounded" name="PortableSpa" minOccurs="0">
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
