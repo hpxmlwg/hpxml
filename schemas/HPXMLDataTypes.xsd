@@ -1393,7 +1393,7 @@
 	</xs:complexType>
 	<!--Lighting Below-->
 	<!--Lighting Controls Below-->
-	<xs:simpleType name="LightingLocation_simple">
+	<xs:simpleType name="LightingAndPlugLoadLocation_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="interior"/>
 			<xs:enumeration value="exterior"/>
@@ -1401,9 +1401,9 @@
 			<xs:enumeration value="common area"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="LightingLocation">
+	<xs:complexType name="LightingAndPlugLoadLocation">
 		<xs:simpleContent>
-			<xs:extension base="LightingLocation_simple">
+			<xs:extension base="LightingAndPlugLoadLocation_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2838,30 +2838,6 @@
 	<xs:complexType name="FuelLoadType">
 		<xs:simpleContent>
 			<xs:extension base="FuelLoadType_simple"/>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="PlugLoadLocation_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="interior"/>
-			<xs:enumeration value="exterior"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="PlugLoadLocation">
-		<xs:simpleContent>
-			<xs:extension base="PlugLoadLocation_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="FuelLoadLocation_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="interior"/>
-			<xs:enumeration value="exterior"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="FuelLoadLocation">
-		<xs:simpleContent>
-			<xs:extension base="FuelLoadLocation_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="PlugLoadUnits_simple">
