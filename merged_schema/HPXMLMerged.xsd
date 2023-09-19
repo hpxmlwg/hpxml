@@ -2344,7 +2344,7 @@
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
-						<xs:element minOccurs="0" name="Location" type="LightingLocation"/>
+						<xs:element minOccurs="0" name="Location" type="LightingAndPlugLoadLocation"/>
 						<xs:element name="Count" type="HPXMLInteger" minOccurs="0"/>
 						<xs:element minOccurs="0" name="FractionofUnitsInLocation" type="Fraction">
 							<xs:annotation>
@@ -2414,7 +2414,7 @@
 						<xs:element minOccurs="0" name="AttachedToLightingGroup" type="LocalReference"/>
 						<xs:element name="LightingControlType" type="LightingControls" minOccurs="0"/>
 						<xs:element name="NumberofLightingControls" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
-						<xs:element name="Location" type="LightingLocation" minOccurs="0"/>
+						<xs:element name="Location" type="LightingAndPlugLoadLocation" minOccurs="0"/>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
@@ -2738,7 +2738,7 @@
 						<xs:element minOccurs="0" ref="ConnectedDevice"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element name="PlugLoadType" type="PlugLoadType" minOccurs="0"/>
-						<xs:element minOccurs="0" name="Location" type="PlugLoadLocation"/>
+						<xs:element minOccurs="0" name="Location" type="LightingAndPlugLoadLocation"/>
 						<xs:element name="Count" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 						<xs:element minOccurs="0" name="Load">
 							<xs:complexType>
@@ -2775,7 +2775,7 @@
 						<xs:element minOccurs="0" ref="ConnectedDevice"/>
 						<xs:element minOccurs="0" ref="AttachedToSpace"/>
 						<xs:element name="FuelLoadType" type="FuelLoadType" minOccurs="0"/>
-						<xs:element minOccurs="0" name="Location" type="FuelLoadLocation"/>
+						<xs:element minOccurs="0" name="Location" type="LightingAndPlugLoadLocation"/>
 						<xs:element name="Count" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
 						<xs:element minOccurs="0" name="Load">
 							<xs:complexType>
@@ -3556,6 +3556,7 @@
 								<xs:documentation>[grams per hour] from EPA label http://www.epa.gov/compliance/monitoring/programs/caa/woodheaters.html</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="AtmosphericBurner" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="AutomaticVentDamper" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="PilotLight" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="IntermittentIgnitionDevice" type="HPXMLBoolean"/>
@@ -3564,9 +3565,13 @@
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="PortableHeater">
+			<xs:element name="SpaceHeater">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element minOccurs="0" name="AtmosphericBurner" type="HPXMLBoolean"/>
+						<xs:element minOccurs="0" name="AutomaticVentDamper" type="HPXMLBoolean"/>
+						<xs:element minOccurs="0" name="PilotLight" type="HPXMLBoolean"/>
+						<xs:element minOccurs="0" name="IntermittentIgnitionDevice" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" ref="extension"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
@@ -7528,7 +7533,7 @@
 	</xs:complexType>
 	<!--Lighting Below-->
 	<!--Lighting Controls Below-->
-	<xs:simpleType name="LightingLocation_simple">
+	<xs:simpleType name="LightingAndPlugLoadLocation_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="interior"/>
 			<xs:enumeration value="exterior"/>
@@ -7536,9 +7541,9 @@
 			<xs:enumeration value="common area"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="LightingLocation">
+	<xs:complexType name="LightingAndPlugLoadLocation">
 		<xs:simpleContent>
-			<xs:extension base="LightingLocation_simple">
+			<xs:extension base="LightingAndPlugLoadLocation_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -8978,30 +8983,6 @@
 			<xs:extension base="FuelLoadType_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="PlugLoadLocation_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="interior"/>
-			<xs:enumeration value="exterior"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="PlugLoadLocation">
-		<xs:simpleContent>
-			<xs:extension base="PlugLoadLocation_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="FuelLoadLocation_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="interior"/>
-			<xs:enumeration value="exterior"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="FuelLoadLocation">
-		<xs:simpleContent>
-			<xs:extension base="FuelLoadLocation_simple"/>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="PlugLoadUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="kWh/year"/>
@@ -10178,7 +10159,7 @@
 			<xs:enumeration value="ENERGY STAR Most Efficient"/>
 			<xs:enumeration value="CEE Tier 1"/>
 			<xs:enumeration value="CEE Tier 2"/>
-			<xs:enumeration value="Cee Tier 3"/>
+			<xs:enumeration value="CEE Tier 3"/>
 			<xs:enumeration value="other"/>
 			<xs:enumeration value="unknown"/>
 			<xs:enumeration value="none"/>
