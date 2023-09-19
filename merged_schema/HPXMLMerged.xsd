@@ -2725,7 +2725,7 @@
 					<xs:complexContent>
 						<xs:extension base="PoolSpaType">
 							<xs:sequence>
-								<xs:element ref="extension"/>
+								<xs:element ref="extension" minOccurs="0"/>
 							</xs:sequence>
 						</xs:extension>
 					</xs:complexContent>
@@ -4409,13 +4409,14 @@
 								<xs:complexContent>
 									<xs:extension base="PoolSpaType">
 										<xs:sequence>
-											<xs:element ref="extension"/>
+											<xs:element minOccurs="0" name="AttachedToPool" type="LocalReference"/>
+											<xs:element ref="extension" minOccurs="0"/>
 										</xs:sequence>
 									</xs:extension>
 								</xs:complexContent>
 							</xs:complexType>
 						</xs:element>
-						<xs:element maxOccurs="unbounded" name="PortableSpa" minOccurs="0">
+						<xs:element maxOccurs="unbounded" name="PortableElectricSpa" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>A factory-built electric spa or hot tub, supplied with piping and equipment for temperature-controlled circulated water at the time of sale or sold separately for subsequent attachment.</xs:documentation>
 							</xs:annotation>
@@ -4429,7 +4430,6 @@
 											<xs:documentation>Number of people</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="Fuel" type="FuelType"/>
 									<xs:element minOccurs="0" name="Volume" type="Volume">
 										<xs:annotation>
 											<xs:documentation>[gal] Rated volume of portable spa</xs:documentation>
@@ -4442,7 +4442,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="MaximumStandbyPowerAllowed" type="Power">
 										<xs:annotation>
-											<xs:documentation>[W] Maximum standby power allowed for this size spa under ANSI/APSP/ICC-24</xs:documentation>
+											<xs:documentation>[W] Maximum standby power allowed for this size spa under ANSI/APSP/ICC-14</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="TotalAnnualPowerConsumptionInStandbyMode" minOccurs="0" type="EnergyAndWaterUseTypeDescription">
