@@ -4401,7 +4401,10 @@
 			<xs:element minOccurs="0" name="Spas">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="StationarySpa" minOccurs="0">
+						<xs:element maxOccurs="unbounded" name="PermanentSpa" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>A permanently constructed spa where piping and equipment are an integral part of the structure, and not intended to be moved.</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:complexContent>
 									<xs:extension base="PoolSpaType">
@@ -4413,6 +4416,9 @@
 							</xs:complexType>
 						</xs:element>
 						<xs:element maxOccurs="unbounded" name="PortableSpa" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>A factory-built electric spa or hot tub, supplied with piping and equipment for temperature-controlled circulated water at the time of sale or sold separately for subsequent attachment.</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
