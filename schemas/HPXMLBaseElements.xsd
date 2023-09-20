@@ -972,7 +972,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="RadiantBarrier" type="HPXMLBoolean" minOccurs="0"/>
-									<xs:element name="RadiantBarrierLocation" type="RadiantBarrierLocation_roof" minOccurs="0"/>
+									<xs:element name="RadiantBarrierLocation" type="RadiantBarrierLocation" minOccurs="0"/>
 									<xs:element name="RadiantBarrierGrade" type="InsulationGrade" minOccurs="0"/>
 									<xs:element minOccurs="0" name="Insulation" type="InsulationInfo"/>
 									<xs:element ref="extension" minOccurs="0"/>
@@ -1067,10 +1067,9 @@
 									<xs:element minOccurs="0" name="SolarAbsorptance" type="SolarAbsorptance"/>
 									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
-									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
 									<xs:element name="RadiantBarrier" type="HPXMLBoolean" minOccurs="0"/>
-									<xs:element name="RadiantBarrierLocation" type="RadiantBarrierLocation_wall" minOccurs="0"/>
 									<xs:element name="RadiantBarrierGrade" type="InsulationGrade" minOccurs="0"/>
+									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
 										<xs:complexType>
 											<xs:sequence>
@@ -1176,10 +1175,9 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
-									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
 									<xs:element name="RadiantBarrier" type="HPXMLBoolean" minOccurs="0"/>
-									<xs:element name="RadiantBarrierLocation" type="RadiantBarrierLocation_floor" minOccurs="0"/>
 									<xs:element name="RadiantBarrierGrade" type="InsulationGrade" minOccurs="0"/>
+									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>

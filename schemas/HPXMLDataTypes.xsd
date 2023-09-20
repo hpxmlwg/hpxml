@@ -1552,24 +1552,20 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="RadiantBarrierLocation_roof_simple">
+	<xs:simpleType name="RadiantBarrierLocation_simple">
 		<xs:annotation>
 			<xs:documentation>Enumerations from http://www.fsec.ucf.edu/en/publications/pdf/FSEC-DN-7-84.pdf</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="top side of truss under sheathing"/>
 			<xs:enumeration value="below bottom chord of truss"/>
-			<xs:enumeration value="attic floor"/>
 			<xs:enumeration value="underside of rafters"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="RadiantBarrierLocation_wall_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="RadiantBarrierLocation_roof">
+	<xs:complexType name="RadiantBarrierLocation">
 		<xs:simpleContent>
-			<xs:extension base="RadiantBarrierLocation_roof_simple">
+			<xs:extension base="RadiantBarrierLocation_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -4985,23 +4981,6 @@
 	<xs:complexType name="MoisureType">
 		<xs:simpleContent>
 			<xs:extension base="MoistureType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:complexType name="RadiantBarrierLocation_wall">
-		<xs:simpleContent>
-			<xs:extension base="RadiantBarrierLocation_wall_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="RadiantBarrierLocation_floor_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="RadiantBarrierLocation_floor">
-		<xs:simpleContent>
-			<xs:extension base="RadiantBarrierLocation_floor_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
