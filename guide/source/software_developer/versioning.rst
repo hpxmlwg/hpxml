@@ -11,8 +11,8 @@ number is assumed to be zero if it is omitted.
 
 .. code-block:: xml
 
-   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2019/10"
-    targetNamespace="http://hpxmlonline.com/2019/10" elementFormDefault="qualified" version="3.1"> 
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2023/09"
+    targetNamespace="http://hpxmlonline.com/2023/09" elementFormDefault="qualified" version="3.1"> 
 
 Additionally, starting with version 2.0, the version of the schema used is
 required in the ``schemaVersion`` attribute on the root element of every
@@ -20,7 +20,7 @@ document.
 
 .. code-block:: xml
 
-   <HPXML xmlns="http://hpxmlonline.com/2019/10" schemaVersion="3.1">
+   <HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="3.1">
     
 .. _major-version:
 
