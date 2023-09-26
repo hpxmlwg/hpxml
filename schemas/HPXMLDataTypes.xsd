@@ -1559,7 +1559,6 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="top side of truss under sheathing"/>
 			<xs:enumeration value="below bottom chord of truss"/>
-			<xs:enumeration value="attic floor"/>
 			<xs:enumeration value="underside of rafters"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
