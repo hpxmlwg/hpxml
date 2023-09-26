@@ -2027,6 +2027,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="DuctShape_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="rectangular"/>
+			<xs:enumeration value="round"/>
+			<xs:enumeration value="oval"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DuctShape">
+		<xs:simpleContent>
+			<xs:extension base="DuctShape_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="DuctLocation_simple">
 		<xs:annotation>
 			<xs:documentation>"other housing unit" refers to the living/conditioned space of the adjacent unit.</xs:documentation>
