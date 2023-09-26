@@ -2853,6 +2853,19 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="PoolHeaterUnits_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="kWh/year"/>
+			<xs:enumeration value="therm/year"/>
+			<xs:enumeration value="W"/>
+			<xs:enumeration value="Btuh"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="PoolHeaterUnits">
+		<xs:simpleContent>
+			<xs:extension base="PoolHeaterUnits_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="FuelLoadUnits_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="therm/year"/>
