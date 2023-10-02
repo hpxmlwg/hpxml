@@ -101,7 +101,7 @@
 	</xs:complexType>
 	<xs:complexType name="RemoteReference">
 		<xs:annotation>
-			<xs:documentation>Use the id attribute if the element being referenced is available locally in the current xml transaction. Use the Sending/Receiving System Identifiers to identify
+			<xs:documentation>Use the idref attribute if the element being referenced is available locally in the current xml transaction. Use the Sending/Receiving System Identifiers to identify
 				elements in other xml transactions.</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
