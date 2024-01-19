@@ -338,7 +338,7 @@
       <Enclosure>
         <AirInfiltration>
           <AirInfiltrationMeasurement>
-            <SystemIdentifier id="blowerdoor1p" sameas="blowerdoor1"/>
+            <SystemIdentifier id="blowerdoor1p" pre_retrofit_id="blowerdoor1"/>
             <HousePressure>50</HousePressure>
             <BuildingAirLeakage>
               <UnitofMeasure>CFM</UnitofMeasure>
@@ -348,7 +348,7 @@
         </AirInfiltration>
         <Attics>
           <Attic>
-            <SystemIdentifier id="attic1p" sameas="attic1"/>
+            <SystemIdentifier id="attic1p" pre_retrofit_id="attic1"/>
             <AtticType>
               <Attic>
                 <Vented>true</Vented>
@@ -360,7 +360,7 @@
         </Attics>
         <Foundations>
           <Foundation>
-            <SystemIdentifier id="fnd1p" sameas="fnd1"/>
+            <SystemIdentifier id="fnd1p" pre_retrofit_id="fnd1"/>
             <FoundationType>
               <Basement>
                 <Finished>true</Finished>
@@ -372,10 +372,10 @@
         </Foundations>
         <Roofs>
           <Roof>
-            <SystemIdentifier id="roof1p" sameas="roof1"/>
+            <SystemIdentifier id="roof1p" pre_retrofit_id="roof1"/>
             <RoofType>shingles</RoofType>
             <Insulation>
-              <SystemIdentifier id="attic2insp" sameas="attic2ins"/>
+              <SystemIdentifier id="attic2insp" pre_retrofit_id="attic2ins"/>
               <Layer>
                 <NominalRValue>0</NominalRValue>
               </Layer>
@@ -384,9 +384,9 @@
         </Roofs>
         <Walls>
           <Wall>
-            <SystemIdentifier id="wall1p" sameas="wall1"/>
+            <SystemIdentifier id="wall1p" pre_retrofit_id="wall1"/>
             <Insulation>
-              <SystemIdentifier id="wall1insp" sameas="wall1ins"/>
+              <SystemIdentifier id="wall1insp" pre_retrofit_id="wall1ins"/>
               <Layer>
                 <NominalRValue>13</NominalRValue>
               </Layer>
@@ -404,9 +404,9 @@
             </Insulation>
           </Floor>
           <Floor>
-            <SystemIdentifier id="fnd1flr1p" sameas="fnd1flr1"/>
+            <SystemIdentifier id="fnd1flr1p" pre_retrofit_id="fnd1flr1"/>
             <Insulation>
-              <SystemIdentifier id="fnd1flr1insp" sameas="fnd1flr1ins"/>
+              <SystemIdentifier id="fnd1flr1insp" pre_retrofit_id="fnd1flr1ins"/>
               <Layer>
                 <NominalRValue>0</NominalRValue>
               </Layer>
@@ -415,7 +415,7 @@
         </Floors>
         <Doors>
           <Door>
-            <SystemIdentifier id="frontdoor1p" sameas="frontdoor1"/>
+            <SystemIdentifier id="frontdoor1p" pre_retrofit_id="frontdoor1"/>
             <StormDoor>true</StormDoor>
             <RValue>2.17</RValue>
           </Door>
@@ -439,7 +439,7 @@
               <FractionHeatLoadServed>0.7</FractionHeatLoadServed>
             </HeatingSystem>
             <CoolingSystem>
-              <SystemIdentifier id="clgsys1p" sameas="clgsys1"/>
+              <SystemIdentifier id="clgsys1p" pre_retrofit_id="clgsys1"/>
               <CoolingSystemType>central air conditioner</CoolingSystemType>
               <CoolingSystemFuel>electricity</CoolingSystemFuel>
               <CoolingCapacity>24000</CoolingCapacity>
@@ -450,7 +450,7 @@
               </AnnualCoolingEfficiency>
             </CoolingSystem>
             <HeatPump>
-              <SystemIdentifier id="heatpump1p" sameas="heatpump1"/>
+              <SystemIdentifier id="heatpump1p" pre_retrofit_id="heatpump1"/>
               <HeatPumpType>air-to-air</HeatPumpType>
               <FractionHeatLoadServed>0.3</FractionHeatLoadServed>
               <FractionCoolLoadServed>0.3</FractionCoolLoadServed>
@@ -465,11 +465,11 @@
             </HeatPump>
           </HVACPlant>
           <HVACControl>
-            <SystemIdentifier id="thermostat1p" sameas="thermostat1"/>
+            <SystemIdentifier id="thermostat1p" pre_retrofit_id="thermostat1"/>
             <ControlType>programmable thermostat</ControlType>
           </HVACControl>
           <HVACDistribution>
-            <SystemIdentifier id="hvacd1p" sameas="hvacd1"/>
+            <SystemIdentifier id="hvacd1p" pre_retrofit_id="hvacd1"/>
             <DistributionSystemType>
               <AirDistribution>
                 <DuctLeakageMeasurement>
@@ -479,7 +479,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
-                  <SystemIdentifier id="duct1p" sameas="duct1"/>
+                  <SystemIdentifier id="duct1p" pre_retrofit_id="duct1"/>
                   <DuctMaterial>sheet metal</DuctMaterial>
                   <DuctInsulationRValue>4</DuctInsulationRValue>
                   <DuctLocation>living space</DuctLocation>
@@ -494,13 +494,13 @@
         </HVAC>
         <CombustionVentilation>
           <CombustionVentilationSystem>
-            <SystemIdentifier id="combvent1p" sameas="combvent1"/>
+            <SystemIdentifier id="combvent1p" pre_retrofit_id="combvent1"/>
             <VentSystemType>atmospheric</VentSystemType>
           </CombustionVentilationSystem>
         </CombustionVentilation>
         <WaterHeating>
           <WaterHeatingSystem>
-            <SystemIdentifier id="dhw1p" sameas="dhw1"/>
+            <SystemIdentifier id="dhw1p" pre_retrofit_id="dhw1"/>
             <FuelType>natural gas</FuelType>
             <WaterHeaterType>storage water heater</WaterHeaterType>
             <Location>living space</Location>
@@ -510,18 +510,18 @@
       </Systems>
       <Appliances>
         <ClothesWasher>
-          <SystemIdentifier id="clotheswasher1p" sameas="clotheswasher1"/>
+          <SystemIdentifier id="clotheswasher1p" pre_retrofit_id="clotheswasher1"/>
           <Type>top loader</Type>
         </ClothesWasher>
         <Refrigerator>
-          <SystemIdentifier id="refrig1p" sameas="refrig1"/>
+          <SystemIdentifier id="refrig1p" pre_retrofit_id="refrig1"/>
           <Type>side-by-side</Type>
           <PrimaryIndicator>true</PrimaryIndicator>
         </Refrigerator>
       </Appliances>
       <Lighting>
         <LightingGroup>
-          <SystemIdentifier id="lights1p" sameas="lights1"/>
+          <SystemIdentifier id="lights1p" pre_retrofit_id="lights1"/>
           <Count>20</Count>
           <LightingType>
             <Incandescent/>
@@ -533,7 +533,7 @@
       <HealthAndSafety>
         <Ventilation>
           <OtherVentilationIssues>
-            <SystemIdentifier id="ventissuesp" sameas="ventissues"/>
+            <SystemIdentifier id="ventissuesp" pre_retrofit_id="ventissues"/>
             <ClothesDryerVented>
               <Yes/>
             </ClothesDryerVented>
@@ -541,7 +541,7 @@
         </Ventilation>
         <MoistureControl>
           <MoistureControlInfo>
-            <SystemIdentifier id="moistctl1p" sameas="moistctl1"/>
+            <SystemIdentifier id="moistctl1p" pre_retrofit_id="moistctl1"/>
           </MoistureControlInfo>
           <MoistureControlImprovement>
             <VaporRetardersInstalled>false</VaporRetardersInstalled>
@@ -551,7 +551,7 @@
           <!-- Seems odd to have all these on the proposed workscope. -->
           <MaxAmbientCOinLivingSpaceDuringAudit>2</MaxAmbientCOinLivingSpaceDuringAudit>
           <CombustionApplianceZone>
-            <SystemIdentifier id="cazzone1p" sameas="cazzone1"/>
+            <SystemIdentifier id="cazzone1p" pre_retrofit_id="cazzone1"/>
             <CAZDepressurizationLimit>1</CAZDepressurizationLimit>
             <PoorCaseTest>
               <Pressure>50</Pressure>
