@@ -31,7 +31,7 @@
             <Enclosure>
                 <Walls>
                     <Wall>
-                        <SystemIdentifier id="wall1post" sameas="wall1"/>
+                        <SystemIdentifier id="wall1post" pre_retrofit_id="wall1"/>
                     </Wall>
                 </Walls>
             </Enclosure>
