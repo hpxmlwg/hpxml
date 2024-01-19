@@ -76,7 +76,7 @@
 		</xs:attribute>
 		<xs:attribute name="pre_retrofit_id" type="xs:IDREF">
 			<xs:annotation>
-				<xs:documentation>Use to reference the id of the same object on the base (pre-retrofit) building where the object has not been replaced.</xs:documentation>
+				<xs:documentation>Use to reference the id of the matching object on the base (pre-retrofit) building where the object has not been replaced.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="duplicate_id" type="xs:IDREF">
