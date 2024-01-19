@@ -6,12 +6,12 @@ A number of tool and resources exist to help software developers, programs, and 
 HPXML Website
 *************
 
-The Home Performance Coalition hosts a website that has information, tools, and resources on HPXML and its business cases. The website is: https://www.hpxmlonline.com.
+The Building Performance Association hosts a website that has information, tools, and resources on HPXML and its business cases. The website is: https://www.hpxmlonline.com.
 
 HPXML Implementation Guide 
 **************************
 
-The `HPXML Implementation Guide <http://hpxml-guide.rtfd.org>`_ provides detailed information to programs and software developers on how to implement HPXML.  
+The `HPXML Implementation Guide <http://hpxml-guide.rtfd.org>`_ (this document) provides detailed information to programs and software developers on how to implement HPXML.  
 
 HPXML Data Selection Tool
 *************************
@@ -28,7 +28,7 @@ There is also a data dictionary for HPXML included in the Toolbox that documents
 HEScore Translator
 ******************
 
-The Home Energy Score Translator generates HEScore inputs from HPXML files. The translator is incorporated into the HEScore API. By using this translator, software developers can leverage their investment in HPXML to provide HESCORE functionality with minimum development cost. 
+The Home Energy Score Translator generates HEScore inputs from HPXML files. The translator is `incorporated into the HEScore API <https://hes-documentation.labworks.org/home/api-definitions/api-methods/submit_hpxml_inputs>`_. By using this translator, software developers can leverage their investment in HPXML to provide HEScore functionality with minimum development cost. 
 
 Home Upgrade Program Accelerator 
 ********************************

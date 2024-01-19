@@ -2,7 +2,8 @@
 HPXML Implementation Guide
 ##########################
 
-.. todolist::
+.. warning::
+    We have made efforts to update this incrementally as new versions are released, but some of the information in this guide may be out of date with the latest HPXML standard. 
 
 .. only:: html
 
