@@ -41,6 +41,18 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HPXMLDoubleGreaterThanZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLDoubleGreaterThanZero">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLDoubleGreaterThanZero_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:complexType name="HPXMLDecimal">
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
