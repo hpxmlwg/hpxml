@@ -95,7 +95,7 @@
 		</xs:attribute>
 		<xs:attribute name="duplicate_id" type="xs:IDREF">
 			<xs:annotation>
-				<xs:documentation>Use to reference the id of the same object on another multifamily unit (e.g., a single central boiler described in multiple multifamily units).</xs:documentation>
+				<xs:documentation>Use to reference the id of the same object on another multifamily unit (e.g., a single central boiler or common wall described in multiple multifamily units).</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="dataSource" type="DataSource"/>
