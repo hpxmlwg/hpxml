@@ -2142,16 +2142,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="MeasuredDuctLeakage_simple">
-		<xs:restriction base="xs:double"/>
-	</xs:simpleType>
-	<xs:complexType name="MeasuredDuctLeakage">
-		<xs:simpleContent>
-			<xs:extension base="MeasuredDuctLeakage_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<!--HVAC System Below-->
 	<xs:simpleType name="AirHandlerStaticPressureMeasurementLocation_simple">
 		<xs:restriction base="xs:string">
@@ -3372,6 +3362,19 @@
 	<xs:complexType name="JobRole">
 		<xs:simpleContent>
 			<xs:extension base="JobRole_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="SensibleHeatFraction_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0.5"/>
+			<xs:maxInclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SensibleHeatFraction">
+		<xs:simpleContent>
+			<xs:extension base="SensibleHeatFraction_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
