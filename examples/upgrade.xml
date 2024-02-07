@@ -510,7 +510,7 @@
             <EnergyFactor>1</EnergyFactor>
             <RecoveryEfficiency>1</RecoveryEfficiency>
             <WaterHeaterImprovement>
-              <PipeInsulated/>
+              <PipeInsulated>true</PipeInsulated>
             </WaterHeaterImprovement>
           </WaterHeatingSystem>
         </WaterHeating>

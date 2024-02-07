@@ -5804,7 +5804,7 @@
 			<xs:element name="JacketInstalledIndicator" type="HPXMLBoolean" minOccurs="0"/>
 			<xs:element name="DispositionofExistingSystem" type="DispositionofExistingSystem" minOccurs="0"/>
 			<xs:element name="RepairsDescription" type="HPXMLString" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="PipeInsulated" type="PipeInsulated" minOccurs="0"/>
+			<xs:element name="PipeInsulated" type="HPXMLBoolean" minOccurs="0"/>
 			<xs:element name="LengthofPipeInsulated" type="LengthMeasurement" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[ft]</xs:documentation>
