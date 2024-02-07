@@ -2142,7 +2142,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-  <xs:simpleType name="MeasuredDuctLeakage_simple">
+	<xs:simpleType name="MeasuredDuctLeakage_simple">
 		<xs:restriction base="xs:double">
 			<xs:minInclusive value="0"/>
 		</xs:restriction>
