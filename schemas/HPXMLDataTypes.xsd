@@ -4527,6 +4527,22 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="EVChargerLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="garage"/>
+			<xs:enumeration value="garage - conditioned"/>
+			<xs:enumeration value="garage - unconditioned"/>
+			<xs:enumeration value="outside"/>
+			<xs:enumeration value="unconditioned space"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="EVChargerLocation">
+		<xs:simpleContent>
+			<xs:extension base="EVChargerLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="DiameterDimension_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="inner"/>
