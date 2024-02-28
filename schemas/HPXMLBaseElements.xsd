@@ -5836,6 +5836,7 @@
 						<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 						<xs:element name="Address" type="AddressInformation" minOccurs="0"/>
 						<xs:element minOccurs="0" name="GeoLocation" type="GeoLocationInformation"/>
+						<xs:element minOccurs="0" name="Elevation" type="HPXMLDouble"/>
 						<xs:element minOccurs="0" name="SchoolDistrict" type="HPXMLString"/>
 						<xs:element minOccurs="0" name="eGridRegion" type="eGridRegions">
 							<xs:annotation>
