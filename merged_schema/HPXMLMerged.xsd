@@ -2463,6 +2463,26 @@
 								<xs:documentation>Number of similar ceiling fans.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
+						<xs:element minOccurs="0" name="LabelEnergyUse" type="HPXMLDoubleGreaterThanZero">
+							<xs:annotation>
+								<xs:documentation>[W] Energy use per the EnergyGuide label</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="LabelAnnualCost" type="HPXMLDoubleGreaterThanZero">
+							<xs:annotation>
+								<xs:documentation>[$] Estimated yearly energy cost per the EnergyGuide label</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="LabelElectricRate" type="HPXMLDoubleGreaterThanZero">
+							<xs:annotation>
+								<xs:documentation>[$/kWh] Electric rate per the EnergyGuide label</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="LabelUsage" type="HPXMLDoubleGreaterThanZero">
+							<xs:annotation>
+								<xs:documentation>[hrs/day] Hours use per day per the EnergyGuide label</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element ref="extension" minOccurs="0"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
@@ -5818,7 +5838,7 @@
 			<xs:element name="JacketInstalledIndicator" type="HPXMLBoolean" minOccurs="0"/>
 			<xs:element name="DispositionofExistingSystem" type="DispositionofExistingSystem" minOccurs="0"/>
 			<xs:element name="RepairsDescription" type="HPXMLString" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="PipeInsulated" type="PipeInsulated" minOccurs="0"/>
+			<xs:element name="PipeInsulated" type="HPXMLBoolean" minOccurs="0"/>
 			<xs:element name="LengthofPipeInsulated" type="LengthMeasurement" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[ft]</xs:documentation>
@@ -8598,16 +8618,6 @@
 	<xs:complexType name="EnergyFactor">
 		<xs:simpleContent>
 			<xs:extension base="EnergyFactor_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="PipeInsulated_simple">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-	<xs:complexType name="PipeInsulated">
-		<xs:simpleContent>
-			<xs:extension base="PipeInsulated_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
