@@ -1,4 +1,4 @@
-<HPXML xmlns="http://hpxmlonline.com/2019/10" schemaVersion="3.1">
+<HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.0">
   <XMLTransactionHeaderInformation>
     <XMLType/>
     <XMLGeneratedBy>Joe</XMLGeneratedBy>
@@ -510,7 +510,7 @@
             <EnergyFactor>1</EnergyFactor>
             <RecoveryEfficiency>1</RecoveryEfficiency>
             <WaterHeaterImprovement>
-              <PipeInsulated/>
+              <PipeInsulated>true</PipeInsulated>
             </WaterHeaterImprovement>
           </WaterHeatingSystem>
         </WaterHeating>
