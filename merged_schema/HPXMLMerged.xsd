@@ -7967,10 +7967,13 @@
 	<xs:simpleType name="InteriorShading_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="light blinds"/>
+			<xs:enumeration value="medium blinds"/>
 			<xs:enumeration value="dark blinds"/>
 			<xs:enumeration value="light shades"/>
+			<xs:enumeration value="medium shades"/>
 			<xs:enumeration value="dark shades"/>
 			<xs:enumeration value="light curtains"/>
+			<xs:enumeration value="medium curtains"/>
 			<xs:enumeration value="dark curtains"/>
 			<xs:enumeration value="none"/>
 		</xs:restriction>
