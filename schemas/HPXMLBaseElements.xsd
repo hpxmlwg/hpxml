@@ -2221,6 +2221,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="PrimaryLocation" type="VehicleLocation"/>
 									<xs:element minOccurs="0" name="MilesDrivenPerYear" type="HPXMLDoubleGreaterThanZero"/>
+									<xs:element minOccurs="0" name="HoursDrivenPerWeek" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="FuelEconomy">
 										<xs:complexType>
 											<xs:sequence>
@@ -6266,6 +6267,11 @@
 				<xs:annotation>
 					<xs:documentation>Not all the power that is used to charge the battery is available during discharge. Round trip efficiency is the ratio of the energy put
 												in to the energy retrieved from storage.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="FractionChargedAtHome" type="Fraction">
+				<xs:annotation>
+					<xs:documentation>The fraction of charging energy provided by an at-home charger.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>

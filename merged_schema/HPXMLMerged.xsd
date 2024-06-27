@@ -10174,7 +10174,8 @@
 			<xs:enumeration value="mpg"/>
 			<xs:enumeration value="mpge"/>
 			<xs:enumeration value="km/L"/>
-			<xs:enumeration value="mi/kWh"/>
+			<xs:enumeration value="mile/kWh"/>
+			<xs:enumeration value="kWh/mile"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="FuelEconomyUnits">

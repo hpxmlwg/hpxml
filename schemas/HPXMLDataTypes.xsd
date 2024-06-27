@@ -53,6 +53,18 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HPXMLDoubleGreaterThanOrEqualToZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLDoubleGreaterThanOrEqualToZero">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLDoubleGreaterThanOrEqualToZero_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:complexType name="HPXMLDecimal">
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
@@ -3765,7 +3777,8 @@
 			<xs:enumeration value="mpg"/>
 			<xs:enumeration value="mpge"/>
 			<xs:enumeration value="km/L"/>
-			<xs:enumeration value="mi/kWh"/>
+			<xs:enumeration value="mile/kWh"/>
+			<xs:enumeration value="kWh/mile"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="FuelEconomyUnits">
