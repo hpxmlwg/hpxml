@@ -5129,10 +5129,24 @@
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" name="Type" type="InteriorShading"/>
-						<xs:element minOccurs="0" name="BlindsClosedOrOpen" type="BlindsClosedOrOpen"/>
-						<xs:element minOccurs="0" name="FractionCovered" type="Fraction">
+						<xs:element minOccurs="0" name="BlindsSummerClosedOrOpen" type="BlindsClosedOrOpen">
 							<xs:annotation>
-								<xs:documentation>Use, e.g., 0.5 for a shade that is drawn halfway and 1.0 for a fully drawn shade.</xs:documentation>
+								<xs:documentation>Specifies if the blinds are open or closed during the summer.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="BlindsWinterClosedOrOpen" type="BlindsClosedOrOpen">
+							<xs:annotation>
+								<xs:documentation>Specifies if the blinds are open or closed during the winter.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="SummerFractionCovered" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Use, e.g., 0.5 for a shade that is drawn halfway and 1.0 for a fully drawn shade during the summer.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="WinterFractionCovered" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>Use, e.g., 0.5 for a shade that is drawn halfway and 1.0 for a fully drawn shade during the winter.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="SummerShadingCoefficient" type="Fraction">
