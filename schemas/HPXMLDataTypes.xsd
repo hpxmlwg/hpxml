@@ -4809,6 +4809,19 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="BlindsClosedOrOpen_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="closed"/>
+			<xs:enumeration value="open"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BlindsClosedOrOpen">
+		<xs:simpleContent>
+			<xs:extension base="BlindsClosedOrOpen_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="PerformanceClass_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="residential"/>
