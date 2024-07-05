@@ -5146,6 +5146,22 @@
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element minOccurs="0" name="InsectScreen">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Location" type="StormLocation"/>
+						<xs:element minOccurs="0" name="FractionCovered" type="Fraction">
+							<xs:annotation>
+								<xs:documentation>The fraction of the window area covered by the insect screen.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element minOccurs="0" name="Condition" type="WindowCondition"/>
+						<xs:element minOccurs="0" ref="extension"/>
+					</xs:sequence>
+					<xs:attribute name="dataSource" type="DataSource"/>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" name="StormWindow">
 				<xs:complexType>
 					<xs:sequence>
