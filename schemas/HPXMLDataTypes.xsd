@@ -3744,7 +3744,6 @@
 	<xs:simpleType name="VehicleFuelType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="gasoline"/>
-			<xs:enumeration value="electricity"/>
 			<xs:enumeration value="diesel"/>
 			<xs:enumeration value="biodiesel"/>
 			<xs:enumeration value="ethanol"/>
