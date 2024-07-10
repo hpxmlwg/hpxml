@@ -2226,8 +2226,16 @@
 									<xs:element minOccurs="0" name="Manufacturer" type="Manufacturer"/>
 									<xs:element minOccurs="0" name="Model" type="Model"/>
 									<xs:element minOccurs="0" name="ModelYear" type="Year"/>
-									<xs:element minOccurs="0" name="VehicleClass" type="VehicleClassType"/>
-									<xs:element minOccurs="0" name="VehicleWeight" type="HPXMLDoubleGreaterThanZero"/>
+									<xs:element minOccurs="0" name="VehicleClass" type="VehicleClassType">
+										<xs:annotation>
+											<xs:documentation>The class as defined by the U.S. Federal Highway Administration.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="VehicleWeight" type="HPXMLDoubleGreaterThanZero">
+										<xs:annotation>
+											<xs:documentation>[lbs] The weight of the vehicle.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Count" type="IntegerGreaterThanZero">
 										<xs:annotation>
 											<xs:documentation>Number of similar vehicles.</xs:documentation>
@@ -2265,7 +2273,11 @@
 																</xs:annotation>
 															</xs:element>
 															<xs:element minOccurs="0" name="ConnectedCharger" type="LocalReference"/>
-															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
+															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType">
+																<xs:annotation>
+																	<xs:documentation>Fuel type of the combustion engine</xs:documentation>
+																</xs:annotation>
+															</xs:element>
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
@@ -2302,7 +2314,25 @@
 									<xs:element minOccurs="0" name="PrimaryLocation" type="VehicleLocation"/>
 									<xs:element minOccurs="0" name="MilesDrivenPerYear" type="HPXMLDoubleGreaterThanZero"/>
 									<xs:element minOccurs="0" name="HoursDrivenPerWeek" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
-									<xs:element minOccurs="0" name="FuelEconomy">
+									<xs:element minOccurs="0" name="FuelEconomyCombined">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="Units" type="FuelEconomyUnits"/>
+												<xs:element minOccurs="0" name="Value" type="HPXMLDoubleGreaterThanZero"/>
+											</xs:sequence>
+											<xs:attribute name="dataSource" type="DataSource"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="FuelEconomyCity">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="Units" type="FuelEconomyUnits"/>
+												<xs:element minOccurs="0" name="Value" type="HPXMLDoubleGreaterThanZero"/>
+											</xs:sequence>
+											<xs:attribute name="dataSource" type="DataSource"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element minOccurs="0" name="FuelEconomyHighway">
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element minOccurs="0" name="Units" type="FuelEconomyUnits"/>
@@ -10164,7 +10194,6 @@
 	<xs:simpleType name="VehicleFuelType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="gasoline"/>
-			<xs:enumeration value="electricity"/>
 			<xs:enumeration value="diesel"/>
 			<xs:enumeration value="biodiesel"/>
 			<xs:enumeration value="ethanol"/>
