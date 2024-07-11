@@ -1288,14 +1288,14 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<!--Insulation Below-->
-	<xs:simpleType name="AssemblyRValue_simple">
+	<xs:simpleType name="RValueGreaterThanZero_simple">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="AssemblyRValue">
+	<xs:complexType name="RValueGreaterThanZero">
 		<xs:simpleContent>
-			<xs:extension base="AssemblyRValue_simple">
+			<xs:extension base="RValueGreaterThanZero_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
