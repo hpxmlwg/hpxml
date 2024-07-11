@@ -1300,14 +1300,14 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	<!--Insulation Below-->
-	<xs:simpleType name="AssemblyRValue_simple">
+	<xs:simpleType name="RValueGreaterThanZero_simple">
 		<xs:restriction base="xs:double">
 			<xs:minExclusive value="0"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="AssemblyRValue">
+	<xs:complexType name="RValueGreaterThanZero">
 		<xs:simpleContent>
-			<xs:extension base="AssemblyRValue_simple">
+			<xs:extension base="RValueGreaterThanZero_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2304,6 +2304,18 @@
 	<xs:complexType name="Temperature">
 		<xs:simpleContent>
 			<xs:extension base="Temperature_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="TemperatureGreaterThanZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TemperatureGreaterThanZero">
+		<xs:simpleContent>
+			<xs:extension base="TemperatureGreaterThanZero_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -5153,18 +5165,6 @@
 	<xs:complexType name="MoisureType">
 		<xs:simpleContent>
 			<xs:extension base="MoistureType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="ElevationType_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="ElevationType">
-		<xs:simpleContent>
-			<xs:extension base="ElevationType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
