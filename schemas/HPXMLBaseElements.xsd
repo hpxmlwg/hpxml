@@ -1787,7 +1787,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="MeetsACCA5QIHVACSpecification" type="HPXMLBoolean" minOccurs="0"/>
-									<xs:element name="HotWaterTemperature" type="Temperature" minOccurs="0">
+									<xs:element name="HotWaterTemperature" type="TemperatureGreaterThanZero" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[deg F]</xs:documentation>
 										</xs:annotation>
@@ -5676,12 +5676,12 @@
 			<xs:element minOccurs="0" ref="ConnectedDevice"/>
 			<xs:element minOccurs="0" ref="AttachedToZone"/>
 			<xs:element name="ControlType" type="ThermostatType" minOccurs="0"/>
-			<xs:element name="SetpointTempHeatingSeason" type="Temperature" minOccurs="0">
+			<xs:element name="SetpointTempHeatingSeason" type="TemperatureGreaterThanZero" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[deg F]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SetbackTempHeatingSeason" type="Temperature" minOccurs="0">
+			<xs:element name="SetbackTempHeatingSeason" type="TemperatureGreaterThanZero" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[deg F]</xs:documentation>
 				</xs:annotation>
@@ -5691,12 +5691,12 @@
 					<xs:documentation>[hours]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SetupTempCoolingSeason" type="Temperature" minOccurs="0">
+			<xs:element name="SetupTempCoolingSeason" type="TemperatureGreaterThanZero" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[deg F]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SetpointTempCoolingSeason" type="Temperature" minOccurs="0">
+			<xs:element name="SetpointTempCoolingSeason" type="TemperatureGreaterThanZero" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[deg F]</xs:documentation>
 				</xs:annotation>
@@ -5856,7 +5856,7 @@
 						<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 						<xs:element name="Address" type="AddressInformation" minOccurs="0"/>
 						<xs:element minOccurs="0" name="GeoLocation" type="GeoLocationInformation"/>
-						<xs:element minOccurs="0" name="Elevation" type="ElevationType">
+						<xs:element minOccurs="0" name="Elevation" type="HPXMLDouble">
 							<xs:annotation>
 								<xs:documentation>[ft]</xs:documentation>
 							</xs:annotation>

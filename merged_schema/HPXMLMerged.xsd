@@ -1801,7 +1801,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="MeetsACCA5QIHVACSpecification" type="HPXMLBoolean" minOccurs="0"/>
-									<xs:element name="HotWaterTemperature" type="Temperature" minOccurs="0">
+									<xs:element name="HotWaterTemperature" type="TemperatureGreaterThanZero" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[deg F]</xs:documentation>
 										</xs:annotation>
@@ -5690,12 +5690,12 @@
 			<xs:element minOccurs="0" ref="ConnectedDevice"/>
 			<xs:element minOccurs="0" ref="AttachedToZone"/>
 			<xs:element name="ControlType" type="ThermostatType" minOccurs="0"/>
-			<xs:element name="SetpointTempHeatingSeason" type="Temperature" minOccurs="0">
+			<xs:element name="SetpointTempHeatingSeason" type="TemperatureGreaterThanZero" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[deg F]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SetbackTempHeatingSeason" type="Temperature" minOccurs="0">
+			<xs:element name="SetbackTempHeatingSeason" type="TemperatureGreaterThanZero" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[deg F]</xs:documentation>
 				</xs:annotation>
@@ -5705,12 +5705,12 @@
 					<xs:documentation>[hours]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SetupTempCoolingSeason" type="Temperature" minOccurs="0">
+			<xs:element name="SetupTempCoolingSeason" type="TemperatureGreaterThanZero" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[deg F]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="SetpointTempCoolingSeason" type="Temperature" minOccurs="0">
+			<xs:element name="SetpointTempCoolingSeason" type="TemperatureGreaterThanZero" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>[deg F]</xs:documentation>
 				</xs:annotation>
@@ -5870,7 +5870,7 @@
 						<xs:element maxOccurs="unbounded" minOccurs="0" ref="ExternalResource"/>
 						<xs:element name="Address" type="AddressInformation" minOccurs="0"/>
 						<xs:element minOccurs="0" name="GeoLocation" type="GeoLocationInformation"/>
-						<xs:element minOccurs="0" name="Elevation" type="ElevationType">
+						<xs:element minOccurs="0" name="Elevation" type="HPXMLDouble">
 							<xs:annotation>
 								<xs:documentation>[ft]</xs:documentation>
 							</xs:annotation>
@@ -8568,6 +8568,18 @@
 	<xs:complexType name="Temperature">
 		<xs:simpleContent>
 			<xs:extension base="Temperature_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="TemperatureGreaterThanZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="TemperatureGreaterThanZero">
+		<xs:simpleContent>
+			<xs:extension base="TemperatureGreaterThanZero_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -11325,18 +11337,6 @@
 	<xs:complexType name="MoisureType">
 		<xs:simpleContent>
 			<xs:extension base="MoistureType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="ElevationType_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="ElevationType">
-		<xs:simpleContent>
-			<xs:extension base="ElevationType_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
