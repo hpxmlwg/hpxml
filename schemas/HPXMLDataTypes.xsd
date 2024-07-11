@@ -5065,16 +5065,4 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="ElevationType_simple">
-		<xs:restriction base="xs:double">
-			<xs:minInclusive value="0"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="ElevationType">
-		<xs:simpleContent>
-			<xs:extension base="ElevationType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 </xs:schema>
