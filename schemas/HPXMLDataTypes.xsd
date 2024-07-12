@@ -3735,6 +3735,19 @@
 			<xs:extension base="VehicleType_simple"/>
 		</xs:simpleContent>
 	</xs:complexType>
+		<xs:simpleType name="VehicleChargingLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Home"/>
+			<xs:enumeration value="Work"/>
+			<xs:enumeration value="Public"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="VehicleChargingLocation">
+		<xs:simpleContent>
+			<xs:extension base="VehicleChargingLocation_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="VehicleLocation_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="garage"/>

@@ -2211,7 +2211,9 @@
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" name="Manufacturer" type="Manufacturer"/>
 									<xs:element minOccurs="0" name="Model" type="Model"/>
+									<xs:element minOccurs="0" name="ModelTrim" type="Model"/>
 									<xs:element minOccurs="0" name="ModelYear" type="Year"/>
+									<xs:element minOccurs="0" name="VIN" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="VehicleClass" type="VehicleClassType">
 										<xs:annotation>
 											<xs:documentation>The class as defined by the U.S. Federal Highway Administration.</xs:documentation>
@@ -2237,12 +2239,24 @@
 													<xs:complexType>
 														<xs:sequence>
 															<xs:element minOccurs="0" name="Battery" type="VehicleBattery"/>
-															<xs:element minOccurs="0" name="FractionChargedAtHome" type="Fraction">
+															<xs:element minOccurs="0" name="FractionChargedLocation">
 																<xs:annotation>
-																	<xs:documentation>The fraction of charging energy provided by an at-home charger.</xs:documentation>
+																	<xs:documentation>The percentage of charging energy provided at a certain location.</xs:documentation>
 																</xs:annotation>
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element minOccurs="0" name="Location" type="VehicleChargingLocation"/>
+																		<xs:element minOccurs="0" name="Percentage" type="Fraction">
+																			<xs:annotation>
+																				<xs:documentation>Percentage as a fraction (50% = 0.5)</xs:documentation>
+																			</xs:annotation>
+																		</xs:element>
+																	</xs:sequence>
+																	<xs:attribute name="dataSource" type="DataSource"/>
+																</xs:complexType>
 															</xs:element>
 															<xs:element minOccurs="0" name="ConnectedCharger" type="LocalReference"/>
+															<xs:element ref="extension" minOccurs="0"/>
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
@@ -2253,10 +2267,21 @@
 													<xs:complexType>
 														<xs:sequence>
 															<xs:element minOccurs="0" name="Battery" type="VehicleBattery"/>
-															<xs:element minOccurs="0" name="FractionChargedAtHome" type="Fraction">
+															<xs:element minOccurs="0" name="FractionChargedLocation">
 																<xs:annotation>
-																	<xs:documentation>The fraction of charging energy provided by an at-home charger.</xs:documentation>
+																	<xs:documentation>The percentage of charging energy provided at a certain location.</xs:documentation>
 																</xs:annotation>
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element minOccurs="0" name="Location" type="VehicleChargingLocation"/>
+																		<xs:element minOccurs="0" name="Percentage" type="Fraction">
+																			<xs:annotation>
+																				<xs:documentation>Percentage as a fraction (50% = 0.5)</xs:documentation>
+																			</xs:annotation>
+																		</xs:element>
+																	</xs:sequence>
+																	<xs:attribute name="dataSource" type="DataSource"/>
+																</xs:complexType>
 															</xs:element>
 															<xs:element minOccurs="0" name="ConnectedCharger" type="LocalReference"/>
 															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType">
@@ -2264,6 +2289,7 @@
 																	<xs:documentation>Fuel type of the combustion engine</xs:documentation>
 																</xs:annotation>
 															</xs:element>
+															<xs:element ref="extension" minOccurs="0"/>
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
@@ -2274,6 +2300,7 @@
 													<xs:complexType>
 														<xs:sequence>
 															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
+															<xs:element ref="extension" minOccurs="0"/>
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
@@ -2284,6 +2311,7 @@
 													<xs:complexType>
 														<xs:sequence>
 															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
+															<xs:element ref="extension" minOccurs="0"/>
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
@@ -2291,6 +2319,7 @@
 													<xs:complexType>
 														<xs:sequence>
 															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
+															<xs:element ref="extension" minOccurs="0"/>
 														</xs:sequence>
 													</xs:complexType>
 												</xs:element>
@@ -2298,6 +2327,7 @@
 										</xs:complexType>
 									</xs:element>
 									<xs:element minOccurs="0" name="PrimaryLocation" type="VehicleLocation"/>
+									<xs:element minOccurs="0" name="Mileage" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="MilesDrivenPerYear" type="HPXMLDoubleGreaterThanZero"/>
 									<xs:element minOccurs="0" name="HoursDrivenPerWeek" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="FuelEconomyCombined">
@@ -6307,6 +6337,16 @@
 				<xs:annotation>
 					<xs:documentation>Not all the power that is used to charge the battery is available during discharge. Round trip efficiency is the ratio of the energy put
 												in to the energy retrieved from storage.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="GridConnected" type="HPXMLBoolean">
+				<xs:annotation>
+					<xs:documentation>Has the ability to feed electricity back on to the grid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="BuildingConnected" type="HPXMLBoolean">
+				<xs:annotation>
+					<xs:documentation>Has the ability to feed electricity to the building.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
