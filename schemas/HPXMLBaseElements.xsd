@@ -1802,6 +1802,9 @@
 									<xs:element minOccurs="0" name="HasSharedCombustionVentilation" type="HPXMLBoolean"/>
 									<xs:element minOccurs="0" name="CombustionVentilationOrphaned" type="HPXMLBoolean"/>
 									<xs:element name="CombustionVentingSystem" minOccurs="0" type="LocalReference"/>
+									<xs:element minOccurs="0" name="CondensingSystem" type="HPXMLBoolean"/>
+									<xs:element minOccurs="0" name="AtmosphericBurner" type="HPXMLBoolean"/>
+									<xs:element minOccurs="0" name="PowerBurner" type="HPXMLBoolean"/>
 									<xs:element minOccurs="0" name="AutomaticVentDamper" type="HPXMLBoolean"/>
 									<xs:element minOccurs="0" name="PilotLight" type="HPXMLBoolean"/>
 									<xs:element minOccurs="0" name="IntermittentIgnitionDevice" type="HPXMLBoolean"/>
