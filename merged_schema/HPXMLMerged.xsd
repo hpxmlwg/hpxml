@@ -2147,34 +2147,7 @@
 			<xs:element minOccurs="0" name="ElectricPanels">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="ElectricPanel">
-							<xs:complexType>
-								<xs:sequence>
-									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" name="Manufacturer" type="Manufacturer"/>
-									<xs:element minOccurs="0" name="Model" type="Model"/>
-									<xs:element minOccurs="0" name="Location" type="BatteryLocation"/>
-									<xs:element minOccurs="0" name="Voltage" type="ElectricPanelVoltage"/>
-									<xs:element minOccurs="0" name="MaxCurrentRating" type="Current">
-										<xs:annotation>
-											<xs:documentation>[A]</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element minOccurs="0" name="MainOrSubPanel" type="ElectricPanelMainOrSub">
-										<xs:annotation>
-											<xs:documentation>Is this the main house panel or a sub panel?</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element maxOccurs="unbounded" minOccurs="0" name="SubPanel" type="LocalReference">
-										<xs:annotation>
-											<xs:documentation>Reference to a subpanel.</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element minOccurs="0" ref="extension"/>
-								</xs:sequence>
-								<xs:attribute name="dataSource" type="DataSource"/>
-							</xs:complexType>
-						</xs:element>
+						<xs:element maxOccurs="unbounded" name="ElectricPanel" type="ElectricPanelType"> </xs:element>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
@@ -6522,6 +6495,32 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="extension" type="extensionType"/>
+		</xs:sequence>
+		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="ElectricPanelType">
+		<xs:sequence>
+			<xs:group ref="SystemInfo"/>
+			<xs:element minOccurs="0" name="Manufacturer" type="Manufacturer"/>
+			<xs:element minOccurs="0" name="Model" type="Model"/>
+			<xs:element minOccurs="0" name="Location" type="BatteryLocation"/>
+			<xs:element minOccurs="0" name="Voltage" type="ElectricPanelVoltage"/>
+			<xs:element minOccurs="0" name="MaxCurrentRating" type="Current">
+				<xs:annotation>
+					<xs:documentation>[A]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MainOrSubPanel" type="ElectricPanelMainOrSub">
+				<xs:annotation>
+					<xs:documentation>Is this the main house panel or a sub panel?</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="SubPanel" type="ElectricPanelType">
+				<xs:annotation>
+					<xs:documentation>Description of a sub-panel.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
