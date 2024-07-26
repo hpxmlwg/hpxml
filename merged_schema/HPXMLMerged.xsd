@@ -11125,6 +11125,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="closed"/>
 			<xs:enumeration value="open"/>
+      <xs:enumeration value="half open"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="BlindsClosedOrOpen">
