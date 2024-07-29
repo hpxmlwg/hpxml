@@ -6510,11 +6510,6 @@
 					<xs:documentation>[A]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="MainOrSubPanel" type="ElectricPanelMainOrSub">
-				<xs:annotation>
-					<xs:documentation>Is this the main house panel or a sub panel?</xs:documentation>
-				</xs:annotation>
-			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="SubPanel" type="ElectricPanelType">
 				<xs:annotation>
 					<xs:documentation>Description of a sub-panel.</xs:documentation>
