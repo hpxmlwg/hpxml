@@ -7899,6 +7899,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Energy Star"/>
 			<xs:enumeration value="Energy Star Most Efficient"/>
+			<xs:enumeration value="Energy Star Cold Climate Heat Pump"/>
 			<xs:enumeration value="CEE Tier 1"/>
 			<xs:enumeration value="CEE Tier 2"/>
 			<xs:enumeration value="CEE Tier 3"/>
