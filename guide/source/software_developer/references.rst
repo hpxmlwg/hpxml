@@ -44,19 +44,19 @@ simple example of this is how a window can reference the wall to which it is att
     :language: xml
     :emphasize-lines: 19,25
 
-.. _sameas:
+.. _pre_retrofit_id:
 
-sameas
-======
+pre_retrofit_id
+===============
 
-The ``sameas`` attribute is a special IDREF that is used most predominantly in
+The ``pre_retrofit_id`` attribute is a special IDREF that is used most predominantly in
 the case of the :doc:`usecases/auditupgrade`. It serves to link components of
 buildings between the pre- and post-upgrade ``Building`` nodes. Each
 ``Building`` node is a full description of the building and measures only
 affect some of the components. For components that do not change it is useful
 to have a way to indicate that they are the same item. 
 
-.. literalinclude:: sameas.xml
+.. literalinclude:: pre_retrofit_id.xml
     :language: xml
     :emphasize-lines: 19,34
 
