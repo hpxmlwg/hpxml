@@ -474,6 +474,7 @@
 	</xs:complexType>
 	<xs:simpleType name="IECCYear_simple">
 		<xs:restriction base="xs:integer">
+			<xs:enumeration value="2024"/>
 			<xs:enumeration value="2021"/>
 			<xs:enumeration value="2018"/>
 			<xs:enumeration value="2015"/>
@@ -1704,10 +1705,13 @@
 	<xs:simpleType name="InteriorShading_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="light blinds"/>
+			<xs:enumeration value="medium blinds"/>
 			<xs:enumeration value="dark blinds"/>
 			<xs:enumeration value="light shades"/>
+			<xs:enumeration value="medium shades"/>
 			<xs:enumeration value="dark shades"/>
 			<xs:enumeration value="light curtains"/>
+			<xs:enumeration value="medium curtains"/>
 			<xs:enumeration value="dark curtains"/>
 			<xs:enumeration value="none"/>
 		</xs:restriction>
@@ -4932,6 +4936,20 @@
 	<xs:complexType name="StormLocation">
 		<xs:simpleContent>
 			<xs:extension base="StormLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="BlindsClosedOrOpen_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="closed"/>
+			<xs:enumeration value="open"/>
+			<xs:enumeration value="half open"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BlindsClosedOrOpen">
+		<xs:simpleContent>
+			<xs:extension base="BlindsClosedOrOpen_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
