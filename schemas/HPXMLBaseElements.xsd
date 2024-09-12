@@ -5222,6 +5222,7 @@
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" name="Location" type="StormLocation"/>
+						<xs:element minOccurs="0" name="ScreenMaterial" type="ScreenMaterial"/>
 						<xs:element minOccurs="0" name="SummerFractionCovered" type="Fraction">
 							<xs:annotation>
 								<xs:documentation>The fraction of the window area covered by the insect screen during the summer.</xs:documentation>
