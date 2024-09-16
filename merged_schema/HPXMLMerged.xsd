@@ -2388,7 +2388,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="PrimaryLocation" type="VehicleLocation"/>
 									<xs:element minOccurs="0" name="Mileage" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
-									<xs:element minOccurs="0" name="MilesDrivenPerYear" type="HPXMLDoubleGreaterThanZero"/>
+									<xs:element minOccurs="0" name="MilesDrivenPerYear" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="HoursDrivenPerWeek" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="FuelEconomyCombined">
 										<xs:complexType>
