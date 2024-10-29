@@ -1701,6 +1701,7 @@
 			<xs:enumeration value="light curtains"/>
 			<xs:enumeration value="medium curtains"/>
 			<xs:enumeration value="dark curtains"/>
+			<xs:enumeration value="other"/>
 			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
