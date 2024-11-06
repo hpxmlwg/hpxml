@@ -1713,6 +1713,7 @@
 			<xs:enumeration value="light curtains"/>
 			<xs:enumeration value="medium curtains"/>
 			<xs:enumeration value="dark curtains"/>
+			<xs:enumeration value="other"/>
 			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -5223,6 +5224,23 @@
 	<xs:complexType name="ElectricPanelVoltage">
 		<xs:simpleContent>
 			<xs:extension base="ElectricPanelVoltage_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ScreenMaterial_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="fiberglass"/>
+			<xs:enumeration value="aluminum"/>
+			<xs:enumeration value="polyester"/>
+			<xs:enumeration value="stainless steel"/>
+			<xs:enumeration value="bronze copper"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ScreenMaterial">
+		<xs:simpleContent>
+			<xs:extension base="ScreenMaterial_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
