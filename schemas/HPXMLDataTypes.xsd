@@ -3728,20 +3728,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="VehicleType_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="BEV"/>
-			<xs:enumeration value="PHEV"/>
-			<xs:enumeration value="HEV"/>
-			<xs:enumeration value="ICE"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="VehicleType">
-		<xs:simpleContent>
-			<xs:extension base="VehicleType_simple"/>
-		</xs:simpleContent>
-	</xs:complexType>
-		<xs:simpleType name="VehicleChargingLocation_simple">
+	<xs:simpleType name="VehicleChargingLocation_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Home"/>
 			<xs:enumeration value="Work"/>
@@ -3751,7 +3738,9 @@
 	</xs:simpleType>
 	<xs:complexType name="VehicleChargingLocation">
 		<xs:simpleContent>
-			<xs:extension base="VehicleChargingLocation_simple"/>
+			<xs:extension base="VehicleChargingLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="VehicleLocation_simple">
@@ -3769,7 +3758,9 @@
 	</xs:simpleType>
 	<xs:complexType name="VehicleLocation">
 		<xs:simpleContent>
-			<xs:extension base="VehicleLocation_simple"/>
+			<xs:extension base="VehicleLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="VehicleFuelType_simple">
@@ -3785,21 +3776,53 @@
 	</xs:simpleType>
 	<xs:complexType name="VehicleFuelType">
 		<xs:simpleContent>
-			<xs:extension base="VehicleFuelType_simple"/>
+			<xs:extension base="VehicleFuelType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="VehicleClassType_simple">
 		<xs:annotation>
 			<xs:documentation>The class as defined by the U.S. Federal Highway Administration</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:int">
-			<xs:minExclusive value="1"/>
-			<xs:maxExclusive value="13"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="motorcycle"/>
+			<xs:enumeration value="passenger car"/>
+			<xs:enumeration value="two-axle, four-tire single unit vehicle"/>
+			<xs:enumeration value="bus"/>
+			<xs:enumeration value="two-axle, six-tire, single-unit truck"/>
+			<xs:enumeration value="three-axle single-unit truck"/>
+			<xs:enumeration value="four or more axle single-unit truck"/>
+			<xs:enumeration value="four or fewer axle single-trailer truck"/>
+			<xs:enumeration value="five-axle single-trailer truck"/>
+			<xs:enumeration value="six or more axle single-trailer truck"/>
+			<xs:enumeration value="five or fewer axle multi-trailer truck"/>
+			<xs:enumeration value="six-axle multi-trailer truck"/>
+			<xs:enumeration value="seven or more axle multi-trailer truck"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="VehicleClassType">
 		<xs:simpleContent>
-			<xs:extension base="VehicleClassType_simple"/>
+			<xs:extension base="VehicleClassType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="GrossVehicleWeightRating_simple">
+		<xs:annotation>
+			<xs:documentation>The class as defined by the U.S. Federal Highway Administration</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="light duty"/>
+			<xs:enumeration value="medium duty"/>
+			<xs:enumeration value="heavy duty"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GrossVehicleWeightRating">
+		<xs:simpleContent>
+			<xs:extension base="GrossVehicleWeightRating_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="FuelEconomyUnits_simple">
@@ -3813,7 +3836,9 @@
 	</xs:simpleType>
 	<xs:complexType name="FuelEconomyUnits">
 		<xs:simpleContent>
-			<xs:extension base="FuelEconomyUnits_simple"/>
+			<xs:extension base="FuelEconomyUnits_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="Current_simple">
