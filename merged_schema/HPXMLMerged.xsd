@@ -2317,6 +2317,15 @@
 																	<xs:attribute name="dataSource" type="DataSource"/>
 																</xs:complexType>
 															</xs:element>
+															<xs:element minOccurs="0" name="BidirectionalCharging">
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element minOccurs="0" name="BidirectionalChargingEnabled" type="HPXMLBoolean"/>
+																		<xs:element minOccurs="0" name="GridConnected" type="HPXMLBoolean"/>
+																		<xs:element minOccurs="0" name="BuildingConnected" type="HPXMLBoolean"/>
+																	</xs:sequence>
+																</xs:complexType>
+															</xs:element>
 															<xs:element minOccurs="0" name="GridConnected" type="HPXMLBoolean">
 																<xs:annotation>
 																	<xs:documentation>Has the ability to feed electricity back on to the grid.</xs:documentation>
@@ -2399,7 +2408,7 @@
 										</xs:complexType>
 									</xs:element>
 									<xs:element minOccurs="0" name="PrimaryLocation" type="VehicleLocation"/>
-									<xs:element minOccurs="0" name="Mileage" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
+									<xs:element minOccurs="0" name="Mileage" type="HPXMLDoubleGreaterThanZero"/>
 									<xs:element minOccurs="0" name="MilesDrivenPerYear" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="HoursDrivenPerWeek" type="HPXMLDoubleGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="FuelEconomyCombined">
@@ -2473,6 +2482,15 @@
 										<xs:annotation>
 											<xs:documentation>[W] Power used by charger when vehicle is not charging</xs:documentation>
 										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="BidirectionalCharging">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="BidirectionalChargingEnabled" type="HPXMLBoolean"/>
+												<xs:element minOccurs="0" name="GridConnected" type="HPXMLBoolean"/>
+												<xs:element minOccurs="0" name="BuildingConnected" type="HPXMLBoolean"/>
+											</xs:sequence>
+										</xs:complexType>
 									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
@@ -6463,7 +6481,7 @@
 					<xs:documentation>[W] The amount of power the battery typically generates under non-peak conditions.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="PeakPowerOutput" type="Power" minOccurs="0">
+			<xs:element minOccurs="0" name="PeakPowerOutput" type="Power">
 				<xs:annotation>
 					<xs:documentation>[W] The peak power that the battery can generate for a short period of time.</xs:documentation>
 				</xs:annotation>
@@ -6478,6 +6496,11 @@
 				<xs:annotation>
 					<xs:documentation>Not all the power that is used to charge the battery is available during discharge. Round trip efficiency is the ratio of the energy put
 												in to the energy retrieved from storage.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="MaximumChargingPower" type="Power">
+				<xs:annotation>
+					<xs:documentation>[W] The maximum charging power that can be accepted by the vehicle battery.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="extension" type="extensionType"/>
