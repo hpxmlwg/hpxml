@@ -2317,25 +2317,7 @@
 																	<xs:attribute name="dataSource" type="DataSource"/>
 																</xs:complexType>
 															</xs:element>
-															<xs:element minOccurs="0" name="BidirectionalCharging">
-																<xs:complexType>
-																	<xs:sequence>
-																		<xs:element minOccurs="0" name="BidirectionalChargingEnabled" type="HPXMLBoolean"/>
-																		<xs:element minOccurs="0" name="GridConnected" type="HPXMLBoolean"/>
-																		<xs:element minOccurs="0" name="BuildingConnected" type="HPXMLBoolean"/>
-																	</xs:sequence>
-																</xs:complexType>
-															</xs:element>
-															<xs:element minOccurs="0" name="GridConnected" type="HPXMLBoolean">
-																<xs:annotation>
-																	<xs:documentation>Has the ability to feed electricity back on to the grid.</xs:documentation>
-																</xs:annotation>
-															</xs:element>
-															<xs:element minOccurs="0" name="BuildingConnected" type="HPXMLBoolean">
-																<xs:annotation>
-																	<xs:documentation>Has the ability to feed electricity to the building.</xs:documentation>
-																</xs:annotation>
-															</xs:element>
+															<xs:element minOccurs="0" name="BidirectionalCharging" type="BidirectionalChargingType"/>
 															<xs:element minOccurs="0" name="ConnectedCharger" type="LocalReference"/>
 															<xs:element ref="extension" minOccurs="0"/>
 														</xs:sequence>
@@ -2483,15 +2465,7 @@
 											<xs:documentation>[W] Power used by charger when vehicle is not charging</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="BidirectionalCharging">
-										<xs:complexType>
-											<xs:sequence>
-												<xs:element minOccurs="0" name="BidirectionalChargingEnabled" type="HPXMLBoolean"/>
-												<xs:element minOccurs="0" name="GridConnected" type="HPXMLBoolean"/>
-												<xs:element minOccurs="0" name="BuildingConnected" type="HPXMLBoolean"/>
-											</xs:sequence>
-										</xs:complexType>
-									</xs:element>
+									<xs:element minOccurs="0" name="BidirectionalCharging" type="BidirectionalChargingType"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -6506,6 +6480,25 @@
 			<xs:element minOccurs="0" name="extension" type="extensionType"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
+	</xs:complexType>
+	<xs:complexType name="BidirectionalChargingType">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="BidirectionalChargingCapable" type="HPXMLBoolean">
+				<xs:annotation>
+					<xs:documentation>Has the capability for bidirectional charging.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="GridConnectionStatus" type="OnOff">
+				<xs:annotation>
+					<xs:documentation>Bidirectional charging is connected to the electrical grid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" name="BuildingConnectionStatus" type="OnOff">
+				<xs:annotation>
+					<xs:documentation>Bidirectional charging is connected to the building.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="PipeDiameterType">
 		<xs:sequence>
@@ -11912,6 +11905,19 @@
 	<xs:complexType name="ScreenMaterial">
 		<xs:simpleContent>
 			<xs:extension base="ScreenMaterial_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="OnOff_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="on"/>
+			<xs:enumeration value="off"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="OnOff">
+		<xs:simpleContent>
+			<xs:extension base="OnOff_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
