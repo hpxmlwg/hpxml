@@ -1751,6 +1751,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HPWHOperatingMode" type="HPWHOperatingMode"/>
+									<xs:element minOccurs="0" name="HPWHVoltage" type="HPWHVoltage"/>
 									<xs:element minOccurs="0" name="HPWHDucting">
 										<xs:complexType>
 											<xs:sequence>
@@ -1845,6 +1846,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="HasMixingValve" type="HPXMLBoolean"/>
+									<xs:element minOccurs="0" name="MixingValueSetpoint" type="TemperatureGreaterThanZero"/>
 									<xs:element minOccurs="0" name="UsesDesuperheater" type="HPXMLBoolean">
 										<xs:annotation>
 											<xs:documentation>Indicates whether this water heater uses a desuperheater. The attached heat pump or air conditioner can be referenced in the
@@ -11456,6 +11458,22 @@
 	<xs:complexType name="HPWHOperatingMode">
 		<xs:simpleContent>
 			<xs:extension base="HPWHOperatingModeType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="HPWHVoltage_simple">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="240V"/>
+			<xs:pattern value="120V"/>
+			<xs:pattern value="120V, dedicated circuit"/>
+			<xs:pattern value="120V, shared circuit"/>
+			<xs:pattern value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPWHVoltage">
+		<xs:simpleContent>
+			<xs:extension base="HPWHVoltage_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
