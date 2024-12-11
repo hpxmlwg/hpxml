@@ -5037,6 +5037,21 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HPWHVoltage_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="240V"/>
+			<xs:enumeration value="120V"/>
+			<xs:enumeration value="120V dedicated circuit"/>
+			<xs:enumeration value="120V shared circuit"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPWHVoltage">
+		<xs:simpleContent>
+			<xs:extension base="HPWHVoltage_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="HPWHOperatingModeType_simple">
 		<xs:restriction base="xs:string">
 			<xs:pattern value="hybrid/auto"/>
