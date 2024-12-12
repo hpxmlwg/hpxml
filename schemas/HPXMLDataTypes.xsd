@@ -5195,6 +5195,22 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HPWHVoltage_simple">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="240V"/>
+			<xs:pattern value="120V"/>
+			<xs:pattern value="120V dedicated circuit"/>
+			<xs:pattern value="120V shared circuit"/>
+			<xs:pattern value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPWHVoltage">
+		<xs:simpleContent>
+			<xs:extension base="HPWHVoltage_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="SoilType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="sand"/>
