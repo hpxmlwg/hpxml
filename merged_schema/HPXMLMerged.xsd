@@ -11466,8 +11466,8 @@
 		<xs:restriction base="xs:string">
 			<xs:pattern value="240V"/>
 			<xs:pattern value="120V"/>
-			<xs:pattern value="120V, dedicated circuit"/>
-			<xs:pattern value="120V, shared circuit"/>
+			<xs:pattern value="120V dedicated circuit"/>
+			<xs:pattern value="120V shared circuit"/>
 			<xs:pattern value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
