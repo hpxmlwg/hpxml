@@ -97,12 +97,12 @@ depending on the scenario:
 
 The post-upgrade building is mostly a duplicate of the pre-upgrade building; components of the building that do not change remain the same. However, each component in the post-upgrade building needs a unique identifier that is
 different from the unique identifier in the pre-upgrade building. The
-``pre_retrofit_id`` attribute of the ``SystemIdentifier`` element is used to link
-identical elements in the pre- and post-upgrade buildings (see :ref:`pre_retrofit_id`).
+``retrofit_id`` attribute of the ``SystemIdentifier`` element is used to link
+identical elements in the pre- and post-upgrade buildings (see :ref:`retrofit_id`).
 
 Going back to the water heater example, the water heater in the post-upgrade
 building has a different ``id`` than the identical water heater in the
-pre-upgrade building, but it has a ``pre_retrofit_id`` attribute to link it back to the
+pre-upgrade building, but it has a ``retrofit_id`` attribute to link it back to the
 pre-upgrade water heater and indicate it is indeed the same equipment.
 
 .. literalinclude:: /../../examples/audit.xml
@@ -114,7 +114,7 @@ pre-upgrade water heater and indicate it is indeed the same equipment.
 .. note::
 
    When a measure changes a component between a pre- and post-upgrade building,
-   the ``SystemIdentifier/@pre_retrofit_id`` attribute is omitted because the measure
+   the ``SystemIdentifier/@retrofit_id`` attribute is omitted because the measure
    references the relationship between components.
 
 Project

@@ -226,7 +226,7 @@
       <Enclosure>
         <AirInfiltration>
           <AirInfiltrationMeasurement>
-            <SystemIdentifier id="airinfilt1proposed" pre_retrofit_id="airinfilt1"/>
+            <SystemIdentifier id="airinfilt1proposed" retrofit_id="airinfilt1"/>
             <TypeOfBlowerDoorTest>depressurization</TypeOfBlowerDoorTest>
             <HousePressure>50</HousePressure>
             <BuildingAirLeakage>
@@ -237,7 +237,7 @@
         </AirInfiltration>
         <Attics>
           <Attic>
-            <SystemIdentifier id="attic1proposed" pre_retrofit_id="attic1"/>
+            <SystemIdentifier id="attic1proposed" retrofit_id="attic1"/>
             <AtticType>
               <Attic>
                 <Vented>true</Vented>
@@ -249,11 +249,11 @@
         </Attics>
         <Roofs>
           <Roof>
-            <SystemIdentifier id="roof1proposed" pre_retrofit_id="roof1"/>
+            <SystemIdentifier id="roof1proposed" retrofit_id="roof1"/>
             <RoofType>shingles</RoofType>
             <RadiantBarrier>false</RadiantBarrier>
             <Insulation>
-              <SystemIdentifier id="attic1roofinsproposed" pre_retrofit_id="attic1roofins"/>
+              <SystemIdentifier id="attic1roofinsproposed" retrofit_id="attic1roofins"/>
               <Layer>
                 <InsulationMaterial>
                   <None/>
@@ -265,9 +265,9 @@
         </Roofs>
         <Walls>
           <Wall>
-            <SystemIdentifier id="wallsproposed" pre_retrofit_id="walls"/>
+            <SystemIdentifier id="wallsproposed" retrofit_id="walls"/>
             <Insulation>
-              <SystemIdentifier id="wallsinsproposed" pre_retrofit_id="wallsins"/>
+              <SystemIdentifier id="wallsinsproposed" retrofit_id="wallsins"/>
               <Layer>
                 <InsulationMaterial>
                   <Batt>fiberglass</Batt>
@@ -293,7 +293,7 @@
         </Floors>
         <Windows>
           <Window>
-            <SystemIdentifier id="windowsproposed" pre_retrofit_id="windows"/>
+            <SystemIdentifier id="windowsproposed" retrofit_id="windows"/>
             <Area>120</Area>
             <Count>15</Count>
             <FrameType>
@@ -307,7 +307,7 @@
         </Windows>
         <Doors>
           <Door>
-            <SystemIdentifier id="door1proposed" pre_retrofit_id="door1"/>
+            <SystemIdentifier id="door1proposed" retrofit_id="door1"/>
             <StormDoor>false</StormDoor>
             <RValue>5</RValue>
           </Door>
@@ -317,7 +317,7 @@
         <HVAC>
           <HVACPlant>
             <HeatingSystem>
-              <SystemIdentifier id="furnace1proposed" pre_retrofit_id="furnace1"/>
+              <SystemIdentifier id="furnace1proposed" retrofit_id="furnace1"/>
               <HeatingSystemType>
                 <Furnace/>
               </HeatingSystemType>
@@ -329,7 +329,7 @@
               <FractionHeatLoadServed>1</FractionHeatLoadServed>
             </HeatingSystem>
             <CoolingSystem>
-              <SystemIdentifier id="clgsys1proposed" pre_retrofit_id="clgsys1"/>
+              <SystemIdentifier id="clgsys1proposed" retrofit_id="clgsys1"/>
               <CoolingSystemType>central air conditioner</CoolingSystemType>
               <CoolingSystemFuel>electricity</CoolingSystemFuel>
               <CoolingCapacity>36000</CoolingCapacity>
@@ -341,12 +341,12 @@
             </CoolingSystem>
           </HVACPlant>
           <HVACControl>
-            <SystemIdentifier id="hvacctrl1proposed" pre_retrofit_id="hvacctrl1"/>
+            <SystemIdentifier id="hvacctrl1proposed" retrofit_id="hvacctrl1"/>
             <ControlType>manual thermostat</ControlType>
             <HVACSystemsServed idref="clgsys1"/>
           </HVACControl>
           <HVACDistribution>
-            <SystemIdentifier id="hvacdist1proposed" pre_retrofit_id="hvacdist1"/>
+            <SystemIdentifier id="hvacdist1proposed" retrofit_id="hvacdist1"/>
             <DistributionSystemType>
               <AirDistribution>
                 <DuctLeakageMeasurement>
@@ -356,7 +356,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
-                  <SystemIdentifier id="hvacduct1proposed" pre_retrofit_id="hvacduct1"/>
+                  <SystemIdentifier id="hvacduct1proposed" retrofit_id="hvacduct1"/>
                   <DuctInsulationRValue>0</DuctInsulationRValue>
                 </Ducts>
               </AirDistribution>
@@ -368,7 +368,7 @@
         </HVAC>
         <WaterHeating>
           <WaterHeatingSystem>
-            <SystemIdentifier id="waterheater1proposed" pre_retrofit_id="waterheater1"/>
+            <SystemIdentifier id="waterheater1proposed" retrofit_id="waterheater1"/>
             <FuelType>natural gas</FuelType>
             <WaterHeaterType>storage water heater</WaterHeaterType>
             <TankVolume>50</TankVolume>
@@ -382,7 +382,7 @@
       </Systems>
       <Appliances>
         <ClothesWasher>
-          <SystemIdentifier id="clotheswasher1proposed" pre_retrofit_id="clotheswasher1"/>
+          <SystemIdentifier id="clotheswasher1proposed" retrofit_id="clotheswasher1"/>
         </ClothesWasher>
         <Refrigerator>
           <SystemIdentifier id="refrigerator1proposed"/>
@@ -391,7 +391,7 @@
       </Appliances>
       <Lighting>
         <LightingGroup>
-          <SystemIdentifier id="lights1proposed" pre_retrofit_id="lights1"/>
+          <SystemIdentifier id="lights1proposed" retrofit_id="lights1"/>
           <Count>10</Count>
           <LightingType>
             <Incandescent/>
@@ -402,7 +402,7 @@
       <HealthAndSafety>
         <CombustionAppliances>
           <CombustionApplianceZone>
-            <SystemIdentifier id="caz1proposed" pre_retrofit_id="caz1"/>
+            <SystemIdentifier id="caz1proposed" retrofit_id="caz1"/>
             <CombustionApplianceTest>
               <CAZAppliance/>
               <CarbonMonoxideTest>
@@ -425,7 +425,7 @@
       <Enclosure>
         <AirInfiltration>
           <AirInfiltrationMeasurement>
-            <SystemIdentifier id="airinfilt1completion" pre_retrofit_id="airinfilt1"/>
+            <SystemIdentifier id="airinfilt1completion" retrofit_id="airinfilt1"/>
             <TypeOfBlowerDoorTest>depressurization</TypeOfBlowerDoorTest>
             <HousePressure>50</HousePressure>
             <BuildingAirLeakage>
@@ -436,7 +436,7 @@
         </AirInfiltration>
         <Attics>
           <Attic>
-            <SystemIdentifier id="attic1completion" pre_retrofit_id="attic1"/>
+            <SystemIdentifier id="attic1completion" retrofit_id="attic1"/>
             <AtticType>
               <Attic>
                 <Vented>true</Vented>
@@ -448,11 +448,11 @@
         </Attics>
         <Roofs>
           <Roof>
-            <SystemIdentifier id="roof1completion" pre_retrofit_id="roof1"/>
+            <SystemIdentifier id="roof1completion" retrofit_id="roof1"/>
             <RoofType>shingles</RoofType>
             <RadiantBarrier>false</RadiantBarrier>
             <Insulation>
-              <SystemIdentifier id="attic1roofinscompletion" pre_retrofit_id="attic1roofins"/>
+              <SystemIdentifier id="attic1roofinscompletion" retrofit_id="attic1roofins"/>
               <Layer>
                 <InsulationMaterial>
                   <None/>
@@ -464,9 +464,9 @@
         </Roofs>
         <Walls>
           <Wall>
-            <SystemIdentifier id="wallscompletion" pre_retrofit_id="walls"/>
+            <SystemIdentifier id="wallscompletion" retrofit_id="walls"/>
             <Insulation>
-              <SystemIdentifier id="wallsinscompletion" pre_retrofit_id="wallsins"/>
+              <SystemIdentifier id="wallsinscompletion" retrofit_id="wallsins"/>
               <Layer>
                 <InsulationMaterial>
                   <Batt>fiberglass</Batt>
@@ -492,7 +492,7 @@
         </Floors>
         <Windows>
           <Window>
-            <SystemIdentifier id="windowscompletion" pre_retrofit_id="windows"/>
+            <SystemIdentifier id="windowscompletion" retrofit_id="windows"/>
             <Area>120</Area>
             <Count>15</Count>
             <FrameType>
@@ -506,7 +506,7 @@
         </Windows>
         <Doors>
           <Door>
-            <SystemIdentifier id="door1completion" pre_retrofit_id="door1"/>
+            <SystemIdentifier id="door1completion" retrofit_id="door1"/>
             <StormDoor>false</StormDoor>
             <RValue>5</RValue>
           </Door>
@@ -516,7 +516,7 @@
         <HVAC>
           <HVACPlant>
             <HeatingSystem>
-              <SystemIdentifier id="furnace1completion" pre_retrofit_id="furnace1"/>
+              <SystemIdentifier id="furnace1completion" retrofit_id="furnace1"/>
               <HeatingSystemType>
                 <Furnace/>
               </HeatingSystemType>
@@ -528,7 +528,7 @@
               <FractionHeatLoadServed>1</FractionHeatLoadServed>
             </HeatingSystem>
             <CoolingSystem>
-              <SystemIdentifier id="clgsys1completion" pre_retrofit_id="clgsys1"/>
+              <SystemIdentifier id="clgsys1completion" retrofit_id="clgsys1"/>
               <CoolingSystemType>central air conditioner</CoolingSystemType>
               <CoolingSystemFuel>electricity</CoolingSystemFuel>
               <CoolingCapacity>36000</CoolingCapacity>
@@ -540,12 +540,12 @@
             </CoolingSystem>
           </HVACPlant>
           <HVACControl>
-            <SystemIdentifier id="hvacctrl1completion" pre_retrofit_id="hvacctrl1"/>
+            <SystemIdentifier id="hvacctrl1completion" retrofit_id="hvacctrl1"/>
             <ControlType>manual thermostat</ControlType>
             <HVACSystemsServed idref="clgsys1"/>
           </HVACControl>
           <HVACDistribution>
-            <SystemIdentifier id="hvacdist1completion" pre_retrofit_id="hvacdist1"/>
+            <SystemIdentifier id="hvacdist1completion" retrofit_id="hvacdist1"/>
             <DistributionSystemType>
               <AirDistribution>
                 <DuctLeakageMeasurement>
@@ -555,7 +555,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
-                  <SystemIdentifier id="hvacduct1completion" pre_retrofit_id="hvacduct1"/>
+                  <SystemIdentifier id="hvacduct1completion" retrofit_id="hvacduct1"/>
                   <DuctInsulationRValue>0</DuctInsulationRValue>
                 </Ducts>
               </AirDistribution>
@@ -567,7 +567,7 @@
         </HVAC>
         <WaterHeating>
           <WaterHeatingSystem>
-            <SystemIdentifier id="waterheater1completion" pre_retrofit_id="waterheater1"/>
+            <SystemIdentifier id="waterheater1completion" retrofit_id="waterheater1"/>
             <FuelType>natural gas</FuelType>
             <WaterHeaterType>storage water heater</WaterHeaterType>
             <TankVolume>50</TankVolume>
@@ -581,7 +581,7 @@
       </Systems>
       <Appliances>
         <ClothesWasher>
-          <SystemIdentifier id="clotheswasher1completion" pre_retrofit_id="clotheswasher1"/>
+          <SystemIdentifier id="clotheswasher1completion" retrofit_id="clotheswasher1"/>
         </ClothesWasher>
         <Refrigerator>
           <SystemIdentifier id="refrigerator1completion"/>
@@ -590,7 +590,7 @@
       </Appliances>
       <Lighting>
         <LightingGroup>
-          <SystemIdentifier id="lights1completion" pre_retrofit_id="lights1"/>
+          <SystemIdentifier id="lights1completion" retrofit_id="lights1"/>
           <Count>10</Count>
           <LightingType>
             <Incandescent/>
@@ -601,7 +601,7 @@
       <HealthAndSafety>
         <CombustionAppliances>
           <CombustionApplianceZone>
-            <SystemIdentifier id="caz1completion" pre_retrofit_id="caz1"/>
+            <SystemIdentifier id="caz1completion" retrofit_id="caz1"/>
             <CombustionApplianceTest>
               <CAZAppliance/>
               <CarbonMonoxideTest>

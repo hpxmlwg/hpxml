@@ -318,7 +318,7 @@
       <Enclosure>
         <AirInfiltration>
           <AirInfiltrationMeasurement>
-            <SystemIdentifier id="blowerdoor1c" pre_retrofit_id="blowerdoor1"/>
+            <SystemIdentifier id="blowerdoor1c" retrofit_id="blowerdoor1"/>
             <HousePressure>50</HousePressure>
             <BuildingAirLeakage>
               <UnitofMeasure>CFM</UnitofMeasure>
@@ -328,7 +328,7 @@
         </AirInfiltration>
         <Attics>
           <Attic>
-            <SystemIdentifier id="attic1c" pre_retrofit_id="attic1"/>
+            <SystemIdentifier id="attic1c" retrofit_id="attic1"/>
             <AtticType>
               <Attic>
                 <Vented>false</Vented>
@@ -340,7 +340,7 @@
         </Attics>
         <Foundations>
           <Foundation>
-            <SystemIdentifier id="fnd1c" pre_retrofit_id="fnd1"/>
+            <SystemIdentifier id="fnd1c" retrofit_id="fnd1"/>
             <FoundationType>
               <Basement>
                 <Conditioned>false</Conditioned>
@@ -354,7 +354,7 @@
             <SystemIdentifier id="roof1c"/>
             <RoofType>shingles</RoofType>
             <Insulation>
-              <SystemIdentifier id="insul2c" pre_retrofit_id="insul2"/>
+              <SystemIdentifier id="insul2c" retrofit_id="insul2"/>
               <MisalignedInsulation>false</MisalignedInsulation>
               <Layer>
                 <InsulationMaterial>
@@ -368,9 +368,9 @@
         </Roofs>
         <Walls>
           <Wall>
-            <SystemIdentifier id="wall1c" pre_retrofit_id="wall1"/>
+            <SystemIdentifier id="wall1c" retrofit_id="wall1"/>
             <Insulation>
-              <SystemIdentifier id="wallins1c" pre_retrofit_id="wallins1"/>
+              <SystemIdentifier id="wallins1c" retrofit_id="wallins1"/>
               <MisalignedInsulation>false</MisalignedInsulation>
               <Layer>
                 <InsulationMaterial>
@@ -386,7 +386,7 @@
           <Floor>
             <SystemIdentifier id="attic-floor-1"/>
             <Insulation>
-              <SystemIdentifier id="insul1c" pre_retrofit_id="insul1"/>
+              <SystemIdentifier id="insul1c" retrofit_id="insul1"/>
               <MisalignedInsulation>false</MisalignedInsulation>
               <Layer>
                 <InsulationMaterial>
@@ -398,9 +398,9 @@
             </Insulation>
           </Floor>
           <Floor>
-            <SystemIdentifier id="fnd1cflr1c" pre_retrofit_id="fnd1flr1"/>
+            <SystemIdentifier id="fnd1cflr1c" retrofit_id="fnd1flr1"/>
             <Insulation>
-              <SystemIdentifier id="fnd1cflr1cins1c" pre_retrofit_id="fnd1flr1ins1"/>
+              <SystemIdentifier id="fnd1cflr1cins1c" retrofit_id="fnd1flr1ins1"/>
               <MisalignedInsulation>false</MisalignedInsulation>
               <Layer>
                 <InsulationMaterial>
@@ -424,7 +424,7 @@
         </Windows>
         <Doors>
           <Door>
-            <SystemIdentifier id="door1c" pre_retrofit_id="door1"/>
+            <SystemIdentifier id="door1c" retrofit_id="door1"/>
             <StormDoor>false</StormDoor>
             <RValue>2.0</RValue>
           </Door>
@@ -454,7 +454,7 @@
               <FractionHeatLoadServed>0.7</FractionHeatLoadServed>
             </HeatingSystem>
             <CoolingSystem>
-              <SystemIdentifier id="clgsys1c" pre_retrofit_id="clgsys1"/>
+              <SystemIdentifier id="clgsys1c" retrofit_id="clgsys1"/>
               <ThirdPartyCertification>CEE Tier 1</ThirdPartyCertification>
               <CoolingSystemType>central air conditioner</CoolingSystemType>
               <CoolingSystemFuel>anthracite coal</CoolingSystemFuel>
@@ -467,11 +467,11 @@
             </CoolingSystem>
           </HVACPlant>
           <HVACControl>
-            <SystemIdentifier id="thermostat1c" pre_retrofit_id="thermostat1"/>
+            <SystemIdentifier id="thermostat1c" retrofit_id="thermostat1"/>
             <ControlType>EMCS</ControlType>
           </HVACControl>
           <HVACDistribution>
-            <SystemIdentifier id="hvacd1c" pre_retrofit_id="hvacd1"/>
+            <SystemIdentifier id="hvacd1c" retrofit_id="hvacd1"/>
             <DistributionSystemType>
               <AirDistribution>
                 <DuctLeakageMeasurement>
@@ -481,7 +481,7 @@
                   </DuctLeakage>
                 </DuctLeakageMeasurement>
                 <Ducts>
-                  <SystemIdentifier id="duct1c" pre_retrofit_id="duct1"/>
+                  <SystemIdentifier id="duct1c" retrofit_id="duct1"/>
                   <DuctMaterial>duct board</DuctMaterial>
                   <DuctInsulationRValue>2</DuctInsulationRValue>
                   <DuctLocation>living space</DuctLocation>
@@ -496,13 +496,13 @@
         </HVAC>
         <CombustionVentilation>
           <CombustionVentilationSystem>
-            <SystemIdentifier id="combvent1c" pre_retrofit_id="combvent1"/>
+            <SystemIdentifier id="combvent1c" retrofit_id="combvent1"/>
             <VentSystemType>atmospheric</VentSystemType>
           </CombustionVentilationSystem>
         </CombustionVentilation>
         <WaterHeating>
           <WaterHeatingSystem>
-            <SystemIdentifier id="dhw1c" pre_retrofit_id="dhw1"/>
+            <SystemIdentifier id="dhw1c" retrofit_id="dhw1"/>
             <FuelType>anthracite coal</FuelType>
             <WaterHeaterType>dedicated boiler with storage tank</WaterHeaterType>
             <Location>living space</Location>
@@ -516,14 +516,14 @@
         </WaterHeating>
         <SolarThermal>
           <SolarThermalSystem>
-            <SystemIdentifier id="solarthermal1c" pre_retrofit_id="solarthermal1"/>
+            <SystemIdentifier id="solarthermal1c" retrofit_id="solarthermal1"/>
             <SystemType>hot water</SystemType>
           </SolarThermalSystem>
         </SolarThermal>
       </Systems>
       <Appliances>
         <ClothesWasher>
-          <SystemIdentifier id="clotheswasher1c" pre_retrofit_id="clotheswasher1"/>
+          <SystemIdentifier id="clotheswasher1c" retrofit_id="clotheswasher1"/>
           <ThirdPartyCertification>Energy Star</ThirdPartyCertification>
           <Type>all-in-one combination washer/dryer</Type>
         </ClothesWasher>
@@ -532,7 +532,7 @@
           <ThirdPartyCertification>CEE Tier 1</ThirdPartyCertification>
         </Dishwasher>
         <Refrigerator>
-          <SystemIdentifier id="refrig1c" pre_retrofit_id="refrig1"/>
+          <SystemIdentifier id="refrig1c" retrofit_id="refrig1"/>
           <ThirdPartyCertification>Energy Star</ThirdPartyCertification>
           <Type>bottom freezer</Type>
           <PrimaryIndicator>false</PrimaryIndicator>
@@ -542,13 +542,13 @@
           <ThirdPartyCertification>CEE Tier 1</ThirdPartyCertification>
         </Freezer>
         <Dehumidifier>
-          <SystemIdentifier id="dehumidifier1c" pre_retrofit_id="dehumidifier1"/>
+          <SystemIdentifier id="dehumidifier1c" retrofit_id="dehumidifier1"/>
           <ThirdPartyCertification>CEE Tier 1</ThirdPartyCertification>
         </Dehumidifier>
       </Appliances>
       <Lighting>
         <LightingGroup>
-          <SystemIdentifier id="lights1c" pre_retrofit_id="lights1"/>
+          <SystemIdentifier id="lights1c" retrofit_id="lights1"/>
           <Count>20</Count>
           <LightingType>
             <CompactFluorescent/>
@@ -561,7 +561,7 @@
       <HealthAndSafety>
         <Ventilation>
           <OtherVentilationIssues>
-            <SystemIdentifier id="ventissuesc" pre_retrofit_id="ventissues"/>
+            <SystemIdentifier id="ventissuesc" retrofit_id="ventissues"/>
             <ClothesDryerVented>
               <Yes/>
             </ClothesDryerVented>
@@ -569,7 +569,7 @@
         </Ventilation>
         <MoistureControl>
           <MoistureControlInfo>
-            <SystemIdentifier id="moistctl1c" pre_retrofit_id="moistctl1"/>
+            <SystemIdentifier id="moistctl1c" retrofit_id="moistctl1"/>
           </MoistureControlInfo>
           <MoistureControlImprovement>
             <VaporRetardersInstalled>false</VaporRetardersInstalled>
@@ -578,7 +578,7 @@
         <CombustionAppliances>
           <MaxAmbientCOinLivingSpaceDuringAudit>0.0</MaxAmbientCOinLivingSpaceDuringAudit>
           <CombustionApplianceZone>
-            <SystemIdentifier id="cazzone1c" pre_retrofit_id="cazzone1"/>
+            <SystemIdentifier id="cazzone1c" retrofit_id="cazzone1"/>
             <CAZDepressurizationLimit>0.0</CAZDepressurizationLimit>
             <PoorCaseTest>
               <Pressure>0.0</Pressure>
