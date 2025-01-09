@@ -5318,7 +5318,11 @@
 			<xs:enumeration value="whole building"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="DemandLoadsBuildingType"/>
+	<xs:complexType name="DemandLoadsBuildingType">
+		<xs:simpleContent>
+			<xs:extension base="DemandLoadsBuildingType_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="DemandLoadsDemandLoadType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="service"/>
@@ -5326,7 +5330,11 @@
 			<xs:enumeration value="branch circuit"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="DemandLoadsDemandLoadType"/>
+	<xs:complexType name="DemandLoadsDemandLoadType">
+		<xs:simpleContent>
+			<xs:extension base="DemandLoadsDemandLoadType_simple"/>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="ScreenMaterial_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="fiberglass"/>

@@ -7274,7 +7274,11 @@
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="LoadType" type="DemandLoadLoadType"/>
-			<xs:element minOccurs="0" name="PowerRating" type="HPXMLDouble"/>
+			<xs:element minOccurs="0" name="PowerRating" type="HPXMLDouble">
+				<xs:annotation>
+					<xs:documentation>[W]</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="IsNewLoad" type="HPXMLBoolean"/>
 			<xs:element minOccurs="0" name="AttachedToComponent" type="LocalReference"/>
 		</xs:sequence>
