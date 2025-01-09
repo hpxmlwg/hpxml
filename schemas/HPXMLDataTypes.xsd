@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2023/09" targetNamespace="http://hpxmlonline.com/2023/09" elementFormDefault="qualified" version="4.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2023/09"
+	targetNamespace="http://hpxmlonline.com/2023/09" elementFormDefault="qualified" version="4.0">
 	<xs:simpleType name="DataSource">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="user"/>
@@ -5269,6 +5270,63 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="BranchCircuitOccupiedSpaces_simple">
+		<xs:restriction base="xs:double">
+			<xs:enumeration value="0.5"/>
+			<xs:enumeration value="1.0"/>
+			<xs:enumeration value="2.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BranchCircuitOccupiedSpaces">
+		<xs:simpleContent>
+			<xs:extension base="BranchCircuitOccupiedSpaces_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DemandLoadLoadType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="heating"/>
+			<xs:enumeration value="cooling"/>
+			<xs:enumeration value="hot water"/>
+			<xs:enumeration value="clothes dryer"/>
+			<xs:enumeration value="dishwasher"/>
+			<xs:enumeration value="range/oven"/>
+			<xs:enumeration value="mech vent"/>
+			<xs:enumeration value="permanent spa heater"/>
+			<xs:enumeration value="permanent spa pump"/>
+			<xs:enumeration value="pool heater"/>
+			<xs:enumeration value="pool pump"/>
+			<xs:enumeration value="well pump"/>
+			<xs:enumeration value="electric vehicle charging"/>
+			<xs:enumeration value="lighting"/>
+			<xs:enumeration value="kitchen"/>
+			<xs:enumeration value="laundry"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DemandLoadLoadType">
+		<xs:simpleContent>
+			<xs:extension base="DemandLoadLoadType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="DemandLoadsBuildingType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="dwelling unit"/>
+			<xs:enumeration value="whole building"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DemandLoadsBuildingType"/>
+	<xs:simpleType name="DemandLoadsDemandLoadType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="service"/>
+			<xs:enumeration value="feeder"/>
+			<xs:enumeration value="branch circuit"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="DemandLoadsDemandLoadType"/>
 	<xs:simpleType name="ScreenMaterial_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="fiberglass"/>
