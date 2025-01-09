@@ -54,19 +54,15 @@ Adopting these best practices will assist in establishing a streamlined data sel
 HPXML Data Selection Tool
 *************************
 
-To assist program administrators in reviewing the standard datasets that are being implemented by other programs, a data selection tool is available to help identify the required data points. The tool also helps programs select and communicate the requirements for the program to contractors, trade allies, and other stakeholders. The HPXML Data Selection Tool is a "living document" so if a program identifies data points that are not in the datasets, the HPXML working group can assist in adding them to the tool to meet the program’s needs.
+.. warning::
+
+    The data selection tool spreadsheet no longer represents the latest HPXML version. Some of information may still be relevant, so it is here for reference for those interested.
+
+To assist program administrators in reviewing the standard datasets that are being implemented by other programs, a data selection tool is available to help identify the required data points. The tool also helps programs select and communicate the requirements for the program to contractors, trade allies, and other stakeholders. The HPXML Data Selection Tool is a "living document" so if a program identifies data points that are not in the datasets, the HPXML working group can assist in adding them to the tool to meet the program's needs.
 
    * Download: :download:`HPXML Data Selection Tool <hpxml_data_selection_tool.xlsx>`
 
-The attached instructional video provides a walkthrough of the HPXML data selection tool. By using the tool, programs can quickly select the data required for HPXML program implementation. Programs can then forward the tool to the implementation team, trade allies and software providers, giving them clear guidance on the requirements for HPXML Implementation with your program.
-
-.. raw:: html
-
-    <iframe width="640" height="360" src="https://www.youtube.com/embed/vmfU1ytzMfc" frameborder="0" allowfullscreen></iframe>
-
-.. raw:: latex
-
-    \par\href{https://youtu.be/vmfU1ytzMfc}{YouTube: HPXML Data Selection Tool Tutorial}\par
+By using the tool, programs can quickly select the data required for HPXML program implementation. Programs can then forward the tool to the implementation team, trade allies and software providers, giving them clear guidance on the requirements for HPXML Implementation with your program.
 
 Additional details about the data structure and standard datasets are provided in the sections below.
 

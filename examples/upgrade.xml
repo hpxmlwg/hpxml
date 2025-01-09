@@ -1,4 +1,4 @@
-<HPXML xmlns="http://hpxmlonline.com/2019/10" schemaVersion="3.1">
+<HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.0">
   <XMLTransactionHeaderInformation>
     <XMLType/>
     <XMLGeneratedBy>Joe</XMLGeneratedBy>
@@ -169,12 +169,12 @@
           <Door>
             <SystemIdentifier id="door1"/>
             <StormDoor>false</StormDoor>
-            <RValue>0.0</RValue>
+            <RValue>2.0</RValue>
           </Door>
           <Door>
             <SystemIdentifier id="door2"/>
             <StormDoor>false</StormDoor>
-            <RValue>0.0</RValue>
+            <RValue>2.0</RValue>
           </Door>
         </Doors>
       </Enclosure>
@@ -426,12 +426,12 @@
           <Door>
             <SystemIdentifier id="door1c" pre_retrofit_id="door1"/>
             <StormDoor>false</StormDoor>
-            <RValue>0.0</RValue>
+            <RValue>2.0</RValue>
           </Door>
           <Door>
             <SystemIdentifier id="door2c"/>
             <StormDoor>false</StormDoor>
-            <RValue>0.0</RValue>
+            <RValue>2.0</RValue>
           </Door>
         </Doors>
       </Enclosure>
@@ -510,7 +510,7 @@
             <EnergyFactor>1</EnergyFactor>
             <RecoveryEfficiency>1</RecoveryEfficiency>
             <WaterHeaterImprovement>
-              <PipeInsulated/>
+              <PipeInsulated>true</PipeInsulated>
             </WaterHeaterImprovement>
           </WaterHeatingSystem>
         </WaterHeating>
