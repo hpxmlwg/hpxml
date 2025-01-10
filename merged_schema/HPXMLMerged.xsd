@@ -12005,7 +12005,9 @@
 	</xs:simpleType>
 	<xs:complexType name="DemandLoadsBuildingType">
 		<xs:simpleContent>
-			<xs:extension base="DemandLoadsBuildingType_simple"/>
+			<xs:extension base="DemandLoadsBuildingType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="DemandLoadsDemandLoadType_simple">
@@ -12017,7 +12019,9 @@
 	</xs:simpleType>
 	<xs:complexType name="DemandLoadsDemandLoadType">
 		<xs:simpleContent>
-			<xs:extension base="DemandLoadsDemandLoadType_simple"/>
+			<xs:extension base="DemandLoadsDemandLoadType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:simpleType name="ScreenMaterial_simple">
