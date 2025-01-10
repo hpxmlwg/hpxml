@@ -1454,9 +1454,9 @@
 												<xs:element name="AirDistribution" type="AirDistributionInfo"/>
 												<xs:element name="HydronicDistribution" type="HydronicDistributionInfo"/>
 												<xs:element name="Other" type="HPXMLString">
-												<xs:annotation>
-												<xs:documentation>describe</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>describe</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 											</xs:choice>
 											<xs:attribute name="dataSource" type="DataSource"/>
@@ -1520,60 +1520,60 @@
 												<xs:element minOccurs="0" name="Manufacturer" type="HPXMLString"/>
 												<xs:element minOccurs="0" name="SerialNumber" type="HPXMLString"/>
 												<xs:element minOccurs="0" name="Count" type="IntegerGreaterThanZero">
-												<xs:annotation>
-												<xs:documentation>Number of similar ventilation fans (e.g., bath fans).</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>Number of similar ventilation fans (e.g., bath fans).</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="FanType" type="VentilationFanType"/>
 												<xs:element minOccurs="0" name="CFISControls">
-												<xs:annotation>
-												<xs:documentation>Relevant when FanType="central fan integrated supply".</xs:documentation>
-												</xs:annotation>
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="HasOutdoorAirControl" type="HPXMLBoolean">
-												<xs:annotation>
-												<xs:documentation>Has controls to block the flow of outside air when the CFIS system is not ventilating. For example, an electronically-controlled mechanical damper, or an in-line fan that substantially blocks the flow when not running.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="AdditionalRuntimeOperatingMode" type="AdditionalRuntimeOperatingMode">
-												<xs:annotation>
-												<xs:documentation>Describes if/how the CFIS system provides additional ventilation beyond when the HVAC system is running to meet a given ventilation target.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element name="SupplementalFan" type="LocalReference" minOccurs="0" maxOccurs="1">
-												<xs:annotation>
-												<xs:documentation>When AdditionalRuntimeOperatingMode="supplemental fan", specifies the VentilationFan that serves as that supplemental fan.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												</xs:complexType>
+													<xs:annotation>
+														<xs:documentation>Relevant when FanType="central fan integrated supply".</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="HasOutdoorAirControl" type="HPXMLBoolean">
+																<xs:annotation>
+																	<xs:documentation>Has controls to block the flow of outside air when the CFIS system is not ventilating. For example, an electronically-controlled mechanical damper, or an in-line fan that substantially blocks the flow when not running.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" name="AdditionalRuntimeOperatingMode" type="AdditionalRuntimeOperatingMode">
+																<xs:annotation>
+																	<xs:documentation>Describes if/how the CFIS system provides additional ventilation beyond when the HVAC system is running to meet a given ventilation target.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element name="SupplementalFan" type="LocalReference" minOccurs="0" maxOccurs="1">
+																<xs:annotation>
+																	<xs:documentation>When AdditionalRuntimeOperatingMode="supplemental fan", specifies the VentilationFan that serves as that supplemental fan.</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" ref="extension"/>
+														</xs:sequence>
+													</xs:complexType>
 												</xs:element>
 												<xs:element minOccurs="0" name="RatedFlowRate" type="HPXMLDouble">
-												<xs:annotation>
-												<xs:documentation>[CFM] as rated by manufacturer</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[CFM] as rated by manufacturer</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="CalculatedFlowRate" type="HPXMLDouble">
-												<xs:annotation>
-												<xs:documentation>[CFM] as calculated using duct size, prescriptive approach</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[CFM] as calculated using duct size, prescriptive approach</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="TestedFlowRate" type="HPXMLDouble">
-												<xs:annotation>
-												<xs:documentation>[CFM] as tested by assessor/auditor/inspector</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[CFM] as tested by assessor/auditor/inspector</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="HoursInOperation" type="HoursPerDay">
-												<xs:annotation>
-												<xs:documentation>24 = continuous, less than 24 = intermittent</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>24 = continuous, less than 24 = intermittent</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="DeliveredVentilation" type="HPXMLDouble">
-												<xs:annotation>
-												<xs:documentation>[CFM]</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[CFM]</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="FanControlProperlyLabeled" type="BooleanWithNA"/>
 												<xs:element minOccurs="0" name="ProperlyVented" type="BooleanWithNA"/>
@@ -1583,70 +1583,70 @@
 												<xs:element minOccurs="0" name="UsedForSeasonalCoolingLoadReduction" type="HPXMLBoolean"/>
 												<xs:element minOccurs="0" name="UsedForGarageVentilation" type="HPXMLBoolean"/>
 												<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
-												<xs:annotation>
-												<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="NumberofUnitsServed" type="HPXMLInteger"/>
 												<xs:element minOccurs="0" name="FractionRecirculation" type="Fraction">
-												<xs:annotation>
-												<xs:documentation>The fraction of supply air that is from recirculation.</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>The fraction of supply air that is from recirculation.</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="RatedNoise" type="HPXMLDouble">
-												<xs:annotation>
-												<xs:documentation>[sones] from manufacturer's info</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[sones] from manufacturer's info</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="TestedNoise" type="HPXMLDouble">
-												<xs:annotation>
-												<xs:documentation>[sones] as tested in field</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[sones] as tested in field</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="TotalRecoveryEfficiency" type="FractionExcludingZero">
-												<xs:annotation>
-												<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by electric
+													<xs:annotation>
+														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by electric
 															consumption, case heat loss or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential
 															total energy that could be recovered plus the exhaust fan energy. Values for some products can be found at the Home Ventilating Institute
 															(hvi.org).</xs:documentation>
-												</xs:annotation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="SensibleRecoveryEfficiency" type="FractionExcludingZero">
-												<xs:annotation>
-												<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by electric consumption, case heat loss or heat gain,
+													<xs:annotation>
+														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by electric consumption, case heat loss or heat gain,
 															air leakage, airflow mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test),
 															as a percent of the potential sensible energy that could be recovered plus the exhaust fan energy. Values for some products can be found at
 															the Home Ventilating Institute (hvi.org).</xs:documentation>
-												</xs:annotation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="AdjustedTotalRecoveryEfficiency" type="FractionExcludingZero">
-												<xs:annotation>
-												<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by case heat loss
+													<xs:annotation>
+														<xs:documentation>The net total energy (sensible plus latent, also called enthalpy) recovered by the supply airstream adjusted by case heat loss
 															or heat gain, air leakage and airflow mass imbalance between the two airstreams, as a percent of the potential total energy that could be
 															recovered. This value is used to predict and compare Cooling Season Performance for the HRV/ERV unit. This value should be used for energy
 															modeling when wattage for air movement is separately accounted for in the energy model. Values for some products can be found at the Home
 															Ventilating Institute (hvi.org).</xs:documentation>
-												</xs:annotation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="AdjustedSensibleRecoveryEfficiency" type="FractionExcludingZero">
-												<xs:annotation>
-												<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by case heat loss or heat gain, air leakage, airflow
+													<xs:annotation>
+														<xs:documentation>The net sensible energy recovered by the supply airstream as adjusted by case heat loss or heat gain, air leakage, airflow
 															mass imbalance between the two airstreams and the energy used for defrost (when running the Very Low Temperature Test), as a percent of the
 															potential sensible energy that could be recovered. This value should be used for energy modeling when wattage for air movement is separately
 															accounted for in the energy model. Values for some products can be found at the Home Ventilating Institute (hvi.org).</xs:documentation>
-												</xs:annotation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="FanPower" type="HPXMLDouble">
-												<xs:annotation>
-												<xs:documentation>[W]</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[W]</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification" type="VentilationFanThirdPartyCertification"/>
 												<xs:element name="AttachedToHVACDistributionSystem" type="LocalReference" minOccurs="0" maxOccurs="1">
-												<xs:annotation>
-												<xs:documentation>For central fan integrated supply mechanical ventilation, specifies the HVAC distribution system it is attached
+													<xs:annotation>
+														<xs:documentation>For central fan integrated supply mechanical ventilation, specifies the HVAC distribution system it is attached
 															to.</xs:documentation>
-												</xs:annotation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
@@ -1756,14 +1756,14 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element minOccurs="0" name="SupplyAirSource" type="AdjacentTo">
-												<xs:annotation>
-												<xs:documentation>Where the air is supplied from; not the location where the supply ducts are running through.</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>Where the air is supplied from; not the location where the supply ducts are running through.</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="ExhaustAirTermination" type="AdjacentTo">
-												<xs:annotation>
-												<xs:documentation>Where the air is exhausted to; not the location where the exhaust ducts are running through.</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>Where the air is exhausted to; not the location where the exhaust ducts are running through.</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element ref="extension" minOccurs="0"/>
 											</xs:sequence>
@@ -1797,38 +1797,38 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element minOccurs="0" name="Jacket">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="InsulationMaterial" type="InsulationMaterial"/>
-												<xs:element name="JacketRValue" type="RValue" minOccurs="0"/>
-												<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[in]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												<xs:attribute name="dataSource" type="DataSource"/>
-												</xs:complexType>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="InsulationMaterial" type="InsulationMaterial"/>
+															<xs:element name="JacketRValue" type="RValue" minOccurs="0"/>
+															<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
+																<xs:annotation>
+																	<xs:documentation>[in]</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" ref="extension"/>
+														</xs:sequence>
+														<xs:attribute name="dataSource" type="DataSource"/>
+													</xs:complexType>
 												</xs:element>
 												<xs:element minOccurs="0" name="TankWall">
-												<xs:annotation>
-												<xs:documentation>Refers to the insulation in the tank wall itself. This information is sometimes available on the water heater's name plate or
+													<xs:annotation>
+														<xs:documentation>Refers to the insulation in the tank wall itself. This information is sometimes available on the water heater's name plate or
 															the units specification sheet, or can be estimated by removing the water heater's access plate.</xs:documentation>
-												</xs:annotation>
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="InsulationMaterial" type="InsulationMaterial"/>
-												<xs:element name="TankWallRValue" type="RValue" minOccurs="0"/>
-												<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[in]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												<xs:attribute name="dataSource" type="DataSource"/>
-												</xs:complexType>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="InsulationMaterial" type="InsulationMaterial"/>
+															<xs:element name="TankWallRValue" type="RValue" minOccurs="0"/>
+															<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
+																<xs:annotation>
+																	<xs:documentation>[in]</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" ref="extension"/>
+														</xs:sequence>
+														<xs:attribute name="dataSource" type="DataSource"/>
+													</xs:complexType>
 												</xs:element>
 											</xs:sequence>
 											<xs:attribute name="dataSource" type="DataSource"/>
@@ -1907,46 +1907,46 @@
 										<xs:complexType>
 											<xs:choice>
 												<xs:element name="Standard">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="PipingLength" type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>Measured length of hot water piping from the hot water heater to the farthest hot water fixture, measured
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="PipingLength" type="LengthMeasurement">
+																<xs:annotation>
+																	<xs:documentation>Measured length of hot water piping from the hot water heater to the farthest hot water fixture, measured
 																		longitudinally from plans, assuming the hot water piping does not run diagonally, plus 10 feet of piping for each floor level,
 																		plus 5 feet of piping for unconditioned basements. [ft]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												<xs:attribute name="dataSource" type="DataSource"/>
-												</xs:complexType>
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" ref="extension"/>
+														</xs:sequence>
+														<xs:attribute name="dataSource" type="DataSource"/>
+													</xs:complexType>
 												</xs:element>
 												<xs:element name="Recirculation">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="ControlType" type="RecirculationControlType"/>
-												<xs:element minOccurs="0" name="RecirculationPipingLoopLength" type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>Hot water recirculation loop piping length including both supply and return sides of the loop, measured
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="ControlType" type="RecirculationControlType"/>
+															<xs:element minOccurs="0" name="RecirculationPipingLoopLength" type="LengthMeasurement">
+																<xs:annotation>
+																	<xs:documentation>Hot water recirculation loop piping length including both supply and return sides of the loop, measured
 																		longitudinally from plans, assuming the hot water piping does not run diagonally. [ft]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="BranchPipingLength" type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>Length of the branch hot water piping from the recirculation loop to the farthest hot water fixture from the
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" name="BranchPipingLength" type="LengthMeasurement">
+																<xs:annotation>
+																	<xs:documentation>Length of the branch hot water piping from the recirculation loop to the farthest hot water fixture from the
 																		recirculation loop, measured longitudinally from plans, assuming the branch hot water piping does not run diagonally, plus 20
 																		feet of piping for each floor level greater than one plus 10 feet of piping for unconditioned basements. [ft]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" name="PumpPower" type="Power">
-												<xs:annotation>
-												<xs:documentation>[W]</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												<xs:attribute name="dataSource" type="DataSource"/>
-												</xs:complexType>
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" name="PumpPower" type="Power">
+																<xs:annotation>
+																	<xs:documentation>[W]</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element minOccurs="0" ref="extension"/>
+														</xs:sequence>
+														<xs:attribute name="dataSource" type="DataSource"/>
+													</xs:complexType>
 												</xs:element>
 											</xs:choice>
 											<xs:attribute name="dataSource" type="DataSource"/>
@@ -1959,9 +1959,9 @@
 												<xs:element minOccurs="0" name="FacilitiesConnected" type="DrainWaterHeatRecoveryFacilitiesConnected"/>
 												<xs:element minOccurs="0" name="EqualFlow" type="HPXMLBoolean"/>
 												<xs:element minOccurs="0" name="Efficiency" type="FractionExcludingZero">
-												<xs:annotation>
-												<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>Efficiency percent expressed as a fraction from 0-1.</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
@@ -2300,92 +2300,92 @@
 										<xs:complexType>
 											<xs:choice>
 												<xs:element minOccurs="0" name="BatteryElectricVehicle">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="Battery" type="VehicleBattery"/>
-												<xs:element minOccurs="0" name="FractionChargedLocation">
-												<xs:annotation>
-												<xs:documentation>The percentage of charging energy provided at a certain location.</xs:documentation>
-												</xs:annotation>
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="Location" type="VehicleChargingLocation"/>
-												<xs:element minOccurs="0" name="Percentage" type="Fraction">
-												<xs:annotation>
-												<xs:documentation>Percentage as a fraction (50% = 0.5)</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												</xs:sequence>
-												<xs:attribute name="dataSource" type="DataSource"/>
-												</xs:complexType>
-												</xs:element>
-												<xs:element minOccurs="0" name="ConnectedCharger" type="LocalReference"/>
-												<xs:element ref="extension" minOccurs="0"/>
-												</xs:sequence>
-												</xs:complexType>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="Battery" type="VehicleBattery"/>
+															<xs:element minOccurs="0" name="FractionChargedLocation">
+																<xs:annotation>
+																	<xs:documentation>The percentage of charging energy provided at a certain location.</xs:documentation>
+																</xs:annotation>
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element minOccurs="0" name="Location" type="VehicleChargingLocation"/>
+																		<xs:element minOccurs="0" name="Percentage" type="Fraction">
+																			<xs:annotation>
+																				<xs:documentation>Percentage as a fraction (50% = 0.5)</xs:documentation>
+																			</xs:annotation>
+																		</xs:element>
+																	</xs:sequence>
+																	<xs:attribute name="dataSource" type="DataSource"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element minOccurs="0" name="ConnectedCharger" type="LocalReference"/>
+															<xs:element ref="extension" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
 												</xs:element>
 												<xs:element minOccurs="0" name="PlugInHybridElectricVehicle">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="Battery" type="VehicleBattery"/>
-												<xs:element minOccurs="0" name="FractionChargedLocation">
-												<xs:annotation>
-												<xs:documentation>The percentage of charging energy provided at a certain location.</xs:documentation>
-												</xs:annotation>
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="Location" type="VehicleChargingLocation"/>
-												<xs:element minOccurs="0" name="Percentage" type="Fraction">
-												<xs:annotation>
-												<xs:documentation>Percentage as a fraction (50% = 0.5)</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												</xs:sequence>
-												<xs:attribute name="dataSource" type="DataSource"/>
-												</xs:complexType>
-												</xs:element>
-												<xs:element minOccurs="0" name="ConnectedCharger" type="LocalReference"/>
-												<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType">
-												<xs:annotation>
-												<xs:documentation>Fuel type of the combustion engine</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element ref="extension" minOccurs="0"/>
-												</xs:sequence>
-												</xs:complexType>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="Battery" type="VehicleBattery"/>
+															<xs:element minOccurs="0" name="FractionChargedLocation">
+																<xs:annotation>
+																	<xs:documentation>The percentage of charging energy provided at a certain location.</xs:documentation>
+																</xs:annotation>
+																<xs:complexType>
+																	<xs:sequence>
+																		<xs:element minOccurs="0" name="Location" type="VehicleChargingLocation"/>
+																		<xs:element minOccurs="0" name="Percentage" type="Fraction">
+																			<xs:annotation>
+																				<xs:documentation>Percentage as a fraction (50% = 0.5)</xs:documentation>
+																			</xs:annotation>
+																		</xs:element>
+																	</xs:sequence>
+																	<xs:attribute name="dataSource" type="DataSource"/>
+																</xs:complexType>
+															</xs:element>
+															<xs:element minOccurs="0" name="ConnectedCharger" type="LocalReference"/>
+															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType">
+																<xs:annotation>
+																	<xs:documentation>Fuel type of the combustion engine</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element ref="extension" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
 												</xs:element>
 												<xs:element minOccurs="0" name="HybridElectricVehicle">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="Battery" type="VehicleBattery"/>
-												<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
-												<xs:element ref="extension" minOccurs="0"/>
-												</xs:sequence>
-												</xs:complexType>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="Battery" type="VehicleBattery"/>
+															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
+															<xs:element ref="extension" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
 												</xs:element>
 												<xs:element minOccurs="0" name="InternalCombustionEngine">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
-												<xs:element ref="extension" minOccurs="0"/>
-												</xs:sequence>
-												</xs:complexType>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
+															<xs:element ref="extension" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
 												</xs:element>
 												<xs:element minOccurs="0" name="FuelCellElectricVehicle">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
-												<xs:element ref="extension" minOccurs="0"/>
-												</xs:sequence>
-												</xs:complexType>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
+															<xs:element ref="extension" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
 												</xs:element>
 												<xs:element minOccurs="0" name="Other">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
-												<xs:element ref="extension" minOccurs="0"/>
-												</xs:sequence>
-												</xs:complexType>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element minOccurs="0" name="FuelType" type="VehicleFuelType"/>
+															<xs:element ref="extension" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
 												</xs:element>
 											</xs:choice>
 										</xs:complexType>
@@ -2876,24 +2876,24 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element minOccurs="0" name="Power" type="Power">
-												<xs:annotation>
-												<xs:documentation>[W]</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[W]</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="MotorNominalSpeed" type="Speed">
-												<xs:annotation>
-												<xs:documentation>[Rev/min] The number of revolutions of the motor shaft in a given unit of time, expressed as revolutions per minute (RPM) (ENERGY STAR, 2013).</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[Rev/min] The number of revolutions of the motor shaft in a given unit of time, expressed as revolutions per minute (RPM) (ENERGY STAR, 2013).</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="FlowRate" type="FlowRate">
-												<xs:annotation>
-												<xs:documentation>[gal/min] The volume of water flowing through the filtration system in a given time, usually measured in gallons per minute (gpm) (ANSI/APSP/ICC-15 2011).</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[gal/min] The volume of water flowing through the filtration system in a given time, usually measured in gallons per minute (gpm) (ANSI/APSP/ICC-15 2011).</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="HoursPerDay" type="HoursPerDay">
-												<xs:annotation>
-												<xs:documentation>[hours] Number of hours per day a pool pump operates at a particular speed setting.</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[hours] Number of hours per day a pool pump operates at a particular speed setting.</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
@@ -3131,81 +3131,81 @@
 										<xs:complexType>
 											<xs:sequence minOccurs="0">
 												<xs:element name="CAZAppliance" type="RemoteReference">
-												<xs:annotation>
-												<xs:documentation>The ID of the system tested</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>The ID of the system tested</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="CombustionVentingSystem" type="RemoteReference"/>
 												<xs:element name="FlueVisualCondition" type="FlueCondition" minOccurs="0"/>
 												<xs:element minOccurs="0" name="FlueConditionNotes" type="HPXMLString"/>
 												<xs:element name="OutsideTemperatureFlueDraftTest" type="Temperature" minOccurs="0">
-												<xs:annotation>
-												<xs:documentation>[deg F]</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[deg F]</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="FlueDraftTest">
-												<xs:annotation>
-												<xs:documentation>[Pa]</xs:documentation>
-												</xs:annotation>
-												<xs:complexType>
-												<xs:complexContent>
-												<xs:extension base="CAZApplianceReading">
-												<xs:sequence>
-												<xs:element ref="extension" minOccurs="0"/>
-												</xs:sequence>
-												</xs:extension>
-												</xs:complexContent>
-												</xs:complexType>
+													<xs:annotation>
+														<xs:documentation>[Pa]</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:complexContent>
+															<xs:extension base="CAZApplianceReading">
+																<xs:sequence>
+																	<xs:element ref="extension" minOccurs="0"/>
+																</xs:sequence>
+															</xs:extension>
+														</xs:complexContent>
+													</xs:complexType>
 												</xs:element>
 												<xs:element minOccurs="0" name="SpillageTest">
-												<xs:annotation>
-												<xs:documentation>[seconds]</xs:documentation>
-												</xs:annotation>
-												<xs:complexType>
-												<xs:complexContent>
-												<xs:extension base="CAZApplianceReading">
-												<xs:sequence>
-												<xs:element ref="extension" minOccurs="0"/>
-												</xs:sequence>
-												</xs:extension>
-												</xs:complexContent>
-												</xs:complexType>
+													<xs:annotation>
+														<xs:documentation>[seconds]</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:complexContent>
+															<xs:extension base="CAZApplianceReading">
+																<xs:sequence>
+																	<xs:element ref="extension" minOccurs="0"/>
+																</xs:sequence>
+															</xs:extension>
+														</xs:complexContent>
+													</xs:complexType>
 												</xs:element>
 												<xs:element minOccurs="0" name="CarbonMonoxideTest">
-												<xs:annotation>
-												<xs:documentation>[ppm]</xs:documentation>
-												</xs:annotation>
-												<xs:complexType>
-												<xs:complexContent>
-												<xs:extension base="CAZApplianceReading">
-												<xs:sequence>
-												<xs:element minOccurs="0" name="AmbientCOActionDuringCAZTesting" type="HPXMLString">
-												<xs:annotation>
-												<xs:documentation>BPI Gold Sheet is one example that shows action levels based upon decision logic</xs:documentation>
-												</xs:annotation>
-												</xs:element>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												</xs:extension>
-												</xs:complexContent>
-												</xs:complexType>
+													<xs:annotation>
+														<xs:documentation>[ppm]</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:complexContent>
+															<xs:extension base="CAZApplianceReading">
+																<xs:sequence>
+																	<xs:element minOccurs="0" name="AmbientCOActionDuringCAZTesting" type="HPXMLString">
+																		<xs:annotation>
+																			<xs:documentation>BPI Gold Sheet is one example that shows action levels based upon decision logic</xs:documentation>
+																		</xs:annotation>
+																	</xs:element>
+																	<xs:element minOccurs="0" ref="extension"/>
+																</xs:sequence>
+															</xs:extension>
+														</xs:complexContent>
+													</xs:complexType>
 												</xs:element>
 												<xs:element name="StackTemperature" type="Temperature" minOccurs="0">
-												<xs:annotation>
-												<xs:documentation>[deg F] after 10 minutes run time</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[deg F] after 10 minutes run time</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element name="FuelLeaks" minOccurs="0" maxOccurs="unbounded">
-												<xs:complexType>
-												<xs:sequence>
-												<xs:element name="FuelType" type="FuelType"/>
-												<xs:element name="LeaksIdentified" type="HPXMLBoolean"/>
-												<xs:element name="LeaksAddressed" type="HPXMLBoolean"/>
-												<xs:element minOccurs="0" name="Notes" type="HPXMLString"/>
-												<xs:element minOccurs="0" ref="extension"/>
-												</xs:sequence>
-												<xs:attribute name="dataSource" type="DataSource"/>
-												</xs:complexType>
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="FuelType" type="FuelType"/>
+															<xs:element name="LeaksIdentified" type="HPXMLBoolean"/>
+															<xs:element name="LeaksAddressed" type="HPXMLBoolean"/>
+															<xs:element minOccurs="0" name="Notes" type="HPXMLString"/>
+															<xs:element minOccurs="0" ref="extension"/>
+														</xs:sequence>
+														<xs:attribute name="dataSource" type="DataSource"/>
+													</xs:complexType>
 												</xs:element>
 												<xs:element ref="extension" minOccurs="0"/>
 											</xs:sequence>
@@ -4277,19 +4277,19 @@
 										<xs:complexType>
 											<xs:sequence>
 												<xs:element minOccurs="0" name="DistanceFromSubway" type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[ft]</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="DistanceFromBus" type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[ft]</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" name="DistanceFromTrain" type="LengthMeasurement">
-												<xs:annotation>
-												<xs:documentation>[ft]</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[ft]</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 											</xs:sequence>
 											<xs:attribute name="dataSource" type="DataSource"/>
@@ -4314,9 +4314,9 @@
 												<xs:element minOccurs="0" name="SoilType" type="SoilType"/>
 												<xs:element minOccurs="0" name="MoistureType" type="MoisureType"/>
 												<xs:element minOccurs="0" name="Conductivity" type="HPXMLDoubleGreaterThanZero">
-												<xs:annotation>
-												<xs:documentation>[Btu/hr-ft-F]</xs:documentation>
-												</xs:annotation>
+													<xs:annotation>
+														<xs:documentation>[Btu/hr-ft-F]</xs:documentation>
+													</xs:annotation>
 												</xs:element>
 												<xs:element minOccurs="0" ref="extension"/>
 											</xs:sequence>
