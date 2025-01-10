@@ -6650,7 +6650,7 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="OccupiedSpaces" type="BranchCircuitOccupiedSpaces"/>
-			<xs:element minOccurs="0" name="AttachedToComponent" type="LocalReference"/>
+			<xs:element minOccurs="0" name="AttachedToComponent" type="LocalReference" maxOccurs="unbounded"/>
 			<xs:element minOccurs="0" name="AttachedToElectricPanel" type="LocalReference">
 				<xs:annotation>
 					<xs:documentation>This references a subpanel.</xs:documentation>
@@ -6669,7 +6669,7 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="IsNewLoad" type="HPXMLBoolean"/>
-			<xs:element minOccurs="0" name="AttachedToComponent" type="LocalReference"/>
+			<xs:element minOccurs="0" name="AttachedToComponent" type="LocalReference" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
