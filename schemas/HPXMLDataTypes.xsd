@@ -5325,8 +5325,7 @@
 	</xs:complexType>
 	<xs:simpleType name="DemandLoadsDemandLoadType_simple">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="service"/>
-			<xs:enumeration value="feeder"/>
+			<xs:enumeration value="service / feeder"/>
 			<xs:enumeration value="branch circuit"/>
 		</xs:restriction>
 	</xs:simpleType>
