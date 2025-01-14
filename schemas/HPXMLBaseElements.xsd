@@ -6617,8 +6617,20 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="RatedTotalSpaces" type="IntegerGreaterThanZero"/>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="BranchCircuit" type="BranchCircuitType"/>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="DemandLoad" type="DemandLoadType"/>
+			<xs:element minOccurs="0" name="BranchCircuits">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="1" name="BranchCircuit" type="BranchCircuitType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element minOccurs="0" name="DemandLoads">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element maxOccurs="unbounded" minOccurs="1" name="DemandLoad" type="DemandLoadType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
