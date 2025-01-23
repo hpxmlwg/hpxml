@@ -6675,7 +6675,7 @@
 	<xs:complexType name="ServiceFeederType">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
-			<xs:element minOccurs="0" name="LoadType" type="DemandLoadLoadType"/>
+			<xs:element minOccurs="0" name="LoadType" type="ServiceFeederLoadType"/>
 			<xs:element minOccurs="0" name="PowerRating" type="HPXMLDouble">
 				<xs:annotation>
 					<xs:documentation>Volt-Amps [VA] or Watts [W]</xs:documentation>
