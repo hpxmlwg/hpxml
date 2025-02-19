@@ -6678,7 +6678,7 @@
 			<xs:element minOccurs="0" name="LoadType" type="ServiceFeederLoadType"/>
 			<xs:element minOccurs="0" name="PowerRating" type="HPXMLDouble">
 				<xs:annotation>
-					<xs:documentation>Volt-Amps [VA] or Watts [W]</xs:documentation>
+					<xs:documentation>[W]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="IsNewLoad" type="HPXMLBoolean">
