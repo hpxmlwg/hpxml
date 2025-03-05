@@ -5312,32 +5312,6 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="DemandLoadsBuildingType_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="dwelling unit"/>
-			<xs:enumeration value="whole building"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="DemandLoadsBuildingType">
-		<xs:simpleContent>
-			<xs:extension base="DemandLoadsBuildingType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
-	<xs:simpleType name="DemandLoadsDemandLoadType_simple">
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="service / feeder"/>
-			<xs:enumeration value="branch circuit"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:complexType name="DemandLoadsDemandLoadType">
-		<xs:simpleContent>
-			<xs:extension base="DemandLoadsDemandLoadType_simple">
-				<xs:attribute name="dataSource" type="DataSource"/>
-			</xs:extension>
-		</xs:simpleContent>
-	</xs:complexType>
 	<xs:simpleType name="ScreenMaterial_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="fiberglass"/>
