@@ -60,7 +60,7 @@ The HPXML Working Group can be a valuable resource for program administrators, i
 Versioning
 ==========
 
-The HPXML schema follows the `Semantic Versioning 2.0 specification <http://semver.org/>`_. The version numbers follow a pattern of Major, Minor, and Patch (e.g., 4.0.0). The major version number is incremented when the schemas are changed in a manner that is incompatible with previous versions. Examples of changes that require a major version change include renaming elements, removing elements, moving elements, and removing enumerations.
+The HPXML schema follows the `Semantic Versioning 2.0 specification <http://semver.org/>`_. The version numbers follow a pattern of Major, Minor, and Patch (e.g., 4.1.0). The major version number is incremented when the schemas are changed in a manner that is incompatible with previous versions. Examples of changes that require a major version change include renaming elements, removing elements, moving elements, and removing enumerations.
 
 The minor version number is incremented when the schemas are changed in a manner that is backwards compatible with previous versions that share the same major version. In other words, a document created in a previous version of the schema will also validate against the new schema. Examples of changes that require a minor version change include adding elements, adding enumerations, and changing the annotation in the schema for an element. 
 
