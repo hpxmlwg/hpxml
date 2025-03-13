@@ -6611,7 +6611,7 @@
 					<xs:documentation>[A]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="Headroom" type="IntegerGreaterThanOrEqualToZero">
+			<xs:element minOccurs="0" name="HeadroomSpaces" type="IntegerGreaterThanOrEqualToZero">
 				<xs:annotation>
 					<xs:documentation>The number of open breaker spaces.</xs:documentation>
 				</xs:annotation>
@@ -6676,7 +6676,7 @@
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="LoadType" type="ServiceFeederLoadType"/>
-			<xs:element minOccurs="0" name="PowerRating" type="HPXMLDouble">
+			<xs:element minOccurs="0" name="PowerRating" type="HPXMLDoubleGreaterThanZero">
 				<xs:annotation>
 					<xs:documentation>[W]</xs:documentation>
 				</xs:annotation>
