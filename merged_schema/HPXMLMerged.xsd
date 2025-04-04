@@ -1,4 +1,4 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2023/09" targetNamespace="http://hpxmlonline.com/2023/09" elementFormDefault="qualified" version="4.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2023/09" targetNamespace="http://hpxmlonline.com/2023/09" elementFormDefault="qualified" version="4.1">
     <xs:element name="HPXML">
         <xs:complexType>
             <xs:sequence>
@@ -6711,6 +6711,7 @@
 	<xs:simpleType name="schemaVersionType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="4.0"/>
+			<xs:enumeration value="4.1"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Address Information Below-->
