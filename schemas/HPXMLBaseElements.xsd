@@ -407,6 +407,7 @@
 					<xs:element minOccurs="0" name="Type" type="ClothesDryerType"/>
 					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
+					<xs:element name="DryingMethod" minOccurs="0" type="ClothesDryerDryingMethod"/>
 					<xs:element minOccurs="0" name="Usage" type="HPXMLDouble">
 						<xs:annotation>
 							<xs:documentation>loads/week of actual usage by the occupants</xs:documentation>
