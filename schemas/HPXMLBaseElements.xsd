@@ -4883,7 +4883,13 @@
 			<xs:element minOccurs="0" name="MeasureType">
 				<xs:complexType>
 					<xs:choice>
-						<xs:element name="InstallReplace"/>
+						<xs:element name="InstallReplace">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="extension" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
 						<xs:element name="AtticEncapsulation">
 							<xs:complexType>
 								<xs:sequence>
