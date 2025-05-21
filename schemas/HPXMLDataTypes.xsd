@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2023/09" targetNamespace="http://hpxmlonline.com/2023/09" elementFormDefault="qualified" version="4.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2023/09" targetNamespace="http://hpxmlonline.com/2023/09" elementFormDefault="qualified" version="4.1">
 	<xs:simpleType name="DataSource">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="user"/>
@@ -53,6 +53,18 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HPXMLDoubleGreaterThanOrEqualToZero_simple">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPXMLDoubleGreaterThanOrEqualToZero">
+		<xs:simpleContent>
+			<xs:extension base="HPXMLDoubleGreaterThanOrEqualToZero_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:complexType name="HPXMLDecimal">
 		<xs:simpleContent>
 			<xs:extension base="xs:decimal">
@@ -70,6 +82,7 @@
 	<xs:simpleType name="schemaVersionType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="4.0"/>
+			<xs:enumeration value="4.1"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!--Address Information Below-->
@@ -1701,6 +1714,7 @@
 			<xs:enumeration value="light curtains"/>
 			<xs:enumeration value="medium curtains"/>
 			<xs:enumeration value="dark curtains"/>
+			<xs:enumeration value="other"/>
 			<xs:enumeration value="none"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -3715,6 +3729,119 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="VehicleChargingLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Home"/>
+			<xs:enumeration value="Work"/>
+			<xs:enumeration value="Public"/>
+			<xs:enumeration value="Other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="VehicleChargingLocation">
+		<xs:simpleContent>
+			<xs:extension base="VehicleChargingLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="VehicleLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="garage"/>
+			<xs:enumeration value="garage - conditioned"/>
+			<xs:enumeration value="garage - unconditioned"/>
+			<xs:enumeration value="outside"/>
+			<xs:enumeration value="outside - private"/>
+			<xs:enumeration value="outside - public"/>
+			<xs:enumeration value="unconditioned space"/>
+			<xs:enumeration value="other heated space"/>
+			<xs:enumeration value="other non-freezing space"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="VehicleLocation">
+		<xs:simpleContent>
+			<xs:extension base="VehicleLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="VehicleFuelType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gasoline"/>
+			<xs:enumeration value="diesel"/>
+			<xs:enumeration value="biodiesel"/>
+			<xs:enumeration value="ethanol"/>
+			<xs:enumeration value="hydrogen"/>
+			<xs:enumeration value="natural gas"/>
+			<xs:enumeration value="propane"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="VehicleFuelType">
+		<xs:simpleContent>
+			<xs:extension base="VehicleFuelType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="VehicleClassType_simple">
+		<xs:annotation>
+			<xs:documentation>The class as defined by the U.S. Federal Highway Administration</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="motorcycle"/>
+			<xs:enumeration value="passenger car"/>
+			<xs:enumeration value="two-axle, four-tire single unit vehicle"/>
+			<xs:enumeration value="bus"/>
+			<xs:enumeration value="two-axle, six-tire, single-unit truck"/>
+			<xs:enumeration value="three-axle single-unit truck"/>
+			<xs:enumeration value="four or more axle single-unit truck"/>
+			<xs:enumeration value="four or fewer axle single-trailer truck"/>
+			<xs:enumeration value="five-axle single-trailer truck"/>
+			<xs:enumeration value="six or more axle single-trailer truck"/>
+			<xs:enumeration value="five or fewer axle multi-trailer truck"/>
+			<xs:enumeration value="six-axle multi-trailer truck"/>
+			<xs:enumeration value="seven or more axle multi-trailer truck"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="VehicleClassType">
+		<xs:simpleContent>
+			<xs:extension base="VehicleClassType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="GrossVehicleWeightRating_simple">
+		<xs:annotation>
+			<xs:documentation>The class as defined by the U.S. Federal Highway Administration</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="light duty"/>
+			<xs:enumeration value="medium duty"/>
+			<xs:enumeration value="heavy duty"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GrossVehicleWeightRating">
+		<xs:simpleContent>
+			<xs:extension base="GrossVehicleWeightRating_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="FuelEconomyUnits_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="mpg"/>
+			<xs:enumeration value="mpge"/>
+			<xs:enumeration value="km/L"/>
+			<xs:enumeration value="mile/kWh"/>
+			<xs:enumeration value="kWh/mile"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="FuelEconomyUnits">
+		<xs:simpleContent>
+			<xs:extension base="FuelEconomyUnits_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="Current_simple">
 		<xs:restriction base="xs:decimal">
 			<xs:minInclusive value="0"/>
@@ -4548,6 +4675,22 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="EVChargerLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="garage"/>
+			<xs:enumeration value="garage - conditioned"/>
+			<xs:enumeration value="garage - unconditioned"/>
+			<xs:enumeration value="outside"/>
+			<xs:enumeration value="unconditioned space"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="EVChargerLocation">
+		<xs:simpleContent>
+			<xs:extension base="EVChargerLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="DiameterDimension_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="inner"/>
@@ -5052,6 +5195,22 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="HPWHVoltage_simple">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="240V"/>
+			<xs:pattern value="120V"/>
+			<xs:pattern value="120V dedicated circuit"/>
+			<xs:pattern value="120V shared circuit"/>
+			<xs:pattern value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="HPWHVoltage">
+		<xs:simpleContent>
+			<xs:extension base="HPWHVoltage_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="SoilType_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="sand"/>
@@ -5106,6 +5265,67 @@
 	<xs:complexType name="ElectricPanelVoltage">
 		<xs:simpleContent>
 			<xs:extension base="ElectricPanelVoltage_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="BranchCircuitOccupiedSpaces_simple">
+		<xs:restriction base="xs:double">
+			<xs:enumeration value="0.0"/>
+			<xs:enumeration value="0.5"/>
+			<xs:enumeration value="1.0"/>
+			<xs:enumeration value="2.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="BranchCircuitOccupiedSpaces">
+		<xs:simpleContent>
+			<xs:extension base="BranchCircuitOccupiedSpaces_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ServiceFeederLoadType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="heating"/>
+			<xs:enumeration value="cooling"/>
+			<xs:enumeration value="hot water"/>
+			<xs:enumeration value="clothes dryer"/>
+			<xs:enumeration value="dishwasher"/>
+			<xs:enumeration value="range/oven"/>
+			<xs:enumeration value="refrigeration"/>
+			<xs:enumeration value="mech vent"/>
+			<xs:enumeration value="permanent spa heater"/>
+			<xs:enumeration value="permanent spa pump"/>
+			<xs:enumeration value="pool heater"/>
+			<xs:enumeration value="pool pump"/>
+			<xs:enumeration value="well pump"/>
+			<xs:enumeration value="electric vehicle charging"/>
+			<xs:enumeration value="lighting"/>
+			<xs:enumeration value="kitchen"/>
+			<xs:enumeration value="laundry"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ServiceFeederLoadType">
+		<xs:simpleContent>
+			<xs:extension base="ServiceFeederLoadType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="ScreenMaterial_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="fiberglass"/>
+			<xs:enumeration value="aluminum"/>
+			<xs:enumeration value="polyester"/>
+			<xs:enumeration value="stainless steel"/>
+			<xs:enumeration value="bronze copper"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="ScreenMaterial">
+		<xs:simpleContent>
+			<xs:extension base="ScreenMaterial_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>

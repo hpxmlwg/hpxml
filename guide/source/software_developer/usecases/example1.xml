@@ -1,4 +1,4 @@
-<HPXML xmlns="http://hpxmlonline.com/2023/09" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hpxmlonline.com/2014/6 ../schemas/HPXML.xsd" schemaVersion="4.0">
+<HPXML xmlns="http://hpxmlonline.com/2023/09" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hpxmlonline.com/2014/6 ../schemas/HPXML.xsd" schemaVersion="4.1">
   <XMLTransactionHeaderInformation>
     <XMLType/>
     <XMLGeneratedBy/>
