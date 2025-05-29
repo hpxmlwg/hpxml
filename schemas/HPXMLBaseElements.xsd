@@ -4910,9 +4910,20 @@
 						<xs:element name="HVACRedesign">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element minOccurs="0" name="DistributionTypeChange" type="HPXMLBoolean"/>
-									<xs:element minOccurs="0" name="PartialDisplacement" type="HPXMLBoolean"/>
+									<xs:element minOccurs="0" name="DistributionTypeChange" type="HPXMLBoolean">
+										<xs:annotation>
+											<xs:documentation>'true' indicates that an HVAC replacement necessitates a change to the distribution type</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="PartialDisplacement" type="HPXMLBoolean">
+										<xs:annotation>
+											<xs:documentation>'true' indicates that the measure references and installed component that partially displaces the load met by an existing component that will remain installed, but meet a smaller load</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="HotWaterIntegrated">
+										<xs:annotation>
+											<xs:documentation>In an integrated system, the HVAC system also supplies domestic hot water, a separated system does not.</xs:documentation>
+										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
 												<xs:enumeration value="separated"/>
@@ -4927,16 +4938,8 @@
 						<xs:element name="DuctImprovement">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element minOccurs="0" name="DuctInsulation" type="HPXMLBoolean">
-										<xs:annotation>
-											<xs:documentation>Add ids to the duct insulation (breaking change)?</xs:documentation>
-										</xs:annotation>
-									</xs:element>
-									<xs:element minOccurs="0" name="DuctSealing" type="HPXMLBoolean">
-										<xs:annotation>
-											<xs:documentation>Add ids to the duct sealing or leakage (breaking change)?</xs:documentation>
-										</xs:annotation>
-									</xs:element>
+									<xs:element minOccurs="0" name="DuctInsulation" type="HPXMLBoolean"/>
+									<xs:element minOccurs="0" name="DuctSealing" type="HPXMLBoolean"/>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 							</xs:complexType>
