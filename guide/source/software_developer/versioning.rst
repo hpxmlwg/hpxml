@@ -3,7 +3,7 @@ Versioning
 
 The HPXML schemas follow the `Semantic Versioning v2.0 <http://semver.org/>`_
 specification. The version numbers follow a pattern of :ref:`major-version`.
-:ref:`minor-version`. :ref:`patch-version` (i.e. 4.1.0). 
+:ref:`minor-version`. :ref:`patch-version` (i.e. 4.2.0). 
 
 The first element of ``HPXML.xsd`` will indicate the version of the schema via
 the ``version`` attribute. Note that when referencing a version, the patch
@@ -12,7 +12,7 @@ number is assumed to be zero if it is omitted.
 .. code-block:: xml
 
    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hpxmlonline.com/2023/09"
-    targetNamespace="http://hpxmlonline.com/2023/09" elementFormDefault="qualified" version="4.1"> 
+    targetNamespace="http://hpxmlonline.com/2023/09" elementFormDefault="qualified" version="4.2"> 
 
 Additionally, starting with version 2.0, the version of the schema used is
 required in the ``schemaVersion`` attribute on the root element of every
@@ -20,7 +20,7 @@ document.
 
 .. code-block:: xml
 
-   <HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.1">
+   <HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.2">
     
 .. _major-version:
 
