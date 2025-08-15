@@ -556,6 +556,7 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element minOccurs="0" name="Type" type="FreezerType"/>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="RatedAnnualkWh" type="RatedAnnualkWh" minOccurs="0"/>
 					<xs:element name="Configuration" type="FreezerStyle" minOccurs="0"/>
@@ -661,6 +662,7 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element minOccurs="0" name="Type" type="CookingRangeType"/>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IsInduction" type="HPXMLBoolean"/>
@@ -673,6 +675,7 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
+					<xs:element minOccurs="0" name="Type" type="OvenType"/>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IsConvection" type="HPXMLBoolean"/>
@@ -1322,7 +1325,7 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="WindowInfo"/>
-									<xs:element minOccurs="0" name="SolarTube" type="HPXMLBoolean"/>
+									<xs:element name="SkylightType" minOccurs="0" type="SkylightType"/>
 									<xs:element minOccurs="0" name="Pitch" type="Pitch">
 										<xs:annotation>
 											<xs:documentation>Pitch of skylight ?/12</xs:documentation>
@@ -2097,6 +2100,7 @@
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="ConnectedDevice"/>
+									<xs:element minOccurs="0" name="SystemType" type="PVSystemType"/>
 									<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
 										<xs:annotation>
 											<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
@@ -2424,6 +2428,7 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Type" type="EVChargerType"/>
 									<xs:element minOccurs="0" name="Count" type="IntegerGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="Manufacturer" type="Manufacturer"/>
 									<xs:element maxOccurs="1" minOccurs="0" name="ModelNumber" type="Model"/>
@@ -2469,6 +2474,7 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Type" type="WindTurbineType"/>
 									<xs:element minOccurs="0" name="Model" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
 									<xs:element minOccurs="0" name="ThirdPartyCertification" maxOccurs="unbounded" type="WindThirdPartyCertification"/>
@@ -2636,6 +2642,7 @@
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="ConnectedDevice"/>
+						<xs:element minOccurs="0" name="Type" type="CeilingFanType"/>
 						<xs:element maxOccurs="3" minOccurs="0" name="Airflow">
 							<xs:annotation>
 								<xs:documentation/>
@@ -3846,6 +3853,8 @@
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="Unknown"/>
+			<xs:element name="None"/>
 		</xs:choice>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
@@ -4674,6 +4683,7 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
+									<xs:element minOccurs="0" name="Type" type="PortableElectricSpaType"/>
 									<xs:element minOccurs="0" name="Manufacturer" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="Model" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="Capacity" type="IntegerGreaterThanZero">
@@ -5418,6 +5428,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Type" type="WindowFilmType"/>
 						<xs:element minOccurs="0" name="ShadingCoefficient" type="Fraction">
 							<xs:annotation>
 								<xs:documentation>Shading coefficients are defined as a multiplier on transmittance: 1 is transparent, 0 is opaque. </xs:documentation>
@@ -5509,6 +5520,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
+						<xs:element minOccurs="0" name="Type" type="ScreenType"/>
 						<xs:element minOccurs="0" name="Location" type="StormLocation"/>
 						<xs:element minOccurs="0" name="ScreenMaterial" type="ScreenMaterial"/>
 						<xs:element minOccurs="0" name="SummerFractionCovered" type="Fraction">
@@ -5543,6 +5555,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
+						<xs:element name="Type" minOccurs="0" type="StormType"/>
 						<xs:element minOccurs="0" name="GlazingMaterial" type="GlazingMaterial"/>
 						<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 						<xs:element minOccurs="0" name="FrameType" type="WindowFrameType"/>
