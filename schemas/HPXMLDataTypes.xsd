@@ -5015,6 +5015,8 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="integrated"/>
 			<xs:enumeration value="separate"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="not present"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="HeatPumpBackupType">
