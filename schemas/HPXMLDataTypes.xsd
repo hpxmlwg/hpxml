@@ -3618,6 +3618,7 @@
 			<xs:enumeration value="good"/>
 			<xs:enumeration value="fair"/>
 			<xs:enumeration value="poor"/>
+			<xs:enumeration value="unknown"/>
 			<xs:enumeration value="not present"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -3695,6 +3696,7 @@
 			<xs:enumeration value="composite shingle siding"/>
 			<xs:enumeration value="masonite siding"/>
 			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
 			<xs:enumeration value="not present"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -3712,6 +3714,7 @@
 			<xs:enumeration value="plaster"/>
 			<xs:enumeration value="wood"/>
 			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
 			<xs:enumeration value="not present"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -3753,6 +3756,7 @@
 			<xs:enumeration value="tile"/>
 			<xs:enumeration value="hardwood"/>
 			<xs:enumeration value="vinyl"/>
+			<xs:enumeration value="unknown"/>
 			<xs:enumeration value="not present"/>
 		</xs:restriction>
 	</xs:simpleType>

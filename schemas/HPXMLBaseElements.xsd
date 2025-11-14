@@ -365,7 +365,11 @@
 	</xs:complexType>
 	<xs:complexType name="InteriorFinishInfo">
 		<xs:sequence>
-			<xs:element minOccurs="0" name="Type" type="InteriorFinish"/>
+			<xs:element minOccurs="0" name="Type" type="InteriorFinish">
+				<xs:annotation>
+					<xs:documentation>If an interior finish is present but the type is not known, use "unknown". If an interior finish is known to be not present, use "not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="Thickness" type="LengthMeasurement">
 				<xs:annotation>
 					<xs:documentation>[in]</xs:documentation>
@@ -404,7 +408,11 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="Type" type="ClothesDryerType"/>
+					<xs:element minOccurs="0" name="Type" type="ClothesDryerType">
+						<xs:annotation>
+							<xs:documentation>If a clothes dryer is present but the type is not known, use "unknown". If a clothes dryer is known to be not present, use "not present".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element name="DryingMethod" minOccurs="0" type="ClothesDryerDryingMethod"/>
@@ -441,7 +449,11 @@
 						<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference"/>
 						<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
 					</xs:choice>
-					<xs:element name="Type" type="ClothesWasherType" minOccurs="0"/>
+					<xs:element name="Type" type="ClothesWasherType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>If a clothes washer is present but the type is not known, use "unknown". If a clothes washer is known to be not present, use "not present".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="LaundryMachineLocation"/>
 					<xs:element name="ModifiedEnergyFactor" type="HPXMLDoubleGreaterThanZero" minOccurs="0">
 						<xs:annotation>
@@ -513,7 +525,11 @@
 						<xs:element name="AttachedToWaterHeatingSystem" type="LocalReference"/>
 						<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
 					</xs:choice>
-					<xs:element minOccurs="0" name="Type" type="DishwasherType"/>
+					<xs:element minOccurs="0" name="Type" type="DishwasherType">
+						<xs:annotation>
+							<xs:documentation>If a dishwasher is present but the type is not known, use "unknown". If a dishwasher is known to be not present, use "not present".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element minOccurs="0" name="Fuel" type="FuelType"/>
 					<xs:element name="HeatDryDefaultOff" type="HPXMLBoolean" minOccurs="0"/>
@@ -556,7 +572,11 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="Type" type="FreezerType"/>
+					<xs:element minOccurs="0" name="Type" type="FreezerType">
+						<xs:annotation>
+							<xs:documentation>If a freezer is present but the type is not known, use "unknown". If a freezer is known to be not present, use "not present".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="RatedAnnualkWh" type="RatedAnnualkWh" minOccurs="0"/>
 					<xs:element name="Configuration" type="FreezerStyle" minOccurs="0"/>
@@ -574,7 +594,11 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
-					<xs:element name="Type" type="RefrigeratorStyle" minOccurs="0"/>
+					<xs:element name="Type" type="RefrigeratorStyle" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>If a refrigerator is present but the type is not known, use "unknown". If a refrigerator is known to be not present, use "not present".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="RatedAnnualkWh" type="RatedAnnualkWh" minOccurs="0"/>
 					<xs:element name="PrimaryIndicator" type="HPXMLBoolean" minOccurs="0">
@@ -608,13 +632,13 @@
 				<xs:sequence>
 					<xs:element minOccurs="0" name="Type" type="DehumidifierType">
 						<xs:annotation>
-							<xs:documentation>Portable room dehumidifiers are typically used to dehumidify a single room or space and can be easily moved to where they are needed. Whole-home dehumidifiers are typically installed to use your home’s air ducts to dehumidify one or more rooms and are often permanent. Some dehumifiers can operate in both configurations by means of a ducting kit.</xs:documentation>
+							<xs:documentation>Portable room dehumidifiers are typically used to dehumidify a single room or space and can be easily moved to where they are needed. Whole-home dehumidifiers are typically installed to use your home’s air ducts to dehumidify one or more rooms and are often permanent. Some dehumidifiers can operate in both configurations by means of a ducting kit. If a dehumidifier is present but the type is not known, use "unknown". If a dehumidifier is known to be not present, use "not present".</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="AdjacentTo"/>
 					<xs:element minOccurs="0" name="Capacity" type="HPXMLDouble">
 						<xs:annotation>
-							<xs:documentation>Rated water removal rate. This represents the expected performance in a basement for portable dehumidifiers and expected performance in the average home for whole-home dehumifiiers. [pints/day]</xs:documentation>
+							<xs:documentation>Rated water removal rate. This represents the expected performance in a basement for portable dehumidifiers and expected performance in the average home for whole-home dehumidifiers. [pints/day]</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="CaseVolume" type="HPXMLDouble">
@@ -662,7 +686,11 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="Type" type="CookingRangeType"/>
+					<xs:element minOccurs="0" name="Type" type="CookingRangeType">
+						<xs:annotation>
+							<xs:documentation>If a cooking range is present but the type is not known, use "unknown". If a cooking range is known to be not present, use "not present".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IsInduction" type="HPXMLBoolean"/>
@@ -675,7 +703,11 @@
 		<xs:complexContent>
 			<xs:extension base="ApplianceTypeSummaryInfo">
 				<xs:sequence>
-					<xs:element minOccurs="0" name="Type" type="OvenType"/>
+					<xs:element minOccurs="0" name="Type" type="OvenType">
+						<xs:annotation>
+							<xs:documentation>If an oven is present but the type is not known, use "unknown". If an oven is known to be not present, use "not present".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IsConvection" type="HPXMLBoolean"/>
@@ -1091,11 +1123,19 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Studs" type="StudProperties"/>
-									<xs:element minOccurs="0" name="Siding" type="Siding"/>
+									<xs:element minOccurs="0" name="Siding" type="Siding">
+										<xs:annotation>
+											<xs:documentation>Omit this element if it's not known if there's siding. If siding is present but the type is not known, use "unknown". If siding is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Color" type="WallAndRoofColor"/>
 									<xs:element minOccurs="0" name="SolarAbsorptance" type="SolarAbsorptance"/>
 									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
-									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
+									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo">
+										<xs:annotation>
+											<xs:documentation>Omit this element if it's not known if there's an interior finish. If an interior finish is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="RadiantBarrier" type="HPXMLBoolean" minOccurs="0"/>
 									<xs:element name="RadiantBarrierGrade" type="InsulationGrade" minOccurs="0"/>
 									<xs:element minOccurs="0" maxOccurs="1" name="Insulation" type="InsulationInfo"/>
@@ -1197,7 +1237,11 @@
 									<xs:element minOccurs="0" name="FloorType" type="FloorType"/>
 									<xs:element minOccurs="0" name="FloorJoists" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorTrusses" type="StudProperties"/>
-									<xs:element minOccurs="0" name="FloorCovering" type="FloorCovering"/>
+									<xs:element minOccurs="0" name="FloorCovering" type="FloorCovering">
+										<xs:annotation>
+											<xs:documentation>Omit this element if it's not known if there's a floor covering. If a floor covering is present but the type is not known, use "unknown". If a floor covering is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
 											<xs:documentation>[sq.ft.]</xs:documentation>
@@ -1288,13 +1332,16 @@
 					<xs:sequence>
 						<xs:element name="Window" maxOccurs="unbounded">
 							<xs:annotation>
-								<xs:documentation>The Window element can be used to describe a single window or a group of windows with the same characteristics. For a group of windows, use the sum of
-									the window areas in the Area subelement.</xs:documentation>
+								<xs:documentation>The Window element can be used to describe a single window or a group of windows with the same characteristics. For a group of windows, use the sum of the window areas in the Area subelement. Omit this element if it's not known if there's a window. If a window is known to be not present, this element can be included along with WindowType="not present".</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="WindowInfo"/>
-									<xs:element minOccurs="0" name="WindowType" type="WindowType"/>
+									<xs:element minOccurs="0" name="WindowType" type="WindowType">
+										<xs:annotation>
+											<xs:documentation>If a window is present but the type is not known, use "unknown". If a window is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="WindowtoWallRatio" type="Fraction"/>
 									<xs:element minOccurs="0" name="AttachedToWall" type="LocalReference"/>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
@@ -1319,13 +1366,16 @@
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="Skylight">
 							<xs:annotation>
-								<xs:documentation>The Skylight element can be used to describe a single skylight or a group of skylights with the same characteristics. For a group of skylights, use
-									the sum of the skylight areas in the Area subelement.</xs:documentation>
+								<xs:documentation>The Skylight element can be used to describe a single skylight or a group of skylights with the same characteristics. For a group of skylights, use the sum of the skylight areas in the Area subelement. Omit this element if it's not known if there's a skylight. If a skylight is known to be not present, this element can be included along with SkylightType="not present".</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="WindowInfo"/>
-									<xs:element name="SkylightType" minOccurs="0" type="SkylightType"/>
+									<xs:element name="SkylightType" minOccurs="0" type="SkylightType">
+										<xs:annotation>
+											<xs:documentation>If a skylight is present but the type is not known, use "unknown". If a skylight is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Pitch" type="Pitch">
 										<xs:annotation>
 											<xs:documentation>Pitch of skylight ?/12</xs:documentation>
@@ -1358,6 +1408,9 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="Door" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Omit this element if it's not known if there's a door. If a door is known to be not present, this element can be included along with DoorType="not present".</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
@@ -1374,7 +1427,11 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Orientation" type="OrientationType"/>
-									<xs:element minOccurs="0" name="DoorType" type="DoorType"/>
+									<xs:element minOccurs="0" name="DoorType" type="DoorType">
+										<xs:annotation>
+											<xs:documentation>If a door is present but the type is not known, use "unknown". If a door is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="DoorMaterial" type="DoorMaterial" minOccurs="0"/>
 									<xs:element minOccurs="0" name="WeatherStripping" type="HPXMLBoolean"/>
 									<xs:element name="StormDoor" type="HPXMLBoolean" minOccurs="0"/>
@@ -1423,10 +1480,26 @@
 											<xs:attribute name="dataSource" type="DataSource"/>
 										</xs:complexType>
 									</xs:element>
-									<xs:element minOccurs="0" maxOccurs="unbounded" name="HeatingSystem" type="HeatingSystemInfoType"/>
-									<xs:element minOccurs="0" maxOccurs="unbounded" name="CoolingSystem" type="CoolingSystemInfoType"/>
-									<xs:element minOccurs="0" maxOccurs="unbounded" name="HeatPump" type="HeatPumpInfoType"/>
-									<xs:element maxOccurs="unbounded" minOccurs="0" name="GeothermalLoop" type="GeothermalLoopType"/>
+									<xs:element minOccurs="0" maxOccurs="unbounded" name="HeatingSystem" type="HeatingSystemInfoType">
+										<xs:annotation>
+											<xs:documentation>Omit this element if it's not known if there's a heating system. If a heating system is known to be not present, this element can be included along with HeatingSystemType/NotPresent.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" maxOccurs="unbounded" name="CoolingSystem" type="CoolingSystemInfoType">
+										<xs:annotation>
+											<xs:documentation>Omit this element if it's not known if there's a cooling system. If a cooling system is known to be not present, this element can be included along with CoolingSystemType="not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" maxOccurs="unbounded" name="HeatPump" type="HeatPumpInfoType">
+										<xs:annotation>
+											<xs:documentation>Omit this element if it's not known if there's a heat pump. If a heat pump is known to be not present, this element can be included along with HeatPumpType="not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element maxOccurs="unbounded" minOccurs="0" name="GeothermalLoop" type="GeothermalLoopType">
+										<xs:annotation>
+											<xs:documentation>Omit this element if it's not known if there's a geothermal loop. If a geothermal loop is known to be not present, this element can be included along with LoopType="not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element ref="extension" minOccurs="0"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -1503,6 +1576,9 @@
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element maxOccurs="unbounded" name="VentilationFan">
+										<xs:annotation>
+											<xs:documentation>Omit this element if it's not known if there's a ventilation fan. If a ventilation fan is known to be not present, this element can be included along with FanType="not present".</xs:documentation>
+										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
 												<xs:group ref="SystemInfo"/>
@@ -1514,7 +1590,11 @@
 														<xs:documentation>Number of similar ventilation fans (e.g., bath fans).</xs:documentation>
 													</xs:annotation>
 												</xs:element>
-												<xs:element minOccurs="0" name="FanType" type="VentilationFanType"/>
+												<xs:element minOccurs="0" name="FanType" type="VentilationFanType">
+													<xs:annotation>
+														<xs:documentation>If a ventilation fan is present but the type is not known, use "unknown". If a ventilation fan is known to be not present, use "not present".</xs:documentation>
+													</xs:annotation>
+												</xs:element>
 												<xs:element minOccurs="0" name="CFISControls">
 													<xs:annotation>
 														<xs:documentation>Relevant when FanType="central fan integrated supply".</xs:documentation>
@@ -1674,6 +1754,9 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="WaterHeatingSystem">
+							<xs:annotation>
+								<xs:documentation>Omit this element if it's not known if there's a water heating system. If a water heating system is known to be not present, this element can be included along with WaterHeaterType="not present".</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
@@ -1681,7 +1764,11 @@
 									<xs:element minOccurs="0" ref="AttachedToZone"/>
 									<xs:element minOccurs="0" name="AttachedToCAZ" type="LocalReference"/>
 									<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
-									<xs:element name="WaterHeaterType" type="WaterHeaterType" minOccurs="0"/>
+									<xs:element name="WaterHeaterType" type="WaterHeaterType" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>If a water heating system is present but the type is not known, use "unknown". If a water heating system is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="Location" type="UnitLocation" minOccurs="0"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
 									<xs:element name="ModelYear" type="Year" minOccurs="0"/>
@@ -2029,6 +2116,9 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="SolarThermalSystem">
+							<xs:annotation>
+								<xs:documentation>Omit this element if it's not known if there's a solar thermal system. If a solar thermal system is known to be not present, this element can be included along with SystemType="not present".</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
@@ -2036,7 +2126,11 @@
 									<xs:element minOccurs="0" name="Manufacturer" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="ModelNumber" type="HPXMLString"/>
 									<xs:element minOccurs="0" ref="AttachedToZone"/>
-									<xs:element name="SystemType" minOccurs="0" type="SolarThermalSystemType"/>
+									<xs:element name="SystemType" minOccurs="0" type="SolarThermalSystemType">
+										<xs:annotation>
+											<xs:documentation>If a solar thermal system is present but the type is not known, use "unknown". If a solar thermal system is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="CollectorArea" type="SurfaceArea" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>[sq.ft.]</xs:documentation>
@@ -2096,11 +2190,18 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="PVSystem">
+							<xs:annotation>
+								<xs:documentation>Omit this element if it's not known if there's a PV system. If a PV system is known to be not present, this element can be included along with SystemType="not present".</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="ConnectedDevice"/>
-									<xs:element minOccurs="0" name="SystemType" type="PVSystemType"/>
+									<xs:element minOccurs="0" name="SystemType" type="PVSystemType">
+										<xs:annotation>
+											<xs:documentation>If a PV system is present but the type is not known, use "unknown". If a PV system is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="IsSharedSystem" type="HPXMLBoolean">
 										<xs:annotation>
 											<xs:documentation>Does the system serve multiple building/dwelling units?</xs:documentation>
@@ -2160,10 +2261,17 @@
 							</xs:complexType>
 						</xs:element>
 						<xs:element maxOccurs="unbounded" minOccurs="0" name="Inverter">
+							<xs:annotation>
+								<xs:documentation>Omit this element if it's not known if there's an inverter. If an inverter is known to be not present, this element can be included along with InverterType="not present".</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" name="InverterType" type="InverterType"/>
+									<xs:element minOccurs="0" name="InverterType" type="InverterType">
+										<xs:annotation>
+											<xs:documentation>If an inverter is present but the type is not known, use "unknown". If an inverter is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="InverterEfficiency" type="FractionExcludingZero"/>
 									<xs:element minOccurs="0" name="YearInverterManufactured" type="Year"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
@@ -2187,6 +2295,9 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="Battery">
+							<xs:annotation>
+								<xs:documentation>Omit this element if it's not known if there's a battery. If a battery is known to be not present, this element can be included along with BatteryType="not present".</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
@@ -2212,7 +2323,11 @@
 											<xs:documentation>Has the ability to feed electricity back on to the grid.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="BatteryType" type="BatteryType"/>
+									<xs:element minOccurs="0" name="BatteryType" type="BatteryType_simple">
+										<xs:annotation>
+											<xs:documentation>If a battery is present but the type is not known, use "unknown". If a battery is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="CoolingStrategy" type="BatteryCoolingStrategy"/>
 									<xs:element minOccurs="0" name="NominalCapacity" type="BatteryCapacityType" maxOccurs="unbounded">
 										<xs:annotation>
@@ -2425,10 +2540,17 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="ElectricVehicleCharger">
+							<xs:annotation>
+								<xs:documentation>Omit this element if it's not known if there's an EV charger. If an EV charger is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" name="Type" type="EVChargerType"/>
+									<xs:element minOccurs="0" name="Type" type="EVChargerType">
+										<xs:annotation>
+											<xs:documentation>If an EV charger is present but the type is not known, use "unknown". If an EV charger is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Count" type="IntegerGreaterThanOrEqualToZero"/>
 									<xs:element minOccurs="0" name="Manufacturer" type="Manufacturer"/>
 									<xs:element maxOccurs="1" minOccurs="0" name="ModelNumber" type="Model"/>
@@ -2470,11 +2592,18 @@
 			<xs:element minOccurs="0" name="Wind">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element maxOccurs="unbounded" name="WindTurbine">
+						<xs:element maxOccurs="unbounded" name="WindTurbine" minOccurs="1">
+							<xs:annotation>
+								<xs:documentation>Omit this element if it's not known if there's a wind turbine. If a wind turbine is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" name="Type" type="WindTurbineType"/>
+									<xs:element minOccurs="0" name="Type" type="WindTurbineType">
+										<xs:annotation>
+											<xs:documentation>If a wind turbine is present but the type is not known, use "unknown". If a wind turbine is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Model" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
 									<xs:element minOccurs="0" name="ThirdPartyCertification" maxOccurs="unbounded" type="WindThirdPartyCertification"/>
@@ -2533,14 +2662,46 @@
 	</xs:complexType>
 	<xs:complexType name="Appliances">
 		<xs:sequence>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="ClothesWasher" type="ClothesWasherInfoType"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="ClothesDryer" type="ClothesDryerInfoType"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="Dishwasher" type="DishwasherInfoType"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="Refrigerator" type="RefrigeratorInfoType"/>
-			<xs:element minOccurs="0" maxOccurs="unbounded" name="Freezer" type="FreezerInfoType"/>
-			<xs:element name="Dehumidifier" maxOccurs="unbounded" minOccurs="0" type="DehumidifierInfoType"/>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="CookingRange" type="CookingRangeInfoType"/>
-			<xs:element maxOccurs="unbounded" minOccurs="0" name="Oven" type="OvenInfoType"/>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="ClothesWasher" type="ClothesWasherInfoType">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a clothes washer. If a clothes washer is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="ClothesDryer" type="ClothesDryerInfoType">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a clothes dryer. If a clothes dryer is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Dishwasher" type="DishwasherInfoType">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a dishwasher. If a dishwasher is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Refrigerator" type="RefrigeratorInfoType">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a refrigerator. If a refrigerator is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element minOccurs="0" maxOccurs="unbounded" name="Freezer" type="FreezerInfoType">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a freezer. If a freezer is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Dehumidifier" maxOccurs="unbounded" minOccurs="0" type="DehumidifierInfoType">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a dehumidifier. If a dehumidifier is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="CookingRange" type="CookingRangeInfoType">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a cooking range. If a cooking range is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element maxOccurs="unbounded" minOccurs="0" name="Oven" type="OvenInfoType">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's an oven. If an oven is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element ref="extension" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
@@ -2638,11 +2799,18 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="CeilingFan">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a ceiling fan. If a ceiling fan is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="ConnectedDevice"/>
-						<xs:element minOccurs="0" name="Type" type="CeilingFanType"/>
+						<xs:element minOccurs="0" name="Type" type="CeilingFanType">
+							<xs:annotation>
+								<xs:documentation>If a ceiling fan is present but the type is not known, use "unknown". If a ceiling fan is known to be not present, use "not present".</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element maxOccurs="3" minOccurs="0" name="Airflow">
 							<xs:annotation>
 								<xs:documentation/>
@@ -2781,7 +2949,7 @@
 			<xs:group ref="SystemInfo"/>
 			<xs:element minOccurs="0" name="Type" type="PoolType">
 				<xs:annotation>
-					<xs:documentation>Indicates if the pool or spa is above or below ground.</xs:documentation>
+					<xs:documentation>Indicates if the pool or spa is above or below ground. If a pool or spa is present but the type is not known, use "unknown". If a pool or spa is known to be not present, use "not present".</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="Volume" type="Volume">
@@ -2806,7 +2974,7 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="FilterType" type="PoolFilterType">
 				<xs:annotation>
-					<xs:documentation>Type of filter used, if any.</xs:documentation>
+					<xs:documentation>Omit this element if it's not known if there's a filter. If a filter is present but the type is not known, use "unknown". If a filter is known to be not present, use "not present".</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="Pumps">
@@ -2814,13 +2982,17 @@
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="Pump">
 							<xs:annotation>
-								<xs:documentation>Pool or spa pump: a mechanical assembly consisting of a “wet-end,” which houses the impeller and a motor. The pump increases the “head” and “flow” of the water (ENERGY STAR, 2013).</xs:documentation>
+								<xs:documentation>Pool or spa pump: a mechanical assembly consisting of a "wet-end," which houses the impeller and a motor. The pump increases the "head" and "flow" of the water (ENERGY STAR, 2013). Omit this element if it's not known if there's a pump. If a pump is known to be not present, this element can be included along with Type="not present".</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
 									<xs:element minOccurs="0" ref="ConnectedDevice"/>
-									<xs:element minOccurs="0" name="Type" type="PoolPumpType"/>
+									<xs:element minOccurs="0" name="Type" type="PoolPumpType_simple">
+										<xs:annotation>
+											<xs:documentation>If a pump is present but the type is not known, use "unknown". If a pump is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Manufacturer" type="HPXMLString">
 										<xs:annotation>
 											<xs:documentation>Manufacturer of pool or spa pump.</xs:documentation>
@@ -2912,13 +3084,16 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="Cleaner">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a cleaner. If a cleaner is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="ConnectedDevice"/>
 						<xs:element minOccurs="0" name="Type" type="PoolCleanerType">
 							<xs:annotation>
-								<xs:documentation>Type of pool or spa cleaner used, if any.</xs:documentation>
+								<xs:documentation>If a cleaner is present but the type is not known, use "unknown". If a cleaner is known to be not present, use "not present".</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="HoursPerDay" type="HoursPerDay">
@@ -2932,13 +3107,16 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="Heater">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a heater. If a heater is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
 						<xs:element minOccurs="0" ref="ConnectedDevice"/>
 						<xs:element minOccurs="0" name="Type" type="PoolHeaterType">
 							<xs:annotation>
-								<xs:documentation>Type of heater used to heat pool or spa, if any.</xs:documentation>
+								<xs:documentation>If a heater is present but the type is not known, use "unknown". If a heater is known to be not present, use "not present".</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="HoursPerDay" type="HoursPerDay">
@@ -2965,6 +3143,9 @@
 	<xs:complexType name="Pools">
 		<xs:sequence>
 			<xs:element maxOccurs="unbounded" name="Pool">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a pool. If a pool is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:complexContent>
 						<xs:extension base="PoolSpaType">
@@ -3697,7 +3878,11 @@
 		<xs:complexContent>
 			<xs:extension base="HVACSystemInfo">
 				<xs:sequence minOccurs="1" maxOccurs="1">
-					<xs:element name="HeatingSystemType" type="HeatingSystemType" minOccurs="0"/>
+					<xs:element name="HeatingSystemType" type="HeatingSystemType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>If a heating system is present but the type is not known, use Unknown. If a heating system is known to be not present, use NotPresent.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element name="HeatingSystemFuel" type="FuelType" minOccurs="0"/>
 					<xs:element name="HeatingInputRating" type="Capacity" minOccurs="0">
 						<xs:annotation>
@@ -3862,7 +4047,11 @@
 		<xs:complexContent>
 			<xs:extension base="HVACSystemInfo">
 				<xs:sequence minOccurs="0">
-					<xs:element name="HeatPumpType" type="HeatPumpType" minOccurs="0"/>
+					<xs:element name="HeatPumpType" type="HeatPumpType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>If a heat pump is present but the type is not known, use "unknown". If a heat pump is known to be not present, use "not present".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="HeatPumpFuel" type="FuelType"/>
 					<xs:element name="HeatingCapacity" type="Capacity" minOccurs="0">
 						<xs:annotation>
@@ -3886,10 +4075,9 @@
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="CoolingSensibleHeatFraction" type="SensibleHeatFraction"/>
-					<xs:element minOccurs="0" name="BackupType" type="HeatPumpBackupType">
+					<xs:element minOccurs="0" name="BackupType" type="HeatPumpBackupType_simple">
 						<xs:annotation>
-							<xs:documentation>Whether the heat pump backup is integrated into the unit (describe in BackupSystemFuel, BackupAnnualHeatingEfficiency, BackupHeatingCapacity), or a
-								separate heating system (add reference in BackupSystem).</xs:documentation>
+							<xs:documentation>Whether the heat pump backup is integrated into the unit (describe in BackupSystemFuel, BackupAnnualHeatingEfficiency, BackupHeatingCapacity), or a separate heating system (add reference in BackupSystem). Omit this element if it's not known if there's heat pump backup. If heat pump backup is present but the type is not known, use "unknown". If heat pump backup is known to be not present, use "not present".</xs:documentation>
 						</xs:annotation>
 					</xs:element>
 					<xs:element minOccurs="0" name="BackupSystem" type="LocalReference">
@@ -3952,7 +4140,11 @@
 		<xs:complexContent>
 			<xs:extension base="HVACSystemInfo">
 				<xs:sequence>
-					<xs:element name="CoolingSystemType" type="CoolingSystemType" minOccurs="0"/>
+					<xs:element name="CoolingSystemType" type="CoolingSystemType" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>If a cooling system is present but the type is not known, use "unknown". If a cooling system is known to be not present, use "not present".</xs:documentation>
+						</xs:annotation>
+					</xs:element>
 					<xs:element minOccurs="0" name="CoolingSystemFuel" type="FuelType"/>
 					<xs:element minOccurs="0" name="CoolingCapacity" type="Capacity">
 						<xs:annotation>
@@ -3991,7 +4183,11 @@
 	<xs:complexType name="GeothermalLoopType">
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
-			<xs:element minOccurs="0" name="LoopType" type="LoopType"/>
+			<xs:element minOccurs="0" name="LoopType" type="LoopType">
+				<xs:annotation>
+					<xs:documentation>If a geothermal loop is present but the type is not known, use "unknown". If a geothermal loop is known to be not present, use "not present".</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="LoopConfiguration" type="LoopConfiguration"/>
 			<xs:element minOccurs="0" name="LoopFlow" type="HPXMLDoubleGreaterThanZero">
 				<xs:annotation>
@@ -4663,7 +4859,7 @@
 					<xs:sequence>
 						<xs:element maxOccurs="unbounded" name="PermanentSpa" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation>A permanently constructed spa where piping and equipment are an integral part of the structure, and not intended to be moved.</xs:documentation>
+								<xs:documentation>A permanently constructed spa where piping and equipment are an integral part of the structure, and not intended to be moved. Omit this element if it's not known if there's a permanent spa. If a permanent spa is known to be not present, this element can be included along with Type="not present".</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:complexContent>
@@ -4678,12 +4874,16 @@
 						</xs:element>
 						<xs:element maxOccurs="unbounded" name="PortableElectricSpa" minOccurs="0">
 							<xs:annotation>
-								<xs:documentation>A factory-built electric spa or hot tub, supplied with piping and equipment for temperature-controlled circulated water at the time of sale or sold separately for subsequent attachment.</xs:documentation>
+								<xs:documentation>A factory-built electric spa or hot tub, supplied with piping and equipment for temperature-controlled circulated water at the time of sale or sold separately for subsequent attachment. Omit this element if it's not known if there's a portable electric spa. If a portable electric spa is known to be not present, this element can be included along with Type="not present".</xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:group ref="SystemInfo"/>
-									<xs:element minOccurs="0" name="Type" type="PortableElectricSpaType"/>
+									<xs:element minOccurs="0" name="Type" type="PortableElectricSpaType">
+										<xs:annotation>
+											<xs:documentation>If a portable electric spa is present but the type is not known, use "unknown". If a portable electric spa is known to be not present, use "not present".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="Manufacturer" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="Model" type="HPXMLString"/>
 									<xs:element minOccurs="0" name="Capacity" type="IntegerGreaterThanZero">
@@ -5425,10 +5625,17 @@
 			<xs:element name="NFRCCertified" type="HPXMLBoolean" minOccurs="0"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ThirdPartyCertification" type="WindowThirdPartyCertification"/>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="WindowFilm">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a window film. If a window film is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
-						<xs:element minOccurs="0" name="Type" type="WindowFilmType"/>
+						<xs:element minOccurs="0" name="Type" type="WindowFilmType">
+							<xs:annotation>
+								<xs:documentation>If a window film is present but the type is not known, use "unknown". If a window film is known to be not present, use "not present".</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="ShadingCoefficient" type="Fraction">
 							<xs:annotation>
 								<xs:documentation>Shading coefficients are defined as a multiplier on transmittance: 1 is transparent, 0 is opaque. </xs:documentation>
@@ -5440,10 +5647,17 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="ExteriorShading">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's exterior shading. If exterior shading is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
-						<xs:element minOccurs="0" name="Type" type="ExteriorShading"/>
+						<xs:element minOccurs="0" name="Type" type="ExteriorShading">
+							<xs:annotation>
+								<xs:documentation>If exterior shading is present but the type is not known, use "unknown". If exterior shading is known to be not present, use "not present".</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="SummerFractionCovered" type="Fraction">
 							<xs:annotation>
 								<xs:documentation>Use, e.g., 0.5 for a shade that is drawn halfway and 1.0 for a fully drawn shade during the summer.</xs:documentation>
@@ -5473,12 +5687,16 @@
 			</xs:element>
 			<xs:element maxOccurs="unbounded" minOccurs="0" name="InteriorShading">
 				<xs:annotation>
-					<xs:documentation>Used to describe drapes, blinds, etc. If moveable insulation also provides shading, the shading should be documented here. </xs:documentation>
+					<xs:documentation>Used to describe drapes, blinds, etc. If moveable insulation also provides shading, the shading should be documented here. Omit this element if it's not known if there's interior shading. If interior shading is known to be not present, this element can be included along with Type="not present".</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
-						<xs:element minOccurs="0" name="Type" type="InteriorShading"/>
+						<xs:element minOccurs="0" name="Type" type="InteriorShading">
+							<xs:annotation>
+								<xs:documentation>If interior shading is present but the type is not known, use "unknown". If interior shading is known to be not present, use "not present".</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="BlindsSummerClosedOrOpen" type="BlindsClosedOrOpen">
 							<xs:annotation>
 								<xs:documentation>Specifies if the blinds are open or closed during the summer.</xs:documentation>
@@ -5517,10 +5735,17 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="InsectScreen">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's an insect screen. If an insect screen is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
-						<xs:element minOccurs="0" name="Type" type="ScreenType"/>
+						<xs:element minOccurs="0" name="Type" type="ScreenType">
+							<xs:annotation>
+								<xs:documentation>If an insect screen is present but the type is not known, use "unknown". If an insect screen is known to be not present, use "not present".</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="Location" type="StormLocation"/>
 						<xs:element minOccurs="0" name="ScreenMaterial" type="ScreenMaterial"/>
 						<xs:element minOccurs="0" name="SummerFractionCovered" type="Fraction">
@@ -5552,10 +5777,17 @@
 				</xs:complexType>
 			</xs:element>
 			<xs:element minOccurs="0" name="StormWindow">
+				<xs:annotation>
+					<xs:documentation>Omit this element if it's not known if there's a storm window. If a storm window is known to be not present, this element can be included along with Type="not present".</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:group ref="SystemInfo"/>
-						<xs:element name="Type" minOccurs="0" type="StormType"/>
+						<xs:element name="Type" minOccurs="0" type="StormType">
+							<xs:annotation>
+								<xs:documentation>If a storm window is present but the type is not known, use "unknown". If a storm window is known to be not present, use "not present".</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 						<xs:element minOccurs="0" name="GlazingMaterial" type="GlazingMaterial"/>
 						<xs:element minOccurs="0" name="GlassType" type="GlassType"/>
 						<xs:element minOccurs="0" name="FrameType" type="WindowFrameType"/>
@@ -5887,7 +6119,7 @@
 						<xs:element minOccurs="0" name="SkirtPresent" type="HPXMLBoolean"/>
 						<xs:element minOccurs="0" name="BellyWrapCondition" type="ManufacturedHomeBellyWrapCondition">
 							<xs:annotation>
-								<xs:documentation>Use the 'not present' choice for cases where the belly wrap is functionally missing even if pieces of the wrap are still present. </xs:documentation>
+								<xs:documentation>Omit this element if it's not known if there's belly wrap. If belly wrap is present but the condition is not known, use "unknown". If belly wrap is known to be not present, use "not present". Also use "not present"  for cases where the belly wrap is functionally missing even if pieces of the wrap are still present. </xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" ref="extension"/>
