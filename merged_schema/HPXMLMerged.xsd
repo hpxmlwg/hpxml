@@ -6734,7 +6734,7 @@
 					<xs:documentation>[A]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="HeadroomSpaces" type="IntegerGreaterThanOrEqualToZero">
+			<xs:element minOccurs="0" name="HeadroomSpaces" type="HPXMLInteger">
 				<xs:annotation>
 					<xs:documentation>The number of open breaker spaces.</xs:documentation>
 				</xs:annotation>
