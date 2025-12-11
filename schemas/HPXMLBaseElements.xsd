@@ -6722,7 +6722,7 @@
 			</xs:element>
 			<xs:element minOccurs="0" name="HeadroomSpaces" type="HPXMLInteger">
 				<xs:annotation>
-					<xs:documentation>The number of open breaker spaces.</xs:documentation>
+					<xs:documentation>The number of open breaker spaces. A negative number can be used for a proposed retrofit (e.g., heat pump upgrade), in which the number of required spaces would exceed the available spaces on the panel.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="RatedTotalSpaces" type="IntegerGreaterThanZero">
