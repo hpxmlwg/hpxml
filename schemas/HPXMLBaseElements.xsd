@@ -5759,6 +5759,11 @@
 						amount of air as the building does at a pressure of 4 Pascals.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="SpecificLeakageArea" type="HPXMLDoubleGreaterThanZero">
+				<xs:annotation>
+					<xs:documentation>[frac] The unitless ratio of Effective Leakage Area divided by conditioned floor area, given in the same units of measure.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="InfiltrationVolume" type="HPXMLDoubleGreaterThanZero">
 				<xs:annotation>
 					<xs:documentation>[sq. ft.] The volume of the building that is applicable to the air infiltration measurement test. The volume can be defined as the conditioned building volume
@@ -6720,9 +6725,9 @@
 					<xs:documentation>[A]</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="HeadroomSpaces" type="IntegerGreaterThanOrEqualToZero">
+			<xs:element minOccurs="0" name="HeadroomSpaces" type="HPXMLInteger">
 				<xs:annotation>
-					<xs:documentation>The number of open breaker spaces.</xs:documentation>
+					<xs:documentation>The number of open breaker spaces. A negative number can be used for a proposed retrofit (e.g., heat pump upgrade), in which the number of required spaces would exceed the available spaces on the panel.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element minOccurs="0" name="RatedTotalSpaces" type="IntegerGreaterThanZero">
