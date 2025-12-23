@@ -5773,6 +5773,11 @@
 						amount of air as the building does at a pressure of 4 Pascals.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="SpecificLeakageArea" type="HPXMLDoubleGreaterThanZero">
+				<xs:annotation>
+					<xs:documentation>[frac] The unitless ratio of Effective Leakage Area divided by conditioned floor area, given in the same units of measure.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element minOccurs="0" name="InfiltrationVolume" type="HPXMLDoubleGreaterThanZero">
 				<xs:annotation>
 					<xs:documentation>[sq. ft.] The volume of the building that is applicable to the air infiltration measurement test. The volume can be defined as the conditioned building volume
