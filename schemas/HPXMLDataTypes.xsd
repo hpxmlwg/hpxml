@@ -3632,6 +3632,7 @@
 	<xs:simpleType name="WallAndRoofColor_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="light"/>
+			<xs:enumeration value="medium light"/>
 			<xs:enumeration value="medium"/>
 			<xs:enumeration value="medium dark"/>
 			<xs:enumeration value="dark"/>
@@ -3691,6 +3692,7 @@
 			<xs:enumeration value="vinyl siding"/>
 			<xs:enumeration value="aluminum siding"/>
 			<xs:enumeration value="brick veneer"/>
+			<xs:enumeration value="stone veneer"/>
 			<xs:enumeration value="asbestos siding"/>
 			<xs:enumeration value="fiber cement siding"/>
 			<xs:enumeration value="composite shingle siding"/>
