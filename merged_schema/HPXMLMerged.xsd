@@ -7145,8 +7145,6 @@
 	</xs:complexType>
 	<xs:simpleType name="schemaVersionType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="4.0"/>
-			<xs:enumeration value="4.1"/>
 			<xs:enumeration value="5.0"/>
 		</xs:restriction>
 	</xs:simpleType>
