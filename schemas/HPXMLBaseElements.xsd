@@ -2059,6 +2059,7 @@
 										<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
 									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType" type="WaterFixtureType"/>
+									<xs:element minOccurs="0" name="Location" type="WaterFixtureLocation"/>
 									<xs:element minOccurs="0" name="Count" type="IntegerGreaterThanZero">
 										<xs:annotation>
 											<xs:documentation>Number of similar water fixtures.</xs:documentation>
