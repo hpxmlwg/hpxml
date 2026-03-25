@@ -1684,6 +1684,38 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="SkylightCurbMaterial_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="metal"/>
+			<xs:enumeration value="wood"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="not present"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SkylightCurbMaterial">
+		<xs:simpleContent>
+			<xs:extension base="SkylightCurbMaterial_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="SkylightShaftMaterial_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="metal"/>
+			<xs:enumeration value="plywood"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="not present"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SkylightShaftMaterial">
+		<xs:simpleContent>
+			<xs:extension base="SkylightShaftMaterial_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="GlassLayers_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="single-pane"/>
