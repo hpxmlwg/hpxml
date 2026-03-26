@@ -2344,6 +2344,7 @@
 			<xs:enumeration value="other multifamily buffer space"/>
 			<xs:enumeration value="other non-freezing space"/>
 			<xs:enumeration value="outdoor closet"/>
+			<xs:enumeration value="outside"/>
 			<xs:enumeration value="roof deck"/>
 			<xs:enumeration value="unconditioned space"/>
 		</xs:restriction>
