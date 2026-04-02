@@ -3656,7 +3656,6 @@
 			<xs:enumeration value="expanded polystyrene sheathing"/>
 			<xs:enumeration value="plastic/rubber/synthetic sheeting"/>
 			<xs:enumeration value="concrete"/>
-			<xs:enumeration value="cool roof"/>
 			<xs:enumeration value="green roof"/>
 			<xs:enumeration value="no one major type"/>
 			<xs:enumeration value="other"/>
