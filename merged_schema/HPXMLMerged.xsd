@@ -2523,8 +2523,8 @@
 									<xs:element minOccurs="0" name="FuelEconomyCombined">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element minOccurs="0" name="Units" type="FuelEconomyUnits"/>
-												<xs:element minOccurs="0" name="Value" type="HPXMLDoubleGreaterThanZero"/>
+												<xs:element minOccurs="1" name="Units" type="FuelEconomyUnits"/>
+												<xs:element minOccurs="1" name="Value" type="HPXMLDoubleGreaterThanZero"/>
 											</xs:sequence>
 											<xs:attribute name="dataSource" type="DataSource"/>
 										</xs:complexType>
@@ -2532,8 +2532,8 @@
 									<xs:element minOccurs="0" name="FuelEconomyCity">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element minOccurs="0" name="Units" type="FuelEconomyUnits"/>
-												<xs:element minOccurs="0" name="Value" type="HPXMLDoubleGreaterThanZero"/>
+												<xs:element minOccurs="1" name="Units" type="FuelEconomyUnits"/>
+												<xs:element minOccurs="1" name="Value" type="HPXMLDoubleGreaterThanZero"/>
 											</xs:sequence>
 											<xs:attribute name="dataSource" type="DataSource"/>
 										</xs:complexType>
@@ -2541,8 +2541,8 @@
 									<xs:element minOccurs="0" name="FuelEconomyHighway">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element minOccurs="0" name="Units" type="FuelEconomyUnits"/>
-												<xs:element minOccurs="0" name="Value" type="HPXMLDoubleGreaterThanZero"/>
+												<xs:element minOccurs="1" name="Units" type="FuelEconomyUnits"/>
+												<xs:element minOccurs="1" name="Value" type="HPXMLDoubleGreaterThanZero"/>
 											</xs:sequence>
 											<xs:attribute name="dataSource" type="DataSource"/>
 										</xs:complexType>
@@ -5270,12 +5270,12 @@
 			<xs:element minOccurs="0" name="DuctLeakage">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="Units" type="DuctLeakageTestUnitofMeasure" minOccurs="0">
+						<xs:element name="Units" type="DuctLeakageTestUnitofMeasure" minOccurs="1">
 							<xs:annotation>
 								<xs:documentation>For Percent enter values as a fractional number, i.e. 30% = 0.3</xs:documentation>
 							</xs:annotation>
 						</xs:element>
-						<xs:element name="Value" type="MeasuredDuctLeakage" minOccurs="0"/>
+						<xs:element name="Value" type="MeasuredDuctLeakage" minOccurs="1"/>
 						<xs:element minOccurs="0" name="TotalOrToOutside" type="DuctLeakageTotalOrToOutside"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
@@ -6012,8 +6012,8 @@
 			<xs:element minOccurs="0" name="BuildingAirLeakage">
 				<xs:complexType>
 					<xs:sequence>
-						<xs:element name="UnitofMeasure" type="BuildingAirLeakageUnit" minOccurs="0"/>
-						<xs:element name="AirLeakage" type="BuildingAirLeakage" minOccurs="0"/>
+						<xs:element name="UnitofMeasure" type="BuildingAirLeakageUnit" minOccurs="1"/>
+						<xs:element name="AirLeakage" type="BuildingAirLeakage" minOccurs="1"/>
 					</xs:sequence>
 					<xs:attribute name="dataSource" type="DataSource"/>
 				</xs:complexType>
@@ -6804,8 +6804,8 @@
 	</xs:complexType>
 	<xs:complexType name="VentilationType">
 		<xs:sequence>
-			<xs:element name="UnitofMeasure" type="VentilationUnit" minOccurs="0"/>
-			<xs:element name="Value" type="BuildingAirLeakage" minOccurs="0"/>
+			<xs:element name="UnitofMeasure" type="VentilationUnit" minOccurs="1"/>
+			<xs:element name="Value" type="BuildingAirLeakage" minOccurs="1"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
