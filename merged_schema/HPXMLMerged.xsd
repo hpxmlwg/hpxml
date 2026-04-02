@@ -1035,6 +1035,11 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="RoofType" type="RoofType"/>
+									<xs:element minOccurs="0" name="CoolRoof" type="HPXMLBoolean">
+										<xs:annotation>
+											<xs:documentation>A cool roof has a material or coating that lowers the roof surface temperature, by having a low solar absorptance and/or high thermal emittance.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="RoofColor" type="WallAndRoofColor"/>
 									<xs:element minOccurs="0" name="SolarAbsorptance" type="SolarAbsorptance"/>
 									<xs:element minOccurs="0" name="Emittance" type="Emittance"/>
@@ -2073,6 +2078,7 @@
 										<xs:element name="AttachedToHotWaterDistribution" type="LocalReference"/>
 									</xs:choice>
 									<xs:element minOccurs="1" name="WaterFixtureType" type="WaterFixtureType"/>
+									<xs:element minOccurs="0" name="Location" type="WaterFixtureLocation"/>
 									<xs:element minOccurs="0" name="Count" type="IntegerGreaterThanZero">
 										<xs:annotation>
 											<xs:documentation>Number of similar water fixtures.</xs:documentation>
@@ -10695,6 +10701,7 @@
 	</xs:complexType>
 	<xs:simpleType name="WallAndRoofColor_simple">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="white"/>
 			<xs:enumeration value="light"/>
 			<xs:enumeration value="medium light"/>
 			<xs:enumeration value="medium"/>
@@ -10720,7 +10727,6 @@
 			<xs:enumeration value="expanded polystyrene sheathing"/>
 			<xs:enumeration value="plastic/rubber/synthetic sheeting"/>
 			<xs:enumeration value="concrete"/>
-			<xs:enumeration value="cool roof"/>
 			<xs:enumeration value="green roof"/>
 			<xs:enumeration value="no one major type"/>
 			<xs:enumeration value="other"/>
@@ -11609,6 +11615,24 @@
 	<xs:complexType name="WaterFixtureType">
 		<xs:simpleContent>
 			<xs:extension base="WaterFixtureType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="WaterFixtureLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bathroom"/>
+			<xs:enumeration value="kitchen"/>
+			<xs:enumeration value="garage"/>
+			<xs:enumeration value="basement"/>
+			<xs:enumeration value="laundry room"/>
+			<xs:enumeration value="outside"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="WaterFixtureLocation">
+		<xs:simpleContent>
+			<xs:extension base="WaterFixtureLocation_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
