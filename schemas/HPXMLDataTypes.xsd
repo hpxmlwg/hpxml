@@ -5451,11 +5451,11 @@
 	</xs:complexType>
 	<xs:simpleType name="HPWHOperatingModeType_simple">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="hybrid/auto"/>
-			<xs:pattern value="heat pump only"/>
-			<xs:pattern value="electric heater only"/>
-			<xs:pattern value="high demand/recovery"/>
-			<xs:pattern value="other"/>
+			<xs:enumeration value="hybrid/auto"/>
+			<xs:enumeration value="heat pump only"/>
+			<xs:enumeration value="electric heater only"/>
+			<xs:enumeration value="high demand/recovery"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="HPWHOperatingMode">
@@ -5467,11 +5467,11 @@
 	</xs:complexType>
 	<xs:simpleType name="HPWHVoltage_simple">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="240V"/>
-			<xs:pattern value="120V"/>
-			<xs:pattern value="120V dedicated circuit"/>
-			<xs:pattern value="120V shared circuit"/>
-			<xs:pattern value="other"/>
+			<xs:enumeration value="240V"/>
+			<xs:enumeration value="120V"/>
+			<xs:enumeration value="120V dedicated circuit"/>
+			<xs:enumeration value="120V shared circuit"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="HPWHVoltage">
