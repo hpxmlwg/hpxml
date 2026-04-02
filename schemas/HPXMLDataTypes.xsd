@@ -4548,6 +4548,24 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="WaterFixtureLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bathroom"/>
+			<xs:enumeration value="kitchen"/>
+			<xs:enumeration value="garage"/>
+			<xs:enumeration value="basement"/>
+			<xs:enumeration value="laundry room"/>
+			<xs:enumeration value="outside"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="WaterFixtureLocation">
+		<xs:simpleContent>
+			<xs:extension base="WaterFixtureLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="WaterFixtureThirdPartyCertification_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Energy Star"/>
