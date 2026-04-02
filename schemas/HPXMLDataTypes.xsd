@@ -3631,6 +3631,7 @@
 	</xs:complexType>
 	<xs:simpleType name="WallAndRoofColor_simple">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="white"/>
 			<xs:enumeration value="light"/>
 			<xs:enumeration value="medium light"/>
 			<xs:enumeration value="medium"/>
