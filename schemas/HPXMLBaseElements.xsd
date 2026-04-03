@@ -1383,7 +1383,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="Curb">
 										<xs:annotation>
-											<xs:documentation/>
+											<xs:documentation>A skylight curb is a raised frame that elevates the skylight above the roof (in contrast to deck mounted skylights that are flush with the roof).</xs:documentation>
 										</xs:annotation>
 										<xs:complexType>
 											<xs:sequence>
