@@ -3629,6 +3629,7 @@
 	</xs:complexType>
 	<xs:simpleType name="WallAndRoofColor_simple">
 		<xs:restriction base="xs:string">
+			<xs:enumeration value="white"/>
 			<xs:enumeration value="light"/>
 			<xs:enumeration value="medium light"/>
 			<xs:enumeration value="medium"/>
@@ -3654,7 +3655,6 @@
 			<xs:enumeration value="expanded polystyrene sheathing"/>
 			<xs:enumeration value="plastic/rubber/synthetic sheeting"/>
 			<xs:enumeration value="concrete"/>
-			<xs:enumeration value="cool roof"/>
 			<xs:enumeration value="green roof"/>
 			<xs:enumeration value="no one major type"/>
 			<xs:enumeration value="other"/>
@@ -4547,6 +4547,24 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="WaterFixtureLocation_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="bathroom"/>
+			<xs:enumeration value="kitchen"/>
+			<xs:enumeration value="garage"/>
+			<xs:enumeration value="basement"/>
+			<xs:enumeration value="laundry room"/>
+			<xs:enumeration value="outside"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="WaterFixtureLocation">
+		<xs:simpleContent>
+			<xs:extension base="WaterFixtureLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="WaterFixtureThirdPartyCertification_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="Energy Star"/>
@@ -5431,11 +5449,11 @@
 	</xs:complexType>
 	<xs:simpleType name="HPWHOperatingModeType_simple">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="hybrid/auto"/>
-			<xs:pattern value="heat pump only"/>
-			<xs:pattern value="electric heater only"/>
-			<xs:pattern value="high demand/recovery"/>
-			<xs:pattern value="other"/>
+			<xs:enumeration value="hybrid/auto"/>
+			<xs:enumeration value="heat pump only"/>
+			<xs:enumeration value="electric heater only"/>
+			<xs:enumeration value="high demand/recovery"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="HPWHOperatingMode">
@@ -5447,11 +5465,11 @@
 	</xs:complexType>
 	<xs:simpleType name="HPWHVoltage_simple">
 		<xs:restriction base="xs:string">
-			<xs:pattern value="240V"/>
-			<xs:pattern value="120V"/>
-			<xs:pattern value="120V dedicated circuit"/>
-			<xs:pattern value="120V shared circuit"/>
-			<xs:pattern value="other"/>
+			<xs:enumeration value="240V"/>
+			<xs:enumeration value="120V"/>
+			<xs:enumeration value="120V dedicated circuit"/>
+			<xs:enumeration value="120V shared circuit"/>
+			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="HPWHVoltage">
