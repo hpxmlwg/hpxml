@@ -1783,7 +1783,11 @@
 											<xs:documentation>If a water heating system is present but the type is not known, use "unknown". If a water heating system is known to be not present, use "not present".</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element name="Location" type="UnitLocation" minOccurs="0"/>
+									<xs:element name="Location" type="UnitLocation" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Use "outdoor closet" when the water heater is installed in a small enclosure adjacent to a home's exterior wall. If the enclosure is not fully enclosed (open to the outdoors), use "outside".</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="YearInstalled" type="Year"/>
 									<xs:element name="ModelYear" type="Year" minOccurs="0"/>
 									<xs:element name="Manufacturer" type="Manufacturer" minOccurs="0"/>
