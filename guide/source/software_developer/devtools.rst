@@ -4,34 +4,34 @@ Development Tools
 HPXML Toolbox
 *************
 
-To facilitate the adoption of the HPXML standard use cases, NREL has developed the `HPXML Toolbox`_. Features of the toolbox include a data dictionary/schema explorer tool as well as a validator.
+To facilitate the adoption of the HPXML standard use cases, the National Laboratory of the Rockies (NLR) has developed the `HPXML Toolbox`_. Features of the toolbox include a data dictionary/schema explorer tool as well as a validator.
 
 Data Dictionary and Schema Explorer
 ===================================
 
-One of the challenges of HPXML is understanding and communicating the structure of the schema, how data elements are organized, and how they are to be interpreted. Up until recently the best way to learn those details was to inspect the `schema files`_. The online `data dictionary`_ is a searchable website that documents HPXML structure, element interpretations, the standard datasets to which an element belongs, and how any element in HPXML relates to the other data standards such as BEDES and RESO. 
+One of the challenges of HPXML is understanding and communicating the structure of the schema, how data elements are organized, and how they are to be interpreted. Up until recently the best way to learn those details was to inspect the `schema files`_. The online `data dictionary`_ is a searchable website that documents HPXML structure, element interpretations, the standard datasets to which an element belongs, and how any element in HPXML relates to the other data standards such as BEDES and RESO.
 
 .. _schema files: https://github.com/hpxmlwg/hpxml/tree/master/schemas
-.. _data dictionary: https://hpxml.nrel.gov/datadictionary
+.. _data dictionary: https://hpxml.nlr.gov/datadictionary
 
 Validator
 =========
 
-The toolbox provides a schema validator plus standard dataset validator. 
+The toolbox provides a schema validator plus standard dataset validator.
 Submitting an HPXML file will perform the following steps:
 
 #. Validation of the file against HPXML schema and determination of schema version.
 #. Validation against each of the standard use cases including output describing
-   any missing elements required to meet a particular use case. 
+   any missing elements required to meet a particular use case.
 #. Display of HPXML file in collapsable tree form.
 
 The validation functionality is available as a `website`_ for testing and
 viewing individual files, or as a `web service API`_ that allows the validation
-to be called as part of a software workflow. 
+to be called as part of a software workflow.
 
-.. _website: https://hpxml.nrel.gov/validator/
-.. _web service API: https://hpxml.nrel.gov/api/
-.. _HPXML Toolbox: https://hpxml.nrel.gov
+.. _website: https://hpxml.nlr.gov/validator/
+.. _web service API: https://hpxml.nlr.gov/api/
+.. _HPXML Toolbox: https://hpxml.nlr.gov
 
 Data Selection Spreadsheet
 **************************
