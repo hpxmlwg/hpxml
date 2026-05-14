@@ -1037,7 +1037,7 @@
 									<xs:element minOccurs="0" name="RoofType" type="RoofType"/>
 									<xs:element minOccurs="0" name="CoolRoof" type="HPXMLBoolean">
 										<xs:annotation>
-											<xs:documentation>A cool roof has a material or coating that lowers the roof surface temperature, by having a low solar absorptance and/or high thermal emittance.</xs:documentation>
+											<xs:documentation>A cool roof has a material or coating that lowers the roof surface temperature, by having a low solar absorptance and/or high thermal emittance. Products may be designated by an efficiency program or similar.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="RoofColor" type="WallAndRoofColor"/>
