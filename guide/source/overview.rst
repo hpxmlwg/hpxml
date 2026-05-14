@@ -41,7 +41,7 @@ HPXML is the most widely used implementation of the Department of Energy’s (DO
 
 HPXML is also aligned with the Real Estate Standards Organization's (RESO) Data Dictionary, which standardizes terms used in Multiple Listing Services (MLS) and other source providers nationwide so that information can be easily shared and understood in the real estate industry.
 
-The benefit of having HPXML aligned with the RESO Data Dictionary and with BEDES is to increase interoperability across sectors and industries. Home energy efficiency information, including score and labels, can be transferred to MLS databases. 
+The benefit of having HPXML aligned with the RESO Data Dictionary and with BEDES is to increase interoperability across sectors and industries. Home energy efficiency information, including score and labels, can be transferred to MLS databases.
 
 Management and Version Control
 ******************************
@@ -49,7 +49,7 @@ Management and Version Control
 HPXML Working Group
 ===================
 
-HPXML has been developed, and is modified and maintained, by the stakeholders who use it, including organizations and individuals from residential energy efficiency programs, software development, government, home performance contracting, and the nonprofit sector. 
+HPXML has been developed, and is modified and maintained, by the stakeholders who use it, including organizations and individuals from residential energy efficiency programs, software development, government, home performance contracting, and the nonprofit sector.
 
 The Home Performance Coalition (HPC) chairs a national working group of industry experts with oversight from the BPI Data and Modeling Standards Technical Committee using an open and consensus based decision-making process set by BPI. The working group meets quarterly to discuss updates and to vote on new versions of the standards.
 
@@ -62,7 +62,7 @@ Versioning
 
 The HPXML schema follows the `Semantic Versioning 2.0 specification <http://semver.org/>`_. The version numbers follow a pattern of Major, Minor, and Patch (e.g., 5.0.0). The major version number is incremented when the schemas are changed in a manner that is incompatible with previous versions. Examples of changes that require a major version change include renaming elements, removing elements, moving elements, and removing enumerations.
 
-The minor version number is incremented when the schemas are changed in a manner that is backwards compatible with previous versions that share the same major version. In other words, a document created in a previous version of the schema will also validate against the new schema. Examples of changes that require a minor version change include adding elements, adding enumerations, and changing the annotation in the schema for an element. 
+The minor version number is incremented when the schemas are changed in a manner that is backwards compatible with previous versions that share the same major version. In other words, a document created in a previous version of the schema will also validate against the new schema. Examples of changes that require a minor version change include adding elements, adding enumerations, and changing the annotation in the schema for an element.
 
 Technical documentation can be found at https://www.hpxmlonline.com/.
 
@@ -75,8 +75,8 @@ Data can be adequately represented by HPXML if HPXML data elements, singularly o
 
     1. Could reasonably be understood by other energy efficiency professionals; and,
     2. Does not result in significant loss of information or create significant risks of miscommunication.
-    
-Software developers may validate their HPXML files against the schema and its datasets by uploading files to the `HPXML Validator <https://hpxml.nrel.gov/validator/>`_. Sample HPXML files are `available on Github <https://github.com/hpxmlwg/hpxml/tree/master/examples>`_. 
+
+Software developers may validate their HPXML files against the schema and its datasets by uploading files to the `HPXML Validator <https://hpxml.nlr.gov/validator/>`_. Sample HPXML files are `available on Github <https://github.com/hpxmlwg/hpxml/tree/master/examples>`_.
 
 Continued Growth
 ****************
