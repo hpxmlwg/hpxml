@@ -3647,7 +3647,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="RoofType_simple">
+	<xs:simpleType name="RoofMaterial_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="shingles"/>
 			<xs:enumeration value="slate or tile shingles"/>
@@ -3656,15 +3656,15 @@
 			<xs:enumeration value="metal surfacing"/>
 			<xs:enumeration value="expanded polystyrene sheathing"/>
 			<xs:enumeration value="plastic/rubber/synthetic sheeting"/>
-			<xs:enumeration value="concrete"/>
+			<xs:enumeration value="concrete tiles"/>
 			<xs:enumeration value="green roof"/>
 			<xs:enumeration value="no one major type"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="RoofType">
+	<xs:complexType name="RoofMaterial">
 		<xs:simpleContent>
-			<xs:extension base="RoofType_simple">
+			<xs:extension base="RoofMaterial_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>

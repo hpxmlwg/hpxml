@@ -1034,7 +1034,8 @@
 											<xs:documentation>[deg]</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="RoofType" type="RoofType"/>
+									<xs:element minOccurs="0" name="RoofType" type="FloorOrRoofType"/>
+									<xs:element minOccurs="0" name="RoofMaterial" type="RoofMaterial"/>
 									<xs:element minOccurs="0" name="CoolRoof" type="HPXMLBoolean">
 										<xs:annotation>
 											<xs:documentation>A cool roof has a material or coating that lowers the roof surface temperature, by having a low solar absorptance and/or high thermal emittance. Products may be designated by an efficiency program or similar.</xs:documentation>
@@ -1253,7 +1254,7 @@
 											<xs:documentation>From the perspective of the living/conditioned space.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
-									<xs:element minOccurs="0" name="FloorType" type="FloorType"/>
+									<xs:element minOccurs="0" name="FloorType" type="FloorOrRoofType"/>
 									<xs:element minOccurs="0" name="FloorJoists" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorTrusses" type="StudProperties"/>
 									<xs:element minOccurs="0" name="FloorCovering" type="FloorCovering">
@@ -6288,7 +6289,7 @@
 		</xs:choice>
 		<xs:attribute name="dataSource" type="DataSource"/>
 	</xs:complexType>
-	<xs:complexType name="FloorType">
+	<xs:complexType name="FloorOrRoofType">
 		<xs:choice>
 			<xs:element name="WoodFrame">
 				<xs:complexType>
@@ -10717,7 +10718,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:simpleType name="RoofType_simple">
+	<xs:simpleType name="RoofMaterial_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="shingles"/>
 			<xs:enumeration value="slate or tile shingles"/>
@@ -10726,15 +10727,15 @@
 			<xs:enumeration value="metal surfacing"/>
 			<xs:enumeration value="expanded polystyrene sheathing"/>
 			<xs:enumeration value="plastic/rubber/synthetic sheeting"/>
-			<xs:enumeration value="concrete"/>
+			<xs:enumeration value="concrete tiles"/>
 			<xs:enumeration value="green roof"/>
 			<xs:enumeration value="no one major type"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:complexType name="RoofType">
+	<xs:complexType name="RoofMaterial">
 		<xs:simpleContent>
-			<xs:extension base="RoofType_simple">
+			<xs:extension base="RoofMaterial_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
