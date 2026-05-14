@@ -11609,6 +11609,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="faucet"/>
 			<xs:enumeration value="shower head"/>
+			<xs:enumeration value="toilet"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
