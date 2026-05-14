@@ -60,7 +60,7 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <RadiantBarrier>false</RadiantBarrier>
             <Insulation>
               <SystemIdentifier id="attic1roofins"/>
@@ -250,7 +250,7 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1proposed" sameas="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <RadiantBarrier>false</RadiantBarrier>
             <Insulation>
               <SystemIdentifier id="attic1roofinsproposed" sameas="attic1roofins"/>
@@ -449,7 +449,7 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1completion" sameas="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <RadiantBarrier>false</RadiantBarrier>
             <Insulation>
               <SystemIdentifier id="attic1roofinscompletion" sameas="attic1roofins"/>
