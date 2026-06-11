@@ -4549,7 +4549,7 @@
 															</xs:element>
 															<xs:element minOccurs="0" name="Distance" type="HPXMLDoubleGreaterThanZero">
 																<xs:annotation>
-																	<xs:documentation>[ft] Distance between home and neighbor building.</xs:documentation>
+																	<xs:documentation>[ft] Distance between closest edges of home and neighbor building.</xs:documentation>
 																</xs:annotation>
 															</xs:element>
 															<xs:element name="NumberofStoriesAboveGrade" type="IntegerGreaterThanZero" minOccurs="0"/>
