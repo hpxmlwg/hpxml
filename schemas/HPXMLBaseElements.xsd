@@ -1409,7 +1409,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="CeilingAreaDisplaced" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.] For a skylight that includes a shaft or sun tunnel, the ceiling (attic floor) area that is displayed by the skylight penetration. This is typically greater than or equal to the skylight area.</xs:documentation>
+											<xs:documentation>[sq.ft.] For a skylight that includes a shaft or sun tunnel, the ceiling (attic floor) area that is displaced by the skylight penetration. This is typically greater than or equal to the skylight area.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="AttachedToRoof" type="LocalReference"/>
