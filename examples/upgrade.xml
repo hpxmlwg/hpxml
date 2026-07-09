@@ -111,7 +111,7 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <Insulation>
               <SystemIdentifier id="insul2"/>
               <Layer>
@@ -352,7 +352,7 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1c"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <Insulation>
               <SystemIdentifier id="insul2c" sameas="insul2"/>
               <MisalignedInsulation>false</MisalignedInsulation>

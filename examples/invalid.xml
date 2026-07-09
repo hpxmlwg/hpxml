@@ -116,7 +116,7 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <Insulation>
               <SystemIdentifier id="attic2ins"/>
               <Layer>
@@ -373,7 +373,7 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1p" sameas="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <Insulation>
               <SystemIdentifier id="attic2insp" sameas="attic2ins"/>
               <Layer>
