@@ -3,7 +3,7 @@
 Step 5: Design a Data Validation Process
 ########################################
 
-Designing a good system for data validation that automatically checks all submitted data is critical for ensuring high-quality data, maintaining contractor satisfaction, and streamlining quality assurance activities. The good news is that most of this work will be completed by your software vendor. However, you will want to undergo a thorough scoping exercise with your vendor to identify what types of validation checks you want your program software to complete. 
+Designing a good system for data validation that automatically checks all submitted data is critical for ensuring high-quality data, maintaining contractor satisfaction, and streamlining quality assurance activities. The good news is that most of this work will be completed by your software vendor. However, you will want to undergo a thorough scoping exercise with your vendor to identify what types of validation checks you want your program software to complete.
 
 For example, a basic validation check ensures that all data is present and in the right format. More advanced validation checks can ensure that data falls within an acceptable range for program compliance purposes or to guide quality assurance. You may be able to automate quality assurance review on health and safety results to ensure all standards are being met. If not met, a user can be warned and intervene on the project.
 
@@ -25,15 +25,15 @@ Once validation rules have been set, it is equally important to ensure that the 
 HPXML Toolbox
 *************
 
-To assist in validation, the National Renewable Energy Lanoratory (NREL) has created an `HPXML Toolbox`_ that includes
-an HPXML schema validator, dataset validator, data dictionary, a collapsable tree view of HPXML,
-and a web API that can be incorportated into software workflows. The tool is
+To assist in validation, the National Laboratory of the Rockies (NLR) has created an `HPXML Toolbox`_ that includes
+an HPXML schema validator, dataset validator, data dictionary, a collapsible tree view of HPXML,
+and a web API that can be incorporated into software workflows. The tool is
 useful to both software developers to test their implementation against the
 known datasets. It is also helpful for program administrators to see what data
 is in an HPXML file and what additional data would be required to meet any of
 the use cases.
 
-.. _HPXML Toolbox: https://hpxml.nrel.gov/
+.. _HPXML Toolbox: https://hpxml.nlr.gov
 
 Phasing of Validation
 *********************
@@ -54,4 +54,4 @@ By using this type of validation system, you can significantly reduce your labor
 
 .. note::
 
-    Over time, you can add even more sophisticated systems. If you launch with a very complex validation system, there is a high likelihood that many of the initial project submissions will fail as the market is still adapting to the new program environment. If you take a phased approach, you can ease this tension and coordinate with the market to facilitate high-quality data transactions while reducing admin costs.  
+    Over time, you can add even more sophisticated systems. If you launch with a very complex validation system, there is a high likelihood that many of the initial project submissions will fail as the market is still adapting to the new program environment. If you take a phased approach, you can ease this tension and coordinate with the market to facilitate high-quality data transactions while reducing admin costs.

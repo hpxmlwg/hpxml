@@ -46,7 +46,7 @@
     <Site>
       <SiteID id="bldg1site"/>
       <Address>
-        <Address1>NREL</Address1>
+        <Address1>NLR</Address1>
         <Address2/>
         <CityMunicipality>Golden</CityMunicipality>
         <StateCode>CO</StateCode>
