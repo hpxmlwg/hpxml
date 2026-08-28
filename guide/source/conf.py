@@ -106,21 +106,11 @@ pygments_style = 'tango'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-if on_rtd:
-    html_theme = 'default'
-else:
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-    # html_theme = 'basic'
-    # html_theme_options = {
-    #     "nosidebar": False,
-    #     "sidebarwidth": 230
-    # }
-    # html_sidebars = {'**': ['globaltoc.html']}
+# The theme is installed from guide/requirements.txt and registers itself with
+# Sphinx, so no html_theme_path is needed. Read the Docs used to substitute this
+# theme for 'default' by appending to conf.py; that stopped when the project moved
+# to a .readthedocs.yml v2 config, so the theme must be set unconditionally here.
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
