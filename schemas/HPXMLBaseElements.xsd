@@ -436,6 +436,15 @@
 					<xs:element maxOccurs="unbounded" minOccurs="0" name="ControlType" type="ClothesDryerControlType"/>
 					<xs:element minOccurs="0" name="Vented" type="HPXMLBoolean"/>
 					<xs:element minOccurs="0" name="VentedFlowRate" type="FlowRate"/>
+					<xs:element minOccurs="0" name="Load" maxOccurs="2">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="ElectricOrFuelLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -512,6 +521,24 @@
 							<xs:documentation>ft^3</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="Load">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="ElectricLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element minOccurs="0" name="HotWaterLoad">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="HotWaterLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -563,6 +590,24 @@
 							<xs:documentation>loads/week per the Energy Guide label; use Usage instead for loads/week of actual usage by the occupants</xs:documentation>
 						</xs:annotation>
 					</xs:element>
+					<xs:element minOccurs="0" name="Load">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="ElectricLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
+					</xs:element>
+					<xs:element minOccurs="0" name="HotWaterLoad">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="HotWaterLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -584,6 +629,15 @@
 						<xs:annotation>
 							<xs:documentation>[cu.ft.]</xs:documentation>
 						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="Load">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="ElectricLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
 					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
@@ -620,6 +674,15 @@
 						<xs:annotation>
 							<xs:documentation>[cu.ft.] Freezer Volume</xs:documentation>
 						</xs:annotation>
+					</xs:element>
+					<xs:element minOccurs="0" name="Load">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="ElectricLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
 					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
@@ -677,6 +740,15 @@
 						</xs:complexType>
 					</xs:element>
 					<xs:element minOccurs="0" name="FractionDehumidificationLoadServed" type="Fraction"/>
+					<xs:element minOccurs="0" name="Load">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="ElectricLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -694,6 +766,15 @@
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IsInduction" type="HPXMLBoolean"/>
+					<xs:element minOccurs="0" name="Load" maxOccurs="2">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="ElectricOrFuelLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -711,6 +792,15 @@
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IsConvection" type="HPXMLBoolean"/>
+					<xs:element minOccurs="0" name="Load" maxOccurs="2">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="Units" type="ElectricOrFuelLoadUnits"/>
+								<xs:element name="Value" type="HPXMLDouble"/>
+							</xs:sequence>
+							<xs:attribute name="dataSource" type="DataSource"/>
+						</xs:complexType>
+					</xs:element>
 					<xs:element ref="extension" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -2056,6 +2146,15 @@
 											<xs:attribute name="dataSource" type="DataSource"/>
 										</xs:complexType>
 									</xs:element>
+									<xs:element minOccurs="0" name="HotWaterLoad">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Units" type="HotWaterLoadUnits"/>
+												<xs:element name="Value" type="HPXMLDouble"/>
+											</xs:sequence>
+											<xs:attribute name="dataSource" type="DataSource"/>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -2105,6 +2204,15 @@
 										<xs:annotation>
 											<xs:documentation>Independent organization has verified that product or appliance meets or exceeds the standard in question.</xs:documentation>
 										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="HotWaterLoad">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="Units" type="HotWaterLoadUnits"/>
+												<xs:element name="Value" type="HPXMLDouble"/>
+											</xs:sequence>
+											<xs:attribute name="dataSource" type="DataSource"/>
+										</xs:complexType>
 									</xs:element>
 									<xs:element minOccurs="0" ref="extension"/>
 								</xs:sequence>
@@ -2774,7 +2882,7 @@
 						<xs:element minOccurs="0" name="Load">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="Units" type="PlugLoadUnits"/>
+									<xs:element name="Units" type="ElectricLoadUnits"/>
 									<xs:element name="Value" type="HPXMLDouble"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -3081,7 +3189,7 @@
 									<xs:element minOccurs="0" name="Load">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="Units" type="PlugLoadUnits"/>
+												<xs:element name="Units" type="ElectricLoadUnits"/>
 												<xs:element name="Value" type="HPXMLDouble"/>
 											</xs:sequence>
 										</xs:complexType>
@@ -3185,7 +3293,7 @@
 						<xs:element minOccurs="0" name="Load">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="Units" type="PlugLoadUnits"/>
+									<xs:element name="Units" type="ElectricLoadUnits"/>
 									<xs:element name="Value" type="HPXMLDouble"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
