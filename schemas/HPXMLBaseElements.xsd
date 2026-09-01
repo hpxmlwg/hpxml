@@ -2882,7 +2882,7 @@
 						<xs:element minOccurs="0" name="Load">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="Units" type="PlugLoadUnits"/>
+									<xs:element name="Units" type="ElectricLoadUnits"/>
 									<xs:element name="Value" type="HPXMLDouble"/>
 								</xs:sequence>
 								<xs:attribute name="dataSource" type="DataSource"/>
@@ -3189,7 +3189,7 @@
 									<xs:element minOccurs="0" name="Load">
 										<xs:complexType>
 											<xs:sequence>
-												<xs:element name="Units" type="PlugLoadUnits"/>
+												<xs:element name="Units" type="ElectricLoadUnits"/>
 												<xs:element name="Value" type="HPXMLDouble"/>
 											</xs:sequence>
 										</xs:complexType>
