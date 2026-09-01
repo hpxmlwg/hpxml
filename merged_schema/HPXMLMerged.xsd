@@ -806,7 +806,7 @@
 					<xs:element minOccurs="0" name="Location" type="RefrigeratorLocation"/>
 					<xs:element name="FuelType" type="FuelType" minOccurs="0"/>
 					<xs:element minOccurs="0" name="IsConvection" type="HPXMLBoolean"/>
-					<xs:element minOccurs="0" name="Load">
+					<xs:element minOccurs="0" name="Load" maxOccurs="2">
 						<xs:complexType>
 							<xs:sequence>
 								<xs:element name="Units" type="ElectricOrFuelLoadUnits"/>
