@@ -5609,7 +5609,6 @@
 			<xs:enumeration value="stainless steel"/>
 			<xs:enumeration value="bronze copper"/>
 			<xs:enumeration value="other"/>
-      <xs:enumeration value="another"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="ScreenMaterial">
