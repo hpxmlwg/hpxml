@@ -32,7 +32,7 @@ Leverage HPXML Experience
 
 In procuring a software provider, it is recommended that you consider their HPXML experience, including prior implementations of HPXML and participation in the working group. Many software vendors have already built in HPXML compliance or have been an active part of the HPXML development process. This experience should help speed up implementation and may reduce costs.
 
-There are several program administrators that participate in the HPXML working group. If you have questions, or would like to learn about their experiences, email your request to hpxml@homeperformance.org or visit http://www.hpxmlonline.com.
+There are several program administrators that participate in the HPXML working group. If you have questions, or would like to learn about their experiences, email your request to hpxml@homeperformance.org or visit https://www.hpxmlonline.com.
 
 Plan for Testing and HPXML Coordination Support
 ***********************************************

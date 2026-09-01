@@ -18,4 +18,7 @@ def test_example_file(filename):
     xmlschema_doc = etree.parse(str(here / '..' / 'schemas' / 'HPXML.xsd'))
     xmlschema = etree.XMLSchema(xmlschema_doc)
     doc = etree.parse(str(filename))
-    assert xmlschema.validate(doc)
+    if str(filename).endswith('invalid.xml'):
+        assert not xmlschema.validate(doc)
+    else:
+        assert xmlschema.validate(doc)
