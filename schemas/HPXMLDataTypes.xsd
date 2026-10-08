@@ -760,6 +760,8 @@
 			<xs:enumeration value="mansard"/>
 			<xs:enumeration value="gambrel"/>
 			<xs:enumeration value="butterfly"/>
+			<xs:enumeration value="curved"/>
+			<xs:enumeration value="combination"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>

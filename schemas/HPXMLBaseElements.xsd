@@ -882,6 +882,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="1" name="AtticType" type="AtticType"/>
+									<xs:element minOccurs="0" name="RoofShape" type="RoofShape"/>
 									<xs:element minOccurs="0" name="VentilationRate" type="VentilationType"/>
 									<xs:element minOccurs="0" name="WithinInfiltrationVolume" type="HPXMLBoolean">
 										<xs:annotation>
