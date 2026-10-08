@@ -751,6 +751,27 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="RoofShape_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gable"/>
+			<xs:enumeration value="hip"/>
+			<xs:enumeration value="flat"/>
+			<xs:enumeration value="shed"/>
+			<xs:enumeration value="mansard"/>
+			<xs:enumeration value="gambrel"/>
+			<xs:enumeration value="butterfly"/>
+			<xs:enumeration value="curved"/>
+			<xs:enumeration value="combination"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="RoofShape">
+		<xs:simpleContent>
+			<xs:extension base="RoofShape_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="SpaceAboveGarage_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="conditioned area"/>

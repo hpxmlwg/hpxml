@@ -896,6 +896,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="1" name="AtticType" type="AtticType"/>
+									<xs:element minOccurs="0" name="RoofShape" type="RoofShape"/>
 									<xs:element minOccurs="0" name="VentilationRate" type="VentilationType"/>
 									<xs:element minOccurs="0" name="WithinInfiltrationVolume" type="HPXMLBoolean">
 										<xs:annotation>
@@ -4816,6 +4817,11 @@
 											<xs:documentation>Primary attic type of building</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="RoofShape" type="RoofShape">
+										<xs:annotation>
+											<xs:documentation>Primary roof shape of building</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element name="AverageAtticRValue" type="RValue" minOccurs="0"/>
 									<xs:element name="AverageWallRValue" type="RValue" minOccurs="0"/>
 									<xs:element name="AverageFloorRValue" type="RValue" minOccurs="0"/>
@@ -7901,6 +7907,27 @@
 	<xs:complexType name="GarageLocation">
 		<xs:simpleContent>
 			<xs:extension base="GarageLocation_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="RoofShape_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gable"/>
+			<xs:enumeration value="hip"/>
+			<xs:enumeration value="flat"/>
+			<xs:enumeration value="shed"/>
+			<xs:enumeration value="mansard"/>
+			<xs:enumeration value="gambrel"/>
+			<xs:enumeration value="butterfly"/>
+			<xs:enumeration value="curved"/>
+			<xs:enumeration value="combination"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="RoofShape">
+		<xs:simpleContent>
+			<xs:extension base="RoofShape_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
