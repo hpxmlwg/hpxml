@@ -896,6 +896,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="1" name="AtticType" type="AtticType"/>
+									<xs:element minOccurs="0" name="RoofShape" type="RoofShape"/>
 									<xs:element minOccurs="0" name="VentilationRate" type="VentilationType"/>
 									<xs:element minOccurs="0" name="WithinInfiltrationVolume" type="HPXMLBoolean">
 										<xs:annotation>
@@ -7919,6 +7920,8 @@
 			<xs:enumeration value="mansard"/>
 			<xs:enumeration value="gambrel"/>
 			<xs:enumeration value="butterfly"/>
+			<xs:enumeration value="curved"/>
+			<xs:enumeration value="combination"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
