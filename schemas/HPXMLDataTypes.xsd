@@ -440,6 +440,8 @@
 	<xs:simpleType name="TypeofInfiltrationMeasurement_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="blower door"/>
+			<xs:enumeration value="single-point blower door"/>
+			<xs:enumeration value="multi-point blower door"/>
 			<xs:enumeration value="tracer gas"/>
 			<xs:enumeration value="estimate"/>
 			<xs:enumeration value="checklist"/>
