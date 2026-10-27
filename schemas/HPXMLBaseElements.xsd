@@ -6096,17 +6096,12 @@
 					<xs:sequence>
 						<xs:element minOccurs="0" name="LeakageCoefficient" type="HPXMLDoubleGreaterThanZero">
 							<xs:annotation>
-								<xs:documentation>[cfm/Pa^n] Leakage (flow) coefficient that represents the volume of air flowing through the building envelope per unit of time at a 1 Pascal pressure difference.</xs:documentation>
+								<xs:documentation>[cfm/Pa^n] The leakage (flow) coefficient, C, represents the volume of air flowing through the building envelope per unit of time at a 1 Pascal pressure difference.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element minOccurs="0" name="PressureExponent" type="FractionGreaterThanOne">
 							<xs:annotation>
-								<xs:documentation>The pressure exponent typically falls between 0.5 (large, turbulent leaks) and 1.0 (small, laminar leaks) with an average around 0.65. Values less than 0.5 or greater than 1.0 are generally considered invalid.</xs:documentation>
-							</xs:annotation>
-						</xs:element>
-						<xs:element minOccurs="0" name="CorrelationCoefficient" type="FractionExcludingZero">
-							<xs:annotation>
-								<xs:documentation>The correlation coefficient describes how well the pressure and airflow data points fit onto the calculated best-fit building leakage curve.</xs:documentation>
+								<xs:documentation>The pressure exponent, n, typically falls between 0.5 (large, turbulent leaks) and 1.0 (small, laminar leaks) with an average around 0.65. Values less than 0.5 or greater than 1.0 are generally considered invalid.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
