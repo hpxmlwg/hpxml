@@ -5633,4 +5633,41 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="GroundSurfaceType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="green grass"/>
+			<xs:enumeration value="dry or brown grass"/>
+			<xs:enumeration value="crushed rock or gravel"/>
+			<xs:enumeration value="sand"/>
+			<xs:enumeration value="soil"/>
+			<xs:enumeration value="light asphalt"/>
+			<xs:enumeration value="dark asphalt"/>
+			<xs:enumeration value="light concrete"/>
+			<xs:enumeration value="dark concrete"/>
+			<xs:enumeration value="light brick"/>
+			<xs:enumeration value="dark brick"/>
+			<xs:enumeration value="combination"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GroundSurfaceType">
+		<xs:simpleContent>
+			<xs:extension base="GroundSurfaceType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="GroundSurfaceReflectance_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+			<xs:maxExclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GroundSurfaceReflectance">
+		<xs:simpleContent>
+			<xs:extension base="GroundSurfaceReflectance_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 </xs:schema>

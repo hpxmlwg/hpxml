@@ -4567,6 +4567,26 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+									<xs:element minOccurs="0" name="GroundSurface">
+										<xs:annotation>
+											<xs:documentation>Ground surface in near proximity to the building perimeter, which can impact ground reflected solar radiation.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="Type" type="GroundSurfaceType">
+													<xs:annotation>
+														<xs:documentation>The primary ground surface type, or combination if there are multiple.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Reflectance" type="GroundSurfaceReflectance">
+													<xs:annotation>
+														<xs:documentation>Ground reflectance (albedo) represents the fraction of incident solar radiation reflected by the ground surface. Use an annual average to cover seasonal variation or multiple ground surface types.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" name="Neighbors">
 										<xs:annotation>
 											<xs:documentation>Presence of neighboring buildings, which can impact solar shading and wind shielding.</xs:documentation>

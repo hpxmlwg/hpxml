@@ -4581,6 +4581,26 @@
 											</xs:sequence>
 										</xs:complexType>
 									</xs:element>
+									<xs:element minOccurs="0" name="GroundSurface">
+										<xs:annotation>
+											<xs:documentation>Ground surface in near proximity to the building perimeter, which can impact ground reflected solar radiation.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="Type" type="GroundSurfaceType">
+													<xs:annotation>
+														<xs:documentation>The primary ground surface type, or combination if there are multiple.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Reflectance" type="GroundSurfaceReflectance">
+													<xs:annotation>
+														<xs:documentation>Ground reflectance (albedo) represents the fraction of incident solar radiation reflected by the ground surface. Use an annual average to cover seasonal variation or multiple ground surface types.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" ref="extension"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" name="Neighbors">
 										<xs:annotation>
 											<xs:documentation>Presence of neighboring buildings, which can impact solar shading and wind shielding.</xs:documentation>
@@ -12783,6 +12803,43 @@
 	<xs:complexType name="ScreenMaterial">
 		<xs:simpleContent>
 			<xs:extension base="ScreenMaterial_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="GroundSurfaceType_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="green grass"/>
+			<xs:enumeration value="dry or brown grass"/>
+			<xs:enumeration value="crushed rock or gravel"/>
+			<xs:enumeration value="sand"/>
+			<xs:enumeration value="soil"/>
+			<xs:enumeration value="light asphalt"/>
+			<xs:enumeration value="dark asphalt"/>
+			<xs:enumeration value="light concrete"/>
+			<xs:enumeration value="dark concrete"/>
+			<xs:enumeration value="light brick"/>
+			<xs:enumeration value="dark brick"/>
+			<xs:enumeration value="combination"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GroundSurfaceType">
+		<xs:simpleContent>
+			<xs:extension base="GroundSurfaceType_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:simpleType name="GroundSurfaceReflectance_simple">
+		<xs:restriction base="xs:double">
+			<xs:minExclusive value="0"/>
+			<xs:maxExclusive value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="GroundSurfaceReflectance">
+		<xs:simpleContent>
+			<xs:extension base="GroundSurfaceReflectance_simple">
 				<xs:attribute name="dataSource" type="DataSource"/>
 			</xs:extension>
 		</xs:simpleContent>
