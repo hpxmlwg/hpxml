@@ -1,4 +1,4 @@
-<HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.2">
+<HPXML xmlns="http://hpxmlonline.com/2025/12" schemaVersion="5.0">
   <XMLTransactionHeaderInformation>
     <XMLType/>
     <XMLGeneratedBy>Joe</XMLGeneratedBy>
@@ -46,7 +46,7 @@
     <Site>
       <SiteID id="bldg1site"/>
       <Address>
-        <Address1>NREL</Address1>
+        <Address1>NLR</Address1>
         <Address2/>
         <CityMunicipality>Golden</CityMunicipality>
         <StateCode>CO</StateCode>
@@ -111,7 +111,7 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <Insulation>
               <SystemIdentifier id="insul2"/>
               <Layer>
@@ -352,7 +352,7 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1c"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <Insulation>
               <SystemIdentifier id="insul2c" sameas="insul2"/>
               <MisalignedInsulation>false</MisalignedInsulation>
