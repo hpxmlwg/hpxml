@@ -76,7 +76,7 @@ Data can be adequately represented by HPXML if HPXML data elements, singularly o
     1. Could reasonably be understood by other energy efficiency professionals; and,
     2. Does not result in significant loss of information or create significant risks of miscommunication.
 
-Software developers may validate their HPXML files against the schema and its datasets by uploading files to the `HPXML Validator <https://hpxml.nlr.gov/validator/>`_. Sample HPXML files are `available on Github <https://github.com/hpxmlwg/hpxml/tree/master/examples>`_.
+Software developers may validate their HPXML files against the schema and its datasets by uploading files to the `HPXML Validator <https://hpxml.nlr.gov/validator/>`_. Sample HPXML files are `available on Github <https://github.com/hpxmlwg/hpxml/tree/main/examples>`_.
 
 Continued Growth
 ****************
