@@ -5,3 +5,5 @@ guide/build
 .idea
 .DS_Store
 .vscode
+__pycache__/
+*.pyc
