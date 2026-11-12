@@ -118,7 +118,10 @@
         <Doors>
           <Door>
             <SystemIdentifier id="door1"/>
-            <StormDoor>false</StormDoor>
+            <StormDoor>
+              <SystemIdentifier id="door1storm"/>
+              <Type>not present</Type>
+            </StormDoor>
             <RValue>5</RValue>
           </Door>
         </Doors>
@@ -308,7 +311,10 @@
         <Doors>
           <Door>
             <SystemIdentifier id="door1proposed" sameas="door1"/>
-            <StormDoor>false</StormDoor>
+            <StormDoor>
+              <SystemIdentifier id="door1proposedstorm" sameas="door1storm"/>
+              <Type>not present</Type>
+            </StormDoor>
             <RValue>5</RValue>
           </Door>
         </Doors>
@@ -507,7 +513,10 @@
         <Doors>
           <Door>
             <SystemIdentifier id="door1completion" sameas="door1"/>
-            <StormDoor>false</StormDoor>
+            <StormDoor>
+              <SystemIdentifier id="door1completionstorm" sameas="door1storm"/>
+              <Type>not present</Type>
+            </StormDoor>
             <RValue>5</RValue>
           </Door>
         </Doors>

@@ -168,12 +168,18 @@
         <Doors>
           <Door>
             <SystemIdentifier id="door1"/>
-            <StormDoor>false</StormDoor>
+            <StormDoor>
+              <SystemIdentifier id="door1storm"/>
+              <Type>not present</Type>
+            </StormDoor>
             <RValue>2.0</RValue>
           </Door>
           <Door>
             <SystemIdentifier id="door2"/>
-            <StormDoor>false</StormDoor>
+            <StormDoor>
+              <SystemIdentifier id="door2storm"/>
+              <Type>not present</Type>
+            </StormDoor>
             <RValue>2.0</RValue>
           </Door>
         </Doors>
@@ -425,12 +431,18 @@
         <Doors>
           <Door>
             <SystemIdentifier id="door1c" sameas="door1"/>
-            <StormDoor>false</StormDoor>
+            <StormDoor>
+              <SystemIdentifier id="door1cstorm" sameas="door1storm"/>
+              <Type>not present</Type>
+            </StormDoor>
             <RValue>2.0</RValue>
           </Door>
           <Door>
             <SystemIdentifier id="door2c"/>
-            <StormDoor>false</StormDoor>
+            <StormDoor>
+              <SystemIdentifier id="door2cstorm"/>
+              <Type>not present</Type>
+            </StormDoor>
             <RValue>2.0</RValue>
           </Door>
         </Doors>
