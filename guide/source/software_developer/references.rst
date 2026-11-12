@@ -40,40 +40,9 @@ When an element needs to reference another element it uses an
 which ensures that the id referenced exists somewhere within the document. One
 simple example of this is how a window can reference the wall to which it is attached.
 
-.. code-block:: xml
-   :emphasize-lines: 19,25
-
-   <?xml version="1.0" encoding="UTF-8"?>
-   <HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.3">
-       <XMLTransactionHeaderInformation>
-           <XMLType></XMLType>
-           <XMLGeneratedBy></XMLGeneratedBy>
-           <CreatedDateAndTime>2014-09-03T16:06:24Z</CreatedDateAndTime>
-           <Transaction>create</Transaction>
-       </XMLTransactionHeaderInformation>
-       <SoftwareInfo/>
-       <Building>
-           <BuildingID id="bldg1"/>
-           <ProjectStatus>
-               <EventType>audit</EventType>
-           </ProjectStatus>
-           <BuildingDetails>
-               <Enclosure>
-                   <Walls>
-                       <Wall>
-                           <SystemIdentifier id="wall1"/>
-                       </Wall>
-                   </Walls>
-                   <Windows>
-                       <Window>
-                           <SystemIdentifier id="window1"/>
-                           <AttachedToWall idref="wall1"/>
-                       </Window>
-                   </Windows>
-               </Enclosure>
-           </BuildingDetails>
-       </Building>
-   </HPXML>
+.. literalinclude:: idref.xml
+    :language: xml
+    :emphasize-lines: 19,25
 
 .. _sameas:
 
@@ -87,50 +56,9 @@ buildings between the pre- and post-upgrade ``Building`` nodes. Each
 affect some of the components. For components that do not change it is useful
 to have a way to indicate that they are the same item. 
 
-.. code-block:: xml
-   :emphasize-lines: 19,34
-
-   <?xml version="1.0" encoding="UTF-8"?>
-   <HPXML xmlns="http://hpxmlonline.com/2014/6" schemaVersion="2.3">
-       <XMLTransactionHeaderInformation>
-           <XMLType></XMLType>
-           <XMLGeneratedBy></XMLGeneratedBy>
-           <CreatedDateAndTime>2014-09-03T16:06:24Z</CreatedDateAndTime>
-           <Transaction>create</Transaction>
-       </XMLTransactionHeaderInformation>
-       <SoftwareInfo/>
-       <Building>
-           <BuildingID id="bldg1"/>
-           <ProjectStatus>
-               <EventType>audit</EventType>
-           </ProjectStatus>
-           <BuildingDetails>
-               <Enclosure>
-                   <Walls>
-                       <Wall>
-                           <SystemIdentifier id="wall1"/>
-                       </Wall>
-                   </Walls>
-               </Enclosure>
-           </BuildingDetails>
-       </Building>
-       <Building>
-           <BuildingID id="bldg1post"/>
-           <ProjectStatus>
-               <EventType>proposed workscope</EventType>
-           </ProjectStatus>
-           <BuildingDetails>
-               <Enclosure>
-                   <Walls>
-                       <Wall>
-                           <SystemIdentifier id="wall1post" sameas="wall1"/>
-                       </Wall>
-                   </Walls>
-               </Enclosure>
-           </BuildingDetails>
-       </Building>
-   </HPXML>
-
+.. literalinclude:: sameas.xml
+    :language: xml
+    :emphasize-lines: 19,34
 
 Inter-Document References
 *************************

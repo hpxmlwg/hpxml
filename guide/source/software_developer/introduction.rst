@@ -3,7 +3,7 @@ Introduction
 
 This section of the Implementation Guide is designed to outline the technical details of implementing HPXML. HPXML is
 an expansive standard data format based on extensible markup language (XML) and maintained by the Building
-Performance Institute's HPXML working group. For more information on HPXML, visit http://www.hpxmlonline.com. 
+Performance Institute's HPXML working group. For more information on HPXML, visit https://www.hpxmlonline.com. 
 
 The HPXML format is defined by a set of XML Schema (XSD) documents that outline
 all the acceptable data elements, their structure, and relation to one another.
