@@ -159,7 +159,9 @@
         <Doors>
           <Door>
             <SystemIdentifier id="frontdoor1"/>
-            <StormDoor>true</StormDoor>
+            <StormDoor>
+              <SystemIdentifier id="frontdoor1storm"/>
+            </StormDoor>
             <RValue>2.17</RValue>
           </Door>
         </Doors>
@@ -416,7 +418,9 @@
         <Doors>
           <Door>
             <SystemIdentifier id="frontdoor1p" sameas="frontdoor1"/>
-            <StormDoor>true</StormDoor>
+            <StormDoor>
+              <SystemIdentifier id="frontdoor1pstorm" sameas="frontdoor1storm"/>
+            </StormDoor>
             <RValue>2.17</RValue>
           </Door>
         </Doors>
