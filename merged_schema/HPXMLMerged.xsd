@@ -4,12 +4,12 @@
             <xs:sequence>
                 <xs:element ref="XMLTransactionHeaderInformation"/>
                 <xs:element ref="SoftwareInfo"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" name="Contractor" nillable="true" type="Contractor"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" name="Customer" nillable="true" type="Customer"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" name="Building" nillable="true" type="Building"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" name="Project" nillable="true" type="Project"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" name="Utility" nillable="true" type="Utility"/>
-                <xs:element maxOccurs="unbounded" minOccurs="0" name="Consumption" nillable="true" type="Consumption"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Contractor" type="Contractor"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Customer" type="Customer"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Building" type="Building"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Project" type="Project"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Utility" type="Utility"/>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="Consumption" type="Consumption"/>
             </xs:sequence>
             <xs:attribute name="schemaVersion" type="schemaVersionType" use="required"/>
             <xs:attribute name="dataSource" type="DataSource"/>
@@ -1224,7 +1224,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.] Gross wall area</xs:documentation>
+											<xs:documentation>[sq.ft.] Gross wall area, e.g., includes window/door area</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="Orientation" type="OrientationType"/>
@@ -1355,7 +1355,7 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="Area" type="SurfaceArea">
 										<xs:annotation>
-											<xs:documentation>[sq.ft.]</xs:documentation>
+											<xs:documentation>[sq.ft.] Gross floor area, e.g., includes skylight shaft or sun tunnel area penetration through ceiling (attic floor)</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="0" name="InteriorFinish" type="InteriorFinishInfo"/>
@@ -1492,10 +1492,51 @@
 											<xs:documentation>Pitch of skylight ?/12</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element minOccurs="0" name="Curb">
+										<xs:annotation>
+											<xs:documentation>A skylight curb is a raised frame that elevates the skylight above the roof (in contrast to deck mounted skylights that are flush with the roof).</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element minOccurs="0" name="Material" type="SkylightCurbMaterial">
+													<xs:annotation>
+														<xs:documentation/>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="Height" type="LengthMeasurement">
+													<xs:annotation>
+														<xs:documentation>[in] Height above roof plane</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element minOccurs="0" name="SurfaceArea" type="SurfaceArea">
+													<xs:annotation>
+														<xs:documentation>[sq.ft.] Curb height above roof plane multiplied by the perimeter</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element name="InsulationNominalRValue" type="RValue" minOccurs="0"/>
+												<xs:element minOccurs="0" name="AssemblyEffectiveRValue" type="RValueGreaterThanZero">
+													<xs:annotation>
+														<xs:documentation>This should indicate the effective R-value of the complete assembly including any air films or other treatments. For below-grade surfaces adjacent to ground, it should not include the insulating effect of the ground.</xs:documentation>
+													</xs:annotation>
+												</xs:element>
+												<xs:element ref="extension" minOccurs="0"/>
+											</xs:sequence>
+										</xs:complexType>
+									</xs:element>
 									<xs:element minOccurs="0" name="AttachedToRoof" type="LocalReference"/>
+									<xs:element minOccurs="0" name="AttachedToKneeWall" type="LocalReference">
+										<xs:annotation>
+											<xs:documentation>For a skylight that includes a shaft or a sun tunnel, reference the knee wall (i.e., Wall with AtticWallType="knee wall") that describes the wall construction/area.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 									<xs:element minOccurs="0" name="AttachedToFloor" type="LocalReference">
 										<xs:annotation>
-											<xs:documentation>For a skylight that includes a shaft or a sun tunnel, reference the attic floor that it penetrates.</xs:documentation>
+											<xs:documentation>For a skylight that includes a shaft or a sun tunnel, reference the ceiling (attic floor) that it penetrates.</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="CeilingAreaDisplaced" type="SurfaceArea">
+										<xs:annotation>
+											<xs:documentation>[sq.ft.] For a skylight that includes a shaft or sun tunnel, the ceiling (attic floor) area that is displaced by the skylight penetration. This is typically greater than or equal to the skylight area.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="AnnualEnergyUse" minOccurs="0">
@@ -4791,8 +4832,8 @@
 									</xs:element>
 									<xs:element minOccurs="0" name="NumberofRooms" type="IntegerGreaterThanZero"/>
 									<xs:element name="NumberofBedrooms" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
-									<xs:element name="NumberofBathrooms" type="IntegerGreaterThanZero" minOccurs="0"/>
-									<xs:element minOccurs="0" name="NumberofCompleteBathrooms" type="IntegerGreaterThanZero">
+									<xs:element name="NumberofBathrooms" type="IntegerGreaterThanOrEqualToZero" minOccurs="0"/>
+									<xs:element minOccurs="0" name="NumberofCompleteBathrooms" type="IntegerGreaterThanOrEqualToZero">
 										<xs:annotation>
 											<xs:documentation>Number of bathrooms with a tub or shower</xs:documentation>
 										</xs:annotation>
@@ -5551,7 +5592,7 @@
 					<xs:documentation>In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="SimplifiedModelCalibrationHeatingBiasError" nillable="true" type="HPXMLDouble">
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationHeatingBiasError" type="HPXMLDouble">
 				<xs:annotation>
 					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% =
 						0.1)</xs:documentation>
@@ -5563,7 +5604,7 @@
 						0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="SimplifiedModelCalibrationBaseloadBiasError" nillable="true" type="HPXMLDouble">
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationBaseloadBiasError" type="HPXMLDouble">
 				<xs:annotation>
 					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. Percentage expressed as a fraction (ie 10% =
 						0.1)</xs:documentation>
@@ -5575,22 +5616,22 @@
 						0.1)</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="SimplifiedModelCalibrationHeatingAbsoluteError" nillable="true" type="HPXMLDouble">
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationHeatingAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
 					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="SimplifiedModelCalibrationCoolingAbsoluteError" nillable="true" type="HPXMLDouble">
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationCoolingAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
 					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="SimplifiedModelCalibrationBaseloadAbsoluteError" nillable="true" type="HPXMLDouble">
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationBaseloadAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
 					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element minOccurs="0" name="SimplifiedModelCalibrationTotalAbsoluteError" nillable="true" type="HPXMLDouble">
+			<xs:element minOccurs="0" name="SimplifiedModelCalibrationTotalAbsoluteError" type="HPXMLDouble">
 				<xs:annotation>
 					<xs:documentation>Used to determine model calibration acceptance when bills fail Detailed criteria, but meet simple criteria. In either kWh for electricity or MBtu (million Btu) for all other fuels.</xs:documentation>
 				</xs:annotation>
@@ -6842,12 +6883,12 @@
 		<xs:sequence>
 			<xs:group ref="SystemInfo"/>
 			<xs:element name="Name" type="HPXMLString"/>
-			<xs:element minOccurs="0" name="City" nillable="true" type="HPXMLString"/>
+			<xs:element minOccurs="0" name="City" type="HPXMLString"/>
 			<xs:element minOccurs="0" name="State" type="StateCode"/>
 			<xs:element minOccurs="0" name="WBAN" type="HPXMLString"/>
 			<xs:element minOccurs="0" name="WMO" type="HPXMLString"/>
 			<xs:element minOccurs="0" name="Type" type="WeatherStationType"/>
-			<xs:element minOccurs="0" name="Use" nillable="true" type="WeatherStationUse"/>
+			<xs:element minOccurs="0" name="Use" type="WeatherStationUse"/>
 			<xs:element minOccurs="0" ref="extension"/>
 		</xs:sequence>
 		<xs:attribute name="dataSource" type="DataSource"/>
@@ -8903,6 +8944,22 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:simpleType name="SkylightCurbMaterial_simple">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="metal"/>
+			<xs:enumeration value="wood"/>
+			<xs:enumeration value="other"/>
+			<xs:enumeration value="unknown"/>
+			<xs:enumeration value="not present"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="SkylightCurbMaterial">
+		<xs:simpleContent>
+			<xs:extension base="SkylightCurbMaterial_simple">
+				<xs:attribute name="dataSource" type="DataSource"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
 	<xs:simpleType name="GlassLayers_simple">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="single-pane"/>
@@ -10923,7 +10980,6 @@
 			<xs:enumeration value="wood shingles or shakes"/>
 			<xs:enumeration value="asphalt or fiberglass shingles"/>
 			<xs:enumeration value="metal surfacing"/>
-			<xs:enumeration value="expanded polystyrene sheathing"/>
 			<xs:enumeration value="plastic/rubber/synthetic sheeting"/>
 			<xs:enumeration value="concrete tiles"/>
 			<xs:enumeration value="green roof"/>
