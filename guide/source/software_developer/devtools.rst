@@ -11,7 +11,7 @@ Data Dictionary and Schema Explorer
 
 One of the challenges of HPXML is understanding and communicating the structure of the schema, how data elements are organized, and how they are to be interpreted. Up until recently the best way to learn those details was to inspect the `schema files`_. The online `data dictionary`_ is a searchable website that documents HPXML structure, element interpretations, the standard datasets to which an element belongs, and how any element in HPXML relates to the other data standards such as BEDES and RESO.
 
-.. _schema files: https://github.com/hpxmlwg/hpxml/tree/master/schemas
+.. _schema files: https://github.com/hpxmlwg/hpxml/tree/main/schemas
 .. _data dictionary: https://hpxml.nlr.gov/datadictionary
 
 Validator
