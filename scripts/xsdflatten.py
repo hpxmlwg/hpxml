@@ -1,4 +1,10 @@
 #!/usr/bin/env python
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "lxml",
+# ]
+# ///
 import sys
 import re
 import copy

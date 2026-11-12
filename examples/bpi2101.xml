@@ -1,4 +1,4 @@
-<HPXML xmlns="http://hpxmlonline.com/2023/09" schemaVersion="4.0">
+<HPXML xmlns="http://hpxmlonline.com/2025/12" schemaVersion="5.0">
   <XMLTransactionHeaderInformation>
     <XMLType>BPI-2101</XMLType>
     <XMLGeneratedBy>Noel</XMLGeneratedBy>
@@ -60,13 +60,13 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <RadiantBarrier>false</RadiantBarrier>
             <Insulation>
               <SystemIdentifier id="attic1roofins"/>
               <Layer>
                 <InsulationMaterial>
-                  <None/>
+                  <NotPresent/>
                 </InsulationMaterial>
                 <NominalRValue>0</NominalRValue>
               </Layer>
@@ -250,13 +250,13 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1proposed" sameas="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <RadiantBarrier>false</RadiantBarrier>
             <Insulation>
               <SystemIdentifier id="attic1roofinsproposed" sameas="attic1roofins"/>
               <Layer>
                 <InsulationMaterial>
-                  <None/>
+                  <NotPresent/>
                 </InsulationMaterial>
                 <NominalRValue>0</NominalRValue>
               </Layer>
@@ -449,13 +449,13 @@
         <Roofs>
           <Roof>
             <SystemIdentifier id="roof1completion" sameas="roof1"/>
-            <RoofType>shingles</RoofType>
+            <RoofMaterial>shingles</RoofMaterial>
             <RadiantBarrier>false</RadiantBarrier>
             <Insulation>
               <SystemIdentifier id="attic1roofinscompletion" sameas="attic1roofins"/>
               <Layer>
                 <InsulationMaterial>
-                  <None/>
+                  <NotPresent/>
                 </InsulationMaterial>
                 <NominalRValue>0</NominalRValue>
               </Layer>
