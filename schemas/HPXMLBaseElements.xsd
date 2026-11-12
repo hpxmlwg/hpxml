@@ -882,6 +882,7 @@
 										</xs:annotation>
 									</xs:element>
 									<xs:element minOccurs="1" name="AtticType" type="AtticType"/>
+									<xs:element minOccurs="0" name="RoofShape" type="RoofShape"/>
 									<xs:element minOccurs="0" name="VentilationRate" type="VentilationType"/>
 									<xs:element minOccurs="0" name="WithinInfiltrationVolume" type="HPXMLBoolean">
 										<xs:annotation>
@@ -4800,6 +4801,11 @@
 									<xs:element name="AtticType" type="AtticType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Primary attic type of building</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element minOccurs="0" name="RoofShape" type="RoofShape">
+										<xs:annotation>
+											<xs:documentation>Primary roof shape of building</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="AverageAtticRValue" type="RValue" minOccurs="0"/>
