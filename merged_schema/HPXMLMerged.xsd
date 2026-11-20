@@ -8241,6 +8241,7 @@
 			<xs:enumeration value="job completion testing/final inspection"/>
 			<xs:enumeration value="quality assurance/monitoring"/>
 			<xs:enumeration value="preconstruction"/>
+			<xs:enumeration value="mentoring"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="EventType">
